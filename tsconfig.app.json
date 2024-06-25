@@ -24,6 +24,17 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true,
     "removeComments": true,
+
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["*"],
+      "@css/*": ["css/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@pages/*": ["pages/*"],
+      "@dto/*": ["dto/*"],
+      "@hooks/*": ["hooks/*"],
+    }
   },
   "include": ["src"]
 }
