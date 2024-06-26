@@ -1,7 +1,7 @@
 # react-gift-react-foundation
 FE 카카오 선물하기 1주차 과제: React 기초
 
-###Requirements
+### Requirements
 - [x] Create React App을 기반으로 프로젝트를 생성
 - [x] Typescript로 프로젝트가 동작되게 세팅하고, 절대 경로로 Import 할 수 있게 alias를 설정
 - [x] tsconfig에 어떤 항목들로 구성되어 있는지 살펴보고, 필요하다 생각되는 설정들이 있다면 자유롭게 설정
