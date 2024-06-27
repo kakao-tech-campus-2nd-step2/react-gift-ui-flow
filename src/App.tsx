@@ -1,10 +1,11 @@
-import React from 'react';
-import { GlobalStyles } from './styles/globals';
+import { ResetStyles } from './styles/reset';
+import HomePage from './pages/HomePage';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <>
-      <GlobalStyles />
+      <ResetStyles />
+      <HomePage />
     </>
   );
 };
