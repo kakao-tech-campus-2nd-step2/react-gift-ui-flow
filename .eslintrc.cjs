@@ -1,11 +1,7 @@
 module.exports = {
   root: true,
   env: { browser: true, es2020: true },
-  extends: [
-    'airbnb',
-    'airbnb-typescript',
-    'airbnb/hooks'
-  ],
+  extends: ['airbnb', 'airbnb-typescript', 'airbnb/hooks', 'plugin:storybook/recommended'],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
