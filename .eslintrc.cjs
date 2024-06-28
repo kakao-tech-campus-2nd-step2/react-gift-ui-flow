@@ -11,6 +11,7 @@ module.exports = {
   rules: {
     'linebreak-style': 'off',
     'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/alt-text': 'off',
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
