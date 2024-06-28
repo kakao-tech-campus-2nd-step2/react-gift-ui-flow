@@ -2,13 +2,14 @@ import { css } from '@emotion/react';
 import Image from '@components/atoms/image/Image';
 
 interface GoodsItemProps {
+  rankingIndex?: number,
   imageSrc: string,
   subtitle: string,
   title: string,
   amount: number,
 }
-function DefaultGoodsItem({
-  imageSrc, subtitle, title, amount,
+function GoodsItem({
+  rankingIndex, imageSrc, subtitle, title, amount,
 }: GoodsItemProps) {
   return (
     <div css={css`
@@ -16,8 +17,36 @@ function DefaultGoodsItem({
       flex-direction: column;
       width: 120px;
       gap: 6px;
+      position: relative;
     `}
     >
+      {rankingIndex ? (
+        <div css={css`
+        background-color: #ff8d8d;
+        color: #ffffff;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        z-index: 1;
+        border-radius: 5px;
+        text-align: center;
+      `}
+        >
+          <p css={css`
+          position: absolute;
+          margin: auto;
+          top: 1px;
+          bottom: 0;
+          left: 0;
+          right: 0;
+        `}
+          >
+            {rankingIndex}
+          </p>
+        </div>
+      ) : null}
       <Image ratio="square" radius={3} src={imageSrc} />
       <p css={
         css`
@@ -58,4 +87,5 @@ function DefaultGoodsItem({
     </div>
   );
 }
-export default DefaultGoodsItem;
+
+export default GoodsItem;
