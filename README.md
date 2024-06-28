@@ -33,4 +33,4 @@ FE 카카오 선물하기 1주차 과제: React 기초
       - [x] rankingIndex가 1~3이면 분홍색 랭킹 배지가 보이도록 구현
       - [x] rankingIndex가 1~3이 아니면 회색 랭킹 배지가 보이도록 구현
 
-  - [ ] Grid, Container 컴포넌트 구현
+  - [x] Grid, Container 컴포넌트 구현
