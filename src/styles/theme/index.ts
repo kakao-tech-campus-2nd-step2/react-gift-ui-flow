@@ -34,4 +34,5 @@ const Themes: ThemeProvider = {
   },
 };
 
-export default Themes;
+export { Themes };
+export type { Theme };
