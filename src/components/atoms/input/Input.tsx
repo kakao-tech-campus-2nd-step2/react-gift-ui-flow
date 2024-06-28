@@ -4,9 +4,9 @@ import { css } from '@emotion/react';
 import { Themes } from '@styles/theme';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  elementSize: ElementSize;
-  invalid?: boolean;
-  errorMessage?: string;
+  elementSize: ElementSize,
+  invalid?: boolean,
+  errorMessage?: string,
 }
 
 function Input({
