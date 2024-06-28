@@ -1,14 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import GoodsItem from './GoodsItem';
+import DefaultGoodsItem from './DefaultGoodsItem';
 
-const meta: Meta<typeof GoodsItem> = {
-  component: GoodsItem,
+const meta: Meta<typeof DefaultGoodsItem> = {
+  component: DefaultGoodsItem,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof GoodsItem>;
-export const GoodsItemWithTestImage: Story = {
+type DefaultGoodsStory = StoryObj<typeof DefaultGoodsItem>;
+
+export const GoodsItemWithTestImage: DefaultGoodsStory = {
   args: {
     imageSrc:
       'https://raw.githubusercontent.com/cla6shade/Cla6Shade/master/banner.png',
