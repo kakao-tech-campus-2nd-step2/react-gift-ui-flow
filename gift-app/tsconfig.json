@@ -22,5 +22,6 @@
       "@styles/*": ["styles/*"]
     }
   },
-  "include": ["src"],
+  "exclude": ["node_modules", "build"],
+  "include": ["src", ".storybook"],
 }

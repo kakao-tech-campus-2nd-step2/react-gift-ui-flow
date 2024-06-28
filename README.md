@@ -1,9 +1,10 @@
 # react-gift-react-foundation
 FE 카카오 선물하기 1주차 과제: React 기초
 
-## 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
-### Requirements
-- [ ] Storybook 추가
+### 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+
+#### Requirements
+- [ ] Storybook 추가<br>
 공통 컴포넌트에 아래와 같은 컴포넌트를 구현하고, Storybook에서 확인 할 수 있도록 구현
   - Button 컴포넌트 구현
     - [ ] Theme Props에 따라 버튼의 컬러와 디자인이 변경되도록 구현
@@ -33,4 +34,4 @@ FE 카카오 선물하기 1주차 과제: React 기초
       - [ ] rankingIndex가 1~3이면 분홍색 랭킹 배지가 보이도록 구현
       - [ ] rankingIndex가 1~3이 아니면 회색 랭킹 배지가 보이도록 구현
 
-  - Grid, Container 컴포넌트 구현
+  - [ ] Grid, Container 컴포넌트 구현
