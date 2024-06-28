@@ -1,6 +1,8 @@
 interface Theme {
   rootBg: string;
   containerBg: string;
+  buttonBg: string;
+  buttonHover: string;
   primary: string;
   primaryDark: string;
   text: string;
@@ -17,6 +19,8 @@ const Themes: ThemeProvider = {
   THEME_LIGHT: {
     rootBg: '#E5E5EA',
     containerBg: '#F4F5F9',
+    buttonBg: '#d30051',
+    buttonHover: '#ea0059',
     primary: '#3C7FFF',
     primaryDark: '#0451f8',
     text: '#1C1C1E',
@@ -26,6 +30,8 @@ const Themes: ThemeProvider = {
   THEME_DARK: {
     rootBg: '#333333',
     containerBg: '#1C1C1E',
+    buttonBg: '#9a003b',
+    buttonHover: '#d30051',
     primary: '#3C7FFF',
     primaryDark: '#0451f8',
     text: '#F4F5F9',
