@@ -118,3 +118,15 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 - [ ]  Grid, Container 컴포넌트 구현
     - [ ]  Grid, Container 모두 child Props로 ReactElement | undefined을 받을 수 있도록 구현
     - [ ]  Grid의 경우 rows columns Props로 rows/columns를 동적으로 설정할 수 있도록 구현
+
+### 1주차 질문 답
+질문 1. webpack은 무엇이고 어떤 역할을 하고 있나요?
+- webpack: 자바스크립트 모듈 번들러이다. 나누어져 있는 파일들을 하나의 자바스크립트 코드로 압축하고 최적화하는 라이브러리이다.
+
+질문 2. 브라우저는 어떻게 JSX 파일을 읽을 수 있나요?
+- 브라우저는 본래 jsx 파일을 읽지 못하며, jsx는 ReactNode를 쉽게 읽을 수 있도록 하는 semantic sugar에 불과하다. 따라서
+  트랜스파일러에 의한 javascript 코드로의 변환이 필요하다. 브라우저는 변환된 코드를 읽게 된다.
+
+질문 3. React에서 상태 변화가 생겼을 때 어떻게 변화를 알아챌 수 있나요?
+- 리액트에서 상태 변화는 React element들이 갖고 있는 state의 변화를 통해 감지한다. 여기서 주의할 점은 이전 state와
+변경된 state의 얕은 비교를 수행하기 때문에, state를 불변 객체로 취급해야만 상태 감지가 원활하게 될 수 있다.
