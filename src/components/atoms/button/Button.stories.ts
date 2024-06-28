@@ -12,21 +12,21 @@ type Story = StoryObj<typeof Button>;
 export const LightResponsive: Story = {
   args: {
     theme: Themes.THEME_LIGHT,
-    size: 'responsive',
+    elementSize: 'responsive',
     text: 'Light Responsive',
   },
 };
 export const DarkResponsive: Story = {
   args: {
     theme: Themes.THEME_DARK,
-    size: 'responsive',
+    elementSize: 'responsive',
     text: 'Dark Responsive',
   },
 };
 export const DarkFixed: Story = {
   args: {
     theme: Themes.THEME_DARK,
-    size: {
+    elementSize: {
       width: '120px',
       height: '100px',
     },

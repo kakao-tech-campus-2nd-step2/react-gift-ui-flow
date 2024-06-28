@@ -5,11 +5,11 @@ import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: Theme,
-  size: ElementSize,
+  elementSize: ElementSize,
   text: string,
 }
 function Button({
-  theme, size, text, ...rest
+  theme, elementSize, text, ...rest
 }: ButtonProps) {
   return (
     <button
@@ -21,8 +21,8 @@ function Button({
         cursor: pointer;
         background-color: ${theme.buttonBg};
         color: ${theme.buttonText};
-        width: ${typeof size === 'string' ? 'auto' : size.width};
-        height: ${typeof size === 'string' ? 'auto' : size.height};
+        width: ${typeof elementSize === 'string' ? 'auto' : elementSize.width};
+        height: ${typeof elementSize === 'string' ? 'auto' : elementSize.height};
         &:hover {
           background-color: ${theme.buttonHover};
         }
