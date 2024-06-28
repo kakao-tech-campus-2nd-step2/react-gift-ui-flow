@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from '@emotion/react';
 
 interface GridProps {
-  gap?: string;
+  gap?: number;
   columns?: number;
   children: React.ReactNode;
 }
