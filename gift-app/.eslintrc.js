@@ -18,5 +18,8 @@ module.exports = {
         'react/function-component-definition': 'off',
         'react/jsx-props-no-spreading': 'off',
         'react/no-unescaped-entities': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        "react/react-in-jsx-scope": "off",
     },
 };
