@@ -17,6 +17,7 @@ module.exports = {
     ],
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
     "react/jsx-props-no-spreading": "off",
+    "react/require-default-props": "off",
     'import/extensions': [
       'error',
       'ignorePackages',
