@@ -1,0 +1,43 @@
+.storybook-input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.storybook-input--small {
+  font-size: 0.75rem;
+  padding: 0.25rem;
+}
+
+.storybook-input--medium {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+.storybook-input--large {
+  font-size: 1.25rem;
+  padding: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .storybook-input--responsive {
+    font-size: 0.75rem;
+    padding: 0.25rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .storybook-input--responsive {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+@media (min-width: 901px) {
+  .storybook-input--responsive {
+    font-size: 1.25rem;
+    padding: 0.75rem;
+  }
+}
