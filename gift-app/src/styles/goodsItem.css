@@ -25,6 +25,14 @@
   color: white;
 }
 
+.top-ranking {
+  background-color: pink;
+}
+
+.default-ranking {
+  background-color: gray;
+}
+
 .goods-item-image-container {
   width: 100%;
   padding-top: 100%; /* 1:1 Aspect Ratio */

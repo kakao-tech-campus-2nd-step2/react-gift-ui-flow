@@ -28,9 +28,9 @@ FE 카카오 선물하기 1주차 과제: React 기초
 
   - GoodsItem 컴포넌트 구현
     - [x] Default 형태와 Ranking 형태의 컴포넌트를 각각 구현
-    - [ ] 공통 Props: imageSrc, subtitle, title, amount 넘겨받도록 구현
+    - [x] 공통 Props: imageSrc, subtitle, title, amount 넘겨받도록 구현
     - 랭킹 형태의 경우 rankingIndex Props를 받도록 구현
-      - [ ] rankingIndex가 1~3이면 분홍색 랭킹 배지가 보이도록 구현
-      - [ ] rankingIndex가 1~3이 아니면 회색 랭킹 배지가 보이도록 구현
+      - [x] rankingIndex가 1~3이면 분홍색 랭킹 배지가 보이도록 구현
+      - [x] rankingIndex가 1~3이 아니면 회색 랭킹 배지가 보이도록 구현
 
   - [ ] Grid, Container 컴포넌트 구현

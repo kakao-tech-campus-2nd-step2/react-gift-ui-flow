@@ -32,7 +32,7 @@ export const Ranking: Story = {
     imageSrc: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
     amount: 10000,
     isRanking: true,
-    ranking: 1,
+    rankingIndex: 1,
   },
 };
 

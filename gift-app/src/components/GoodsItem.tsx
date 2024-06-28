@@ -6,15 +6,16 @@ export interface GoodsItemProps {
   imageSrc: string;
   amount: number;
   isRanking?: boolean;
-  ranking?: number;
+  rankingIndex?: number;
 }
 
-export const GoodsItem = ({ title, subtitle, imageSrc, amount, isRanking = false, ranking }: GoodsItemProps) => {
+export const GoodsItem = ({ title, subtitle, imageSrc, amount, isRanking = false, rankingIndex }: GoodsItemProps) => {
+    const rankingClass = rankingIndex !== undefined && rankingIndex <= 3 ? 'top-ranking' : 'default-ranking';
   return (
     <div className="goods-item">
-      {isRanking && ranking !== undefined && (
-        <div className={`goods-item-ranking ${ranking <= 3 ? 'top-ranking' : 'default-ranking'}`}>
-          {ranking}
+      {isRanking && rankingIndex !== undefined && (
+        <div className={`goods-item-ranking ${rankingClass}`}>
+          {rankingIndex}
         </div>
       )}
       <div className="goods-item-image-container">
