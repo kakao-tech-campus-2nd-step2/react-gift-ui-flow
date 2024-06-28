@@ -1,6 +1,6 @@
-interface FixedSize {
+export interface FixedSize {
   width: string,
   height: string,
 }
-type ElementSize = FixedSize | 'responsive';
+type ElementSize = FixedSize | 'responsive' | 'small' | 'big';
 export default ElementSize;
