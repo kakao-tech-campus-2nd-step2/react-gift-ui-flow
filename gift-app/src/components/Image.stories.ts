@@ -7,12 +7,7 @@ export default {
   argTypes: {
     src: { control: 'text' },
     width: { control: 'text' },
-    ratio: {
-      control: {
-        type: 'select',
-        options: ['auto', 'square', 1.5, 0.75],
-      },
-    },
+    ratio: { control: 'text' },
     radius: {
       control: {
         type: 'select',

@@ -2,7 +2,7 @@ import React from 'react';
 import '@styles/image.css';
 
 export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  ratio?: 'auto' | 'square' | number;
+  ratio?: 'auto' | 'square' | string;
   radius?: 'circle' | number;
 }
 
@@ -18,10 +18,17 @@ export const Image = ({
 
   const style: React.CSSProperties = { width };
 
-  if (ratio === 'auto') {
-    style.aspectRatio = 'auto';
-  } else if (ratio === 'square') {
-    style.aspectRatio = '1 / 1';
+  if (typeof ratio === 'string') {
+    if (ratio === 'auto') {
+      style.aspectRatio = 'auto';
+    } else if (ratio === 'square') {
+      style.aspectRatio = '1 / 1';
+    } else {
+      const [widthRatio, heightRatio] = ratio.split('/');
+      if (widthRatio && heightRatio) {
+        style.aspectRatio = `${parseFloat(widthRatio)} / ${parseFloat(heightRatio)}`;
+      }
+    }
   }
 
   if (radius === 'circle') {

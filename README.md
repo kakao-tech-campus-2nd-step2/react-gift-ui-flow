@@ -20,8 +20,8 @@ FE 카카오 선물하기 1주차 과제: React 기초
     - [x] Input Element의 기본 속성들을 모두 사용 가능하도록 구현
 
   - Image 컴포넌트 구현
-    - [ ] ratio Props에 따라 이미지 비율을 설정 - value가 number로 16/9로 넘겨진 경우
-    - [ ] ratio Props에 따라 이미지 비율을 설정 - value가 square로 설정한 경우
+    - [x] ratio Props에 따라 이미지 비율을 설정 - value가 number로 16/9로 넘겨진 경우
+    - [x] ratio Props에 따라 이미지 비율을 설정 - value가 square로 설정한 경우
     - [ ] radius Props에 따라 모서리가 둥글게 구현 - value가 number인 경우
     - [ ] radius Props에 따라 모서리가 둥글게 구현 - value가 number인 경우
     - [x] Img Element의 기본 속성들을 모두 사용 가능하도록 구현
