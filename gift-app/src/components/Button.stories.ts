@@ -20,22 +20,23 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
+export const ConTheme: Story = {
   args: {
-    label: 'Secondary Button',
+    label: 'Con Theme Button',
+    theme: 'Con',
   },
 };
 
-export const Large: Story = {
+export const MujiTheme: Story = {
   args: {
-    size: 'large',
-    label: 'Button',
+    label: 'Muji Theme Button',
+    theme: 'Muji',
   },
 };
 
-export const Small: Story = {
+export const JayGTheme: Story = {
   args: {
-    size: 'small',
-    label: 'Button',
+    label: 'JayG Theme Button',
+    theme: 'JayG',
   },
 };

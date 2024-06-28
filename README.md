@@ -4,10 +4,10 @@ FE 카카오 선물하기 1주차 과제: React 기초
 ### 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
 
 #### Requirements
-- [ ] Storybook 추가<br>
+- [x] Storybook 추가<br>
 공통 컴포넌트에 아래와 같은 컴포넌트를 구현하고, Storybook에서 확인 할 수 있도록 구현
   - Button 컴포넌트 구현
-    - [ ] Theme Props에 따라 버튼의 컬러와 디자인이 변경되도록 구현
+    - [x] Theme Props에 따라 버튼의 컬러와 디자인이 변경되도록 구현
     - [ ] Size Props에 따라 버튼의 size가 변경되도록 구현
     - [ ] Size Props 예외 - value가 responsive인 경우 미디어 쿼리에 따라 사이즈가 변경되도록 구현
     - [ ] Button element의 기본 속성을 모두 사용 가능하도록 구현
