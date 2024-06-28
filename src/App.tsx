@@ -1,9 +1,8 @@
-import 'reset-css';
+import GlobalStyle from '@styles/GlobalStyle.tsx';
 
 function App() {
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <></>
+    <GlobalStyle />
   );
 }
 
