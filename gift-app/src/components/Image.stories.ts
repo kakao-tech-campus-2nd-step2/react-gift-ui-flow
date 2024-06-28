@@ -8,12 +8,7 @@ export default {
     src: { control: 'text' },
     width: { control: 'text' },
     ratio: { control: 'text' },
-    radius: {
-      control: {
-        type: 'select',
-        options: ['circle', 10, 20, 30],
-      },
-    },
+    radius: { control: 'text' },
     alt: { control: 'text' },
   },
 } as Meta;

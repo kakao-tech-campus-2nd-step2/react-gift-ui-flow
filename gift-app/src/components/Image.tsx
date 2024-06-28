@@ -3,7 +3,7 @@ import '@styles/image.css';
 
 export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   ratio?: 'auto' | 'square' | string;
-  radius?: 'circle' | number;
+  radius?: 'circle' | number | string;
 }
 
 export const Image = ({
@@ -33,6 +33,8 @@ export const Image = ({
 
   if (radius === 'circle') {
     style.borderRadius = '50%';
+  } else if (typeof radius === 'string' && !Number.isNaN(Number(radius))) {
+    style.borderRadius = `${Number(radius)}px`;
   } else if (typeof radius === 'number') {
     style.borderRadius = `${radius}px`;
   }
