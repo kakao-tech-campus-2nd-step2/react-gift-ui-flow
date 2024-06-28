@@ -16,6 +16,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react/jsx-props-no-spreading": "off",
     'import/extensions': [
       'error',
       'ignorePackages',
