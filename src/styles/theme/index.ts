@@ -3,6 +3,7 @@ interface Theme {
   containerBg: string;
   buttonBg: string;
   buttonHover: string;
+  buttonText: string;
   primary: string;
   primaryDark: string;
   text: string;
@@ -21,6 +22,7 @@ const Themes: ThemeProvider = {
     containerBg: '#F4F5F9',
     buttonBg: '#d30051',
     buttonHover: '#ea0059',
+    buttonText: '#e4e4e4',
     primary: '#3C7FFF',
     primaryDark: '#0451f8',
     text: '#1C1C1E',
@@ -32,6 +34,7 @@ const Themes: ThemeProvider = {
     containerBg: '#1C1C1E',
     buttonBg: '#9a003b',
     buttonHover: '#d30051',
+    buttonText: '#e4e4e4',
     primary: '#3C7FFF',
     primaryDark: '#0451f8',
     text: '#F4F5F9',
