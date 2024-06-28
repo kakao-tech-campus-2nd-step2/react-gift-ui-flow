@@ -27,8 +27,7 @@ FE 카카오 선물하기 1주차 과제: React 기초
     - [x] Img Element의 기본 속성들을 모두 사용 가능하도록 구현
 
   - GoodsItem 컴포넌트 구현
-    - [ ] Default 형태의 컴포넌트 구현
-    - [ ] Ranking 형태의 컴포넌트 구현
+    - [x] Default 형태와 Ranking 형태의 컴포넌트를 각각 구현
     - [ ] 공통 Props: imageSrc, subtitle, title, amount 넘겨받도록 구현
     - 랭킹 형태의 경우 rankingIndex Props를 받도록 구현
       - [ ] rankingIndex가 1~3이면 분홍색 랭킹 배지가 보이도록 구현
