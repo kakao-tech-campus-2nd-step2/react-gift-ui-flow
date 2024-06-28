@@ -14,7 +14,7 @@ FE 카카오 선물하기 1주차 과제: React 기초
 
   - Input 컴포넌트 구현
     - [x] disabled Props에 따라 Input이 비활성화 되고, UI에서도 비활성화 됨을 인지 가능하도록 구현
-    - [ ] invalid Props 에 따라 Input의 값이 잘 못되었음을 UI에서 인지 가능하도록 구현
+    - [x] invalid Props 에 따라 Input의 값이 잘 못되었음을 UI에서 인지 가능하도록 구현
     - [x] Size Props에 따라 버튼의 size가 변경되도록 구현
     - [x] Size Props 예외 - value가 responsive인 경우 미디어 쿼리에 따라 사이즈가 변경되도록 구현
     - [x] Input Element의 기본 속성들을 모두 사용 가능하도록 구현

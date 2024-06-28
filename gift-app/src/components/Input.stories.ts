@@ -19,5 +19,6 @@ export const Default: Story = {
     placeholder: 'Enter text',
     size: 'medium',
     disabled: false,
+    invalid: false,
   },
 };

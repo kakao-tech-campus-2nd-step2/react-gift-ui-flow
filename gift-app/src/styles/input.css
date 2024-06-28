@@ -45,3 +45,12 @@
 .storybook-input--disabled {
   opacity: 0.6;
 }
+
+.error-message {
+  display: none;
+}
+
+.error-message--invalid {
+  color: red;
+  display: block;
+}
