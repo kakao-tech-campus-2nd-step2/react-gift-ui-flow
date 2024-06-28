@@ -1,5 +1,5 @@
 import { css } from '@emotion/react';
-import Image from '@components/atoms/image/Image.tsx';
+import Image from '@components/atoms/image/Image';
 
 interface GoodsItemProps {
   imageSrc: string,
@@ -7,7 +7,7 @@ interface GoodsItemProps {
   title: string,
   amount: number,
 }
-function GoodsItem({
+function DefaultGoodsItem({
   imageSrc, subtitle, title, amount,
 }: GoodsItemProps) {
   return (
@@ -21,8 +21,8 @@ function GoodsItem({
       <Image ratio="square" radius={3} src={imageSrc} />
       <p css={
         css`
-          color: #595959;
-          font-size: 13px;
+          color: #999999;
+          font-size: 14px;
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
@@ -34,7 +34,7 @@ function GoodsItem({
         {subtitle}
       </p>
       <p css={css`
-        color: #000000;
+        color: #333333;
         font-size: 14px;
         overflow: hidden;
         white-space: nowrap;
@@ -46,7 +46,7 @@ function GoodsItem({
         {title}
       </p>
       <p css={css`
-        color: #000000;
+        color: #222222;
         font-size: 20px;
         font-weight: bold;
         word-wrap: break-word;
@@ -58,4 +58,4 @@ function GoodsItem({
     </div>
   );
 }
-export default GoodsItem;
+export default DefaultGoodsItem;
