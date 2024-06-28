@@ -34,8 +34,8 @@ const GoodsItemWrapper = styled.div`
     width: 100%;
   }
 `;
+
 const RankingNumber = styled.div<IGoodsItem>`
-  width: 20px;
   position: absolute;
   left: 4px;
   top: 4px;

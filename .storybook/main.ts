@@ -18,7 +18,6 @@ const config: StorybookConfig = {
     options: {},
   },
   staticDirs: ['../public'],
-
   webpackFinal: async (config) => {
     if (config.resolve?.plugins) {
       config.resolve.plugins = config.resolve.plugins || [];
