@@ -15,9 +15,9 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
-    "react/jsx-props-no-spreading": "off",
-    "react/require-default-props": "off",
+    'react/no-unknown-property': ['error', { 'ignore': ['css'] }],
+    'react/jsx-props-no-spreading': 'off',
+    'react/require-default-props': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
