@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Themes } from '@styles/theme';
 import Button from './Button';
 
 const meta: Meta<typeof Button> = {
@@ -9,27 +8,24 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 type Story = StoryObj<typeof Button>;
-export const LightResponsive: Story = {
+export const KakaoResponsive: Story = {
   args: {
-    theme: Themes.THEME_LIGHT,
+    theme: 'kakao',
     elementSize: 'responsive',
     text: 'Light Responsive',
   },
 };
-export const DarkResponsive: Story = {
+export const NaverResponsive: Story = {
   args: {
-    theme: Themes.THEME_DARK,
+    theme: 'naver',
     elementSize: 'responsive',
     text: 'Dark Responsive',
   },
 };
-export const DarkFixed: Story = {
+export const BlackBig: Story = {
   args: {
-    theme: Themes.THEME_DARK,
-    elementSize: {
-      width: '120px',
-      height: '100px',
-    },
+    theme: 'black',
+    elementSize: 'big',
     text: 'Dark Fixed',
   },
 };
