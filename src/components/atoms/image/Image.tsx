@@ -23,7 +23,7 @@ function Image({ ratio, radius, ...rest }: ImageProps) {
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: ${typeof radius === 'string' ? '100%' : `${radius}px`};
+          border-radius: ${radius === 'circle' ? '100%' : `${radius}px`};
           object-fit: cover;
         `}
         {...rest}
