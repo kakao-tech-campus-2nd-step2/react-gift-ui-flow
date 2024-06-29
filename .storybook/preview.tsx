@@ -11,12 +11,14 @@ const preview: Preview = {
     },
   },
   decorators: [
-    (Story) => {
-    return <GlobalStyle>
-      <Story />
-    </GlobalStyle>
-    }
-  ]
+    Story => {
+      return (
+        <GlobalStyle>
+          <Story />
+        </GlobalStyle>
+      );
+    },
+  ],
 };
 
 export default preview;
