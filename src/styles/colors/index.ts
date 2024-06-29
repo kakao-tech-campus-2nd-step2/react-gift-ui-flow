@@ -21,3 +21,10 @@ export const buttonHoverColors = {
   lightGray: 'rgb(174,174,174)',
   darkGray: 'rgb(78,78,78)',
 };
+
+export const textColors = {
+  default: '#222222',
+  title: '#333333',
+  subtitle: '#999999',
+  inset: '#f6f6f6',
+};
