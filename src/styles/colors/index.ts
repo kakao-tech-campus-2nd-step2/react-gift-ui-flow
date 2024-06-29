@@ -28,3 +28,12 @@ export const textColors = {
   subtitle: '#999999',
   inset: '#f6f6f6',
 };
+
+export const backgroundColors = {
+  badge: '#ff8d8d',
+  root: '#e5e5ea',
+  container: '#f4f5f9',
+  primary: '#fee500',
+  primaryDark: '#FFD900',
+  error: '#ff555f',
+};
