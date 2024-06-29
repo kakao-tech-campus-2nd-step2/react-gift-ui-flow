@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { InputProps } from '@components/atoms/input/Input';
+import { textColors } from '@styles/colors';
 
 export const StyledInput = styled.input<InputProps>`
   width: ${({ elementSize }) => (typeof elementSize === 'string' ? 'auto' : elementSize.width)};
@@ -16,7 +17,7 @@ export const StyledInput = styled.input<InputProps>`
 `;
 
 export const StyledErrorMessage = styled.p`
-  color: #ff4343;
+  color: ${textColors.error};
   font-size: 12px;
   margin-top: 3px;
 `;

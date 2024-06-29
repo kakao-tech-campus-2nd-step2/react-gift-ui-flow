@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { backgroundColors, textColors } from '@styles/colors';
 
 export const GoodsItemWrapper = styled.div`
   display: flex;
@@ -9,8 +10,8 @@ export const GoodsItemWrapper = styled.div`
 `;
 
 export const RankingBadge = styled.div`
-  background-color: #ff8d8d;
-  color: #ffffff;
+  background-color: ${backgroundColors.badge};
+  color: ${textColors.inset};
   position: absolute;
   top: 2px;
   left: 2px;
@@ -31,7 +32,7 @@ export const RankingBadge = styled.div`
 `;
 
 export const Subtitle = styled.p`
-  color: #999999;
+  color: ${textColors.subtitle};
   font-size: 14px;
   overflow: hidden;
   white-space: nowrap;
@@ -41,7 +42,7 @@ export const Subtitle = styled.p`
 `;
 
 export const Title = styled.p`
-  color: #333333;
+  color: ${textColors.title};
   font-size: 14px;
   overflow: hidden;
   white-space: nowrap;
@@ -51,7 +52,7 @@ export const Title = styled.p`
 `;
 
 export const Amount = styled.p`
-  color: #222222;
+  color: ${textColors.default};
   font-size: 20px;
   font-weight: bold;
   word-wrap: break-word;
