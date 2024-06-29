@@ -1,8 +1,8 @@
 import ElementSize from '@styles/size';
 import { InputHTMLAttributes } from 'react';
-import { css } from '@emotion/react';
+import { StyledErrorMessage, StyledInput } from '@components/atoms/input/Input.styles';
 
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   elementSize: ElementSize,
   invalid?: boolean,
   errorMessage?: string,
@@ -13,37 +13,16 @@ function Input({
 }: InputProps) {
   return (
     <>
-      <input
-        css={css`
-          width: ${typeof elementSize === 'string'
-          ? 'auto'
-          : elementSize.width};
-          height: ${typeof elementSize === 'string'
-            ? 'auto'
-            : elementSize.height};
-          border: none;
-          border-bottom: #939393 3px solid;
-          padding-left: 7px;
-          transition: all 0.2s ease-in;
-
-          &:focus {
-            outline: none;
-            border-bottom: #494949 3px solid;
-          }
-        `}
+      <StyledInput
+        elementSize={elementSize}
         disabled={disabled}
         {...rest}
       />
       {invalid
         ? (
-          <p css={css`
-            color: #ff4343;
-            font-size: 12px;
-            margin-top: 3px;
-          `}
-          >
+          <StyledErrorMessage>
             {errorMessage ?? '잘못된 입력값입니다.'}
-          </p>
+          </StyledErrorMessage>
         )
         : null}
     </>
