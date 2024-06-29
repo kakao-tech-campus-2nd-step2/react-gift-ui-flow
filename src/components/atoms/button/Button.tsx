@@ -8,17 +8,21 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text: string;
 }
 
+function getButtonSize(size: ElementSize): FixedSize {
+  if (typeof size === 'object') {
+    return size;
+  }
+
+  return {
+    width: 'auto',
+    height: size === 'big' ? '60px' : '40px',
+  };
+}
+
 function Button({
   theme, elementSize, text, ...rest
 }: ButtonProps) {
-  let size = elementSize;
-
-  if (typeof elementSize !== 'object') {
-    size = {
-      width: 'auto',
-      height: size === 'big' ? '60px' : '40px',
-    };
-  }
+  const size = getButtonSize(elementSize);
 
   const buttonColors = {
     kakao: 'rgb(254, 229, 0)',
@@ -52,10 +56,8 @@ function Button({
         cursor: pointer;
         background-color: ${buttonColors[theme]};
         color: ${colors[theme]};
-        width: ${typeof size === 'string' ? 'auto' : (size as FixedSize).width};
-        height: ${typeof size === 'string'
-        ? 'auto'
-        : (size as FixedSize).height};
+        width: ${size.width};
+        height: ${size.height};
 
         &:hover {
           background-color: ${buttonHover[theme]};
