@@ -31,16 +31,6 @@ export const RankingBadge = styled.div`
   }
 `;
 
-export const Subtitle = styled.p`
-  color: ${textColors.subtitle};
-  font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-`;
-
 export const Title = styled.p`
   color: ${textColors.title};
   font-size: 14px;
@@ -49,6 +39,10 @@ export const Title = styled.p`
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+`;
+
+export const Subtitle = styled(Title)`
+  color: ${textColors.subtitle};
 `;
 
 export const Amount = styled.p`
