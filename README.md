@@ -79,45 +79,45 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 
 ### Step 1.
 
-- [ ]  초기 셋업 (yarn create vite)
-- [ ]  테스트를 위해 jest 설치
-- [ ]  airbnb 코드 컨벤션 적용을 위한 라이브러리 설치
-- [ ]  위에서 설치한 패키지를 바탕으로 eslint 및 prettier 설정
-- [ ]  tsconfig 설정
-- [ ]  alias 설정하기
-- [ ]  emotion 라이브러리 추가하기
-- [ ]  reset css 적용하기
-- [ ]  .gitignore에 필요한 내용 작성하기
-- [ ]  불필요한 에셋 제거하기
-- [ ]  폴더 구조 만들고 .gitkeep 파일을 만들어 커밋하기
+- [x]  초기 셋업 (yarn create vite)
+- [x]  테스트를 위해 jest 설치
+- [x]  airbnb 코드 컨벤션 적용을 위한 라이브러리 설치
+- [x]  위에서 설치한 패키지를 바탕으로 eslint 및 prettier 설정
+- [x]  tsconfig 설정
+- [x]  alias 설정하기
+- [x]  emotion 라이브러리 추가하기
+- [x]  reset css 적용하기
+- [x]  .gitignore에 필요한 내용 작성하기
+- [x]  불필요한 에셋 제거하기
+- [x]  폴더 구조 만들고 .gitkeep 파일을 만들어 커밋하기
 
 ### Step 2.
 
-- [ ]  Storybook 설치
-- [ ]  Storybook 프로젝트 설정
-- [ ]  Button 컴포넌트 구현
-    - [ ]  Theme Props에 따라 컬러와 디자인이 다르게 보이도록 구성
-    - [ ]  size Props에 따라 다르게 보이도록 구성
-    - [ ]  Button Element의 기본 속성들을 모두 사용할 수 있도록 구성 (ButtonProps가 HTMLButtonAttributes를 받을 수 있도록 spread 연산자를 사용하면 될 것 같다)
-- [ ]  Theme 구현
-    - [ ]  테마는 Theme 타입을 갖는 객체로 구현.
-    - [ ]  Theme의 property에는 rootBg, containerBg, primary, primaryDark, text, textInset, error로 구성. 추후에 변경될 수도 있음
-    - [ ]  Theme는 ThemeProvider이라는 객체의 property로 저장, ThemeId라는 enum으로 접근 및 불러오기가 가능하도록 구현
-- [ ]  Input 컴포넌트 구현
-    - [ ]  disabled Props에 따라 Input 비활성화 여부 결정, UI에서도 비활성화
-    - [ ]  invalid Props에 따라 Input의 값이 잘못되었음을 알 수 있도록 하기
-    - [ ]  size Prop에 따라 Input의 size가 다르게 보여지도록 구현
-- [ ]  Image 컴포넌트 구현
-    - [ ]  ratio Props에 따라 이미지 비율을 설정할 수 있도록. (ex. value가 number로 16/9로 넘겨진 경우 16:9로 보여지도록. square을 넘겨준 경우 정사각형)
-    - [ ]  radius Props에 따라 border-radius 설정
-    - [ ]  Img element의 기본 속성을 모두 사용할 수 있도록 구현
-- [ ]  GoodsItem 컴포넌트 구현
-    - [ ]  Default/Ranking 컴포넌트를 각각 구현
-    - [ ]  공통으로 imageSrc, subtitle, title, amount Props를 받도록 함.
-    - [ ]  Ranking 컴포넌트의 경우 rankingIndex Props를 추가로 넘겨받음. 1~3까지는 분홍색, 나머지 숫자에는 회색의 랭킹 뱃지가 보이도록.
-- [ ]  Grid, Container 컴포넌트 구현
-    - [ ]  Grid, Container 모두 child Props로 ReactElement | undefined을 받을 수 있도록 구현
-    - [ ]  Grid의 경우 rows columns Props로 rows/columns를 동적으로 설정할 수 있도록 구현
+- [x]  Storybook 설치
+- [x]  Storybook 프로젝트 설정
+- [x]  Button 컴포넌트 구현
+    - [x]  Theme Props에 따라 컬러와 디자인이 다르게 보이도록 구성
+    - [x]  size Props에 따라 다르게 보이도록 구성
+    - [x]  Button Element의 기본 속성들을 모두 사용할 수 있도록 구성 (ButtonProps가 HTMLButtonAttributes를 받을 수 있도록 spread 연산자를 사용하면 될 것 같다)
+- [x]  Theme 구현
+    - [x]  테마는 Theme 타입을 갖는 객체로 구현.
+    - [x]  Theme의 property에는 rootBg, containerBg, primary, primaryDark, text, textInset, error로 구성. 추후에 변경될 수도 있음
+    - [x]  Theme는 ThemeProvider이라는 객체의 property로 저장, ThemeId라는 enum으로 접근 및 불러오기가 가능하도록 구현
+- [x]  Input 컴포넌트 구현
+    - [x]  disabled Props에 따라 Input 비활성화 여부 결정, UI에서도 비활성화
+    - [x]  invalid Props에 따라 Input의 값이 잘못되었음을 알 수 있도록 하기
+    - [x]  size Prop에 따라 Input의 size가 다르게 보여지도록 구현
+- [x]  Image 컴포넌트 구현
+    - [x]  ratio Props에 따라 이미지 비율을 설정할 수 있도록. (ex. value가 number로 16/9로 넘겨진 경우 16:9로 보여지도록. square을 넘겨준 경우 정사각형)
+    - [x]  radius Props에 따라 border-radius 설정
+    - [x]  Img element의 기본 속성을 모두 사용할 수 있도록 구현
+- [x]  GoodsItem 컴포넌트 구현
+    - [x]  Default/Ranking 컴포넌트를 각각 구현
+    - [x]  공통으로 imageSrc, subtitle, title, amount Props를 받도록 함.
+    - [x]  Ranking 컴포넌트의 경우 rankingIndex Props를 추가로 넘겨받음. 1~3까지는 분홍색, 나머지 숫자에는 회색의 랭킹 뱃지가 보이도록.
+- [x]  Grid, Container 컴포넌트 구현
+    - [x]  Grid, Container 모두 child Props로 ReactElement | undefined을 받을 수 있도록 구현
+    - [x]  Grid의 경우 rows columns Props로 rows/columns를 동적으로 설정할 수 있도록 구현
 
 ### 1주차 질문 답
 질문 1. webpack은 무엇이고 어떤 역할을 하고 있나요?
