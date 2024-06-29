@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { css } from '@emotion/react';
+import { backgroundColors } from '@styles/colors';
 
 interface ContainerProps {
   maxWidth?: string,
@@ -20,6 +21,7 @@ function Container({
         flex-direction: ${flexDirection};
         justify-content: ${justifyContent};
         align-items: ${alignItems};
+        background-color: ${backgroundColors.container};
       `}
     >
       {children}
