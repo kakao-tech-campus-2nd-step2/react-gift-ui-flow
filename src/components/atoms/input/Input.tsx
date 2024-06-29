@@ -1,12 +1,5 @@
-import ElementSize from '@styles/size';
-import { InputHTMLAttributes } from 'react';
 import { StyledErrorMessage, StyledInput } from '@components/atoms/input/Input.styles';
-
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  elementSize: ElementSize,
-  invalid?: boolean,
-  errorMessage?: string,
-}
+import { InputProps } from '@/types';
 
 function Input({
   disabled, invalid, elementSize, errorMessage, ...rest
