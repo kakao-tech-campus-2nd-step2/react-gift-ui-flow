@@ -27,6 +27,7 @@ export const textColors = {
   title: '#333333',
   subtitle: '#999999',
   inset: '#f6f6f6',
+  error: '#ff555f',
 };
 
 export const backgroundColors = {
@@ -35,5 +36,4 @@ export const backgroundColors = {
   container: '#f4f5f9',
   primary: '#fee500',
   primaryDark: '#FFD900',
-  error: '#ff555f',
 };
