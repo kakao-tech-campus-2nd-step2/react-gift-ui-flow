@@ -39,9 +39,9 @@ function Button({
     darkGray: 'rgb(255, 255, 255)',
   };
   const buttonHover = {
-    kakao: 'rgb(255,233,25)',
-    naver: 'rgb(49,207,9)',
-    black: 'rgb(43,43,43)',
+    kakao: 'rgb(255,217,0)',
+    naver: 'rgb(87,255,41)',
+    black: 'rgb(60,60,60)',
     lightGray: 'rgb(174,174,174)',
     darkGray: 'rgb(78,78,78)',
   };
@@ -58,6 +58,7 @@ function Button({
         color: ${colors[theme]};
         width: ${size.width};
         height: ${size.height};
+        transition: background-color 0.2s ease-in-out;
 
         &:hover {
           background-color: ${buttonHover[theme]};
