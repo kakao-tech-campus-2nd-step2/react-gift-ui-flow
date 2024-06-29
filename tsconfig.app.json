@@ -33,6 +33,7 @@
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
       "@constants/*": ["constants/*"],
+      "@utils/*": ["utils/*"],
       "@pages/*": ["pages/*"],
       "@dto/*": ["dto/*"],
       "@hooks/*": ["hooks/*"],
