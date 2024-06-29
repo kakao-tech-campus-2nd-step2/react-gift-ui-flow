@@ -1,6 +1,7 @@
 import ElementSize, { FixedSize } from '@styles/size';
 import { css } from '@emotion/react';
 import { ButtonHTMLAttributes } from 'react';
+import { buttonColors, buttonHoverColors, buttonTextColors } from '@styles/colors';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: 'kakao' | 'naver' | 'black' | 'lightGray' | 'darkGray';
@@ -24,28 +25,6 @@ function Button({
 }: ButtonProps) {
   const size = getButtonSize(elementSize);
 
-  const buttonColors = {
-    kakao: 'rgb(254, 229, 0)',
-    naver: 'rgb(40,205,0)',
-    black: 'rgb(5,5,5)',
-    lightGray: 'rgb(138,138,138)',
-    darkGray: 'rgb(37,37,37)',
-  };
-  const colors = {
-    kakao: 'rgb(5, 5, 5)',
-    naver: 'rgb(5, 5, 5)',
-    black: 'rgb(255, 255, 255)',
-    lightGray: 'rgb(0, 0, 0)',
-    darkGray: 'rgb(255, 255, 255)',
-  };
-  const buttonHover = {
-    kakao: 'rgb(255,217,0)',
-    naver: 'rgb(87,255,41)',
-    black: 'rgb(60,60,60)',
-    lightGray: 'rgb(174,174,174)',
-    darkGray: 'rgb(78,78,78)',
-  };
-
   return (
     <button
       css={css`
@@ -55,13 +34,13 @@ function Button({
         font-size: 14px;
         cursor: pointer;
         background-color: ${buttonColors[theme]};
-        color: ${colors[theme]};
+        color: ${buttonTextColors[theme]};
         width: ${size.width};
         height: ${size.height};
         transition: background-color 0.2s ease-in-out;
 
         &:hover {
-          background-color: ${buttonHover[theme]};
+          background-color: ${buttonHoverColors[theme]};
         }
       `}
       type="button"
