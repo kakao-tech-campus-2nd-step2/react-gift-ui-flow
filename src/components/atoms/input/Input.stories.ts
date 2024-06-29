@@ -8,6 +8,7 @@ const meta: Meta<typeof Input> = {
 export default meta;
 
 type Story = StoryObj<typeof Input>;
+
 export const InputWithPlaceholder: Story = {
   args: {
     elementSize: {
@@ -17,6 +18,7 @@ export const InputWithPlaceholder: Story = {
     placeholder: 'placeholder test',
   },
 };
+
 export const InputWithDefaultValue: Story = {
   args: {
     elementSize: {
@@ -27,6 +29,7 @@ export const InputWithDefaultValue: Story = {
     defaultValue: 'default value',
   },
 };
+
 export const InputError: Story = {
   args: {
     elementSize: {

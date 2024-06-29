@@ -8,6 +8,7 @@ interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 
 function Image({ ratio, radius, ...rest }: ImageProps) {
   const ratioPadding = `${typeof ratio === 'number' ? `${(1 / ratio) * 100}%` : '100%'};`;
+
   return (
     <div css={css`
       position: relative;

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import GoodsItem from './GoodsItem.tsx';
+import GoodsItem from './GoodsItem';
 
 const meta: Meta<typeof GoodsItem> = {
   component: GoodsItem,
@@ -19,6 +19,7 @@ export const GoodsItemWithTestImage: DefaultGoodsStory = {
     amount: 1000000000000000000,
   },
 };
+
 export const GoodsItemWithRanking: DefaultGoodsStory = {
   args: {
     rankingIndex: 3,

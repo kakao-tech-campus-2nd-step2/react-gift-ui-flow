@@ -8,6 +8,7 @@ interface GoodsItemProps {
   title: string,
   amount: number,
 }
+
 function GoodsItem({
   rankingIndex, imageSrc, subtitle, title, amount,
 }: GoodsItemProps) {

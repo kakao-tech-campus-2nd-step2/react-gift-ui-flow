@@ -3,20 +3,23 @@ import { css } from '@emotion/react';
 import { ButtonHTMLAttributes } from 'react';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme: 'kakao' | 'naver' | 'black' | 'lightGray' | 'darkGray',
-  elementSize: ElementSize,
-  text: string,
+  theme: 'kakao' | 'naver' | 'black' | 'lightGray' | 'darkGray';
+  elementSize: ElementSize;
+  text: string;
 }
+
 function Button({
   theme, elementSize, text, ...rest
 }: ButtonProps) {
   let size = elementSize;
+
   if (typeof elementSize !== 'object') {
     size = {
       width: 'auto',
       height: size === 'big' ? '60px' : '40px',
     };
   }
+
   const buttonColors = {
     kakao: 'rgb(254, 229, 0)',
     naver: 'rgb(40,205,0)',
@@ -38,6 +41,7 @@ function Button({
     lightGray: 'rgb(174,174,174)',
     darkGray: 'rgb(78,78,78)',
   };
+
   return (
     <button
       css={css`

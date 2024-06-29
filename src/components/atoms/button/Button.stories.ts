@@ -8,6 +8,7 @@ const meta: Meta<typeof Button> = {
 export default meta;
 
 type Story = StoryObj<typeof Button>;
+
 export const KakaoResponsive: Story = {
   args: {
     theme: 'kakao',
@@ -15,6 +16,7 @@ export const KakaoResponsive: Story = {
     text: 'Light Responsive',
   },
 };
+
 export const NaverResponsive: Story = {
   args: {
     theme: 'naver',
@@ -22,6 +24,7 @@ export const NaverResponsive: Story = {
     text: 'Dark Responsive',
   },
 };
+
 export const BlackBig: Story = {
   args: {
     theme: 'black',

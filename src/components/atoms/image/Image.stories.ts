@@ -8,6 +8,7 @@ const meta: Meta<typeof Image> = {
 export default meta;
 
 type Story = StoryObj<typeof Image>;
+
 export const CircledImage: Story = {
   args: {
     radius: 'circle',
@@ -15,6 +16,7 @@ export const CircledImage: Story = {
     src: 'https://raw.githubusercontent.com/cla6shade/Cla6Shade/master/banner.png',
   },
 };
+
 export const RoundedImage: Story = {
   args: {
     radius: 20,
@@ -22,6 +24,7 @@ export const RoundedImage: Story = {
     src: 'https://raw.githubusercontent.com/cla6shade/Cla6Shade/master/banner.png',
   },
 };
+
 export const SquaredImage: Story = {
   args: {
     radius: 20,
