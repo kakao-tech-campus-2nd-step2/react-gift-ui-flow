@@ -29,6 +29,15 @@ module.exports = {
         'ts': 'never',
         'tsx': 'never'
       }
+    ],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: ['if', 'for', 'while', 'switch', 'export', 'class', 'function'] },
+      { blankLine: 'always', prev: '*', next: 'return' },
+      { blankLine: 'always', prev: ['if', 'for', 'while', 'switch', 'export', 'class', 'function'], next: '*' },
+
+      { blankLine: 'always', prev: 'import', next: '*' },
+      { blankLine: 'never', prev: 'import', next: 'import' },
     ]
   }
 }
