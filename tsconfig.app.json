@@ -32,6 +32,7 @@
       "@styles/*": ["styles/*"],
       "@assets/*": ["assets/*"],
       "@components/*": ["components/*"],
+      "@constants/*": ["constants/*"],
       "@pages/*": ["pages/*"],
       "@dto/*": ["dto/*"],
       "@hooks/*": ["hooks/*"],
