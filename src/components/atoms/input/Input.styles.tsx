@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
-import { InputProps } from '@components/atoms/input/Input';
 import { textColors } from '@styles/colors';
+import { InputProps } from '@/types';
 
 export const StyledInput = styled.input<InputProps>`
   width: ${({ elementSize }) => (typeof elementSize === 'string' ? 'auto' : elementSize.width)};
