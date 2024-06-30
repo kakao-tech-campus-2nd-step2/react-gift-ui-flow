@@ -2,12 +2,12 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export interface IUnderlineTextField extends React.ComponentProps<'input'> {
-  invalid: boolean;
+  invalid?: boolean;
   variant: 'small' | 'large' | 'responsive';
 }
 
 export const UnderlineTextField = ({ invalid = false, variant = 'responsive', ...rest }: IUnderlineTextField) => {
-  return <StyleInput invalid={invalid} variant={variant} {...rest}></StyleInput>;
+  return <StyleInput invalid={invalid} variant={variant} {...rest} />;
 };
 
 const sizeStyles = {
@@ -40,7 +40,7 @@ const sizeStyles = {
   `,
 };
 
-const StyleInput = styled.input<IUnderlineTextField>`
+const StyleInput = styled.input<Pick<IUnderlineTextField, 'invalid' | 'variant'>>`
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
