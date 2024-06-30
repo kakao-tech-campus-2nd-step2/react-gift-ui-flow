@@ -1,21 +1,20 @@
-import { SerializedStyles, css } from '@emotion/react';
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export type THEME = 'kakao' | 'outline' | 'black' | 'lightGray' | 'darkGray';
-export interface IButton {
-  theme: THEME;
+export interface IButton extends React.ComponentProps<'button'> {
+  themetype: 'kakao' | 'outline' | 'black' | 'lightGray' | 'darkGray';
   size: 'small' | 'large' | 'responsive';
-  children: string;
-  onClick: () => void;
+  children?: React.ReactNode;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
-export const Button = ({ theme = 'kakao', size = 'responsive', children, onClick }: IButton) => {
+export const Button = ({ themetype = 'kakao', size = 'responsive', children, onClick }: IButton) => {
   return (
-    <StyleBtn onClick={onClick} theme={theme} size={size}>
+    <StyleBtn onClick={onClick} themetype={themetype} size={size}>
       {children}
     </StyleBtn>
   );
 };
-const themeStyles: Record<THEME, SerializedStyles> = {
+const themeStyles = {
   kakao: css`
     background-color: yellow;
     color: black;
@@ -25,9 +24,9 @@ const themeStyles: Record<THEME, SerializedStyles> = {
     }
   `,
   outline: css`
-    background: none;
-    border: 1px solid #cecece;
+    background-color: transparent;
     color: black;
+    box-shadow: rgb(168, 168, 168) 0px 0px 0px 1px inset;
     &:hover {
       background-color: #cecece;
       transition: 0.1s;
@@ -94,6 +93,6 @@ const StyleBtn = styled.button<IButton>`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  ${(props) => themeStyles[props.theme as THEME]};
+  ${(props) => themeStyles[props.themetype]};
   ${(props) => sizeStyles[props.size]};
 `;
