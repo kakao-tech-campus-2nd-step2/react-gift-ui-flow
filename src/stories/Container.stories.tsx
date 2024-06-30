@@ -10,7 +10,7 @@ const Template: StoryFn<IContainer> = (args) => <Container {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  maxWidth: '100',
+  maxWidth: '100px',
   children: 'Hello, world!',
   flexDirection: 'row',
   justifyContent: 'center',

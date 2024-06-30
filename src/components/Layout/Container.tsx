@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export interface IContainer {
-  maxWidth?: string;
+  maxWidth?: `${string}px`;
   children: React.ReactNode;
   flexDirection?: 'row' | 'column';
   justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
