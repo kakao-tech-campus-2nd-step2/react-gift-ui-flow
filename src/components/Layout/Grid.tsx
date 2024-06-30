@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
 export interface IGrid {
-  gap: number;
+  gap?: number;
   children: React.ReactNode;
   columns: number | 'ResponseGridStyle';
 }
@@ -38,6 +38,6 @@ const GridContainer = styled.div<IGrid>`
   display: grid;
   grid-template-columns: ${(props) =>
     props.columns === 'ResponseGridStyle' ? columnStyles : `repeat(${props.columns}, 1fr)`};
-  gap: ${(props) => props.gap};
+  gap: ${(props) => `${props.gap}px`};
   align-items: center;
 `;
