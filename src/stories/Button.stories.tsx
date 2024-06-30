@@ -12,7 +12,7 @@ export const Default = Template.bind({});
 Default.args = {
   size: 'responsive',
   children: '반응형 버튼',
-  theme: 'kakao',
+  themetype: 'kakao',
   onClick: () => {
     alert('클릭되었습니다');
   },

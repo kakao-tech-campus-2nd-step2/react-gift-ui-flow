@@ -12,5 +12,5 @@ export const Default = Template.bind({});
 Default.args = {
   src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
   radius: 'circle',
-  ratio: 'auto',
+  ratio: 'square',
 };
