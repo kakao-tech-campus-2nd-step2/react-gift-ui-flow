@@ -3,3 +3,33 @@
 ## Week 2. 1단계 - 페이지 만들기
 
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+
+### 구현할 기능 목록
+
+#### 공통 컴포넌트
+
+- [ ] Header
+- [ ] Footer
+
+#### 메인 페이지
+
+- Theme
+  - [ ] Theme Item 리스트
+- Rank
+  - [ ] 필터링
+  - [ ] Ranking Goods Item 리스트
+  - [ ] 더보기 버튼
+
+#### Theme 페이지
+
+- [ ] Dynamic Header
+- [ ] Goods Item 리스트
+
+#### 로그인 페이지
+
+- [ ] IP, PW 입력창
+- [ ] 로그인 버튼
+
+#### 나의 페이지
+
+- [ ] 로그아웃 버튼
