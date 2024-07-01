@@ -1,18 +1,12 @@
-import styled from '@emotion/styled';
+import React from 'react';
+import { Global } from '@emotion/react';
+import resetStyles from '@styles/resetStyles';
 
-const App = () => {
-  const name = 'Josh Perez';
-
-  return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
-  );
-};
+const App = () => (
+  <>
+    <Global styles={resetStyles} />
+    <div className="App">Hello World!</div>
+  </>
+);
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
