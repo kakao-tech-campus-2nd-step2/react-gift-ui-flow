@@ -4,10 +4,10 @@
 
 ## step.1  1단계 - 페이지 만들기 (without. API)
 - [ ] Header, Footer, Card와 같은 공통 컴포넌트 구현
-      - [X] Header 구현
-      - [ ] Footer 구현
-      - [ ] Card 구현
-      - [ ] Button 구현
+  - [ ] Header 구현
+  - [ ] Footer 구현
+  - [ ] Card 구현
+  - [ ] Button 구현
 - [ ] 메인 페이지 구현
 - [ ] Theme 페이지 구현
 - [ ] 로그인 페이지 구현
