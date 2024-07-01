@@ -1,10 +1,13 @@
 import styled from '@emotion/styled';
 
+import { RoutesPage } from './components/Routes';
+
 const App = () => {
   const name = 'Josh Perez';
 
   return (
     <div>
+      <RoutesPage />
       <Title>Hello, {name}</Title>
     </div>
   );
