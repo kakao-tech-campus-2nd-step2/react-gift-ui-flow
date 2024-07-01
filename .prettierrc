@@ -1,0 +1,17 @@
+{
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": [
+    "^@emotion/(.*)$",
+    "^react(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^@/(apis|assets|constants|hooks|mocks|pages|stores|stories|styles|types|utils)/(.*)$",
+    "^@/components/(.*)$",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "semi": true
+}
