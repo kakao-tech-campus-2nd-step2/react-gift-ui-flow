@@ -4,8 +4,8 @@ import Header from './Header';
 
 // Storybook 메타데이터 설정
 const meta = {
-  title: 'Common/Header', // 스토리북에서의 경로 및 이름 설정
-  component: Header, // 스토리북에서 사용할 컴포넌트 지정
+  title: 'Common/Header',
+  component: Header,
   args: {
     isLoggedIn: false, // 기본 로그인 상태를 false로 설정
   },
