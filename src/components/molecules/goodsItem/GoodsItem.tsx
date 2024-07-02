@@ -10,7 +10,7 @@ function GoodsItem({
   return (
     <GoodsItemWrapper>
       {rankingIndex ? (
-        <RankingBadge>
+        <RankingBadge rankingIndex={rankingIndex}>
           <p>{rankingIndex}</p>
         </RankingBadge>
       ) : null}

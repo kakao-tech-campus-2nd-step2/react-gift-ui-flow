@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { backgroundColors, textColors } from '@styles/colors';
+import { RankingBadgeProps } from '@/types';
 
 export const GoodsItemWrapper = styled.div`
   display: flex;
@@ -9,26 +10,22 @@ export const GoodsItemWrapper = styled.div`
   position: relative;
 `;
 
-export const RankingBadge = styled.div`
-  background-color: ${backgroundColors.badge};
+export const RankingBadge = styled.div<RankingBadgeProps>`
+  background-color: ${(props) => (props.rankingIndex && props.rankingIndex <= 3
+    ? backgroundColors.badgePrimary
+    : backgroundColors.badge)};
   color: ${textColors.inset};
   position: absolute;
   top: 2px;
   left: 2px;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   z-index: 1;
   border-radius: 5px;
   text-align: center;
-
-  p {
-    position: absolute;
-    margin: auto;
-    top: 1px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Title = styled.p`
