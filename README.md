@@ -10,7 +10,7 @@
 
 - [ ] BaseLayout
   - [x] Header
-  - [ ] Footer
+  - [x] Footer
 
 #### 메인 페이지
 

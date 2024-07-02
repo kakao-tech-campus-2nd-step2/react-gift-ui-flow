@@ -5,3 +5,7 @@ export const headerStyle = css({
   top: '0',
   zIndex: '100',
 });
+
+export const footerStyles = css({
+  padding: '2rem 0',
+});
