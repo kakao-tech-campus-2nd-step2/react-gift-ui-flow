@@ -7,7 +7,6 @@ const StyledHeader = styled.header`
   width: 100%;
   max-width: 100vw;
   background-color: rgb(255, 255, 255);
-  padding: 0px 16px;
   display: flex;
   justify-content: center;
 `;
