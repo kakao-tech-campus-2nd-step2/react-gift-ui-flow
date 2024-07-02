@@ -5,6 +5,7 @@ const StyledHeader = styled.header`
   position: fixed;
   z-index: 9999;
   width: 100%;
+  height: 54px;
   max-width: 100vw;
   background-color: rgb(255, 255, 255);
   display: flex;
@@ -22,10 +23,13 @@ const StyledInner = styled.div`
 const StyledLink = styled(Link)`
   outline: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-  img {
-    height: 54px;
-  }
+const StyledLogo = styled.img`
+  height: 54px;
 `;
 
 const StyledLinkText = styled(Link)`
@@ -38,16 +42,21 @@ const StyledLinkText = styled(Link)`
 `;
 
 const Header = () => {
+  const isLogin = false;
   return (
     <StyledHeader>
       <StyledInner>
         <StyledLink to="/">
-          <img
+          <StyledLogo
             src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
             alt="카카오 선물하기 로고"
           />
         </StyledLink>
-        <StyledLinkText to="/my-account">내 계정</StyledLinkText>
+        {isLogin ? (
+          <StyledLinkText to="/my-account">내 계정</StyledLinkText>
+        ) : (
+          <StyledLinkText to="/login">로그인</StyledLinkText>
+        )}
       </StyledInner>
     </StyledHeader>
   );
