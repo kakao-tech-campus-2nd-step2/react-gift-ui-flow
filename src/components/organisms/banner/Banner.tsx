@@ -1,7 +1,7 @@
 import Container from '@components/atoms/container/Container';
 import { backgroundColors } from '@styles/colors';
+import GiftThemes from '@constants/GiftThemes';
 import { ThemeName, ThemeSubtitle, ThemeTitle } from './Banner.styles';
-import { GiftThemes } from '@/constants';
 
 type GiftThemeKey = keyof typeof GiftThemes;
 
