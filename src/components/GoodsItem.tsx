@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { Image } from './Image';
 
 export interface IGoodsItem {

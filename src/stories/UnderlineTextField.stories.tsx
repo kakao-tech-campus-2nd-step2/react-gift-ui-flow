@@ -1,5 +1,7 @@
-import { UnderlineTextField, IUnderlineTextField } from '@/components/Form/Input/UnderlineTextField';
-import { StoryFn, Meta } from '@storybook/react';
+import type { Meta,StoryFn } from '@storybook/react';
+
+import type { IUnderlineTextField } from '@/components/Form/Input/UnderlineTextField';
+import { UnderlineTextField } from '@/components/Form/Input/UnderlineTextField';
 
 export default {
   component: UnderlineTextField,

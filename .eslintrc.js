@@ -14,24 +14,22 @@ module.exports = {
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
+    tsconfigRootDir: __dirname,
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'json-format',
-    'simple-import-sort',
-    '@emotion',
-    'prettier',
-  ],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'json-format', 'simple-import-sort', '@emotion', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/imports': 'error',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [['^\\u0000'], ['^@?\\w'], ['^~/', '^\\.']],
+      },
+    ],
     'simple-import-sort/exports': 'error',
     '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/no-unused-vars': [

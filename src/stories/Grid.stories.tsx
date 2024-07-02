@@ -1,5 +1,7 @@
-import { Grid, IGrid } from '@/components/Layout/Grid';
-import { StoryFn, Meta } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
+
+import type { IGrid } from '@/components/Layout/Grid';
+import { Grid } from '@/components/Layout/Grid';
 
 export default {
   component: Grid,

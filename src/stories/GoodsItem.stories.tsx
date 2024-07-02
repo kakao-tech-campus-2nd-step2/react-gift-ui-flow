@@ -1,5 +1,7 @@
-import { GoodsItem, IGoodsItem } from '@/components/GoodsItem';
-import { StoryFn, Meta } from '@storybook/react';
+import type { Meta,StoryFn } from '@storybook/react';
+
+import type { IGoodsItem } from '@/components/GoodsItem';
+import { GoodsItem } from '@/components/GoodsItem';
 
 export default {
   component: GoodsItem,
