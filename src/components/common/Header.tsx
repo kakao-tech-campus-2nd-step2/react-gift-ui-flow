@@ -19,6 +19,11 @@ const StyledInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const StyledLink = styled(Link)`
+  outline: none;
+  cursor: pointer;
 
   img {
     height: 54px;
@@ -37,12 +42,12 @@ const Header = () => {
   return (
     <StyledHeader>
       <StyledInner>
-        <Link to="/">
+        <StyledLink to="/">
           <img
             src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
             alt="카카오 선물하기 로고"
           />
-        </Link>
+        </StyledLink>
         <StyledLinkText to="/my-account">내 계정</StyledLinkText>
       </StyledInner>
     </StyledHeader>
