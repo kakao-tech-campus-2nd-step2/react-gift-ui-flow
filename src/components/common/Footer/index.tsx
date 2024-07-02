@@ -15,4 +15,5 @@ export default function Footer() {
 const FooterContainer = styled.footer`
   padding-top: 16px;
   padding-bottom: 120px;
+  background-color: #fafafc;
 `;
