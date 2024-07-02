@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 const useSelectButton = () => {
-  const [selectBtn1, setSelectBtn1] = useState<string>('');
-  const [selectBtn2, setSelectBtn2] = useState<string>('');
+  const [selectBtn1, setSelectBtn1] = useState<string>('ALL');
+  const [selectBtn2, setSelectBtn2] = useState<string>('받고 싶어한');
 
   const handleClicked = (type: string) => {
     setSelectBtn1(type);
