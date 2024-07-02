@@ -1,9 +1,17 @@
-const path = require('path');
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 module.exports = {
-  webpack: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
+  plugins: [
+    {
+      plugin: {
+        overrideWebpackConfig: ({ webpackConfig }) => {
+          webpackConfig.resolve.plugins.push(new TsconfigPathsPlugin({}));
+          return webpackConfig;
+        },
+      },
     },
+  ],
+  babel: {
+    presets: ["@emotion/babel-preset-css-prop"],
   },
 };

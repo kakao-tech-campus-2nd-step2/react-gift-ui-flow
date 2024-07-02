@@ -1,47 +1,23 @@
-import styled from '@emotion/styled';
+/* eslint-disable react/jsx-props-no-spreading */
+/** @jsxImportSource @emotion/react */
 
-type Props = {
-  radius?: 'circle' | number;
-  ratio?: 'square' | 'auto' | number;
+type ImageProps = {
+  ratio: 'square' | string;
+  radius: 'circle' | number;
 } & React.ImgHTMLAttributes<HTMLImageElement>;
 
-export const Image = ({ ...props }: Props) => <Wrapper {...props} />;
+function Image({ ratio, radius, ...rest }: ImageProps) {
+  return (
+    <img
+      css={{
+        borderRadius: radius === 'circle' ? '50%' : radius,
+        width: '100%',
+        aspectRatio: ratio === 'square' ? '1' : ratio,
+        objectFit: 'cover',
+      }}
+      {...rest}
+    />
+  );
+}
 
-const Wrapper = styled.img<Pick<Props, 'ratio' | 'radius'>>(
-  {
-    objectFit: 'cover',
-    objectPosition: 'center',
-  },
-  ({ radius = 0 }) => {
-    if (radius === 'circle') {
-      return {
-        borderRadius: '50%',
-      };
-    }
-
-    if (typeof radius === 'number') {
-      return {
-        borderRadius: `${radius}px`,
-      };
-    }
-  },
-  ({ ratio = 'auto' }) => {
-    if (ratio === 'square') {
-      return {
-        aspectRatio: '1 / 1',
-      };
-    }
-
-    if (ratio === 'auto') {
-      return {
-        aspectRatio: 'auto',
-      };
-    }
-
-    if (typeof ratio === 'number') {
-      return {
-        aspectRatio: `${ratio}`,
-      };
-    }
-  },
-);
+export default Image;

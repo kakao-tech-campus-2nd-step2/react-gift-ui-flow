@@ -1,44 +1,49 @@
-import styled from '@emotion/styled';
+/** @jsxImportSource @emotion/react */
 
-import { vars } from '@/styles';
+import { css } from '@emotion/react';
 
-type ResponseGridStyle = {
-  [key in keyof typeof vars.breakpoints]?: number;
+type GridProps = {
+  gap: number;
+  columns: number | { initial: number; lg: number; md: number; sm: number };
+  children: React.ReactNode;
 };
 
-type Props = {
-  columns: number | ResponseGridStyle;
-  gap?: number;
-} & React.HTMLAttributes<HTMLDivElement>;
-
-export const Grid: React.FC<Props> = ({ children, columns, ...props }: Props) => {
+function Grid({ gap, columns, children }: GridProps) {
+  if (typeof columns === 'number') {
+    return (
+      <div
+        css={css`
+          width: 100%;
+          display: grid;
+          gap: ${gap}px;
+          grid-template-columns: repeat(${columns}, 1fr);
+        `}
+      >
+        {children}
+      </div>
+    );
+  }
   return (
-    <Wrapper columns={columns} {...props}>
+    <div
+      css={css`
+        width: 100%;
+        display: grid;
+        gap: ${gap}px;
+        grid-template-columns: repeat(${columns.initial}, 1fr);
+        @media (min-width: 1025px) {
+          grid-template-columns: repeat(${columns.lg}, 1fr);
+        }
+        @media (min-width: 601px) and (max-width: 1024px) {
+          grid-template-columns: repeat(${columns.md}, 1fr);
+        }
+        @media (max-width: 600px) {
+          grid-template-columns: repeat(${columns.sm}, 1fr);
+        }
+      `}
+    >
       {children}
-    </Wrapper>
+    </div>
   );
-};
+}
 
-const Wrapper = styled.div<Pick<Props, 'columns' | 'gap'>>(
-  {
-    width: '100%',
-    display: 'grid',
-  },
-  ({ gap }) => ({
-    gap: gap ? `${gap}px` : '0',
-  }),
-  ({ columns }) => {
-    if (typeof columns === 'number') {
-      return {
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      };
-    }
-
-    const breakpoints = Object.keys(columns) as (keyof typeof vars.breakpoints)[];
-    return breakpoints
-      .map((breakpoint) => {
-        return `@media screen and (min-width: ${vars.breakpoints[breakpoint]}) { grid-template-columns: repeat(${columns[breakpoint]}, 1fr); }`;
-      })
-      .join(' ');
-  },
-);
+export default Grid;

@@ -1,0 +1,35 @@
+.goodsItem {
+  width: 160px;
+}
+
+.goodsItem__ranking {
+  position: absolute;
+  margin: 5px;
+  background-color: #fd7363;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.goodsItem__img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.goodsItem__subtitle {
+  font-size: 0.9rem;
+  color: #a0a0a0;
+  margin: 5px 0 5px 0;
+}
+
+.goodsItem__amount {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

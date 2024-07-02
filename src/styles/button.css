@@ -1,0 +1,84 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button--apple {
+  background-color: #d90056;
+}
+
+.button--orange {
+  background-color: #ffa500;
+}
+
+.button--mango {
+  background-color: #ffd700;
+}
+
+.button--melon {
+  background-color: #bbf596;
+}
+
+.button--peach {
+  background-color: #fbccc0;
+}
+
+.button--sm {
+  padding: 5px 10px;
+  width: 100px;
+  height: 30px;
+  font-size: 14px;
+}
+
+.button--md {
+  padding: 10px 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.button--lg {
+  padding: 15px 30px;
+  width: 200px;
+  height: 50px;
+  font-size: 18px;
+}
+
+@media (min-width: 1025px) {
+  .button--responsive {
+    padding: 15px 30px;
+    width: 200px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .button--responsive {
+    padding: 10px 20px;
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .button--responsive {
+    padding: 5px 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+  }
+}

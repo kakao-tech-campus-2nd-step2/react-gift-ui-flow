@@ -1,33 +1,43 @@
-import styled from '@emotion/styled';
-import { forwardRef } from 'react';
+/** @jsxImportSource @emotion/react */
 
-import { vars } from '@/styles';
+import { css } from "@emotion/react";
 
-type Props = {
+type ContainerProps = {
   maxWidth?: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+  children: React.ReactNode;
+  flexDirection?: "row" | "column";
+  justifyContent?: "center" | "flex-start" | "flex-end" | "space-between" | "space-around";
+  alignItems?: "center" | "flex-start" | "flex-end" | "baseline" | "stretch";
+};
 
-export const Container: React.FC<Props> = forwardRef(
-  ({ children, maxWidth, ...props }: Props, ref: React.Ref<HTMLDivElement>) => {
-    return (
-      <Wrapper ref={ref} {...props}>
-        <Inner className="inner" maxWidth={maxWidth}>
-          {children}
-        </Inner>
-      </Wrapper>
-    );
-  },
-);
+function Container({
+  maxWidth,
+  children,
+  flexDirection = "column",
+  justifyContent = "center",
+  alignItems = "center",
+}: ContainerProps) {
+  return (
+    <div
+      css={css`
+        display: flex;
+        flex-direction: ${flexDirection};
+        justify-content: ${justifyContent};
+        align-items: ${alignItems};
+        max-width: ${maxWidth};
+        margin: 0 auto;
+      `}
+    >
+      {children}
+    </div>
+  );
+}
 
-const Wrapper = styled.div`
-  width: 100%;
+Container.defaultProps = {
+  maxWidth: undefined,
+  flexDirection: undefined,
+  justifyContent: undefined,
+  alignItems: undefined,
+};
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const Inner = styled.div<Pick<Props, 'maxWidth'>>`
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ?? vars.breakpoints.md};
-`;
+export default Container;
