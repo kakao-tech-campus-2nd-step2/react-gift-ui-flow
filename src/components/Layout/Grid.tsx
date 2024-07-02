@@ -7,7 +7,7 @@ interface GridProps {
   children: React.ReactNode;
 }
 
-const Grid: React.FC<GridProps> = ({ gap, columns, children }) => (
+const Grid = ({ gap, columns, children }: GridProps) => (
   <StyledGrid gap={gap} columns={columns}>
     {children}
   </StyledGrid>
