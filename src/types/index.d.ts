@@ -23,4 +23,9 @@ export interface FixedSize {
   height: string,
 }
 
+const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marriage', 'warm',
+  'small', 'fan', 'exchange', 'health', 'grocery', 'kids'];
+
+export type GiftThemeKey = typeof giftThemeKeys[number];
+
 export type ElementSize = FixedSize | 'responsive' | 'small' | 'big';

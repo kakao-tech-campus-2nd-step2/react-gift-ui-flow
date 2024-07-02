@@ -1,8 +1,9 @@
-import GiftThemes, { GiftThemeKey } from '@constants/GiftThemes';
+import GiftThemes from '@constants/GiftThemes';
 // import Paths from '@constants/Paths';
 import Container from '@components/atoms/container/Container';
 import Image from '@components/atoms/image/Image';
 import { css } from '@emotion/react';
+import { GiftThemeKey } from '@/types';
 
 interface ThemeItemProps {
   themeKey: GiftThemeKey;
