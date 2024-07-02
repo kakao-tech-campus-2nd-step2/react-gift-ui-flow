@@ -33,7 +33,7 @@ type Story = StoryObj<typeof Image>;
 export const Default: Story = {
   render: (args) => <Image {...args} />,
   args: {
-    src: 'https://via.placeholder.com/200',
+    src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
     alt: 'Placeholder Image',
     ratio: 1,
     radius: 0,
