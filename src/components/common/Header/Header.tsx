@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { fontsizes } from '@/styles/variants';
+
 export const Header = () => (
   <HeaderContainer>
     <TitleButton>선물하기</TitleButton>
@@ -17,15 +19,11 @@ const HeaderContainer = styled.div({
 });
 
 const TitleButton = styled.button({
-  background: 'none',
-  border: 'none',
-  fontSize: '16px',
-  cursor: 'pointer',
+  fontSize: fontsizes.lg,
+  fontFamily: 'HSGooltokki',
 });
 
 const LoginButton = styled.button({
-  background: 'none',
-  border: 'none',
-  fontSize: '14px',
-  cursor: 'pointer',
+  fontSize: fontsizes.df,
+  fontFamily: 'Pretendard-Regular',
 });

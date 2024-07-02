@@ -5,3 +5,10 @@ export const breakpoints = {
   md: '1024px',
   lg: '1280px',
 };
+
+export const fontsizes = {
+  initial: '16px',
+  sm: '12px',
+  df: '16px',
+  lg: '20px',
+};
