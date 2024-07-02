@@ -15,7 +15,8 @@ interface ContainerProps {
 }
 
 function Container({
-  maxWidth, elementSize, flexDirection, justifyContent, alignItems, children, backgroundColor, cssProps,
+  maxWidth, elementSize, flexDirection, justifyContent,
+  alignItems, children, backgroundColor, cssProps,
 }: ContainerProps) {
   const combinedStyles: CSSObject = {
     maxWidth,
