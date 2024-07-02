@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import Grid from '../components/Layout/Grid';
+import Grid from '@components/Layout/Grid';
 
 const meta: Meta<typeof Grid> = {
   title: 'Components/Layout/Grid',

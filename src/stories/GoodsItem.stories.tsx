@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import DefaultGoodsItem from '../components/GoodsItem/DefaultGoodsItem';
-import RankingGoodsItem from '../components/GoodsItem/RankingGoodsItem';
+import DefaultGoodsItem from '@components/GoodsItem/DefaultGoodsItem';
+import RankingGoodsItem from '@components/GoodsItem/RankingGoodsItem';
 
 // DefaultGoodsItem의 Meta 정의
 const defaultMeta: Meta<typeof DefaultGoodsItem> = {

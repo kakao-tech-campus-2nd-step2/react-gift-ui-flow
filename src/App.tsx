@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from '@components/Layout/Layout';
 import Main from '@pages/Main/Main';
 import ThemePage from '@pages/ThemePage/ThemePage';
+import { ROUTE_PATHS } from './constants';
 
 const App = () => (
   <>
@@ -12,8 +13,8 @@ const App = () => (
     <Router>
       <Layout>
         <Routes>
-          <Route path="/" Component={Main} />
-          <Route path="/theme/:themeKey" Component={ThemePage} />
+          <Route path={ROUTE_PATHS.ROOT} Component={Main} />
+          <Route path={ROUTE_PATHS.THEME} Component={ThemePage} />
         </Routes>
       </Layout>
     </Router>
