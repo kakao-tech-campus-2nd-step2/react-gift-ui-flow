@@ -4,8 +4,7 @@ import InnerStyle from '@/styles/innerStyle';
 
 const StyledFooter = styled.footer`
   padding: 40px 16px 120px;
-  width: 100%;
-  max-width: 100vw;
+
   background-color: rgb(250, 250, 252);
   display: flex;
   justify-content: center;
