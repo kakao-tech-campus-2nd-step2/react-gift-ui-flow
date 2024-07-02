@@ -1,5 +1,6 @@
 import { GiftTheme } from '@dto/GiftTheme';
 
+// 나중에 테마 정보를 서버에서 받아오게 된다면 해당 모듈을 없애고 state나 context로 구현해야됨
 const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marriage', 'warm',
   'small', 'fan', 'exchange', 'health', 'grocery', 'kids'];
 const giftThemeKeywords = ['생일', '졸업선물', '스몰럭셔리', '명품선물', '결혼/집들이', '따뜻한선물',
