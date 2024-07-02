@@ -10,10 +10,11 @@ interface ContainerProps {
   justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around',
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch',
   children?: ReactNode,
+  backgroundColor?: string;
 }
 
 function Container({
-  maxWidth, elementSize, flexDirection, justifyContent, alignItems, children,
+  maxWidth, elementSize, flexDirection, justifyContent, alignItems, children, backgroundColor,
 }: ContainerProps) {
   return (
     <div
@@ -25,7 +26,7 @@ function Container({
         flex-direction: ${flexDirection};
         justify-content: ${justifyContent};
         align-items: ${alignItems};
-        background-color: ${backgroundColors.container};
+        background-color: ${backgroundColor ?? backgroundColors.container};
       `}
     >
       {children}
