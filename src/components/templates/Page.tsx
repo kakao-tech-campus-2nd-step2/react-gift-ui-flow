@@ -12,7 +12,7 @@ function Page({ children }: PageProps) {
   return (
     <>
       <PageHeader displayLogo />
-      <Container cssProps={{ marginTop: HEADER_HEIGHT }}>
+      <Container cssProps={{ marginTop: HEADER_HEIGHT }} flexDirection="column" alignItems="center">
         {children}
       </Container>
       <PageFooter />
