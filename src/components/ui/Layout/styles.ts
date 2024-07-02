@@ -11,7 +11,8 @@ export const containerStyle = (
   maxWidth?: string,
   flexDirection?: FlexDirection,
   justifyContent?: JustifyContent,
-  alignItems?: AlignItems
+  alignItems?: AlignItems,
+  gap?: string
 ) =>
   css({
     display: 'flex',
@@ -20,6 +21,7 @@ export const containerStyle = (
     flexDirection,
     justifyContent,
     alignItems,
+    gap,
   });
 
 export const contentStyle = (backgroundColor: string, height: string) =>

@@ -1,23 +1,20 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 
 import { Container } from '@/components/ui/Layout/Container';
-import { Content } from '@/components/ui/Layout/Content';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
 import { layoutStyles, mainStyles } from './styles';
 
-type BaseLayoutProp = {
+export interface BaseLayoutProp extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-};
+}
 
-const BaseLayout = ({ children }: BaseLayoutProp) => {
+const BaseLayout = ({ children, ...props }: BaseLayoutProp) => {
   return (
-    <Container flexDirection="column" css={layoutStyles}>
+    <Container flexDirection="column" css={layoutStyles} {...props}>
       <Header />
-      <Content height="100%" backgroundColor="white" css={mainStyles}>
-        {children}
-      </Content>
+      <div css={mainStyles}>{children}</div>
       <Footer />
     </Container>
   );

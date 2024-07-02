@@ -10,6 +10,7 @@ export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   flexDirection?: FlexDirection;
   justifyContent?: JustifyContent;
   alignItems?: AlignItems;
+  gap?: string;
 }
 
 export const Container = ({
@@ -18,11 +19,18 @@ export const Container = ({
   flexDirection,
   justifyContent,
   alignItems,
+  gap,
   ...rest
 }: ContainerProps) => {
   return (
     <div
-      css={containerStyle(maxWidth, flexDirection, justifyContent, alignItems)}
+      css={containerStyle(
+        maxWidth,
+        flexDirection,
+        justifyContent,
+        alignItems,
+        gap
+      )}
       {...rest}
     >
       {children}

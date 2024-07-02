@@ -5,17 +5,18 @@ import { contentStyle } from './styles';
 
 interface ContentProps extends ContainerProps {
   children: ReactNode;
-  backgroundColor: string;
+  backgroundColor?: string;
   height: string;
 }
 
 export const Content = ({
   children,
-  backgroundColor,
+  backgroundColor = 'transparent',
   height,
   flexDirection,
   justifyContent,
   alignItems,
+  gap,
   ...rest
 }: ContentProps) => {
   return (
@@ -25,6 +26,7 @@ export const Content = ({
         flexDirection={flexDirection}
         justifyContent={justifyContent}
         alignItems={alignItems}
+        gap={gap}
       >
         {children}
       </Container>

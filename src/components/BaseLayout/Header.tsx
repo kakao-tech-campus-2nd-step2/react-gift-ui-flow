@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <Content
       css={headerStyle}
-      backgroundColor={colors.gray[100]}
+      backgroundColor={colors.white}
       height="3.5rem"
       justifyContent="space-between"
       alignItems="center"

@@ -1,6 +1,6 @@
 export const colors = {
   yellow: {
-    100: '#FEE500',
+    100: '#FEEB00',
     200: '#F2DA00',
   },
   gray: {
@@ -9,6 +9,11 @@ export const colors = {
     300: '#D4D4D4',
     400: '#404040',
     500: '#262626',
+  },
+  blue: {
+    100: '#E6F1FF',
+    200: '#D6E5FF',
+    400: '#4584E9',
   },
   black: '#000000',
   white: '#FFFFFF',
