@@ -1,12 +1,14 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+import Body from '@/components/Body';
 import Header from '@/components/Header';
 
 const MainPage: React.FC = () => {
   return (
     <PageContainer>
       <Header />
+      <Body />
     </PageContainer>
   );
 };
