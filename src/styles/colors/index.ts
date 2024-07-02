@@ -34,6 +34,7 @@ export const backgroundColors = {
   badge: '#ff8d8d',
   root: '#f9f9fd',
   container: '#ffffff',
+  containerDark: '#4B4D50',
   primary: '#fee500',
   primaryDark: '#FFD900',
 };
