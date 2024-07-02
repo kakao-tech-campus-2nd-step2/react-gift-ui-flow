@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Grid } from './components/common/layouts/Grid';
+
 const Main: React.FC = () => {
   const themes = [
     { key: 'theme1', name: '생일' },
@@ -18,7 +20,7 @@ const Main: React.FC = () => {
     { key: 'theme12', name: '출산/키즈' },
   ];
 
-  const MainContainer = styled.main`
+const MainContainer = styled.main`
   background-color: #fff;
   color: #333;
   padding: 10px 20px;
@@ -27,18 +29,32 @@ const Main: React.FC = () => {
   width: 100%;
 `;
 
+const ThemeLink = styled(Link)`
+  padding: 10px;
+  background-color: #fff;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 200;
+
+  &:hover {
+    background-color: #fff;
+  }
+`;
+
   return (
     <div>
       <MainContainer>
         <p>선물 받을 친구를 선택해주세요.</p>
       </MainContainer>
-      <ul>
+      <Grid columns={4} gap={20}>
         {themes.map((theme) => (
-          <li key={theme.key}>
-            <Link to={`/theme/${theme.key}`}>{theme.name}</Link>
-          </li>
+          <ThemeLink key={theme.key} to={`/theme/${theme.key}`}>
+            {theme.name}
+          </ThemeLink>
         ))}
-      </ul>
+      </Grid>
     </div>
   );
 };
