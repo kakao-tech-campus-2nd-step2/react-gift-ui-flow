@@ -1,13 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import HeaderSection from './HeaderSection';
+import Banner from './Banner';
 
-const meta: Meta<typeof HeaderSection> = {
-  component: HeaderSection,
+const meta: Meta<typeof Banner> = {
+  component: Banner,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof HeaderSection>;
+type Story = StoryObj<typeof Banner>;
 
 export const DefaultFooter: Story = {
   args: {

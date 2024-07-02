@@ -1,15 +1,15 @@
 import Container from '@components/atoms/container/Container';
 import { backgroundColors } from '@styles/colors';
-import { ThemeName, ThemeSubtitle, ThemeTitle } from './HeaderSection.styles';
+import { ThemeName, ThemeSubtitle, ThemeTitle } from './Banner.styles';
 import { GiftThemes } from '@/constants';
 
 type GiftThemeKey = keyof typeof GiftThemes;
 
-interface HeaderSectionProps {
+interface BannerProps {
   themeKey: GiftThemeKey;
 }
 
-function HeaderSection({ themeKey }: HeaderSectionProps) {
+function Banner({ themeKey }: BannerProps) {
   const themeTexts = GiftThemes[themeKey];
 
   return (
@@ -29,4 +29,4 @@ function HeaderSection({ themeKey }: HeaderSectionProps) {
   );
 }
 
-export default HeaderSection;
+export default Banner;
