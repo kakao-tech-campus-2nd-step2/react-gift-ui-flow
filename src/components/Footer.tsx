@@ -1,9 +1,7 @@
+import './Footer.module.scss';
+
 const Footer = () => {
-  return (
-    <footer>
-      <p>© 2021</p>
-    </footer>
-  );
+  return <footer>카카오톡 선물하기</footer>;
 };
 
 export default Footer;
