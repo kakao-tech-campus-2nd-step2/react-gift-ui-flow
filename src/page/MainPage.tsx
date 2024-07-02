@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import Body from '@/components/Body';
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
 const MainPage: React.FC = () => {
@@ -9,6 +10,7 @@ const MainPage: React.FC = () => {
     <PageContainer>
       <Header />
       <Body />
+      <Footer />
     </PageContainer>
   );
 };

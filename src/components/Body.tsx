@@ -9,7 +9,8 @@ const BodyContainer = styled.div`
   margin-top: 59px;
   padding: 20px;
   height: 1000px;
-  backgroundcolor: rgb(200, 200, 200);
+  background: rgb(250, 250, 250);
+  box-sizing: border-box;
 `;
 
 export default Body;
