@@ -9,7 +9,7 @@ function PageFooter() {
         background-color: ${backgroundColors.root}
     `}
     >
-      <Container backgroundColor={backgroundColors.root}>
+      <Container>
         <p>카카오톡 선물하기</p>
       </Container>
     </footer>
