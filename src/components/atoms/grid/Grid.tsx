@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 interface GridProps {
   gap?: number;
   columns?: number;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 function Grid({ gap, columns, children }: GridProps) {
