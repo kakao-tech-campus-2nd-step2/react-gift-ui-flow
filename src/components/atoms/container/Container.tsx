@@ -1,9 +1,11 @@
 import { ReactNode } from 'react';
 import { css } from '@emotion/react';
 import { backgroundColors } from '@styles/colors';
+import { FixedSize } from '@styles/size';
 
 interface ContainerProps {
   maxWidth?: string,
+  elementSize?: FixedSize,
   flexDirection?: 'row' | 'column',
   justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around',
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch',
@@ -11,13 +13,15 @@ interface ContainerProps {
 }
 
 function Container({
-  maxWidth, flexDirection, justifyContent, alignItems, children,
+  maxWidth, elementSize, flexDirection, justifyContent, alignItems, children,
 }: ContainerProps) {
   return (
     <div
       css={css`
         max-width: ${maxWidth};
         display: flex;
+        width: ${elementSize ? elementSize.width : 'auto'};
+        height: ${elementSize ? elementSize.height : 'auto'};
         flex-direction: ${flexDirection};
         justify-content: ${justifyContent};
         align-items: ${alignItems};
