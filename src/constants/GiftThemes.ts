@@ -2,6 +2,7 @@ interface GiftTheme {
   title: string;
   subtitle: string;
   keyword: string;
+  themeImageSrc: string;
 }
 
 const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marriage', 'warm',
@@ -18,6 +19,7 @@ giftThemeKeys.forEach((name, i) => {
     title: '예산은 가볍게, 감동은 무겁게❤️',
     subtitle: '당신의 센스를 뽐내줄 부담 없는 선물',
     keyword: giftThemeKeywords[i],
+    themeImageSrc: 'https://picsum.photos/200',
   };
 });
 
