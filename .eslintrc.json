@@ -84,8 +84,8 @@
                         "./src/styles"
                     ],
                     [
-                        "@images",
-                        "./src/images"
+                        "@pages",
+                        "./src/pages"
                     ]
                 ],
                 "extensions": [
