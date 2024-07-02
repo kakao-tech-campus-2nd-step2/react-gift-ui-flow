@@ -2,58 +2,52 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    node: true,
   },
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'airbnb/hooks',
-    'airbnb-typescript',
-    'prettier',
-    'plugin:storybook/recommended',
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:import/typescript",
+    "plugin:import/recommended",
   ],
-  parser: '@typescript-eslint/parser',
+  overrides: [],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: './tsconfig.json',
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'json-format',
-    'simple-import-sort',
-    '@emotion',
-    'prettier',
-  ],
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
-    '@typescript-eslint/consistent-type-imports': 'warn',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-      },
-    ],
-    'import/extensions': ['off'],
-    'import/no-extraneous-dependencies': ['off'],
-    'react/jsx-filename-extension': [
-      'warn',
-      {
-        extensions: ['.tsx', '.js', '.jsx'],
-      },
-    ],
-    '@typescript-eslint/no-use-before-define': ['off'],
-  },
-  ignorePatterns: ['**/build/**/*', '.eslintrc.js', 'craco.config.js'],
+  plugins: ["import"],
   settings: {
-    'import/resolver': {
-      typescript: {},
+    "import/resolver": {
+      node: true,
+      typescript: true,
     },
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"],
+    },
+  },
+  rules: {
+    "react/react-in-jsx-scope": "off",
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", "parent", "sibling", "index"],
+        alphabetize: {
+          order: "asc",
+          caseInsensitive: true,
+        },
+        "newlines-between": "never",
+        pathGroups: [
+          {
+            pattern: "@/**",
+            group: "internal",
+            position: "after",
+          },
+        ],
+      },
+    ],
+    "import/no-unresolved": "off",
+    "import/export": "off",
+    "import/named": "off",
   },
 };
