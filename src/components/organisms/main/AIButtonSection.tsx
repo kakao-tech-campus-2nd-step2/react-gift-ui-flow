@@ -19,10 +19,7 @@ function AIButtonSection() {
 
   return (
     <Container
-      elementSize={{
-        width: '100%',
-        height: 'auto',
-      }}
+      elementSize="full-width"
       justifyContent="center"
     >
       <Container
@@ -31,10 +28,7 @@ function AIButtonSection() {
         alignItems="center"
         flexDirection="column"
         backgroundColor={buttonColors.kakao} // 나중에 컬러 팔레트를 새로 만들던가 해야겠다..
-        elementSize={{
-          width: '100%',
-          height: '76px',
-        }}
+        elementSize="full-width"
         cssProps={{
           borderRadius: '8px',
         }}

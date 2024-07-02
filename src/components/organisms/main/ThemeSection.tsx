@@ -18,10 +18,7 @@ function ThemeSection({ maxColumns }: ThemeSectionProps) {
     `}
     >
       <Container
-        elementSize={{
-          width: '100%',
-          height: 'auto',
-        }}
+        elementSize="full-width"
         justifyContent="center"
       >
         <Grid columns={maxColumns} gap={0}>

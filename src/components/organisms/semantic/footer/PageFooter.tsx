@@ -12,7 +12,7 @@ function PageFooter() {
         justify-content: center;
     `}
     >
-      <Container cssProps={{ width: '100%' }} maxWidth={MAX_CONTENT_WIDTH}>
+      <Container elementSize="full-width" maxWidth={MAX_CONTENT_WIDTH}>
         <p>카카오톡 선물하기</p>
       </Container>
     </footer>

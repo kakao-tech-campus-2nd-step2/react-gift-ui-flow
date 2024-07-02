@@ -7,7 +7,7 @@ function MainBanner() {
   return (
     <Container cssProps={{ padding: '40px 16px' }} justifyContent="center">
       <Container
-        cssProps={{ width: '100%' }}
+        elementSize="full-width"
         alignItems="center"
         maxWidth={MAX_CONTENT_WIDTH}
       >

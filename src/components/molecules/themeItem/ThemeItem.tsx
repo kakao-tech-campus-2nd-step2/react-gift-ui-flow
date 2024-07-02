@@ -15,7 +15,7 @@ function ThemeItem({ themeKey }: ThemeItemProps) {
 
   return (
     <Container cssProps={{ padding: '25px 35px 24px' }}>
-      <Container elementSize={{ width: '100%', height: 'auto' }} flexDirection="column" alignItems="center">
+      <Container elementSize="full-width" flexDirection="column" alignItems="center">
         <Image src={theme.themeImageSrc} ratio="square" radius={32} />
         <p css={css`
           font-size: 16px;
