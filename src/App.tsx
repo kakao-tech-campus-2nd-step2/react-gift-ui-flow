@@ -4,6 +4,7 @@ import resetStyles from '@styles/resetStyles';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from '@components/Layout/Layout';
 import Main from '@pages/Main/Main';
+import ThemePage from '@pages/ThemePage/ThemePage';
 
 const App = () => (
   <>
@@ -12,6 +13,7 @@ const App = () => (
       <Layout>
         <Routes>
           <Route path="/" Component={Main} />
+          <Route path="/theme/:themeKey" Component={ThemePage} />
         </Routes>
       </Layout>
     </Router>
