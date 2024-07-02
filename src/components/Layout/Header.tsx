@@ -10,6 +10,8 @@ export const Header = () => {
 };
 
 const Wrapper = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
   position: sticky;
   padding: 15px 10px;
   display: flex;
