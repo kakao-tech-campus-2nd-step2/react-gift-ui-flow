@@ -44,7 +44,7 @@ const ThemeItemContainer = styled.div`
 
 const ThemeItem = ({ themeKey }: ThemeItemProps) => {
   return (
-    <StyledLink to={`/theme/${themeKey}`}>
+    <StyledLink to={`/theme/${encodeURIComponent(themeKey)}`}>
       <ThemeItemContainer>
         <img
           src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
