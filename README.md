@@ -8,8 +8,9 @@
 
 #### 공통 컴포넌트
 
-- [ ] Header
-- [ ] Footer
+- [ ] BaseLayout
+  - [x] Header
+  - [ ] Footer
 
 #### 메인 페이지
 
