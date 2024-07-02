@@ -1,9 +1,11 @@
-import Header from "@/components/common/Header/index";
+import Footer from "@/components/common/Footer";
+import Header from "@/components/common/Header";
 
 const App = () => {
   return (
     <div>
-      <Header></Header>
+      <Header />
+      <Footer />
     </div>
   );
 };
