@@ -3,31 +3,16 @@ import styled from '@emotion/styled';
 interface RankingItemProps {
   index?: number;
   rank?: boolean;
-  top3?: boolean;
+  showSpan?: boolean;
 }
+
+type FirstSpanProps = {
+  top3: boolean;
+};
 
 const RanckingItemContainer = styled.div<RankingItemProps>`
   width: 100%;
   position: relative;
-
-  & > span:nth-of-type(1) {
-    width: 30px;
-    min-width: 30px;
-    height: 30px;
-    border-radius: 6px;
-    font-size: 18px;
-    position: absolute;
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 1;
-    font-weight: 700;
-    top: 4px;
-    left: 4px;
-    color: rgb(255, 255, 255);
-    background-color: ${(props) => (props.top3 ? 'rgb(253, 115, 100)' : 'rgb(187, 187, 187)')};
-  }
 
   img {
     object-fit: cover;
@@ -38,6 +23,25 @@ const RanckingItemContainer = styled.div<RankingItemProps>`
     overflow-clip-margin: content-box;
     overflow: clip;
   }
+`;
+
+const FirstSpan = styled.span<FirstSpanProps>`
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  font-size: 18px;
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  font-weight: 700;
+  top: 4px;
+  left: 4px;
+  color: rgb(255, 255, 255);
+  background-color: ${(props) => (props.top3 ? 'rgb(253, 115, 100)' : 'rgb(187, 187, 187)')};
 `;
 
 const TextContainer = styled.div`
@@ -81,11 +85,11 @@ const TextContainer = styled.div`
   }
 `;
 
-const RankingItem = ({ index }: RankingItemProps) => {
+const RankingItem = ({ index, showSpan }: RankingItemProps) => {
   const top3 = index === 1 || index === 2 || index === 3;
   return (
-    <RanckingItemContainer top3={top3}>
-      <span>{index}</span>
+    <RanckingItemContainer>
+      {showSpan && <FirstSpan top3={top3}>{index}</FirstSpan>}
       <div>
         <img
           src="https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg"
