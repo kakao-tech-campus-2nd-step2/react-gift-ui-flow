@@ -3,7 +3,7 @@ import { StyledContainer } from './Container.style';
 
 interface ContainerProps {
   width?: string;
-  maxWitdh?: string;
+  maxWidth?: string;
   flexDirection?: 'row' | 'column';
   justifyContent?:
     | 'center'
@@ -18,7 +18,7 @@ interface ContainerProps {
 
 const Container = ({
   width,
-  maxWitdh,
+  maxWidth,
   flexDirection,
   justifyContent,
   alignItems,
@@ -27,7 +27,7 @@ const Container = ({
 }: ContainerProps) => (
   <StyledContainer
     width={width}
-    maxWidth={maxWitdh}
+    maxWidth={maxWidth}
     flexDirection={flexDirection}
     justifyContent={justifyContent}
     alignItems={alignItems}

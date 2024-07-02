@@ -5,7 +5,7 @@ import Container from '../Layout/Container';
 const Footer = () => (
   <FooterContainer>
     <Container
-      maxWitdh="1024px"
+      maxWidth="1200px"
       flexDirection="column"
     >
       <Text>카카오톡 선물하기</Text>
