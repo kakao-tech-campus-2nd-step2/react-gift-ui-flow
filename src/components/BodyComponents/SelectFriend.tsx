@@ -14,6 +14,7 @@ const SelectFriend: React.FC = () => {
 
 const SelectFriendContainer = styled.div`
   display: flex;
+  background: rgb(250, 250, 250);
   align-items: center;
   padding: 18px 16px;
   box-sizing: border-box;
