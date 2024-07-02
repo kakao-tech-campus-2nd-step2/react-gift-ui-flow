@@ -48,7 +48,8 @@
           ["@hooks", "./src/hooks"],
           ["@pages", "./src/pages"],
           ["@store", "./src/store"],
-          ["@utils", "./src/utils"]
+          ["@utils", "./src/utils"],
+          ["@data", "./src/data"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
