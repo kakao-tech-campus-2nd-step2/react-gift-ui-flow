@@ -137,7 +137,7 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 - [ ]  react-router-dom 설치
 - [ ]  PageHeader, PageFooter 컴포넌트 만들기(Organisms/PageHeader, PageFooter)
 - [ ]  Page 컴포넌트 만들기
-- [ ]  HeaderSection  컴포넌트 만들기 (molecules/HeaderSection)
+- [ ]  HeaderSection  컴포넌트 만들기 (organisms/HeaderSection)
     - [ ]  themeKey에 따라 label, title, description, backgroundColor가 달라지도록.
 - [ ]  GiftDisplaySection 컴포넌트 만들기
     - [ ]  indexed?: boolean에 따라 랭킹 표시 여부 결정
