@@ -1,9 +1,14 @@
 import BaseLayout from '@/components/BaseLayout/BaseLayout';
+import { ThemeFooter } from '@/components/ThemeSection/ThemeFooter';
+import { ThemeHeader } from '@/components/ThemeSection/ThemeHeader';
+import { ThemeList } from '@/components/ThemeSection/ThemeList/ThemeList';
 
 const App = () => {
   return (
-    <BaseLayout>
-      <div style={{ height: '1000px' }}>test</div>
+    <BaseLayout style={{ height: '2000px' }}>
+      <ThemeHeader />
+      <ThemeList />
+      <ThemeFooter />
     </BaseLayout>
   );
 };

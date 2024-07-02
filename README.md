@@ -14,8 +14,8 @@
 
 #### 메인 페이지
 
-- Theme
-  - [ ] Theme Item 리스트
+- [x] Theme
+  - [x] Theme Item 리스트
 - Rank
   - [ ] 필터링
   - [ ] Ranking Goods Item 리스트
