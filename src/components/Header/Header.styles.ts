@@ -2,10 +2,14 @@ import styled from '@emotion/styled';
 
 export const Container = styled.header`
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #fff;
 `;
 
 export const Inner = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
