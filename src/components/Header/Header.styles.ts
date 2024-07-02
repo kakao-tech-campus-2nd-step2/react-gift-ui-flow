@@ -14,15 +14,16 @@ export const Inner = styled.div`
 `;
 
 export const Logo = styled.a`
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  img {
+    width: 61px;
+  }
 `;
 
 export const Login = styled.a`
-  font-size: 16px;
+  font-size: 14px;
   text-decoration: none;
   color: #000;
   cursor: pointer;
