@@ -2,9 +2,9 @@
 
 ## 공통 컴포넌트 만들기
 
-- [ ] Header
-- [ ] Body
-- [ ] Footer
+- [x] Header
+- [x] Body
+- [x] Footer
 
 ## Url Path별로 페이지 만들기
 

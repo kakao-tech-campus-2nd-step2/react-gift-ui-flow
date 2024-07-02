@@ -22,5 +22,6 @@ const PageContainer = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1024px;
+  min-height: 100vh;
   background: rgb(250, 250, 250);
 `;
