@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
+
+import { Container } from './components/common/layouts/Container';
  
 const Main: React.FC = () => {
   const themes = [
@@ -45,13 +47,29 @@ const ThemeLink = styled(Link)`
 `;
 
 const ThemeItem = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const ImageContainer = styled.div`
-    margin-bottom: 3px; 
+  margin-bottom: 3px; 
+`;
+
+const RecommendationContainer = styled(Container)`
+  background-color: #fee500;
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 15px;
+  p{
+    font-weight: 600;
+  }
+`;
+
+const RecommendationHeader = styled.h2`
+  color: #aaa;
+  font-size: 14px;
 `;
 
   return (
@@ -71,6 +89,10 @@ const ImageContainer = styled.div`
           </ThemeLink>
         ))}
       </Grid>
+      <RecommendationContainer>
+        <RecommendationHeader>AI가 추천하는 선물</RecommendationHeader>
+        <p>선물을 추천받고 싶은 친구를 선택해주세요.</p>
+      </RecommendationContainer>
     </div>
   );
 };
