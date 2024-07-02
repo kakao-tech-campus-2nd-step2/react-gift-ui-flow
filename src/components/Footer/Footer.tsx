@@ -1,12 +1,16 @@
 import React from 'react';
-import { Container, Inner, Text } from './Footer.styles';
+import { FooterContainer, Text } from './Footer.styles';
+import Container from '../Layout/Container';
 
 const Footer = () => (
-  <Container>
-    <Inner>
+  <FooterContainer>
+    <Container
+      maxWitdh="1024px"
+      flexDirection="column"
+    >
       <Text>카카오톡 선물하기</Text>
-    </Inner>
-  </Container>
+    </Container>
+  </FooterContainer>
 );
 
 export default Footer;

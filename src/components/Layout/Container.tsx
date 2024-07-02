@@ -2,7 +2,8 @@ import React from 'react';
 import { StyledContainer } from './Container.style';
 
 interface ContainerProps {
-  maxWidth?: string;
+  width?: string;
+  maxWitdh?: string;
   flexDirection?: 'row' | 'column';
   justifyContent?:
     | 'center'
@@ -11,21 +12,26 @@ interface ContainerProps {
     | 'space-between'
     | 'space-around';
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch';
+  padding?: string;
   children: React.ReactNode;
 }
 
-const Container: React.FC<ContainerProps> = ({
-  maxWidth,
+const Container = ({
+  width,
+  maxWitdh,
   flexDirection,
   justifyContent,
   alignItems,
+  padding,
   children,
-}) => (
+}: ContainerProps) => (
   <StyledContainer
-    maxWidth={maxWidth}
+    width={width}
+    maxWidth={maxWitdh}
     flexDirection={flexDirection}
     justifyContent={justifyContent}
     alignItems={alignItems}
+    padding={padding}
   >
     {children}
   </StyledContainer>

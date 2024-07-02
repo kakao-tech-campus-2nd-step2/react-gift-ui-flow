@@ -1,9 +1,16 @@
 import React from 'react';
-import { Container, Inner, Logo, Login } from './Header.styles';
+import { HeaderContainer, Logo, Login } from './Header.styles';
+import Container from '../Layout/Container';
 
 const Header = () => (
-  <Container>
-    <Inner>
+  <HeaderContainer>
+    <Container
+      width="100%"
+      maxWitdh="1200px"
+      justifyContent="space-between"
+      alignItems="center"
+      padding="10px 20px"
+    >
       <Logo href="/">
         <img
           src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
@@ -11,8 +18,8 @@ const Header = () => (
         />
       </Logo>
       <Login href="/login">로그인</Login>
-    </Inner>
-  </Container>
+    </Container>
+  </HeaderContainer>
 );
 
 export default Header;
