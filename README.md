@@ -1,15 +1,24 @@
 # 카카오 테크 캠퍼스 - 프론트엔드 카카오 선물하기 편
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
+## **경북대 FE\_정솔빈\_2주차 과제**
 
-## Week 1. 1단계 - 프로젝트 세팅
+### Week 2. 1단계 - 페이지 만들기
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
+**할 일 목록: **
 
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+- [ ] Header와 Footer는 보여질 수 있게 적용
+- [ ] 메인페이지(/)
+  - [ ] Theme 카테고리 섹션 추가
+  - [ ] 실시간 급상승 선물랭킹 hooks를 이용한 필터기능 구현
+  - [ ] 6개의 상품만 보이도록 만들기 (더보기와 접기 버튼 만들기)
+- [ ] Theme 페이지
+  - [ ] Header 섹션 추가
+  - [ ] 상품 목록 섹션 추가
+- [ ] 로그인 페이지에서 ID, PW 입력하면 로그인이 되도록 구현
+- [ ] 나의 페이지에서 로그아웃 할 수 있는 버튼 추가
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
+</br>
 
-## Week 2. 1단계 - 페이지 만들기
+**코드 작성하면서 어려웠던 점**
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+**마무리 및 질문**
