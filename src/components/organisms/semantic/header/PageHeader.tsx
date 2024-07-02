@@ -24,7 +24,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
         z-index: 9999;
     `}
     >
-      <Container elementSize={{ height: '54px', width: '100%' }} justifyContent="space-between">
+      <Container elementSize={{ height: '54px', width: '100%' }} justifyContent={displayLogo ? 'space-between' : 'flex-end'}>
         {displayLogo
           ? (
             <img
