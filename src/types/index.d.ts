@@ -23,6 +23,8 @@ export interface FixedSize {
   height: string,
 }
 
+export type ContainerSize = FixedSize | 'full-width';
+
 const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marriage', 'warm',
   'small', 'fan', 'exchange', 'health', 'grocery', 'kids'];
 
