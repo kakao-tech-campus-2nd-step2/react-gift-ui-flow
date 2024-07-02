@@ -18,7 +18,7 @@
 
 # 구현 목록
 
-- [ ] react router dom 세팅
+- [x] react router dom 세팅
 
 - 공통 컴포넌트 만들기
 	- [ ] Header
