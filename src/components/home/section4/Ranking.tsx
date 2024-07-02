@@ -2,12 +2,14 @@ import styled from '@emotion/styled';
 
 import InnerStyle from '@/styles/innerStyle';
 
+import RankingItemList from './rankingitemlist/RankingItemList';
 import Select from './select/Select';
 const RecommendContainer = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0px 16px 80px;
 `;
 
 const RecommendInner = styled(InnerStyle)`
@@ -32,6 +34,7 @@ const Ranking = () => {
       <RecommendInner>
         <h2>실시간 급상승 선물 랭킹</h2>
         <Select />
+        <RankingItemList />
       </RecommendInner>
     </RecommendContainer>
   );
