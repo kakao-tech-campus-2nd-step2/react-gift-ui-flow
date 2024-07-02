@@ -5,14 +5,6 @@ import Grid from '../components/Layout/Grid';
 const meta: Meta<typeof Grid> = {
   title: 'Components/Layout/Grid',
   component: Grid,
-  parameters: {
-    layout: 'centered',
-  },
-  argTypes: {
-    gap: { control: 'number' },
-    columns: { control: 'object' },
-    children: { control: 'text' },
-  },
 };
 
 export default meta;
