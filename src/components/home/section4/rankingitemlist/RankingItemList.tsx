@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import RankingItem from './RankingItem';
 
 const ItemListContainer = styled.div`
+  width: 100%;
   padding: 40px 0px 60px;
 `;
 
@@ -12,6 +13,9 @@ const GridContainer = styled.div`
   width: 100%;
   display: grid;
   gap: 16px;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 const PlusBtnContainer = styled.div`

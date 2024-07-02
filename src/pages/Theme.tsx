@@ -13,7 +13,6 @@ const ThemeContainer = styled.div`
 `;
 
 const HeaderSection = styled.section`
-  padding: 50px 20px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -23,6 +22,7 @@ const HeaderSection = styled.section`
 `;
 
 const Inner = styled(InnerStyle)`
+  padding: 50px 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

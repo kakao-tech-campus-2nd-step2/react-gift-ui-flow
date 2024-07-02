@@ -18,6 +18,10 @@ const GridContainer = styled(InnerStyle)`
     display: grid;
     gap: 0px;
 		grid-template-columns: repeat(6, 1fr);
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
 }`;
 
 const ThemeItemConfig = [
