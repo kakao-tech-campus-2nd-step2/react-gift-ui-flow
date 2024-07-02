@@ -105,19 +105,47 @@ const RankingContainer = styled.div`
 `;
 
 const FilterButton = styled.button<{ active: boolean }>`
-  padding: 10px 20px;
-  background-color: #fff;
-  font-size: 16px;
-  color: ${props => (props.active ? '#007bff' : '#333')};
-  font-weight: ${props => (props.active ? 'bold' : 'normal')};
-  cursor: pointer;
-  transition: color 0.3s;
-  outline: none;
+    padding: 20px;
+    margin-left: 15px;
+    width: 60px;
+    height: 60px;
+    background-color: ${props => (props.active ? '#e0f7fa' : '#fff')};
+    font-size: 14px;
+    color: ${props => (props.active ? '#007bff' : '#333')};
+    font-weight: ${props => (props.active ? 'bold' : 'normal')};
+    cursor: pointer;
+    transition: color 0.3s;
+    border: none;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    outline: none;
 
-  &:hover {
-    color: #007bff;
-  }
-`;
+    &:hover {
+      color: #007bff;
+    }
+
+    &::before {
+      content: ${props => {
+        switch (props.children) {
+          case '전체':
+            return "'ALL'";
+          case '여성이':
+            return "'\\1F469'";
+          case '남성이':
+            return "'\\1F468'";
+          case '청소년이':
+            return "'\\1F466'";
+          default:
+            return "''";
+        }
+      }};
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+  `;
 const RankingBox = styled.div`
   padding: 10px;
   background-color: #e0f7fa;
@@ -163,7 +191,7 @@ const RankingItem = styled.div<{ active: boolean }>`
       </RecommendationContainer>
       <RankingContainer>
         <RankingContainerHeader>실시간 급상승 선물랭킹</RankingContainerHeader>
-        <FilterGrid columns={4} gap={10}>
+        <FilterGrid columns={4} gap={20}>
           <FilterButton
             active={activeFilter === '전체'}
             onClick={() => setActiveFilter('전체')}
