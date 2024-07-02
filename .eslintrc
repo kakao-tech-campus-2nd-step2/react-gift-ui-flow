@@ -28,7 +28,7 @@
     "react/jsx-props-no-spreading": "off",
     "import/prefer-default-export": "off",
     "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+    "import/no-extraneous-dependencies": "off",
     "import/no-unresolved": "off",
     "react/require-default-props": "off",
     "no-use-before-define": "off",
