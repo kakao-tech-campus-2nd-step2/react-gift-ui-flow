@@ -20,22 +20,28 @@ const GridContainer = styled(InnerStyle)`
 		grid-template-columns: repeat(6, 1fr);
 }`;
 
+const ThemeItemConfig = [
+  '생일',
+  '졸업선물',
+  '스몰럭셔리',
+  '명품선물',
+  '결혼/집들이',
+  '따듯한 선물',
+  '가벼운 선물',
+  '팬심저격',
+  '교환권',
+  '건강/비타민',
+  '과일/한우',
+  '출산/키즈',
+];
+
 const Theme = () => {
   return (
     <StyledTheme>
       <GridContainer>
-        <ThemeItem themeKey={'생일'} />
-        <ThemeItem themeKey={'졸업선물'} />
-        <ThemeItem themeKey={'스몰럭셔리'} />
-        <ThemeItem themeKey={'명품선물'} />
-        <ThemeItem themeKey={'결혼/집들이'} />
-        <ThemeItem themeKey={'따듯한 선물'} />
-        <ThemeItem themeKey={'가벼운 선물'} />
-        <ThemeItem themeKey={'팬심저격'} />
-        <ThemeItem themeKey={'교환권'} />
-        <ThemeItem themeKey={'건강/비타민'} />
-        <ThemeItem themeKey={'과일/한우'} />
-        <ThemeItem themeKey={'출산/키즈'} />
+        {ThemeItemConfig.map((themeKey) => (
+          <ThemeItem key={themeKey} themeKey={themeKey} />
+        ))}
       </GridContainer>
     </StyledTheme>
   );
