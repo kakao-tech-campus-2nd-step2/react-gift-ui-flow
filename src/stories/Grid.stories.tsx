@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Grid from '../components/Layout/Grid';
 
 const meta: Meta<typeof Grid> = {
-  title: 'Layout/Grid',
+  title: 'Components/Layout/Grid',
   component: Grid,
   parameters: {
     layout: 'centered',

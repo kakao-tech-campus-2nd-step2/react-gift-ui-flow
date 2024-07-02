@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import Container from '../components/Layout/Container';
 
 const meta: Meta<typeof Container> = {
-  title: 'Layout/Container',
+  title: 'Components/Layout/Container',
   component: Container,
   parameters: {
     layout: 'centered',
