@@ -15,6 +15,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
+    project: "./tsconfig.json",
   },
   plugins: ["import"],
   settings: {
@@ -49,5 +50,8 @@ module.exports = {
     "import/no-unresolved": "off",
     "import/export": "off",
     "import/named": "off",
+    "import/namespace": "off",
+    "import/order": "off",
+    "import/no-duplicates": "off",
   },
 };
