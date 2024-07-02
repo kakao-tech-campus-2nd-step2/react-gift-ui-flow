@@ -23,7 +23,6 @@ const HeaderWrapper = styled.div`
   height: 54px;
   background-color: #fff;
   z-index: 3;
-  position: fixed;
 `;
 
 const HeaderContent = styled.div`
