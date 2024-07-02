@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Inner, Logo, Login } from '@components/Header/Header.styles';
+import { Container, Inner, Logo, Login } from './Header.styles';
 
 const Header = () => (
   <Container>
