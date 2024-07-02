@@ -10,7 +10,11 @@ export default function Footer() {
 }
 
 const FooterWrapper = styled.div`
-  display: block;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  justify-content: center;
+  align-items: center;
   width: 100vw;
   height: 137px;
   background-color: #fff;
@@ -20,7 +24,7 @@ const FooterWrapper = styled.div`
 
 const FooterContent = styled.div`
   width: 100%;
-  max-width: 100vw;
+  max-width: 1024px;
   height: 21px;
   padding: 28px 16px 88px;
 `;

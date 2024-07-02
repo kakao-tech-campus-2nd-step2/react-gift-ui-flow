@@ -19,14 +19,20 @@ export default function Header() {
 }
 
 const HeaderWrapper = styled.div`
-  width: 100vw;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 54px;
   background-color: #fff;
   z-index: 3;
 `;
 
 const HeaderContent = styled.div`
-  width: 95vw;
+  width: 100%;
+  max-width: 1024px;
   height: 54px;
   margin: 0 auto;
   display: flex;
