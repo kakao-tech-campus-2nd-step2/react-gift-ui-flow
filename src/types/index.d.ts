@@ -29,3 +29,7 @@ const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marri
 export type GiftThemeKey = typeof giftThemeKeys[number];
 
 export type ElementSize = FixedSize | 'responsive' | 'small' | 'big';
+
+export type GroupFilter = 'all' | 'men' | 'women' | 'adolescent';
+
+export type PopularityFilter = 'mostWanted' | 'mostGiven' | 'mostGivenByWish';
