@@ -5,7 +5,7 @@ import { GiftThemeKey, GroupFilter, PopularityFilter } from '@/types';
 interface FetchParams {
   groupFilter?: GroupFilter;
   popularityFilter?: PopularityFilter;
-  themeFilter?: GiftThemeKey;
+  themeFilter?: 'all' | GiftThemeKey;
 }
 
 function useFetchGifts({ groupFilter, popularityFilter, themeFilter }: FetchParams) {
