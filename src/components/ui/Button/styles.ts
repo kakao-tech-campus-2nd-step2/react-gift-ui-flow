@@ -47,14 +47,13 @@ export const sizeStyles: {
     padding: '0 2rem',
   },
   response: {
-    height: '2rem',
-    padding: '0 1rem',
+    height: '2.5rem',
+    padding: '0 14rem',
     '@media (min-width: 768px)': {
-      height: '2.5rem',
-      padding: '0 2rem',
+      height: '3.5rem',
     },
     '@media (min-width: 1024px)': {
-      padding: '0 4rem',
+      height: '4rem',
     },
   },
 };

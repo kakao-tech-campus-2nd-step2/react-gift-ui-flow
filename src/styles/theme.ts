@@ -13,6 +13,7 @@ export const colors = {
   blue: {
     100: '#E6F1FF',
     200: '#D6E5FF',
+    300: '#70A4F9',
     400: '#4584E9',
   },
   black: '#000000',

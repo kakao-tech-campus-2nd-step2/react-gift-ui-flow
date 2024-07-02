@@ -17,9 +17,9 @@
 - [x] Theme
   - [x] Theme Item 리스트
 - Rank
-  - [ ] 필터링
-  - [ ] Ranking Goods Item 리스트
-  - [ ] 더보기 버튼
+  - [x] 필터링
+  - [x] Ranking Goods Item 리스트
+  - [x] 더보기 버튼
 
 #### Theme 페이지
 

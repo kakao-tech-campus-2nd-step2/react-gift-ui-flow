@@ -5,3 +5,7 @@ export const rankTitleStyle = css({
   fontSize: '2.5rem',
   paddingTop: '4rem',
 });
+
+export const moreButtonContainerStyle = css({
+  paddingBottom: '5rem',
+});

@@ -37,6 +37,8 @@ export const contentStyle = (backgroundColor: string, height: string) =>
 export const gridStyle = (gap: number, columns: Column) => {
   const baseStyle = {
     display: 'grid',
+    width: '100%',
+    placeItems: 'center',
     gap: `${gap}px`,
   };
 
