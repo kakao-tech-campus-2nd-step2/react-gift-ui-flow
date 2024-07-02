@@ -13,3 +13,10 @@
 ## Week 2. 1단계 - 페이지 만들기
 
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+
+- [ ] Header 컴포넌트 생성
+- [ ] Footer 컴포넌트 생성
+- [ ] 메인 페이지 (/)
+- [ ] Theme 페이지(/theme/:themeKey)
+- [ ] 로그인 페이지(/login)
+- [ ] 나의 페이지(/my-account)
