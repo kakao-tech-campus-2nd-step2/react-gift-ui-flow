@@ -77,6 +77,7 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 
 ## 구현할 기능 목록
 
+## 1주차
 ### Step 1.
 
 - [x]  초기 셋업 (yarn create vite)
@@ -130,3 +131,37 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 질문 3. React에서 상태 변화가 생겼을 때 어떻게 변화를 알아챌 수 있나요?
 - 리액트에서 상태 변화는 React element들이 갖고 있는 state의 변화를 통해 감지한다. 여기서 주의할 점은 이전 state와
 변경된 state의 얕은 비교를 수행하기 때문에, state를 불변 객체로 취급해야만 상태 감지가 원활하게 될 수 있다.
+
+## 2주차
+
+- [ ]  react-router-dom 설치
+- [ ]  PageHeader, PageFooter 컴포넌트 만들기(Organisms/PageHeader, PageFooter)
+- [ ]  Page 컴포넌트 만들기
+- [ ]  HeaderSection  컴포넌트 만들기 (molecules/HeaderSection)
+    - [ ]  themeKey에 따라 label, title, description, backgroundColor가 달라지도록.
+- [ ]  GiftDisplaySection 컴포넌트 만들기
+    - [ ]  indexed?: boolean에 따라 랭킹 표시 여부 결정
+    - [ ]  maxColumns, minColumns를 받아서, 각각 가장 큰 화면에서 보여줄 선물 아이템의 최대 개수와 가장 작은 화면에서 보여줄 선물 아이템의 최소 개수를 결정. 이 값에 따라서 미디어 쿼리를 다르게 지정하도록 하면 될 것.
+- [ ]  createBrowserRouter로 라우터 모듈 만들기
+- [ ]  routing 경로를 정의하는 상수 모듈 만들기
+- [ ]  메인 페이지 만들기(`/`)
+    - [ ]  레이아웃 구성
+    - [ ]  loginState 만들기(추후에 Context API를 이용하여 별도 로 분리.)
+    - [ ]  테마 카테고리 섹션 추가(organisms/ThemeSection)
+        - [ ]  테마 카테고리 타입 작성(types/index.d.ts)
+    - [ ]  실시간 선물랭킹 섹션 추가(GiftRankingSection)
+        - [ ]  필터 타입 작성(types/index.d.ts: Filter)
+        - [ ]  선물 타입 작성(types/index.d.ts: Gift)
+        - [ ]  필터에 따른 선물 리스트를 받아오는 hook 작성(filter: Filter, Gift[])
+        - [ ]  선물 리스트 표시
+        - [ ]  접기/펼치기 구현
+- [ ]  Theme 페이지 만들기(`/theme/:themeKey`)
+    - [ ]  헤더 섹션 추가 (HeaderSection 컴포넌트 이용)
+    - [ ]  상품 목록 섹션 추가
+        - [ ]  위에서 작성한 `필터에 따른 선물 리스트를 받아오는 hook` 과 유사하게, themeKey에 따라 선물 리스트를 다르게 받아오는 hook 구현
+        - [ ]  상품 목록 표시하기
+- [ ]  로그인 페이지 만들기(`/login`)
+    - [ ]  LoginForm 컴포넌트 만들기 (organisms/LoginForm)
+        - [ ]  로그인 시 이전 페이지로 이동
+- [ ]  마이페이지 만들기(`/my-account` )
+    - [ ]  로그아웃 버튼 구현
