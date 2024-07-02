@@ -1,9 +1,10 @@
 // import React from "react";
-import { BrowserRouter , Routes, Route } from "react-router-dom";
+import { BrowserRouter , Route,Routes } from "react-router-dom";
+
 import Home from "@/pages/Home";
-import Theme from "@/pages/Theme";
 import Login from "@/pages/Login";
 import MyAccount from "@/pages/MyAccount";
+import Theme from "@/pages/Theme";
 
 const Router = () => {
 	  return (
