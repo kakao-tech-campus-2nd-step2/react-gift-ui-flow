@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Container from '../../components/Layout/Container';
-import Grid from '../../components/Layout/Grid';
-import Image from '../../components/Image/Image';
+import Container from '../../../components/Layout/Container';
+import Grid from '../../../components/Layout/Grid';
+import Image from '../../../components/Image/Image';
 import { ThemeContainer, CategoryItem, CategoryText } from './ThemeSection.styles';
 
 const themes = [
