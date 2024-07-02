@@ -12,3 +12,7 @@ export const fontsizes = {
   df: '16px',
   lg: '20px',
 };
+
+export const colors = {
+  lightGray: 'rgb(250, 250, 252)',
+};
