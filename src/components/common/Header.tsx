@@ -10,10 +10,12 @@ const StyledHeader = styled.header`
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 const StyledInner = styled.div`
   width: 100%;
+  margin: 0 16px;
   max-width: 1024px;
   display: flex;
   justify-content: space-between;

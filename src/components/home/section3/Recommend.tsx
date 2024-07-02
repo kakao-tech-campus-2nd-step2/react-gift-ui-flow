@@ -15,6 +15,7 @@ const StyledInner = styled(InnerStyle)`
   flex-direction: column;
   align-items: center;
   padding: 16px 0;
+  margin: 0 16px;
   border-radius: 8px;
   background-color: rgb(254, 235, 0);
 

@@ -9,11 +9,12 @@ const RecommendContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 16px 80px;
 `;
 
 const RecommendInner = styled(InnerStyle)`
   display: flex;
+  width: 100%;
+  padding: 0px 16px 80px;
   flex-direction: column;
   -webkit-box-pack: start;
   justify-content: flex-start;

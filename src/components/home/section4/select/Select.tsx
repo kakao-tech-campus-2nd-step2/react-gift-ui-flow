@@ -6,7 +6,6 @@ import { SelectBtn1, SelectBtn2 } from './SelectBtn';
 
 const SelectContainer = styled.div`
   width: 100%;
-  padding: 20px 0px 7px;
   display: flex;
   flex-direction: column;
   justify-content: center;
