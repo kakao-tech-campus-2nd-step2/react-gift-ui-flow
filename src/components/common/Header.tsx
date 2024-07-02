@@ -6,7 +6,6 @@ const StyledHeader = styled.header`
   z-index: 9999;
   width: 100%;
   max-width: 100vw;
-  height: 54px;
   background-color: rgb(255, 255, 255);
   padding: 0px 16px;
   display: flex;
@@ -36,6 +35,7 @@ const StyledLinkText = styled(Link)`
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
+  outline: none;
 `;
 
 const Header = () => {
