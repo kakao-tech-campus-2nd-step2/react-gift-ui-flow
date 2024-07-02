@@ -5,7 +5,7 @@ import { RankingBadgeProps } from '@/types';
 export const GoodsItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 120px;
+  width: 100%;
   gap: 6px;
   position: relative;
 `;
