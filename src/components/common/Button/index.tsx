@@ -23,7 +23,7 @@ const Wrapper = styled.button<Pick<Props, 'theme' | 'size'>>(
   },
   ({ size = 'responsive' }) => {
     const largeStyle = {
-      height: '60px',
+      height: '85px',
       fontSize: '16px',
     };
 

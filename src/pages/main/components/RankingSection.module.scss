@@ -1,0 +1,21 @@
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-weight: 600;
+  padding: 25px;
+}
+
+.rankingGrid {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.rankingButton {
+  width: 60%;
+  margin-bottom: 50px;
+}
