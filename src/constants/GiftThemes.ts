@@ -1,9 +1,4 @@
-interface GiftTheme {
-  title: string;
-  subtitle: string;
-  keyword: string;
-  themeImageSrc: string;
-}
+import { GiftTheme } from '@dto/GiftTheme';
 
 const giftThemeKeys = ['birthday', 'graduation', 'smallluxury', 'luxury', 'marriage', 'warm',
   'small', 'fan', 'exchange', 'health', 'grocery', 'kids'];
