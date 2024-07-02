@@ -2,14 +2,7 @@ import Image from '@components/atoms/image/Image';
 import {
   Amount, GoodsItemWrapper, RankingBadge, Subtitle, Title,
 } from './GoodsItems.styles';
-
-interface GoodsItemProps {
-  rankingIndex?: number,
-  imageSrc: string,
-  subtitle: string,
-  title: string,
-  amount: number,
-}
+import { GoodsItemProps } from '@/types';
 
 function GoodsItem({
   rankingIndex, imageSrc, subtitle, title, amount,
