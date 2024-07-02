@@ -1,4 +1,5 @@
-import { Container } from '../ui/Layout/Container';
+import { Container } from '@/components/ui/Layout/Container';
+
 import { rankTitleStyle } from './styles';
 
 export const RankTitle = () => {

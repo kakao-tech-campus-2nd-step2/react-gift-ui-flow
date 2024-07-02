@@ -1,7 +1,8 @@
 import { useRankList } from '@/context/rankList/useRankList';
 
-import { Button } from '../ui/Button/Button';
-import { Container } from '../ui/Layout/Container';
+import { Button } from '@/components/ui/Button/Button';
+import { Container } from '@/components/ui/Layout/Container';
+
 import { moreButtonContainerStyle } from './styles';
 
 export const ShowMoreButton = () => {

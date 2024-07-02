@@ -1,4 +1,4 @@
-import { ReactNode, useCallback, useMemo, useState } from 'react';
+import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useFilter } from '@/context/filter/useFilter';
 
@@ -14,6 +14,9 @@ export const RankListProvider = ({ children }: { children: ReactNode }) => {
 
   const [visibleItemCount, setVisibleItemCount] = useState(INITIAL_ITEMS_COUNT);
 
+  const visibleItems = filteredData.slice(0, visibleItemCount);
+  const isExpanded = visibleItemCount >= filteredData.length;
+
   const handleShowMore = useCallback(() => {
     setVisibleItemCount(filteredData.length);
   }, [filteredData.length]);
@@ -22,8 +25,9 @@ export const RankListProvider = ({ children }: { children: ReactNode }) => {
     setVisibleItemCount(INITIAL_ITEMS_COUNT);
   }, []);
 
-  const visibleItems = filteredData.slice(0, visibleItemCount);
-  const isExpanded = visibleItemCount >= filteredData.length;
+  useEffect(() => {
+    setVisibleItemCount(INITIAL_ITEMS_COUNT);
+  }, [userFilter, giftFilter]);
 
   const contextValue = useMemo(
     () => ({
