@@ -14,6 +14,10 @@ export interface GoodsItemProps {
   amount: number,
 }
 
+export interface RankingBadgeProps {
+  rankingIndex?: number;
+}
+
 export interface FixedSize {
   width: string,
   height: string,
