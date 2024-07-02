@@ -18,6 +18,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
   return (
     <header css={css`
         position: fixed;
+        top: 0;
         left: 0;
         right: 0;
         padding: 0 16px;
