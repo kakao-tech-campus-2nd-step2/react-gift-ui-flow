@@ -1,9 +1,7 @@
 import Container from '@components/atoms/container/Container';
 import { backgroundColors } from '@styles/colors';
-import GiftThemes from '@constants/GiftThemes';
+import GiftThemes, { GiftThemeKey } from '@constants/GiftThemes';
 import { ThemeName, ThemeSubtitle, ThemeTitle } from './Banner.styles';
-
-type GiftThemeKey = keyof typeof GiftThemes;
 
 interface BannerProps {
   themeKey: GiftThemeKey;
@@ -16,7 +14,7 @@ function Banner({ themeKey }: BannerProps) {
     <Container backgroundColor={backgroundColors.containerDark} cssProps={{ padding: '50px 20px' }}>
       <Container maxWidth="1100px" flexDirection="column">
         <ThemeName>
-          {themeKey}
+          {themeTexts.keyword}
         </ThemeName>
         <ThemeTitle>
           {themeTexts.title}
