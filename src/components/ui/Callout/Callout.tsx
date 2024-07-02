@@ -5,12 +5,14 @@ import { calloutStyles } from './styles';
 interface ButtonProps extends ContainerProps {
   theme?: 'kakao' | 'skyblue';
   radius?: number | 'circle';
+  isActive?: boolean;
 }
 
 export const Callout = ({
   children,
   theme = 'kakao',
   radius = 8,
+  isActive = false,
   flexDirection,
   justifyContent,
   alignItems,
@@ -23,7 +25,7 @@ export const Callout = ({
       justifyContent={justifyContent}
       alignItems={alignItems}
       gap={gap}
-      css={calloutStyles(theme, radius)}
+      css={calloutStyles(theme, radius, isActive)}
       {...props}
     >
       {children}
