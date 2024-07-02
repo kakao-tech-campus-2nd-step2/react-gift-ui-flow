@@ -5,12 +5,12 @@ const HeaderContainer = styled.header`
   background-color: #fff;
   color: #333;
   padding: 10px 20px;
-  font-size: 10px;
-  font-weight: 700;
 `;
 
 const Title = styled.h1`
-  margin: 0;
+  margin-top: 15px;
+  font-weight: 900;
+  font-size: 18px;
 `;
 
 const Header: React.FC = () => {

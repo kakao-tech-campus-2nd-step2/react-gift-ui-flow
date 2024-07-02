@@ -40,9 +40,13 @@ const MainContainer = styled.main`
   background-color: #fff;
   color: #333;
   padding: 10px 20px;
-  font-size: 20px;
-  font-weight: 200;
-  width: 100%;
+  p{
+    font-size: 18px;
+    font-weight: 200;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 const ThemeLink = styled(Link)`
@@ -84,6 +88,13 @@ const RecommendationHeader = styled.h2`
   color: #aaa;
   font-size: 14px;
 `;
+
+const RankingContainerHeader = styled.h3`
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 900;
+`;
+
 const FilterGrid = styled(Grid)`
   margin-top: 10px;
   gap: 10px;
@@ -96,7 +107,7 @@ const RankingContainer = styled.div`
 const FilterButton = styled.button<{ active: boolean }>`
   padding: 10px 20px;
   background-color: #fff;
-  font-size: 14px;
+  font-size: 16px;
   color: ${props => (props.active ? '#007bff' : '#333')};
   font-weight: ${props => (props.active ? 'bold' : 'normal')};
   cursor: pointer;
@@ -151,7 +162,7 @@ const RankingItem = styled.div<{ active: boolean }>`
         <p>선물을 추천받고 싶은 친구를 선택해주세요.</p>
       </RecommendationContainer>
       <RankingContainer>
-        <h3>실시간 급상승 선물랭킹</h3>
+        <RankingContainerHeader>실시간 급상승 선물랭킹</RankingContainerHeader>
         <FilterGrid columns={4} gap={10}>
           <FilterButton
             active={activeFilter === '전체'}
