@@ -24,6 +24,17 @@ const Main: React.FC = () => {
   ];
 
   const [activeFilter, setActiveFilter] = useState('전체');
+  const [activeRankingItem, setActiveRankingItem] = useState('r1');
+
+  const handleRankingItemClick = (key: string) => {
+    setActiveRankingItem(key);
+  };
+
+  const rankingItems = [
+    { key: 'r1', name: '받고 싶어한' },
+    { key: 'r2', name: '많이 선물한' },
+    { key: 'r3', name: '위시로 받은' },
+  ];
 
 const MainContainer = styled.main`
   background-color: #fff;
@@ -78,11 +89,6 @@ const FilterGrid = styled(Grid)`
   gap: 10px;
 `;
 
-const RankingGrid = styled(Grid)`
-  margin-top: 10px;
-  gap: 10px;
-`;
-
 const RankingContainer = styled.div`
   margin-top: 20px;
 `;
@@ -101,19 +107,26 @@ const FilterButton = styled.button<{ active: boolean }>`
     color: #007bff;
   }
 `;
-
-const RankingButton = styled.div`
+const RankingBox = styled.div`
   padding: 10px;
-  background-color: #fff;
+  background-color: #e0f7fa;
   border-radius: 8px;
-  margin-bottom: 10px;
-  text-align: center;
-  font-size: 14px;
-  transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  margin-right: 15px;
+  gap: 10px;
+`;
 
-  &:hover {
-    background-color: #fff;
-  }
+const RankingItem = styled.div<{ active: boolean }>`
+  padding: 6px;
+  background-color: #e0f7fa;
+  color: #007bff;
+  font-weight: ${props => (props.active ? 'bold' : 'normal')};
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
 `;
 
   return (
@@ -165,17 +178,17 @@ const RankingButton = styled.div`
             청소년이
           </FilterButton>
         </FilterGrid>
-        <RankingGrid columns={3} gap={5}>
-          <RankingButton>
-            active={activeFilter === '받고 싶어한'}
-          </RankingButton>
-          <RankingButton>
-            active={activeFilter === '많이 선물한'}
-          </RankingButton>
-          <RankingButton>
-            active={activeFilter === '위시로 받은'}
-          </RankingButton>
-        </RankingGrid>
+        <RankingBox>
+          {rankingItems.map(item => (
+            <RankingItem
+              key={item.key}
+              active={activeRankingItem === item.key}
+              onClick={() => handleRankingItemClick(item.key)}
+            >
+              {item.name}
+            </RankingItem>
+          ))}
+        </RankingBox>
       </RankingContainer>
     </div>
   );
