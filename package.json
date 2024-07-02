@@ -6,6 +6,8 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write '**/*.{ts,tsx}'",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
