@@ -9,7 +9,7 @@ export default meta;
 
 type Story = StoryObj<typeof Banner>;
 
-export const DefaultFooter: Story = {
+export const DefaultBanner: Story = {
   args: {
     themeKey: '가벼운선물',
   },
