@@ -25,6 +25,10 @@ const StyledBtn1 = styled.button<IStyledBtn>`
   cursor: pointer;
   outline: none;
 
+  @media (max-width: 768px) {
+    min-width: 58px;
+  }
+
   div {
     width: 60px;
     height: 60px;
@@ -37,6 +41,13 @@ const StyledBtn1 = styled.button<IStyledBtn>`
     color: rgb(255, 255, 255);
     background-color: ${(props) => props.color || 'rgb(230, 241, 255)'};
     transition: background-color 200ms ease 0s;
+
+    @media (max-width: 768px) {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      font-size: 14px;
+    }
   }
 
   p {
@@ -48,6 +59,11 @@ const StyledBtn1 = styled.button<IStyledBtn>`
     transition:
       color 200ms ease 0s,
       font-weight 200ms ease 0s;
+    @media (max-width: 768px) {
+      padding: 5px 0px;
+      font-size: 14px;
+      line-height: 16px;
+    }
   }
 `;
 
@@ -64,6 +80,12 @@ const StyledBtn2 = styled.button<IStyledBtn2>`
   border: 0;
   cursor: pointer;
   outline: none;
+
+  @media (max-width: 768px) {
+    padding: 13px 20px;
+    font-size: 16px;
+    line-height: 16px;
+  }
 `;
 
 export const SelectBtn1 = ({ type1, type2, color, onClick }: IStyledBtn) => {

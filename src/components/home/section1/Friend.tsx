@@ -8,6 +8,11 @@ const StyledFriend = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 768px) {
+    height: 76px;
+    padding: 0 16px;
+  }
 `;
 
 const StyledInner = styled(InnerStyle)`
@@ -19,6 +24,15 @@ const StyledInner = styled(InnerStyle)`
     height: 70px;
     border-radius: 24px;
     cursor: pointer;
+
+    @media (max-width: 768px) {
+      object-fit: cover;
+      object-position: center center;
+      aspect-ratio: auto;
+      width: 40px;
+      height: 40px;
+      border-radius: 16px;
+    }
   }
   p {
     font-size: 28px;
@@ -26,6 +40,11 @@ const StyledInner = styled(InnerStyle)`
     font-weight: 500;
     line-height: 35px;
     padding-left: 16px;
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+      line-height: 22px;
+    }
   }
 `;
 

@@ -11,6 +11,10 @@ const StyledTheme = styled.section`
   align-items: center;
 
   padding: 45px 0 24px 0;
+
+  @media (max-width: 768px) {
+    padding: 14px 14px 3px;
+  }
 `;
 
 const GridContainer = styled(InnerStyle)`

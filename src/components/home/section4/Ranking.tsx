@@ -26,6 +26,12 @@ const RecommendInner = styled(InnerStyle)`
     font-size: 35px;
     line-height: 50px;
     font-weight: 700;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      font-size: 20px;
+      line-height: 30px;
+    }
   }
 `;
 

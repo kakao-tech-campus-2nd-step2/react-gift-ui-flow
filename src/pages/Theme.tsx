@@ -16,17 +16,21 @@ const HeaderSection = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   background-color: rgb(75, 77, 80);
+  margin: 0 50px;
 `;
 
 const Inner = styled(InnerStyle)`
-  padding: 50px 20px;
+  padding: 27px 50px 23px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
+  @media (min-width: 768px) {
+  padding: 50px 50px;
+  }
 
   & > p:nth-of-type(1) {
     font-size: 20px;
@@ -50,6 +54,20 @@ const Inner = styled(InnerStyle)`
     line-height: 32px;
     color: rgba(255, 255, 255, 0.55);
     word-break: break-all;
+  }
+  @media (max-width: 768px) {
+    h1 {
+    font-size: 18px;
+    line-height: 26px;
+    }
+    & > p:nth-of-type(1) {
+    font-size: 13px;
+    line-height: 16px;
+    }
+    & > p:nth-of-type(2) {
+padding-top: 5px;
+    font-size: 14px;
+    line-height: 20px;
   }
 `;
 

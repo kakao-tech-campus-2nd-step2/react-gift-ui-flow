@@ -42,6 +42,14 @@ const FirstSpan = styled.span<FirstSpanProps>`
   left: 4px;
   color: rgb(255, 255, 255);
   background-color: ${(props) => (props.top3 ? 'rgb(253, 115, 100)' : 'rgb(187, 187, 187)')};
+
+  @media (max-width: 768px) {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
 `;
 
 const TextContainer = styled.div`

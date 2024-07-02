@@ -24,6 +24,10 @@ const ThemeItemContainer = styled.div`
   flex-direction: column;
   justify-content: center;
 
+  @media (max-width: 768px) {
+    padding: 13px 0px 12px;
+  }
+
   img {
     max-width: 90px;
     max-height: 90px;
@@ -33,12 +37,24 @@ const ThemeItemContainer = styled.div`
     aspect-ratio: auto;
     width: 100%;
     height: 100%;
+
+    @media (max-width: 768px) {
+      max-width: 50px;
+      max-height: 50px;
+      border-radius: 18px;
+    }
   }
 
   p {
     padding-top: 7px;
     font-size: 16px;
     line-height: 28px;
+
+    @media (max-width: 768px) {
+      padding-top: 5px;
+      font-size: 13px;
+      line-height: 17px;
+    }
   }
 `;
 

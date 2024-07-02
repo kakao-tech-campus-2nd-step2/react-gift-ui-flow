@@ -16,8 +16,11 @@ const LoginFormContainer = styled.div`
 `;
 
 const StyledLoginForm = styled.article`
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  padding: 60px 52px;
+  @media (min-width: 768px) {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    padding: 60px 52px;
+  }
+
   width: 100%;
   max-width: 580px;
   box-sizing: border-box;
@@ -49,6 +52,13 @@ const StyledInput = styled.input`
   &:focus {
     border-color: rgb(37, 37, 37);
   }
+
+  @media (max-width: 768px) {
+    min-height: 42px;
+    font-size: 15px;
+    line-height: 1.5;
+    padding: 9px 0px;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -63,9 +73,13 @@ const StyledButton = styled.button`
   transition: background-color 200ms ease 0s;
   color: rgb(17, 17, 17);
   background-color: rgb(254, 229, 0);
-
   &:hover {
     background-color: rgb(250, 218, 10);
+  }
+
+  @media (max-width: 768px) {
+    height: 40px;
+    font-size: 15px;
   }
 `;
 

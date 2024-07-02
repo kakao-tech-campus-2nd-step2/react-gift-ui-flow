@@ -11,6 +11,7 @@ const Inner = styled(InnerStyle)`
 
 const GridContainer = styled.div`
   padding: 40px 16px 360px;
+  margin: 0 30px;
   width: 100%;
   display: grid;
   gap: 16px;

@@ -16,6 +16,9 @@ const GridContainer = styled.div`
   @media (max-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const PlusBtnContainer = styled.div`
@@ -39,6 +42,11 @@ const PlusBtnContainer = styled.div`
     color: rgb(17, 17, 17);
     &:hover {
       background-color: rgb(248, 248, 248);
+    }
+
+    @media (max-width: 768px) {
+      height: 40px;
+      font-size: 15px;
     }
   }
 `;

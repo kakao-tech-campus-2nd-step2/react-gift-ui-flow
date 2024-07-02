@@ -24,6 +24,10 @@ const SelectBtn2Container = styled.div`
   border: 1px solid rgba(70, 132, 233, 0.1);
   background-color: rgb(230, 241, 255);
   border-radius: 12px;
+
+  @media (max-width: 768px) {
+    border-radius: 8px;
+  }
 `;
 
 const btnConfig1 = [
