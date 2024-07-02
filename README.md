@@ -21,8 +21,8 @@
 - [x] react router dom 세팅
 
 - 공통 컴포넌트 만들기
-	- [ ] Header
-	- [ ] Footer
+	- [x] Header
+	- [x] Footer
 
 - 페이지 만들기
 	- 메인 페이지 (/)
