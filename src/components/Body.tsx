@@ -1,14 +1,16 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import SelectFriend from './\bBodyComponents/SelectFriend';
-import Theme from './\bBodyComponents/Theme';
+import RecommendPresent from './BodyComponents/RecommendPresent';
+import SelectFriend from './BodyComponents/SelectFriend';
+import Theme from './BodyComponents/Theme';
 
 const Body: React.FC = () => {
   return (
     <BodyContainer>
       <SelectFriend />
       <Theme />
+      <RecommendPresent />
     </BodyContainer>
   );
 };

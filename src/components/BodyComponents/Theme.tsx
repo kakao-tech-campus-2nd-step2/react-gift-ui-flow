@@ -46,6 +46,7 @@ const ThemeLink = styled(Link)`
   flex-direction: column;
   text-align: center;
   align-items: center;
+  text-decoration: none;
 `;
 
 const ThemeImage = styled.img`
@@ -55,11 +56,10 @@ const ThemeImage = styled.img`
 `;
 
 const Label = styled.div`
-  margin-top: 8px;
-  font-size: 16px;
-  text-align: center;
-  color: #000;
-  text-decoration: none;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 17px;
+  color: rgb(51, 51, 51);
 `;
 
 export default Theme;
