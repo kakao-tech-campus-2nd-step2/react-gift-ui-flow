@@ -33,7 +33,7 @@ export const textColors = {
 export const backgroundColors = {
   badge: '#ff8d8d',
   root: '#e5e5ea',
-  container: '#f4f5f9',
+  container: '#ffffff',
   primary: '#fee500',
   primaryDark: '#FFD900',
 };
