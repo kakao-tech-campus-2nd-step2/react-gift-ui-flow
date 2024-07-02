@@ -31,7 +31,8 @@ export const textColors = {
 };
 
 export const backgroundColors = {
-  badge: '#ff8d8d',
+  badge: '#bbbbbb',
+  badgePrimary: '#ff8d8d',
   root: '#f9f9fd',
   container: '#ffffff',
   containerDark: '#4B4D50',
