@@ -1,7 +1,7 @@
-import ElementSize, { FixedSize } from '@styles/size';
 import { css } from '@emotion/react';
 import { ButtonHTMLAttributes } from 'react';
 import { buttonColors, buttonHoverColors, buttonTextColors } from '@styles/colors';
+import { ElementSize, FixedSize } from '@/types';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme: 'kakao' | 'naver' | 'black' | 'lightGray' | 'darkGray';

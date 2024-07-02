@@ -1,0 +1,22 @@
+import { ReactNode } from 'react';
+import PageHeader from '@components/organisms/semantic/header/PageHeader';
+import PageFooter from '@components/organisms/semantic/footer/PageFooter';
+import Container from '@components/atoms/container/Container';
+
+interface PageProps {
+  children?: ReactNode;
+}
+
+function Page({ children }: PageProps) {
+  return (
+    <>
+      <PageHeader displayLogo />
+      <Container cssProps={{ marginTop: '54px' }}>
+        {children}
+      </Container>
+      <PageFooter />
+    </>
+  );
+}
+
+export default Page;
