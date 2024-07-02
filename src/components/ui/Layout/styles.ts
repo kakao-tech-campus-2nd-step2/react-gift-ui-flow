@@ -15,10 +15,21 @@ export const containerStyle = (
 ) =>
   css({
     display: 'flex',
+    width: '100%',
     maxWidth,
     flexDirection,
     justifyContent,
     alignItems,
+  });
+
+export const contentStyle = (backgroundColor: string, height: string) =>
+  css({
+    padding: `0 1rem`,
+    backgroundColor,
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100vw',
+    height,
   });
 
 export const gridStyle = (gap: number, columns: Column) => {

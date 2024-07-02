@@ -4,7 +4,7 @@ import { AlignItems, FlexDirection, JustifyContent } from '@/types/uiTypes';
 
 import { containerStyle } from './styles';
 
-interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
   maxWidth?: string;
   flexDirection?: FlexDirection;
