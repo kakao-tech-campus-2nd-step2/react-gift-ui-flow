@@ -1,6 +1,5 @@
 import { CSSProperties, ReactNode } from 'react';
 import { css, CSSObject } from '@emotion/react';
-import { backgroundColors } from '@styles/colors';
 import { FixedSize } from '@/types';
 
 interface ContainerProps {
@@ -26,7 +25,7 @@ function Container({
     flexDirection,
     justifyContent,
     alignItems,
-    backgroundColor: backgroundColor ?? backgroundColors.container,
+    backgroundColor: backgroundColor || 'transparent',
     ...cssProps,
   };
 
