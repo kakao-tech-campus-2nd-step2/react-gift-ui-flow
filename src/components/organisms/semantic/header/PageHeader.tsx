@@ -2,6 +2,7 @@ import Container from '@components/atoms/container/Container';
 import { css } from '@emotion/react';
 import headerLogo from '@assets/images/header_logo.png';
 import styled from '@emotion/styled';
+import { HEADER_HEIGHT } from '@styles/size';
 
 interface PageHeaderProps {
   isLoggedIn?: boolean;
@@ -25,7 +26,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
         z-index: 9999;
     `}
     >
-      <Container elementSize={{ height: '54px', width: '100%' }} justifyContent={displayLogo ? 'space-between' : 'flex-end'}>
+      <Container elementSize={{ height: HEADER_HEIGHT, width: '100%' }} justifyContent={displayLogo ? 'space-between' : 'flex-end'}>
         {displayLogo
           ? (
             <img
