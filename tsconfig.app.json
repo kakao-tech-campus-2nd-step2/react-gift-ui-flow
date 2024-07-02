@@ -36,8 +36,9 @@
       "@utils/*": ["utils/*"],
       "@types/*": ["types/*"],
       "@pages/*": ["pages/*"],
-      "@dto/*": ["dto/*"],
+      "@dto/*": ["dto/"],
       "@hooks/*": ["hooks/*"],
+      "@router": ["router/"]
     }
   },
   "include": ["src"]
