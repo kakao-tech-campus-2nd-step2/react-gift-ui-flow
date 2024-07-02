@@ -1,7 +1,8 @@
+import Friend from '@/components/home/section1/Friend';
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <Friend />
     </div>
   );
 };
