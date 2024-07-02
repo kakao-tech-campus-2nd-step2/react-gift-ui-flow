@@ -1,9 +1,11 @@
 import React from 'react';
-import { Container, Text } from './Footer.styles';
+import { Container, Inner, Text } from './Footer.styles';
 
 const Footer = () => (
   <Container>
-    <Text>카카오톡 선물하기</Text>
+    <Inner>
+      <Text>카카오톡 선물하기</Text>
+    </Inner>
   </Container>
 );
 
