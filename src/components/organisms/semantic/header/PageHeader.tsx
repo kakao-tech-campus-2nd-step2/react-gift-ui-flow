@@ -2,7 +2,7 @@ import Container from '@components/atoms/container/Container';
 import { css } from '@emotion/react';
 import headerLogo from '@assets/images/header_logo.png';
 import styled from '@emotion/styled';
-import { HEADER_HEIGHT } from '@styles/size';
+import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '@styles/size';
 
 interface PageHeaderProps {
   isLoggedIn?: boolean;
@@ -24,9 +24,15 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
         right: 0;
         padding: 0 16px;
         z-index: 9999;
+        display: flex;
+        justify-content: center;
     `}
     >
-      <Container elementSize={{ height: HEADER_HEIGHT, width: '100%' }} justifyContent={displayLogo ? 'space-between' : 'flex-end'}>
+      <Container
+        elementSize={{ height: HEADER_HEIGHT, width: '100%' }}
+        justifyContent={displayLogo ? 'space-between' : 'flex-end'}
+        maxWidth={MAX_CONTENT_WIDTH}
+      >
         {displayLogo
           ? (
             <img
