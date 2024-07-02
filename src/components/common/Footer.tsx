@@ -3,16 +3,18 @@ import styled from '@emotion/styled';
 import InnerStyle from '@/styles/innerStyle';
 
 const StyledFooter = styled.footer`
-  padding: 28px 16px 88px;
+  padding: 40px 16px 120px;
   width: 100%;
   max-width: 100vw;
   background-color: rgb(250, 250, 252);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const StyledP = styled(InnerStyle)`
   display: flex;
   flex-direction: column;
-  -webkit-box-pack: start;
   justify-content: flex-start;
   align-items: flex-start;
 `;
