@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
@@ -22,6 +22,8 @@ const Main: React.FC = () => {
     { key: 'theme11', name: '과일/한우', imgSrc: 'https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png' },
     { key: 'theme12', name: '출산/키즈', imgSrc: 'https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png' },
   ];
+
+  const [activeFilter, setActiveFilter] = useState('전체');
 
 const MainContainer = styled.main`
   background-color: #fff;
@@ -71,6 +73,48 @@ const RecommendationHeader = styled.h2`
   color: #aaa;
   font-size: 14px;
 `;
+const FilterGrid = styled(Grid)`
+  margin-top: 10px;
+  gap: 10px;
+`;
+
+const RankingGrid = styled(Grid)`
+  margin-top: 10px;
+  gap: 10px;
+`;
+
+const RankingContainer = styled.div`
+  margin-top: 20px;
+`;
+
+const FilterButton = styled.button<{ active: boolean }>`
+  padding: 10px 20px;
+  background-color: #fff;
+  font-size: 14px;
+  color: ${props => (props.active ? '#007bff' : '#333')};
+  font-weight: ${props => (props.active ? 'bold' : 'normal')};
+  cursor: pointer;
+  transition: color 0.3s;
+  outline: none;
+
+  &:hover {
+    color: #007bff;
+  }
+`;
+
+const RankingButton = styled.div`
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 14px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #fff;
+  }
+`;
 
   return (
     <div>
@@ -93,6 +137,46 @@ const RecommendationHeader = styled.h2`
         <RecommendationHeader>AI가 추천하는 선물</RecommendationHeader>
         <p>선물을 추천받고 싶은 친구를 선택해주세요.</p>
       </RecommendationContainer>
+      <RankingContainer>
+        <h3>실시간 급상승 선물랭킹</h3>
+        <FilterGrid columns={4} gap={10}>
+          <FilterButton
+            active={activeFilter === '전체'}
+            onClick={() => setActiveFilter('전체')}
+          >
+            전체
+          </FilterButton>
+          <FilterButton
+            active={activeFilter === '여성이'}
+            onClick={() => setActiveFilter('여성이')}
+          >
+            여성이
+          </FilterButton>
+          <FilterButton
+            active={activeFilter === '남성이'}
+            onClick={() => setActiveFilter('남성이')}
+          >
+            남성이
+          </FilterButton>
+          <FilterButton
+            active={activeFilter === '청소년이'}
+            onClick={() => setActiveFilter('청소년이')}
+          >
+            청소년이
+          </FilterButton>
+        </FilterGrid>
+        <RankingGrid columns={3} gap={5}>
+          <RankingButton>
+            active={activeFilter === '받고 싶어한'}
+          </RankingButton>
+          <RankingButton>
+            active={activeFilter === '많이 선물한'}
+          </RankingButton>
+          <RankingButton>
+            active={activeFilter === '위시로 받은'}
+          </RankingButton>
+        </RankingGrid>
+      </RankingContainer>
     </div>
   );
 };
