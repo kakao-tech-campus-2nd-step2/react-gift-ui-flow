@@ -1,18 +1,22 @@
 import styled from '@emotion/styled';
+import React from 'react';
 
-const MainPage = () => {
-  const name = 'Josh Perez';
+import Header from '@/components/Header';
 
+const MainPage: React.FC = () => {
   return (
-    <div>
-      <Title>Hello, {name}. This is main page.</Title>
-    </div>
+    <PageContainer>
+      <Header />
+    </PageContainer>
   );
 };
 
 export default MainPage;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+  background: rgb(250, 250, 250);
 `;

@@ -8,10 +8,10 @@
 
 ## Url Path별로 페이지 만들기
 
-- [ ] 메인 페이지 (`/`)
-- [ ] Theme 페이지(`/theme/:themeKey`)
-- [ ] 로그인 페이지 (`/login`)
-- [ ] 나의 페이지 (`/my-account`)
+- [x] 메인 페이지 (`/`)
+- [x] Theme 페이지(`/theme/:themeKey`)
+- [x] 로그인 페이지 (`/login`)
+- [x] 나의 페이지 (`/my-account`)
 
 ## 세부사항 구현하기
 
