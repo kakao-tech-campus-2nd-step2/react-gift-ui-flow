@@ -57,7 +57,7 @@ const RankingItemList = () => {
     <ItemListContainer>
       <GridContainer>
         {ItemList.map((index) => (
-          <RankingItem key={index} index={index} />
+          <RankingItem key={index} index={index} showSpan={true} />
         ))}
       </GridContainer>
       <PlusBtnContainer>
