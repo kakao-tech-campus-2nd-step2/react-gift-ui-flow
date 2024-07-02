@@ -1,22 +1,15 @@
-import { Button } from './components/common/Button';
-import styled from '@emotion/styled';
-import Header from './components/common/Header/Header';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Mainpage from './pages/Mainpage';
 
 const App = () => {
-  const name = 'Josh Perez';
-
   return (
-    <div>
-      <Header></Header>
-      <Title>Hello, {name}</Title>
-      <Button theme="kakao">버튼</Button>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Mainpage />} />
+        {/* Add more routes here */}
+      </Routes>
+    </BrowserRouter>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
