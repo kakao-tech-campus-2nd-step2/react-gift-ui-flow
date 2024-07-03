@@ -6,12 +6,13 @@ import { HEADER_HEIGHT } from '@styles/size';
 
 interface PageProps {
   children?: ReactNode;
+  isLoggedIn?: boolean;
 }
 
-function Page({ children }: PageProps) {
+function Page({ children, isLoggedIn }: PageProps) {
   return (
     <>
-      <PageHeader displayLogo />
+      <PageHeader displayLogo isLoggedIn={isLoggedIn} />
       <Container cssProps={{ marginTop: HEADER_HEIGHT }} flexDirection="column" alignItems="center">
         {children}
       </Container>
