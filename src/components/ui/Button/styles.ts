@@ -44,7 +44,7 @@ export const sizeStyles: {
   },
   large: {
     height: '2.25rem',
-    padding: '0 2rem',
+    padding: '0 4rem',
   },
   response: {
     height: '2.5rem',
