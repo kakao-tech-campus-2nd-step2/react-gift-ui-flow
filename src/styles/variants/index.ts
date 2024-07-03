@@ -16,4 +16,6 @@ export const fontsizes = {
 export const colors = {
   lightGray: 'rgb(250, 250, 252)',
   white: 'rgb(255, 255, 255)',
+  blue: 'rgb(70, 132, 233)',
+  skyBlue: 'rgb(230, 241, 255)',
 };
