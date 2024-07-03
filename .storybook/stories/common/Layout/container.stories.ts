@@ -1,9 +1,8 @@
+import Container from '@components/common/Layout/Container';
 import type { Meta, StoryObj } from '@storybook/react/*';
 
-import Container from './index';
-
 const meta = {
-  title: 'Example/Layout/Container',
+  title: 'Common/Layout/Container',
   component: Container,
   parameters: {
     layout: 'centered',

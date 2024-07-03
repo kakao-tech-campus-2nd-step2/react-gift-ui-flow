@@ -3,7 +3,7 @@
 
 import '@styles/goodsItem.css';
 
-import GoodsItem from '@components/common/GoodsItem';
+import GoodsItem from './GoodsItem';
 
 type RankGoodsItemProps = {
   rankingIndex: number;

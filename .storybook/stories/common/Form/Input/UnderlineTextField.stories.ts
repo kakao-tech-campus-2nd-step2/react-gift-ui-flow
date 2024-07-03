@@ -1,11 +1,10 @@
+import UnderlineTextField from '@components/common/Form/Input/UnderlintTextField';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import Input from './index';
-
 const meta = {
-  title: 'Example/Input',
-  component: Input,
+  title: 'Common/Form/Input/UnderlineTextField',
+  component: UnderlineTextField,
   parameters: {
     layout: 'centered',
   },
@@ -23,7 +22,7 @@ const meta = {
     },
   },
   args: { onClick: fn() },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof UnderlineTextField>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

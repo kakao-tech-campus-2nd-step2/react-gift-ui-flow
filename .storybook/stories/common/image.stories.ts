@@ -1,10 +1,9 @@
+import Image from '@components/common/Image';
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import Image from './index';
-
 const meta = {
-  title: 'Example/Image',
+  title: 'Common/Image',
   component: Image,
   parameters: {
     layout: 'centered',

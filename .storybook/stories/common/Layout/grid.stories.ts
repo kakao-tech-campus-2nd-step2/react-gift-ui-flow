@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react/*';
 
-import Grid from './index';
 import NumberColumns from './NumberColumns';
+import Grid from '@components/common/Layout/Grid';
 
 const meta = {
-  title: 'Example/Layout/Grid',
+  title: 'Common/Layout/Grid',
   component: Grid,
   parameters: {
     layout: 'padded',

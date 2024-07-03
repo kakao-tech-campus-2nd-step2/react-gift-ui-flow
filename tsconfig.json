@@ -17,6 +17,17 @@
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["src", ".eslintrc.cjs"],
+  "include": [
+    "src",
+    ".eslintrc.cjs",
+    ".storybook/stories/common/button.stories.ts",
+    ".storybook/stories/common/GoodsItem/DefaultGoodsItem.stories.ts",
+    ".storybook/stories/common/GoodsItem/RankGoodsItem.stories.ts",
+    ".storybook/stories/common/image.stories.ts",
+    ".storybook/stories/common/Form/Input/UnderlineTextField.stories.ts",
+    ".storybook/stories/common/Layout/container.stories.ts",
+    ".storybook/stories/common/Layout/grid.stories.ts",
+    ".storybook/stories/common/Layout/NumberColumns.tsx"
+  ],
   "extends": "./tsconfig.paths.json"
 }

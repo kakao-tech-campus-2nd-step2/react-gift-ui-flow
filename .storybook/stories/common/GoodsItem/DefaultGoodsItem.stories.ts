@@ -1,9 +1,8 @@
+import DefaultGoodsItem from '@components/common/GoodsItem/DefaultGoodsItem';
 import type { Meta, StoryObj } from '@storybook/react/*';
 
-import DefaultGoodsItem from './index';
-
 const meta = {
-  title: 'Example/GoodsItem/Default',
+  title: 'Common/GoodsItem/DefaultGoodsItem',
   component: DefaultGoodsItem,
   parameters: {
     layout: 'centered',

@@ -1,9 +1,8 @@
+import RankGoodsItem from '@components/common/GoodsItem/RankGoodsItem';
 import type { Meta, StoryObj } from '@storybook/react/*';
 
-import RankGoodsItem from './index';
-
 const meta = {
-  title: 'Example/GoodsItem/Rank',
+  title: 'Common/GoodsItem/RankGoodsItem',
   component: RankGoodsItem,
   parameters: {
     layout: 'centered',
