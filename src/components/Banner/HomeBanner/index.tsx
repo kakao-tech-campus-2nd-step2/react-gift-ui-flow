@@ -1,6 +1,7 @@
 import { Image } from "@/components/common/Image";
 import styled from "@emotion/styled";
 import { Container } from "../../common/layouts/Container/index";
+import IMAGE from "@/constants/Image";
 
 const HomeBanner = () => {
   return (
@@ -8,7 +9,7 @@ const HomeBanner = () => {
       <Container>
         <StyledHomeBannerLayout>
           <Image
-            src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png"
+            src={IMAGE.FRIEND}
             radius={20}
             sizes="1px"
             width={64}
