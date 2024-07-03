@@ -4,7 +4,7 @@ interface ButtonProps {
   primary?: 'primary' | 'secondary';
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large'| 'responsive';
-  label: string;
+  children: string;
   onClick?: () => void;
   theme?: 'Con' | 'Muji' | 'JayG';
 }
@@ -13,7 +13,7 @@ const Button = ({
   primary = 'secondary',
   size = 'medium',
   backgroundColor = '',
-  label,
+  children,
   theme,
   ...props
 }: ButtonProps) => {
@@ -33,7 +33,6 @@ const styleByTheme = {
   },
 };
 
-// mode 변수에서 결정한 primary prop의 값에 따라 CSS 적용
 const modeTheme = theme ? styleByTheme[theme][primary] : '';
 const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size}`;
 
@@ -44,7 +43,7 @@ const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size
       style={{ backgroundColor }}
       {...props}
     >
-      {label}
+      {children}
     </StyledButton>
   );
 };
