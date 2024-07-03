@@ -1,0 +1,82 @@
+.ranking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h1 {
+  font-weight: 600;
+  padding: 25px;
+}
+
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 60%;
+}
+.icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemIcon {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border-radius: 35%;
+  background-color: rgb(230, 241, 255);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.activeIcon {
+  background-color: rgb(70, 132, 233);
+  font-weight: 600;
+}
+
+.categoryItem {
+  color: gray;
+}
+.activeItem {
+  color: rgb(70, 132, 233);
+  font-weight: 800;
+}
+
+.chooseOne {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 70px;
+  width: 96%;
+  border: 1px solid rgba(70, 132, 233, 0.1);
+  border-radius: 10px;
+  background-color: rgb(230, 241, 255);
+  flex-direction: row;
+  align-items: center;
+  color: rgba(70, 132, 233, 0.7);
+  font-size: 20px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.chooseActive {
+  color: rgb(70, 132, 233);
+  font-weight: 700;
+}
+
+.rankingGrid {
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.rankingButton {
+  width: 60% !important;
+  margin-bottom: 50px;
+}

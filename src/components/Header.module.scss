@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+h2 {
+  cursor: pointer;
+}
+
+.login {
+  cursor: pointer;
+}

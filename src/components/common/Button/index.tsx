@@ -23,12 +23,12 @@ const Wrapper = styled.button<Pick<Props, 'theme' | 'size'>>(
   },
   ({ size = 'responsive' }) => {
     const largeStyle = {
-      height: '60px',
+      height: '85px',
       fontSize: '16px',
     };
 
     const smallStyle = {
-      height: '40px',
+      height: '50px',
       fontSize: '15px',
     };
     if (size === 'large') {
