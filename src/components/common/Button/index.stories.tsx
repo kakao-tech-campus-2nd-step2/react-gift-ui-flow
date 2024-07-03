@@ -5,6 +5,7 @@ import { Button } from './index';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Common/Button',
+  component: Button,
   tags: ['autodocs'],
   args: {
     children: '버튼',
@@ -15,20 +16,20 @@ const meta = {
     },
   },
   argTypes: {
-    // theme: {
-    //   control: {
-    //     type: 'radio',
-    //     options: ['kakao', 'outline', 'black', 'lightGray', 'darkGray'],
-    //     default: 'kakao',
-    //   },
-    // },
-    // size: {
-    //   control: {
-    //     type: 'radio',
-    //     options: ['large', 'small', 'responsive'],
-    //     default: 'responsive',
-    //   },
-    // },
+    theme: {
+      control: {
+        type: 'radio',
+        options: ['kakao', 'outline', 'black', 'lightGray', 'darkGray'],
+      },
+      defaultValue: 'kakao',
+    },
+    size: {
+      control: {
+        type: 'radio',
+        options: ['large', 'small', 'responsive'],
+      },
+      defaultValue: 'responsive',
+    },
   },
   render: (props) => (
     <div style={{ width: '120px' }}>
