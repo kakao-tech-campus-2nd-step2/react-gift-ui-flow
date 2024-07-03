@@ -1,5 +1,12 @@
 import React from 'react';
-import { GoodsItemContainer, Image, Text, Amount } from './GoodsItem.styles';
+import {
+  GoodsItemContainer,
+  ItemInfo,
+  SubTitle,
+  Title,
+  Amount,
+} from '@components/GoodsItem/GoodsItem.styles';
+import Image from '@components/Image/Image';
 
 interface DefaultGoodsItemProps {
   imageSrc: string;
@@ -8,17 +15,24 @@ interface DefaultGoodsItemProps {
   amount: number;
 }
 
-const DefaultGoodsItem: React.FC<DefaultGoodsItemProps> = ({
+const DefaultGoodsItem = ({
   imageSrc,
   subtitle,
   title,
   amount,
-}) => (
+}: DefaultGoodsItemProps) => (
   <GoodsItemContainer>
-    <Image src={imageSrc} alt={title} />
-    <Text>{title}</Text>
-    <Text>{subtitle}</Text>
-    <Amount>{amount.toLocaleString()}원</Amount>
+    <ItemInfo>
+      <Image
+        ratio="square"
+        radius={4}
+        src={imageSrc}
+        alt={title}
+      />
+      <SubTitle>{subtitle}</SubTitle>
+      <Title>{title}</Title>
+      <Amount>{amount.toLocaleString()}원</Amount>
+    </ItemInfo>
   </GoodsItemContainer>
 );
 

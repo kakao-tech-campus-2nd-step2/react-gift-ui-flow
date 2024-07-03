@@ -10,6 +10,8 @@ interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
 }
 
 const StyledImage = styled.img<ImageProps>`
+  width: 100%;
+  height: auto;
   object-fit: 'cover';
   aspect-ratio: ${({ ratio }) => {
     if (ratio === 'square') return '1';

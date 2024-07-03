@@ -1,33 +1,42 @@
 import React from 'react';
 import {
   GoodsItemContainer,
-  Image,
-  Text,
-  Amount,
   RankingBadge,
-} from './GoodsItem.styles';
+  ItemInfo,
+  SubTitle,
+  Title,
+  Amount,
+} from '@components/GoodsItem/GoodsItem.styles';
+import Image from '@components/Image/Image';
 
 interface RankingGoodsItemProps {
   imageSrc: string;
+  rankingIndex: number;
   subtitle: string;
   title: string;
   amount: number;
-  rankingIndex: number;
 }
 
-const RankingGoodsItem: React.FC<RankingGoodsItemProps> = ({
+const RankingGoodsItem = ({
   imageSrc,
+  rankingIndex,
   subtitle,
   title,
   amount,
-  rankingIndex,
-}) => (
+}: RankingGoodsItemProps) => (
   <GoodsItemContainer>
     <RankingBadge rankingIndex={rankingIndex}>{rankingIndex}</RankingBadge>
-    <Image src={imageSrc} alt={title} />
-    <Text>{title}</Text>
-    <Text>{subtitle}</Text>
-    <Amount>{amount.toLocaleString()}원</Amount>
+    <ItemInfo>
+      <Image
+        ratio="square"
+        radius={4}
+        src={imageSrc}
+        alt={title}
+      />
+      <SubTitle>{title}</SubTitle>
+      <Title>{subtitle}</Title>
+      <Amount>{amount.toLocaleString()}원</Amount>
+    </ItemInfo>
   </GoodsItemContainer>
 );
 

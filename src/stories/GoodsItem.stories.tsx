@@ -3,18 +3,11 @@ import { Meta, StoryObj } from '@storybook/react';
 import DefaultGoodsItem from '@components/GoodsItem/DefaultGoodsItem';
 import RankingGoodsItem from '@components/GoodsItem/RankingGoodsItem';
 
-// DefaultGoodsItem의 Meta 정의
 const defaultMeta: Meta<typeof DefaultGoodsItem> = {
   title: 'Components/GoodsItem/Default',
   component: DefaultGoodsItem,
   parameters: {
     layout: 'centered',
-  },
-  argTypes: {
-    imageSrc: { control: 'text' },
-    subtitle: { control: 'text' },
-    title: { control: 'text' },
-    amount: { control: 'number' },
   },
 };
 
