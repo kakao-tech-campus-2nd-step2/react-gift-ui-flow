@@ -1,31 +1,33 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-export type HeaderProps = {
-  label: string;
-  title: string;
-  description: string;
-  backgroundColor: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+import { useAuth } from '@/AuthContext';
 
-export const Header = ({ label, title, description, backgroundColor, ...props }: HeaderProps) => {
+export const Header = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
-    <HeaderContainer backgroundColor={backgroundColor} {...props}>
+    <HeaderContainer>
       <Nav>
-        <TitleLink to="/">{title}</TitleLink>
-        <LabelLink to={label}>{description}</LabelLink>
+        <TitleLink to="/">선물하기</TitleLink>
+        {isAuthenticated ? (
+          <>
+            <LabelLink to="/my-account">내 계정</LabelLink>
+          </>
+        ) : (
+          <LabelLink to="/login">로그인</LabelLink>
+        )}
       </Nav>
     </HeaderContainer>
   );
 };
 
-const HeaderContainer = styled.header<{ backgroundColor: string }>`
+const HeaderContainer = styled.header`
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 0px 16px;
-  background-color: ${({ backgroundColor }) => backgroundColor};
+  background-color: #fff;
   position: fixed;
   width: 100%;
   max-width: 1024px;

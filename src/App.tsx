@@ -1,19 +1,22 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { AuthProvider } from './AuthContext';
 import LoginPage from './page/LoginPage';
 import MainPage from './page/MainPage';
-import MyaccountPage from './page/MyaccountPage';
+import MyAccountPage from './page/MyAccountPage';
 import ThemePage from './page/ThemePage';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/theme/:themeKey" element={<ThemePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/my-account" element={<MyaccountPage />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/theme/:themeKey" element={<ThemePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/my-account" element={<MyAccountPage />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 };

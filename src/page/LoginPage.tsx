@@ -1,24 +1,17 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
+import { useAuth } from '@/AuthContext';
+import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
+
 const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-
-  const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
-  };
-
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(e.target.value);
-  };
+  const { login } = useAuth();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // 로그인 처리 로직을 구현할 수 있습니다.
-    console.log('Username:', username);
-    console.log('Password:', password);
-    // 예시로 콘솔에 출력합니다.
+    login(username);
   };
 
   return (
@@ -26,18 +19,18 @@ const LoginPage: React.FC = () => {
       <LoginForm onSubmit={handleSubmit}>
         <FormTitle>kakao</FormTitle>
         <FormField>
-          <Input
+          <UnderlineTextField
             type="text"
             id="username"
             value={username}
-            onChange={handleUsernameChange}
+            onChange={(e) => setUsername(e.target.value)}
             placeholder="이름"
           />
-          <Input
+          <UnderlineTextField
             type="password"
             id="password"
             value={password}
-            onChange={handlePasswordChange}
+            onChange={(e) => setPassword(e.target.value)}
             placeholder="비밀번호"
           />
           <LoginButton type="submit">로그인</LoginButton>
@@ -73,20 +66,6 @@ const FormField = styled.div`
   box-sizing: border-box;
 `;
 
-const Input = styled.input`
-  padding: 10px 0px 8px;
-  width: 100%;
-  box-sizing: border-box;
-  min-height: 42px;
-  line-height: 1.5;
-  border-width: 0px 0px 1px;
-  border-color: rgb(204, 204, 204);
-  color: rgb(51, 51, 51);
-  font-weight: 400;
-  font-size: 15px;
-  gap: 16px;
-`;
-
 const LoginButton = styled.button`
   width: 100%;
   padding: 10px 0px 8px;
@@ -101,6 +80,10 @@ const LoginButton = styled.button`
 
   &:hover {
     background-color: rgb(254, 215, 0);
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 
