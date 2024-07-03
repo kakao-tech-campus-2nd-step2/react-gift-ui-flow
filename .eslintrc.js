@@ -10,29 +10,19 @@ module.exports = {
     'airbnb-typescript',
     'prettier',
     'plugin:storybook/recommended',
+    'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.json',
-    ecmaFeatures: {
-      jsx: true,
-    },
+    createDefaultProgram: true,
+    jsx: true,
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'json-format',
-    'simple-import-sort',
-    '@emotion',
-    'prettier',
-  ],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'json-format', '@emotion', 'prettier'],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
     '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/no-unused-vars': [
       'error',
