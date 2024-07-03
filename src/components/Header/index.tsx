@@ -6,11 +6,7 @@ import { Image } from '../common/Image';
 
 export default () => {
     return (
-        <header
-            className={css`
-                position: fiexd;
-            `}
-        >
+        <header className={headerStyle}>
             <FlexContainer>
                 <Image
                     alt={'카카오 선물하기 로그인'}
@@ -23,12 +19,18 @@ export default () => {
     );
 };
 
+const headerStyle = css`
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+`;
 const FlexContainer = styled.div({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: '0px 20px',
 });
+
 const UserButton = () => {
     const [isLogined, setIsLogined] = useState<boolean>(false);
     useEffect(() => {
