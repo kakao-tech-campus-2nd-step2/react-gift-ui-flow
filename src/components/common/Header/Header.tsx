@@ -2,18 +2,20 @@ import styled from '@emotion/styled';
 
 import { colors, fontsizes } from '@/styles/variants';
 
+import { Container } from '../layouts/Container';
+
 export const Header = () => (
   <Wrapper>
-    <HeaderContainer>
-      <InnerContainer>
+    <Container>
+      <Buttons>
         <TitleButton>선물하기</TitleButton>
         <LoginButton>로그인</LoginButton>
-      </InnerContainer>
-    </HeaderContainer>
+      </Buttons>
+    </Container>
   </Wrapper>
 );
 
-const Wrapper = styled.div({
+const Wrapper = styled.header({
   position: 'fixed',
   zIndex: '9999',
   width: '100%',
@@ -21,21 +23,17 @@ const Wrapper = styled.div({
   height: '54px',
   backgroundColor: colors.white,
   padding: '0 16px',
-});
-const HeaderContainer = styled.div({
-  width: '100%',
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
 });
-const InnerContainer = styled.div({
-  width: '100%',
-  maxWidth: '1024px',
+
+const Buttons = styled.div({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
   alignItems: 'center',
 });
+
 const TitleButton = styled.button({
   fontSize: fontsizes.lg,
   fontFamily: 'HSGooltokki',

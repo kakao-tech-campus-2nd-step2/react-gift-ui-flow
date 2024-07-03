@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 import { breakpoints } from '@/styles/variants';
 
@@ -10,25 +11,19 @@ type ThemeSectionProps = {
 };
 
 export const ThemeSection: React.FC<ThemeSectionProps> = ({ gap, columns, children }) => (
-  <Wrapper>
+  <SectionWrapper>
     <Container>
       <Grid columns={columns} gap={gap}>
         {children}
       </Grid>
     </Container>
-  </Wrapper>
+  </SectionWrapper>
 );
 
-const Wrapper = styled.div({
-  padding: '14px 14px 3px',
-  [`@media screen and (max-width: ${breakpoints.sm})`]: {
-    padding: '45px 52px 23px',
-  },
-});
+const SectionWrapper = styled.section`
+  padding: 14px 14px 3px;
 
-const Container = styled.div({
-  width: '100%',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
+  @media screen and (max-width: ${breakpoints.sm}) {
+    padding: 45px 52px 23px;
+  }
+`;

@@ -1,18 +1,35 @@
 import styled from '@emotion/styled';
 
-const MainPage = () => {
-  const name = 'Yeji';
+import { Footer } from '@/components/common/Footer/Footer';
+import { ThemeSection } from '@/components/section/Theme/Theme';
 
+const MainPage = () => {
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <Wrapper>
+      <ThemeSection gap={0} columns={4}>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </ThemeSection>
+      <Footer />
+    </Wrapper>
   );
 };
 
 export default MainPage;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
+const Wrapper = styled.div({
+  width: '100%',
+  position: 'absolute',
+  top: '0px',
+  left: '0px',
+  marginTop: '54px',
+});
