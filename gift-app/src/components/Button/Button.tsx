@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface ButtonProps {
-  primary?: boolean;
+  primary?: 'primary' | 'secondary';
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large'| 'responsive';
   label: string;
@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 const Button = ({
-  primary = false,
+  primary = 'secondary',
   size = 'medium',
   backgroundColor = '',
   label,
@@ -19,20 +19,28 @@ const Button = ({
 }: ButtonProps) => {
 
 const styleByTheme = {
-  'Con': 'button--con',
-  'Muji': 'button--muji',
-  'JayG': 'button--jayg',
+  'Con': {
+    primary: 'button--Con-primary',
+    secondary: 'button--Con-secondary',
+  },
+  'Muji': {
+    primary: 'button--Muji-primary',
+    secondary: 'button--Muji-secondary',
+  },
+  'JayG': {
+    primary: 'button--JayG-primary',
+    secondary: 'button--JayG-secondary',
+  },
 };
 
 // mode 변수에서 결정한 primary prop의 값에 따라 CSS 적용
-const mode = primary ? 'button--primary' : 'button--secondary';
+const modeTheme = theme ? styleByTheme[theme][primary] : '';
 const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size}`;
-const themeClass = theme? styleByTheme[theme] : '';
 
   return (
     <StyledButton
       type='button'
-      className={['button', sizeClass, mode, themeClass].join(' ')}
+      className={['button', sizeClass, modeTheme].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
@@ -49,17 +57,6 @@ const StyledButton = styled.button`
   cursor: pointer;
   display: inline-block;
   line-height: 1;
-
-  &.button--primary {
-    color: white;
-    background-color: #1ea7fd;
-  }
-
-  &.button--secondary {
-    color: #333;
-    background-color: transparent;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
-  }
 
   &.button--small {
     font-size: 12px;
@@ -97,19 +94,34 @@ const StyledButton = styled.button`
     }
   }
 
-  &.button--con {
-    background-color: green !important;
-    color: white !important;
+  &.button--Con-primary {
+    background-color: green;
+    color: white;
   }
 
-  &.button--muji {
-    background-color: yellow !important;
-    color: black !important;
+  &.button--Con-secondary {
+    background-color: lightgreen;
+    color: darkgreen;
   }
 
-  &.button--jayg {
-    background-color: brown !important;
-    color: whitesmoke !important;
+  &.button--Muji-primary {
+    background-color: yellow;
+    color: black;
+  }
+
+  &.button--Muji-secondary {
+    background-color: palegoldenrod;
+    color: gray;
+  }
+
+  &.button--JayG-primary {
+    background-color: chocolate;
+    color: whitesmoke;
+  }
+
+  &.button--JayG-secondary {
+    background-color: sandybrown;
+    color: white;
   }
 `;
 
