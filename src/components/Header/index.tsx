@@ -1,14 +1,17 @@
 import styled from "@emotion/styled";
 import { Button } from "../common/Button";
+import { Container } from "../common/layouts/Container";
 
 const Header = () => {
   return (
-    <StyledHeader>
-      <h1>선물하기</h1>
-      <div>
-        <Button theme="transparent">로그인</Button>
-      </div>
-    </StyledHeader>
+    <Container>
+      <StyledHeader>
+        <h1>선물하기</h1>
+        <div>
+          <Button theme="transparent">로그인</Button>
+        </div>
+      </StyledHeader>
+    </Container>
   );
 };
 
