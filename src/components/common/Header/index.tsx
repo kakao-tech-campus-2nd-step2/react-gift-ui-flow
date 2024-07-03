@@ -8,7 +8,7 @@ export type HeaderProps = {
 const HeaderContainer = styled.header`
   background-color: #fff;
   color: #333;
-  padding: 20px calc(8% + 20px);
+  padding: 20px calc(8% + 100px);
   display: flex;
   justify-content: space-between;
   align-items: center;

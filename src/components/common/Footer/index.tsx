@@ -7,7 +7,7 @@ export type FooterProps = {
 const FooterContainer = styled.header`
   background-color: #FCFCFC;
   color: #333;
-  padding: 40px calc(8% + 20px) 120px calc(8% + 20px);
+  padding: 40px calc(8% + 100px) 120px calc(8% + 100px);
   font-size: 8px;
   font-weight: bold;
 
