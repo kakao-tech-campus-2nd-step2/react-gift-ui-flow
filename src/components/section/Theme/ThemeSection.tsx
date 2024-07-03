@@ -34,12 +34,12 @@ export const ThemeSection = () => {
         <ItemContainer key={index} onClick={() => onItemClick('life_small_gift')}>
           <Image
             src={item.image}
-            alt={`선물 테마: ${item.title}`}
+            alt={`선물 테마: ${item.category}`}
             width="90x"
             radius={30}
             ratio="square"
           />
-          <p>{item.title}</p>
+          <p>{item.category}</p>
         </ItemContainer>
       ))}
     </Items>

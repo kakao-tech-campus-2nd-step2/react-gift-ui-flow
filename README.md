@@ -18,7 +18,7 @@
 
 - [x] Header, Footer 공통 컴포넌트 구현
   - 모든 페이지에서 Header와 Footer는 보여질 수 있도록 함.
-- [ ] 각 Url Path별로 페이지 생성
+- [x] 각 Url Path별로 페이지 생성
   - 메인 페이지( `/` )
   - [x] Theme 카테고리 섹션 추가
   - [x] Theme 카테고리 Item 클릭 시 Theme 페이지 ( `/theme/:themeKey` )로 이동
