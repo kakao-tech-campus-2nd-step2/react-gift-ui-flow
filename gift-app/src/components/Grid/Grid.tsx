@@ -18,6 +18,8 @@ const StyledGrid = styled.div<{ columns: number; gap: number }>`
   display: grid;
   width: 100%;
   height: 100%;
+  grid-template-columns: ${({ columns }) => `repeat(${columns}, 1fr)`};
+  gap: ${({ gap }) => `${gap}px`};
 
   & .grid-item {
     text-align: center;

@@ -14,3 +14,4 @@ FE 카카오 선물하기 1주차 과제: React 기초
 - [x] 재할당 가능한 let을 대신하는 themeStyle 객체 및 스타일 수정
 - [x] theme별 primary/secondary 스타일 추가
 - [x] 예측가능성을 고려한 label -> children 변경
+- [x] 통일성과 올바른 기능 작동을 위한 Grid style 코드 수정
