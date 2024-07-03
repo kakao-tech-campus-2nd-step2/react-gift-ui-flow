@@ -5,11 +5,6 @@ export const ThemeContainer = styled.section`
   padding: 45px 52px 23px;
 `;
 
-export const CategoryItem = styled.a`
-  text-decoration: none;
-  cursor: pointer;
-`;
-
 export const CategoryText = styled.p`
   padding-top: 7px;
   font-size: 16px;

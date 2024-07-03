@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Image from '@components/Image/Image';
 import Container from '@components/Layout/Container';
 import Grid from '@components/Layout/Grid';
-import { ThemeContainer, CategoryItem, CategoryText } from './ThemeSection.styles';
+import { ThemeContainer, CategoryText } from './ThemeSection.styles';
 
 const themes = [
   {
@@ -78,23 +78,21 @@ const ThemeSection = () => (
     >
       <Grid columns={6}>
         {themes.map((theme) => (
-          <Link to={`/theme/${theme.key}`}>
-            <CategoryItem>
-              <Container
-                width="100%"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                padding="25px 35px 24px"
-              >
-                <Image
-                  src={theme.src}
-                  width={90}
-                  radius={32}
-                />
-                <CategoryText>{theme.category}</CategoryText>
-              </Container>
-            </CategoryItem>
+          <Link key={theme.key} to={`/theme/${theme.key}`}>
+            <Container
+              width="100%"
+              flexDirection="column"
+              justifyContent="center"
+              alignItems="center"
+              padding="25px 35px 24px"
+            >
+              <Image
+                src={theme.src}
+                width={90}
+                radius={32}
+              />
+              <CategoryText>{theme.category}</CategoryText>
+            </Container>
           </Link>
         ))}
       </Grid>
