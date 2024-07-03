@@ -32,7 +32,8 @@ export const Title = styled.p`
   color: ${textColors.title};
   font-size: 14px;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: normal;
+  display: -webkit-box;
   text-overflow: ellipsis;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
