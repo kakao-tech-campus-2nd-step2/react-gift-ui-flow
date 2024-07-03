@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Container } from '@/components/atoms/Container';
+import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
 import { Profile } from '@/components/molecules/Profile/Profile';
 import { 선물하기 } from '@/components/molecules/선물하기/선물하기';
 
@@ -10,7 +11,7 @@ export const Header = () => {
   const auth = { name: '' };
   return (
     <HeaderWrapper>
-      <Container justifyContent="space-between">
+      <Container justifyContent={ContainerJustifyContentType.spaceBetween}>
         <선물하기 height={HEADER_HEIGHT} />
         <Profile {...auth} />
       </Container>

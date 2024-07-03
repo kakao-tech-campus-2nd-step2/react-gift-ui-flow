@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Container } from '@/components/atoms/Container';
+import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
 
 export type ProfileProps = {
   name: string;
@@ -9,7 +10,7 @@ export type ProfileProps = {
 export const Profile = ({ name = '' }: ProfileProps) => {
   const label = name ? name : '로그인';
   return (
-    <Container justifyContent="flex-end">
+    <Container justifyContent={ContainerJustifyContentType.flexEnd}>
       <ProfileContent onClick={() => alert('hi')}>{label}</ProfileContent>
     </Container>
   );

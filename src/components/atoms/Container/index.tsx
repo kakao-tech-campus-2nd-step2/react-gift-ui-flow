@@ -1,13 +1,23 @@
 import styled from '@emotion/styled';
 import { forwardRef } from 'react';
 
+import type {
+  ContainerAlignItems,
+  ContainerDirection,
+  ContainerJustifyContent,
+} from '@/components/atoms/Container/types';
+import {
+  ContainerAlignItemsType,
+  ContainerDirectionType,
+  ContainerJustifyContentType,
+} from '@/components/atoms/Container/types';
 import { vars } from '@/styles';
 
 type Props = {
   maxWidth?: string;
-  flexDirection?: string;
-  alignItems?: string;
-  justifyContent?: string;
+  flexDirection?: ContainerDirection;
+  alignItems?: ContainerAlignItems;
+  justifyContent?: ContainerJustifyContent;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const Container: React.FC<Props> = forwardRef(
@@ -15,9 +25,9 @@ export const Container: React.FC<Props> = forwardRef(
     {
       children,
       maxWidth,
-      flexDirection = 'row',
-      alignItems = 'center',
-      justifyContent = 'center',
+      flexDirection = ContainerDirectionType.row,
+      alignItems = ContainerAlignItemsType.center,
+      justifyContent = ContainerJustifyContentType.center,
       ...props
     }: Props,
     ref: React.Ref<HTMLDivElement>,
