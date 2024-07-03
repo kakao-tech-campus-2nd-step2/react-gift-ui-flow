@@ -26,6 +26,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
         z-index: 9999;
         display: flex;
         justify-content: center;
+        background-color: #ffffff;
     `}
     >
       <Container
