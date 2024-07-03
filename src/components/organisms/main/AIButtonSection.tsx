@@ -22,9 +22,7 @@ function AIButtonSection() {
       <Container
         elementSize="full-width"
         maxWidth={MAX_CONTENT_WIDTH}
-        cssProps={{
-          padding: '16px',
-        }}
+        padding="16px"
       >
         <Container
           justifyContent="center"

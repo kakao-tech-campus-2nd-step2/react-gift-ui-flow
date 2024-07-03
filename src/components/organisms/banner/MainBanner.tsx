@@ -5,7 +5,7 @@ import { MAX_CONTENT_WIDTH } from '@styles/size';
 
 function MainBanner() {
   return (
-    <Container cssProps={{ padding: '40px 16px' }} justifyContent="center">
+    <Container padding="40px 16px" justifyContent="center">
       <Container
         elementSize="full-width"
         alignItems="center"

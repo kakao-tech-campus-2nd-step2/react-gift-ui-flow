@@ -14,7 +14,7 @@ function ThemeItem({ themeKey }: ThemeItemProps) {
   const theme = GiftThemes[themeKey];
 
   return (
-    <Container cssProps={{ padding: '25px 35px 24px' }}>
+    <Container padding="25px 35px 24px">
       <Container elementSize="full-width" flexDirection="column" alignItems="center">
         <Image src={theme.themeImageSrc} ratio="square" radius={32} />
         <p css={css`

@@ -31,8 +31,8 @@ function PopularityFilterArea({ currentFilter, setPopularityFilter }: Popularity
       justifyContent="center"
       cssProps={{
         marginTop: '16px',
-        backgroundColor: 'rgb(230, 241, 255)',
       }}
+      backgroundColor="rgb(230, 241, 255)"
     >
       {(Object.keys(filterNames) as PopularityFilter[]).map((filter) => {
         const key = `popularityFilter-${filter}`;

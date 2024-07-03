@@ -12,7 +12,7 @@ function Banner({ themeKey }: BannerProps) {
   const themeTexts = GiftThemes[themeKey];
 
   return (
-    <Container backgroundColor={backgroundColors.containerDark} cssProps={{ padding: '50px 20px' }}>
+    <Container backgroundColor={backgroundColors.containerDark} padding="50px 20px">
       <Container maxWidth="1100px" flexDirection="column">
         <ThemeName>
           {themeTexts.keyword}

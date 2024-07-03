@@ -22,10 +22,10 @@ function RankingSection() {
       <Container
         elementSize="full-width"
         maxWidth={MAX_CONTENT_WIDTH}
-        cssProps={{ padding: '0 16px 80px' }}
+        padding="0 16px 80px"
         flexDirection="column"
       >
-        <Container cssProps={{ justifyContent: 'center' }}>
+        <Container justifyContent="center">
           <h1 css={css`
             font-size: 35px;
             line-height: 50px;
@@ -40,7 +40,7 @@ function RankingSection() {
           currentFilter={popularityFilter}
           setPopularityFilter={setPopularityFilter}
         />
-        <Container cssProps={{ padding: '40px 0 20px' }}>
+        <Container padding="40px 0 20px">
           <GiftDisplaySection gifts={isFolded ? gifts.slice(0, 6) : gifts} maxColumns={6} indexed />
         </Container>
         <Container elementSize="full-width" justifyContent="center">

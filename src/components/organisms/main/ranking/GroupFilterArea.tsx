@@ -31,8 +31,8 @@ function GroupFilterArea({ currentFilter, setGroupFilter }: GroupFilterProps) {
       justifyContent="space-around"
       cssProps={{
         gap: '10px',
-        padding: '20px 0 7px',
       }}
+      padding="20px 0 7px"
     >
       {(Object.keys(filterNames) as GroupFilter[]).map((filter) => {
         const key = `groupFilter-${filter}`;
