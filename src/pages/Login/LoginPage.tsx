@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Container from '@components/Layout/Container';
 import Image from '@components/Image/Image';
 import {
@@ -9,45 +10,66 @@ import {
 } from '@pages/Login/LoginPage.styles';
 import Input from '@components/Input/Input';
 import Button from '@components/Button/Button';
+import { ROUTE_PATHS } from '../../constants';
 
-const LoginPage = () => (
-  <Container
-    width="100vw"
-    height="100vh"
-    justifyContent="center"
-    alignItems="center"
-    flexDirection="column"
-  >
-    <ImageContainer>
-      <Image
-        src="https://kakao-tech-week2-kakao-gift-ui-flow.pages.dev/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg"
-        alt="kakao"
-        width={88}
-      />
-    </ImageContainer>
-    <LoginContainer>
-      <StyledInput>
-        <Input
-          inputSize="large"
-          placeholder="이름"
+const LoginPage = () => {
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (id && password) {
+      localStorage.setItem('isLoggedIn', 'true');
+      navigate(ROUTE_PATHS.ROOT);
+    } else alert('아이디와 비밀번호를 입력해주세요.');
+  };
+
+  return (
+    <Container
+      width="100vw"
+      height="100vh"
+      justifyContent="center"
+      alignItems="center"
+      flexDirection="column"
+    >
+      <ImageContainer>
+        <Image
+          src="https://kakao-tech-week2-kakao-gift-ui-flow.pages.dev/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg"
+          alt="kakao"
+          width={88}
         />
-      </StyledInput>
-      <StyledInput>
-        <Input
-          inputSize="large"
-          placeholder="비밀번호"
-        />
-      </StyledInput>
-      <StyledButton>
-        <Button
-          theme="primary"
-          size="medium"
-        >
-          로그인
-        </Button>
-      </StyledButton>
-    </LoginContainer>
-  </Container>
-);
+      </ImageContainer>
+      <LoginContainer>
+        <form onSubmit={handleLogin}>
+          <StyledInput>
+            <Input
+              inputSize="large"
+              placeholder="이름"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+            />
+          </StyledInput>
+          <StyledInput>
+            <Input
+              inputSize="large"
+              placeholder="비밀번호"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </StyledInput>
+          <StyledButton>
+            <Button
+              theme="primary"
+              size="medium"
+            >
+              로그인
+            </Button>
+          </StyledButton>
+        </form>
+      </LoginContainer>
+    </Container>
+  );
+};
 
 export default LoginPage;
