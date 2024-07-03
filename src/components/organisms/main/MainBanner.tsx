@@ -2,10 +2,11 @@ import Container from '@components/atoms/container/Container';
 import { css } from '@emotion/react';
 import Image from '@components/atoms/image/Image';
 import { MAX_CONTENT_WIDTH } from '@styles/size';
+import { backgroundColors } from '@styles/colors';
 
 function MainBanner() {
   return (
-    <Container padding="40px 16px" justifyContent="center">
+    <Container padding="40px 16px" justifyContent="center" backgroundColor={backgroundColors.root}>
       <Container
         elementSize="full-width"
         alignItems="center"
