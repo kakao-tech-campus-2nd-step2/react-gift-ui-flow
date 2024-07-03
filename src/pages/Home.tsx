@@ -4,6 +4,7 @@ import Footer from '@components/common/Footer';
 import FriendSelector from '@components/FriendSelector';
 import ThemeCategory from '@components/ThemeCategory';
 import Target from '@components/Filter/Target';
+import Wish from '@components/Filter/Wish';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <FriendSelector />
       <ThemeCategory />
       <Target />
+      <Wish />
       <Footer />
     </>
   );
