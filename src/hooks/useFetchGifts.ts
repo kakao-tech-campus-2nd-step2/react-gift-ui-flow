@@ -11,6 +11,7 @@ interface FetchParams {
 function useFetchGifts({ groupFilter, popularityFilter, themeFilter }: FetchParams) {
   const [gifts, setGifts] = useState<Gift[]>([]);
   useEffect(() => {
+    // 올바르지 않은 필터값일 경우 예외처리
     const fetchedGifts = [];
 
     for (let i = 0; i < 16; i += 1) {
