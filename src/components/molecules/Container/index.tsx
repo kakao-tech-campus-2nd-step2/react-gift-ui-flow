@@ -1,24 +1,13 @@
 import styled from '@emotion/styled';
 import { forwardRef } from 'react';
 
-import type {
-  ContainerAlignItems,
-  ContainerDirection,
-  ContainerJustifyContent,
-} from '@/components/atoms/Container/types';
+import type { Props } from '@/components/atoms/FlatFlex';
+import { FlatFlex } from '@/components/atoms/FlatFlex';
 import {
   ContainerAlignItemsType,
   ContainerDirectionType,
   ContainerJustifyContentType,
-} from '@/components/atoms/Container/types';
-import { vars } from '@/styles';
-
-type Props = {
-  maxWidth?: string;
-  flexDirection?: ContainerDirection;
-  alignItems?: ContainerAlignItems;
-  justifyContent?: ContainerJustifyContent;
-} & React.HTMLAttributes<HTMLDivElement>;
+} from '@/components/atoms/FlatFlex/types';
 
 export const Container: React.FC<Props> = forwardRef(
   (
@@ -34,7 +23,7 @@ export const Container: React.FC<Props> = forwardRef(
   ) => {
     return (
       <Wrapper ref={ref} {...props}>
-        <Inner
+        <FlatFlex
           className="inner"
           maxWidth={maxWidth}
           flexDirection={flexDirection}
@@ -42,7 +31,7 @@ export const Container: React.FC<Props> = forwardRef(
           justifyContent={justifyContent}
         >
           {children}
-        </Inner>
+        </FlatFlex>
       </Wrapper>
     );
   },
@@ -54,15 +43,4 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Inner = styled.div<
-  Pick<Props, 'maxWidth' | 'flexDirection' | 'justifyContent' | 'alignItems'>
->`
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ?? vars.breakpoints.md};
-  display: flex;
-  flex-direction: ${({ flexDirection }) => flexDirection};
-  justify-content: ${({ justifyContent }) => justifyContent};
-  align-items: ${({ alignItems }) => alignItems};
 `;

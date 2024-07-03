@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { MouseEvent } from 'react';
 
-import { Container } from '@/components/atoms/Container';
+import { Container } from '@/components/molecules/Container';
 import { ImageParagraphBanner } from '@/components/molecules/ImageParagraphBanner';
 
 const friendImgSrc = 'https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png';

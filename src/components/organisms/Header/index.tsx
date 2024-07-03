@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import type { MouseEvent } from 'react';
 
-import { Container } from '@/components/atoms/Container';
-import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
+import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
+import { Container } from '@/components/molecules/Container';
 import { Profile } from '@/components/molecules/Profile';
 import { 선물하기 } from '@/components/molecules/선물하기/선물하기';
 

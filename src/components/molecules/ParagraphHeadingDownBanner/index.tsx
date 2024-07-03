@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
-import { Container } from '@/components/atoms/Container';
-import { ContainerDirectionType } from '@/components/atoms/Container/types';
+import { ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
 import type { HeadingLevel } from '@/components/atoms/Heading';
 import { Heading } from '@/components/atoms/Heading';
 import { Paragraph } from '@/components/atoms/Paragraph';
+import { Container } from '@/components/molecules/Container';
 
 type ParagraphHeadingBannerProp = {
   hNum: HeadingLevel;

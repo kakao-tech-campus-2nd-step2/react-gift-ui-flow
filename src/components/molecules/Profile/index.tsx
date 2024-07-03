@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import type { MouseEventHandler } from 'react';
 
-import { Container } from '@/components/atoms/Container';
-import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
+import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Paragraph } from '@/components/atoms/Paragraph';
+import { Container } from '@/components/molecules/Container';
 
 export type ProfileProps = {
   name: string | undefined;

@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 import type { MouseEventHandler } from 'react';
 
-import { Container } from '@/components/atoms/Container';
-import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
+import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Image } from '@/components/atoms/Image';
 import { Paragraph } from '@/components/atoms/Paragraph';
+import { Container } from '@/components/molecules/Container';
 
 type ImageBannerProps = {
   src: string;
