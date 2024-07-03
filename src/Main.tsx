@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
+import GoodsList from '@/GoodsList';
 
 import { Container } from './components/common/layouts/Container';
  
@@ -229,6 +230,7 @@ const RankingItem = styled.div<{ active: boolean }>`
           ))}
         </RankingBox>
       </RankingContainer>
+      <GoodsList />
     </div>
   );
 };
