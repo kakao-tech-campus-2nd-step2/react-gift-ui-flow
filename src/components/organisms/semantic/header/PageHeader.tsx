@@ -3,6 +3,8 @@ import { css } from '@emotion/react';
 import headerLogo from '@assets/images/header_logo.png';
 import styled from '@emotion/styled';
 import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '@styles/size';
+import { Link } from 'react-router-dom';
+import Paths from '@constants/Paths';
 
 interface PageHeaderProps {
   isLoggedIn?: boolean;
@@ -44,8 +46,9 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
             />
           ) : null}
         <HeaderAccountButton>
-          {/* TODO: 로그인 페이지 또는 마이페이지로 이동하게끔 연결하기 */}
-          {isLoggedIn ? '마이페이지' : '로그인'}
+          <Link to={isLoggedIn ? Paths.MYACCOUNT_PAGE : Paths.LOGIN_PAGE}>
+            {isLoggedIn ? '마이페이지' : '로그인'}
+          </Link>
         </HeaderAccountButton>
       </Container>
     </header>
