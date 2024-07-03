@@ -87,3 +87,11 @@ button:disabled {
   border: 0;
   padding: 0;
 }
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
