@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import Body from '@/components/Body';
+import { Header } from '@/components/common/Header/Header';
 import Footer from '@/components/Footer';
-import Header from '@/components/Header';
 
 const MainPage: React.FC = () => {
   return (
     <PageContainer>
-      <Header />
+      <Header label="/login" title="선물하기" description="로그인" backgroundColor="#FFF" />
       <Body />
       <Footer />
     </PageContainer>

@@ -2,23 +2,30 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Header: React.FC = () => {
+export type HeaderProps = {
+  label: string;
+  title: string;
+  description: string;
+  backgroundColor: string;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+export const Header = ({ label, title, description, backgroundColor, ...props }: HeaderProps) => {
   return (
-    <HeaderContainer>
+    <HeaderContainer backgroundColor={backgroundColor} {...props}>
       <Nav>
-        <LogoLink to="/">선물하기</LogoLink>
-        <NavLink to="/login">로그인</NavLink>
+        <TitleLink to="/">{title}</TitleLink>
+        <LabelLink to={label}>{description}</LabelLink>
       </Nav>
     </HeaderContainer>
   );
 };
 
-const HeaderContainer = styled.header`
+const HeaderContainer = styled.header<{ backgroundColor: string }>`
   display: flex;
   align-items: center;
   box-sizing: border-box;
   padding: 0px 16px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${({ backgroundColor }) => backgroundColor};
   position: fixed;
   width: 100%;
   max-width: 1024px;
@@ -33,17 +40,18 @@ const Nav = styled.nav`
   width: 100%;
 `;
 
-const NavLink = styled(Link)`
+const LabelLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 14px;
+  line-height: 20px;
 
   &:focus {
     outline: none;
   }
 `;
 
-const LogoLink = styled(Link)`
+const TitleLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 20px;
@@ -53,5 +61,3 @@ const LogoLink = styled(Link)`
     outline: none;
   }
 `;
-
-export default Header;

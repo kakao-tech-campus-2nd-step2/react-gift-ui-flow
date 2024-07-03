@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
-import { DefaultHeader } from './Default';
+import { Header } from './Header';
 
 const meta = {
   title: 'Common/Header/Default',
   tags: ['autodocs'],
   render: (props) => (
     <MemoryRouter>
-      <DefaultHeader {...props} />
+      <Header {...props} />
     </MemoryRouter>
   ),
-} satisfies Meta<typeof DefaultHeader>;
+} satisfies Meta<typeof Header>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
