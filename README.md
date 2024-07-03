@@ -4,7 +4,9 @@
 
 ## Week 2. 1단계 - 페이지 만들기
 
-- 공동 컴포넌트 구현<br/> - [ ] Header 구현<br/> - [ ] Footer 구현<br/>
+- 공동 컴포넌트 구현<br/>
+  - [ ] Header 구현<br/>
+  - [ ] Footer 구현<br/>
   <br/>
 - Url Path별 페이지 구현<br/>
   - 메인 페이지 (`/`)<br/>
