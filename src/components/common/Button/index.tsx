@@ -108,6 +108,8 @@ const Wrapper = styled.button<Pick<Props, "theme" | "size">>(
     return {
       color: "#111",
       backgroundColor: "#fee500",
+      outline: "none",
+      border: "none",
 
       "&:hover": {
         backgroundColor: "#fada0a",
