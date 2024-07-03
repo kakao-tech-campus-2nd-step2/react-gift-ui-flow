@@ -18,29 +18,21 @@ const Button = ({
   ...props
 }: ButtonProps) => {
 
-  let themeType = '';
-  switch (theme) {
-    case 'Con':
-      themeType = 'button--con';
-      break;
-    case 'Muji':
-      themeType = 'button--muji';
-      break;
-    case 'JayG':
-      themeType = 'button--jayg';
-      break;
-    default:
-      themeType = '';
-  }
+const styleByTheme = {
+  'Con': 'button--con',
+  'Muji': 'button--muji',
+  'JayG': 'button--jayg',
+};
 
 // mode 변수에서 결정한 primary prop의 값에 따라 CSS 적용
 const mode = primary ? 'button--primary' : 'button--secondary';
 const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size}`;
+const themeClass = theme? styleByTheme[theme] : '';
 
   return (
     <StyledButton
       type='button'
-      className={['button', sizeClass, mode, themeType].join(' ')}
+      className={['button', sizeClass, mode, themeClass].join(' ')}
       style={{ backgroundColor }}
       {...props}
     >
