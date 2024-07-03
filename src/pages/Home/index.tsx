@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { AnnualCategory } from './AnnualCategory';
 import { Badge } from './Badge';
 import { MainMent } from './MainMent';
+import { Ranking } from './Ranking';
 
 export const Home = () => {
   return (
@@ -10,6 +11,7 @@ export const Home = () => {
       <MainMent />
       <AnnualCategory />
       <Badge />
+      <Ranking />
     </Wrapper>
   );
 };
