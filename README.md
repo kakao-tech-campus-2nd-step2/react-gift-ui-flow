@@ -24,7 +24,7 @@
 #### Theme 페이지
 
 - [x] Header
-- [ ] Goods Item 리스트
+- [x] Goods Item 리스트
 
 #### 로그인 페이지
 
