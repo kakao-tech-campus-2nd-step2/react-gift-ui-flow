@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { RankingGoodsItems } from './Ranking';
+import { RankingGoodsItems } from '@/components/molecules/GoodsItem/Ranking';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

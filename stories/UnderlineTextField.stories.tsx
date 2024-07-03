@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { UnderlineTextField } from './UnderlineTextField';
+import { UnderlineTextField } from '@/components/atoms/Input/UnderlineTextField';
 
 const meta = {
   title: 'Common/Form/Input/UnderlineTextField',
