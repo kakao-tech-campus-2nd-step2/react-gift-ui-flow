@@ -29,6 +29,28 @@
     margin-top: 10px;
 }
 
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.button01 {
+    margin: 0 calc(8% + 120px);
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.buttonSubtitle {
+    color: #857D52;
+}
+
+.buttonTitle {
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
 @media (max-width: 992px) {
     .selectFriend {
         padding: 40px calc(4% + 20px);

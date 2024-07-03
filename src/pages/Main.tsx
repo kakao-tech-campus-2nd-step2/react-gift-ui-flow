@@ -2,6 +2,7 @@
 
 import './Main.css'
 
+import { Button } from '@/components/common/Button'
 import Footer from '@/components/common/Footer'
 import Header from '@/components/common/Header'
 import { Image } from '@/components/common/Image'
@@ -56,8 +57,15 @@ const Main = () => {
             </div>
             ))}
         </div>
+
+        <div className='buttonContainer'>
+            <Button theme='kakao' size='responsive' className='button01'>
+                <div className='buttonSubtitle'>AI가 추천하는 선물</div>
+                <div className='buttonTitle'>선물을 추천받고 싶은 친구를 선택해주세요.</div>
+            </Button>
+        </div>
         
-        <Footer title='카카오톡 선물하기' />
+        <Footer title='카카오톡 선물하기'  />
     </div>
   )
 }
