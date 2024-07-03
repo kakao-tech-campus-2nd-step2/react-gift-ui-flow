@@ -1,22 +1,24 @@
 import styled from '@emotion/styled';
+import type { MouseEventHandler } from 'react';
 
 import { Container } from '@/components/atoms/Container';
 import { ContainerJustifyContentType } from '@/components/atoms/Container/types';
+import { Paragraph } from '@/components/atoms/Paragraph';
 
 export type ProfileProps = {
-  name: string;
+  name: string | undefined;
+  onClick: MouseEventHandler<HTMLParagraphElement>;
 };
 
-export const Profile = ({ name = '' }: ProfileProps) => {
-  const label = name ? name : '로그인';
+export const Profile = ({ name = '로그인', onClick }: ProfileProps) => {
   return (
     <Container justifyContent={ContainerJustifyContentType.flexEnd}>
-      <ProfileContent onClick={() => alert('hi')}>{label}</ProfileContent>
+      <ProfileParagraph onClick={onClick} content={name} />
     </Container>
   );
 };
 
-const ProfileContent = styled.p`
+const ProfileParagraph = styled(Paragraph)`
   -webkit-box-align: center;
   align-items: center;
   font-size: 18px;
