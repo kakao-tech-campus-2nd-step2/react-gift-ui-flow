@@ -1,6 +1,6 @@
 .selectFriend {
     background-color: #F6F6F6;
-    padding: 40px calc(8% + 20px);
+    padding: 40px calc(8% + 100px);
     display: flex;
     align-items: center;
 }
@@ -8,6 +8,25 @@
 .selectFriendTitle {
     font-size: 26px;
     padding: 0 20px;
+}
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 기본적으로는 2행 6열 */
+    justify-content: center;
+    gap: 40px;
+    padding: 40px calc(8% + 120px);
+}
+
+.categoryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categoryText {
+    margin-top: 10px;
 }
 
 @media (max-width: 992px) {
@@ -21,3 +40,9 @@
         padding: 40px 20px;
     }
 }
+
+@media (max-width: 1200px) {
+    .categories {
+      grid-template-columns: repeat(4, 1fr); /* 1200px 이하에서는 4행 4열 */
+    }
+  }
