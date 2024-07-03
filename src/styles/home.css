@@ -1,0 +1,29 @@
+.home__header__frame {
+  width: 100vw;
+  height: 150px;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+
+.home__header {
+  width: 100%;
+  max-width: 1024px;
+  padding: 40px 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.home__header__image {
+  width: 70px;
+  height: 70px;
+  border-radius: 24px;
+}
+
+.home__header__text {
+  font-size: 28px;
+  font-weight: 500;
+  margin-left: 16px;
+  color: #333333;
+}

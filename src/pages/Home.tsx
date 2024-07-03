@@ -1,7 +1,11 @@
+import '@styles/home.css';
+
+import HomeHeader from '@components/Home/HomeHeader';
+
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
+    <div className="home">
+      <HomeHeader />
     </div>
   );
 }
