@@ -1,6 +1,6 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
-import { Grid } from "../common/layouts/Grid";
+import { Grid } from '../common/layouts/Grid';
 
 export default () => {
     return (
@@ -12,11 +12,9 @@ export default () => {
     );
 };
 
-const Footar = styled.footer(
-    {
-        padding: '28px 16px 88px',
-        width: '100%',
-        maxWidth: '100vw',
-        backgroundColor: 'rgb(250, 250, 252)',
-    }
-);
+const Footar = styled.footer({
+    padding: '28px 16px 88px',
+    width: '100%',
+    maxWidth: '100vw',
+    backgroundColor: 'rgb(250, 250, 252)',
+});
