@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { ThemeSection } from './Theme';
+import { ThemeSection } from './ThemeSection';
 
 const ChildComponent = () => (
   <>

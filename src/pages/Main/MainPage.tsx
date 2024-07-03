@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Footer } from '@/components/common/Footer/Footer';
-import { ThemeSection } from '@/components/section/Theme/Theme';
+import { ThemeSection } from '@/components/section/Theme/ThemeSection';
 
 const MainPage = () => {
   return (

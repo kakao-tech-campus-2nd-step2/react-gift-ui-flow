@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
@@ -22,22 +23,28 @@ export const Items: React.FC<ThemeSectionProps> = ({ gap, columns, children }) =
   </SectionWrapper>
 );
 
-export const ThemeSection = () => (
-  <Items gap={0} columns={{ xs: 4, sm: 4, md: 6 }}>
-    {items.map((item, index) => (
-      <ItemContainer key={index}>
-        <Image
-          src={item.image}
-          alt={`선물 테마: ${item.title}`}
-          width="90x"
-          radius={30}
-          ratio="square"
-        />
-        <p>{item.title}</p>
-      </ItemContainer>
-    ))}
-  </Items>
-);
+export const ThemeSection = () => {
+  const navigate = useNavigate();
+  const onItemClick = (themeKey: string) => {
+    navigate(`/theme/${themeKey}`);
+  };
+  return (
+    <Items gap={0} columns={{ xs: 4, sm: 4, md: 6 }}>
+      {items.map((item, index) => (
+        <ItemContainer key={index} onClick={() => onItemClick('life_small_gift')}>
+          <Image
+            src={item.image}
+            alt={`선물 테마: ${item.title}`}
+            width="90x"
+            radius={30}
+            ratio="square"
+          />
+          <p>{item.title}</p>
+        </ItemContainer>
+      ))}
+    </Items>
+  );
+};
 const SectionWrapper = styled.section`
   padding: 14px 14px 3px;
 

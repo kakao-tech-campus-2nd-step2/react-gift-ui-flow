@@ -20,8 +20,8 @@
   - 모든 페이지에서 Header와 Footer는 보여질 수 있도록 함.
 - [ ] 각 Url Path별로 페이지 생성
   - 메인 페이지( `/` )
-  - [ ] Theme 카테고리 섹션 추가
-  - [ ] Theme 카테고리 Item 클릭 시 Theme 페이지 ( `/theme/:themeKey` )로 이동
+  - [x] Theme 카테고리 섹션 추가
+  - [x] Theme 카테고리 Item 클릭 시 Theme 페이지 ( `/theme/:themeKey` )로 이동
 - [ ] 실시간 급상승 선물랭킹 구현
   - [ ] hooks를 사용하여 필터 기능 구현 (ex. 전체, 여성이, 남성이, 청소년이 / 받고 싶어한, 많이 선물한, 위시로 받은)
   - [ ] 상품 목록을 처음에는 6개만 보여지게 함.
