@@ -19,7 +19,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
         </Routes>
         <Routes>
-          <Route path="/my-account" element={<MyAccount />} />
+          <Route path="/my-account" element={<MyAccount userName="문정윤" />} />
         </Routes>
         <Routes>
           <Route path="/theme/life_small_gift" element={<LifeSmallGift />} />

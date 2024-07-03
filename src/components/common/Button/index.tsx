@@ -28,7 +28,7 @@ const Wrapper = styled.button<Pick<Props, 'theme' | 'size'>>(
     };
 
     const smallStyle = {
-      height: '60px',
+      height: '50px',
       fontSize: '15px',
     };
     if (size === 'large') {
