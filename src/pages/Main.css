@@ -1,0 +1,23 @@
+.selectFriend {
+    background-color: #F6F6F6;
+    padding: 40px calc(8% + 20px);
+    display: flex;
+    align-items: center;
+}
+
+.selectFriendTitle {
+    font-size: 26px;
+    padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+    .selectFriend {
+        padding: 40px calc(4% + 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .selectFriend {
+        padding: 40px 20px;
+    }
+}
