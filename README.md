@@ -1,15 +1,28 @@
-# 카카오 테크 캠퍼스 - 프론트엔드 카카오 선물하기 편
+<h1> 카카오 테크 캠퍼스 - 프론트엔드 카카오 선물하기 편 </h1>
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
+<h3>2주차 체크 리스트</h3>
 
-## Week 1. 1단계 - 프로젝트 세팅
+- [ ] Header, Footer 와 같은 공통 컴포넌트 작성
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
+- [ ] 각 Url Path 별로 페이지 만들기
 
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+  - Main page (`/`)
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
+    - [ ] Theme 카테고리 섹션 추가
 
-## Week 2. 1단계 - 페이지 만들기
+    - [ ] Theme 카테고리 Item 클릭 시 Theme page(`/theme/:themekey`) 로 이동 
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+  - Theme page (`/theme/:themekey`)
+
+    - [ ] 재사용성을 고려하여 Header 섹션 추가 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
+
+    - [ ] 상품 목록 섹션 추가
+
+  - Login page (`/login`)
+
+    - [ ] ID와 PW를 입력하면 로그인이 되도록 구현
+
+  - My page (`/my-account`)
+
+    - [ ] 로그아웃이 가능한 버튼 추가
+
