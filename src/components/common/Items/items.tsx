@@ -25,7 +25,7 @@ const Item: React.FC<ItemProps> = ({ image, label, radius}) => {
 	radius = 20;
   return (
     <div css={itemStyle}>
-      <Image src={image} alt={label} radius={radius} ratio="square" css={{ width: 60, height: 60 }}/>
+      <Image src={image} alt={label} radius={radius} ratio="square" css={{ width: 90, height: 90 }}/>
       <span>{label}</span>
     </div>
   );
