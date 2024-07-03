@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
 const App = () => {
-  const name = 'Josh Perez';
+  const name = "Josh Perez";
 
   return (
     <div>

@@ -79,8 +79,8 @@ button:disabled {
   outline: 4px solid rgba(0, 125, 250, 0.6);
   outline-offset: 1px;
 }
-:focus[data-focus-method='mouse']:not(input):not(textarea):not(select),
-:focus[data-focus-method='touch']:not(input):not(textarea):not(select) {
+:focus[data-focus-method="mouse"]:not(input):not(textarea):not(select),
+:focus[data-focus-method="touch"]:not(input):not(textarea):not(select) {
   outline: none;
 }
 ::-moz-focus-inner {
