@@ -9,7 +9,7 @@ import { useLocation } from 'react-router-dom';
 
 function MainPage() {
   const location = useLocation();
-  const { loginState } = location.state;
+  const { loginState } = location.state || {};
   const [isLoggedIn] = useState(loginState);
 
   return (
