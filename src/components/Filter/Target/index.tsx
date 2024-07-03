@@ -3,7 +3,7 @@ import Container from '@components/common/Layout/Container/Container';
 import { FILTER_TARGETS } from '../constants';
 import TargetItem from './TargetItem';
 
-interface TargetProps {
+export interface TargetProps {
   selectedTarget: string;
   selectTarget: (target: string) => void;
 }
