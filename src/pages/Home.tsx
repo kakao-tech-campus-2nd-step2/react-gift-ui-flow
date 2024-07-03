@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
+import { Button } from '../components/common/Button/index';
 import { Image } from '../components/common/Image/index';
 import Item from '../components/common/Items/items';
 import { Grid }  from '../components/common/layouts/Grid/index';
@@ -47,6 +48,20 @@ const selectFriendImageStyle = css`
   padding: 20px;
 `;
 
+const buttonStyle = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  outline: none;
+  width: 95%;
+  margin: 40px auto;
+  padding: 5px;
+  
+  p {
+    margin: 3px 0;
+  }
+`;
+
 const SelectFriend : React.FC = () => {
 	  return (
 	<div css={selectFriendStyle}>
@@ -66,6 +81,10 @@ const Home: React.FC = () => {
 			<Item key={index} image={item.image} label={item.label} radius={item.radius} />
 		  ))}
 		</Grid>
+		<Button css={buttonStyle}>
+			<p css={{color:'gray', fontSize:'18px'}}>AI가 추천하는 선물</p>
+			<p css={{fontWeight: 600, fontSize:'18px'}}>선물을 추천받고 싶은 친구를 선택해주세요.</p>
+		</Button>
 	  </div>
 	);
   };
