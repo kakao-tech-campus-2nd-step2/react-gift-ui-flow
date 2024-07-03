@@ -12,7 +12,7 @@ export const Banner: React.FC = () => {
             alt="Profile Image"
             radius={10}
             ratio="auto"
-            style={{ width: '50px', height: '50px' }}
+            style={{ width: '100px', height: '100px' }}
             onClick={()=>{alert("선물 받을 친구 선택하기")}}
           />
           <Text>선물 받을 친구를 선택해주세요.</Text>
@@ -25,11 +25,14 @@ export default Banner;
 
 const Wrapper = styled.section`
   padding: 16px;
+  background-color: rgb(250, 250, 250);
 `;
 
 const Content = styled.div`
   display: flex;
   align-items: center;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const Text = styled.p`
