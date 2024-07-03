@@ -4,6 +4,7 @@ import { StyledContainer } from './Container.style';
 interface ContainerProps {
   width?: string;
   maxWidth?: string;
+  height?: string;
   flexDirection?: 'row' | 'column';
   justifyContent?:
     | 'center'
@@ -19,6 +20,7 @@ interface ContainerProps {
 const Container = ({
   width,
   maxWidth,
+  height,
   flexDirection,
   justifyContent,
   alignItems,
@@ -28,6 +30,7 @@ const Container = ({
   <StyledContainer
     width={width}
     maxWidth={maxWidth}
+    height={height}
     flexDirection={flexDirection}
     justifyContent={justifyContent}
     alignItems={alignItems}

@@ -40,7 +40,8 @@ export const StyledInput = styled.input<{
   invalid?: boolean;
 }>`
   background-color: ${({ disabled }) => (disabled ? '#f5f5f5' : '#fff')};
-  border: 1px solid ${({ invalid }) => (invalid ? 'red' : '#ccc')};
+  border: none;
+  border-bottom: 1px solid ${({ invalid }) => (invalid ? 'red' : '#ccc')};
   outline: none;
   width: 100%;
   ${({ inputSize }) => inputSize && getSizeStyles(inputSize)}

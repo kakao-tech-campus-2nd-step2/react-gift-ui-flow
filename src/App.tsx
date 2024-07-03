@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from '@components/Layout/Layout';
 import Main from '@pages/Main/Main';
 import ThemePage from '@pages/ThemePage/ThemePage';
+import LoginPage from '@pages/Login/LoginPage';
 import { ROUTE_PATHS } from './constants';
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
         <Routes>
           <Route path={ROUTE_PATHS.ROOT} Component={Main} />
           <Route path={ROUTE_PATHS.THEME} Component={ThemePage} />
+          <Route path={ROUTE_PATHS.LOGIN} Component={LoginPage} />
         </Routes>
       </Layout>
     </Router>

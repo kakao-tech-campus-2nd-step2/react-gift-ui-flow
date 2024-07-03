@@ -10,12 +10,12 @@ interface InputProps
   inputSize: SizeProps;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input = ({
   disabled,
   invalid,
   inputSize = 'large',
   ...props
-}) => (
+}: InputProps) => (
   <StyledInput
     disabled={disabled}
     invalid={invalid}

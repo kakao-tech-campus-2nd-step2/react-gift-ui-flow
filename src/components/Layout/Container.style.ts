@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 interface ContainerProps {
   width?: string;
   maxWidth?: string;
+  height?: string;
   flexDirection?: 'row' | 'column';
   justifyContent?:
     | 'center'
@@ -18,9 +19,11 @@ export const StyledContainer = styled.div<ContainerProps>`
   display: flex;
   width: ${({ width }) => width};
   max-width: ${({ maxWidth }) => maxWidth || '100%'};
+  height: ${({ height }) => height};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'stretch'};
   padding: ${({ padding }) => padding || '0'};
   margin: 0 auto;
+  overflow: hidden;
 `;
