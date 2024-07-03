@@ -13,10 +13,12 @@ const Wrapper = styled.div`
   max-width: 1024px;
   margin: 0 auto;
   position: sticky;
+  top: 0;
   padding: 15px 10px;
   display: flex;
   justify-content: space-between;
   align-items: end;
+  background-color: #fff;
 `;
 const Logo = styled.div`
   font-size: 16px;
