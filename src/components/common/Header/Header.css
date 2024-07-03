@@ -1,0 +1,18 @@
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff; /* 흰색 배경 */
+  border-bottom: 1px solid #ccc; /* 아래쪽 테두리 */
+}
+
+.title {
+  font-size: 20px;
+  color: #333;
+}
+
+.login {
+  font-size: 16px;
+  cursor: pointer;
+}
