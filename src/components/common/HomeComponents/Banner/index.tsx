@@ -34,5 +34,5 @@ const Content = styled.div`
 
 const Text = styled.p`
   padding-left: 16px;
-  margin: 0; /* 텍스트의 기본 마진 제거 */
+  margin: 0;
 `;
