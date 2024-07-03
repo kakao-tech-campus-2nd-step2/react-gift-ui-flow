@@ -5,6 +5,7 @@ import { breakpoints } from '@/styles/variants';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
+import { RankingItems } from './RankingItems';
 
 export const RankingSection = () => (
   <SectionWrapper>
@@ -14,6 +15,7 @@ export const RankingSection = () => (
         <WhoCategories />
         <Space />
         <GiftCategories />
+        <RankingItems />
       </ContentWrapper>
     </Container>
   </SectionWrapper>
