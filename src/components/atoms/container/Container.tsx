@@ -11,6 +11,7 @@ interface ContainerProps {
   children?: ReactNode,
   backgroundColor?: string;
   cssProps?: CSSProperties;
+  padding?: string;
 }
 
 function getFixedSize(size: ContainerSize | undefined): FixedSize {
@@ -33,7 +34,7 @@ function getFixedSize(size: ContainerSize | undefined): FixedSize {
 
 function Container({
   maxWidth, elementSize, flexDirection, justifyContent,
-  alignItems, children, backgroundColor, cssProps,
+  alignItems, children, backgroundColor, padding, cssProps,
 }: ContainerProps) {
   const fixedSize = getFixedSize(elementSize);
   const combinedStyles: CSSObject = {
@@ -45,6 +46,7 @@ function Container({
     justifyContent,
     alignItems,
     backgroundColor: backgroundColor || 'transparent',
+    padding,
     ...cssProps,
   };
 
