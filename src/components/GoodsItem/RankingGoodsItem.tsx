@@ -27,12 +27,7 @@ const RankingGoodsItem = ({
   <GoodsItemContainer>
     <RankingBadge rankingIndex={rankingIndex}>{rankingIndex}</RankingBadge>
     <ItemInfo>
-      <Image
-        ratio="square"
-        radius={4}
-        src={imageSrc}
-        alt={title}
-      />
+      <Image ratio="square" radius={4} src={imageSrc} alt={title} />
       <SubTitle>{title}</SubTitle>
       <Title>{subtitle}</Title>
       <Amount>{amount.toLocaleString()}원</Amount>

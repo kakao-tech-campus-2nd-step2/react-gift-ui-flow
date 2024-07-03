@@ -13,7 +13,8 @@ import Button from '@components/Button/Button';
 
 const items = Array.from({ length: 20 }, (_, index) => ({
   id: index + 1,
-  imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
+  imageSrc:
+    'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
   subtitle: 'BBQ',
   title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
   amount: 29000,
@@ -40,10 +41,7 @@ const RankingSection = () => {
         maxWidth="1024px"
         alignItems="center"
       >
-        <Container
-          width="100%"
-          flexDirection="column"
-        >
+        <Container width="100%" flexDirection="column">
           <Title>실시간 급상승 선물랭킹</Title>
           <Container
             width="100%"
@@ -51,17 +49,12 @@ const RankingSection = () => {
             flexDirection="column"
             justifyContent="center"
           >
-            <Grid
-              columns={4}
-            >
+            <Grid columns={4}>
               <FilterButton
                 active={filter === '전체'}
                 onClick={() => setFilter('전체')}
               >
-                <Container
-                  justifyContent="center"
-                  alignItems="center"
-                >
+                <Container justifyContent="center" alignItems="center">
                   ALL
                 </Container>
                 <p>전체</p>
@@ -70,10 +63,7 @@ const RankingSection = () => {
                 active={filter === '여성이'}
                 onClick={() => setFilter('여성이')}
               >
-                <Container
-                  justifyContent="center"
-                  alignItems="center"
-                >
+                <Container justifyContent="center" alignItems="center">
                   👩🏻
                 </Container>
                 <p>여성이</p>
@@ -82,10 +72,7 @@ const RankingSection = () => {
                 active={filter === '남성이'}
                 onClick={() => setFilter('남성이')}
               >
-                <Container
-                  justifyContent="center"
-                  alignItems="center"
-                >
+                <Container justifyContent="center" alignItems="center">
                   👨🏻
                 </Container>
                 <p>남성이</p>
@@ -94,10 +81,7 @@ const RankingSection = () => {
                 active={filter === '청소년이'}
                 onClick={() => setFilter('청소년이')}
               >
-                <Container
-                  justifyContent="center"
-                  alignItems="center"
-                >
+                <Container justifyContent="center" alignItems="center">
                   👦🏻
                 </Container>
                 <p>청소년이</p>
@@ -106,10 +90,7 @@ const RankingSection = () => {
           </Container>
         </Container>
       </Container>
-      <Container
-        padding="20px 0px 7px"
-        maxWidth="1024px"
-      >
+      <Container padding="20px 0px 7px" maxWidth="1024px">
         <CategoryContainer>
           <CategoryButton
             active={category === '받고 싶어한'}
@@ -136,10 +117,7 @@ const RankingSection = () => {
         flexDirection="column"
         maxWidth="1024px"
       >
-        <Grid
-          columns={6}
-          gap={16}
-        >
+        <Grid columns={6} gap={16}>
           {items.slice(0, visibleItems).map((item, index) => (
             <RankingGoodsItem
               key={item.id}
@@ -157,19 +135,11 @@ const RankingSection = () => {
           padding="30px 0px 0px 0px"
         >
           {visibleItems <= 6 ? (
-            <Button
-              theme="default"
-              size="large"
-              onClick={ShowMore}
-            >
+            <Button theme="default" size="large" onClick={ShowMore}>
               더보기
             </Button>
           ) : (
-            <Button
-              theme="default"
-              size="large"
-              onClick={ShowLess}
-            >
+            <Button theme="default" size="large" onClick={ShowLess}>
               접기
             </Button>
           )}

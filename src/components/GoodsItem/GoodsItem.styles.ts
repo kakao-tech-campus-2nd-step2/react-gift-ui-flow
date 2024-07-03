@@ -6,7 +6,7 @@ export const GoodsItemContainer = styled.div`
   max-width: 157px;
 `;
 
-export const RankingBadge = styled.span<{ rankingIndex: number}>`
+export const RankingBadge = styled.span<{ rankingIndex: number }>`
   position: absolute;
   z-index: 2;
   top: 16px;

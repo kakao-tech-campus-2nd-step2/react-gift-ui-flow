@@ -23,12 +23,7 @@ const DefaultGoodsItem = ({
 }: DefaultGoodsItemProps) => (
   <GoodsItemContainer>
     <ItemInfo>
-      <Image
-        ratio="square"
-        radius={4}
-        src={imageSrc}
-        alt={title}
-      />
+      <Image ratio="square" radius={4} src={imageSrc} alt={title} />
       <SubTitle>{subtitle}</SubTitle>
       <Title>{title}</Title>
       <Amount>{amount.toLocaleString()}원</Amount>

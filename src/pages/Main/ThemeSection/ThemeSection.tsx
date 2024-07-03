@@ -143,11 +143,7 @@ const ThemeSection = () => (
               alignItems="center"
               padding="25px 35px 24px"
             >
-              <Image
-                src={theme.src}
-                width={90}
-                radius={32}
-              />
+              <Image src={theme.src} width={90} radius={32} />
               <CategoryText>{theme.category}</CategoryText>
             </Container>
           </Link>
