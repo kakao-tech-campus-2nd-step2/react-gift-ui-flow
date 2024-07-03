@@ -3,7 +3,7 @@ import theme from '@assets/images/theme.jpeg';
 import ThemeItem, { ThemeItemProps } from '.';
 
 const meta: Meta<ThemeItemProps> = {
-  title: 'components/ThemeCategory/ThemeItem',
+  title: 'components/home/ThemeCategory/ThemeItem',
   component: ThemeItem,
   tags: ['autodocs'],
   argTypes: {

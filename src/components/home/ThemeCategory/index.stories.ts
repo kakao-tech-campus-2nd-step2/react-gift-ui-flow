@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeCategory from '.';
 
 const meta: Meta<typeof ThemeCategory> = {
-  title: 'components/ThemeCategory/Default',
+  title: 'components/home/ThemeCategory/Default',
   component: ThemeCategory,
   tags: ['autodocs'],
 };
