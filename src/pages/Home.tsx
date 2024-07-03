@@ -11,7 +11,9 @@ export default function Home() {
     <>
       <Header />
       <FriendSelector />
-      <ThemeCategory />
+      <Inner maxWidth={1024}>
+        <ThemeCategory />
+      </Inner>
       <Inner maxWidth={1024}>
         <Filter />
       </Inner>

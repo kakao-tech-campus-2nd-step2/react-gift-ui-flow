@@ -64,7 +64,6 @@ export const THEME_CATEGORY_LIST = [
 ];
 
 export const THEME_CATEGORY = Object.freeze({
-  INNER_MAX_WIDTH: 1024,
   COLUMNS: 6,
   GAP: 24,
 });
