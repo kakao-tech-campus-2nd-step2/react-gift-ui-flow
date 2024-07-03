@@ -27,7 +27,7 @@
 			- [ ] 상품 목록을 처음에는 6개만 보이도록, 더보기를 누르는 경우 상품 목록을 더 보여줌(접기 버튼을 누르면 다시 6개만 보이도록)
 	- Theme 페이지(/theme/:themeKey)
 		- [ ] Header 섹션 추가
-		- [ ] 재사용성 고려하여 만들기(themeKey에 따라 label, title, description, backgroundColor가 달라짐)
+			- [ ] 재사용성 고려하여 만들기(themeKey에 따라 label, title, description, backgroundColor가 달라짐)
 		- [ ] 상품 목록 섹션 추가
 	- 로그인 페이지(/login)
 		- [ ] ID와 PW를 입력하면 로그인이 되도록 구현(ID와 PW는 아무 값을 입력해도 통과)
