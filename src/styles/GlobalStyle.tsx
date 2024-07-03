@@ -1,13 +1,17 @@
 import 'reset-css';
-import { ReactNode } from 'react';
+import { css, Global } from '@emotion/react';
+import { textColors } from '@styles/colors';
 
-interface GlobalStyleProps {
-  children?: ReactNode;
-}
+const baseStyle = css`
+  a {
+    text-decoration: none;
+    color: ${textColors.default}
+  }
+`;
 
-function GlobalStyle({ children }: GlobalStyleProps) {
+function GlobalStyle() {
   // eslint-disable-next-line react/jsx-no-useless-fragment
-  return <>{children}</>;
+  return <Global styles={baseStyle} />;
 }
 
 export default GlobalStyle;
