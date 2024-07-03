@@ -134,34 +134,34 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
 
 ## 2주차
 
-- [ ]  react-router-dom 설치
-- [ ]  PageHeader, PageFooter 컴포넌트 만들기(Organisms/PageHeader, PageFooter)
-- [ ]  Page 컴포넌트 만들기
-- [ ]  HeaderSection  컴포넌트 만들기 (organisms/HeaderSection)
-    - [ ]  themeKey에 따라 label, title, description, backgroundColor가 달라지도록.
-- [ ]  GiftDisplaySection 컴포넌트 만들기
-    - [ ]  indexed?: boolean에 따라 랭킹 표시 여부 결정
-    - [ ]  maxColumns, minColumns를 받아서, 각각 가장 큰 화면에서 보여줄 선물 아이템의 최대 개수와 가장 작은 화면에서 보여줄 선물 아이템의 최소 개수를 결정. 이 값에 따라서 미디어 쿼리를 다르게 지정하도록 하면 될 것.
-- [ ]  createBrowserRouter로 라우터 모듈 만들기
-- [ ]  routing 경로를 정의하는 상수 모듈 만들기
-- [ ]  메인 페이지 만들기(`/`)
-    - [ ]  레이아웃 구성
-    - [ ]  loginState 만들기(추후에 Context API를 이용하여 별도 로 분리.)
-    - [ ]  테마 카테고리 섹션 추가(organisms/ThemeSection)
-        - [ ]  테마 카테고리 타입 작성(types/index.d.ts)
-    - [ ]  실시간 선물랭킹 섹션 추가(GiftRankingSection)
-        - [ ]  필터 타입 작성(types/index.d.ts: Filter)
-        - [ ]  선물 타입 작성(types/index.d.ts: Gift)
-        - [ ]  필터에 따른 선물 리스트를 받아오는 hook 작성(filter: Filter, Gift[])
-        - [ ]  선물 리스트 표시
-        - [ ]  접기/펼치기 구현
-- [ ]  Theme 페이지 만들기(`/theme/:themeKey`)
-    - [ ]  헤더 섹션 추가 (HeaderSection 컴포넌트 이용)
-    - [ ]  상품 목록 섹션 추가
-        - [ ]  위에서 작성한 `필터에 따른 선물 리스트를 받아오는 hook` 과 유사하게, themeKey에 따라 선물 리스트를 다르게 받아오는 hook 구현
-        - [ ]  상품 목록 표시하기
-- [ ]  로그인 페이지 만들기(`/login`)
-    - [ ]  LoginForm 컴포넌트 만들기 (organisms/LoginForm)
-        - [ ]  로그인 시 이전 페이지로 이동
-- [ ]  마이페이지 만들기(`/my-account` )
-    - [ ]  로그아웃 버튼 구현
+- [x]  react-router-dom 설치
+- [x]  PageHeader, PageFooter 컴포넌트 만들기(Organisms/PageHeader, PageFooter)
+- [x]  Page 컴포넌트 만들기
+- [x]  HeaderSection  컴포넌트 만들기 (organisms/HeaderSection)
+    - [x]  themeKey에 따라 label, title, description, backgroundColor가 달라지도록.
+- [x]  GiftDisplaySection 컴포넌트 만들기
+    - [x]  indexed?: boolean에 따라 랭킹 표시 여부 결정
+    - [x]  maxColumns, minColumns를 받아서, 각각 가장 큰 화면에서 보여줄 선물 아이템의 최대 개수와 가장 작은 화면에서 보여줄 선물 아이템의 최소 개수를 결정. 이 값에 따라서 미디어 쿼리를 다르게 지정하도록 하면 될 것.
+- [x]  createBrowserRouter로 라우터 모듈 만들기
+- [x]  routing 경로를 정의하는 상수 모듈 만들기
+- [x]  메인 페이지 만들기(`/`)
+    - [x]  레이아웃 구성
+    - [x]  loginState 만들기(추후에 Context API를 이용하여 별도 로 분리.)
+    - [x]  테마 카테고리 섹션 추가(organisms/ThemeSection)
+        - [x]  테마 카테고리 타입 작성(types/index.d.ts)
+    - [x]  실시간 선물랭킹 섹션 추가(GiftRankingSection)
+        - [x]  필터 타입 작성(types/index.d.ts: Filter)
+        - [x]  선물 타입 작성(types/index.d.ts: Gift)
+        - [x]  필터에 따른 선물 리스트를 받아오는 hook 작성(filter: Filter, Gift[])
+        - [x]  선물 리스트 표시
+        - [x]  접기/펼치기 구현
+- [x]  Theme 페이지 만들기(`/theme/:themeKey`)
+    - [x]  헤더 섹션 추가 (HeaderSection 컴포넌트 이용)
+    - [x]  상품 목록 섹션 추가
+        - [x]  위에서 작성한 `필터에 따른 선물 리스트를 받아오는 hook` 과 유사하게, themeKey에 따라 선물 리스트를 다르게 받아오는 hook 구현
+        - [x]  상품 목록 표시하기
+- [x]  로그인 페이지 만들기(`/login`)
+    - [x]  LoginForm 컴포넌트 만들기 (organisms/LoginForm)
+        - [x]  로그인 시 이전 페이지로 이동
+- [x]  마이페이지 만들기(`/my-account` )
+    - [x]  로그아웃 버튼 구현
