@@ -3,8 +3,8 @@ import Header from '@components/common/Header';
 import Footer from '@components/common/Footer';
 import FriendSelector from '@components/FriendSelector';
 import ThemeCategory from '@components/ThemeCategory';
-import Target from '@components/Filter/Target';
-import Wish from '@components/Filter/Wish';
+import Filter from '@components/Filter';
+import Inner from '@components/common/Layout/Inner';
 
 export default function Home() {
   return (
@@ -12,8 +12,9 @@ export default function Home() {
       <Header />
       <FriendSelector />
       <ThemeCategory />
-      <Target />
-      <Wish />
+      <Inner maxWidth={1024}>
+        <Filter />
+      </Inner>
       <Footer />
     </>
   );

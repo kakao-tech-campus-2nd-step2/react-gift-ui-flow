@@ -8,9 +8,9 @@ export interface TargetItemProps extends ButtonHTMLAttributes<HTMLButtonElement>
   onSelect: () => void;
 }
 
-export default function TargetItem({ icon, target, selected, onSelect }: TargetItemProps) {
+export default function TargetItem({ icon, target, selected, onSelect, ...rest }: TargetItemProps) {
   return (
-    <TargetContainer type="button" onClick={onSelect}>
+    <TargetContainer type="button" onClick={onSelect} {...rest}>
       <IconContainer selected={selected}>{icon}</IconContainer>
       <Text selected={selected}>{target}</Text>
     </TargetContainer>
