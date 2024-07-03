@@ -2,7 +2,7 @@ import Grid from '@components/atoms/grid/Grid';
 import Container from '@components/atoms/container/Container';
 import ThemeItem from '@components/molecules/themeItem/ThemeItem';
 import GiftThemes from '@constants/GiftThemes';
-import { css } from '@emotion/react';
+import { MAX_CONTENT_WIDTH } from '@styles/size';
 
 interface ThemeSectionProps {
   maxColumns: number,
@@ -13,12 +13,10 @@ function ThemeSection({ maxColumns }: ThemeSectionProps) {
   const themes = GiftThemes;
 
   return (
-    <div css={css`
-      padding: 45px 52px 23px;
-    `}
-    >
+    <Container padding="45px 52px 23px" justifyContent="center">
       <Container
         elementSize="full-width"
+        maxWidth={MAX_CONTENT_WIDTH}
         justifyContent="center"
       >
         <Grid columns={maxColumns} gap={0}>
@@ -31,7 +29,7 @@ function ThemeSection({ maxColumns }: ThemeSectionProps) {
           })}
         </Grid>
       </Container>
-    </div>
+    </Container>
   );
 }
 
