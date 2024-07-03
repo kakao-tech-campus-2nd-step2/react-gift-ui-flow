@@ -14,7 +14,7 @@
 
   - Theme page (`/theme/:themekey`)
 
-    - [ ] 재사용성을 고려하여 Header 섹션 추가 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
+    - [ ] 재사용성을 고려하여 Header 섹션 추가 
 
     - [ ] 상품 목록 섹션 추가
 
