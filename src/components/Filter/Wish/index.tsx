@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Inner from '@/components/common/Layout/Inner';
 import Container from '@/components/common/Layout/Container/Container';
 import styled from '@emotion/styled';
 import { FILTER_WISHS } from '../constants';
+import WishItem from './WishItem';
 
 export default function Wish() {
+  const [selectedWish, setSelectedWish] = useState<string>(FILTER_WISHS[0].wish);
+
   return (
     <Inner maxWidth={1024}>
       <WishContainer>
         <Container justifyContent="center" alignItems="center">
-          {FILTER_WISHS.map((wish) => (
-            <WishItem key={wish.id} type="button">
-              {wish.wish}
-            </WishItem>
+          {FILTER_WISHS.map(({ id, wish }) => (
+            <WishItem key={id} wish={wish} selected={selectedWish === wish} onSelect={() => setSelectedWish(wish)} />
           ))}
         </Container>
       </WishContainer>
@@ -24,13 +25,4 @@ const WishContainer = styled.div`
   width: 100%;
   background-color: #e6f1ff;
   border-radius: 12px;
-`;
-
-const WishItem = styled.button`
-  border: none;
-  background-color: transparent;
-  padding: 20px 30px;
-  font-size: 22px;
-  color: #4684e9b3;
-  cursor: pointer;
 `;
