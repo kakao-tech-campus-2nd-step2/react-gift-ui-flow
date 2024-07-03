@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
-import GoodsList from '@/GoodsList';
+import GoodsList from '@/MainPage/GoodsList';
 
-import { Container } from './components/common/layouts/Container';
+import { Container } from '../components/common/layouts/Container';
  
 const Main: React.FC = () => {
   const themes = [
