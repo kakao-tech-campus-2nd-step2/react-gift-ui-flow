@@ -1,6 +1,7 @@
 import Container from '@components/atoms/container/Container';
 import { backgroundColors } from '@styles/colors';
-import GiftThemes, { GiftThemeKey } from '@constants/GiftThemes';
+import GiftThemes from '@constants/GiftThemes';
+import { GiftThemeKey } from '@/types';
 import { ThemeName, ThemeSubtitle, ThemeTitle } from './Banner.styles';
 
 interface BannerProps {
