@@ -1,3 +1,6 @@
+import { RankItemType } from '@/types/rankTypes';
+import { ThemeListType } from '@/types/themeType';
+
 export const themeListData = [
   {
     id: 0,
@@ -59,7 +62,8 @@ export const themeListData = [
     imageSrc: 'https://picsum.photos/200/?random=12',
     themeTitle: '출산/키즈',
   },
-];
+] satisfies ThemeListType[];
+
 export const rankListData = [
   {
     id: 1,
@@ -381,4 +385,4 @@ export const rankListData = [
     subtitle: '파워퍼프걸 특별 한정판',
     price: '190000',
   },
-];
+] satisfies RankItemType[];

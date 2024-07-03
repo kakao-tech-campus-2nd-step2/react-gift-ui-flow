@@ -1,6 +1,6 @@
 import BaseLayout from '@/components/BaseLayout/BaseLayout';
-import { RankSection } from '@/components/RankSection/RankSection';
-import { ThemeSection } from '@/components/ThemeSection/ThemeSection';
+import { RankSection } from '@/components/HomePage/RankSection/RankSection';
+import { ThemeSection } from '@/components/HomePage/ThemeSection/ThemeSection';
 
 export const HomePage = () => {
   return (

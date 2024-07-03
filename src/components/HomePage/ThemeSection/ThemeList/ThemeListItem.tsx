@@ -1,14 +1,15 @@
+import { ThemeListType } from '@/types/themeType';
+
 import { Image } from '@/components/ui/Image/Image';
 import { Container } from '@/components/ui/Layout/Container';
 
 import { themeListItemStyle, themeTitleStyle } from './styles';
 
 type ThemeListItemProps = {
-  imageSrc: string;
-  themeTitle: string;
+  theme: ThemeListType;
 };
 
-export const ThemeListItem = ({ imageSrc, themeTitle }: ThemeListItemProps) => {
+export const ThemeListItem = ({ theme }: ThemeListItemProps) => {
   return (
     <Container
       flexDirection="column"
@@ -16,13 +17,13 @@ export const ThemeListItem = ({ imageSrc, themeTitle }: ThemeListItemProps) => {
       css={themeListItemStyle}
     >
       <Image
-        src={imageSrc}
+        src={theme.imageSrc}
         width="6rem"
         radius={30}
         ratio="square"
-        alt={themeTitle}
+        alt={theme.themeTitle}
       />
-      <div css={themeTitleStyle}>{themeTitle}</div>
+      <div css={themeTitleStyle}>{theme.themeTitle}</div>
     </Container>
   );
 };

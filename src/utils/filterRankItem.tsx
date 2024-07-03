@@ -7,7 +7,10 @@ export const getFilteredRankItem = (
 ): FilterRankItemType[] => {
   return rankListData
     .filter((item) => {
-      return item.userType === userFilter && item.giftType === giftFilter;
+      return (
+        (userFilter === '전체' || item.userType === userFilter) &&
+        item.giftType === giftFilter
+      );
     })
     .map((item, index) => ({
       ...item,

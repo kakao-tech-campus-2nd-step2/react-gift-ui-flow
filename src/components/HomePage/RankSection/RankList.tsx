@@ -20,11 +20,8 @@ export const RankList = () => {
       {visibleItems.map((item) => (
         <RankingGoodsItem
           key={item.id}
-          rank={item.rank}
           imageSrc={DEFAULT_IMAGE_URL}
-          subtitle={item.subtitle}
-          title={item.title}
-          amount={item.price}
+          rankingItem={item}
         />
       ))}
     </Grid>

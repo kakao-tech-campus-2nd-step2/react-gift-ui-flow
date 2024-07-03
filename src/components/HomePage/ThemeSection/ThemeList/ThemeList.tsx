@@ -19,13 +19,7 @@ export const ThemeList = () => {
         }}
       >
         {themeListData.map((theme) => {
-          return (
-            <ThemeListItem
-              key={theme.id}
-              imageSrc={theme.imageSrc}
-              themeTitle={theme.themeTitle}
-            />
-          );
+          return <ThemeListItem key={theme.id} theme={theme} />;
         })}
       </Grid>
     </Content>
