@@ -4,7 +4,7 @@ FE 카카오 선물하기 2주차 과제: React 기초
 
 ### step1
 
-- [ ] Header, Footer와 같은 공통 컴포넌트 제작 ( Header와 Footer는 모든 페이지에서 보이도록)
+- [x] Header, Footer와 같은 공통 컴포넌트 제작 ( Header와 Footer는 모든 페이지에서 보이도록)
 - [x] 각 Url Path별로 페이지 제작
 - [ ] 메인 페이지 ( / )
   - [ ] Theme 카테고리 섹션
