@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { Image } from './Image';
+import { Image } from './common/Image';
+
 export default function ChooseFriend() {
   const handleImgClick = () => {
     alert('선물 받을 친구 선택하기');

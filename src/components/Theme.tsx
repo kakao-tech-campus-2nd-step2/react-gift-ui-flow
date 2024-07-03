@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Image } from './Image';
+import { Image } from './common/Image';
 import styled from '@emotion/styled';
 
 interface ThemeProp {
@@ -11,14 +11,14 @@ interface ThemeProp {
 export default function Theme({ themeKey, themeName, imgsrc }: ThemeProp) {
   const navigate = useNavigate();
 
-  const handleImgClick = () => {
+  const handleClick = () => {
     // themeKey로 ThemePage로 이동
     navigate(`/theme/${themeKey}`);
   };
 
   return (
     <ThemeWrapper>
-      <ThemeContainer>
+      <ThemeContainer onClick={handleClick}>
         <Image
           radius={32}
           ratio="square"
@@ -26,7 +26,6 @@ export default function Theme({ themeKey, themeName, imgsrc }: ThemeProp) {
           alt="생일 아이콘"
           width="90px"
           height="90px"
-          onClick={handleImgClick}
         ></Image>
         <ThemeName>{themeName}</ThemeName>
       </ThemeContainer>
@@ -50,6 +49,7 @@ const ThemeContainer = styled.div`
   padding: 25px 35px 24px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const ThemeName = styled.p`

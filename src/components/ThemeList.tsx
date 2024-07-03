@@ -1,5 +1,5 @@
-import { Grid } from './layouts/Grid';
-import { Container } from './layouts/Container';
+import { Grid } from './common/layouts/Grid';
+import { Container } from './common/layouts/Container';
 import styled from '@emotion/styled';
 import Theme from './Theme';
 
