@@ -15,7 +15,7 @@
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
 
 ## Week 2. 구현할 기능
-- [ ] 본인만의 기준으로 일관된 코드를 작성해주세요.
+- [x] 본인만의 기준으로 일관된 코드를 작성해주세요.
 - [ ] 기능 단위로 커밋을 해주세요.
 - [ ] Header 컴포넌트를 만드세요.
 - [ ] Footer 컴포넌트를 만드세요.
