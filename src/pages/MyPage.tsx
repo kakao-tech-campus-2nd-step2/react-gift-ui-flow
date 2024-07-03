@@ -2,8 +2,19 @@ import Container from '@components/atoms/container/Container';
 import Page from '@components/templates/Page';
 import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
+import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MyPage() {
+  const navigate = useNavigate();
+  const onLogoutClick = useCallback(() => {
+    navigate('/', {
+      state: {
+        loginState: false,
+      },
+    });
+  }, [navigate]);
+
   return (
     <Page>
       <Container
@@ -35,6 +46,7 @@ function MyPage() {
               width: '100%',
               maxWidth: '200px',
             }}
+            onClick={onLogoutClick}
           />
         </Container>
       </Container>
