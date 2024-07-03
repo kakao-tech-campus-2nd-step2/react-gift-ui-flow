@@ -5,7 +5,6 @@ interface GoodsItemProps {
   subtitle?: string;
   imageSrc: string;
   amount: number;
-  isRanking?: boolean;
   rankingIndex?: number;
 }
 
@@ -14,14 +13,13 @@ const GoodsItem = ({
   subtitle,
   imageSrc,
   amount,
-  isRanking = false,
   rankingIndex
 }: GoodsItemProps) => {
-  const rankingClass = rankingIndex !== undefined && rankingIndex <= 3 ? 'top-ranking' : 'default-ranking';
+  const rankingClass = rankingIndex !== undefined && rankingIndex >= 1 && rankingIndex <= 3? 'top-ranking' : 'default-ranking';
 
   return (
     <StyledGoodsItem>
-      {isRanking && rankingIndex !== undefined && (
+      {rankingIndex !== undefined && (
         <div className={`goods-item-ranking ${rankingClass}`}>
           {rankingIndex}
         </div>
@@ -65,11 +63,11 @@ const StyledGoodsItem = styled.div`
     color: white;
   }
 
-  &.top-ranking {
+  & .top-ranking {
     background-color: pink;
   }
 
-  &.default-ranking {
+  & .default-ranking {
     background-color: gray;
   }
 

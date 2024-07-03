@@ -9,3 +9,5 @@ FE 카카오 선물하기 1주차 과제: React 기초
     - [x] css module 대신 emotion 스타일 라이브러리를 tsx에 추가
     - [x] 컴포넌트 별로 폴더 구조 변경
     - [x] 통일성을 위해 style 코드의 storybook이라는 prefix 사용한 부분 제거
+- [x] 불필요한 stories 폴더 전체 제거
+- [x] rankingIndex의 여부로 isRanking을 대체

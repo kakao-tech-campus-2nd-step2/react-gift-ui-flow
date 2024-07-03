@@ -9,7 +9,6 @@ export default {
     subtitle: { control: 'text' },
     imageSrc: { control: 'text' },
     amount: { control: 'number' },
-    isRanking: { control: 'boolean' },
     ranking: { control: 'number' },
   },
 } as Meta;
@@ -31,7 +30,6 @@ export const Ranking: Story = {
     subtitle: '카카오 프렌즈 특별 한정판',
     imageSrc: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
     amount: 10000,
-    isRanking: true,
     rankingIndex: 1,
   },
 };
