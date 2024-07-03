@@ -21,7 +21,7 @@ export const titleStyle = css({
 });
 
 export const subtitleStyle = css({
-  color: colors.gray[400],
+  color: colors.blackOpacity[40],
   fontSize: '0.9rem',
   overflow: 'hidden',
   textOverflow: 'ellipsis',

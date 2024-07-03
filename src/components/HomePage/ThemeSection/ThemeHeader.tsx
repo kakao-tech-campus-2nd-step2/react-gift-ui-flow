@@ -21,7 +21,7 @@ export const ThemeHeader = () => {
     >
       <Image
         width="5rem"
-        radius={24}
+        radius={1.5}
         ratio="square"
         src={profile}
         css={themeProfileStyle}

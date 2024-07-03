@@ -1,4 +1,4 @@
-import { themeListData } from '@/mocks/mockData';
+import { themeData } from '@/mocks/mockData';
 
 import { Content } from '@/components/ui/Layout/Content';
 import { Grid } from '@/components/ui/Layout/Grid';
@@ -18,7 +18,7 @@ export const ThemeList = () => {
           sm: 4,
         }}
       >
-        {themeListData.map((theme) => {
+        {themeData.map((theme) => {
           return <ThemeListItem key={theme.id} theme={theme} />;
         })}
       </Grid>

@@ -14,7 +14,7 @@ const getBorderRadius = (radius: number | 'circle'): string => {
   if (radius === 'circle') {
     return IMAGE_CIRCLE_RADIUS;
   }
-  return `${radius}px`;
+  return `${radius}rem`;
 };
 
 export const boxStyle = (boxWidth: string) =>

@@ -3,8 +3,8 @@ import { css } from '@emotion/react';
 import { colors } from '@/styles/theme';
 
 export const themeHeaderStyle = css({
-  paddingTop: '2rem',
-  paddingBottom: '2rem',
+  paddingTop: '2.5rem',
+  paddingBottom: '2.5rem',
 });
 
 const textColor = {
@@ -31,3 +31,7 @@ export const textStyle = (textType: 'title' | 'subTitle' | 'description') =>
     fontWeight: fontWeight[textType],
     fontSize: fontSize[textType],
   });
+
+export const themeContentStyle = css({
+  padding: '2rem 0',
+});

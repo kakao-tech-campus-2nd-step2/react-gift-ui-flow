@@ -1,5 +1,7 @@
 import { css } from '@emotion/react';
 
+import { colors } from '@/styles/theme';
+
 export const themeProfileStyle = css({
   cursor: 'pointer',
 });
@@ -15,7 +17,7 @@ export const themeFooterStyle = css({
 });
 
 export const lightTextStyle = css({
-  color: 'rgba(0, 0, 0, 0.5)',
+  color: colors.blackOpacity[40],
   fontWeight: '500',
 });
 export const boldTextStyle = css({

@@ -1,14 +1,18 @@
-import { themeHeaderData } from '@/mocks/mockData';
+import { themeHeaderData, themeListData } from '@/mocks/mockData';
 
 import BaseLayout from '@/components/BaseLayout/BaseLayout';
+import { ThemeContent } from '@/components/ThemePage/ThemeContent';
 import { ThemeHeader } from '@/components/ThemePage/ThemeHeader';
 
 export const ThemePage = () => {
-  const testData = themeHeaderData[0];
+  const testHeader = themeHeaderData[0];
+  const { themeTitle } = testHeader;
+  const testContent = themeListData[themeTitle];
 
   return (
     <BaseLayout>
-      <ThemeHeader contents={testData} />
+      <ThemeHeader contents={testHeader} />
+      <ThemeContent items={testContent} />
     </BaseLayout>
   );
 };

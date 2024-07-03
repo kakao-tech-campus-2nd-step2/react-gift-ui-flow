@@ -1,4 +1,4 @@
-import { ThemeListType } from '@/types/themeType';
+import { ThemeTitleType } from '@/types/themeType';
 
 import { Image } from '@/components/ui/Image/Image';
 import { Container } from '@/components/ui/Layout/Container';
@@ -6,7 +6,7 @@ import { Container } from '@/components/ui/Layout/Container';
 import { themeListItemStyle, themeTitleStyle } from './styles';
 
 type ThemeListItemProps = {
-  theme: ThemeListType;
+  theme: ThemeTitleType;
 };
 
 export const ThemeListItem = ({ theme }: ThemeListItemProps) => {
@@ -19,7 +19,7 @@ export const ThemeListItem = ({ theme }: ThemeListItemProps) => {
       <Image
         src={theme.imageSrc}
         width="6rem"
-        radius={30}
+        radius={1.8}
         ratio="square"
         alt={theme.themeTitle}
       />
