@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 
-export interface TargetItemProps {
+export interface TargetItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: string;
   target: string;
   selected: boolean;
@@ -45,4 +45,5 @@ const Text = styled.p<{ selected: boolean }>`
   font-size: 20px;
   padding: 10px 0 6px 0;
   color: ${({ selected }) => (selected ? '#4684e9' : '#666666')};
+  font-weight: ${({ selected }) => (selected ? '700' : '400')};
 `;

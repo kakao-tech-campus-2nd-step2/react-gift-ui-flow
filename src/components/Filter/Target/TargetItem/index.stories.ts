@@ -1,13 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
 import TargetItem, { TargetItemProps } from '.';
+import { FILTER_TARGETS } from '../../constants';
 
 const meta: Meta<TargetItemProps> = {
   title: 'components/Filter/Target/TargetItem',
   component: TargetItem,
   tags: ['autodocs'],
   argTypes: {
-    icon: { control: 'select', options: ['ALL', '👩🏻‍🦳', '👨🏻‍🦳', '👦🏻'] },
-    target: { control: 'select', options: ['전체', '여성이', '남성이', '청소년이'] },
+    icon: { control: 'select', options: FILTER_TARGETS.map((target) => target.icon) },
+    target: { control: 'select', options: FILTER_TARGETS.map((target) => target.name) },
   },
 };
 
@@ -17,7 +18,7 @@ type Story = StoryObj<TargetItemProps>;
 
 export const Default: Story = {
   args: {
-    icon: 'ALL',
-    target: '전체',
+    icon: FILTER_TARGETS[0].icon,
+    target: FILTER_TARGETS[0].name,
   },
 };
