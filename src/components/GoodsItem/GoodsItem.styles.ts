@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const GoodsItemContainer = styled.div`
   position: relative;
   width: 100%;
-  max-width: 244px;
+  max-width: 157px;
 `;
 
 export const RankingBadge = styled.span<{ rankingIndex: number}>`

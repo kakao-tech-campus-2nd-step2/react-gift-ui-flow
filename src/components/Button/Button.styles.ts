@@ -6,7 +6,7 @@ type SizeProps = 'small' | 'medium' | 'large' | 'responsive';
 // color variables
 const colors = {
   default: {
-    backgroundColor: '#ffff00',
+    backgroundColor: '#fff',
     color: '#000',
   },
   primary: {

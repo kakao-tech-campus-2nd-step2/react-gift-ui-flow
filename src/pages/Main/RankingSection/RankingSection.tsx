@@ -1,11 +1,36 @@
 import React, { useState } from 'react';
 import Container from '@components/Layout/Container';
 import Grid from '@components/Layout/Grid';
-import { RankingContainer, Title, CategoryContainer, FilterButton, CategoryButton } from '@pages/Main/RankingSection/RankingSection.styles';
+import {
+  RankingContainer,
+  Title,
+  CategoryContainer,
+  FilterButton,
+  CategoryButton,
+} from '@pages/Main/RankingSection/RankingSection.styles';
+import RankingGoodsItem from '@components/GoodsItem/RankingGoodsItem';
+import Button from '@components/Button/Button';
+
+const items = Array.from({ length: 20 }, (_, index) => ({
+  id: index + 1,
+  imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
+  subtitle: 'BBQ',
+  title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+  amount: 29000,
+}));
 
 const RankingSection = () => {
   const [filter, setFilter] = useState('전체');
   const [category, setCategory] = useState('받고 싶어한');
+  const [visibleItems, setVisibleItems] = useState(6);
+
+  const ShowMore = () => {
+    setVisibleItems((prev) => prev + 6);
+  };
+
+  const ShowLess = () => {
+    setVisibleItems(6);
+  };
 
   return (
     <RankingContainer>
@@ -83,6 +108,7 @@ const RankingSection = () => {
       </Container>
       <Container
         padding="20px 0px 7px"
+        maxWidth="1024px"
       >
         <CategoryContainer>
           <CategoryButton
@@ -104,6 +130,49 @@ const RankingSection = () => {
             위시로 받은
           </CategoryButton>
         </CategoryContainer>
+      </Container>
+      <Container
+        padding="40px 0px 60px"
+        flexDirection="column"
+        maxWidth="1024px"
+      >
+        <Grid
+          columns={6}
+          gap={16}
+        >
+          {items.slice(0, visibleItems).map((item, index) => (
+            <RankingGoodsItem
+              key={item.id}
+              rankingIndex={index + 1}
+              imageSrc={item.imageSrc}
+              subtitle={item.subtitle}
+              title={item.title}
+              amount={item.amount}
+            />
+          ))}
+        </Grid>
+        <Container
+          justifyContent="center"
+          padding="30px 0px 0px 0px"
+        >
+          {visibleItems <= 6 ? (
+            <Button
+              theme="default"
+              size="large"
+              onClick={ShowMore}
+            >
+              더보기
+            </Button>
+          ) : (
+            <Button
+              theme="default"
+              size="large"
+              onClick={ShowLess}
+            >
+              접기
+            </Button>
+          )}
+        </Container>
       </Container>
     </RankingContainer>
   );
