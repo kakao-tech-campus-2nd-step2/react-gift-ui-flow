@@ -3,7 +3,13 @@ import styled from "@emotion/styled";
 import { breakpoints } from "@/styles/variants";
 
 type Props = {
-  theme?: "kakao" | "outline" | "black" | "lightGray" | "darkGray";
+  theme?:
+    | "kakao"
+    | "outline"
+    | "black"
+    | "lightGray"
+    | "darkGray"
+    | "transparent";
   size?: "large" | "small" | "responsive";
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
@@ -88,6 +94,14 @@ const Wrapper = styled.button<Pick<Props, "theme" | "size">>(
         "&:hover": {
           backgroundColor: "#555",
         },
+      };
+    }
+    if (theme === "transparent") {
+      return {
+        color: "#000",
+        backgroundColor: "transparent",
+        outline: "none",
+        border: "none",
       };
     }
 
