@@ -11,9 +11,9 @@ function AppRouter() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="/theme/:themeKey" element={<Theme />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/my-account" element={<MyAccount />} />
       </Route>
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }
