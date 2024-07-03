@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
+import PATH from '@/components/constants';
 
 export default function Header() {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ export default function Header() {
   return (
     <HeaderWrapper>
       <HeaderContent>
-        <GivePresent onClick={() => handleClick('/')}>선물하기</GivePresent>
-        <Login>로그인</Login>
+        <GivePresent onClick={() => handleClick(PATH.MAINPAGE)}>선물하기</GivePresent>
+        <Login onClick={() => handleClick(PATH.LOGINPAGE)}>로그인</Login>
       </HeaderContent>
     </HeaderWrapper>
   );

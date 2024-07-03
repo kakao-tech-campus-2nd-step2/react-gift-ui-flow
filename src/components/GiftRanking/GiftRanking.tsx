@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import MenuButton from './MenuButton';
 import GiftList from './GiftList';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function GiftRanking() {
   const [genderFilter, setGenderFilter] = useState('ALL');
@@ -9,12 +9,10 @@ export default function GiftRanking() {
 
   const handleGenderFilterChange = (filter: string) => {
     setGenderFilter(filter);
-    console.log(genderFilter);
   };
 
   const handleWishFilterChange = (filter: string) => {
     setWishFilter(filter);
-    console.log(wishFilter);
   };
 
   // 각 버튼의 활성 상태 관리
@@ -30,6 +28,14 @@ export default function GiftRanking() {
     setWishButton(filter); // 버튼 클릭 시 활성 버튼 변경
     handleWishFilterChange(filter); // 필터링 함수 호출
   };
+  // 상태가 변경될 때마다 콘솔에 현재 상태값 출력
+  useEffect(() => {
+    console.log(genderFilter);
+  }, [genderFilter]);
+
+  useEffect(() => {
+    console.log(wishFilter);
+  }, [wishFilter]);
 
   return (
     <GiftRankingWrapper>
