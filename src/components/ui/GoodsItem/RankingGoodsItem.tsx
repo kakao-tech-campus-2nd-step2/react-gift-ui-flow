@@ -16,12 +16,7 @@ export const RankingGoodsItem = ({
   rankingItem,
 }: RankingGoodsItemProps) => {
   return (
-    <Container
-      maxWidth="8rem"
-      flexDirection="column"
-      alignItems="center"
-      css={containerStyle}
-    >
+    <Container maxWidth="100%" flexDirection="column" css={containerStyle}>
       <RankedImage
         rank={rankingItem.rank}
         imageSrc={imageSrc}

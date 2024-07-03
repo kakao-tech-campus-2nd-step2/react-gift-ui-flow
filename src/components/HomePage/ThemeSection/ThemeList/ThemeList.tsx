@@ -22,8 +22,8 @@ export const ThemeList = () => {
       >
         {themeData.map((theme) => {
           return (
-            <Link to={`/theme/${theme.id}`}>
-              <ThemeListItem key={theme.id} theme={theme} />
+            <Link key={theme.id} to={`/theme/${theme.id}`}>
+              <ThemeListItem theme={theme} />
             </Link>
           );
         })}

@@ -14,14 +14,15 @@ export const inputSizeStyles: {
     fontSize: '1rem',
   },
   response: {
-    height: '2rem',
-    fontSize: '0.875rem',
+    height: '2.5rem',
+    fontSize: '14px',
     '@media (min-width: 768px)': {
-      height: '2.25rem',
-      fontSize: '1rem',
+      height: '3rem',
+      fontSize: '18px',
+      borderBottomWidth: '0.18rem',
     },
     '@media (min-width: 1024px)': {
-      width: '16rem',
+      height: '3.5rem',
     },
   },
 };
@@ -56,7 +57,7 @@ export const inputStyle = ({
   disabled: boolean;
 }) =>
   css({
-    borderBottom: `1px solid ${colors.gray[300]}`,
+    borderBottom: `0.12rem solid ${colors.gray[300]}`,
     outline: 'none',
     padding: '0 0.5rem',
     ...inputSizeStyles[size],

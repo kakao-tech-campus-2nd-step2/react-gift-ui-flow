@@ -130,7 +130,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
-  color: #a3a3a3;
+  color: #727272;
 }
 button,
 [role='button'] {

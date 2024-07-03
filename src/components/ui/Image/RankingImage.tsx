@@ -25,7 +25,7 @@ export const RankedImage = ({ rank, imageSrc, alt }: RankedImageProps) => {
         {rank}
       </Container>
       <Image
-        width="8rem"
+        width="100%"
         src={imageSrc}
         alt={alt}
         ratio={GOODS_IMAGE_DEFAULT_RATIO}

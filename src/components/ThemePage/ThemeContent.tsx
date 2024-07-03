@@ -1,9 +1,10 @@
 import { DEFAULT_IMAGE_URL } from '@/constants/data';
 import { ThemeListType } from '@/types/themeType';
 
-import { GoodsItem } from '../ui/GoodsItem/GoodsItem';
-import { Content } from '../ui/Layout/Content';
-import { Grid } from '../ui/Layout/Grid';
+import { GoodsItem } from '@/components/ui/GoodsItem/GoodsItem';
+import { Content } from '@/components/ui/Layout/Content';
+import { Grid } from '@/components/ui/Layout/Grid';
+
 import { themeContentStyle } from './styles';
 
 type ThemeContentProps = {

@@ -48,7 +48,8 @@ export const sizeStyles: {
   },
   response: {
     height: '2.5rem',
-    padding: '0 14rem',
+    width: '30rem',
+    padding: 'auto',
     '@media (min-width: 768px)': {
       height: '3.5rem',
     },
