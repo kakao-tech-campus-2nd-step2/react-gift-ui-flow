@@ -13,7 +13,7 @@ function LoginForm() {
         loginState: true,
       },
     });
-  }, []);
+  }, [navigate]);
 
   return (
     <Container
