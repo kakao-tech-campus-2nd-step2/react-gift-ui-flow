@@ -5,6 +5,12 @@ import Button from '@components/atoms/button/Button';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Paths from '@constants/Paths';
+import styled from '@emotion/styled';
+
+const GreetingTitle = styled.h1`
+    font-weight: bold;
+    font-size: 36px
+`;
 
 function MyPage() {
   const navigate = useNavigate();
@@ -28,13 +34,9 @@ function MyPage() {
           flexDirection="column"
           alignItems="center"
         >
-          <h1 css={css`
-            font-weight: 700;
-            font-size: 36px
-          `}
-          >
+          <GreetingTitle>
             회원님 안녕하세요!
-          </h1>
+          </GreetingTitle>
           <div css={css`
             height: 64px;
           `}
