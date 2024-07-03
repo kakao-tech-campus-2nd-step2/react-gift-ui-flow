@@ -6,16 +6,24 @@ import Inner from '@components/common/Layout/Inner';
 
 export default function Header() {
   return (
-    <header>
+    <HeaderContainer>
       <Inner maxWidth={1024}>
         <Container justifyContent="space-between" alignItems="center">
           <Logo src={logo} alt="home page logo" />
           <Login>로그인</Login>
         </Container>
       </Inner>
-    </header>
+    </HeaderContainer>
   );
 }
+
+const HeaderContainer = styled.header`
+  position: fixed;
+  background-color: #fff;
+  width: 100%;
+  top: 0;
+  left: 0;
+`;
 
 const Logo = styled.img`
   width: 60px;
