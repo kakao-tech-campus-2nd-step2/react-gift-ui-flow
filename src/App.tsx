@@ -1,5 +1,6 @@
 // import styled from '@emotion/styled';
 
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 
 const App = () => {
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <div>
       <Header />
+      <Footer />
       {/* <Title>Hello, {name}</Title> */}
     </div>
   );
