@@ -1,4 +1,4 @@
-import { Global } from "@emotion/react";
+import { Global } from '@emotion/react';
 
 function ResetCss() {
   return (
@@ -49,6 +49,12 @@ function ResetCss() {
     table {
         border-collapse: collapse;
         border-spacing: 0;
+    }
+    a:link {
+        text-decoration: none;
+    }
+    a:visited, a:hover, a:active {
+        color: inherit;
     }`}
     />
   );
