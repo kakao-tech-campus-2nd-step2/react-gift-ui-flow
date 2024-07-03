@@ -3,9 +3,16 @@ import React from "react";
 
 import { breakpoints } from "@/styles/variants";
 
-const Header = () => {
-  const handleClick: React.MouseEventHandler<HTMLDivElement> = () => {
+type Props = {
+  isLogin: boolean;
+} & React.HTMLAttributes<HTMLDivElement>;
+
+const Header: React.FC<Props> = ({ isLogin = false }: Props) => {
+  const loginClick: React.MouseEventHandler<HTMLDivElement> = () => {
     location.href = "/login";
+  };
+  const myaccountClick: React.MouseEventHandler<HTMLDivElement> = () => {
+    location.href = "/my-account";
   };
 
   return (
@@ -14,9 +21,15 @@ const Header = () => {
         <a href="/">
           <LogoImage src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" />
         </a>
-        <LoginContainer onClick={handleClick}>
-          <p>로그인</p>
-        </LoginContainer>
+        {isLogin ? (
+          <MenuContainer onClick={myaccountClick}>
+            <p>나의 페이지</p>
+          </MenuContainer>
+        ) : (
+          <MenuContainer onClick={loginClick}>
+            <p>로그인</p>
+          </MenuContainer>
+        )}
       </InnerWrapper>
     </Wrapper>
   );
@@ -48,6 +61,6 @@ const LogoImage = styled.img`
   height: 54px;
 `;
 
-const LoginContainer = styled.div`
+const MenuContainer = styled.div`
   cursor: pointer;
 `;

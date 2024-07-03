@@ -4,7 +4,7 @@ import Header from "@/components/common/Header";
 const App = () => {
   return (
     <div>
-      <Header />
+      <Header isLogin={false} />
       <Footer />
     </div>
   );

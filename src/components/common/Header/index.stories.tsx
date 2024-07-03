@@ -6,6 +6,9 @@ const meta = {
   title: "Common/Header",
   component: Header,
   tags: ["autodocs"],
+  args: {
+    isLogin: false,
+  },
 } satisfies Meta<typeof Header>;
 
 export default meta;
