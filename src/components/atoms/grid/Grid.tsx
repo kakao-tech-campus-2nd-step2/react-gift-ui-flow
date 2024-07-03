@@ -12,6 +12,7 @@ function Grid({ gap, columns, children }: GridProps) {
     <div css={css`
     display: grid;
     gap: ${gap}px;
+    width: 100%;
     grid-template-columns: repeat(${columns}, 1fr);
   `}
     >
