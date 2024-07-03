@@ -3,6 +3,7 @@ import MainPage from '@pages/main/MainPage';
 import Paths from '@constants/Paths';
 import ThemePage from '@pages/ThemePage';
 import LoginPage from '@pages/LoginPage';
+import MyPage from '@pages/MyPage';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: Paths.LOGIN_PAGE,
     element: <LoginPage />,
+  },
+  {
+    path: Paths.MYACCOUNT_PAGE,
+    element: <MyPage />,
   },
 ]);
 
