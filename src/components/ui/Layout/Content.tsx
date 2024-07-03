@@ -6,13 +6,13 @@ import { contentStyle } from './styles';
 interface ContentProps extends ContainerProps {
   children: ReactNode;
   backgroundColor?: string;
-  height: string;
+  height?: string;
 }
 
 export const Content = ({
   children,
   backgroundColor = 'transparent',
-  height,
+  height = 'fit-content',
   flexDirection,
   justifyContent,
   alignItems,

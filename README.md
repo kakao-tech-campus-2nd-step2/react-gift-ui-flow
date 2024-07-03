@@ -23,7 +23,7 @@
 
 #### Theme 페이지
 
-- [ ] Dynamic Header
+- [x] Header
 - [ ] Goods Item 리스트
 
 #### 로그인 페이지
@@ -38,6 +38,7 @@
 #### react router
 
 - [ ] 페이지에 라우터 연결
+- [ ] theme 페이지 다이나믹 라우터 처리
 - [ ] 로그인 리다이렉션 처리
 
 #### 리팩토링

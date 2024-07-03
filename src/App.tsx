@@ -1,7 +1,7 @@
-import { HomePage } from './pages/Home';
+import { ThemePage } from './pages/Theme';
 
 const App = () => {
-  return <HomePage />;
+  return <ThemePage />;
 };
 
 export default App;
