@@ -20,10 +20,25 @@ const Theme: React.FC = () => {
     '과일/한우',
     '출산/키즈',
   ];
+  const themeKeys = [
+    'Birthday',
+    'GraduationGift',
+    'SmallLuxury',
+    'LuxuryGift',
+    'Marriage',
+    'WarmGift',
+    'LightGift',
+    'FanGift',
+    'ExchangeCard',
+    'Health',
+    'Food',
+    'Birth',
+  ];
+
   return (
     <GridContainer>
       {labels.map((label, index) => (
-        <ThemeLink key={index} to="/theme/:themeKey">
+        <ThemeLink key={index} to={`/theme/${themeKeys[index]}`}>
           <ThemeImage src={imageUrl} alt={`Theme ${index + 1}`} />
           <Label>{label}</Label>
         </ThemeLink>
