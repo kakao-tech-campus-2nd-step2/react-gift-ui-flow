@@ -1,0 +1,10 @@
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgb(255, 255, 255); /* 흰색 배경 */
+}
+.text {
+  font-size: 16px;
+}
