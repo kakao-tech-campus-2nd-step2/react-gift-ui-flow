@@ -6,23 +6,23 @@ import { Grid } from '@/components/common/layouts/Grid';
 
 import styles from './RankingSection.module.scss';
 
-const RankingCategory = () => {
-  const [category, setCategory] = useState('전체');
+const PeopleCategory = () => {
+  const [peopleCat, setPeopleCat] = useState('전체');
   const categories = ['전체', '여성이', '남성이', '청소년이'];
 
   const handleCategory = (cat: string) => {
-    setCategory(cat);
+    setPeopleCat(cat);
   };
 
   return (
     <div className={styles.category}>
       {categories.map((item) => (
         <div onClick={() => handleCategory(item)} className={styles.icon}>
-          <div className={[styles.itemIcon, category === item ? styles.activeIcon : ''].join(' ')}>
+          <div className={[styles.itemIcon, peopleCat === item ? styles.activeIcon : ''].join(' ')}>
             {item === '전체' ? 'ALL' : item === '여성이' ? '👩🏻' : item === '남성이' ? '👨🏻' : '👦🏻'}
           </div>
           <div
-            className={[styles.categoryItem, category === item ? styles.activeItem : ''].join('')}
+            className={[styles.categoryItem, peopleCat === item ? styles.activeItem : ''].join(' ')}
           >
             {item}
           </div>
@@ -72,7 +72,7 @@ const RankingSection = () => {
   return (
     <div className={styles.ranking}>
       <h1>실시간 급상승 선물랭킹</h1>
-      <RankingCategory />
+      <PeopleCategory />
       <CategoryChoosing />
       <div className={styles.rankingList}>
         <Grid columns={4} gap={15} className={styles.rankingGrid}>
