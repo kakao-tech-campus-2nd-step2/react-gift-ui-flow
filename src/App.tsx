@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
-import Header from './components/common/Header';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     <AppContainer>
-      <Header></Header>
+      <Header />
+      <Footer />
     </AppContainer>
   );
 };
