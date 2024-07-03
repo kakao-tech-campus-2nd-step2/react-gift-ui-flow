@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
 
 const Title = styled.h1`
   margin-top: 15px;
+  margin-bottom: 10px;
   font-weight: 900;
   font-size: 18px;
 `;
