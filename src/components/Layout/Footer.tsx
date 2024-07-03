@@ -5,6 +5,6 @@ export const Footer = () => {
 };
 const Wrapper = styled.div`
   background-color: rgb(250, 250, 250);
-  height: 76px;
+  height: 100px;
   padding: 20px;
 `;
