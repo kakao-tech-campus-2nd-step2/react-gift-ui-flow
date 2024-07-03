@@ -2,6 +2,9 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  box-sizing: border-box;
+}
 abbr,
 blockquote,
 body,
@@ -86,4 +89,8 @@ button:disabled {
 ::-moz-focus-inner {
   border: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
