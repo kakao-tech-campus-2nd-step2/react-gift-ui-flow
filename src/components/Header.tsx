@@ -37,6 +37,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: #000;
   font-size: 14px;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const LogoLink = styled(Link)`
@@ -44,6 +48,10 @@ const LogoLink = styled(Link)`
   color: #000;
   font-size: 20px;
   font-weight: bold;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export default Header;

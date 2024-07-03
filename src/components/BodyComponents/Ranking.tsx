@@ -1,17 +1,122 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
+import { RankingGoodsItems } from '../common/GoodsItem/Ranking';
+
+const imgSrc =
+  'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg';
+
 const items = [
-  { id: 1, name: '상품 1', category: '전체', gender: '여성', type: '받고 싶어한' },
-  { id: 2, name: '상품 2', category: '전체', gender: '남성', type: '많이 선물한' },
-  { id: 3, name: '상품 3', category: '전체', gender: '청소년', type: '위시로 받은' },
-  { id: 4, name: '상품 4', category: '전체', gender: '여성', type: '많이 선물한' },
-  { id: 5, name: '상품 5', category: '전체', gender: '남성', type: '받고 싶어한' },
-  { id: 6, name: '상품 6', category: '전체', gender: '청소년', type: '많이 선물한' },
-  { id: 7, name: '상품 7', category: '전체', gender: '여성', type: '위시로 받은' },
-  { id: 8, name: '상품 8', category: '전체', gender: '남성', type: '받고 싶어한' },
-  { id: 9, name: '상품 9', category: '전체', gender: '청소년', type: '많이 선물한' },
-  { id: 10, name: '상품 10', category: '전체', gender: '여성', type: '위시로 받은' },
+  {
+    id: 1,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 2,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 3,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 4,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 5,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 6,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 7,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 8,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 9,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
+  {
+    id: 10,
+    name: '상품 1',
+    category: '전체',
+    gender: '여성',
+    type: '받고 싶어한',
+    imageSrc: imgSrc,
+    subtitle: 'BBQ',
+    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+    amount: 29000,
+  },
 ];
 
 const Ranking: React.FC = () => {
@@ -21,8 +126,9 @@ const Ranking: React.FC = () => {
 
   const filteredItems = items.filter(
     (item) =>
-      (genderFilter === '전체' || item.gender === genderFilter) &&
-      (typeFilter === '전체' || item.type === typeFilter),
+      item.category === '전체' ||
+      ((genderFilter === '전체' || item.gender === genderFilter) &&
+        (typeFilter === '받고 싶어한' || item.type === typeFilter)),
   );
 
   const showMoreItems = () => {
@@ -114,7 +220,14 @@ const Ranking: React.FC = () => {
       </Filters>
       <ItemList>
         {filteredItems.slice(0, visibleItems).map((item) => (
-          <Item key={item.id}>{item.name}</Item>
+          <RankingGoodsItems
+            key={item.id}
+            rankingIndex={item.id}
+            imageSrc={item.imageSrc}
+            subtitle={item.subtitle}
+            title={item.title}
+            amount={item.amount}
+          />
         ))}
       </ItemList>
       {visibleItems < filteredItems.length ? (
@@ -158,6 +271,11 @@ const FilterGenderGroup = styled.div`
 
 const ButtonContainer = styled.div`
   justify-content: center;
+  width: 100%;
+  min-width: 58px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Label = styled.div<{ active: boolean }>`
@@ -216,31 +334,32 @@ const ItemList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-`;
-
-const Item = styled.div`
-  background-color: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px 0px 30px;
 `;
 
 const Button = styled.button`
   display: block;
   width: 100%;
+  height: 40px;
   padding: 10px;
   margin-top: 20px;
-  background-color: #007bff;
-  color: white;
+  background-color: none;
+  color: rgb(17, 17, 17);
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   text-align: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: rgb(204, 204, 204) 0px 0px 0px 1px inset;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: rgb(245, 245, 245);
+  }
+
+  &:focus {
+    outline: none;
   }
 `;
 

@@ -39,20 +39,24 @@ const GridContainer = styled.div`
   padding: 14px 14px 3px;
   height: 308px;
   box-sizing: border-box;
+  align-items: center;
 `;
 
 const ThemeLink = styled(Link)`
   display: flex;
   flex-direction: column;
-  text-align: center;
   align-items: center;
   text-decoration: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const ThemeImage = styled.img`
   width: 50px;
   height: 50px;
-  border-radius: 8px;
+  border-radius: 18px;
 `;
 
 const Label = styled.div`
