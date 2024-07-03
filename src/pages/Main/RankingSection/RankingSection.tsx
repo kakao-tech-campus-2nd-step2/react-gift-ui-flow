@@ -152,6 +152,7 @@ const RankingSection = () => {
           ))}
         </Grid>
         <Container
+          width="100%"
           justifyContent="center"
           padding="30px 0px 0px 0px"
         >
