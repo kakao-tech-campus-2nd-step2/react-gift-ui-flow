@@ -5,6 +5,11 @@ import type {
   ContainerDirection,
   ContainerJustifyContent,
 } from '@/components/atoms/FlatFlex/types';
+import {
+  ContainerAlignItemsType,
+  ContainerDirectionType,
+  ContainerJustifyContentType,
+} from '@/components/atoms/FlatFlex/types';
 import { vars } from '@/styles';
 
 export type Props = {
@@ -14,8 +19,25 @@ export type Props = {
   justifyContent?: ContainerJustifyContent;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export const FlatFlex = ({ ...args }: Props) => {
-  return <Inner {...args} />;
+export const FlatFlex = ({
+  children,
+  maxWidth,
+  flexDirection = ContainerDirectionType.row,
+  alignItems = ContainerAlignItemsType.center,
+  justifyContent = ContainerJustifyContentType.center,
+  ...args
+}: Props) => {
+  return (
+    <Inner
+      maxWidth={maxWidth}
+      flexDirection={flexDirection}
+      alignItems={alignItems}
+      justifyContent={justifyContent}
+      {...args}
+    >
+      {children}
+    </Inner>
+  );
 };
 
 const Inner = styled.div<
