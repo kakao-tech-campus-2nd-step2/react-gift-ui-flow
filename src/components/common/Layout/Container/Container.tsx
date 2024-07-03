@@ -37,5 +37,4 @@ const StyledContainer = styled.div<ContainerProps>`
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
   align-items: ${({ alignItems }) => alignItems || 'stretch'};
   margin: 0 auto;
-  padding: 16px;
 `;
