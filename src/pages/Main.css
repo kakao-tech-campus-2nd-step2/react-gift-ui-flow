@@ -1,3 +1,8 @@
+.header {
+    position: fixed;
+    width: 100%;
+}
+
 .selectFriend {
     background-color: #F6F6F6;
     padding: 40px calc(8% + 100px);

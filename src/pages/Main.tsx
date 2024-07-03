@@ -46,8 +46,10 @@ const Main = () => {
 
   return (
     <div className='MainPage'>
-        <Header title='선물하기' subtitle='로그인'/>
-
+        <div className='header'>
+            <Header title='선물하기' subtitle='로그인' />
+        </div>
+        
         <div className='selectFriend'>
             <Image
                 src={choonsik}
