@@ -7,8 +7,8 @@ export type HeaderProps = {
 const HeaderContainer = styled.header`
   background-color: #fff;
   color: #333;
-  padding: 10px 20px;
-  font-size: 12px;
+  padding: 20px 20px;
+  font-size: 10px;
   font-weight: bold;
 `;
 
