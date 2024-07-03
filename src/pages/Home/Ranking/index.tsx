@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { breakpoints } from '@/styles/variants';
 
 import { PersonCategory } from './PersonCategory';
+import { Rankings } from './Rankings';
 import { SituationCategory } from './SituationCategory';
 
 export const Ranking = () => {
@@ -11,6 +12,7 @@ export const Ranking = () => {
       <Title>실시간 급상승 선물랭킹</Title>
       <PersonCategory />
       <SituationCategory />
+      <Rankings />
     </Wrapper>
   );
 };
