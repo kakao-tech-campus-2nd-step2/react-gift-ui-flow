@@ -3,7 +3,10 @@ import styled from '@emotion/styled';
 const Header = () => {
   return (
     <HeaderContainer>
-      <HomeLogo>선물하기</HomeLogo>
+      <HomeLogo
+        src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+        alt="Home Logo"
+      ></HomeLogo>
       <LoginBtn>로그인</LoginBtn>
     </HeaderContainer>
   );
@@ -15,12 +18,14 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
 `;
 
-const HomeLogo = styled.span`
-  font-size: 20px;
-  font-weight: bold;
+const HomeLogo = styled.img`
+  width: 60px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const LoginBtn = styled.span`
