@@ -4,11 +4,12 @@ import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
 import { useNavigate } from 'react-router-dom';
 import { useCallback } from 'react';
+import Paths from '@constants/Paths';
 
 function LoginForm() {
   const navigate = useNavigate();
   const onLoginClick = useCallback(() => {
-    navigate('/', {
+    navigate(Paths.MAIN_PAGE, {
       state: {
         loginState: true,
       },

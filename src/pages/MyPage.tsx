@@ -4,11 +4,12 @@ import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
 import { useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Paths from '@constants/Paths';
 
 function MyPage() {
   const navigate = useNavigate();
   const onLogoutClick = useCallback(() => {
-    navigate('/', {
+    navigate(Paths.MAIN_PAGE, {
       state: {
         loginState: false,
       },
