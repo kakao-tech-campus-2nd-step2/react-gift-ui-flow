@@ -25,6 +25,7 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   color: black;
   font-weight: bold;
+  outline: none;
 `;
 
 const Header: React.FC = () => {
