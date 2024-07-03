@@ -28,7 +28,7 @@
 	- Theme 페이지(/theme/:themeKey)
 		- [X] Header 섹션 추가
 			- [X] 재사용성 고려하여 만들기(themeKey에 따라 label, title, description, backgroundColor가 달라짐)
-		- [ ] 상품 목록 섹션 추가
+		- [X] 상품 목록 섹션 추가
 	- 로그인 페이지(/login)
 		- [ ] ID와 PW를 입력하면 로그인이 되도록 구현(ID와 PW는 아무 값을 입력해도 통과)
 	- 나의 페이지(/my-account)

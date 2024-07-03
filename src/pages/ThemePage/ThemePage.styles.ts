@@ -28,3 +28,8 @@ export const HeaderDescription = styled.p`
   line-height: 32px;
   color: rgba(255, 255, 255, 0.55);
 `;
+
+export const ItemListSection = styled.section`
+  padding: 40px 16px 360px;
+  width: 100%;
+`;

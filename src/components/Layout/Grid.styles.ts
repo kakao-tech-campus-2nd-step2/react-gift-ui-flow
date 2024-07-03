@@ -8,6 +8,8 @@ interface ResponsiveGridStyle {
 interface GridProps {
   gap?: number;
   columns: number | ResponsiveGridStyle;
+  alignItems?: string;
+  justifyItems?: string;
 }
 
 const getColumns = (columns: number | ResponsiveGridStyle) => {
@@ -32,4 +34,6 @@ export const StyledGrid = styled.div<GridProps>`
   display: grid;
   grid-gap: ${({ gap }) => gap || 0}px;
   grid-template-columns: ${({ columns }) => getColumns(columns)};
+  align-items: ${({ alignItems }) => alignItems || 'center'};
+  justify-items: ${({ justifyItems }) => justifyItems || 'center'};
 `;
