@@ -6,7 +6,7 @@ import { Footer } from './Footer';
 import { Header } from './Header';
 import { layoutStyles, mainStyles } from './styles';
 
-export interface BaseLayoutProp extends HTMLAttributes<HTMLDivElement> {
+interface BaseLayoutProp extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
 }
 
