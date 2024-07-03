@@ -21,6 +21,7 @@ const LoginPage = () => {
     e.preventDefault();
     if (id && password) {
       localStorage.setItem('isLoggedIn', 'true');
+      localStorage.setItem('id', id);
       navigate(ROUTE_PATHS.ROOT);
     } else alert('아이디와 비밀번호를 입력해주세요.');
   };
@@ -59,10 +60,7 @@ const LoginPage = () => {
             />
           </StyledInput>
           <StyledButton>
-            <Button
-              theme="primary"
-              size="medium"
-            >
+            <Button theme="primary" size="medium">
               로그인
             </Button>
           </StyledButton>

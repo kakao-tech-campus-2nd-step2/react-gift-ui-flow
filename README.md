@@ -18,7 +18,7 @@
 ### 요구사항
 - [X] Header, Footer와 같은 공통 컴포넌트 만들기
 	- [X] 모든 페이지에서 Header와 Footer가 보이게 적용
-- [ ] 각 URL Path 별로 페이지 만들기
+- [X] 각 URL Path 별로 페이지 만들기
 	- 메인 페이지(/)
 		- [X] Theme 카테고리 섹션 추가
 			- [X] Theme 카테고리 Item 클릭 시 Theme 페이지(/theme/:themeKey)로 이동
@@ -32,4 +32,4 @@
 	- 로그인 페이지(/login)
 		- [X] ID와 PW를 입력하면 로그인이 되도록 구현(ID와 PW는 아무 값을 입력해도 통과)
 	- 나의 페이지(/my-account)
-		- [ ] 로그아웃을 할 수 있는 버튼 추가 
+		- [X] 로그아웃을 할 수 있는 버튼 추가 

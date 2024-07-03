@@ -15,8 +15,8 @@ const colors = {
     border: 'none',
   },
   secondary: {
-    backgroundColor: '#ffffe0',
-    color: '#777777',
+    backgroundColor: 'rgb(68, 68, 68)',
+    color: 'rgb(255, 255, 255)',
     border: 'none',
   },
 };
