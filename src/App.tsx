@@ -1,18 +1,22 @@
-import styled from '@emotion/styled';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import HomePage from './components/pages/HomePage';
 
 const App = () => {
-  const name = 'Josh Perez';
-
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
