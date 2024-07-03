@@ -3,16 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #fff; /* 흰색 배경 */
-  border-bottom: 1px solid #ccc; /* 아래쪽 테두리 */
+  background-color: rgb(255, 255, 255); /* 흰색 배경 */
 }
 
-.title {
-  font-size: 20px;
-  color: #333;
+.title img {
+  height: 54px;
 }
 
 .login {
-  font-size: 16px;
+  font-size: 14px;
   cursor: pointer;
 }
