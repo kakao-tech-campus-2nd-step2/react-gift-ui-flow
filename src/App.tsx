@@ -1,7 +1,7 @@
-import { ThemePage } from './pages/Theme';
+import { Router } from './router';
 
 const App = () => {
-  return <ThemePage />;
+  return <Router />;
 };
 
 export default App;

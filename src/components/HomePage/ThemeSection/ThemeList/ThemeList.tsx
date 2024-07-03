@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { themeData } from '@/mocks/mockData';
 
 import { Content } from '@/components/ui/Layout/Content';
@@ -19,7 +21,11 @@ export const ThemeList = () => {
         }}
       >
         {themeData.map((theme) => {
-          return <ThemeListItem key={theme.id} theme={theme} />;
+          return (
+            <Link to={`/theme/${theme.id}`}>
+              <ThemeListItem key={theme.id} theme={theme} />
+            </Link>
+          );
         })}
       </Grid>
     </Content>
