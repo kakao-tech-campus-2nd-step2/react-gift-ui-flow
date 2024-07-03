@@ -9,7 +9,7 @@ export interface WishItemProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export default function WishItem({ wish, selected, onSelect, ...rest }: WishItemProps) {
   return (
-    <WishItemContainer type="button" {...rest} selected={selected} onClick={onSelect}>
+    <WishItemContainer type="button" selected={selected} onClick={onSelect} {...rest}>
       {wish}
     </WishItemContainer>
   );

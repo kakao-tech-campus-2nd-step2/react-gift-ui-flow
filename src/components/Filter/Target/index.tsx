@@ -1,20 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Container from '@components/common/Layout/Container/Container';
 import { FILTER_TARGETS } from '../constants';
 import TargetItem from './TargetItem';
 
-export default function Target() {
-  const [selectedTarget, setSelectedTarget] = useState<string>(FILTER_TARGETS[0].name);
+interface TargetProps {
+  selectedTarget: string;
+  selectTarget: (target: string) => void;
+}
 
+export default function Target({ selectedTarget, selectTarget, ...rest }: TargetProps) {
   return (
-    <Container justifyContent="space-around">
+    <Container justifyContent="space-around" {...rest}>
       {FILTER_TARGETS.map(({ id, icon, name }) => (
         <TargetItem
           key={id}
           icon={icon}
           target={name}
           selected={selectedTarget === name}
-          onSelect={() => setSelectedTarget(name)}
+          onSelect={() => selectTarget(name)}
         />
       ))}
     </Container>
