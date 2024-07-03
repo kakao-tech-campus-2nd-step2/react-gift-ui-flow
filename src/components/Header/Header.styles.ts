@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
 
 export const HeaderContainer = styled.header`
+  position: fixed;
   width: 100%;
+  height: 54px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #fff;
+  padding: 0px 16px;
 `;
 
 export const Logo = styled.a`

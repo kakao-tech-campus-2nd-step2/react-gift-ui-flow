@@ -6,7 +6,7 @@ const Header = () => (
   <HeaderContainer>
     <Container
       width="100%"
-      maxWidth="1200px"
+      maxWidth="1024px"
       justifyContent="space-between"
       alignItems="center"
       padding="10px 0"
