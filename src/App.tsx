@@ -1,12 +1,19 @@
+import '@/styles/reset.css';
+
 import styled from '@emotion/styled';
+import { Outlet } from 'react-router-dom';
+
+import { Header } from '@/components/organisms/Header';
 
 const App = () => {
   const name = 'Josh Perez';
 
   return (
-    <div>
+    <>
+      <Header />
       <Title>Hello, {name}</Title>
-    </div>
+      <Outlet />
+    </>
   );
 };
 
