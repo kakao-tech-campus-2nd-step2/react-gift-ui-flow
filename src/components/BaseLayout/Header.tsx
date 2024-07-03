@@ -1,12 +1,14 @@
 import { colors } from '@/styles/theme';
 
-import { Button } from '@/components/ui/Button/Button';
 import { Content } from '@/components/ui/Layout/Content';
 
+import { AuthButton } from './AuthButton';
 import { Logo } from './Logo';
 import { headerStyle } from './styles';
 
 export const Header = () => {
+  const isLoggedIn = !!sessionStorage.getItem('authToken');
+
   return (
     <Content
       css={headerStyle}
@@ -16,7 +18,7 @@ export const Header = () => {
       alignItems="center"
     >
       <Logo />
-      <Button theme="outline">로그인</Button>
+      <AuthButton isLoggedIn={isLoggedIn} />
     </Content>
   );
 };
