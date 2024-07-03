@@ -84,7 +84,7 @@ const categories: Category[] = [
   },
 ];
 
-export const AnnualCategory = () => {
+export const Theme = () => {
   return (
     <Wrapper>
       <Grid columns={6} style={{ rowGap: '50px' }}>
