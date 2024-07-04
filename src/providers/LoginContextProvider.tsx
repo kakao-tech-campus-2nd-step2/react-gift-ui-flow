@@ -17,7 +17,7 @@ const defaultLoginStatus: LoginStatus = {
   setUsername: () => {},
 };
 
-const LoginContext = createContext<LoginStatus>(defaultLoginStatus);
+export const LoginContext = createContext<LoginStatus>(defaultLoginStatus);
 
 function LoginContextProvider({ children }: { children: ReactNode }) {
   const storedUsername = sessionStorage.getItem(STORAGE_AUTH_TOKEN_KEY);
