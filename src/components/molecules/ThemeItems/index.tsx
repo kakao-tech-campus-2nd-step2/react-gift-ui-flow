@@ -5,6 +5,7 @@ import { Image } from '@/components/atoms/Image';
 import { Paragraph } from '@/components/atoms/Paragraph';
 
 export type ThemeItemProp = {
+  id: number;
   imgSrc: string;
   pContent: string;
   linkTo?: string;
