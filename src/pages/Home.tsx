@@ -2,10 +2,13 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
+import RankingHeader from '@/components/Ranking/RankingHeader';
+
 import { Button } from '../components/common/Button/index';
 import { Image } from '../components/common/Image/index';
-import Item from '../components/common/Items/items';
 import { Grid }  from '../components/common/layouts/Grid/index';
+import Item from '../components/Items/items';
+import Filter from '../components/Ranking/Filter';
 
 interface ItemType {
   image: string;
@@ -85,6 +88,8 @@ const Home: React.FC = () => {
 			<p css={{color:'gray', fontSize:'18px'}}>AI가 추천하는 선물</p>
 			<p css={{fontWeight: 600, fontSize:'18px'}}>선물을 추천받고 싶은 친구를 선택해주세요.</p>
 		</Button>
+    <RankingHeader />
+    <Filter />
 	  </div>
 	);
   };
