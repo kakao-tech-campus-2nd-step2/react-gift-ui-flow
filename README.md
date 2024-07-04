@@ -16,7 +16,7 @@
       - [x] 상품 목록을 처음에는 6개만 렌더링, 더보기를 누르는 경우 상품 목록을 더 보여주도록 구현 (접기 버튼을 누르면 다시 6개만 보여지도록 구현)
   - Theme 페이지(`/theme:themeKey`)
     - [x] Header 섹션 추가
-    - [] 재사용성을 고려한 Header 섹션 구현(themeKey에 따라 label, title, description, backgroundColor 변경되도록 구현)
+    - [x] 재사용성을 고려한 Header 섹션 구현(themeKey에 따라 label, title, description, backgroundColor 변경되도록 구현)
     - [] 상품 목록 섹션 추가
   - 로그인 페이지(`/login`)
     - [] ID, PW 입력시 로그인이 되도록 구현(아무값을 입력해도 통과)

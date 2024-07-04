@@ -1,27 +1,25 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Inner } from '@components/common';
+import { useParams } from 'react-router-dom';
+import { THEME_KEY } from './constants';
 
-export interface SectionHeaderProps {
-  label: string;
-  title: string;
-  description: string;
-  color: string;
-}
+export default function SectionHeader() {
+  const { themeKey } = useParams<{ themeKey: string }>();
+  const theme = THEME_KEY.find((t) => t.themeKey === themeKey);
 
-export default function SectionHeader({ label, title, description, color, ...rest }: SectionHeaderProps) {
   return (
-    <SectionHeaderContainer {...rest} color={color}>
+    <SectionHeaderContainer color={theme?.color}>
       <Inner maxWidth={1024}>
-        <Label>{label}</Label>
-        <Title>{title}</Title>
-        <Description>{description}</Description>
+        <Label>{theme?.label}</Label>
+        <Title>{theme?.title}</Title>
+        <Description>{theme?.description}</Description>
       </Inner>
     </SectionHeaderContainer>
   );
 }
 
-const SectionHeaderContainer = styled.section<{ color: string }>`
+const SectionHeaderContainer = styled.section<{ color?: string }>`
   margin-top: 60px;
   background-color: ${({ color }) => color};
   padding: 50px 0;
@@ -29,7 +27,7 @@ const SectionHeaderContainer = styled.section<{ color: string }>`
 
 const Label = styled.p`
   font-size: 20px;
-  color: #bbbbbbf3;
+  color: #333;
   font-weight: 700;
 `;
 
@@ -42,6 +40,6 @@ const Title = styled.h1`
 
 const Description = styled.p`
   font-size: 24px;
-  color: #ffffff8c;
+  color: #505050;
   padding-top: 12px;
 `;
