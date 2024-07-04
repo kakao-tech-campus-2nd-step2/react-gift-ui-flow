@@ -18,8 +18,9 @@ export const MyPageContent = () => {
     >
       <h1 css={styles.titleStyle}>{userName}님 안녕하세요!</h1>
       <Button
-        size="large"
+        size="medium"
         theme="darkGray"
+        width="14rem"
         css={styles.buttonStyle}
         onClick={logout}
       >

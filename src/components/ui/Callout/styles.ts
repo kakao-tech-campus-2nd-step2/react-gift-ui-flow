@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
 import { colors } from '@/styles/theme';
+import { Radius } from '@/types/uiTypes';
 
 const backgroundColor = {
   kakao: colors.yellow[100],
@@ -19,7 +20,7 @@ const activeBackgroundColor = {
 
 export const calloutStyles = (
   theme: 'kakao' | 'skyblue',
-  radius: number | 'circle',
+  radius: Radius,
   isActive: boolean
 ) =>
   css({

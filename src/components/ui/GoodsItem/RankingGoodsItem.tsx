@@ -1,3 +1,4 @@
+import { DEFAULT_IMAGE_URL } from '@/constants/data';
 import { FilterRankItemType } from '@/types/rankTypes';
 
 import { RankedImage } from '@/components/ui/Image/RankingImage';
@@ -7,12 +8,12 @@ import { GoodsItemDetail } from './GoodsItemDetail';
 import { containerStyle } from './styles';
 
 interface RankingGoodsItemProps {
-  imageSrc: string;
+  imageSrc?: string;
   rankingItem: FilterRankItemType;
 }
 
 export const RankingGoodsItem = ({
-  imageSrc,
+  imageSrc = DEFAULT_IMAGE_URL,
   rankingItem,
 }: RankingGoodsItemProps) => {
   return (

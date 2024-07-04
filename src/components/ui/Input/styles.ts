@@ -1,21 +1,30 @@
 import { CSSObject, css } from '@emotion/react';
 
 import { colors } from '@/styles/theme';
+import { Size } from '@/types/uiTypes';
 
 export const inputSizeStyles: {
-  [key in 'small' | 'large' | 'response']: CSSObject;
+  [key in 'small' | 'medium' | 'large' | 'response']: CSSObject;
 } = {
   small: {
     height: '2rem',
-    fontSize: '0.875rem',
+    fontSize: '14px',
+  },
+  medium: {
+    height: '2.5rem',
+    fontSize: '16px',
   },
   large: {
-    height: '2.25rem',
-    fontSize: '1rem',
+    height: '3rem',
+    fontSize: '18px',
   },
   response: {
-    height: '2.5rem',
+    height: '2rem',
     fontSize: '14px',
+    '@media (min-width: 520px)': {
+      height: '2.5rem',
+      fontSize: '16px',
+    },
     '@media (min-width: 768px)': {
       height: '3rem',
       fontSize: '18px',
@@ -52,7 +61,7 @@ export const inputStyle = ({
   invalid,
   disabled,
 }: {
-  size: 'small' | 'large' | 'response';
+  size: Size;
   invalid: boolean;
   disabled: boolean;
 }) =>

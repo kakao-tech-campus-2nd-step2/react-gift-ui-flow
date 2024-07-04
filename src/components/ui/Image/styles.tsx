@@ -1,45 +1,27 @@
 import { css } from '@emotion/react';
 
-import { IMAGE_CIRCLE_RADIUS } from '@/constants/styles';
 import { colors } from '@/styles/theme';
+import { Radius, Ratio } from '@/types/uiTypes';
 
-const getRatioPadding = (ratio: number | 'square'): string => {
-  if (ratio === 'square') {
-    return '100%';
-  }
-  return `${(1 / ratio) * 100}%`;
-};
+const getBorderRadius = (radius: Radius) => {
+  if (radius === 'circle') return '50%';
 
-const getBorderRadius = (radius: number | 'circle'): string => {
-  if (radius === 'circle') {
-    return IMAGE_CIRCLE_RADIUS;
-  }
   return `${radius}rem`;
 };
 
-export const boxStyle = (boxWidth: string) =>
-  css({
-    width: boxWidth,
-    height: 'auto',
-  });
+const getAspectRatio = (ratio: Ratio) => {
+  if (ratio === 'square') return '1/1';
+  if (ratio === 'auto') return 'auto';
+  return `${ratio}`;
+};
 
-export const wrapperStyle = (ratio?: number | 'square') =>
+export const imageStyle = (ratio: Ratio, radius: Radius, width: string) =>
   css({
-    position: 'relative',
-    width: '100%',
-    paddingTop: ratio ? getRatioPadding(ratio) : 'auto',
-    overflow: 'hidden',
-  });
-
-export const imageStyle = (radius?: number | 'circle') =>
-  css({
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
     objectFit: 'cover',
-    borderRadius: radius !== undefined ? getBorderRadius(radius) : '0',
+    objectPosition: 'center',
+    width,
+    borderRadius: getBorderRadius(radius),
+    aspectRatio: getAspectRatio(ratio),
   });
 
 export const rankingWrapperStyle = css({

@@ -36,22 +36,30 @@ export const themeStyles = (theme: Theme) => ({
 });
 
 export const sizeStyles: {
-  [key in 'small' | 'large' | 'response']: CSSObject;
+  [key in 'small' | 'medium' | 'large' | 'response']: CSSObject;
 } = {
   small: {
     height: '2rem',
-    padding: '0 1rem',
+    fontSize: '15px',
+  },
+  medium: {
+    height: '2.5rem',
+    fontSize: '15px',
   },
   large: {
-    height: '2.25rem',
-    padding: '0 4rem',
+    height: '4rem',
+    fontSize: '16px',
   },
   response: {
-    height: '2.5rem',
-    width: '30rem',
+    height: '2rem',
+    fontSize: '15px',
     padding: 'auto',
+    '@media (min-width: 520px)': {
+      height: '2.5rem',
+    },
     '@media (min-width: 768px)': {
-      height: '3.5rem',
+      height: '3rem',
+      fontSize: '16px',
     },
     '@media (min-width: 1024px)': {
       height: '4rem',
@@ -59,10 +67,11 @@ export const sizeStyles: {
   },
 };
 
-export const buttonStyle = (theme: Theme, size: Size) =>
+export const buttonStyle = (theme: Theme, size: Size, width: string) =>
   css({
     borderRadius: '0.25rem',
     border: theme === 'outline' ? `1.2px solid ${colors.gray[200]}` : '',
+    width,
     ...themeStyles(theme),
     ...sizeStyles[size],
   });

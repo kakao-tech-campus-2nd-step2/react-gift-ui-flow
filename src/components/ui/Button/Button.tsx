@@ -7,6 +7,7 @@ import { buttonStyle } from './styles';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: Theme;
   size?: Size;
+  width?: string;
 }
 
 export const Button = ({
@@ -14,10 +15,11 @@ export const Button = ({
   onClick,
   theme = 'kakao',
   size = 'small',
+  width = '100%',
   ...props
 }: ButtonProps) => {
   return (
-    <button onClick={onClick} css={buttonStyle(theme, size)} {...props}>
+    <button onClick={onClick} css={buttonStyle(theme, size, width)} {...props}>
       {children}
     </button>
   );

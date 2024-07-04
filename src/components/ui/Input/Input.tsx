@@ -1,10 +1,12 @@
 import { InputHTMLAttributes, forwardRef } from 'react';
 
+import { Size } from '@/types/uiTypes';
+
 import { inputStyle } from './styles';
 
 interface InputProps
   extends Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> {
-  size?: 'small' | 'large' | 'response';
+  size?: Size;
   invalid?: boolean;
 }
 

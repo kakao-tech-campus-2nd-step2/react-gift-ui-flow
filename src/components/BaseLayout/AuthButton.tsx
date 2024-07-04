@@ -9,14 +9,18 @@ export const AuthButton = ({ isLoggedIn }: AuthButtonProps) => {
   if (isLoggedIn) {
     return (
       <Link to="/my-account">
-        <Button theme="outline">내 계정</Button>
+        <Button theme="outline" width="5rem">
+          내 계정
+        </Button>
       </Link>
     );
   }
 
   return (
     <Link to="/login">
-      <Button theme="outline">로그인</Button>
+      <Button theme="outline" width="4rem">
+        로그인
+      </Button>
     </Link>
   );
 };

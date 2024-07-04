@@ -5,6 +5,7 @@ import {
   Column,
   FlexDirection,
   JustifyContent,
+  PlaceItems,
 } from '@/types/uiTypes';
 
 export const containerStyle = (
@@ -34,11 +35,15 @@ export const contentStyle = (backgroundColor: string, height: string) =>
     height,
   });
 
-export const gridStyle = (gap: number, columns: Column) => {
+export const gridStyle = (
+  gap: number,
+  columns: Column,
+  placeItems: PlaceItems
+) => {
   const baseStyle = {
     display: 'grid',
     width: '100%',
-    placeItems: 'start',
+    placeItems,
     gap: `${gap}px`,
   };
 

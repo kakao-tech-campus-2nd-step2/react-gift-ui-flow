@@ -26,7 +26,7 @@ export const LoginForm = () => {
         size="response"
         placeholder="비밀번호"
       />
-      <Button size="response" type="submit" css={buttonStyle}>
+      <Button size="response" type="submit" width="30rem" css={buttonStyle}>
         로그인
       </Button>
     </form>

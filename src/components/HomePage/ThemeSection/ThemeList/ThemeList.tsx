@@ -12,13 +12,13 @@ export const ThemeList = () => {
   return (
     <Content height="fit-content" justifyContent="center">
       <Grid
-        css={themeListStyle}
         columns={{
           initial: 4,
           lg: 6,
-          md: 6,
+          md: 4,
           sm: 4,
         }}
+        css={themeListStyle}
       >
         {themeData.map((theme) => {
           return (

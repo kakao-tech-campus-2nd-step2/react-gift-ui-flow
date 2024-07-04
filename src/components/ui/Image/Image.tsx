@@ -1,25 +1,30 @@
 import { ImgHTMLAttributes } from 'react';
 
-import { boxStyle, imageStyle, wrapperStyle } from './styles';
+import { Radius, Ratio } from '@/types/uiTypes';
+
+import { imageStyle } from './styles';
 
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
-  ratio?: number | 'square';
-  radius?: number | 'circle';
-  width: string;
+  ratio?: Ratio;
+  radius?: Radius;
+  width?: string;
+  src: string;
 }
 
 export const Image = ({
-  ratio = 16 / 9,
+  ratio = 'auto',
   radius = 0,
-  width,
+  width = '100%',
+  src,
   alt,
   ...props
 }: ImageProps) => {
   return (
-    <div css={boxStyle(width)}>
-      <div css={wrapperStyle(ratio)}>
-        <img css={imageStyle(radius)} alt={alt} {...props} />
-      </div>
-    </div>
+    <img
+      css={imageStyle(ratio, radius, width)}
+      alt={alt}
+      src={src}
+      {...props}
+    />
   );
 };

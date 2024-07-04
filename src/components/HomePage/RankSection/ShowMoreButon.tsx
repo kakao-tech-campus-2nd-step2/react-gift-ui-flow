@@ -10,11 +10,21 @@ export const ShowMoreButton = () => {
   return (
     <Container justifyContent="center" css={moreButtonContainerStyle}>
       {isExpanded ? (
-        <Button theme="outline" size="response" onClick={handleShowLess}>
+        <Button
+          theme="outline"
+          size="response"
+          width="32rem"
+          onClick={handleShowLess}
+        >
           접기
         </Button>
       ) : (
-        <Button theme="outline" size="response" onClick={handleShowMore}>
+        <Button
+          theme="outline"
+          size="response"
+          width="32rem"
+          onClick={handleShowMore}
+        >
           더보기
         </Button>
       )}

@@ -1,3 +1,4 @@
+import { DEFAULT_IMAGE_URL } from '@/constants/data';
 import {
   GOODS_IMAGE_DEFAULT_RADIUS,
   GOODS_IMAGE_DEFAULT_RATIO,
@@ -11,11 +12,11 @@ import { GoodsItemDetail } from './GoodsItemDetail';
 import { containerStyle } from './styles';
 
 export interface GoodsItemProps extends ThemeListType {
-  imageSrc: string;
+  imageSrc?: string;
 }
 
 export const GoodsItem = ({
-  imageSrc,
+  imageSrc = DEFAULT_IMAGE_URL,
   subtitle,
   title,
   amount,
@@ -28,7 +29,6 @@ export const GoodsItem = ({
       css={containerStyle}
     >
       <Image
-        width="100%"
         src={imageSrc}
         ratio={GOODS_IMAGE_DEFAULT_RATIO}
         radius={GOODS_IMAGE_DEFAULT_RADIUS}

@@ -18,7 +18,6 @@ export const ThemeListItem = ({ theme }: ThemeListItemProps) => {
     >
       <Image
         src={theme.imageSrc}
-        width="6rem"
         radius={1.8}
         ratio="square"
         alt={theme.themeTitle}
