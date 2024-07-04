@@ -27,5 +27,6 @@ export const Header = () => {
 
 const HeaderWrapper = styled.header`
   width: calc(100% - 32px);
+  max-width: 1024px;
   margin: 0 auto;
 `;

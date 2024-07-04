@@ -7,7 +7,7 @@ import { Container } from '@/components/molecules/Container';
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <Container justifyContent={ContainerJustifyContentType.flexStart}>
+      <Container justifyContent={ContainerJustifyContentType.flexStart} maxWidth="1024px">
         <Paragraph content="카카오톡 선물하기" />
       </Container>
     </FooterWrapper>

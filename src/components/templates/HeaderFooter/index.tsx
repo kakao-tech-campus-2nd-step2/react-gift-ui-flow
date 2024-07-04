@@ -7,13 +7,14 @@ import { Header } from '@/components/organisms/Header';
 
 type HeaderFooterProp = {
   children?: ReactNode;
+  limitMaxWidth?: boolean;
 };
 
-export const HeaderFooter = ({ children = [] }: HeaderFooterProp) => {
+export const HeaderFooter = ({ children = [], limitMaxWidth = true }: HeaderFooterProp) => {
   return (
     <Fragment>
       <Header />
-      <Margin0Auto>{children}</Margin0Auto>
+      <Margin0Auto limitMaxWidth={limitMaxWidth}>{children}</Margin0Auto>
       <Footer />
     </Fragment>
   );

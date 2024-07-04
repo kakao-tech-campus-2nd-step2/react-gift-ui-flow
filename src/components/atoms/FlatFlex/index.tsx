@@ -21,7 +21,7 @@ export type FlatFlexProps = {
 
 export const FlatFlex = ({
   children,
-  maxWidth,
+  maxWidth = '100%',
   flexDirection = ContainerDirectionType.row,
   alignItems = ContainerAlignItemsType.center,
   justifyContent = ContainerJustifyContentType.center,
@@ -52,4 +52,5 @@ const Inner = styled.div<
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
   background-color: ${({ backgroundColor }) => backgroundColor};
+  max-width: ${({ maxWidth }) => maxWidth};
 `;
