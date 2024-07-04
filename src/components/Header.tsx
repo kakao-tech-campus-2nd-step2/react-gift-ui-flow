@@ -3,10 +3,12 @@ import styled from '@emotion/styled';
 const Header = () => {
   return (
     <HeaderContainer>
-      <HomeLogo
-        src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
-        alt="Home Logo"
-      ></HomeLogo>
+      <a href="/">
+        <HomeLogo
+          src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+          alt="Home Logo"
+        ></HomeLogo>
+      </a>
       <LoginBtn>로그인</LoginBtn>
     </HeaderContainer>
   );
@@ -19,6 +21,9 @@ const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  a {
+    outline: none;
+  }
 `;
 
 const HomeLogo = styled.img`
