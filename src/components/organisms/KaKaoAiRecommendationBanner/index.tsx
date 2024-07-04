@@ -18,6 +18,8 @@ export const KaKaoAiRecommendation = () => {
 
 const Padding = styled.section`
   padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const KaKaoWrapper = styled.div`
