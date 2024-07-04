@@ -1,23 +1,23 @@
 import { Gift } from '@dto/Gift';
-import Grid from '@components/atoms/grid/Grid';
 import GoodsItem from '@components/molecules/goodsItem/GoodsItem';
 import { useRef } from 'react';
+import ResponsiveGrid from '@components/atoms/grid/responsive/ResponsiveGrid';
 import { generateRandomId } from '@/utils';
 
 interface GiftDisplaySectionProps {
   gifts: Gift[];
   indexed?: boolean,
   maxColumns: number,
-  // minColumns: number,
+  minColumns: number,
 }
 
 function GiftDisplaySection({
-  gifts, indexed, maxColumns, /* minColumns, */
+  gifts, indexed, maxColumns, minColumns,
 }: GiftDisplaySectionProps) {
   const sectionRandomId = useRef(generateRandomId());
 
   return (
-    <Grid gap={16} columns={maxColumns}>
+    <ResponsiveGrid gap={16} columnsDefault={maxColumns} columnsSm={minColumns}>
       {gifts.map((gift, i) => {
         const key = `${sectionRandomId.current}-gift-${i}`;
 
@@ -32,7 +32,7 @@ function GiftDisplaySection({
           />
         );
       })}
-    </Grid>
+    </ResponsiveGrid>
   );
 }
 
