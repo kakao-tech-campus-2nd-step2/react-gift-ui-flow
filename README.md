@@ -24,10 +24,10 @@
   - [ ] Footer 컴포넌트 기본 구조 작성
   - [ ] Footer 컴포넌트를 모든 페이지에 적용
 
-#### 각 Url Path별로 페이지 생성
+#### pages
 
-1. **메인 페이지 (/)**
-   - [ ] 메인 페이지 파일 생성
+1. **MainPage (/)**
+   - [x] MainPage 파일 생성
    - [ ] Theme 카테고리 섹션 추가
      - [ ] Theme 카테고리 섹션 기본 구조 작성
      - [ ] Theme 카테고리 Item 클릭 시 Theme 페이지(/theme/:themeKey)로 이동 로직 추가
@@ -41,19 +41,20 @@
      - [ ] 더보기 버튼 기능 구현
      - [ ] 접기 버튼 기능 구현
 
-2. **Theme 페이지 (/theme/:themeKey)**
-   - [ ] Theme 페이지 파일 생성
+2. **ThemePage (/theme/:themeKey)**
+   - [x] ThemePage 파일 생성
    - [ ] Header 섹션의 themeKey에 따른 내용 변경 확인
    - [ ] 상품 목록 섹션 추가
      - [ ] 상품 목록 기본 구조 작성
 
-3. **로그인 페이지 (/login)**
-   - [ ] 로그인 페이지 파일 생성
+3. **LoginPage (/login)**
+   - [x] LoginPage 파일 생성
    - [ ] ID와 PW 입력 폼 생성
    - [ ] 로그인 버튼 생성
    - [ ] 로그인 버튼 클릭 시 로그인 처리 로직 추가 (현재는 ID와 PW는 아무 값이나 입력해도 통과)
 
-4. **나의 페이지 (/my-account)**
+4. **MyAccountPage (/my-account)**
+   - [x] MyAccountPage 파일 생성
    - [ ] 로그아웃 버튼 추가
    - [ ] 로그아웃 버튼 클릭 시 로그아웃 처리 로직 추가
 
