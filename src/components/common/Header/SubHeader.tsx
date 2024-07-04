@@ -11,7 +11,7 @@ const HeaderContainer = styled.header<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   color: #fff;
   height: 150px;
-  padding: 20px calc(8% + 20px);
+  padding: 20px calc(8% + 100px);
   display: flex;
   flex-direction: column;
   justify-content: center;
