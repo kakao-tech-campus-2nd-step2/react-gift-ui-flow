@@ -21,7 +21,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Title = styled.h1`
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 `;
 

@@ -1,17 +1,21 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 
 type Props = {
   imageSrc: string;
   label: string;
+  to: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
-export const ItemImage = ({ imageSrc, label}: Props) => (
-  <Wrapper>
-    <StyledImage src={imageSrc} alt={label} radius={10}/>
-    <Label>{label}</Label>
-  </Wrapper>
+export const ItemImage = ({ imageSrc, label, to }: Props) => (
+  <Link to={to}>
+    <Wrapper>
+      <StyledImage src={imageSrc} alt={label} radius={10} />
+      <Label>{label}</Label>
+    </Wrapper>
+  </Link>
 );
 
 const Wrapper = styled.div`
