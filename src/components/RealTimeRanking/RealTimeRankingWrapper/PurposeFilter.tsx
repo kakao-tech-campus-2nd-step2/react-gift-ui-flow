@@ -1,6 +1,7 @@
-import { RealTimeRankContext, RealTimeRankingFilter } from ".";
+import { RealTimeRankContext } from ".";
 import { useContext } from "react";
 import styled from "@emotion/styled";
+import { RealTimeRankingFilter } from "@/model/Ranking";
 
 const purposeFilterList: RealTimeRankingFilter["purpose"][] = [
   "받고싶어한",

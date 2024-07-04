@@ -1,7 +1,8 @@
-import { RealTimeRankContext, RealTimeRankingFilter } from ".";
+import { RealTimeRankContext } from ".";
 import styled from "@emotion/styled";
 import { useContext } from "react";
 import WhoFilterItem from "./WhoFilterItem";
+import { RealTimeRankingFilter } from "@/model/Ranking";
 
 const WhoFilterList: RealTimeRankingFilter["who"][] = [
   "전체",
