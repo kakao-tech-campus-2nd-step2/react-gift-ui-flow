@@ -6,6 +6,7 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "lint": "eslint --fix src/",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
