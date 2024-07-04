@@ -1,7 +1,7 @@
 # React Gift UI Flow
 
 ## 개요
-이 저장소는 FE 카카오 선물하기 2주차 과제 (2024-07-01 ~ 2024-07-05)를 위한 React 기초 구현을 포함하고 있습니다. 학습 일지는 [여기](https://www.notion.so/TIL-FE-25dbeb894e884b889eca0fa3e4e13904)에서 확인할 수 있습니다.
+이 저장소는 FE 카카오 선물하기 2주차 과제 (2024-07-01 ~ 2024-07-05)를 위한 React 페이지 구현을 포함하고 있습니다. 학습 일지는 [여기](https://www.notion.so/TIL-FE-25dbeb894e884b889eca0fa3e4e13904)에서 확인할 수 있습니다.
 
 지난주에 진행한 레퍼지토리도 있지만 ([react-gift-react-foundation](https://github.com/sugoring/react-gift-react-foundation)), 기반을 잡아놓은 프로젝트에서 실행하는 방법도 익혀보고 싶어 해당 레퍼지토리([react-gift-ui-flow](https://github.com/kakao-tech-campus-2nd-step2/react-gift-ui-flow))를 클론하여 시작하였습니다.
 
