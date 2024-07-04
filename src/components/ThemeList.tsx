@@ -11,7 +11,7 @@ export default function ThemeList() {
     themeNames1.map((themeName, index) => (
       <Theme
         key={`top-${index}`}
-        themeKey="life_small_gift"
+        themeKey="small_luxury"
         themeName={themeName}
         imgsrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
       />
