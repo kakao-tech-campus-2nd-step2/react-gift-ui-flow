@@ -29,6 +29,7 @@ const Wrapper = styled.div`
 const Label = styled.label`
   font-size: 22px;
   color: rgba(70, 132, 233, 0.7);
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
 `;
 const RadioInput = styled.input`
