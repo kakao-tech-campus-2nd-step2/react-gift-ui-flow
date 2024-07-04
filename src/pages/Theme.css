@@ -1,0 +1,13 @@
+.ThemePage {
+
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.themeContainer {
+    padding-top: 64px;
+}
