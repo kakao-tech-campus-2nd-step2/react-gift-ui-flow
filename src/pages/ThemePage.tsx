@@ -1,12 +1,8 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 
-interface Params {
-  themeKey: string;
-}
-
 const ThemePage = () => {
-  const { themeKey } = useParams<Params>();
+  const params = useParams();
+  const themeKey = params.themeKey as string;
 
   return (
     <div>
