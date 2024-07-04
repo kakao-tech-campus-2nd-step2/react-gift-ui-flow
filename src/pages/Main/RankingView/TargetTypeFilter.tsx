@@ -1,18 +1,16 @@
 import styled from '@emotion/styled';
 
+import { colors } from '@/styles/variants';
+
 import type { TargetType } from './FilterType';
 
 interface Props {
     target: TargetType;
     selectedTarget: TargetType;
-    setSelectedTarget: (target: TargetType) => void;
+    onClick: () => void;
 }
 
-const TargetTypeFilter: React.FC<Props> = ({
-    target,
-    selectedTarget,
-    setSelectedTarget,
-}: Props) => {
+const TargetTypeFilter: React.FC<Props> = ({ target, selectedTarget, onClick }: Props) => {
     const contentByTarget = {
         ALL: {
             icon: 'ALL',
@@ -33,13 +31,7 @@ const TargetTypeFilter: React.FC<Props> = ({
     };
 
     return (
-        <FilterBtn
-            target={target}
-            selectedTarget={selectedTarget}
-            onClick={() => {
-                setSelectedTarget(target);
-            }}
-        >
+        <FilterBtn target={target} selectedTarget={selectedTarget} onClick={onClick}>
             <div>{contentByTarget[target].icon}</div>
             <p>{contentByTarget[target].text}</p>
         </FilterBtn>
@@ -47,12 +39,12 @@ const TargetTypeFilter: React.FC<Props> = ({
 };
 export default TargetTypeFilter;
 
-const FilterBtn = styled.button<Omit<Props, 'setSelectedTarget'>>`
+const FilterBtn = styled.button<Omit<Props, 'onClick'>>`
     div {
         ${({ target, selectedTarget }) =>
             target === selectedTarget
-                ? `background-color: rgb(70, 132, 233);`
-                : `background-color: rgb(230, 241, 255);`}
+                ? `background-color: ${colors.blue};`
+                : `background-color: ${colors.lightBlue};`}
 
         border-radius: 20px;
         width: 60px;
@@ -68,7 +60,7 @@ const FilterBtn = styled.button<Omit<Props, 'setSelectedTarget'>>`
             font-weight 200ms ease 0s;
         ${({ target, selectedTarget }) =>
             target === selectedTarget
-                ? `color: rgb(70, 132, 233); font-weight: bold;`
+                ? `color: ${colors.blue}; font-weight: bold;`
                 : `color: rgb(102, 102, 102);`}
     }
 `;
