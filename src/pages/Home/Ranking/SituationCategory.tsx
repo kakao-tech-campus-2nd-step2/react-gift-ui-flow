@@ -1,18 +1,49 @@
 import styled from '@emotion/styled/macro';
+import { useState } from 'react';
 
 import { breakpoints } from '@/styles/variants';
+interface Situation {
+  key: string;
+  ment: string;
+}
+const situationGroup: Situation[] = [
+  {
+    key: 'want',
+    ment: '받고 싶어한',
+  },
+  {
+    key: 'many',
+    ment: '많이 선물한',
+  },
+  {
+    key: 'wish',
+    ment: '위시로 받은',
+  },
+];
 
 export const SituationCategory = () => {
+  const [category, setCategory] = useState('want');
+  const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCategory(e.target.value);
+    console.log(category);
+  };
   return (
     <Wrapper>
-      <RadioInput type="radio" id="want" name="situation-category" />
-      <Label htmlFor="want">받고 싶어한</Label>
-
-      <RadioInput type="radio" id="many" name="situation-category" />
-      <Label htmlFor="many">많이 선물한</Label>
-
-      <RadioInput type="radio" id="wish" name="situation-category" />
-      <Label htmlFor="wish">위시로 받은</Label>
+      {situationGroup.map((s: Situation) => (
+        <div>
+          <RadioInput
+            type="radio"
+            id={s.key}
+            name="situation-category"
+            value={s.key}
+            onChange={handleCategory}
+            checked={category === s.key}
+          />
+          <Label htmlFor={s.key} key={s.key}>
+            {s.ment}
+          </Label>
+        </div>
+      ))}
     </Wrapper>
   );
 };
