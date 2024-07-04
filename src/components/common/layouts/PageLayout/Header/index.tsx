@@ -1,18 +1,21 @@
 import styled from "@emotion/styled";
-import { Button } from "../../../Button";
 import { Container } from "../../Container";
 import { Link } from "react-router-dom";
+import { getAccessToken } from "@/utils/localStorage";
 
 const Header = () => {
+  const isLoggedIn = getAccessToken();
   return (
     <Container>
       <StyledHeader>
         <Link to="/">
           <h1>선물하기</h1>
         </Link>
-        <Link to="/login">
-          <Button theme="transparent">로그인</Button>
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/my-account">내 계정</Link>
+        ) : (
+          <Link to="/login">로그인</Link>
+        )}
       </StyledHeader>
     </Container>
   );
