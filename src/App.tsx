@@ -20,6 +20,4 @@ const App = () => {
 
 export default App;
 
-const AppContainer = styled.div`
-  padding: 0 120px;
-`;
+const AppContainer = styled.div``;

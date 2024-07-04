@@ -14,7 +14,8 @@ const Header = () => {
 
 export default Header;
 
-const HeaderContainer = styled.div`
+const HeaderContainer = styled.header`
+  padding: 0 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;

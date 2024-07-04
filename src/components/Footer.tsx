@@ -7,5 +7,5 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.div`
-  padding: 10px 0;
+  padding: 100px 100px;
 `;
