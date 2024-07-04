@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from 'react';
+import { CSSProperties, InputHTMLAttributes, ReactNode } from 'react';
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   elementSize: ElementSize,
@@ -16,6 +16,15 @@ export interface GoodsItemProps {
 
 export interface RankingBadgeProps {
   rankingIndex?: number;
+}
+
+export interface BreakpointGridProps {
+  columnsXS?: number,
+  columnsSm?: number,
+  columnsMd?: number,
+  columnsLg?: number,
+  columnsDefault: number,
+  gap?: number,
 }
 
 export interface FixedSize {
