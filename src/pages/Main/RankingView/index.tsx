@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { colors } from '@/styles/variants';
 
 import type { RankType, TargetType } from './FilterType';
+import RankingList from './RankingList';
 import RankTypeFilter from './RankTypeFilter';
 import TargetTypeFilter from './TargetTypeFilter';
 
@@ -63,6 +64,7 @@ export default () => {
                     위시로 받은
                 </RankTypeFilter>
             </div>
+            <RankingList targetType={targetType} rankType={rankType} />
         </div>
     );
 };
@@ -78,7 +80,7 @@ const targetTypeFilterContainerStyle = css`
 const rankTypeFilterContainerStyle = css`
     display: flex;
     justify-content: space-between;
-    margin: 10px 10px;
+    margin: 10px 10px 50px;
     padding: 15px 50px;
     border-radius: 20px;
     @media screen and (min-width: 768px) {
