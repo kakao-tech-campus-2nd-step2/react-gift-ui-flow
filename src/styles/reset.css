@@ -144,3 +144,158 @@ body {
   font-size: 14px;
   color: #666;
 }
+.login {
+  text-decoration: none;
+  color: black;
+}
+
+
+
+
+/* MainPage.css */
+.main-container {
+  font-family: Arial, sans-serif;
+  background-color: #f7f7f7;
+  padding: 20px;
+}
+
+.theme-section {
+  margin-bottom: 40px;
+}
+
+.theme-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+  justify-items: center;
+}
+
+.theme-list li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-list li img {
+  width: 90px;
+  height: 90px;
+  background-color: #f1f1f1;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.theme-list li:hover {
+  transform: scale(1.05);
+}
+
+.theme-list li span {
+  font-size: 16px;
+  color: #333;
+  text-align: center;
+}
+
+.ranking-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.ranking-section h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.filter-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+  color: #fff;
+  border-color: #0056b3;
+}
+
+.gift-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.gift-item {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: calc(33.333% - 20px);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gift-item:hover {
+  transform: scale(1.05);
+}
+
+.gift-image {
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  border-radius: 10px 10px 0 0;
+}
+
+.gift-item p {
+  margin: 10px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.gift-item p:last-child {
+  font-weight: bold;
+  color: #ff4500;
+}
+
+.load-more-button, .show-less-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.load-more-button:hover, .show-less-button:hover {
+  background-color: #bdbdbd;
+}
