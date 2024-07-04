@@ -21,7 +21,7 @@ export const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: PATHS.THEME,
+        path: PATHS.BIRTHDAY,
         element: <ThemePage />,
       },
     ],
