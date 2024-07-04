@@ -1,20 +1,17 @@
 import styled from '@emotion/styled';
 
 import KaKaoLoginBox from '@/pages/login/components/KaKaoLoginBox';
+import { Layout } from '@/styles/Layout';
 
-const LoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 238px);
+const LoginLayout = styled(Layout)`
+  height: 100vh;
 `;
 
 const LoginPage = () => {
   return (
-    <LoginContainer>
+    <LoginLayout>
       <KaKaoLoginBox />
-    </LoginContainer>
+    </LoginLayout>
   );
 };
 
