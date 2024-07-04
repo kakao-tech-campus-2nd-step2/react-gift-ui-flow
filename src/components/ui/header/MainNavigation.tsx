@@ -24,7 +24,7 @@ const InnerContainer = styled.div`
   align-items: center;
 `;
 
-const LoginText = styled.span`
+const LoginText = styled.p`
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
