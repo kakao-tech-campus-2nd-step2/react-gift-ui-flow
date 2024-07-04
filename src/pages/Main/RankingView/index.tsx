@@ -1,7 +1,7 @@
 import { css } from '@emotion/css';
 import { useState } from 'react';
 
-import type { TargetType } from '../FilterType';
+import type { TargetType } from './FilterType';
 import TargetTypeFilter from './TargetTypeFilter';
 
 export default () => {
