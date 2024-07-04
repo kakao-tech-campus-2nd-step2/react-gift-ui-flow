@@ -1,14 +1,38 @@
 import { Button } from "@/components/common/Button";
+import { setAccessToken } from "@/utils/localStorage";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
+import { FormEvent, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const usernameRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const username = usernameRef.current?.value;
+    const password = passwordRef.current?.value;
+
+    if (!username || !password) {
+      alert("아이디와 비밀번호를 입력하세요.");
+      return;
+    }
+
+    const accessToken = Date.now().toString();
+    setAccessToken(accessToken);
+
+    navigate("/");
+  };
+
   return (
     <StyledLogin>
       <h2>kakao</h2>
-      <form>
-        <input type="text" placeholder="이름" />
-        <input type="text" placeholder="비밀번호" />
+      <form onSubmit={handleSubmit}>
+        <input ref={usernameRef} type="text" placeholder="이름" />
+        <input ref={passwordRef} type="password" placeholder="비밀번호" />
         <div
           className={css`
             margin-top: 2rem;
