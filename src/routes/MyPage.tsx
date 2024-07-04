@@ -4,10 +4,10 @@ import { Button } from '../components/common/Button/index';
 
 const MyPage = () => {
   const navigate = useNavigate();
-  const name = localStorage.getItem('username');
+  const name = sessionStorage.getItem('authToken');
 
   const handleLogout = () => {
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('authToken');
     navigate('/');
   };
 

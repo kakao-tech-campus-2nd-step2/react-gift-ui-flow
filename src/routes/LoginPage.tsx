@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
-import { useNavigate } from 'react-router-dom'; // 페이지 이동을 위한 훅
+import { useNavigate } from 'react-router-dom';
 import { UnderlineTextField } from '../components/common/Form/Input/UnderlineTextField';
 import { Button } from '../components/common/Button';
 
@@ -15,7 +15,7 @@ const LoginPage = () => {
       return;
     }
 
-    localStorage.setItem('username', name);
+    sessionStorage.setItem('authToken', name);
 
     navigate('/');
   };
