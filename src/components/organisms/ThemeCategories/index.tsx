@@ -17,7 +17,7 @@ for (let i = 0; i < 12; i++) {
     imgSrc:
       'https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png',
     pContent: 'pContent',
-    linkTo: '/',
+    linkTo: 'theme/life_small_gift',
   });
 }
 
