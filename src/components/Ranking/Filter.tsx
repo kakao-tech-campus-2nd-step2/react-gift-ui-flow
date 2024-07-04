@@ -17,10 +17,25 @@ interface Item {
 }
 
 const Filter: React.FC = () => {
-  const [filter, setFilter] = useState<string>('ALL');
+  const [activeFilters, setActiveFilters] = useState<{ [key: string]: boolean }>({
+    ALL: true,
+    여성: false,
+    남성: false,
+    청소년: false,
+  });
+  const [tab, setTab] = useState<string>('받고 싶어한');
 
   const handleFilterChange = (newFilter: string) => {
-    setFilter(newFilter);
+    setActiveFilters({
+      ALL: newFilter === 'ALL',
+      여성: newFilter === '여성',
+      남성: newFilter === '남성',
+      청소년: newFilter === '청소년',
+    });
+  };
+
+  const handleTabChange = (newTab: string) => {
+    setTab(newTab);
   };
 
   const data: Item[] = [
@@ -31,18 +46,18 @@ const Filter: React.FC = () => {
     // ...
   ];
 
-  const filteredData = data.filter(item => filter === 'ALL' || item.category === filter);
+  const filteredData = activeFilters.ALL ? data : data.filter(item => activeFilters[item.category]);
 
   return (
     <div>
       <FilterWrapper>
-        <FilterButton active={filter === 'ALL'} onClick={() => handleFilterChange('ALL')} buttonText='ALL'>전체</FilterButton>
-        <FilterButton active={filter === '여성'} onClick={() => handleFilterChange('여성')} buttonText='👩🏻‍🦳'>여성이</FilterButton>
-        <FilterButton active={filter === '남성'} onClick={() => handleFilterChange('남성')} buttonText='👨🏻‍🦳'>남성이</FilterButton>
-        <FilterButton active={filter === '청소년'} onClick={() => handleFilterChange('청소년')} buttonText='👦🏻'>청소년이</FilterButton>
+        <FilterButton active={activeFilters.ALL} onClick={() => handleFilterChange('ALL')} buttonText='ALL'>전체</FilterButton>
+        <FilterButton active={activeFilters.여성} onClick={() => handleFilterChange('여성')} buttonText='👩🏻‍🦳'>여성이</FilterButton>
+        <FilterButton active={activeFilters.남성} onClick={() => handleFilterChange('남성')} buttonText='👨🏻‍🦳'>남성이</FilterButton>
+        <FilterButton active={activeFilters.청소년} onClick={() => handleFilterChange('청소년')} buttonText='👦🏻'>청소년이</FilterButton>
       </FilterWrapper>
-      <FilterTabs activeTab={filter} onTabChange={handleFilterChange} />
       <div>
+        <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
         {filteredData.map(item => (
           <div key={item.id}>{item.title}</div>
         ))}

@@ -8,7 +8,7 @@ const TabsWrapper = styled.div`
   border-radius: 10px;
   border: 1px solid #dae5fb;
   padding: 10px;
-  width: 80%;
+  width: 85%;
   margin: 0 auto;
 `;
 
@@ -21,6 +21,7 @@ const Tab = styled.div<{ active: boolean }>`
   margin: 0 10px;
   width: 95%;
   text-align: center;
+  pointer-events: auto;
 `;
 
 interface FilterTabProps {
