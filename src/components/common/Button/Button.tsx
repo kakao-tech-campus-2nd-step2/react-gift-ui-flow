@@ -58,11 +58,20 @@ const getThemeStyles = (theme: ButtonTheme) => {
       return css`
         background-color: #fee500;
         color: #111;
+
+        &:hover {
+          opacity: 0.8;
+        }
       `;
     case 'primary':
       return css`
         background-color: #fff;
+        border: 1px solid #b5b2b2;
         color: #111;
+
+        &:hover {
+          background-color: #f8f8f8;
+        }
       `;
     default:
       return css``;
@@ -71,14 +80,10 @@ const getThemeStyles = (theme: ButtonTheme) => {
 
 const StyledButton = styled.button<StyledButtonProps>`
   border: none;
-  width: 120px;
+  width: 100%;
   border-radius: 4px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
-
-  &:hover {
-    opacity: 0.8;
-  }
+  transition: all 0.2s ease;
 
   ${({ size }) => getSizeStyles(size)}
   ${({ theme }) => getThemeStyles(theme)}
