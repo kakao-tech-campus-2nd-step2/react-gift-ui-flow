@@ -280,7 +280,7 @@ body {
 
 .gift-item p:last-child {
   font-weight: bold;
-  color: #ff4500;
+  color: black;
 }
 
 .load-more-button, .show-less-button {
