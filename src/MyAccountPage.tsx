@@ -23,11 +23,11 @@ const Greeting = styled.h1`
 
 const MyAccountPage: React.FC = () => {
   const { username, logout } = useAuth();
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // 네비게이션 함수를 가지고 와서
 
   const handleLogout = () => {
     logout();
-    navigate('/');
+    navigate('/'); // 메인 페이지로 Redirect
   };
 
   return (
