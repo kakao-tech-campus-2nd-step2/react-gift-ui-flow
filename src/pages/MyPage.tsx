@@ -3,8 +3,6 @@ import Page from '@components/templates/Page';
 import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
 import { useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Paths from '@constants/Paths';
 import styled from '@emotion/styled';
 
 const GreetingTitle = styled.h1`
@@ -13,14 +11,8 @@ const GreetingTitle = styled.h1`
 `;
 
 function MyPage() {
-  const navigate = useNavigate();
   const onLogoutClick = useCallback(() => {
-    navigate(Paths.MAIN_PAGE, {
-      state: {
-        loginState: false,
-      },
-    });
-  }, [navigate]);
+  }, []);
 
   return (
     <Page isLoggedIn>
