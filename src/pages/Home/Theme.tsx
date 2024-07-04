@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
@@ -89,10 +90,12 @@ export const Theme = () => {
     <Wrapper>
       <Grid columns={6} style={{ rowGap: '50px' }}>
         {categories.map((category: Category) => (
-          <Container key={category.id}>
-            <Image src={category.imageSrc} radius={30} width={90} />
-            {category.annual}
-          </Container>
+          <Link to={`/theme/${category.id}`}>
+            <Container key={category.id}>
+              <Image src={category.imageSrc} radius={30} width={90} />
+              {category.annual}
+            </Container>
+          </Link>
         ))}
       </Grid>
     </Wrapper>
