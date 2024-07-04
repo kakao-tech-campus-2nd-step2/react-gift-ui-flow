@@ -2,15 +2,15 @@
 
 <h3>2주차 체크 리스트</h3>
 
-- [ ] Header, Footer 와 같은 공통 컴포넌트 작성
+- [x] Header, Footer 와 같은 공통 컴포넌트 작성
 
-- [ ] 각 Url Path 별로 페이지 만들기
+- [x] 각 Url Path 별로 페이지 만들기
 
   - Main page (`/`)
 
-    - [ ] Theme 카테고리 섹션 추가
+    - [x] Theme 카테고리 섹션 추가
 
-    - [ ] Theme 카테고리 Item 클릭 시 Theme page(`/theme/:themekey`) 로 이동 
+    - [x] Theme 카테고리 Item 클릭 시 Theme page(`/theme/:themekey`) 로 이동 
 
   - Theme page (`/theme/:themekey`)
 
