@@ -13,9 +13,9 @@ export const RoutesPage = () => {
       <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/theme/:themeKey" element={<Theme />} />
-        <Route path="/login" element={<Login />} />
         <Route path="/my-account" element={<MyAccount />} />
       </Route>
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 };
