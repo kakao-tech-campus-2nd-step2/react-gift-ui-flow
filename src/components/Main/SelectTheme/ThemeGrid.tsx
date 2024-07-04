@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import { ThemeItem } from './ThemeItem';
 
 const themes = [
@@ -67,7 +69,9 @@ export const ThemeGrid = () => {
   return (
     <div>
       {themes.map((theme) => (
-        <ThemeItem title={theme.title} imgUrl={theme.imgUrl} />
+        <Link to="/theme/:themeKey">
+          <ThemeItem title={theme.title} imgUrl={theme.imgUrl} />
+        </Link>
       ))}
     </div>
   );

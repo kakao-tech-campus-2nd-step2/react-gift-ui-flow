@@ -72,9 +72,9 @@ const allGifts = [
 ];
 
 export const GiftRanking = () => {
-  const [gifts, setGifts] = useState(allGifts.slice(0, 6));
-  const [filterWho, setFilterWho] = useState<string>('전체');
-  const [filterWhy, setFilterWhy] = useState<string>('받고싶어한');
+  const [, setGifts] = useState(allGifts.slice(0, 6));
+  const [, setFilterWho] = useState<string>('전체');
+  const [, setFilterWhy] = useState<string>('받고싶어한');
   const [showMore, setShowMore] = useState<boolean>(false);
 
   const handleFilterWho = (newfilter: string) => {

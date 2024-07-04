@@ -7,16 +7,14 @@
 ### STEP1
 
 - [x] Header, Footer와 같은 공통 컴포넌트 생성
-  - [ ] URL Path 연결
+  - [x] URL Path 연결
 - [x] 메인페이지 제작
   - [x] Theme 카테고리 섹션 추가
   - [x] 실시간 급상승 선물랭킹 추가
-  - [ ] URL Path 연결
+  - [x] URL Path 연결
 - [x] Theme 페이지 제작
   - [x] Header 섹션 추가
   - [x] 상품 목록 섹션 추가
-  - [ ] URL Path 연결
+  - [x] URL Path 연결
 - [x] 로그인 페이지 제작
-  - [ ] URL Path 연결
 - [x] 나의 페이지 제작
-  - [ ] URL Path 연결
