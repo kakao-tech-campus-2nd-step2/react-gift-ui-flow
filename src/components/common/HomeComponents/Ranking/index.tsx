@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
 
+import Filter from '@/components/common/HomeComponents/Ranking/Filter';
+import ItemList from '@/components/common/HomeComponents/Ranking/ItemList';
+
 
 
 export const Ranking = () =>{
@@ -8,7 +11,8 @@ export const Ranking = () =>{
       <Title>
       실시간 급상승 선물랭킹
       </Title>
-      
+      <Filter></Filter>
+      <ItemList></ItemList>
     </Wrapper>
   );
 }
