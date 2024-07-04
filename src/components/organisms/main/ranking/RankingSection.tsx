@@ -7,7 +7,7 @@ import GroupFilterArea from '@components/organisms/main/ranking/GroupFilterArea'
 import PopularityFilterArea from '@components/organisms/main/ranking/PopularityFilterArea';
 import Button from '@components/atoms/button/Button';
 import {
-  RankingSectionTitle,
+  RankingSectionTitle, RankingSectionTitleContainer,
 } from '@components/organisms/main/ranking/RankingSection.styles';
 import { GroupFilter, PopularityFilter } from '@/types';
 
@@ -27,11 +27,11 @@ function RankingSection() {
         padding="0 16px 80px"
         flexDirection="column"
       >
-        <Container justifyContent="center">
+        <RankingSectionTitleContainer>
           <RankingSectionTitle>
             실시간 급상승 선물랭킹
           </RankingSectionTitle>
-        </Container>
+        </RankingSectionTitleContainer>
         <GroupFilterArea currentFilter={groupFilter} setGroupFilter={setGroupFilter} />
         <PopularityFilterArea
           currentFilter={popularityFilter}
