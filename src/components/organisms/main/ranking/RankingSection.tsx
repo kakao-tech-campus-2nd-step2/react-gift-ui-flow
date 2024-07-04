@@ -38,7 +38,12 @@ function RankingSection() {
           setPopularityFilter={setPopularityFilter}
         />
         <Container padding="40px 0 20px">
-          <GiftDisplaySection gifts={isFolded ? gifts.slice(0, 6) : gifts} maxColumns={6} indexed />
+          <GiftDisplaySection
+            gifts={isFolded ? gifts.slice(0, 6) : gifts}
+            maxColumns={6}
+            minColumns={3}
+            indexed
+          />
         </Container>
         <Container elementSize="full-width" justifyContent="center">
           <Container elementSize="full-width" maxWidth="480px">
