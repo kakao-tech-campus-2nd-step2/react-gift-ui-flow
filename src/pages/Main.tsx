@@ -35,14 +35,16 @@ const Main = () => {
         <div className='mainContainer'>
 
             <div className='selectFriend'>
-                <Image
-                    src={choonsik}
-                    alt='choonsik'
-                    radius={20}
-                    ratio={'square'}
-                    width={70}
-                    height={70}
+                <div className='choonsikContainer' onClick={() => alert("선물 받을 친구 선택하기")}>
+                    <Image
+                        src={choonsik}
+                        alt='choonsik'
+                        radius={20}
+                        ratio={'square'}
+                        width={70}
+                        height={70}
                 />
+                </div>
                 <div className='selectFriendTitle'>선물 받을 친구를 선택해주세요.</div>
             </div>
 
