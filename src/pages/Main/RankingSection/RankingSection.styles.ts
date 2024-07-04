@@ -1,3 +1,6 @@
+/* eslint-disable indent */
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-confusing-arrow */
 import styled from '@emotion/styled';
 
 export const RankingContainer = styled.section`
@@ -24,12 +27,14 @@ export const FilterButton = styled.button<{ active: boolean }>`
     width: 60px;
     height: 60px;
     border-radius: 24px;
-    background-color: ${({ active }) => (active ? 'rgb(70, 132, 233)' : 'rgb(230, 241, 255)')};
+    background-color: ${({ active }) =>
+      active ? 'rgb(70, 132, 233)' : 'rgb(230, 241, 255)'};
   }
 
   p {
     padding: 10px 0px 6px;
-    color: ${({ active }) => (active ? 'rgb(70, 132, 233)' : 'rgb(102, 102, 102)')};
+    color: ${({ active }) =>
+      active ? 'rgb(70, 132, 233)' : 'rgb(102, 102, 102)'};
   }
 `;
 
@@ -50,5 +55,6 @@ export const CategoryButton = styled.button<{ active: boolean }>`
   line-height: 22px;
   border: none;
   background: none;
-  color: ${({ active }) => (active ? 'rgb(70, 132, 233)' : 'rgba(70, 132, 233, 0.7)')};
+  color: ${({ active }) =>
+    active ? 'rgb(70, 132, 233)' : 'rgba(70, 132, 233, 0.7)'};
 `;

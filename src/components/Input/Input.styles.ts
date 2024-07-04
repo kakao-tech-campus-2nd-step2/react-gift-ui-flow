@@ -1,21 +1,22 @@
+/* eslint-disable indent */
 import styled from '@emotion/styled';
 
 type SizeProps = 'small' | 'large' | 'responsive';
 
 const getSizeStyles = (inputSize: SizeProps) => {
   switch (inputSize) {
-  case 'small':
-    return `
+    case 'small':
+      return `
   font-size: 12px;
   padding: 4px 8px;
   `;
-  case 'large':
-    return `
+    case 'large':
+      return `
       font-size: 16px;
       padding: 8px 16px;
     `;
-  case 'responsive':
-    return `
+    case 'responsive':
+      return `
       @media (max-width: 600px) {
         font-size: 12px;
         padding: 4px 8px;
@@ -29,8 +30,8 @@ const getSizeStyles = (inputSize: SizeProps) => {
         padding: 8px 16px;
       }
       `;
-  default:
-    return '';
+    default:
+      return '';
   }
 };
 

@@ -1,3 +1,5 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable no-confusing-arrow */
 import styled from '@emotion/styled';
 
 export const GoodsItemContainer = styled.div`
@@ -17,7 +19,8 @@ export const RankingBadge = styled.span<{ rankingIndex: number }>`
   font-size: 18px;
   font-weight: 700;
   color: rgb(255, 255, 255);
-  background-color: ${({ rankingIndex }) => (rankingIndex <= 3 ? 'rgb(253, 115, 100)' : 'rgb(187, 187, 187)')};
+  background-color: ${({ rankingIndex }) =>
+    rankingIndex <= 3 ? 'rgb(253, 115, 100)' : 'rgb(187, 187, 187)'};
   display: flex;
   justify-content: center;
   align-items: center;

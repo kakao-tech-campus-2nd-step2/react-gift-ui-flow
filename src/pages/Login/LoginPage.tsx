@@ -25,7 +25,7 @@ const LoginPage = () => {
     if (id && password) {
       login(id);
       navigate(location.state?.from?.pathname || ROUTE_PATHS.ROOT);
-    // eslint-disable-next-line no-alert
+      // eslint-disable-next-line no-alert
     } else alert('아이디와 비밀번호를 입력해주세요.');
   };
 
