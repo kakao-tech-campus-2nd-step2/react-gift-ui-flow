@@ -14,7 +14,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!username || !password) {
-      alert('이름과 비밀번호를 입력하세요');
+      alert('아이디와 비밀번호를 입력하세요');
       return;
     }
     onLogin();
@@ -39,6 +39,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            <br/>
             <Button type="submit">로그인</Button>
           </Form>
         </FormWrapper>
@@ -50,6 +51,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 export default Login;
 
 const Wrapper = styled.div`
+  height: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,6 +59,7 @@ const Wrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,8 +76,8 @@ const FormWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: white;
-  max-width: 700px;
-  width: 100%;
+  width: 500px;
+  height: 250px;
   padding: 40px;
   border: 1px solid black;
 `;

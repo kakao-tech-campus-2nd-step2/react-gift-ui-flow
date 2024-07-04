@@ -6,13 +6,12 @@ import Header from '@/Layout/Header';
 
 interface LayoutProps {
   isLoggedIn: boolean;
-  onLogout: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ isLoggedIn, onLogout }) => {
+const Layout: React.FC<LayoutProps> = ({ isLoggedIn }) => {
   return (
     <div>
-      <Header isLoggedIn={isLoggedIn} onLogout={onLogout} />
+      <Header isLoggedIn={isLoggedIn} />
       <Outlet />
       <Footer />
     </div>

@@ -4,28 +4,26 @@ import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   isLoggedIn: boolean;
-  onLogout: () => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ isLoggedIn, onLogout }) => {
+const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleLoginClick = () => {
     navigate('/login');
   };
 
-  const handleLogoutClick = () => {
-    onLogout();
-    navigate('/');
+  const handleAccountClick = () => {
+    navigate('/my-account');
   };
 
   return (
     <HeaderWrapper>
       <Title>선물하기</Title>
       {isLoggedIn ? (
-        <LoginButton onClick={handleLogoutClick}>로그아웃</LoginButton>
+        <Button onClick={handleAccountClick}>내 계정</Button>
       ) : (
-        <LoginButton onClick={handleLoginClick}>로그인</LoginButton>
+        <Button onClick={handleLoginClick}>로그인</Button>
       )}
     </HeaderWrapper>
   );
@@ -48,7 +46,7 @@ const Title = styled.h1`
   font-weight: bold;
 `;
 
-const LoginButton = styled.button`
+const Button = styled.button`
   background: none;
   border: none;
   font-size: 16px;
