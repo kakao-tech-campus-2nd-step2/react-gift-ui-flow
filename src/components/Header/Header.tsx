@@ -1,15 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@components/Layout/Container';
+import { AuthContext } from '../../App';
 import { HeaderContainer, Logo, Login } from './Header.styles';
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    setIsLoggedIn(loggedIn);
-  }, []);
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <HeaderContainer>

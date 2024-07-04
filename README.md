@@ -36,10 +36,10 @@
 
 ## 2단계 - 인증 프로세스 구현
 ### 요구사항
-- [ ] 로그인 페이지에서 ID와 PW를 입력하면 직전 페이지로 Redirect
+- [X] 로그인 페이지에서 ID와 PW를 입력하면 직전 페이지로 Redirect
 - [ ] Fake 로그인 기능 구현
-	- [ ] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 autoToken key에 저장
+	- [X] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 autoToken key에 저장
 	- [ ] 모든 페이지 진입 시 authToken을 토대로 로그인 여부를 판단하는 로직 추가(ContextAPI 활용)
-	- [ ] Header에서 로긍니 한 경우 내 계정을, 로그인 하지 않은 경우 로그인 버튼 추가
+	- [X] Header에서 로그인 한 경우 내 계정을, 로그인 하지 않은 경우 로그인 버튼 추가
 	- [ ] 내 계정(/my-account)페이지는 로그인 한 사람만 접근 가능
 	- [ ] 내 계정 페이지에서 로그아웃 가능(로그아웃 후 메인 페이지(/)로 Redirect)

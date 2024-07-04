@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Container from '@components/Layout/Container';
 import Image from '@components/Image/Image';
 import {
@@ -10,19 +10,22 @@ import {
 } from '@pages/Login/LoginPage.styles';
 import Input from '@components/Input/Input';
 import Button from '@components/Button/Button';
+import { AuthContext } from '../../App';
 import { ROUTE_PATHS } from '../../constants';
 
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (id && password) {
-      localStorage.setItem('isLoggedIn', 'true');
-      localStorage.setItem('id', id);
-      navigate(ROUTE_PATHS.ROOT);
+      login(id);
+      navigate(location.state?.from?.pathname || ROUTE_PATHS.ROOT);
+    // eslint-disable-next-line no-alert
     } else alert('아이디와 비밀번호를 입력해주세요.');
   };
 
