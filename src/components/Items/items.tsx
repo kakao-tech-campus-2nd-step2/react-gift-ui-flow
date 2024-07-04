@@ -27,14 +27,15 @@ const linkStyle = css`
 interface ItemProps {
   image: string;
   label: string;
+  themekey: string;
   radius?: 'circle' | number;
 }
 
-const Item: React.FC<ItemProps> = ({ image, label, radius}) => {
+const Item: React.FC<ItemProps> = ({ image, label, radius, themekey}) => {
 	radius = 20;
   return (
     <div css={itemStyle}>
-	<Link to="/theme" css={linkStyle}>
+	<Link to={`/theme/${themekey}`} css={linkStyle}>
       <Image src={image} alt={label} radius={radius} ratio="square" css={{ width: 90, height: 90 }}/>
 	  </Link>
       <span>{label}</span>

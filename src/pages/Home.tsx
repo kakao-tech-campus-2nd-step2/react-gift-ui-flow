@@ -14,6 +14,7 @@ import Filter from '../components/Ranking/Filter/Filter';
 interface ItemType {
   image: string;
   label: string;
+  themekey: string;
   radius?: 'circle' | number;
 }
 
@@ -23,18 +24,18 @@ const imageUrls = {
 };
 
 const items: ItemType[] = [
-  { image: imageUrls.img, label: '생일'},
-  { image: imageUrls.img, label: '졸업선물'},
-  { image: imageUrls.img, label: '명품선물'},
-  { image: imageUrls.img, label: '스몰럭셔리'},
-  { image: imageUrls.img, label: '결혼/집들이' },
-  { image: imageUrls.img, label: '따뜻한선물' },
-  { image: imageUrls.img, label: '가벼운선물' },
-  { image: imageUrls.img, label: '팬심저격' },
-  { image: imageUrls.img, label: '교환권' },
-  { image: imageUrls.img, label: '건강/비타민' },
-  { image: imageUrls.img, label: '과일/한우' },
-  { image: imageUrls.img, label: '출산/키즈' },
+  { image: imageUrls.img, label: '생일', themekey: 'birthday' },
+  { image: imageUrls.img, label: '졸업선물', themekey: 'graduation'},
+  { image: imageUrls.img, label: '명품선물', themekey: 'luxury'},
+  { image: imageUrls.img, label: '스몰럭셔리', themekey: 'luxury'},
+  { image: imageUrls.img, label: '결혼/집들이', themekey: 'wedding'},
+  { image: imageUrls.img, label: '따뜻한선물' , themekey: 'warm'},
+  { image: imageUrls.img, label: '가벼운선물' , themekey: 'light'},
+  { image: imageUrls.img, label: '팬심저격', themekey: 'fan'},
+  { image: imageUrls.img, label: '교환권', themekey: 'exchange'},
+  { image: imageUrls.img, label: '건강/비타민', themekey: 'health'},
+  { image: imageUrls.img, label: '과일/한우', themekey: 'fruit'},
+  { image: imageUrls.img, label: '출산/키즈', themekey: 'kids'},
 ];
 
 const selectFriendStyle = css`
@@ -89,7 +90,7 @@ const Home: React.FC = () => {
     <GridWrapper>
 		<Grid columns={4} gap={20}>
 		  {items.map((item, index) => (
-			<Item key={index} image={item.image} label={item.label} radius={item.radius} />
+			<Item key={index} image={item.image} label={item.label} radius={item.radius} themekey={item.themekey}/>
 		  ))}
 		</Grid>
     </GridWrapper>
