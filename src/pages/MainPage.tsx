@@ -38,6 +38,13 @@ const MainPage = () => {
             <li>
               <button onClick={() => handleThemeClick('theme2')}>Theme 2</button>
             </li>
+            {/* 필요한 추가 테마 버튼들 */}
+            <li>
+              <button onClick={() => handleThemeClick('theme3')}>Theme 3</button>
+            </li>
+            <li>
+              <button onClick={() => handleThemeClick('theme4')}>Theme 4</button>
+            </li>
           </ul>
         </section>
 
