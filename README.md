@@ -16,7 +16,7 @@
 
 - [x] Header 컴포넌트 생성
 - [x] Footer 컴포넌트 생성
-- [ ] 메인 페이지 (/) 작성
+- [x] 메인 페이지 (/) 작성
 - [ ] Theme 페이지(/theme/:themeKey) 작성
 - [ ] 로그인 페이지(/login) 작성
 - [ ] 나의 페이지(/my-account) 작성
