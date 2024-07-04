@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UserInfo } from '@/providers/UserInfoProviders';
@@ -7,9 +8,11 @@ import { UserInfo } from '@/providers/UserInfoProviders';
 export const MyAccount = () => {
   const { userName } = useContext(UserInfo);
   const { setUserName } = useContext(UserInfo);
+  const navigate = useNavigate();
   const handleLogout = () => {
     setUserName('');
     sessionStorage.clear();
+    navigate('/');
   };
   return (
     <Wrapper>
