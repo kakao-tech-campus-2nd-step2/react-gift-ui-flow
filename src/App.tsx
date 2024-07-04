@@ -1,12 +1,17 @@
 import React, { createContext, useState, useEffect, useMemo } from 'react';
 import { Global } from '@emotion/react';
 import resetStyles from '@styles/resetStyles';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import Layout from '@components/Layout/Layout';
 import Main from '@pages/Main/Main';
 import ThemePage from '@pages/ThemePage/ThemePage';
 import LoginPage from '@pages/Login/LoginPage';
-import MyAccountPage from '@pages/MyAccount/MyAccount';
+import MyAccountPage from '@pages/MyAccount/MyAccountPage';
 import { ROUTE_PATHS } from './constants';
 
 const AuthContext = createContext({
@@ -17,7 +22,9 @@ const AuthContext = createContext({
 });
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem('authToken'));
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    !!sessionStorage.getItem('authToken'),
+  );
 
   const login = (id: string) => {
     sessionStorage.setItem('authToken', id);
@@ -55,7 +62,11 @@ const App = () => {
               <Route
                 path={ROUTE_PATHS.MYACCOUNT}
                 element={
-                  isLoggedIn ? <MyAccountPage /> : <Navigate to={ROUTE_PATHS.LOGIN} />
+                  isLoggedIn ? (
+                    <MyAccountPage />
+                  ) : (
+                    <Navigate to={ROUTE_PATHS.LOGIN} />
+                  )
                 }
               />
             </Routes>
