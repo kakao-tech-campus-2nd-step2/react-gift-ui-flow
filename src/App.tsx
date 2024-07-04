@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Error from './pages/Error';
 import Main from './pages/Main';
 import Theme from './pages/Theme';
 
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+    },
+    {
+        path: '/error/:http_status',
+        element: <Error />,
     },
     {
         path: '/theme/:themeKey',

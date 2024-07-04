@@ -29,7 +29,7 @@ export default () => {
                         alt={themeKey}
                         src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
                     />
-                    <p>{themeKey}</p>
+                    <p>{themeKeys[themeKey].label}</p>
                 </Link>
             </Container>
         );
@@ -37,7 +37,7 @@ export default () => {
 
     return (
         <Grid columns={{ initial: 2, xs: 4, sm: 4, md: 6 }}>
-            {themeKeys.map((themeKey) => (
+            {Object.keys(themeKeys).map((themeKey) => (
                 <ThemeBtn key={themeKey} themeKey={themeKey} />
             ))}
         </Grid>
