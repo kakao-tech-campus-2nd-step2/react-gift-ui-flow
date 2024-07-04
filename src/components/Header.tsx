@@ -1,3 +1,5 @@
+import React from 'react';
+
 const themeConfig: {
   [key: string]: { label: string; title: string; description: string; backgroundColor: string };
 } = {
@@ -43,6 +45,12 @@ const Header = ({ themeKey = 'default' }: HeaderProps) => {
           </li>
           <li>
             <a href="/my-account">My Account</a>
+          </li>
+          <li>
+            <a href="/theme/theme1">Theme 1</a>
+          </li>
+          <li>
+            <a href="/theme/theme2">Theme 2</a>
           </li>
         </ul>
       </nav>
