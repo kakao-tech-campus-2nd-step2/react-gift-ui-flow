@@ -10,13 +10,13 @@ import {
   ContainerDirectionType,
   ContainerJustifyContentType,
 } from '@/components/atoms/FlatFlex/types';
-import { vars } from '@/styles';
 
-export type Props = {
+export type FlatFlexProps = {
   maxWidth?: string;
   flexDirection?: ContainerDirection;
   alignItems?: ContainerAlignItems;
   justifyContent?: ContainerJustifyContent;
+  backgroundColor?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const FlatFlex = ({
@@ -26,7 +26,7 @@ export const FlatFlex = ({
   alignItems = ContainerAlignItemsType.center,
   justifyContent = ContainerJustifyContentType.center,
   ...args
-}: Props) => {
+}: FlatFlexProps) => {
   return (
     <Inner
       maxWidth={maxWidth}
@@ -41,12 +41,15 @@ export const FlatFlex = ({
 };
 
 const Inner = styled.div<
-  Pick<Props, 'maxWidth' | 'flexDirection' | 'justifyContent' | 'alignItems'>
+  Pick<
+    FlatFlexProps,
+    'maxWidth' | 'flexDirection' | 'justifyContent' | 'alignItems' | 'backgroundColor'
+  >
 >`
   width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ?? vars.breakpoints.md};
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection};
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `;

@@ -9,6 +9,7 @@ type ResponseGridStyle = {
 type Props = {
   columns: number | ResponseGridStyle;
   gap?: number;
+  className?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const Grid: React.FC<Props> = ({ children, columns, ...props }: Props) => {
