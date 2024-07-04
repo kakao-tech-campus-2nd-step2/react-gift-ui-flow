@@ -25,8 +25,12 @@ export const Header: React.FC = () => {
 
     return (
         <Wrapper>
-            <Title onClick={() => { history.push('/') }}>선물하기</Title>
-            <LoginBtn onClick={onBtnClickedHandler}>{btnLabel}</LoginBtn>
+            <InsideWrapper>
+                <Inner>
+                    <Title onClick={() => { history.push('/') }}>선물하기</Title>
+                    <LoginBtn onClick={onBtnClickedHandler}>{btnLabel}</LoginBtn>
+                </Inner>
+            </InsideWrapper>
         </Wrapper>
     )
 };
@@ -46,19 +50,32 @@ const LoginBtn = styled.span(
     }
 );
 
-const Wrapper = styled.div(
+const Inner = styled.div({
+    width: '100%',
+    maxWidth: '1024px',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+})
+
+const InsideWrapper = styled.div({
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+})
+
+const Wrapper = styled.header(
     {
         width: '100%',
         height: '55px',
         fontFamily: 'sans-serif',
         backgroundColor: 'white',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        display: 'flex',
         padding: '0 16px',
         boxSizing: 'border-box',
         maxWidth: '100vw',
         position: 'fixed',
-        zIndex: '9999'
+        zIndex: '9999',
+        alignContent: 'center'
     },
 );
