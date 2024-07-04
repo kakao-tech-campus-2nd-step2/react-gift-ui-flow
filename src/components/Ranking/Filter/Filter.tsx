@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
 import FilterButton from '../../common/FilterButton/FilterButton';
+import DetailButton from '../Detail/DetailButton';
 import RankingItems from '../RankingItems/RankingItems';
 import FilterTabs from './FilterTabs';
 
@@ -59,6 +60,7 @@ const Filter: React.FC = () => {
         <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
       </div>
       <RankingItems items={filteredItems} />
+      <DetailButton />
     </FilterContent>
   );
 };
