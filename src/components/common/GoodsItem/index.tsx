@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Image from '@/components/common/Image';
+import Image from '@components/common/Image';
 import Ranking from './Ranking';
 
-const IMAGE_SIZE_LARGE = 160;
-const IMAGE_SIZE_SMALL = 120;
+const IMAGE_SIZE_RANKING = 160;
+const IMAGE_SIZE_GOODS_ITEM = 250;
 
 export interface GoodsItemProps {
   imageSrc: string;
@@ -15,7 +15,7 @@ export interface GoodsItemProps {
 }
 
 export default function GoodsItem({ imageSrc, subtitle, title, amount, rankingIndex, ...props }: GoodsItemProps) {
-  const imageSize = rankingIndex ? IMAGE_SIZE_LARGE : IMAGE_SIZE_SMALL;
+  const imageSize = rankingIndex ? IMAGE_SIZE_RANKING : IMAGE_SIZE_GOODS_ITEM;
 
   const renderRanking = () => rankingIndex && <Ranking {...{ rankingIndex }} />;
 
@@ -37,7 +37,7 @@ export default function GoodsItem({ imageSrc, subtitle, title, amount, rankingIn
 
 const StyledGoodsItem = styled.div<{ rankingIndex?: number }>`
   position: relative;
-  width: ${({ rankingIndex }) => (rankingIndex ? `${IMAGE_SIZE_LARGE}px` : `${IMAGE_SIZE_SMALL}px`)};
+  width: ${({ rankingIndex }) => (rankingIndex ? `${IMAGE_SIZE_RANKING}px` : `${IMAGE_SIZE_GOODS_ITEM}px`)};
 `;
 
 const Content = styled.div`
