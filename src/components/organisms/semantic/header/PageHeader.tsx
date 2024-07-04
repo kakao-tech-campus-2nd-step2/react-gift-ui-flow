@@ -5,9 +5,10 @@ import styled from '@emotion/styled';
 import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '@styles/size';
 import { Link } from 'react-router-dom';
 import Paths from '@constants/Paths';
+import { useContext } from 'react';
+import { LoginContext } from '@/providers/LoginContextProvider';
 
 interface PageHeaderProps {
-  isLoggedIn?: boolean;
   displayLogo?: boolean;
 }
 
@@ -17,7 +18,9 @@ const HeaderAccountButton = styled.p`
   cursor: pointer;
 `;
 
-function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
+function PageHeader({ displayLogo }: PageHeaderProps) {
+  const { isLoggedIn } = useContext(LoginContext);
+
   return (
     <header css={css`
       position: fixed;
