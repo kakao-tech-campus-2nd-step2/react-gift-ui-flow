@@ -14,6 +14,7 @@ const HeaderContainer = styled.header`
   align-items: center;
   font-size: 10px;
   font-weight: bold;
+  z-index: 10;
 
   @media (max-width: 768px) {
     padding: 20px 20px;
