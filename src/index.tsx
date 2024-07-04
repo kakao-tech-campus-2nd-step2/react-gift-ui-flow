@@ -4,6 +4,7 @@ import './styles/css/index.css';
 import './styles/css/LoginPage.css';
 import './styles/css/MyAccountPage.css';
 import './styles/css/Header.css';
+import './styles/css/ThemePage.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
