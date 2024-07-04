@@ -5,8 +5,10 @@ import GiftDisplaySection from '@components/organisms/gift/GiftDisplaySection';
 import { MAX_CONTENT_WIDTH } from '@styles/size';
 import GroupFilterArea from '@components/organisms/main/ranking/GroupFilterArea';
 import PopularityFilterArea from '@components/organisms/main/ranking/PopularityFilterArea';
-import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
+import {
+  RankingSectionTitle,
+} from '@components/organisms/main/ranking/RankingSection.styles';
 import { GroupFilter, PopularityFilter } from '@/types';
 
 function RankingSection() {
@@ -26,14 +28,9 @@ function RankingSection() {
         flexDirection="column"
       >
         <Container justifyContent="center">
-          <h1 css={css`
-            font-size: 35px;
-            line-height: 50px;
-            font-weight: bold;
-          `}
-          >
+          <RankingSectionTitle>
             실시간 급상승 선물랭킹
-          </h1>
+          </RankingSectionTitle>
         </Container>
         <GroupFilterArea currentFilter={groupFilter} setGroupFilter={setGroupFilter} />
         <PopularityFilterArea
