@@ -1,22 +1,28 @@
 import { Grid } from '@/components/common/layouts/Grid';
-import * as styles from '../styles';
+import * as Styles from '../styles';
 import { TypeData } from '@/constants/GiftData';
 import { Container } from '@/components/common/layouts/Container';
+import { useNavigate } from 'react-router-dom';
+import { PATHS } from '@/constants/Path';
 
 const SelectGiftType = () => {
+  const navigate = useNavigate();
+  const HandlerNavigate = () => {
+    navigate(PATHS.BIRTHDAY);
+  };
   return (
-    <styles.SelectGiftLayout>
+    <Styles.SelectGiftLayout>
       <Container>
         <Grid columns={6}>
           {TypeData.map((data, index) => (
-            <styles.GiftTypeContainer key={index}>
-              <styles.GiftImg src={data.image} alt={data.title} />
-              <styles.GiftTypeTitle>{data.title}</styles.GiftTypeTitle>
-            </styles.GiftTypeContainer>
+            <Styles.GiftTypeContainer onClick={HandlerNavigate} key={index}>
+              <Styles.GiftImg src={data.image} alt={data.title} />
+              <Styles.GiftTypeTitle>{data.title}</Styles.GiftTypeTitle>
+            </Styles.GiftTypeContainer>
           ))}
         </Grid>
       </Container>
-    </styles.SelectGiftLayout>
+    </Styles.SelectGiftLayout>
   );
 };
 
