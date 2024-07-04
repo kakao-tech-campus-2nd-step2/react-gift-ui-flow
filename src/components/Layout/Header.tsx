@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 import { breakpoints } from '@/styles/variants';
 
@@ -7,7 +8,7 @@ export const Header = () => {
     <Wrapper>
       <Cotainer>
         <Logo>선물하기</Logo>
-        <LoginButton>로그인</LoginButton>
+        <Link to="/login">로그인</Link>
       </Cotainer>
     </Wrapper>
   );
@@ -28,8 +29,5 @@ const Cotainer = styled.div`
 const Logo = styled.div`
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
-`;
-const LoginButton = styled.div`
   cursor: pointer;
 `;
