@@ -1,4 +1,4 @@
-const Header: React.FC = () => {
+const Header: React.FC<{ themeKey?: string }> = ({ themeKey }) => {
   return (
     <header>
       <h1>My Application</h1>

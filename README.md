@@ -11,18 +11,18 @@
 
 #### 공통 컴포넌트 생성
 - **Header 컴포넌트 생성**
-  - [ ] Header 컴포넌트 파일 생성
+  - [x] Header 컴포넌트 파일 생성
   - [ ] Header 컴포넌트 기본 구조 작성
     - [ ] themeKey에 따라 label 변경 로직 추가
     - [ ] themeKey에 따라 title 변경 로직 추가
     - [ ] themeKey에 따라 description 변경 로직 추가
     - [ ] themeKey에 따라 backgroundColor 변경 로직 추가
-  - [ ] Header 컴포넌트를 모든 페이지에 적용
+  - [x] Header 컴포넌트를 모든 페이지에 적용
 
 - **Footer 컴포넌트 생성**
-  - [ ] Footer 컴포넌트 파일 생성
+  - [x] Footer 컴포넌트 파일 생성
   - [ ] Footer 컴포넌트 기본 구조 작성
-  - [ ] Footer 컴포넌트를 모든 페이지에 적용
+  - [x] Footer 컴포넌트를 모든 페이지에 적용
 
 #### pages
 
