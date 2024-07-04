@@ -6,10 +6,15 @@ import { UserInfo } from '@/providers/UserInfoProviders';
 
 export const MyAccount = () => {
   const { userName } = useContext(UserInfo);
+  const { setUserName } = useContext(UserInfo);
+  const handleLogout = () => {
+    setUserName('');
+    sessionStorage.clear();
+  };
   return (
     <Wrapper>
       <Title>{userName}님 안녕하세요!</Title>
-      <Button theme="darkGray" size="small" style={{ width: 200 }}>
+      <Button theme="darkGray" size="small" style={{ width: 200 }} onClick={handleLogout}>
         로그아웃
       </Button>
     </Wrapper>
