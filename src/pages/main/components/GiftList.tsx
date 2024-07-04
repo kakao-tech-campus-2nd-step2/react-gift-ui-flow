@@ -11,6 +11,12 @@ const GiftLayout = styled.div`
   display: flex;
   justify-content: center;
   padding: 14px 14px 3px;
+
+  @media screen and (min-width: ${breakpoints.sm}) {
+    width: calc(100% - 104px);
+
+    padding: 45px 52px 23px;
+  }
 `;
 
 const GiftWrapper = styled.div`
@@ -41,7 +47,16 @@ const GiftContainer = styled.div`
 `;
 
 const GiftEx = styled.p`
-  padding: 7px 0px 0px;
+  color: rgb(51, 51, 51);
+  font-size: 13px;
+  line-height: 17px;
+  margin: 5px 0px 0px;
+
+  @media screen and (min-width: ${breakpoints.sm}) {
+    padding: 7px 0px 0px;
+    font-size: 16px;
+    line-height: 28px;
+  }
 `;
 
 const GiftList = () => {
