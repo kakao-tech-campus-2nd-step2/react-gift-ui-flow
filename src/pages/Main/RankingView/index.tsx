@@ -1,6 +1,8 @@
 import { css } from '@emotion/css';
 import { useState } from 'react';
 
+import { Button } from '@/components/common/Button';
+import { Container } from '@/components/common/layouts/Container';
 import { colors } from '@/styles/variants';
 
 import type { RankType, TargetType } from './FilterType';
@@ -11,6 +13,7 @@ import TargetTypeFilter from './TargetTypeFilter';
 export default () => {
     const [targetType, setTargetType] = useState<TargetType>('ALL');
     const [rankType, setRankType] = useState<RankType>('MANY_WISH');
+    const [isDetail, setIsDetail] = useState<boolean>(false);
 
     return (
         <div
@@ -64,7 +67,12 @@ export default () => {
                     위시로 받은
                 </RankTypeFilter>
             </div>
-            <RankingList targetType={targetType} rankType={rankType} />
+            <RankingList targetType={targetType} rankType={rankType} isDetail={isDetail} />
+            <Container maxWidth="400px" className={detailBtnStyle}>
+                <Button theme="outline" onClick={() => setIsDetail((value) => !value)}>
+                    {isDetail ? '접기' : '더보기'}
+                </Button>
+            </Container>
         </div>
     );
 };
@@ -90,4 +98,8 @@ const rankTypeFilterContainerStyle = css`
         }
     }
     background-color: ${colors.lightBlue};
+`;
+const detailBtnStyle = css`
+    margin-top: 20px;
+    margin-bottom: 50px;
 `;
