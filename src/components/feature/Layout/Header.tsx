@@ -2,14 +2,16 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 import { Container } from '@/components/common/Layout/Container';
+import { useAuth } from '@/hooks/useAuth';
 export const Header = () => {
+  const { authToken } = useAuth();
   return (
     <HeaderWrapper>
       <Container flexDirection="row" justifyContent="space-between" alignItems="center" maxWidth="1024px">
         <Link to="/">
           <Logo src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" alt="선물하기" />
         </Link>
-        <Link to="/login">로그인</Link>
+        {authToken ? <Link to="/my-account">내 계정</Link> : <Link to="/login">로그인</Link>}
       </Container>
     </HeaderWrapper>
   );
