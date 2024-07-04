@@ -2,25 +2,11 @@ import { css } from '@emotion/css';
 import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
-import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 
-import { themeKeys } from './Theme';
+import { themeKeys } from '../Theme';
 
 export default () => {
-    return (
-        <div>
-            {/* theme section */}
-            <section className={sectionStyle}>
-                <Container>
-                    <ThemeList />
-                </Container>
-            </section>
-        </div>
-    );
-};
-
-const ThemeList = () => {
     const ThemeBtn = ({ themeKey }: { themeKey: string }) => {
         const divStyle = css`
             padding: 25px 35px 24px;
@@ -47,10 +33,3 @@ const ThemeList = () => {
         </Grid>
     );
 };
-
-const sectionStyle = css`
-    padding: 14px 14px 3px;
-    @media screen and (min-width: 768px) {
-        padding: 45px 52px 23px;
-    }
-`;
