@@ -4,7 +4,6 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import RankingHeader from '@/components/Ranking/RankingHeader';
-import RankingItems from '@/components/Ranking/RankingItems/RankingItems';
 
 import { Button } from '../components/common/Button/index';
 import { Image } from '../components/common/Image/index';
@@ -100,7 +99,6 @@ const Home: React.FC = () => {
 		</Button>
     <RankingHeader />
     <Filter />
-    <RankingItems />
 	  </div>
 	);
   };

@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
 import FilterButton from '../../common/FilterButton/FilterButton';
+import RankingItems from '../RankingItems/RankingItems';
 import FilterTabs from './FilterTabs';
 
 const FilterWrapper = styled.div`
@@ -9,6 +10,15 @@ const FilterWrapper = styled.div`
   justify-content: space-around;
   margin-bottom: 20px;
 `;
+
+const items = [
+  { id: 1, category: 'ALL', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 1', amount: 10000 },
+  { id: 2, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
+  { id: 3, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
+  { id: 4, category: '청소년', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
+  { id: 5, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 2', title: '상품명 2', amount: 20000 },
+  { id: 6, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 2', title: '상품명 2', amount: 20000 },
+];
 
 const Filter: React.FC = () => {
   const [activeFilters, setActiveFilters] = useState<{ [key: string]: boolean }>({
@@ -32,6 +42,8 @@ const Filter: React.FC = () => {
     setTab(newTab);
   };
 
+  const filteredItems = items.filter(item => activeFilters.ALL || activeFilters[item.category]);
+
   return (
     <div>
       <FilterWrapper>
@@ -43,6 +55,7 @@ const Filter: React.FC = () => {
       <div>
         <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
       </div>
+      <RankingItems items={filteredItems} />
     </div>
   );
 };
