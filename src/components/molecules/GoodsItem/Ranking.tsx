@@ -2,11 +2,11 @@ import styled from '@emotion/styled';
 
 import { DefaultGoodsItems, type DefaultGoodsItemsProps } from './Default';
 
-type Props = {
+export type RankingGoodsItemsProps = {
   rankingIndex: number;
 } & DefaultGoodsItemsProps;
 
-export const RankingGoodsItems = ({ rankingIndex, ...props }: Props) => {
+export const RankingGoodsItems = ({ rankingIndex, ...props }: RankingGoodsItemsProps) => {
   return (
     <Wrapper>
       <RankingLabel rankingIndex={rankingIndex}>{rankingIndex}</RankingLabel>
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`
+const RankingLabel = styled.span<Pick<RankingGoodsItemsProps, 'rankingIndex'>>`
   position: absolute;
   z-index: 2;
   width: 30px;
