@@ -1,11 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Navigate,Route, Routes } from 'react-router-dom';
 
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-
-import AccountPage from './pages/AccountPage';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import { AuthProvider, useAuth } from './context/AuthContext';
+import AccountPage from './pages/AccountPage';
 import Home from './pages/Home';
 import LoginPage from './pages/LoginPage';
 import ThemePage from './pages/ThemePage';
