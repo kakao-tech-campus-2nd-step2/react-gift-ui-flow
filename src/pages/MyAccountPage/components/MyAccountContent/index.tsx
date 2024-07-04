@@ -1,12 +1,12 @@
-import { useAuth } from '@/pages/MyAccountPage/hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
 
 import { Button } from '@/components/ui/Button';
 import { Container } from '@/components/ui/Layout/Container';
 
 import { buttonStyle, countainerStyle, titleStyle } from './styles';
 
-export const MyPageContent = () => {
-  const { userName, logout } = useAuth();
+export const MyAccountConent = () => {
+  const { storedUserName, logout } = useAuth();
 
   return (
     <Container
@@ -16,7 +16,7 @@ export const MyPageContent = () => {
       gap="3rem"
       css={countainerStyle}
     >
-      <h1 css={titleStyle}>{userName}님 안녕하세요!</h1>
+      <h1 css={titleStyle}>{storedUserName}님 안녕하세요!</h1>
       <Button
         size="medium"
         theme="darkGray"

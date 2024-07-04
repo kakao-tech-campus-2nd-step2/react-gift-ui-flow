@@ -1,8 +1,9 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/hooks/useAuth';
 
 export const useLoginForm = () => {
-  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -29,11 +30,8 @@ export const useLoginForm = () => {
     if (!isLoginEnabled) {
       /* eslint-disable no-alert */
       alert('아이디와 비밀번호를 입력해주세요.');
-      return;
     }
-
-    sessionStorage.setItem('authToken', username);
-    navigate('/');
+    login(username);
   };
 
   return {

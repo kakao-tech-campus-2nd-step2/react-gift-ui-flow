@@ -1,11 +1,11 @@
 import BaseLayout from '@/layouts/BaseLayout';
 
-import { MyPageContent } from './components/MyAccountContent';
+import { MyAccountConent } from './components/MyAccountContent';
 
 export const MyAccountPage = () => {
   return (
     <BaseLayout>
-      <MyPageContent />
+      <MyAccountConent />
     </BaseLayout>
   );
 };
