@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export type HeaderProps = {
-  label: string;
-  title: string;
-  description: string;
-  backgroundColor: string;
+  label?: string;
+  title?: string;
+  description?: string;
+  backgroundColor?: string;
 }
 
 const HeaderContainer = styled.header<{ backgroundColor: string }>`
@@ -21,7 +21,6 @@ const HeaderContainer = styled.header<{ backgroundColor: string }>`
   @media (max-width: 768px) {
     padding: 20px 20px;
   }
-  
 `;
 
 const HeaderLabel = styled.h2`
@@ -42,7 +41,12 @@ const HeaderDescription = styled.h2`
   color: #ADADAD;
 `;
 
-const Header: React.FC<HeaderProps> = ({ label, title, description, backgroundColor }) => (
+const Header: React.FC<HeaderProps> = ({
+  label = 'Default Label',
+  title = 'Default Title',
+  description = 'Default Description',
+  backgroundColor = '#000',
+}) => (
   <HeaderContainer backgroundColor={backgroundColor}>
     <HeaderLabel>{label}</HeaderLabel>
     <HeaderTitle>{title}</HeaderTitle>
