@@ -11,12 +11,6 @@ export default meta;
 
 type Story = StoryObj<typeof Header>;
 
-export const Primary: Story = {
-  args: {
-    title: '선물하기',
-  },
-};
-
 export const WithImage: Story = {
   args: {
     title: '선물하기',
