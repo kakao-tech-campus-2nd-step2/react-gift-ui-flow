@@ -173,10 +173,10 @@ Polyfill은 이전 버전에서 지원하지 않는 기능들에 대한 코드�
   - [x] 로그인 페이지 조정하기
   - [x] 마이 페이지 조정하기
 - [x] 로그인 상태를 관리하는 Context API 만들기
-  - [x authToken값이 sessionStorage에 있는지 확인하여 default login state 설정하기
-- [ ] 로그인 페이지에서 ID와 비밀번호 입력 시 ID를 sessionStorage의 authToken에 저장
+  - [x] authToken값이 sessionStorage에 있는지 확인하여 default login state 설정하기
+- [x] 로그인 페이지에서 ID와 비밀번호 입력 시 ID를 sessionStorage의 authToken에 저장
 - [x] 로그인 시 이전 페이지로 이동
-- [ ] Header에서 로그인 여부를 Context API로 받아와 서로 다른 버튼 표시하기
-- [ ] `/my-account`에 접근하는 경우 로그인하지 않은 사용자를 로그인 페이지로 리디렉션
+- [x] Header에서 로그인 여부를 Context API로 받아와 서로 다른 버튼 표시하기
+- [x] `/my-account`에 접근하는 경우 로그인하지 않은 사용자를 로그인 페이지로 리디렉션
 - [x] `/login`에 접근하는 경우 로그인 완료한 사용자를 메인 페이지로 리디렉션
-- [ ] 로그아웃 기능 구현
+- [x] 로그아웃 기능 구현
