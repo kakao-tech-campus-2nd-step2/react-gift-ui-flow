@@ -25,7 +25,6 @@ function MainBanner() {
         <ImageContainer>
           <Image
             ratio="square"
-            radius={25}
             src="https://picsum.photos/200"
             css={imageStyle}
           />
