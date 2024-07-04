@@ -10,7 +10,7 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 
 - [x] Header 컴포넌트 생성
 - [x] logo 클릭 시, `/`으로
-- [ ] 로그인 여부에 따라 라우팅 (false면 **`/login`**, true면 **`/my-account`**)
+- [x] 로그인 여부에 따라 라우팅 (false면 **`/login`**, true면 **`/my-account`**)
 - [x] Footer 컴포넌트 생성
 
 ### 메인 페이지 만들기 (**`/`**)

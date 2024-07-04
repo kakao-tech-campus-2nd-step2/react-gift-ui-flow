@@ -1,11 +1,23 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  isLoggedIn: boolean;
+}
+
+export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
     navigate(`/`);
+  };
+
+  const handleLoginClick = () => {
+    navigate(`/login`);
+  };
+
+  const handleMyAccountClick = () => {
+    navigate(`/my-account`);
   };
 
   return (
@@ -19,7 +31,11 @@ export const Header: React.FC = () => {
           />
         </LeftSection>
         <RightSection>
-          <Item>로그인</Item>
+          {isLoggedIn ? (
+            <MenuItem onClick={handleMyAccountClick}>내 계정</MenuItem>
+          ) : (
+            <MenuItem onClick={handleLoginClick}>로그인</MenuItem>
+          )}
         </RightSection>
       </HeaderContent>
     </HeaderContainer>
@@ -54,7 +70,7 @@ const RightSection = styled.div`
   align-items: center;
 `;
 
-const Item = styled.p`
+const MenuItem = styled.p`
   margin: 0;
   color: #000000;
   cursor: pointer;

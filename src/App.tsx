@@ -13,7 +13,7 @@ const App = () => {
       path: '/',
       element: (
         <>
-          <Header />
+          <Header isLoggedIn={false} />
           <MainPage />
           <Footer />
         </>
@@ -31,7 +31,7 @@ const App = () => {
       path: '/my-account',
       element: (
         <>
-          <Header />
+          <Header isLoggedIn={false} />
           <MyAccountPage />
           <Footer />
         </>
