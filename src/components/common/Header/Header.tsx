@@ -1,6 +1,13 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate(`/`);
+  };
+
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -8,6 +15,7 @@ export const Header: React.FC = () => {
           <Logo
             src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
             alt="카카오 선물하기 로고"
+            onClick={handleLogoClick}
           />
         </LeftSection>
         <RightSection>
