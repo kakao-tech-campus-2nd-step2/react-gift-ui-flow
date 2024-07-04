@@ -30,6 +30,7 @@
     "react-router-dom": "5"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@craco/craco": "^7.1.0",
     "@emotion/eslint-plugin": "^11.11.0",
     "@storybook/addon-essentials": "^7.6.17",
