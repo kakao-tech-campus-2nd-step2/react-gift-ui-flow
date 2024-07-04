@@ -18,9 +18,9 @@ const Header: React.FC<Props> = ({ isLogin = false }: Props) => {
   return (
     <Wrapper>
       <InnerWrapper>
-        <a href="/">
+        <StyledA href="/">
           <LogoImage src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" />
-        </a>
+        </StyledA>
         {isLogin ? (
           <MenuContainer onClick={myaccountClick}>
             <p>나의 페이지</p>
@@ -59,6 +59,11 @@ const InnerWrapper = styled.div`
 
 const LogoImage = styled.img`
   height: 54px;
+`;
+
+const StyledA = styled.a`
+  border: 0;
+  outline: 0;
 `;
 
 const MenuContainer = styled.div`

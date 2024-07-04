@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate,Route, Routes } from "react-router-dom";
 
 import Login from "@/pages/Login";
 import Main from "@/pages/Main";
@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/theme" element={<Navigate to="/" />} />
         <Route path="/theme/:themeKey" element={<Theme />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my-account" element={<MyAccount />} />
