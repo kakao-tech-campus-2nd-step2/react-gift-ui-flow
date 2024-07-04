@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@components/*": ["src/presentation/components/*"],
+      "@utils/*": ["src/shared/utils/*"],
+      "@hooks/*": ["src/presentation/hooks/*"]
+    }
+  }
+}
