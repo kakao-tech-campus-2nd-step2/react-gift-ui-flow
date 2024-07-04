@@ -21,6 +21,7 @@ const LoginPage: React.FC = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <button type="submit">Login</button>
       </form>
     </div>
   );
