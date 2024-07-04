@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
 import FilterButton from '../common/FilterButton/FilterButton';
+import FilterTabs from './FilterTabs';
 
 const FilterWrapper = styled.div`
   display: flex;
@@ -40,6 +41,7 @@ const Filter: React.FC = () => {
         <FilterButton active={filter === '남성'} onClick={() => handleFilterChange('남성')} buttonText='👨🏻‍🦳'>남성이</FilterButton>
         <FilterButton active={filter === '청소년'} onClick={() => handleFilterChange('청소년')} buttonText='👦🏻'>청소년이</FilterButton>
       </FilterWrapper>
+      <FilterTabs activeTab={filter} onTabChange={handleFilterChange} />
       <div>
         {filteredData.map(item => (
           <div key={item.id}>{item.title}</div>
