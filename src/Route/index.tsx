@@ -1,4 +1,5 @@
 import Home from "@/pages/Home";
+import Login from "@/pages/Login";
 import ThemeDetail from "@/pages/ThemeDetail";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -11,7 +12,7 @@ export function RootRoute() {
     },
     {
       path: "/login",
-      element: <div>Hello world!</div>,
+      element: <Login />,
     },
     {
       path: "/my-account",

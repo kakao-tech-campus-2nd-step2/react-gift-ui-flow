@@ -10,9 +10,9 @@ const Header = () => {
         <Link to="/">
           <h1>선물하기</h1>
         </Link>
-        <div>
+        <Link to="/login">
           <Button theme="transparent">로그인</Button>
-        </div>
+        </Link>
       </StyledHeader>
     </Container>
   );
