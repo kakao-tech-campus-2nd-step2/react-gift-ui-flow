@@ -3,6 +3,10 @@ import styled from '@emotion/styled';
 import { Image } from '@/components/common/Image/index';
 
 export const MainPage: React.FC = () => {
+  const handleImageClick = () => {
+    alert('선물 받을 친구 선택하기');
+  };
+
   return (
     <>
       <FriendSection>
@@ -12,6 +16,7 @@ export const MainPage: React.FC = () => {
             alt="선물 받을 친구"
             radius={25}
             ratio="square"
+            onClick={handleImageClick}
           />
           <FriendText>선물 받을 친구를 선택해주세요.</FriendText>
         </FriendContainer>

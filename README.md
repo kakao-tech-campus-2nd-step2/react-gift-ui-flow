@@ -16,7 +16,7 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 ### 메인 페이지 만들기 (**`/`**)
 
 - [x] Friend 섹션 추가
-- [ ] Friend Img 클릭 시, alert
+- [x] Friend Img 클릭 시, alert
 - [ ] Theme 섹션 추가 (Grid로 상품이 6열 2행으로 보이게 구현)
 - [ ] Theme Item 클릭 시, Theme 페이지(**`/theme/:themeKey`**)로 라우팅
 - [ ] AI 섹션 추가
