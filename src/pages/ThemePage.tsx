@@ -29,7 +29,7 @@ function ThemePage() {
           justifyContent="center"
           padding="40px 16px 300px"
         >
-          <GiftDisplaySection gifts={gifts} maxColumns={4} />
+          <GiftDisplaySection gifts={gifts} maxColumns={4} minColumns={2} />
         </Container>
       </Container>
     </Page>
