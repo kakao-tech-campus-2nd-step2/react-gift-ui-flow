@@ -35,7 +35,8 @@ const Wrapper = styled.div(
         display: 'flex',
         padding: '0 16px',
         boxSizing: 'border-box',
-        maxWidth: '1024px',
-        margin: '0 auto',
+        maxWidth: '100vw',
+        position: 'fixed',
+        zIndex: '9999'
     },
 );

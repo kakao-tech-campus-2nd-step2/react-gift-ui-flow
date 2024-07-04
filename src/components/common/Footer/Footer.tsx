@@ -20,7 +20,6 @@ const Title = styled.div(
 const InsideWrapper = styled.div(
     {
         width: '100%',
-        height: '179.5px',
         fontFamily: 'sans-serif',
         padding: '40px 16px 120px',
         maxWidth: '1024px',
