@@ -1,4 +1,3 @@
-import { DEFAULT_IMAGE_URL } from '@/constants/data';
 import { ThemeListType } from '@/types/themeType';
 
 import { GoodsItem } from '@/components/ui/GoodsItem/GoodsItem';
@@ -26,7 +25,6 @@ export const ThemeContent = ({ items }: ThemeContentProps) => {
       >
         {items.map((item) => (
           <GoodsItem
-            imageSrc={DEFAULT_IMAGE_URL}
             title={item.title}
             subtitle={item.subtitle}
             amount={item.amount}

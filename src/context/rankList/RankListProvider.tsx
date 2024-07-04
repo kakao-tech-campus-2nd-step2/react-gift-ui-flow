@@ -1,7 +1,6 @@
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useFilter } from '@/context/filter/useFilter';
-
 import { getFilteredRankItem } from '@/utils/filterRankItem';
 
 import { RankListContext } from './RankListContext';

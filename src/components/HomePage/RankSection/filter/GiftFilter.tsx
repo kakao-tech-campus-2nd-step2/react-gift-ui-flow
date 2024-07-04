@@ -1,6 +1,5 @@
 import { useFilter } from '@/context/filter/useFilter';
 import { GiftFilterButons } from '@/data/filterData';
-
 import { GiftFilterType } from '@/types/rankTypes';
 
 import { Callout } from '@/components/ui/Callout/Callout';

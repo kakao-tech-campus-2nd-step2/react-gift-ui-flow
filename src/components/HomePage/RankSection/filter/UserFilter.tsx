@@ -1,6 +1,5 @@
 import { useFilter } from '@/context/filter/useFilter';
 import { UserFilterButtons } from '@/data/filterData';
-
 import { UserFilterContentType } from '@/types/rankTypes';
 
 import { Container } from '@/components/ui/Layout/Container';
