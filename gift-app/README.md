@@ -16,4 +16,5 @@ FE 카카오 선물하기 1주차 과제: React 기초
 - [x] 예측가능성을 고려한 label -> children 변경
 - [x] 통일성과 올바른 기능 작동을 위한 Grid style 코드 수정
 - [x] ratio 완벽하게 처리하는 로직 개선
-- [x] ratio 완벽하게 처리하는 로직 개선
+- [x] radius 완벽하게 처리하는 로직 개선
+- [x] button tag의 모든 prop을 받을 수 있도록 extends로 타입을 확장 및 Omit 활용
