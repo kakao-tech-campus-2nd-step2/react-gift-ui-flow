@@ -1,19 +1,30 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { colors, fontsizes } from '@/styles/variants';
 
 import { Container } from '../layouts/Container';
 
-export const Header = () => (
-  <Wrapper>
-    <Container>
-      <Buttons>
-        <TitleButton>선물하기</TitleButton>
-        <LoginButton>로그인</LoginButton>
-      </Buttons>
-    </Container>
-  </Wrapper>
-);
+export const Header = () => {
+  const navigate = useNavigate();
+
+  const moveToMain = () => {
+    navigate('/');
+  };
+  const moveToLogin = () => {
+    navigate('/login');
+  };
+  return (
+    <Wrapper>
+      <Container>
+        <Buttons>
+          <TitleButton onClick={moveToMain}>선물하기</TitleButton>
+          <LoginButton onClick={moveToLogin}>로그인</LoginButton>
+        </Buttons>
+      </Container>
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.header({
   position: 'fixed',
