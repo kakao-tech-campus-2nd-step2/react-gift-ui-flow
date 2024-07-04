@@ -9,6 +9,7 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
+      <Header themeKey="default" />
       <main>
         <section>
           <h2>Theme Categories</h2>
@@ -21,7 +22,16 @@ const MainPage: React.FC = () => {
             </li>
           </ul>
         </section>
+        <section>
+          <h2>Trending Gifts</h2>
+          <ul>
+            <li>Gift 1</li>
+            <li>Gift 2</li>
+            <li>Gift 3</li>
+          </ul>
+        </section>
       </main>
+      <Footer />
     </div>
   );
 };
