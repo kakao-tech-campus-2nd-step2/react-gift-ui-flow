@@ -1,17 +1,45 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Container } from '@/components/common/layouts/Container/index';
 
-export const LoginPage: React.FC = () => {
+interface LoginPageProps {
+  onLogin: () => void;
+}
+
+export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+  const navigate = useNavigate();
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = () => {
+    if (!id || !password) {
+      alert('아이디와 비밀번호를 입력해주세요.');
+      return;
+    }
+    onLogin();
+    navigate('/');
+  };
+
   return (
     <LoginSection>
       <h1>kakao</h1>
       <FormContainer>
-        <LoginField placeholder="이름"></LoginField>
-        <LoginField placeholder="비밀번호" type="password"></LoginField>
-        <LoginButton theme="kakao" size="small">
+        <LoginField
+          placeholder="이름"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        ></LoginField>
+        <LoginField
+          placeholder="비밀번호"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        ></LoginField>
+        <LoginButton theme="kakao" size="small" onClick={handleLogin}>
           로그인
         </LoginButton>
       </FormContainer>

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Footer } from '@/components/common/Footer/Footer';
@@ -9,12 +10,18 @@ import { MyAccountPage } from './pages/MyAccountPage';
 import { ThemePage } from './pages/ThemePage';
 
 const App = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
   const router = createBrowserRouter([
     {
       path: '/',
       element: (
         <>
-          <Header isLoggedIn={false} />
+          <Header isLoggedIn={isLoggedIn} />
           <MainPage />
           <Footer />
         </>
@@ -24,7 +31,7 @@ const App = () => {
       path: '/login',
       element: (
         <>
-          <LoginPage />
+          <LoginPage onLogin={handleLogin} />
         </>
       ),
     },
@@ -32,7 +39,7 @@ const App = () => {
       path: '/my-account',
       element: (
         <>
-          <Header isLoggedIn={false} />
+          <Header isLoggedIn={isLoggedIn} />
           <MyAccountPage />
           <Footer />
         </>
@@ -42,7 +49,7 @@ const App = () => {
       path: '/theme/:themeKey',
       element: (
         <>
-          <Header isLoggedIn={false} />
+          <Header isLoggedIn={isLoggedIn} />
           <ThemePage />
           <Footer />
         </>
