@@ -4,8 +4,11 @@ type UserInfoProps = {
   userName: string;
   setUserName: (user: string) => void;
 };
+
+const auth = sessionStorage.getItem('authToken');
+
 const defaultUserInfo: UserInfoProps = {
-  userName: '',
+  userName: auth ? auth : '',
   setUserName: () => {},
 };
 
