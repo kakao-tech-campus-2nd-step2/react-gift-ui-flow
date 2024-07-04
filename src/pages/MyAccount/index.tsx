@@ -1,11 +1,14 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
 
 import { Button } from '@/components/common/Button';
+import { UserInfo } from '@/providers/UserInfoProviders';
 
 export const MyAccount = () => {
+  const { userName } = useContext(UserInfo);
   return (
     <Wrapper>
-      <Title>aabb님 안녕하세요!</Title>
+      <Title>{userName}님 안녕하세요!</Title>
       <Button theme="darkGray" size="small" style={{ width: 200 }}>
         로그아웃
       </Button>
