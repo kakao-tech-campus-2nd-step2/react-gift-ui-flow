@@ -1,4 +1,3 @@
-import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Footer from '@/components/Footer';
@@ -8,7 +7,7 @@ interface AppProps {
   themeKey?: string;
 }
 
-const App: React.FC<AppProps> = ({ themeKey = 'default' }) => {
+const App = ({ themeKey = 'default' }: AppProps) => {
   return (
     <div>
       <Header themeKey={themeKey} />
