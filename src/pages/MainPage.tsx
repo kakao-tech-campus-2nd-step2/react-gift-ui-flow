@@ -11,11 +11,14 @@ const MainPage: React.FC = () => {
     history.push(`/theme/${themeKey}`);
   };
 
+  const handleLoadMore = () => {
+    setVisibleItems((prevVisibleItems) => prevVisibleItems + 6);
+  };
+
   const items = Array.from({ length: 20 }, (_, index) => `Gift ${index + 1}`);
 
   return (
     <div>
-      <Header themeKey="default" />
       <main>
         <section>
           <h2>Theme Categories</h2>
@@ -49,9 +52,9 @@ const MainPage: React.FC = () => {
               <li key={item}>{item}</li>
             ))}
           </ul>
+          {visibleItems < items.length && <button onClick={handleLoadMore}>더보기</button>}
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
