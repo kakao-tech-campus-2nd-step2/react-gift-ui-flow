@@ -19,4 +19,4 @@
 - [x] 메인 페이지 (/) 작성
 - [x] Theme 페이지(/theme/:themeKey) 작성
 - [x] 로그인 페이지(/login) 작성
-- [ ] 나의 페이지(/my-account) 작성
+- [x] 나의 페이지(/my-account) 작성
