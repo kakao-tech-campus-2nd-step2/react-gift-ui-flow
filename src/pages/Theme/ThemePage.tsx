@@ -1,5 +1,24 @@
-const ThemePage = () => {
-  return <h1>This is ThemePage</h1>;
+import styled from '@emotion/styled';
+import { useParams } from 'react-router-dom';
+
+import { Header } from '@/components/common/Header/ThemeHeader/Header';
+const ThemePage: React.FC = () => {
+  const { themeKey } = useParams<{ themeKey: string }>();
+  const defaultThemeKey = themeKey || 'life_small_gift';
+
+  return (
+    <Wrapper>
+      <Header themeKey={defaultThemeKey} />;
+    </Wrapper>
+  );
 };
 
 export default ThemePage;
+
+const Wrapper = styled.div({
+  width: '100%',
+  position: 'absolute',
+  top: '0px',
+  left: '0px',
+  marginTop: '54px',
+});

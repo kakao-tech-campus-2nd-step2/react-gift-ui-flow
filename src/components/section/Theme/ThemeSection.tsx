@@ -31,7 +31,7 @@ export const ThemeSection = () => {
   return (
     <Items gap={0} columns={{ xs: 4, sm: 4, md: 6 }}>
       {items.map((item, index) => (
-        <ItemContainer key={index} onClick={() => onItemClick('life_small_gift')}>
+        <ItemContainer key={index} onClick={() => onItemClick(item.themeKey)}>
           <Image
             src={item.image}
             alt={`선물 테마: ${item.category}`}
