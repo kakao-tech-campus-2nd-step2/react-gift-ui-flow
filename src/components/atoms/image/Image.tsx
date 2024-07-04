@@ -3,7 +3,19 @@ import { css } from '@emotion/react';
 
 interface ImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   ratio: number | 'square',
-  radius: number | 'circle',
+  radius?: number | 'circle',
+}
+
+function getRadius(radius?: number | 'circle') {
+  if (typeof radius === 'number') {
+    return `${radius}px`;
+  }
+
+  if (radius === 'circle') {
+    return '100%';
+  }
+
+  return '0px';
 }
 
 function Image({ ratio, radius, ...rest }: ImageProps) {
@@ -23,7 +35,7 @@ function Image({ ratio, radius, ...rest }: ImageProps) {
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: ${radius === 'circle' ? '100%' : `${radius}px`};
+          border-radius: ${getRadius(radius)};
           object-fit: cover;
         `}
         {...rest}
