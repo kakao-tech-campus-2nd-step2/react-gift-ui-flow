@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
-import itemThumbnail from '@/assets/images/itemThumbnail.jpg';
 import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
@@ -10,24 +9,16 @@ interface Item extends Omit<DefaultGoodsItemsProps, 'rankingIndex'> {
   rankingIndex: number;
 }
 
-const createItems = (): Item[] => {
-  return Array.from({ length: 21 }, (_, index) => ({
-    rankingIndex: index + 1,
-    imageSrc: itemThumbnail,
-    subtitle: 'BBQ',
-    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
-    amount: 29000,
-  }));
-};
+interface RankingItemsProps {
+  items: Item[];
+}
 
-const items: Item[] = createItems();
-
-export const RankingItems: React.FC = () => {
+export const RankingItems: React.FC<RankingItemsProps> = ({ items }) => {
   const [count, setCount] = useState(6);
   const [isViewedMore, setIsViewedMore] = useState(false);
 
   const toggleViewMoreItems = () => {
-    if (!isViewedMore) {
+    if (isViewedMore) {
       setCount(6);
     } else {
       setCount(items.length);

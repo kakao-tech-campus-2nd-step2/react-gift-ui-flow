@@ -2,12 +2,19 @@ import styled from '@emotion/styled';
 
 import { breakpoints, colors } from '@/styles/variants';
 
-export const GiftCategories = () => {
+interface Props {
+  onCategoryChange: (category: string) => void;
+}
+
+export const GiftCategories: React.FC<Props> = ({ onCategoryChange }) => {
+  const handleCategoryClick = (category: string) => {
+    onCategoryChange(category);
+  };
   return (
     <Wrapper>
-      <Button>받고 싶어한</Button>
-      <Button>많이 선물한</Button>
-      <Button>위시로 받은</Button>
+      <Button onClick={() => handleCategoryClick('받고 싶어한')}>받고 싶어한</Button>
+      <Button onClick={() => handleCategoryClick('많이 선물한')}>많이 선물한</Button>
+      <Button onClick={() => handleCategoryClick('위시로 받은')}>위시로 받은</Button>
     </Wrapper>
   );
 };

@@ -1,29 +1,42 @@
 import styled from '@emotion/styled';
+import React from 'react';
 
 import { breakpoints } from '@/styles/variants';
 
-export const WhoCategories = () => {
+interface Props {
+  onCategoryChange: (category: string) => void;
+}
+
+export const WhoCategories: React.FC<Props> = ({ onCategoryChange }) => {
+  const handleCategoryClick = (category: string) => {
+    onCategoryChange(category);
+  };
+
   return (
-    <div style={{ display: 'flex' }}>
-      <Button>
+    <Wrapper>
+      <Button onClick={() => handleCategoryClick('전체')}>
         <Icon>ALL</Icon>
         <p>전체</p>
       </Button>
-      <Button>
+      <Button onClick={() => handleCategoryClick('여성이')}>
         <Icon>👩</Icon>
         <p>여성이</p>
       </Button>
-      <Button>
+      <Button onClick={() => handleCategoryClick('남성이')}>
         <Icon>👨</Icon>
         <p>남성이</p>
       </Button>
-      <Button>
+      <Button onClick={() => handleCategoryClick('청소년이')}>
         <Icon>👧</Icon>
         <p>청소년이</p>
       </Button>
-    </div>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  display: flex;
+`;
 
 const Button = styled.button`
   &:not(:first-of-type) {
@@ -40,6 +53,12 @@ const Button = styled.button`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
 `;
 
 const Icon = styled.div`
