@@ -39,6 +39,14 @@ interface ContainerProps {
   padding?: string;
 }
 
+interface ResponsiveContainerProps extends ContainerProps { // padding은 어떻게 하지?
+  sizeDefault: ContainerSize;
+  sizeXS?: ContainerSize;
+  sizeSm?: ContainerSize;
+  sizeMd?: ContainerSize;
+  sizeLg?: ContainerSize;
+}
+
 export interface FixedSize {
   width: string,
   height: string,
