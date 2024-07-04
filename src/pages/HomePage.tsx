@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const categories = [
@@ -75,6 +75,13 @@ const categories = [
       'https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png',
   },
 ];
+
+const trendingGifts = [
+  { id: 1, name: '전체', category: 'all' },
+  { id: 2, name: '여성이', category: 'woman' },
+  { id: 3, name: '남성이', category: 'man' },
+  { id: 4, name: '청소년이', category: 'teen' },
+];
 const containerStyle: React.CSSProperties = {
   padding: '20px',
   display: 'flex',
@@ -111,7 +118,39 @@ const trendingSectionStyle: React.CSSProperties = {
   textAlign: 'center',
   marginTop: '50px',
 };
+
+const filterButtonStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  width: '60px',
+  height: '60px',
+  margin: '20px 60px',
+  borderRadius: '20px',
+  cursor: 'pointer',
+  backgroundColor: '#E6F1FF',
+  color: '#fff',
+  fontWeight: 'bold',
+  border: 'none',
+};
+
+const activeFilterButtonStyle: React.CSSProperties = {
+  ...filterButtonStyle,
+  backgroundColor: '#007bff',
+  color: '#fff',
+};
+
 const HomePage: React.FC = () => {
+  const [activeFilter, setActiveFilter] = useState('all');
+
+  const handleFilterClick = (filter: string) => {
+    setActiveFilter(filter);
+  };
+
+  const filteredGifts = trendingGifts.filter(
+    (gift) => activeFilter === 'all' || gift.category === activeFilter,
+  );
+
   return (
     <div>
       <section>
@@ -139,6 +178,54 @@ const HomePage: React.FC = () => {
       <section>
         <div style={trendingSectionStyle}>
           <h2 style={{ fontWeight: 'bold' }}>실시간 급상승 선물랭킹</h2>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '10px' }}>
+            <div>
+              <button
+                style={activeFilter === 'all' ? activeFilterButtonStyle : filterButtonStyle}
+                onClick={() => handleFilterClick('all')}
+              >
+                ALL
+              </button>
+              <div>전체</div>
+            </div>
+
+            <div>
+              <button
+                style={activeFilter === 'woman' ? activeFilterButtonStyle : filterButtonStyle}
+                onClick={() => handleFilterClick('woman')}
+              >
+                👩🏻‍🦳
+              </button>
+              <div>여성이</div>
+            </div>
+
+            <div>
+              <button
+                style={activeFilter === 'man' ? activeFilterButtonStyle : filterButtonStyle}
+                onClick={() => handleFilterClick('man')}
+              >
+                👩🏻‍🦳
+              </button>
+              <div>남성이</div>
+            </div>
+
+            <div>
+              <button
+                style={activeFilter === 'teen' ? activeFilterButtonStyle : filterButtonStyle}
+                onClick={() => handleFilterClick('teen')}
+              >
+                👦🏻
+              </button>
+              <div>청소년이</div>
+            </div>
+          </div>
+          <section>
+            <div style={trendingSectionStyle}>
+              {filteredGifts.map((gift) => (
+                <div key={gift.id}>{gift.name}</div>
+              ))}
+            </div>
+          </section>
         </div>
       </section>
     </div>
