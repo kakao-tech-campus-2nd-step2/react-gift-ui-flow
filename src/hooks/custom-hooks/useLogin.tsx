@@ -10,8 +10,12 @@ const useLogin = () => {
   };
 
   const handleLoginClick = () => {
-    sessionStorage.setItem('authToken', name);
-    navigate('/');
+    if (name.length === 0) {
+      alert('아이디와 비밀번호를 입력해주세요.');
+    } else {
+      sessionStorage.setItem('authToken', name);
+      navigate('/');
+    }
   };
 
   return {
