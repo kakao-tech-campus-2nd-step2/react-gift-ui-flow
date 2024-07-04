@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 import Footer from '@/components/common/Layouts/Footer/Footer';
 import Header from '@/components/common/Layouts/Header/Header';
 
+import SelectGiftRecipient from './components/others/SelectGiftRecipient';
+
 const AppWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,14 +12,22 @@ const AppWrapper = styled.div`
 `;
 
 const MainContent = styled.div`
-  flex: 1;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-top: 54px;
 `;
 
 const App = () => {
   return (
     <AppWrapper>
       <Header />
-      <MainContent />
+
+      <MainContent>
+        <SelectGiftRecipient />
+      </MainContent>
+
       <Footer />
     </AppWrapper>
   );
