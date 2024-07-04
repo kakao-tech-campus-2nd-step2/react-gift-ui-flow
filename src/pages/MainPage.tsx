@@ -1,7 +1,7 @@
-import { useHistory } from 'react-router-dom';
-
+import React, { useState } from 'react';
 const MainPage: React.FC = () => {
   const [filter1, setFilter1] = useState('전체');
+  const [filter2, setFilter2] = useState('받고 싶어한');
   const history = useHistory();
 
   const handleThemeClick = (themeKey: string) => {
@@ -10,7 +10,6 @@ const MainPage: React.FC = () => {
 
   return (
     <div>
-      <Header themeKey="default" />
       <main>
         <section>
           <h2>Theme Categories</h2>
@@ -33,6 +32,11 @@ const MainPage: React.FC = () => {
               <option value="남성">남성</option>
               <option value="청소년">청소년</option>
             </select>
+            <select value={filter2} onChange={(e) => setFilter2(e.target.value)}>
+              <option value="받고 싶어한">받고 싶어한</option>
+              <option value="많이 선물한">많이 선물한</option>
+              <option value="위시로 받은">위시로 받은</option>
+            </select>
           </div>
           <ul>
             <li>Gift 1</li>
@@ -41,7 +45,6 @@ const MainPage: React.FC = () => {
           </ul>
         </section>
       </main>
-      <Footer />
     </div>
   );
 };
