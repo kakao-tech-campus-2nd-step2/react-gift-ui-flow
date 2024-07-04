@@ -1,8 +1,9 @@
-import { createContext, useContext, useState, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 interface AuthContextType {
-  authToken: string | null;
-  login: (token: string) => void;
+  userId: string | null;
+  login: (id: string) => void;
   logout: () => void;
 }
 
@@ -13,21 +14,19 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [authToken, setAuthToken] = useState<string | null>(sessionStorage.getItem('authToken'));
+  const [userId, setUserId] = useState<string | null>(sessionStorage.getItem('userId'));
 
-  const login = (token: string) => {
-    sessionStorage.setItem('authToken', token);
-    setAuthToken(token);
+  const login = (id: string) => {
+    sessionStorage.setItem('userId', id);
+    setUserId(id);
   };
 
   const logout = () => {
-    sessionStorage.removeItem('authToken');
-    setAuthToken(null);
+    sessionStorage.removeItem('userId');
+    setUserId(null);
   };
 
-  return (
-    <AuthContext.Provider value={{ authToken, login, logout }}>{children}</AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ userId, login, logout }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = (): AuthContextType => {

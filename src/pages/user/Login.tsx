@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { useLocation,useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
+import { useAuth } from '@/context/AuthContext';
 
 import styles from './Login.module.scss';
 
@@ -12,17 +13,18 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
+  const { login } = useAuth();
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
-    sessionStorage.setItem('authToken', id);
+    login(id);
     navigate(from, { replace: true });
   };
 
   return (
     <div className={styles.login}>
       <div className={styles.kakao}>kakao</div>
-      <div onSubmit={handleLogin} className={styles.inputBox}>
+      <form onSubmit={handleLogin} className={styles.inputBox}>
         <div className={styles.input}>
           <UnderlineTextField
             type="text"
@@ -41,7 +43,7 @@ const Login: React.FC = () => {
         <Button type="submit" theme="kakao" size="small">
           로그인
         </Button>
-      </div>
+      </form>
     </div>
   );
 };
