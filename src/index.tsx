@@ -1,4 +1,6 @@
-import './styles/reset.css';
+import './styles/css/reset.css';
+import './styles/css/MainPage.css';
+import './styles/css/index.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
