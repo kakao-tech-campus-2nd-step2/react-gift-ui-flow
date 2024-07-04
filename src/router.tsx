@@ -5,14 +5,21 @@ import { LoginPage } from '@/pages/LoginPage';
 import { MyAccountPage } from '@/pages/MyAccountPage';
 import { ThemePage } from '@/pages/ThemePage';
 
+const ROUTES = {
+  HOME: '/',
+  THEME: '/theme/:themeKey',
+  LOGIN: '/login',
+  MY_ACCOUNT: '/my-account',
+};
+
 export const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/theme/:themeKey" element={<ThemePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/my-account" element={<MyAccountPage />} />
+        <Route path={ROUTES.HOME} element={<HomePage />} />
+        <Route path={ROUTES.THEME} element={<ThemePage />} />
+        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+        <Route path={ROUTES.MY_ACCOUNT} element={<MyAccountPage />} />
       </Routes>
     </BrowserRouter>
   );
