@@ -1,16 +1,22 @@
 import { Button } from '@/components/common/Button';
+import { useAuth } from '@/context/AuthContext';
 
 import styles from './MyAccount.module.scss';
 
-interface MyAccountProps {
-  userName: string;
-}
+const MyAccount = () => {
+  const { userId, logout } = useAuth();
 
-const MyAccount: React.FC<MyAccountProps> = ({ userName }) => {
   return (
     <div className={styles.myAccount}>
-      <h1>{userName}님 안녕하세요!</h1>
-      <Button theme="darkGray" size="small" className={styles.logoutButton} onClick={() => {}}>
+      <h1>{userId}님 안녕하세요!</h1>
+      <Button
+        theme="darkGray"
+        size="small"
+        className={styles.logoutButton}
+        onClick={() => {
+          logout();
+        }}
+      >
         로그아웃
       </Button>
     </div>
