@@ -1,35 +1,32 @@
-import Grid from '@components/atoms/grid/Grid';
 import Container from '@components/atoms/container/Container';
-import ThemeItem from '@components/molecules/themeItem/ThemeItem';
 import GiftThemes from '@constants/GiftThemes';
 import { MAX_CONTENT_WIDTH } from '@styles/size';
+import ResponsiveGrid from '@components/atoms/grid/responsive/ResponsiveGrid';
+import MainThemeItem from '@components/organisms/main/theme/MainThemeItem';
+import ResponsiveThemeSection
+  from '@components/organisms/main/theme/ResponsiveThemeSection';
 
-interface ThemeSectionProps {
-  maxColumns: number,
-  // minColumns: number,
-}
-
-function ThemeSection({ maxColumns }: ThemeSectionProps) {
+function ThemeSection() {
   const themes = GiftThemes;
 
   return (
-    <Container padding="45px 52px 23px" justifyContent="center">
+    <ResponsiveThemeSection>
       <Container
         elementSize="full-width"
         maxWidth={MAX_CONTENT_WIDTH}
         justifyContent="center"
       >
-        <Grid columns={maxColumns} gap={0}>
+        <ResponsiveGrid columnsDefault={6} columnsMd={4} gap={0}>
           {Object.keys(themes).map((themeKey, i) => {
             const key = `$gift-theme-${i}`;
 
             return (
-              <ThemeItem themeKey={themeKey} key={key} />
+              <MainThemeItem themeKey={themeKey} key={key} />
             );
           })}
-        </Grid>
+        </ResponsiveGrid>
       </Container>
-    </Container>
+    </ResponsiveThemeSection>
   );
 }
 
