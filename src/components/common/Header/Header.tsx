@@ -1,10 +1,32 @@
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 export const Header: React.FC = () => {
+    const history = useHistory();
+    const [btnLabel, setBtnLabel] = useState<string>('로그인')
+
+    useEffect(() => {
+        const authTokenFromSession = sessionStorage.getItem('authToken');
+        if (authTokenFromSession) {
+            setBtnLabel('내 계정')
+        } else {
+            setBtnLabel('로그인')
+        }
+    }, []);
+
+    const onBtnClickedHandler = () => {
+        if (btnLabel === '로그인') {
+            history.push('/login')
+        } else {
+            history.push('/my-account')
+        }
+    }
+
     return (
         <Wrapper>
-            <Title>선물하기</Title>
-            <LoginBtn>로그인</LoginBtn>
+            <Title onClick={() => { history.push('/') }}>선물하기</Title>
+            <LoginBtn onClick={onBtnClickedHandler}>{btnLabel}</LoginBtn>
         </Wrapper>
     )
 };
