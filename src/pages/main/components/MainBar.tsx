@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import Chunsik from '@/assets/bar_img.png';
 import { Image } from '@/components/common/Image';
-// import { Container } from '@/components/common/layouts/Container';
+import useSelectFriedns from '@/hooks/custom-hooks/useSelectFriends';
 import { breakpoints } from '@/styles/variants/index';
 
 const LogoContainer = styled.section`
@@ -49,10 +49,18 @@ const BarTitle = styled.p`
 `;
 
 const MainBar = () => {
+  const { handleSelectFriendsClick } = useSelectFriedns();
+
   return (
     <LogoContainer>
       <BoxWrapper>
-        <ImageBox src={Chunsik} alt="bar" ratio="square" radius={16} />
+        <ImageBox
+          src={Chunsik}
+          alt="bar"
+          ratio="square"
+          radius={16}
+          onClick={handleSelectFriendsClick}
+        />
         <BarTitle>선물 받을 친구를 선택해주세요.</BarTitle>
       </BoxWrapper>
     </LogoContainer>
