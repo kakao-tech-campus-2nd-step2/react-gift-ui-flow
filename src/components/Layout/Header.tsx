@@ -14,9 +14,11 @@ export const Header = () => {
     <Wrapper>
       <Cotainer>
         <Logo>
-          <Link to={ROUTE_PATHS.LOGIN}>선물하기</Link>
+          <Link to={ROUTE_PATHS.ROOT}>선물하기</Link>
         </Logo>
-        <Link to="/login">{userName === auth ? '내 계정' : '로그인'}</Link>
+        <Link to={userName === auth ? '/my-account' : '/login'}>
+          {userName === auth ? '내 계정' : '로그인'}
+        </Link>
       </Cotainer>
     </Wrapper>
   );
