@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Header from '@/components/common/Header';
 import Login from '@/pages/Login';
+import Main from '@/pages/Main';
 import MyAccount from '@/pages/MyAccount';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <Header />
         <main style={{ paddingTop: '54px' }}>
           <Routes>
-            <Route path="/" />
+            <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login />} />
             <Route path="/my-account" element={<MyAccount />} />
           </Routes>
