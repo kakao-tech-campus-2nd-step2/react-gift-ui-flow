@@ -10,8 +10,20 @@ export const Footer: React.FC = () => {
   );
 };
 
-const FooterContainer = styled.footer``;
+const FooterContainer = styled.footer`
+  display: flex;
+  background-color: #fafafa;
+  height: 175px;
+`;
 
-const FooterContent = styled.div``;
+const FooterContent = styled.div`
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 40px;
+`;
 
-const FooterText = styled.p``;
+const FooterText = styled.p`
+  color: #000000;
+  font-size: 16px;
+`;
