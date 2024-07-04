@@ -3,9 +3,6 @@ import Banner from "@/components/common/HomeComponents/Banner";
 import Ranking from "@/components/common/HomeComponents/Ranking";
 import ThemeCategory from "@/components/common/HomeComponents/ThemeCategory";
 
-
-
-
 export const Home = () => {
   return(
     <>
