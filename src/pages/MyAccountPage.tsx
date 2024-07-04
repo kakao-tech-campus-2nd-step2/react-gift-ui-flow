@@ -16,6 +16,25 @@ export const MyAccountPage: React.FC = () => {
   );
 };
 
-const MySection = styled.section``;
+const MySection = styled.section`
+  width: 100vw;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 
-const MyContainer = styled(Container)``;
+  & > h1 {
+    font-size: 36px;
+    font-weight: bold;
+  }
+`;
+
+const MyContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 200px;
+  padding: 60px 52px;
+`;
