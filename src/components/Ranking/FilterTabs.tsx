@@ -8,11 +8,13 @@ const TabsWrapper = styled.div`
   border-radius: 10px;
   border: 1px solid #dae5fb;
   padding: 10px;
+  width: 80%;
+  margin: 0 auto;
 `;
 
 const Tab = styled.div<{ active: boolean }>`
   color: ${(props) => (props.active ? '#4285f4' : '#7fa1e7')};
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   padding: 10px;
