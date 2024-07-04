@@ -1,18 +1,26 @@
 import styled from '@emotion/styled';
 
-const App = () => {
-  const name = 'Josh Perez';
+import Footer from '@/components/common/Layouts/Footer/Footer';
+import Header from '@/components/common/Layouts/Header/Header';
 
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
+`;
+
+const App = () => {
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <AppWrapper>
+      <Header />
+      <MainContent />
+      <Footer />
+    </AppWrapper>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
