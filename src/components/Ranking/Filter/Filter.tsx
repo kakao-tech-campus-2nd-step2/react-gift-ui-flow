@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
-import FilterButton from '../common/FilterButton/FilterButton';
+import FilterButton from '../../common/FilterButton/FilterButton';
 import FilterTabs from './FilterTabs';
 
 const FilterWrapper = styled.div`

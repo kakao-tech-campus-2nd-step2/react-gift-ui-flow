@@ -4,12 +4,13 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import RankingHeader from '@/components/Ranking/RankingHeader';
+import RankingItems from '@/components/Ranking/RankingItems/RankingItems';
 
 import { Button } from '../components/common/Button/index';
 import { Image } from '../components/common/Image/index';
 import { Grid }  from '../components/common/layouts/Grid/index';
 import Item from '../components/Items/items';
-import Filter from '../components/Ranking/Filter';
+import Filter from '../components/Ranking/Filter/Filter';
 
 interface ItemType {
   image: string;
@@ -99,6 +100,7 @@ const Home: React.FC = () => {
 		</Button>
     <RankingHeader />
     <Filter />
+    <RankingItems />
 	  </div>
 	);
   };
