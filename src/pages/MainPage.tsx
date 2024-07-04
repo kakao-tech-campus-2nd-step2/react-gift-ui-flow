@@ -83,14 +83,28 @@ const FriendText = styled.span`
 `;
 
 const ThemeSection = styled.section`
-  max-width: 1000px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   padding: 40px;
 `;
 
-const Item = styled.div``;
+const Item = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+`;
 
-const ThemeImage = styled(Image)``;
+const ThemeImage = styled(Image)`
+  max-width: 100px;
+  max-height: 100px;
+`;
 
-const ItemName = styled.span``;
+const ItemName = styled.span`
+  margin-top: 10px;
+  font-size: 16px;
+  color: black;
+`;
