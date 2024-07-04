@@ -288,6 +288,16 @@ const FilterButton = styled(Button)`
     margin-top: 10px;
   }
 
+  &.active > div {
+    background-color: #4684e9;
+    transition: background-color 0.3s;
+  }
+
+  &.active > p {
+    color: #4684e9;
+    font-weight: bold;
+  }
+
   &:hover {
     background: none;
     border: none;
@@ -318,6 +328,13 @@ const SubFilterButton = styled(Button)`
   &:hover {
     background: none;
     border: none;
+  }
+
+  &.active {
+    background: none;
+    color: #4684e9;
+    font-weight: bold;
+    outline: none;
   }
 `;
 
