@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+
 const MainPage: React.FC = () => {
   const [filter1, setFilter1] = useState('전체');
   const [filter2, setFilter2] = useState('받고 싶어한');
+  const [visibleItems, setVisibleItems] = useState(6);
   const history = useHistory();
 
   const handleThemeClick = (themeKey: string) => {
     history.push(`/theme/${themeKey}`);
   };
 
+  const items = Array.from({ length: 20 }, (_, index) => `Gift ${index + 1}`);
+
   return (
     <div>
+      <Header themeKey="default" />
       <main>
         <section>
           <h2>Theme Categories</h2>
@@ -39,12 +45,13 @@ const MainPage: React.FC = () => {
             </select>
           </div>
           <ul>
-            <li>Gift 1</li>
-            <li>Gift 2</li>
-            <li>Gift 3</li>
+            {items.slice(0, visibleItems).map((item) => (
+              <li key={item}>{item}</li>
+            ))}
           </ul>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
