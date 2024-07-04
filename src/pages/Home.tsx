@@ -3,20 +3,17 @@ import Header from '@components/common/Header';
 import Footer from '@components/common/Footer';
 import FriendSelector from '@components/home/FriendSelector';
 import ThemeCategory from '@components/home/ThemeCategory';
-import Filter from '@components/home/Filter';
-import Inner from '@components/common/Layout/Inner';
-import RankingList from '@components/home/RankingList';
+import TrendingGifts from '@components/home/TrendingGifts';
 
 export default function Home() {
   return (
     <>
       <Header />
-      <FriendSelector />
-      <Inner maxWidth={1024}>
+      <main>
+        <FriendSelector />
         <ThemeCategory />
-        <Filter />
-        <RankingList />
-      </Inner>
+        <TrendingGifts />
+      </main>
       <Footer />
     </>
   );
