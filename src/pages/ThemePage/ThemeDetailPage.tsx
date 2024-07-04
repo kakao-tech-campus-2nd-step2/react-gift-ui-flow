@@ -3,8 +3,16 @@ import ThemeHeader from "@/pages/ThemePage/section/ThemeHeader";
 import { Header } from "@/components/common/Header/Header";
 import ThemeItem from "@/pages/ThemePage/section/ThemeItem";
 import { Footer } from "@/components/common/Footer/Footer";
+import { useEffect } from "react";
 
 const ThemeDetailPage = () => {
+    useEffect(() => {
+        const authTokenFromSession = sessionStorage.getItem('authToken');
+        if (authTokenFromSession) {
+            // 로그인 유무 확인
+        }
+    }, []);
+
     return (
         <>
             <Header />

@@ -4,10 +4,18 @@ import SelectFriend from "@/pages/MainPage/section/SelectFriend";
 import Theme from "@/pages/MainPage/section/Theme";
 import AIRecommendation from "@/pages/MainPage/section/AIRecommendation";
 import LiveRanking from "@/pages/MainPage/section/LiveRanking";
+import { useEffect } from "react";
 
 import styled from '@emotion/styled';
 
 const MainPage = () => {
+    useEffect(() => {
+        const authTokenFromSession = sessionStorage.getItem('authToken');
+        if (authTokenFromSession) {
+            // 로그인 유무 확인
+        }
+    }, []);
+
     return (
         <>
             <Header />
