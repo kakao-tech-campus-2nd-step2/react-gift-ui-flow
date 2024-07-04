@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { Grid } from '@/components/common/layouts/Grid';
-import { BodyWrapper, Child, ItemWrapper } from '@/pages/MainPage';
+import { BodyWrapper, ChildColumnCenter, ItemWrapper } from '@/pages/MainPage';
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 
 // Title은 flex-direction: row;를 가지고 있습니다.
@@ -32,10 +32,10 @@ const Gift = () => {
     <BodyWrapper>
       <Title>
         <H3>가벼운 선물</H3>
-        <H1>예산은 가볍게, 감동은 무겁게</H1>
+        <H1>예산은 가볍게, 감동은 무겁게 ❤️</H1>
         <H2>당신의 센스를 뽐내줄 부담없는 선물</H2>
       </Title>
-      <Child>
+      <ChildColumnCenter>
         <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={10}>
           <ItemWrapper>
             <DefaultGoodsItems
@@ -78,7 +78,7 @@ const Gift = () => {
             ></DefaultGoodsItems>
           </ItemWrapper>
         </Grid>
-      </Child>
+      </ChildColumnCenter>
     </BodyWrapper>
   );
 };
