@@ -12,23 +12,23 @@ interface PageHeaderProps {
 }
 
 const HeaderAccountButton = styled.p`
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
 function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
   return (
     <header css={css`
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0 16px;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0 16px;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
     `}
     >
       <Container
@@ -40,7 +40,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
           ? (
             <img
               css={css`
-                  height: 100%;
+                height: 100%;
               `}
               src={headerLogo}
             />
