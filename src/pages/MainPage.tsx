@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 
 const MainPage: React.FC = () => {
+  const [filter1, setFilter1] = useState('전체');
   const history = useHistory();
 
   const handleThemeClick = (themeKey: string) => {
@@ -24,6 +25,15 @@ const MainPage: React.FC = () => {
         </section>
         <section>
           <h2>Trending Gifts</h2>
+          <div>
+            <label>Filter by:</label>
+            <select value={filter1} onChange={(e) => setFilter1(e.target.value)}>
+              <option value="전체">전체</option>
+              <option value="여성">여성</option>
+              <option value="남성">남성</option>
+              <option value="청소년">청소년</option>
+            </select>
+          </div>
           <ul>
             <li>Gift 1</li>
             <li>Gift 2</li>
