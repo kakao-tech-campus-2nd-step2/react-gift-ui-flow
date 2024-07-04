@@ -1,12 +1,17 @@
 import styled from "@emotion/styled";
 import { Button } from "@/components/common/Button";
 
-const Account = () => {
+type AccountProps = {
+    onBtnClickedHandler: () => void;
+    name: string;
+}
+
+const Account = ({ onBtnClickedHandler, name }: AccountProps) => {
     return (
         <Wrapper>
-            kakao님 안녕하세요!
+            {name}님 안녕하세요!
             <div style={{ height: '64px' }} />
-            <Button style={{ maxWidth: '200px' }} children={'로그아웃'} theme={'darkGray'} size={'small'} />
+            <Button onClick={onBtnClickedHandler} style={{ maxWidth: '200px' }} children={'로그아웃'} theme={'darkGray'} size={'small'} />
         </Wrapper>
     )
 }
