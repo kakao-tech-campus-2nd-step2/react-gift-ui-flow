@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
@@ -36,12 +37,23 @@ export const MainPage: React.FC = () => {
     });
   }
 
+  const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
+  const [selectedSubFilter, setSelectedSubFilter] = useState<string>('WANT');
+
   const handleImageClick = () => {
     alert('선물 받을 친구 선택하기');
   };
 
   const handleItemClick = (themeKey: string) => {
     navigate(`/theme/${themeKey}`);
+  };
+
+  const handleFilterClick = (filter: string) => {
+    setSelectedFilter(filter);
+  };
+
+  const handleSubFilterClick = (subFilter: string) => {
+    setSelectedSubFilter(subFilter);
   };
 
   return (
@@ -82,27 +94,54 @@ export const MainPage: React.FC = () => {
       <RankingSection>
         <RankingName>실시간 급상승 선물랭킹</RankingName>
         <FilterContainer>
-          <FilterButton>
+          <FilterButton
+            className={selectedFilter === 'ALL' ? 'active' : ''}
+            onClick={() => handleFilterClick('ALL')}
+          >
             <div>ALL</div>
             <p>전체</p>
           </FilterButton>
-          <FilterButton>
+          <FilterButton
+            className={selectedFilter === 'WOMEN' ? 'active' : ''}
+            onClick={() => handleFilterClick('WOMEN')}
+          >
             <div>👩🏻‍🦳</div>
             <p>여성이</p>
           </FilterButton>
-          <FilterButton>
+          <FilterButton
+            className={selectedFilter === 'MEN' ? 'active' : ''}
+            onClick={() => handleFilterClick('MEN')}
+          >
             <div>👨🏻‍🦳</div>
             <p>남성이</p>
           </FilterButton>
-          <FilterButton>
+          <FilterButton
+            className={selectedFilter === 'YOUTH' ? 'active' : ''}
+            onClick={() => handleFilterClick('YOUTH')}
+          >
             <div>👦🏻</div>
             <p>청소년이</p>
           </FilterButton>
         </FilterContainer>
         <SubFilterContainer>
-          <SubFilterButton>받고 싶어한</SubFilterButton>
-          <SubFilterButton>많이 선물한</SubFilterButton>
-          <SubFilterButton>위시로 받은</SubFilterButton>
+          <SubFilterButton
+            className={selectedSubFilter === 'WANT' ? 'active' : ''}
+            onClick={() => handleSubFilterClick('WANT')}
+          >
+            받고 싶어한
+          </SubFilterButton>
+          <SubFilterButton
+            className={selectedSubFilter === 'GIVEN' ? 'active' : ''}
+            onClick={() => handleSubFilterClick('GIVEN')}
+          >
+            많이 선물한
+          </SubFilterButton>
+          <SubFilterButton
+            className={selectedSubFilter === 'WISH' ? 'active' : ''}
+            onClick={() => handleSubFilterClick('WISH')}
+          >
+            위시로 받은
+          </SubFilterButton>
         </SubFilterContainer>
         <ItemContainer>
           <Grid columns={{ sm: 3, md: 4, lg: 6 }} gap={20}>
