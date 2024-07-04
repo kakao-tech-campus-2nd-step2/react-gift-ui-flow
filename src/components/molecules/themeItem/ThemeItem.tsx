@@ -1,5 +1,4 @@
 import GiftThemes from '@constants/GiftThemes';
-// import Paths from '@constants/Paths';
 import Container from '@components/atoms/container/Container';
 import Image from '@components/atoms/image/Image';
 import { css } from '@emotion/react';
@@ -8,7 +7,6 @@ import Paths from '@constants/Paths';
 import { ThemeItemProps } from '@/types';
 
 function ThemeItem({ themeKey }: ThemeItemProps) {
-  // const href = Paths.THEME_PAGE(themeKey);
   const theme = GiftThemes[themeKey];
 
   return (
