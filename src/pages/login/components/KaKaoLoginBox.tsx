@@ -4,6 +4,7 @@ import kakaoLogo from '@/assets/login_logo.svg';
 import { Button } from '@/components/common/Button/index';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Image } from '@/components/common/Image/index';
+import useLogin from '@/hooks/custom-hooks/useLogin';
 import { breakpoints } from '@/styles/variants/index';
 
 const LoginBox = styled.article`
@@ -40,14 +41,16 @@ const KakaoButton = styled(Button)`
 `;
 
 const KaKaoLoginBox = () => {
+  const { name, handleNameChange, handleLoginClick } = useLogin();
+
   return (
     <>
       <KakaoLogo src={kakaoLogo} alt="login" ratio="square" />
       <LoginBox>
-        <Input placeholder="이름" />
+        <Input placeholder="이름" value={name} onChange={handleNameChange} />
         <InputMargin />
-        <Input placeholder="비밀번호" />
-        <KakaoButton theme="kakao" size="large">
+        <Input placeholder="비밀번호" type="password" />
+        <KakaoButton theme="kakao" size="large" onClick={handleLoginClick}>
           로그인
         </KakaoButton>
       </LoginBox>
