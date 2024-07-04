@@ -19,7 +19,7 @@ export const Default: Story = {
   args: {
     src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
     alt: 'Placeholder Image',
-    width: '150px',
+    width: '100%',
     ratio: 'square',
     radius: 10,
   },
