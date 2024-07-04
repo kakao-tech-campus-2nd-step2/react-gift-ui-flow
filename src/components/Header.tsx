@@ -23,7 +23,11 @@ const themeConfig: {
   },
 };
 
-const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
+interface HeaderProps {
+  themeKey?: string;
+}
+
+const Header = ({ themeKey = 'default' }: HeaderProps) => {
   const theme = themeConfig[themeKey];
 
   return (
