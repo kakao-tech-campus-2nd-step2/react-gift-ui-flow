@@ -1,14 +1,23 @@
-import Footer from './components/common/Footer/Footer';
-import Header from './components/common/Header/Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Layout from './layouts/Layout';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import MyAccountPage from './pages/MyAccountPage';
+import ThemePage from './pages/ThemePage';
+
 const App = () => {
   return (
-    <div className="App">
-      <Header
-        title="선물하기"
-        imageUrl="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
-      />
-      <Footer content="카카오톡 선물하기" />
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/theme/:themeKey" element={<ThemePage />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/my-account" element={<MyAccountPage />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 };
 

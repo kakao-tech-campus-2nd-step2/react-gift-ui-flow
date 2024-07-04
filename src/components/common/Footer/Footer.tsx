@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface FooterProps {
+export interface FooterProps {
   content: string;
 }
 
