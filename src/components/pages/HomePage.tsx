@@ -1,7 +1,11 @@
+import ThemeCategory from '../Theme/ThemeCategory';
+
 const HomePage: React.FC = () => {
   return (
     <div className="home">
-      <p>홈페이지임당</p>
+      <img src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png" />
+      <p>선물 받을 친구를 선택해주세요.</p>
+      <ThemeCategory />
     </div>
   );
 };
