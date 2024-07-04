@@ -51,6 +51,7 @@ const Wrapper = styled.section`
           font-size: 28px;
           line-height: 35px;
         }
+      }
     }
   }
 `;
