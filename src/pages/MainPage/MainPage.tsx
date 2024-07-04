@@ -12,6 +12,7 @@ const MainPage = () => {
             <SelectFriend />
             <Theme />
             <AIRecommendation />
+            <div style={{ height: "120px" }} />
             <LiveRanking />
             <Footer />
         </>
