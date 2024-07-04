@@ -1,15 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
-import GoodsItem, { GoodsItemProps } from '@/components/common/GoodsItem/GoodItem';
+import GoodsItem, { GoodsItemProps } from '@components/common/GoodsItem';
 
 const meta: Meta<GoodsItemProps> = {
-  title: 'common/GoodsItem/Ranking',
-  component: GoodsItem,
+  title: 'common/GoodsItem/Default',
   tags: ['autodocs'],
-  argTypes: {
-    rankingIndex: {
-      control: { type: 'number', min: 1, max: 10 },
-    },
-  },
+  component: GoodsItem,
 };
 
 export default meta;
@@ -22,6 +17,5 @@ export const Default: Story = {
     subtitle: '부제목',
     title: '상품 제목',
     amount: 10000,
-    rankingIndex: 1,
   },
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Container from '@components/common/Layout/Container/Container';
-import Image from '@components/common/Image/Image';
+import { Container, Image } from '@components/common';
 import { THEME_ITEM } from '../constants';
 
 export interface ThemeItemProps {

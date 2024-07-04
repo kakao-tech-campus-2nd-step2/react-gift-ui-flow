@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@/components/common/Layout/Container/Container';
+import { Container } from '@components/common';
 import styled from '@emotion/styled';
 import { FILTER_WISHS } from '../constants';
 import WishItem from './WishItem';

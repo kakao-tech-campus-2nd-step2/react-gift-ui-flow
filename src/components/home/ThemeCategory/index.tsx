@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Grid from '@components/common/Layout/Grid/Grid';
-import Inner from '@components/common/Layout/Inner';
+import { Grid, Inner } from '@components/common';
 import { THEME_CATEGORY, THEME_CATEGORY_LIST } from './constants';
 import ThemeItem from './ThemeItem';
 

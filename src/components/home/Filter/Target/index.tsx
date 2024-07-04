@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '@components/common/Layout/Container/Container';
+import { Container } from '@components/common';
 import { FILTER_TARGETS } from '../constants';
 import TargetItem from './TargetItem';
 

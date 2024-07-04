@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import Grid, { GridProps } from '@/components/common/Layout/Grid/Grid';
+import Grid, { GridProps } from '@/components/common/Layout/Grid';
 
 const meta: Meta<GridProps> = {
   title: 'common/Layout/Grid',

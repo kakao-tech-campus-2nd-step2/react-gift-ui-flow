@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import RankingList from '@components/home/RankingList';
-import Filter from '@components/home/Filter';
-import Inner from '@components/common/Layout/Inner';
+import { Inner } from '@components/common/';
+import { RankingList, Filter } from '@components/home';
 
 export default function TrendingGifts() {
   return (

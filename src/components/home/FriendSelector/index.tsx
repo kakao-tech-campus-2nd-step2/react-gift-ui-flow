@@ -1,9 +1,7 @@
 import React from 'react';
-import Image from '@components/common/Image/Image';
 import friend from '@assets/images/friend.png';
 import styled from '@emotion/styled';
-import Container from '@components/common/Layout/Container/Container';
-import Inner from '@components/common/Layout/Inner';
+import { Container, Inner, Image } from '@components/common';
 
 export default function FriendSelector() {
   return (

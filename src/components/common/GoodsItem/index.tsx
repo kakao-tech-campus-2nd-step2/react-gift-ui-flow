@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Image from '@/components/common/Image/Image';
-import Ranking from './Ranking/Ranking';
+import Image from '@/components/common/Image';
+import Ranking from './Ranking';
 
 const IMAGE_SIZE_LARGE = 160;
 const IMAGE_SIZE_SMALL = 120;

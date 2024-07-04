@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import rankingList from '@data/rankingList';
 import styled from '@emotion/styled';
-import GoodsItem from '@components/common/GoodsItem/GoodItem';
-import Grid from '@components/common/Layout/Grid/Grid';
-import Button from '@/components/common/Button/Button';
+import { GoodsItem, Grid, Button } from '@components/common';
 
 const INITIAL_DISPLAY_COUNT = 6;
 

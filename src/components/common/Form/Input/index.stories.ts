@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Input, { InputProps } from '@components/common/Form/Input/Input';
+import Input, { InputProps } from '@components/common/Form/Input';
 
 const meta: Meta<InputProps> = {
   title: 'common/Form/Input/Input',

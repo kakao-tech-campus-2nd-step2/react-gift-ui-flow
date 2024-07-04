@@ -1,4 +1,4 @@
-import Button, { ButtonProps } from '@/components/common/Button/Button';
+import Button, { ButtonProps } from '@/components/common/Button';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<ButtonProps> = {

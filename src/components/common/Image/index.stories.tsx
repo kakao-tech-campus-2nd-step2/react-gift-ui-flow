@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Image, { ImageProps } from '@/components/common/Image/Image';
+import Image, { ImageProps } from '@/components/common/Image';
 
 const meta: Meta<ImageProps> = {
   title: 'common/Image',

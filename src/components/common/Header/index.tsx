@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Container from '@components/common/Layout/Container/Container';
+import Container from '@components/common/Layout/Container';
 import logo from '@assets/images/logo.png';
 import Inner from '@components/common/Layout/Inner';
 
