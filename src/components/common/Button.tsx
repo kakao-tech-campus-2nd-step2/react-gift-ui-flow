@@ -7,19 +7,19 @@ export interface IButton extends React.ComponentProps<'button'> {
   children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
-export const Button = ({ themetype = 'kakao', size = 'responsive', children, onClick }: IButton) => {
+export const Button = ({ themetype = 'kakao', size = 'responsive', children, onClick, ...rest }: IButton) => {
   return (
-    <StyleBtn onClick={onClick} themetype={themetype} size={size}>
+    <StyleBtn onClick={onClick} themetype={themetype} size={size} {...rest}>
       {children}
     </StyleBtn>
   );
 };
 const themeStyles = {
   kakao: css`
-    background-color: yellow;
+    background-color: #fee500;
     color: black;
     &:hover {
-      background-color: #e8bd30;
+      background-color: #f8f8f8;
       transition: 0.1s;
     }
   `,
@@ -88,7 +88,7 @@ const sizeStyles = {
   `,
 };
 
-const StyleBtn = styled.button<IButton>`
+const StyleBtn = styled.button<Pick<IButton, 'themetype' | 'size'>>`
   padding: 10px 20px;
   border: none;
   border-radius: 5px;

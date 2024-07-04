@@ -1,15 +1,14 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-export interface IGrid {
+export interface IGrid extends React.ComponentProps<'div'> {
   gap?: number;
-  children: React.ReactNode;
   columns: number | 'ResponseGridStyle';
 }
 
-export const Grid = ({ gap, columns, children }: IGrid) => {
+export const Grid = ({ gap, columns, children, ...rest }: IGrid) => {
   return (
-    <GridContainer gap={gap} columns={columns}>
+    <GridContainer gap={gap} columns={columns} {...rest}>
       {children}
     </GridContainer>
   );
@@ -34,7 +33,8 @@ const columnStyles = css`
   }
 `;
 
-const GridContainer = styled.div<IGrid>`
+const GridContainer = styled.div<Pick<IGrid, 'columns' | 'gap'>>`
+  width: 100%;
   display: grid;
   grid-template-columns: ${(props) =>
     props.columns === 'ResponseGridStyle' ? columnStyles : `repeat(${props.columns}, 1fr)`};

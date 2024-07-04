@@ -1,7 +1,7 @@
-import type { Meta,StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
-import type { IImage } from '@/components/Image';
-import { Image } from '@/components/Image';
+import type { IImage } from '@/components/common/Image';
+import { Image } from '@/components/common/Image';
 
 export default {
   component: Image,

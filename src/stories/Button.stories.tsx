@@ -1,7 +1,7 @@
-import type { Meta,StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
-import type { IButton } from '@/components/Button';
-import { Button } from '@/components/Button';
+import type { IButton } from '@/components/common/Button';
+import { Button } from '@/components/common/Button';
 
 export default {
   component: Button,

@@ -1,7 +1,7 @@
-import type { Meta,StoryFn } from '@storybook/react';
+import type { Meta, StoryFn } from '@storybook/react';
 
-import type { IContainer } from '@/components/Layout/Container';
-import { Container } from '@/components/Layout/Container';
+import type { IContainer } from '@/components/common/Layout/Container';
+import { Container } from '@/components/common/Layout/Container';
 
 export default {
   component: Container,
