@@ -14,9 +14,7 @@ const Wrapper = styled.footer`
   div {
     width: 100%;
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
 
     .inner {
@@ -24,7 +22,6 @@ const Wrapper = styled.footer`
       max-width: 1024px;
       display: flex;
       flex-direction: column;
-      -webkit-box-pack: start;
       justify-content: flex-start;
       align-items: flex-start;
 

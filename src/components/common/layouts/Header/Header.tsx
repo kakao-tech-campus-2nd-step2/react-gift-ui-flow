@@ -13,9 +13,7 @@ const Wrapper = styled.header`
   div {
     width: 100%;
     display: flex;
-    -webkit-box-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
     align-items: center;
 
     .inner {
@@ -23,9 +21,7 @@ const Wrapper = styled.header`
       max-width: 1024px;
       display: flex;
       flex-direction: row;
-      -webkit-box-pack: justify;
       justify-content: space-between;
-      -webkit-box-align: center;
       align-items: center;
 
       img {
@@ -33,7 +29,6 @@ const Wrapper = styled.header`
       }
 
       p {
-        -webkit-box-align: center;
         align-items: center;
         font-size: 14px;
         color: rgb(0, 0, 0);
