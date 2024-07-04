@@ -67,6 +67,7 @@ export default () => {
                     위시로 받은
                 </RankTypeFilter>
             </div>
+            {/* ranking item list */}
             <RankingList targetType={targetType} rankType={rankType} isDetail={isDetail} />
             <Container maxWidth="400px" className={detailBtnStyle}>
                 <Button theme="outline" onClick={() => setIsDetail((value) => !value)}>
