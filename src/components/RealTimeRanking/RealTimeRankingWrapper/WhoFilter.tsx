@@ -4,11 +4,26 @@ import { useContext } from "react";
 import WhoFilterItem from "./WhoFilterItem";
 import { RealTimeRankingFilter } from "@/model/Ranking";
 
-const WhoFilterList: RealTimeRankingFilter["who"][] = [
-  "전체",
-  "여성이",
-  "남성이",
-  "청소년이",
+const WhoFilterList: {
+  target: RealTimeRankingFilter["who"];
+  filterImage: string;
+}[] = [
+  {
+    target: "전체",
+    filterImage: "ALL",
+  },
+  {
+    target: "여성이",
+    filterImage: "👩",
+  },
+  {
+    target: "남성이",
+    filterImage: "🧑",
+  },
+  {
+    target: "청소년이",
+    filterImage: "👦",
+  },
 ];
 
 const WhoFilter = () => {
@@ -18,11 +33,12 @@ const WhoFilter = () => {
   } = useContext(RealTimeRankContext);
   return (
     <StyledWhoFilter>
-      {WhoFilterList.map((target, index) => (
+      {WhoFilterList.map(({ target, filterImage }, index) => (
         <WhoFilterItem
           key={`${index}-${target}`}
           target={target}
           selected={who}
+          filterImage={filterImage}
           onClick={() => setFilterWho(target)}
         />
       ))}

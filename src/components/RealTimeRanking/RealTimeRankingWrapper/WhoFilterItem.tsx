@@ -5,9 +5,15 @@ interface WhoFilterItemProps {
   target: string;
   selected: string;
   onClick: (target: string) => void;
+  filterImage: string;
 }
 
-const WhoFilterItem = ({ target, onClick, selected }: WhoFilterItemProps) => {
+const WhoFilterItem = ({
+  target,
+  onClick,
+  selected,
+  filterImage,
+}: WhoFilterItemProps) => {
   const isSelected = target === selected;
   return (
     <StyledWhoFilterItem
@@ -15,7 +21,7 @@ const WhoFilterItem = ({ target, onClick, selected }: WhoFilterItemProps) => {
       $isSelected={isSelected}
     >
       <Icon text={target}>
-        <WhoFilterImage $isSelected={isSelected}>ALL</WhoFilterImage>
+        <WhoFilterImage $isSelected={isSelected}>{filterImage}</WhoFilterImage>
       </Icon>
     </StyledWhoFilterItem>
   );
