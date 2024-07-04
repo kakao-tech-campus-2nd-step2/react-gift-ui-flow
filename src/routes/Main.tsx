@@ -4,6 +4,16 @@ import { Grid } from '../components/common/layouts/Grid/index';
 import { RankingGoodsItems } from '../components/common/GoodsItem/Ranking';
 import { Button } from '../components/common/Button/index';
 
+type RankingItem = {
+  rankingIndex: number;
+  subtitle: string;
+  title: string;
+  imageSrc: string;
+  amount: number;
+  category: string;
+  option: string;
+};
+
 const Main = () => {
   const [selectedPersonCategory, setSelectedPersonCategory] = useState<string>('All');
   const [selectedOption, setSelectedOption] = useState<string>('받고 싶어한');
@@ -21,7 +31,7 @@ const Main = () => {
     setShowAllRankingItems((prev) => !prev);
   };
 
-  const rankingItems = [
+  const rankingItems: RankingItem[] = [
     {
       rankingIndex: 1,
       subtitle: 'BBQ',
@@ -29,6 +39,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: 'All',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 2,
@@ -37,6 +49,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: 'All',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 3,
@@ -45,6 +59,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: 'All',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 4,
@@ -53,6 +69,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '여성이',
+      option: '많이 선물한',
     },
     {
       rankingIndex: 5,
@@ -61,6 +79,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '여성이',
+      option: '많이 선물한',
     },
     {
       rankingIndex: 6,
@@ -69,6 +89,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '여성이',
+      option: '위시로 받은',
     },
     {
       rankingIndex: 7,
@@ -77,6 +99,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '여성이',
+      option: '위시로 받은',
     },
     {
       rankingIndex: 8,
@@ -85,6 +109,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '여성이',
+      option: '위시로 받은',
     },
     {
       rankingIndex: 9,
@@ -93,6 +119,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 10,
@@ -101,6 +129,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 11,
@@ -109,6 +139,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 12,
@@ -117,6 +149,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 13,
@@ -125,6 +159,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 14,
@@ -133,6 +169,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 15,
@@ -141,6 +179,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 16,
@@ -149,6 +189,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 17,
@@ -157,6 +199,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 18,
@@ -165,6 +209,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '받고 싶어한',
     },
     {
       rankingIndex: 19,
@@ -173,6 +219,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '많이 선물한',
     },
     {
       rankingIndex: 20,
@@ -181,6 +229,8 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '많이 선물한',
     },
     {
       rankingIndex: 21,
@@ -189,10 +239,16 @@ const Main = () => {
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
       amount: 29000,
+      category: '남성이',
+      option: '많이 선물한',
     },
   ];
 
-  const itemsToShow = showAllRankingItems ? rankingItems : rankingItems.slice(0, 6);
+  const filteredRankingItems = rankingItems
+    .filter((item) => item.category === selectedPersonCategory || selectedPersonCategory === 'All')
+    .filter((item) => item.option === selectedOption);
+
+  const itemsToShow = showAllRankingItems ? filteredRankingItems : filteredRankingItems.slice(0, 6);
 
   return (
     <MainContainer>
