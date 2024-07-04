@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
 
+import { Grid } from '@/components/common/layouts/Grid';
 import { themeConfig } from '@/components/themeConfig';
 
 const ThemePage = () => {
   const { themeKey } = useParams<{ themeKey?: string }>();
 
-  // themeKey가 정의되어 있는지 확인
   if (!themeKey) {
     return <div>Invalid theme</div>;
   }
@@ -16,6 +16,8 @@ const ThemePage = () => {
     return <div>Invalid theme</div>;
   }
 
+  const products = Array.from({ length: 30 }, (_, index) => `Product ${index + 1}`);
+
   return (
     <div>
       <main>
@@ -23,11 +25,13 @@ const ThemePage = () => {
         <p>{theme.description}</p>
         <section>
           <h2>Products</h2>
-          <ul>
-            <li>Product 1</li>
-            <li>Product 2</li>
-            <li>Product 3</li>
-          </ul>
+          <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={20}>
+            {products.map((product, index) => (
+              <div key={index} style={{ border: '1px solid #ccc', padding: '10px' }}>
+                {product}
+              </div>
+            ))}
+          </Grid>
         </section>
       </main>
     </div>
