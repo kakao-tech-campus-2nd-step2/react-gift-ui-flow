@@ -21,11 +21,13 @@ const AppContent = () => {
   return (
     <AppContainer>
       {!isLoginPage && <Header />}
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/theme/life_small_gift" element={<ThemePage />} />
-        <Route path="/login" element={<LoginPage />} />
-      </Routes>
+      <ContentContainer isLoginPage={isLoginPage}>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/theme/life_small_gift" element={<ThemePage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Routes>
+      </ContentContainer>
       {!isLoginPage && <Footer />}
     </AppContainer>
   );
@@ -34,6 +36,12 @@ const AppContent = () => {
 export default App;
 
 const AppContainer = styled.div`
+  position: relative;
   width: 100%;
   height: 100vh;
+`;
+
+const ContentContainer = styled.div<{ isLoginPage: boolean }>`
+  padding-top: ${({ isLoginPage }) => (isLoginPage ? '0' : '54px')};
+  width: 100%;
 `;
