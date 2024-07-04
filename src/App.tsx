@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Main from './routes/Main';
 import ThemePage from './routes/ThemePage';
 import LoginPage from './routes/LoginPage';
+import MyPage from './routes/MyPage';
 import Footer from './components/Footer';
 
 const App = () => {
@@ -26,6 +27,7 @@ const AppContent = () => {
           <Route path="/" element={<Main />} />
           <Route path="/theme/life_small_gift" element={<ThemePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/my-account" element={<MyPage />} />
         </Routes>
       </ContentContainer>
       {!isLoginPage && <Footer />}
