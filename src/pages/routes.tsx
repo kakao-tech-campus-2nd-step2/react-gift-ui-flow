@@ -11,8 +11,8 @@ const MainRoutes = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={MainPage} />
-                <Route path="/theme" component={ThemePage} />
-                <Route path="/theme/:themeKey" component={ThemeDetailPage} />
+                <Route path="/theme/:themeKey" component={ThemePage} />
+                <Route path="/theme" component={ThemeDetailPage} />
                 <Route path="/login" component={LoginPage} />
                 <Route path="/my-account" component={MyAccountPage} />
             </Switch>

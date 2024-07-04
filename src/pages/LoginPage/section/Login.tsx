@@ -5,7 +5,7 @@ import { Button } from '@/components/common/Button';
 const Login = () => {
     return (
         <LoginBox>
-            <UnderlineTextField placeholder='이름' size={'small'} />
+            <UnderlineTextField placeholder='이름' />
             <div style={{ height: "16px" }} />
             <UnderlineTextField type='password' placeholder='비밀번호' />
             <div style={{ height: "60px" }} />
