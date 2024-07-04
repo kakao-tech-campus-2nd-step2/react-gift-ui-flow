@@ -9,8 +9,8 @@ export default function ThemeCategory() {
     <ThemeCategoryContainer>
       <Inner maxWidth={1024}>
         <Grid gap={THEME_CATEGORY.GAP} columns={THEME_CATEGORY.COLUMNS}>
-          {THEME_CATEGORY_LIST.map((category) => (
-            <ThemeItem key={category.id} image={category.image} name={category.name} />
+          {THEME_CATEGORY_LIST.map(({ id, image, name, themeKey }) => (
+            <ThemeItem key={id} image={image} name={name} themeKey={themeKey} />
           ))}
         </Grid>
       </Inner>

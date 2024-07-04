@@ -8,7 +8,7 @@
 - [] 각 Url Path별로 페이지 구현
   - 메인페이지(`/`)
     - [x] Theme 카테고리 섹션 추가
-      - [] Theme 카테고리 Item 클릭 시 Theme페이지 (`/theme/:themeKey`)로 이동되도록 구현
+      - [x] Theme 카테고리 Item 클릭 시 Theme페이지 (`/theme/:themeKey`)로 이동되도록 구현
     - [x] 실시간 급상승 선물 랭킹 추가
       - [x] Target 컴포넌트 구현
       - [x] Wish 컴포넌트 구현

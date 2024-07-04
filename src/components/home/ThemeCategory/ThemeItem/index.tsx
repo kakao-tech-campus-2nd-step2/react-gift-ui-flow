@@ -1,16 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Container, Image } from '@components/common';
+import { useNavigate } from 'react-router-dom';
 import { THEME_ITEM } from '../constants';
 
 export interface ThemeItemProps {
   image: string;
   name: string;
+  themeKey: string;
 }
 
-export default function ThemeItem({ image, name, ...rest }: ThemeItemProps) {
+export default function ThemeItem({ image, name, themeKey, ...rest }: ThemeItemProps) {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/theme/${themeKey}`);
+  };
+
   return (
-    <ThemeItemContainer {...rest}>
+    <ThemeItemContainer {...rest} onClick={handleClick}>
       <Container flexDirection="column" alignItems="center">
         <Image
           src={image}
