@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const MainPage: React.FC = () => {
+const MainPage = () => {
   const [filter1, setFilter1] = useState('전체');
   const [filter2, setFilter2] = useState('받고 싶어한');
   const [visibleItems, setVisibleItems] = useState(6);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleThemeClick = (themeKey: string) => {
-    history.push(`/theme/${themeKey}`);
+    navigate(`/theme/${themeKey}`);
   };
 
   const handleLoadMore = () => {

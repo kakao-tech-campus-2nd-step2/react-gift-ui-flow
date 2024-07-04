@@ -1,6 +1,5 @@
 const MyAccountPage = () => {
   const handleLogout = () => {
-    // 로그아웃 처리 로직
     console.log('로그아웃 처리');
   };
 
