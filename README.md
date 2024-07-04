@@ -34,9 +34,9 @@
 
 ### 3. 테마 페이지 (`/theme/:themeKey`)
 
-- [] Header 섹션
+- [o] Header 섹션
   - themeKey에 따라 label, title, description, backgroundColor가 달라지는 재사용 가능한 Header 컴포넌트를 구현
-- [] 상품 목록 섹션
+- [o] 상품 목록 섹션
 
 ### 4. 로그인 페이지 (`/login`)
 
