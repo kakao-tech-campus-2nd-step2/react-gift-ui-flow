@@ -8,7 +8,7 @@ const ThemePage: React.FC = () => {
 
   return (
     <Wrapper>
-      <Header themeKey={defaultThemeKey} />;
+      <Header themeKey={defaultThemeKey} />
     </Wrapper>
   );
 };
