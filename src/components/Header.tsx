@@ -1,33 +1,36 @@
-const labels: { [key: string]: string } = {
-  default: 'My Application',
-  theme1: 'Theme 1 Application',
-  theme2: 'Theme 2 Application',
-};
+import React from 'react';
 
-const titles: { [key: string]: string } = {
-  default: 'Welcome to My Application',
-  theme1: 'Welcome to Theme 1',
-  theme2: 'Welcome to Theme 2',
-};
-
-const descriptions: { [key: string]: string } = {
-  default: 'This is the default theme.',
-  theme1: 'This is theme 1.',
-  theme2: 'This is theme 2.',
-};
-
-const backgroundColors: { [key: string]: string } = {
-  default: '#ffffff',
-  theme1: '#ffcccc',
-  theme2: '#ccffcc',
+const themeConfig: {
+  [key: string]: { label: string; title: string; description: string; backgroundColor: string };
+} = {
+  default: {
+    label: 'My Application',
+    title: 'Welcome to My Application',
+    description: 'This is the default theme.',
+    backgroundColor: '#ffffff',
+  },
+  theme1: {
+    label: 'Theme 1 Application',
+    title: 'Welcome to Theme 1',
+    description: 'This is theme 1.',
+    backgroundColor: '#ffcccc',
+  },
+  theme2: {
+    label: 'Theme 2 Application',
+    title: 'Welcome to Theme 2',
+    description: 'This is theme 2.',
+    backgroundColor: '#ccffcc',
+  },
 };
 
 const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
+  const theme = themeConfig[themeKey];
+
   return (
-    <header style={{ backgroundColor: backgroundColors[themeKey] }}>
-      <h1>{labels[themeKey]}</h1>
-      <h2>{titles[themeKey]}</h2>
-      <p>{descriptions[themeKey]}</p>
+    <header style={{ backgroundColor: theme.backgroundColor }}>
+      <h1>{theme.label}</h1>
+      <h2>{theme.title}</h2>
+      <p>{theme.description}</p>
       <nav>
         <ul>
           <li>
@@ -44,3 +47,5 @@ const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
     </header>
   );
 };
+
+export default Header;
