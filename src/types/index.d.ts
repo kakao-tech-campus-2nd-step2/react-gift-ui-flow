@@ -27,6 +27,18 @@ export interface BreakpointGridProps {
   gap?: number,
 }
 
+interface ContainerProps {
+  maxWidth?: string,
+  elementSize?: ContainerSize,
+  flexDirection?: 'row' | 'column',
+  justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around',
+  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch',
+  children?: ReactNode,
+  backgroundColor?: string;
+  cssProps?: CSSProperties;
+  padding?: string;
+}
+
 export interface FixedSize {
   width: string,
   height: string,

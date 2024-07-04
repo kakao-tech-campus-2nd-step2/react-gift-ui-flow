@@ -1,18 +1,5 @@
-import { CSSProperties, ReactNode } from 'react';
 import { css, CSSObject } from '@emotion/react';
-import { ContainerSize, FixedSize } from '@/types';
-
-interface ContainerProps {
-  maxWidth?: string,
-  elementSize?: ContainerSize,
-  flexDirection?: 'row' | 'column',
-  justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around',
-  alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch',
-  children?: ReactNode,
-  backgroundColor?: string;
-  cssProps?: CSSProperties;
-  padding?: string;
-}
+import { ContainerProps, ContainerSize, FixedSize } from '@/types';
 
 function getFixedSize(size: ContainerSize | undefined): FixedSize {
   if (!size) {
