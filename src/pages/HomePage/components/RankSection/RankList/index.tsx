@@ -3,6 +3,8 @@ import { useRankList } from '@/context/rankList/useRankList';
 import { RankingGoodsItem } from '@/components/ui/GoodsItem/Ranking';
 import { Grid } from '@/components/ui/Layout/Grid';
 
+import { itemContainerStyle } from './styles';
+
 export const RankList = () => {
   const { visibleItems } = useRankList();
 
@@ -17,13 +19,14 @@ export const RankList = () => {
       placeItems="start"
     >
       {visibleItems.map((item) => (
-        <RankingGoodsItem
-          key={item.id}
-          rank={item.rank}
-          title={item.title}
-          subtitle={item.subtitle}
-          amount={item.amount}
-        />
+        <div key={item.id} css={itemContainerStyle}>
+          <RankingGoodsItem
+            rank={item.rank}
+            title={item.title}
+            subtitle={item.subtitle}
+            amount={item.amount}
+          />
+        </div>
       ))}
     </Grid>
   );

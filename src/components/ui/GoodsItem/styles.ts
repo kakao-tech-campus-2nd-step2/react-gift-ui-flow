@@ -4,7 +4,6 @@ import { colors } from '@/styles/theme';
 
 export const containerStyle = css({
   gap: '1rem',
-  backgroundColor: colors.white,
 });
 
 export const detailContainerStyle = css({

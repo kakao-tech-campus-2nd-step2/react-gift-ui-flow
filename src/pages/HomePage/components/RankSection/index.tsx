@@ -1,4 +1,3 @@
-import { FilterProvider } from '@/context/filter/FilterProvider';
 import { RankListProvider } from '@/context/rankList/RankListProvider';
 
 import { Content } from '@/components/Content';
@@ -11,16 +10,14 @@ import { ShowMoreButton } from './ShowMoreButton';
 
 export const RankSection = () => {
   return (
-    <FilterProvider>
-      <Content flexDirection="column" height="fit-content" gap="2rem">
-        <RankTitle />
-        <RankFilterUser />
-        <RankFilterGift />
-        <RankListProvider>
-          <RankList />
-          <ShowMoreButton />
-        </RankListProvider>
-      </Content>
-    </FilterProvider>
+    <Content flexDirection="column" height="fit-content" gap="2rem">
+      <RankTitle />
+      <RankFilterUser />
+      <RankFilterGift />
+      <RankListProvider>
+        <RankList />
+        <ShowMoreButton />
+      </RankListProvider>
+    </Content>
   );
 };

@@ -1,3 +1,4 @@
+import { FilterProvider } from '@/context/filter/FilterProvider';
 import BaseLayout from '@/layouts/BaseLayout';
 
 import { RankSection } from './components/RankSection';
@@ -7,7 +8,9 @@ export const HomePage = () => {
   return (
     <BaseLayout>
       <ThemeSection />
-      <RankSection />
+      <FilterProvider>
+        <RankSection />
+      </FilterProvider>
     </BaseLayout>
   );
 };
