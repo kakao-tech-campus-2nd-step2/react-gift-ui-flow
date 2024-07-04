@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React from "react";
+import React from 'react';
 
 const Button = styled.button`
   background-color: white;
@@ -12,16 +12,22 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
 
   &:focus {
     outline: none;
   }
 `;
 
-const DetailButton: React.FC = () => {
+interface DetailButtonProps {
+  onClick: () => void;
+  text: string;
+}
+
+const DetailButton: React.FC<DetailButtonProps> = ({ onClick, text }) => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-      <Button>더보기</Button>
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <Button onClick={onClick}>{text}</Button>
     </div>
   );
 };

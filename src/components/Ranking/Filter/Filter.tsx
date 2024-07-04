@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
 import FilterButton from '../../common/FilterButton/FilterButton';
-import DetailButton from '../Detail/DetailButton';
 import RankingItems from '../RankingItems/RankingItems';
 import FilterTabs from './FilterTabs';
 
@@ -16,12 +15,27 @@ const FilterWrapper = styled.div`
 `;
 
 const items = [
-  { id: 1, category: 'ALL', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 1', amount: 10000 },
-  { id: 2, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
-  { id: 3, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
-  { id: 4, category: '청소년', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 1', title: '상품명 2', amount: 20000 },
-  { id: 5, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 2', title: '상품명 2', amount: 20000 },
-  { id: 6, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: '상품설명 2', title: '상품명 2', amount: 20000 },
+  { id: 1, category: 'ALL', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 10000 },
+  { id: 2, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 3, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 4, category: '청소년', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 5, category: '여성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 6, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 7, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 8, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 9, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 10, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 11, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 12, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 13, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 14, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 15, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 16, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 17, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 18, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 19, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 20, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
+  { id: 21, category: '남성', imageSrc: 'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg', subtitle: 'BBQ', title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', amount: 20000 },
 ];
 
 const Filter: React.FC = () => {
@@ -60,7 +74,6 @@ const Filter: React.FC = () => {
         <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
       </div>
       <RankingItems items={filteredItems} />
-      <DetailButton />
     </FilterContent>
   );
 };
