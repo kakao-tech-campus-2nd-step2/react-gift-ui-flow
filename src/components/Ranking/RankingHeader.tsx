@@ -6,7 +6,7 @@ const headerStyle = css`
   font-size: 24px;
   font-weight: bold;
   text-align: center;
-  margin: 20px 0;
+  margin: 20px 40px;
 `;
 
 const RankingHeader: React.FC = () => {

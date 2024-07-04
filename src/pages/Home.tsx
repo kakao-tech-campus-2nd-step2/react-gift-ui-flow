@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import React from 'react';
 
 import RankingHeader from '@/components/Ranking/RankingHeader';
@@ -56,13 +57,19 @@ const buttonStyle = css`
   flex-direction: column;
   align-items: center;
   outline: none;
-  width: 95%;
+  width: 85%;
   margin: 40px auto;
   padding: 5px;
   
   p {
     margin: 3px 0;
   }
+`;
+
+const GridWrapper = styled.div`
+  width: 95%;
+  margin: 0 auto;
+  align-items: center;
 `;
 
 const SelectFriend : React.FC = () => {
@@ -79,11 +86,13 @@ const Home: React.FC = () => {
 	return (
 	  <div>
 		<SelectFriend />
+    <GridWrapper>
 		<Grid columns={4} gap={20}>
 		  {items.map((item, index) => (
 			<Item key={index} image={item.image} label={item.label} radius={item.radius} />
 		  ))}
 		</Grid>
+    </GridWrapper>
 		<Button css={buttonStyle}>
 			<p css={{color:'gray', fontSize:'18px'}}>AI가 추천하는 선물</p>
 			<p css={{fontWeight: 600, fontSize:'18px'}}>선물을 추천받고 싶은 친구를 선택해주세요.</p>
