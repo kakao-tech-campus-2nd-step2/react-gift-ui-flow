@@ -1,25 +1,21 @@
 import styled from '@emotion/styled';
 
 const FooterWrapper = styled.footer`
-  position: sitcky;
-  bottom: 0; /* 페이지 하단에 고정 */
+  position: relative; /* 고정 위치로 설정하여 항상 하단에 고정 */
+  bottom: 0; /* 하단에 고정 */
   left: 0;
   right: 0;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 36px;
-  letter-spacing: 16px;
-  z-index: 3;
-  background-color: #fdf5e6;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0 20px; /* 좌우 패딩 추가 */
+  background-color: rgb(250, 250, 252); /* 배경색 설정 */
 `;
-
 const Footer = () => {
   return (
     <FooterWrapper>
-      <div>카카오톡 선물하기</div>
+      <h3>카카오톡 선물하기</h3>
     </FooterWrapper>
   );
 };
