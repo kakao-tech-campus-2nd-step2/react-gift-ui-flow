@@ -16,7 +16,7 @@ function MainPage() {
     <Page isLoggedIn={isLoggedIn}>
       <Container flexDirection="column" elementSize="full-width">
         <MainBanner />
-        <ThemeSection maxColumns={6} />
+        <ThemeSection />
         <AIButtonSection />
         <Container elementSize={{ width: '100%', height: '120px' }} />
         <RankingSection />
