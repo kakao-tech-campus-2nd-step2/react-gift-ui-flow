@@ -1,24 +1,29 @@
 import styled from '@emotion/styled';
 
+import { breakpoints } from '@/styles/variants';
+
 export const Header = () => {
   return (
     <Wrapper>
-      <Logo>선물하기</Logo>
-      <LoginButton>로그인</LoginButton>
+      <Cotainer>
+        <Logo>선물하기</Logo>
+        <LoginButton>로그인</LoginButton>
+      </Cotainer>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  max-width: 1024px;
-  margin: 0 auto;
   position: sticky;
   top: 0;
+  background-color: #fff;
+`;
+const Cotainer = styled.div`
+  max-width: ${breakpoints.md};
+  margin: 0 auto;
   padding: 15px 10px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
-  background-color: #fff;
 `;
 const Logo = styled.div`
   font-size: 16px;
