@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 
 import { Container } from '@/components/common/layouts/Container';
 
+import RankingView from './RankingView';
 import ThemeList from './ThemeList';
 
 export default () => {
@@ -12,6 +13,11 @@ export default () => {
                 <Container>
                     <ThemeList />
                 </Container>
+            </section>
+            {/* real-time ranking section */}
+            <section>
+                <h2>실시간 급상승 선물랭킹</h2>
+                <RankingView />
             </section>
         </div>
     );
