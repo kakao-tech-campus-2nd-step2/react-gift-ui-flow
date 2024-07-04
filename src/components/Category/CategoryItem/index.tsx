@@ -1,5 +1,4 @@
-import { Image } from "@/components/common/Image";
-import styled from "@emotion/styled";
+import Icon from "@/components/common/GoodsItem/Icon";
 import { Link } from "react-router-dom";
 
 interface CategoryItemProps {
@@ -13,27 +12,11 @@ const CategoryItem = ({
   themeKey,
 }: CategoryItemProps) => {
   return (
+    // TODO: 링크 상수화
     <Link to={`/theme/${themeKey}`}>
-      <StyledCategoryItem>
-        <Image
-          src={imageSrc}
-          alt="카테고리 소개"
-          width="80"
-          ratio="square"
-          radius={25}
-        />
-        <p>{categoryName}</p>
-      </StyledCategoryItem>
+      <Icon imageSrc={imageSrc} text={categoryName} />
     </Link>
   );
 };
-
-const StyledCategoryItem = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  align-items: center;
-  margin: 0 10px;
-`;
 
 export default CategoryItem;
