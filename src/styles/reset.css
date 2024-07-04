@@ -38,6 +38,10 @@ ul {
   font-style: normal;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 fieldset,
 iframe {
   border: 0;
