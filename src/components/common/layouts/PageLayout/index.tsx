@@ -1,15 +1,13 @@
 import { css } from "@emotion/css";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Outlet } from "react-router-dom";
 
-interface PageLayoutProps {
-  children: React.ReactNode | React.ReactNode[];
-}
-const PageLayout = ({ children }: PageLayoutProps) => {
+const PageLayout = () => {
   return (
     <div>
       <Header />
-      {children}
+      <Outlet />
       <div
         className={css`
           margin-top: 8rem;

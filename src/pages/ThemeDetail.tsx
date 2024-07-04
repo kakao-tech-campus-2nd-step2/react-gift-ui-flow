@@ -1,5 +1,4 @@
 import { getThemeDetail } from "@/api";
-import PageLayout from "@/components/common/layouts/PageLayout";
 import { Product } from "@/model/Product";
 import { useEffect, useState } from "react";
 import { Grid } from "../components/common/layouts/Grid/index";
@@ -16,7 +15,7 @@ const ThemeDetail = () => {
   }, []);
 
   return (
-    <PageLayout>
+    <>
       <ThemeBanner />
       <div
         className={css`
@@ -31,7 +30,7 @@ const ThemeDetail = () => {
           </Grid>
         </Container>
       </div>
-    </PageLayout>
+    </>
   );
 };
 
