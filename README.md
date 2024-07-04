@@ -2,14 +2,29 @@
 
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
 
-## Week 1. 1단계 - 프로젝트 세팅
-
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
-
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
-
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
-
 ## Week 2. 1단계 - 페이지 만들기
 
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+
+#### 기능 요구 사항
+- [ ] Header와 Footer 공통 컴포넌트 만들어 모든 페이지에 적용
+- 각 Url Path별로 페이지를 만들기
+
+  <메인 페이지>
+  - [ ] Theme 카테고리 섹션 추가
+    - [ ] Theme 카테고리 Item을 클릭 시 Theme 페이지로 이동
+  - [ ] 실시간 급상승 선물랭킹 추가
+    - [ ] 필터 기능을 하는 hooks 추가
+    - [ ] 상품 목록 6개를 기본값으로 설정
+    - [ ] 누르면 상품 목록 더 보여주는 더보기 기능 추가
+    - [ ] 누르면 기본 상품 목록으로 돌아가는 접기 버튼 추가
+
+  <Theme 페이지>
+  - [ ] 재사용성을 고려한 Header 섹션 추가
+  - [ ] 상품 목록 섹션 추가
+
+  <로그인 페이지>
+  - [ ] ID와 PW를 입력하면 로그인이 되도록 구현
+
+  <나의 페이지>
+  - [ ] 로그아웃 버튼 추가

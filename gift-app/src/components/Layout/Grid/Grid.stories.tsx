@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Grid from '@components/Grid/Grid';
+import Grid from '@components/Layout/Grid/Grid';
 
 export default {
   title: 'Layout/Grid',

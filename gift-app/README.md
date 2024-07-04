@@ -1,7 +1,7 @@
 # react-gift-react-foundation
 FE 카카오 선물하기 1주차 과제: React 기초
 
-### 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+### Week1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
 
 #### Requirements
 - [x] 1주차 Style 부분 코드리뷰 반영
