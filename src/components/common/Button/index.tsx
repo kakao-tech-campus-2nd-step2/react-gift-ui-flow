@@ -57,6 +57,8 @@ const Wrapper = styled.button<Pick<Props, "theme" | "size">>(
       return {
         boxShadow: "0 0 0 1px #ccc inset",
         color: "#999",
+        backgroundColor: "inherit",
+        border: "1px solid",
 
         "&:hover": {
           backgroundColor: "#f8f8f8",

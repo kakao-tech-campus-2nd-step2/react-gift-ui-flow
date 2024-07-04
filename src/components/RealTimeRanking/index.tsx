@@ -22,6 +22,14 @@ const RealTimeRanking = () => {
             <RealTimeRankingWrapper.WhoFilter />
             <RealTimeRankingWrapper.PurposeFilter />
             <RealTimeRankingWrapper.Content />
+            <div
+              className={css`
+                width: 24rem;
+                margin-inline: auto;
+              `}
+            >
+              <RealTimeRankingWrapper.ExpandBtn />
+            </div>
           </div>
         </RealTimeRankingWrapper>
       </Container>
