@@ -2,6 +2,7 @@ import { css } from '@emotion/css';
 import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
+import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 
 import { themeKeys } from '../Theme';
@@ -9,19 +10,28 @@ import { themeKeys } from '../Theme';
 export default () => {
     const ThemeBtn = ({ themeKey }: { themeKey: string }) => {
         const divStyle = css`
-            padding: 25px 35px 24px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 15px;
+            img {
+                max-width: 90px;
+                margin-bottom: 8px;
+            }
+            padding: 20px 0px;
         `;
         return (
-            <Link className={divStyle} to={`/theme/${themeKey}`}>
-                <Image
-                    radius={30}
-                    ratio="square"
-                    alt={themeKey}
-                    src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                />
-                <p>{themeKey}</p>
-            </Link>
+            <Container>
+                <Link className={divStyle} to={`/theme/${themeKey}`}>
+                    <Image
+                        radius={30}
+                        ratio="square"
+                        alt={themeKey}
+                        src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+                    />
+                    <p>{themeKey}</p>
+                </Link>
+            </Container>
         );
     };
 

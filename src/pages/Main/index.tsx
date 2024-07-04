@@ -24,8 +24,8 @@ export default () => {
 };
 
 const themeSectionStyle = css`
-    padding: 14px 14px 3px;
+    padding: 3px 14px 3px;
     @media screen and (min-width: 768px) {
-        padding: 45px 52px 23px;
+        padding: 23px 52px 23px;
     }
 `;
