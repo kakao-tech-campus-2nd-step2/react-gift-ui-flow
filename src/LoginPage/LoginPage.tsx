@@ -36,6 +36,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
+    sessionStorage.setItem('authToken', id);
     onLogin(id);
     navigate('/');
   };
