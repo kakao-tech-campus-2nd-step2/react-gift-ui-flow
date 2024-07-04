@@ -20,10 +20,28 @@ export const MainPage: React.FC = () => {
   );
 };
 
-const FriendSection = styled.section``;
+const FriendSection = styled.section`
+  display: flex;
+  justify-content: center;
+  background-color: #fafafa;
+  padding: 40px;
+`;
 
-const FriendContainer = styled.div``;
+const FriendContainer = styled.div`
+  display: flex;
+  max-width: 1024px;
+  align-items: center;
+  width: 100%;
+`;
 
-const FriendImage = styled(Image)``;
+const FriendImage = styled(Image)`
+  cursor: pointer;
+  max-width: 70px;
+  max-height: 70px;
+`;
 
-const FriendText = styled.span``;
+const FriendText = styled.span`
+  font-size: 28px;
+  color: black;
+  margin-left: 20px;
+`;
