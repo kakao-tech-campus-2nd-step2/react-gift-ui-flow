@@ -9,18 +9,21 @@ const BodyPlusWrapper = styled(BodyWrapper)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-left: 20%;
-  padding-right: 20%;
+  height: 100vh; /* 화면의 전체 높이를 차지하도록 설정 */
+  padding: 0 20px; /* 좌우 패딩을 설정하여 여백 추가 */
   gap: 20px;
 `;
 
 const Border = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
-  border: 1px solid lightgray; /* 예시를 위한 테두리 */
+  width: 40%;
   padding: 50px;
   gap: 40px;
+
+  @media (min-width: 768px) {
+    border: 1px solid lightgray;
+  }
 `;
 
 const LoginPage = () => {
