@@ -1,22 +1,11 @@
 import Container from '@components/atoms/container/Container';
 import { MAX_CONTENT_WIDTH } from '@styles/size';
-import { buttonColors, textColors } from '@styles/colors';
-import styled from '@emotion/styled';
+import { buttonColors } from '@styles/colors';
+import {
+  AIButtonCaption, AIButtonCaptionStrong,
+} from '@components/organisms/main/AIButtonSection.styles';
 
 function AIButtonSection() {
-  const AIButtonCaption = styled.p`
-  font-size: 17px;
-  line-height: 19px;
-  padding-bottom: 5px;
-  color: ${textColors.subtitle}
-`;
-  const AIButtonCaptionStrong = styled(AIButtonCaption)`
-  font-size: 18px;
-  line-height: 19px;
-  font-weight: bold;
-  color: ${textColors.default};
-`;
-
   return (
     <Container elementSize="full-width" justifyContent="center">
       <Container
