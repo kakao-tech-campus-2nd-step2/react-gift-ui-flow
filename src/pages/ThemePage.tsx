@@ -1,13 +1,21 @@
 import { useParams } from 'react-router-dom';
 
+import { themeConfig } from '@/components/themeConfig';
+
 const ThemePage = () => {
-  const params = useParams();
+  const params = useParams<{ themeKey: string }>();
   const themeKey = params.themeKey as string;
+  const theme = themeConfig[themeKey];
+
+  if (!theme) {
+    return <div>Invalid theme</div>;
+  }
 
   return (
     <div>
       <main>
-        <h1>Theme Page for {themeKey}</h1>
+        <h1>{theme.title}</h1>
+        <p>{theme.description}</p>
         <section>
           <h2>Products</h2>
           <ul>
