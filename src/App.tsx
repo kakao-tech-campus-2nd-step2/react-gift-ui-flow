@@ -7,6 +7,7 @@ import Main from './pages/main/Main';
 import LifeSmallGift from './pages/theme/Theme';
 import Login from './pages/user/Login';
 import MyAccount from './pages/user/MyAccount';
+import PrivateRoute from './routes/PrivateRoute';
 
 const App = () => {
   return (
@@ -16,14 +17,10 @@ const App = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
-          </Routes>
-          <Routes>
             <Route path="/login" element={<Login />} />
-          </Routes>
-          <Routes>
-            <Route path="/my-account" element={<MyAccount />} />
-          </Routes>
-          <Routes>
+            <Route element={<PrivateRoute />}>
+              <Route path="/my-account" element={<MyAccount />} />
+            </Route>
             <Route path="/theme/life_small_gift" element={<LifeSmallGift />} />
           </Routes>
           <Footer />
