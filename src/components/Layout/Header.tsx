@@ -1,18 +1,22 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
+import { UserInfo } from '@/providers/UserInfoProviders';
 import { breakpoints } from '@/styles/variants';
 
 import { ROUTE_PATHS } from '../Routes/constants';
 
 export const Header = () => {
+  const { userName } = useContext(UserInfo);
+  const auth = sessionStorage.getItem('authToken');
   return (
     <Wrapper>
       <Cotainer>
         <Logo>
           <Link to={ROUTE_PATHS.LOGIN}>선물하기</Link>
         </Logo>
-        <Link to="/login">로그인</Link>
+        <Link to="/login">{userName === auth ? '내 계정' : '로그인'}</Link>
       </Cotainer>
     </Wrapper>
   );
