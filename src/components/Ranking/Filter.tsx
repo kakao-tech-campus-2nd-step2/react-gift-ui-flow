@@ -35,10 +35,10 @@ const Filter: React.FC = () => {
   return (
     <div>
       <FilterWrapper>
-        <FilterButton active={filter === 'ALL'} onClick={() => handleFilterChange('ALL')}>전체</FilterButton>
-        <FilterButton active={filter === '여성'} onClick={() => handleFilterChange('여성')}>여성이</FilterButton>
-        <FilterButton active={filter === '남성'} onClick={() => handleFilterChange('남성')}>남성이</FilterButton>
-        <FilterButton active={filter === '청소년'} onClick={() => handleFilterChange('청소년')}>청소년이</FilterButton>
+        <FilterButton active={filter === 'ALL'} onClick={() => handleFilterChange('ALL')} buttonText='ALL'>전체</FilterButton>
+        <FilterButton active={filter === '여성'} onClick={() => handleFilterChange('여성')} buttonText='👩🏻‍🦳'>여성이</FilterButton>
+        <FilterButton active={filter === '남성'} onClick={() => handleFilterChange('남성')} buttonText='👨🏻‍🦳'>남성이</FilterButton>
+        <FilterButton active={filter === '청소년'} onClick={() => handleFilterChange('청소년')} buttonText='👦🏻'>청소년이</FilterButton>
       </FilterWrapper>
       <div>
         {filteredData.map(item => (
