@@ -4,7 +4,7 @@ import { useAuth } from '@/context/AuthContext';
 
 import styles from './Header.module.scss';
 const Header = () => {
-  const { userId } = useAuth();
+  const { authToken } = useAuth();
   const navigate = useNavigate();
 
   const handleLink = (path: string) => {
@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header>
       <h2 onClick={() => handleLink('/')}>선물하기</h2>
-      {userId ? (
+      {authToken ? (
         <div className={styles.login} onClick={() => handleLink('/my-account')}>
           내 계정
         </div>
