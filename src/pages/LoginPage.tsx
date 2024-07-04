@@ -1,22 +1,47 @@
 /* @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Container } from '@/components/common/Layout/Container';
 
 export default function LoginPage() {
+  const [id, setId] = useState('');
+  const [pw, setPw] = useState('');
+
+  const navigate = useNavigate();
+  const HandleLogin = () => {
+    if (!id || !pw) {
+      alert('아이디와 비밀번호를 입력해주세요.');
+      return;
+    }
+    navigate('/');
+  };
   return (
     <LoginWrapper>
       <Title>Kakao</Title>
       <Container justifyContent="center" alignItems="center" maxWidth="1024px">
         <FormWrapper>
-          <UnderlineTextField placeholder="이름" variant="responsive" />
-          <UnderlineTextField placeholder="비밀번호" variant="responsive" />
+          <UnderlineTextField
+            placeholder="이름"
+            value={id}
+            variant="responsive"
+            onChange={(e) => setId(e.target.value)}
+          />
+          <UnderlineTextField
+            placeholder="비밀번호"
+            type="password"
+            value={pw}
+            variant="responsive"
+            onChange={(e) => setPw(e.target.value)}
+          />
           <Button
             themetype="kakao"
             size="responsive"
+            onClick={HandleLogin}
             css={css`
               width: 100%;
               margin-top: 40px;
