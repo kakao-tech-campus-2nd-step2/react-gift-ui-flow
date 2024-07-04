@@ -4,7 +4,7 @@ import './Main.css'
 
 import { Link } from 'react-router-dom'
 
-import CategorySection from '@/CategorySection/CategorySection'
+import CategorySection from '@/components/CategorySection/CategorySection'
 import { Button } from '@/components/common/Button'
 import Footer from '@/components/common/Footer'
 import Header, { HeaderSubtitle, HeaderTitle } from '@/components/common/Header'

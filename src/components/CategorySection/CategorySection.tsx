@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import { Image } from '@/components/common/Image'
 
-import category01 from '../images/category01.png'
+import category01 from '../../images/category01.png'
 
 
 const CategorySection = () => {
