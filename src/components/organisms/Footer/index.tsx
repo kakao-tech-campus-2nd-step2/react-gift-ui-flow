@@ -19,4 +19,5 @@ const FooterWrapper = styled.footer`
   width: 100%;
   max-width: 100vw;
   background-color: #fafafc;
+  box-sizing: border-box;
 `;
