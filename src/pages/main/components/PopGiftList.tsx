@@ -23,7 +23,6 @@ const defaultGoodsProps: DefaultGoodsItemsProps = {
 const ButtonWrapper = styled.div`
   width: 100%;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
   padding-top: 30px;
 
@@ -37,9 +36,7 @@ const Button = styled.button`
   max-width: 480px;
   border-radius: 4px;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
   cursor: pointer;
   transition: background-color 200ms ease 0s;
@@ -53,12 +50,47 @@ const Button = styled.button`
   }
 `;
 
-const PopGiftList = () => {
+const PopGiftList = ({
+  genderFilter,
+  giftFilter,
+}: {
+  genderFilter: string;
+  giftFilter: string;
+}) => {
+  const applyGenderFilter = (props: DefaultGoodsItemsProps): boolean => {
+    if (genderFilter === 'FEMALE') {
+      return props.subtitle === 'BBQ';
+    } else if (genderFilter === 'MALE') {
+      return props.subtitle === 'BBQ';
+    } else if (genderFilter === 'TEEN') {
+      return props.subtitle === 'BBQ';
+    } else {
+      return true;
+    }
+  };
+
+  const applyGiftFilter = (props: DefaultGoodsItemsProps): boolean => {
+    if (giftFilter === 'WANT') {
+      return props.amount == 29000;
+    } else if (giftFilter === 'GIVEN') {
+      return props.amount == 29000;
+    } else if (giftFilter === 'WISHED') {
+      return props.amount == 29000;
+    } else {
+      return true;
+    }
+  };
+
   const { isExpanded, listLength, toggleExpansion } = useExpandableList(6, 21);
 
-  const rankingGoodsItems = Array.from({ length: listLength }, (_, index) => (
-    <RankingGoodsItems key={index} rankingIndex={index + 1} {...defaultGoodsProps} />
-  ));
+  const filteredGoodsProps = { ...defaultGoodsProps };
+
+  const rankingGoodsItems = Array.from({ length: listLength }, (_, index) => {
+    const isVisible = applyGenderFilter(filteredGoodsProps) && applyGiftFilter(filteredGoodsProps);
+    return isVisible ? (
+      <RankingGoodsItems key={index} rankingIndex={index + 1} {...filteredGoodsProps} />
+    ) : null;
+  });
 
   return (
     <GridContainer>
