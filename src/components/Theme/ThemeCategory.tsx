@@ -13,7 +13,7 @@ const themes = [
   { key: 'gift-certificates', name: '교환권' },
   { key: 'health-vitamins', name: '건강/비타민' },
   { key: 'fruits-beef', name: '과일/한우' },
-  { key: 'baby-kids', name: '출산/키즈' },
+  { key: 'birth-kids', name: '출산/키즈' },
 ];
 
 const ThemeCategory: React.FC = () => {
