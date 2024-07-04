@@ -30,7 +30,7 @@ export const SituationCategory = () => {
   return (
     <Wrapper>
       {situationGroup.map((s: Situation) => (
-        <div>
+        <div key={s.key}>
           <RadioInput
             type="radio"
             id={s.key}

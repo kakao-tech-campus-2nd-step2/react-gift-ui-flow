@@ -90,8 +90,8 @@ export const Theme = () => {
     <Wrapper>
       <Grid columns={6} style={{ rowGap: '50px' }}>
         {categories.map((category: Category) => (
-          <Link to={`/theme/${category.id}`}>
-            <Container key={category.id}>
+          <Link to={`/theme/${category.id}`} key={category.id}>
+            <Container>
               <Image src={category.imageSrc} radius={30} width={90} />
               {category.annual}
             </Container>

@@ -16,6 +16,7 @@ export const Rankings = () => {
       <Grid columns={6} gap={15}>
         {GoodsItems.filter((_item, idx) => (!more ? idx < 6 : idx >= 0)).map((goods) => (
           <RankingGoodsItems
+            key={goods.rankingIndex}
             rankingIndex={goods.rankingIndex}
             imageSrc={goods.imgSrc}
             subtitle={goods.subtitle}
