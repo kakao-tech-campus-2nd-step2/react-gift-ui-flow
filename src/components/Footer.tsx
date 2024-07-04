@@ -1,8 +1,10 @@
+import './../styles/Footer.css';
+
 import React from 'react';
 
 const Footer: React.FC = () => (
   <footer>
-    <p>&copy; 2024 Gift Shop</p>
+    <p>카카오톡 선물하기</p>
   </footer>
 );
 

@@ -1,0 +1,75 @@
+.home-container {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .select-section {
+    background-color: #fafafa;
+    height : 76px;
+    width : 100%; 
+    padding : 40px 0px;
+  }
+  .sub {
+    display : flex;
+    align-items: center;
+    max-width: 1024px;
+    margin:0 auto;
+  }
+
+  .select-section img {
+    width: 70px; 
+    height : 70px;
+    border-radius: 40%; 
+    cursor: pointer;
+  }
+  
+  .select-section h2 {
+    color: #333333; 
+    font: 28px "Malgun Gothic"; 
+    padding : 0px 0px 0px 16px;
+  }
+  
+  .category-section {
+    display: flex;
+    max-width: 1024px; 
+    margin : 0 auto;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    margin-bottom: 20px; 
+    padding : 45px 52px 23px;
+  }
+  
+  .category-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding : 25px 35px 24px;
+    text-align: center; 
+  }
+  .category-item img {
+    border-radius: 40%;
+    width : 90px;
+  }
+
+  .banner {
+    background-color: #FFeb00;  
+    padding: 16px; 
+    font-size: 24px; 
+    font-weight: bold;
+    width : 1024px;
+    margin : 0 auto;
+    text-align: center;
+    border-radius: 10px;
+  }
+  .sub-banner {
+    color : #00000066;
+    font : 13px "Malgun Gothic";
+    padding : 0px 0px 3px;
+  }
+  .main-banner {
+    color : #000000;
+    font : 18px "Malgun Gothic";
+    font-weight: bold;
+  }
+
+  
