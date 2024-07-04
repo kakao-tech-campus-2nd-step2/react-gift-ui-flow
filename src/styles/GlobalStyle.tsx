@@ -7,6 +7,9 @@ const baseStyle = css`
     text-decoration: none;
     color: ${textColors.default}
   }
+  div {
+    box-sizing: border-box;
+  }
 `;
 
 function GlobalStyle() {
