@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 import { Button } from "../../../Button";
 import { Container } from "../../Container";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <Container>
       <StyledHeader>
-        <h1>선물하기</h1>
+        <Link to="/">
+          <h1>선물하기</h1>
+        </Link>
         <div>
           <Button theme="transparent">로그인</Button>
         </div>
