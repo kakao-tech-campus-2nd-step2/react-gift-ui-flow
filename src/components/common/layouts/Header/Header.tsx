@@ -11,7 +11,6 @@ const Wrapper = styled.header`
   padding: 0px 16px;
   
   div {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

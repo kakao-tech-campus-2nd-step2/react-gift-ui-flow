@@ -3,6 +3,8 @@ import styled from '@emotion/styled'
 const Wrapper = styled.footer`
   width: 100%;
   max-width: 100vw;
+  position: fixed;
+  bottom: 0;
   box-sizing: border-box;
   padding: 28px 16px 88px;
   background-color: rgb(250, 250, 252);
@@ -12,7 +14,6 @@ const Wrapper = styled.footer`
   }
 
   div {
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
