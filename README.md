@@ -27,7 +27,7 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 ### Theme 페이지(**`/theme/:themeKey`**)
 
 - [x] Header 및 상품 목록 섹션 추가
-- [ ] themeKey에 따라 label, title, description, backgroundColor 변화
+- [x] themeKey에 따라 label, title, description, backgroundColor 변화
 
 ### 로그인 페이지(**`/login`**)
 
