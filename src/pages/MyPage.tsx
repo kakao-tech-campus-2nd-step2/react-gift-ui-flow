@@ -3,12 +3,14 @@ import Footer from '@/components/common/Footer/Footer';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import PATH from '@/components/constants';
+import { useAuth } from '@/components/AuthContext';
 
 export default function MyPage() {
+  const { logout } = useAuth();
   const navigate = useNavigate();
-
   const handleLogoutButton = () => {
     // alert('logout');
+    logout();
     navigate(PATH.MAINPAGE);
   };
 
