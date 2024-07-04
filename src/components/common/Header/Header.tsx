@@ -18,14 +18,46 @@ export const Header: React.FC = () => {
   );
 };
 
-const HeaderContainer = styled.header``;
+const HeaderContainer = styled.header`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 20px;
+  background-color: #ffffff;
+  height: 50px;
+`;
 
-const HeaderContent = styled.div``;
+const HeaderContent = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+`;
 
-const LeftSection = styled.div``;
+const LeftSection = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-const RightSection = styled.div``;
+const RightSection = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-const Item = styled.p``;
+const Item = styled.p`
+  margin: 0;
+  color: #000000;
+  cursor: pointer;
+  font-size: 14px;
+  &:hover {
+    text-decoration: none;
+  }
+`;
 
-const Logo = styled.img``;
+const Logo = styled.img`
+  cursor: pointer;
+  height: 100%;
+  max-height: 55px;
+`;
