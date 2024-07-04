@@ -36,15 +36,23 @@ const LogoImg = styled(Image)`
 `;
 
 const MainNavigation = () => {
+  const authToken = sessionStorage.getItem('authToken');
+
   return (
     <Layout>
       <InnerContainer>
         <NavLink to="/">
           <LogoImg src={GiftLogo} alt="nav" radius={0} ratio="auto" />
         </NavLink>
-        <NavLink to="/login">
-          <LoginText>로그인</LoginText>
-        </NavLink>
+        {authToken ? (
+          <NavLink to="my-account">
+            <LoginText>내 계정</LoginText>
+          </NavLink>
+        ) : (
+          <NavLink to="/login">
+            <LoginText>로그인</LoginText>
+          </NavLink>
+        )}
       </InnerContainer>
     </Layout>
   );
