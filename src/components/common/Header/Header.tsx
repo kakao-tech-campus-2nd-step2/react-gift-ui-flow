@@ -2,11 +2,13 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
 import { colors, fontsizes } from '@/styles/variants';
+import { useLogin } from '@/utils/hooks/useLogin';
 
 import { Container } from '../layouts/Container';
 
 export const Header = () => {
   const navigate = useNavigate();
+  const { isLogin } = useLogin();
 
   const moveToMain = () => {
     navigate('/');
@@ -14,12 +16,19 @@ export const Header = () => {
   const moveToLogin = () => {
     navigate('/login');
   };
+  const moveToMyAccount = () => {
+    navigate('/my-account');
+  };
   return (
     <Wrapper>
       <Container>
         <Buttons>
           <TitleButton onClick={moveToMain}>선물하기</TitleButton>
-          <LoginButton onClick={moveToLogin}>로그인</LoginButton>
+          {isLogin ? (
+            <ButtonModal onClick={moveToMyAccount}>내 계정</ButtonModal>
+          ) : (
+            <ButtonModal onClick={moveToLogin}>로그인</ButtonModal>
+          )}
         </Buttons>
       </Container>
     </Wrapper>
@@ -50,7 +59,7 @@ const TitleButton = styled.button({
   fontFamily: 'HSGooltokki',
 });
 
-const LoginButton = styled.button({
+const ButtonModal = styled.button({
   fontSize: fontsizes.df,
   fontFamily: 'Pretendard-Regular',
 });

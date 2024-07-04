@@ -10,8 +10,9 @@ export const useLogin = () => {
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-    setIsLogin(username !== '' && password !== '');
-  }, [username, password]);
+    const auth = sessionStorage.getItem('auth');
+    setIsLogin(auth !== null);
+  }, []);
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -32,6 +33,7 @@ export const useLogin = () => {
     }
 
     sessionStorage.setItem('auth', username);
+    setIsLogin(true);
     navigate('/');
   };
   return {
@@ -39,5 +41,6 @@ export const useLogin = () => {
     password,
     handleInputChange,
     handleLogin,
+    isLogin,
   };
 };
