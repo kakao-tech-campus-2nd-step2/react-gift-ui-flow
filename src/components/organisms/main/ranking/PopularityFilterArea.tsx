@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Container from '@components/atoms/container/Container';
+import { BREAKPOINT_SM } from '@styles/size';
 import { PopularityFilter } from '@/types';
 
 interface PopularityFilterProps {
@@ -16,7 +17,11 @@ const FilterButton = styled.div<{ selected: boolean }>`
   line-height: 22px;
   cursor: pointer;
   color: ${({ selected }) => (selected ? 'rgb(70, 132, 233)' : 'rgba(70, 132, 233, 0.7)')};
-  transition: color 200ms ease 0s, font-weight 200ms ease 0s
+  transition: color 200ms ease 0s, font-weight 200ms ease 0s;
+  @media (max-width: ${BREAKPOINT_SM}) {
+    font-size: 16px;
+    padding: 13px 20px;
+  }
 `;
 
 function PopularityFilterArea({ currentFilter, setPopularityFilter }: PopularityFilterProps) {
