@@ -3,11 +3,9 @@ import React from "react";
 
 import { breakpoints } from "@/styles/variants";
 
-type Props = {
-  isLogin: boolean;
-} & React.HTMLAttributes<HTMLDivElement>;
+const Header = () => {
+  const savedToken = sessionStorage.getItem("autoToken");
 
-const Header: React.FC<Props> = ({ isLogin = false }: Props) => {
   const loginClick: React.MouseEventHandler<HTMLDivElement> = () => {
     location.href = "/login";
   };
@@ -21,7 +19,7 @@ const Header: React.FC<Props> = ({ isLogin = false }: Props) => {
         <StyledA href="/">
           <LogoImage src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" />
         </StyledA>
-        {isLogin ? (
+        {savedToken ? (
           <MenuContainer onClick={myaccountClick}>
             <p>나의 페이지</p>
           </MenuContainer>

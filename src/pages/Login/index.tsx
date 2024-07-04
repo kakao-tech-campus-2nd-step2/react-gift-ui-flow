@@ -1,18 +1,31 @@
 import styled from "@emotion/styled";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { AuthTokenContext } from "@/App";
 import { Button } from "@/components/common/Button";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
 import { breakpoints } from "@/styles/variants";
 
 const Login = () => {
+  const authToken = useContext(AuthTokenContext);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  if (authToken) {
+    // 로그인 O
+    console.log("로그인 O");
+
+    location.href = "/";
+  } else {
+    // 로그인 X
+    console.log("로그인 X");
+  }
+
   const handleLogin = () => {
     if (username && password) {
+      sessionStorage.setItem("autoToken", username);
       navigate("/");
     } else {
       alert("아이디와 비밀번호를 입력해주세요");

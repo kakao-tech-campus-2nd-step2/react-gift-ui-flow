@@ -29,12 +29,13 @@ const ItemList: React.FC<Prop> = ({ children }) => {
             lg: 4,
           }}
         >
-          {children.map((element) => (
+          {children.map((element, index) => (
             <DefaultGoodsItems
               imageSrc={element.imageSrc}
               subtitle={element.subtitle}
               title={element.title}
               amount={element.amount}
+              key={index}
             />
           ))}
         </StyledGrid>

@@ -45,12 +45,13 @@ const CategoryFilter: React.FC<Prop> = ({ category, setCategory }) => {
   return (
     <Wrapper>
       <Grid columns={4}>
-        {CategoryElements.map((element) => (
+        {CategoryElements.map((element, index) => (
           <CategoryElement
             categoryName={element.categoryName}
             icon={element.icon}
             title={element.title}
             isSelect={category === element.categoryName}
+            key={index}
           />
         ))}
       </Grid>

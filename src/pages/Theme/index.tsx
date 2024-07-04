@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+import { AuthTokenContext } from "@/App";
 import Footer from "@/components/common/Footer";
 import Header from "@/components/common/Header";
 
@@ -10,8 +11,17 @@ import ThemeHeader from "./ThemeHeader";
 const themeKeys = ["life_small_gift"];
 
 const Theme: React.FC = () => {
+  const authToken = useContext(AuthTokenContext);
   const { themeKey } = useParams<{ themeKey: string }>();
   const navigate = useNavigate();
+
+  if (authToken) {
+    // 로그인 O
+    console.log("로그인 O");
+  } else {
+    // 로그인 X
+    console.log("로그인 X");
+  }
 
   useEffect(() => {
     if (!themeKey || !themeKeys.includes(themeKey)) {
@@ -21,7 +31,7 @@ const Theme: React.FC = () => {
 
   return (
     <div>
-      <Header isLogin={false} />
+      <Header />
       {themeKey && <ThemeHeader themeKey={themeKey} />}
       <ItemList children={themeItems} />
       <Footer />

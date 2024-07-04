@@ -42,13 +42,14 @@ const RankingGrid: React.FC<Prop> = ({ children }) => {
           lg: 6,
         }}
       >
-        {rankingList.map((element) => (
+        {rankingList.map((element, index) => (
           <RankingGoodsItems
             imageSrc={element.imageSrc}
             subtitle={element.subtitle}
             title={element.title}
             amount={element.amount}
             rankingIndex={element.rankingIndex}
+            key={index}
           />
         ))}
       </StyledGrid>

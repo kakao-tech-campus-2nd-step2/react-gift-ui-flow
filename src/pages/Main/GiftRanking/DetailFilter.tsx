@@ -39,11 +39,12 @@ const DetailFilter: React.FC<Prop> = ({ detail, setDetail }) => {
 
   return (
     <Wrapper>
-      {DetailElements.map((element) => (
+      {DetailElements.map((element, index) => (
         <DetailElement
           detailName={element.detailName}
           title={element.title}
           isSelect={detail === element.detailName}
+          key={index}
         />
       ))}
     </Wrapper>
