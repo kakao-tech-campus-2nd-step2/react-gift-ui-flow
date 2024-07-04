@@ -1,4 +1,12 @@
+import { useHistory } from 'react-router-dom';
+
 const MainPage: React.FC = () => {
+  const history = useHistory();
+
+  const handleThemeClick = (themeKey: string) => {
+    history.push(`/theme/${themeKey}`);
+  };
+
   return (
     <div>
       <main>
@@ -6,10 +14,10 @@ const MainPage: React.FC = () => {
           <h2>Theme Categories</h2>
           <ul>
             <li>
-              <a href="/theme/theme1">Theme 1</a>
+              <button onClick={() => handleThemeClick('theme1')}>Theme 1</button>
             </li>
             <li>
-              <a href="/theme/theme2">Theme 2</a>
+              <button onClick={() => handleThemeClick('theme2')}>Theme 2</button>
             </li>
           </ul>
         </section>
