@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import type { ReactNode } from 'react';
 
 export type HeaderProps = {
-  title: string;
-  subtitle: string;
+  children: ReactNode;
 }
 
 const HeaderContainer = styled.header`
@@ -18,20 +18,23 @@ const HeaderContainer = styled.header`
   @media (max-width: 768px) {
     padding: 20px 20px;
   }
-  
 `;
 
 const HeaderTitle = styled.h1`
   font-weight: bold;
 `;
 
+const HeaderSubtitle = styled.h2`
+  font-size: 14px;
+  font-weight: normal;
+`;
 
-
-const Header: React.FC<HeaderProps> = ({ title, subtitle }) => (
+const Header: React.FC<HeaderProps> = ({ children }) => (
   <HeaderContainer>
-    <HeaderTitle>{title}</HeaderTitle>
-    <h2>{subtitle}</h2>
+    {children}
   </HeaderContainer>
 );
+
+export { HeaderSubtitle, HeaderTitle };
 
 export default Header;

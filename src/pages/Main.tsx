@@ -2,10 +2,12 @@
 
 import './Main.css'
 
+import { Link } from 'react-router-dom'
+
 import CategorySection from '@/CategorySection/CategorySection'
 import { Button } from '@/components/common/Button'
 import Footer from '@/components/common/Footer'
-import Header from '@/components/common/Header'
+import Header, { HeaderSubtitle, HeaderTitle } from '@/components/common/Header'
 import { Image } from '@/components/common/Image'
 import RankingSection from '@/components/RankingSection/RankingSection'
 
@@ -16,7 +18,15 @@ const Main = () => {
   return (
     <div className='MainPage'>
         <div className='header'>
-            <Header title={'선물하기'} subtitle={'로그인'}  />
+            <Header>
+                <Link to={'/'}>
+                    <HeaderTitle>선물하기</HeaderTitle>
+                </Link>
+                <Link to={'/login'}>
+                    <HeaderSubtitle>로그인</HeaderSubtitle>
+                </Link>
+            </Header>
+            
         </div>
 
         <div className='mainContainer'>

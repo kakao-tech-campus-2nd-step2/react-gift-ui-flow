@@ -1,17 +1,21 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import type { HeaderProps } from './index';
-import Header from './index'; // HeaderProps import
-
+import Header, { HeaderSubtitle,HeaderTitle } from './index';
 
 export default {
   title: 'Components/Header',
   component: Header,
 } as Meta;
 
-const Template: StoryFn<HeaderProps> = (args) => <Header {...args} />;
+const Template: StoryFn = (args) => (
+  <Header>
+    <HeaderTitle>{args.title}</HeaderTitle>
+    <HeaderSubtitle>{args.subtitle}</HeaderSubtitle>
+  </Header>
+);
 
 export const Primary = Template.bind({});
 Primary.args = {
   title: 'Header Title',
+  subtitle: 'Header Subtitle',
 };
