@@ -3,9 +3,9 @@ import {
   GOODS_IMAGE_DEFAULT_RATIO,
 } from '@/constants/styles';
 
-import { Image } from '@/components/ui/Image/Image';
 import { Container } from '@/components/ui/Layout/Container';
 
+import { Image } from './Default';
 import { rankingStyle, rankingWrapperStyle } from './styles';
 
 type RankedImageProps = {

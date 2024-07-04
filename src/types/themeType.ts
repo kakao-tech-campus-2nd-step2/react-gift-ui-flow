@@ -13,6 +13,7 @@ export type ThemeHeaderType = {
 };
 
 export interface ThemeListType {
+  id: number;
   subtitle: string;
   title: string;
   amount: string;

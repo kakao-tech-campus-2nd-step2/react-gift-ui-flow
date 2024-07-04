@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { HomePage } from '@/pages/Home';
-import { LoginPage } from '@/pages/Login';
-import { MyAccountPage } from '@/pages/MyAccount';
-import { ThemePage } from '@/pages/Theme';
+import { HomePage } from '@/pages/HomePage';
+import { LoginPage } from '@/pages/LoginPage';
+import { MyAccountPage } from '@/pages/MyAccountPage';
+import { ThemePage } from '@/pages/ThemePage';
 
 export const Router = () => {
   return (

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { DEFAULT_IMAGE_URL } from '@/constants/data';
 
-import { GoodsItem } from '@/components/ui/GoodsItem/GoodsItem';
+import { GoodsItem } from '@/components/ui/GoodsItem/Default';
 
 const meta: Meta<typeof GoodsItem> = {
   title: 'Example/GoodsItem/Default',

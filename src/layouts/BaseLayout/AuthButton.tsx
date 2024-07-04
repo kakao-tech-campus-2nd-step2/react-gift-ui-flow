@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 
 type AuthButtonProps = {
   isLoggedIn: boolean;
