@@ -4,11 +4,11 @@ import { useAuth } from '@/context/AuthContext';
 import styles from './MyAccount.module.scss';
 
 const MyAccount = () => {
-  const { userId, logout } = useAuth();
+  const { authToken, logout } = useAuth();
 
   return (
     <div className={styles.myAccount}>
-      <h1>{userId}님 안녕하세요!</h1>
+      <h1>{authToken}님 안녕하세요!</h1>
       <Button
         theme="darkGray"
         size="small"
