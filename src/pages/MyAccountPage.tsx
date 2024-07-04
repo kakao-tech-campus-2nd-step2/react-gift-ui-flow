@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 import { Button } from '@/components/common/Button';
+import { Footer } from '@/components/common/Footer/Footer';
 import { Header } from '@/components/common/Header/Header';
 import { useAuth } from '@/utils/hooks/useAuth';
 const MyAccountPage = () => {
@@ -17,6 +18,7 @@ const MyAccountPage = () => {
             로그아웃
           </Button>
         </AccountContainer>
+        <Footer />
       </Wrapper>
     </>
   );

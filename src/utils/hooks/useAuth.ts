@@ -27,11 +27,6 @@ export const useAuth = () => {
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    if (!isLogin) {
-      alert('올바른 아이디와 패스워드를 입력해주세요.');
-      return;
-    }
-
     sessionStorage.setItem('auth', username);
     setIsLogin(true);
     navigate('/');
