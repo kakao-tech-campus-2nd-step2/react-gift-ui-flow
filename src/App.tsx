@@ -1,13 +1,11 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
-interface AppProps {
-  themeKey?: string;
-}
+const App = () => {
+  const { themeKey } = useParams<{ themeKey?: string }>();
 
-const App = ({ themeKey = 'default' }: AppProps) => {
   return (
     <div>
       <Header themeKey={themeKey} />

@@ -3,8 +3,13 @@ import { useParams } from 'react-router-dom';
 import { themeConfig } from '@/components/themeConfig';
 
 const ThemePage = () => {
-  const params = useParams<{ themeKey: string }>();
-  const themeKey = params.themeKey as string;
+  const { themeKey } = useParams<{ themeKey?: string }>();
+
+  // themeKey가 정의되어 있는지 확인
+  if (!themeKey) {
+    return <div>Invalid theme</div>;
+  }
+
   const theme = themeConfig[themeKey];
 
   if (!theme) {
