@@ -1,30 +1,13 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import itemThumbnail from '@/assets/images/itemThumbnail.jpg';
-import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
 import { Container } from '@/components/common/layouts/Container';
 import { breakpoints } from '@/styles/variants';
+import { items } from '@/utils/hooks/createItems';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
 import { RankingItems } from './RankingItems';
-
-export interface Item extends Omit<DefaultGoodsItemsProps, 'rankingIndex'> {
-  rankingIndex: number;
-}
-
-const createItems = (): Item[] => {
-  return Array.from({ length: 30 }, (_, index) => ({
-    rankingIndex: index + 1,
-    imageSrc: itemThumbnail,
-    subtitle: 'BBQ',
-    title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
-    amount: 29000,
-  }));
-};
-
-const items = createItems();
 
 export const RankingSection: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);

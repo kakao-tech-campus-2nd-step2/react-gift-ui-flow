@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import { Header } from './components/common/Header/Header';
-import MainPage from './pages/Main/MainPage';
-import ThemePage from './pages/Theme/ThemePage';
+import MainPage from './pages/MainPage';
+import ThemePage from './pages/ThemePage';
 
 const App: React.FC = () => {
   return (
