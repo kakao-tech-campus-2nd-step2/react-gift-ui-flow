@@ -173,7 +173,7 @@ export const RankData = [
     price: '29,000원',
   },
   {
-    rank: 20,
+    rank: 21,
     Img: menuImg,
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
