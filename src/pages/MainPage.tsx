@@ -123,6 +123,30 @@ const ItemName = styled.span`
   color: black;
 `;
 
-const AISection = styled.section``;
+const AISection = styled.section`
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+`;
 
-const AIButton = styled(Button)``;
+const AIButton = styled(Button)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: default;
+  padding: 10px;
+
+  & > p {
+    font-size: 16px;
+    color: gray;
+  }
+
+  & > h3 {
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+  }
+`;
