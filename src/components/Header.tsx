@@ -10,11 +10,18 @@ const titles: { [key: string]: string } = {
   theme2: 'Welcome to Theme 2',
 };
 
+const descriptions: { [key: string]: string } = {
+  default: 'This is the default theme.',
+  theme1: 'This is theme 1.',
+  theme2: 'This is theme 2.',
+};
+
 const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
   return (
     <header>
       <h1>{labels[themeKey]}</h1>
       <h2>{titles[themeKey]}</h2>
+      <p>{descriptions[themeKey]}</p>
       <nav>
         <ul>
           <li>
