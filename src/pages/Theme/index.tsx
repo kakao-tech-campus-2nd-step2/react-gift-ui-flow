@@ -1,3 +1,5 @@
+import { Header } from './Header';
+
 export const Theme = () => {
-  return <div>Theme 페이지</div>;
+  return <Header />;
 };
