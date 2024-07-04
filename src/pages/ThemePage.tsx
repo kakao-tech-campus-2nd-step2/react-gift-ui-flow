@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useParams } from 'react-router-dom';
 
 import { Header } from '@/components/common/Header/ThemeHeader/Header';
+import { ThemeItemSection } from '@/components/section/Theme/ThemeItemSection';
 const ThemePage: React.FC = () => {
   const { themeKey } = useParams<{ themeKey: string }>();
   const defaultThemeKey = themeKey || 'life_small_gift';
@@ -9,6 +10,7 @@ const ThemePage: React.FC = () => {
   return (
     <Wrapper>
       <Header themeKey={defaultThemeKey} />
+      <ThemeItemSection />
     </Wrapper>
   );
 };

@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Container } from '@/components/common/layouts/Container';
 import { breakpoints } from '@/styles/variants';
-import { items } from '@/utils/hooks/createItems';
+import { rankingItems } from '@/utils/hooks/createItems';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
@@ -17,7 +17,7 @@ export const RankingSection: React.FC = () => {
   };
   //선물 아이템이 모두 동일하므로, 랭킹 인덱스로 대체
   const filteredItems = selectedCategory
-    ? items.filter((item) => {
+    ? rankingItems.filter((item) => {
         if (selectedCategory === '전체') {
           return true;
         } else if (selectedCategory === '여성이') {
@@ -35,7 +35,7 @@ export const RankingSection: React.FC = () => {
         }
         return false;
       })
-    : items;
+    : rankingItems;
 
   return (
     <SectionWrapper>
