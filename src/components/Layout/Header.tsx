@@ -7,7 +7,9 @@ export const Header = () => {
   return (
     <Wrapper>
       <Cotainer>
-        <Logo>선물하기</Logo>
+        <Logo>
+          <Link to="/">선물하기</Link>
+        </Logo>
         <Link to="/login">로그인</Link>
       </Cotainer>
     </Wrapper>
@@ -29,5 +31,4 @@ const Cotainer = styled.div`
 const Logo = styled.div`
   font-size: 16px;
   font-weight: bold;
-  cursor: pointer;
 `;
