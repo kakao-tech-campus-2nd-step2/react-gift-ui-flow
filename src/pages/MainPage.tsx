@@ -6,6 +6,8 @@ import AIButtonSection from '@components/organisms/main/AIButtonSection';
 import RankingSection from '@components/organisms/main/ranking/RankingSection';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import ResponsiveContainer
+  from '@components/atoms/container/ResponsiveContainer';
 
 function MainPage() {
   const location = useLocation();
@@ -18,7 +20,10 @@ function MainPage() {
         <MainBanner />
         <ThemeSection />
         <AIButtonSection />
-        <Container elementSize={{ width: '100%', height: '120px' }} />
+        <ResponsiveContainer
+          sizeDefault={{ width: '100%', height: '120px' }}
+          sizeSm={{ width: '100%', height: '0px' }}
+        />
         <RankingSection />
       </Container>
     </Page>
