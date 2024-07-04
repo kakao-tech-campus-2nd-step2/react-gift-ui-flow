@@ -5,11 +5,7 @@ import Image from '@components/atoms/image/Image';
 import { css } from '@emotion/react';
 import { Link } from 'react-router-dom';
 import Paths from '@constants/Paths';
-import { GiftThemeKey } from '@/types';
-
-interface ThemeItemProps {
-  themeKey: GiftThemeKey;
-}
+import { ThemeItemProps } from '@/types';
 
 function ThemeItem({ themeKey }: ThemeItemProps) {
   // const href = Paths.THEME_PAGE(themeKey);

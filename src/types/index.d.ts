@@ -47,6 +47,10 @@ interface ResponsiveContainerProps extends ContainerProps { // padding은 어떻
   sizeLg?: ContainerSize;
 }
 
+interface ThemeItemProps {
+  themeKey: GiftThemeKey;
+}
+
 export interface FixedSize {
   width: string,
   height: string,
