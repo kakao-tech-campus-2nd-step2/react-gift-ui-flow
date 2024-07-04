@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image/index';
 import { Grid } from '@/components/common/layouts/Grid/index';
 
 export const MainPage: React.FC = () => {
-  const handleImageClick = () => {
-    alert('선물 받을 친구 선택하기');
-  };
+  const navigate = useNavigate();
 
   const themes = [
     { name: '생일', key: 'birthday' },
@@ -22,6 +21,14 @@ export const MainPage: React.FC = () => {
     { name: '과일/한우', key: 'fruit-beef' },
     { name: '출산/키즈', key: 'pregnancy' },
   ];
+
+  const handleImageClick = () => {
+    alert('선물 받을 친구 선택하기');
+  };
+
+  const handleItemClick = (themeKey: string) => {
+    navigate(`/theme/${themeKey}`);
+  };
 
   return (
     <>
@@ -40,7 +47,7 @@ export const MainPage: React.FC = () => {
       <ThemeSection>
         <Grid columns={{ sm: 3, md: 4, lg: 6 }} gap={20}>
           {themes.map((theme, index) => (
-            <Item key={index}>
+            <Item key={index} onClick={() => handleItemClick(theme.key)}>
               <ThemeImage
                 src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
                 alt={theme.name}

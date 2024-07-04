@@ -6,6 +6,7 @@ import { Header } from '@/components/common/Header/Header';
 import { LoginPage } from './pages/LoginPage';
 import { MainPage } from './pages/MainPage';
 import { MyAccountPage } from './pages/MyAccountPage';
+import { ThemePage } from './pages/ThemePage';
 
 const App = () => {
   const router = createBrowserRouter([
@@ -33,6 +34,16 @@ const App = () => {
         <>
           <Header isLoggedIn={false} />
           <MyAccountPage />
+          <Footer />
+        </>
+      ),
+    },
+    {
+      path: '/theme/:themeKey',
+      element: (
+        <>
+          <Header isLoggedIn={false} />
+          <ThemePage />
           <Footer />
         </>
       ),

@@ -18,7 +18,7 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 - [x] Friend 섹션 추가
 - [x] Friend Img 클릭 시, alert
 - [x] Theme 섹션 추가 (Grid로 상품이 6열 2행으로 보이게 구현)
-- [ ] Theme Item 클릭 시, Theme 페이지(**`/theme/:themeKey`**)로 라우팅
+- [x] Theme Item 클릭 시, Theme 페이지(**`/theme/:themeKey`**)로 라우팅
 - [ ] AI 섹션 추가
 - [ ] Ranking 섹션 추가
 - [ ] hooks 사용해 필터 기능 구현 (전체, 여성이, 남성이, 청소년이 / 받고 싶어한, 많이 선물한, 위시로 받은)
