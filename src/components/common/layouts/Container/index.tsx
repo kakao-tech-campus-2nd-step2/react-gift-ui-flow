@@ -21,7 +21,6 @@ export const Container: React.FC<Props> = forwardRef(
 
 const Wrapper = styled.div`
   width: 100%;
-
   display: flex;
   justify-content: center;
   align-items: center;
