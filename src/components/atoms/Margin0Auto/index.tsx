@@ -3,13 +3,14 @@ import type { ReactNode } from 'react';
 
 type MarginCenterProp = {
   children?: ReactNode;
+  limitMaxWidth?: boolean;
 };
 
-export const Margin0Auto = ({ children }: MarginCenterProp) => {
-  return <FloatDiv>{children}</FloatDiv>;
+export const Margin0Auto = ({ children, limitMaxWidth = false }: MarginCenterProp) => {
+  return <FloatDiv limitMaxWidth={limitMaxWidth}>{children}</FloatDiv>;
 };
 
-const FloatDiv = styled.div`
+const FloatDiv = styled.div<Pick<MarginCenterProp, 'limitMaxWidth'>>`
   margin: 0 auto;
-  max-width: 1024px;
+  max-width: ${({ limitMaxWidth }) => (limitMaxWidth ? '1024px' : '100%')};
 `;
