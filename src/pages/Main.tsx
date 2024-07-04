@@ -10,10 +10,13 @@ import Footer from '@/components/common/Footer'
 import Header, { HeaderSubtitle, HeaderTitle } from '@/components/common/Header'
 import { Image } from '@/components/common/Image'
 import RankingSection from '@/components/RankingSection/RankingSection'
+import { useAuth } from "@/context/AuthContext"
 
 import choonsik from '../images/choonsik.png'
 
 const Main = () => {
+
+    const {authToken} = useAuth()
 
   return (
     <div className='MainPage'>
@@ -22,8 +25,8 @@ const Main = () => {
                 <Link to={'/'}>
                     <HeaderTitle>선물하기</HeaderTitle>
                 </Link>
-                <Link to={'/login'}>
-                    <HeaderSubtitle>로그인</HeaderSubtitle>
+                <Link to={authToken ? '/my-account' : '/login'}>
+                    <HeaderSubtitle>{authToken ? '내 계정' : '로그인'}</HeaderSubtitle>
                 </Link>
             </Header>
             
