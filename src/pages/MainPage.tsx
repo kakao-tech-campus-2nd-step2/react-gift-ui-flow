@@ -1,7 +1,24 @@
 import styled from '@emotion/styled';
 
-import SelectGiftRecipient from '@/components/others/SelectGiftRecipient';
-import ThemeCategory from '@/components/others/ThemeCategory';
+import ThemeCategory from '@/components/theme/ThemeCategory';
+import ThemeFooter from '@/components/theme/ThemeFooter';
+import ThemeHeader from '@/components/theme/ThemeHeader';
+
+const MainPage: React.FC = () => {
+  return (
+    <MainPageWrapper>
+      <ThemeContainer>
+        <ThemeHeader />
+        <ThemeCategory />
+        <ThemeFooter />
+      </ThemeContainer>
+
+      <EmptyField/>
+    </MainPageWrapper>
+  )
+}
+
+export default MainPage
 
 const MainPageWrapper = styled.div`
   display: flex;
@@ -9,23 +26,27 @@ const MainPageWrapper = styled.div`
   min-height: 100vh;
 `;
 
-const MainContent = styled.div`
+const ThemeContainer = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
   top: 0px;
   left: 0px;
   margin-top: 54px;
 `;
 
-const MainPage: React.FC = () => {
-  return (
-    <MainPageWrapper>
-      <MainContent >
-        <SelectGiftRecipient />
-        <ThemeCategory />
-      </MainContent>
-    </MainPageWrapper>
-  )
-}
+const EmptyField = styled.div`
+  width: 100%;
+  background-color: inherit;
 
-export default MainPage
+  @media screen and (min-width: 1024px) {
+    height: 120px;
+  } 
+
+  @media screen and (min-width: 768px) {
+    height: 80px;
+  } 
+
+  @media screen and (min-width: 0) {
+    height: 40px;
+  } 
+`;

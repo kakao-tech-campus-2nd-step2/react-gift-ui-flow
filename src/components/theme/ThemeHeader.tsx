@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 
-const SelectGiftRecipient: React.FC = () => {
+const ThemeHeader: React.FC = () => {
   return (
     <Wrapper>
       <Container>
@@ -13,13 +13,12 @@ const SelectGiftRecipient: React.FC = () => {
   )
 }
 
-export default SelectGiftRecipient
+export default ThemeHeader
 
 const Wrapper = styled.section`
   width: 100%;
   height: 76px;
   padding: 18px 16px;
-  box-sizing: border-box;
   background: rgb(250, 250, 250);
 
   @media screen and (min-width: 768px) {
@@ -37,9 +36,12 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
+  width: 100%;
   max-width: 1024px;
+  display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 `;
 
 const Image = styled.img`

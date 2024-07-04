@@ -21,18 +21,23 @@ const ThemeCategory: React.FC = () => {
   ]
 
   return (
-    <Grid columns={6} gap={20}>
-      {themes.map( (theme) => (
-        <ThemeLink key={theme.key} to={`/theme/${theme.key}`}>
-          <ThemeItem>
-            <ThemeImage>
-              <Image src={theme.src} width='60px' ratio='square' radius={20} />
-            </ThemeImage>
-            {theme.name}
-          </ThemeItem>
-        </ThemeLink>
-      ))}
-    </Grid>
+    <Wrapper>
+      <Container>
+        <Grid columns={6} gap={20}>
+          {themes.map( (theme) => (
+            <ThemeLink key={theme.key} to={`/theme/${theme.key}`}>
+              <ThemeItem>
+                <ThemeImage>
+                  <Image src={theme.src} width='60px' ratio='square' radius={20} />
+                </ThemeImage>
+                {theme.name}
+              </ThemeItem>
+            </ThemeLink>
+          ))}
+        </Grid>
+      </Container>
+    </Wrapper>
+    
   )
 }
 
@@ -40,6 +45,24 @@ export default ThemeCategory
 
 // 기존의 HTML 태그를 스타일링 할 때는 styled.{tagName}
 // 라이브러리에서 제공되는 컴포넌트를 스타일링 할 때는 styled.(componentName)
+const Wrapper = styled.div`
+  padding: 14px 14px 3px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`;
+
+const Container = styled.div`
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
 const ThemeLink = styled(Link)`
   padding: 10px;
   text-align: center;
