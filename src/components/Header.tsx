@@ -16,9 +16,15 @@ const descriptions: { [key: string]: string } = {
   theme2: 'This is theme 2.',
 };
 
+const backgroundColors: { [key: string]: string } = {
+  default: '#ffffff',
+  theme1: '#ffcccc',
+  theme2: '#ccffcc',
+};
+
 const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
   return (
-    <header>
+    <header style={{ backgroundColor: backgroundColors[themeKey] }}>
       <h1>{labels[themeKey]}</h1>
       <h2>{titles[themeKey]}</h2>
       <p>{descriptions[themeKey]}</p>
