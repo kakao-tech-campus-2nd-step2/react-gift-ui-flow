@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { breakpoints } from '@/styles/variants';
 
+import { ROUTE_PATHS } from '../Routes/constants';
+
 export const Header = () => {
   return (
     <Wrapper>
       <Cotainer>
         <Logo>
-          <Link to="/">선물하기</Link>
+          <Link to={ROUTE_PATHS.LOGIN}>선물하기</Link>
         </Logo>
         <Link to="/login">로그인</Link>
       </Cotainer>

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
+import { ROUTE_PATHS } from '@/components/Routes/constants';
 
 export const Login = () => {
   const [name, setName] = useState<string>('');
@@ -12,7 +13,7 @@ export const Login = () => {
   const hanldeClick = () => {
     console.log(name);
     console.log(pw);
-    navigate('/my-account');
+    navigate(ROUTE_PATHS.MYPAGE);
   };
   return (
     <Wrapper>

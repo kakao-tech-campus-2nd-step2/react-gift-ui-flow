@@ -6,16 +6,17 @@ import { MyAccount } from '@/pages/MyAccount';
 import { Theme } from '@/pages/Theme';
 
 import { Layout } from '../Layout';
+import { ROUTE_PATHS } from './constants';
 
 export const RoutesPage = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
-        <Route path="/theme/:themeKey" element={<Theme />} />
-        <Route path="/my-account" element={<MyAccount />} />
+      <Route path={ROUTE_PATHS.ROOT} element={<Layout />}>
+        <Route path={ROUTE_PATHS.ROOT} element={<Home />} />
+        <Route path={ROUTE_PATHS.THEME} element={<Theme />} />
+        <Route path={ROUTE_PATHS.MYPAGE} element={<MyAccount />} />
       </Route>
-      <Route path="/login" element={<Login />} />
+      <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
     </Routes>
   );
 };

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
+import { getDynamicRoute } from '@/components/Routes/constants';
 import { breakpoints } from '@/styles/variants';
 
 interface Category {
@@ -90,7 +91,7 @@ export const Theme = () => {
     <Wrapper>
       <Grid columns={6} style={{ rowGap: '50px' }}>
         {categories.map((category: Category) => (
-          <Link to={`/theme/${category.id}`} key={category.id}>
+          <Link to={getDynamicRoute.THEME(`${category.id}`)} key={category.id}>
             <Container>
               <Image src={category.imageSrc} radius={30} width={90} />
               {category.annual}
