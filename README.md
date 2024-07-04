@@ -19,6 +19,6 @@
     - [x] 재사용성을 고려한 Header 섹션 구현(themeKey에 따라 label, title, description, backgroundColor 변경되도록 구현)
     - [x] 상품 목록 섹션 추가
   - 로그인 페이지(`/login`)
-    - [] ID, PW 입력시 로그인이 되도록 구현(아무값을 입력해도 통과)
+    - [x] ID, PW 입력시 로그인이 되도록 구현(아무값을 입력해도 통과)
   - 나의 페이지(`/my-account`)
     - [] 로그아웃 할 수 있는 버튼 추가

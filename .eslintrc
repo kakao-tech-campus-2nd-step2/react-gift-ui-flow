@@ -35,7 +35,10 @@
     "react/prop-types": "off",
     "import/no-cycle": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error"
+    "@typescript-eslint/no-unused-vars": "error",
+    "jsx-a11y/label-has-associated-control": [ 2, {
+    "some": [ "nesting", "id" ]
+    }]
   },
   "settings": {
     "import/resolver": {
