@@ -13,4 +13,9 @@ export const RankingSectionTitle = styled.h1`
 export const RankingSectionTitleContainer = styled.div`
   display: flex;
   align-items: center;
+
+  @media (max-width: ${BREAKPOINT_SM}) {
+    font-size: 20px;
+    align-items: flex-start;
+  }
 `;
