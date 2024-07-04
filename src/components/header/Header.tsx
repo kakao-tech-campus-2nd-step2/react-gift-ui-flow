@@ -5,11 +5,8 @@ import { useNavigate } from 'react-router-dom';
 import { AUTH, PATHS } from '@/constants/Path';
 import { Container } from '@/components/common/layouts/Container';
 
-// interface HeaderProps {
-//   children: React.ReactNode;
-// }
-
 const Header = () => {
+  const sessionToken = sessionStorage.getItem('authToken');
   const navigate = useNavigate();
 
   return (
@@ -19,8 +16,8 @@ const Header = () => {
           <div onClick={() => navigate(PATHS.MAIN)}>
             <styles.GiftLogo src={GiftLogo} alt="Gift-Logo" />
           </div>
-          <div onClick={() => navigate(AUTH.LOGIN)}>
-            <styles.Login>로그인</styles.Login>
+          <div onClick={() => navigate(sessionToken ? AUTH.MY_ACCOUNT : AUTH.LOGIN)}>
+            <styles.Login>{sessionToken ? '내 계정' : '로그인'}</styles.Login>
           </div>
         </globals.InnerContainer>
       </Container>
