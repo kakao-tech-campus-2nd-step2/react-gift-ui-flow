@@ -26,6 +26,7 @@ const App = () => {
         <Route path="/theme/:themeKey" element={<Theme />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my-account" element={<MyAccount />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </AuthTokenContext.Provider>
   );

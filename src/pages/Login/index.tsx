@@ -26,7 +26,7 @@ const Login = () => {
   const handleLogin = () => {
     if (username && password) {
       sessionStorage.setItem("autoToken", username);
-      navigate("/");
+      navigate(-1);
     } else {
       alert("아이디와 비밀번호를 입력해주세요");
     }
