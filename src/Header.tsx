@@ -32,15 +32,15 @@ const LoginLink = styled(Link)`
 `;
 
 const Header: React.FC = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useAuth(); // useAuth hook을 이용해 isLoggedIn 상태 가져오기
 
   return (
     <HeaderContainer>
       <Title>선물하기</Title>
       {isLoggedIn ? (
-        <LoginLink to="/my-account">내 계정</LoginLink>
+        <LoginLink to="/my-account">내 계정</LoginLink> // 로그인 한 상태인 경우 "내 계정" 버튼 표시
       ) : (
-        <LoginLink to="/login">로그인</LoginLink>
+        <LoginLink to="/login">로그인</LoginLink> // 로그인 하지 않은 경우 "로그인" 버튼 표시
       )}
     </HeaderContainer>
   );
