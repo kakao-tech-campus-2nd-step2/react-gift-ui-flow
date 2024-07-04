@@ -4,7 +4,7 @@ export interface RankItemType {
   giftType: string;
   title: string;
   subtitle: string;
-  price: string;
+  amount: string;
 }
 
 export interface FilterRankItemType extends RankItemType {

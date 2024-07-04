@@ -528,7 +528,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 카카오 프렌즈 특별 한정판 브라이트 쿠션',
     subtitle: '카카오 프렌즈 특별 한정판',
-    price: '10000',
+    amount: '10000',
   },
   {
     id: 2,
@@ -536,7 +536,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[신제품] 피카츄 테마 파워뱅크',
     subtitle: '피카츄 테마 한정판',
-    price: '20000',
+    amount: '20000',
   },
   {
     id: 3,
@@ -544,7 +544,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[인기] 스타워즈 레고 세트',
     subtitle: '스타워즈 한정판',
-    price: '10000',
+    amount: '10000',
   },
   {
     id: 4,
@@ -552,7 +552,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[한정판] 마블 어벤져스 피규어 세트',
     subtitle: '마블 어벤져스 특별 한정판',
-    price: '40000',
+    amount: '40000',
   },
   {
     id: 5,
@@ -560,7 +560,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[특가] 디즈니 공주 인형 세트',
     subtitle: '디즈니 공주 한정판',
-    price: '50000',
+    amount: '50000',
   },
   {
     id: 6,
@@ -568,7 +568,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[신제품] 헬로키티 테마 스마트폰 케이스',
     subtitle: '헬로키티 특별 한정판',
-    price: '60000',
+    amount: '60000',
   },
   {
     id: 7,
@@ -576,7 +576,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[인기] 트랜스포머 옵티머스 프라임 피규어',
     subtitle: '트랜스포머 한정판',
-    price: '70000',
+    amount: '70000',
   },
   {
     id: 8,
@@ -584,7 +584,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[한정판] 원피스 루피 피규어',
     subtitle: '원피스 특별 한정판',
-    price: '80000',
+    amount: '80000',
   },
   {
     id: 9,
@@ -592,7 +592,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[특가] 미니언즈 테마 백팩',
     subtitle: '미니언즈 특별 한정판',
-    price: '90000',
+    amount: '90000',
   },
   {
     id: 10,
@@ -600,7 +600,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[신제품] 스누피 테마 머그컵 세트',
     subtitle: '스누피 특별 한정판',
-    price: '100000',
+    amount: '100000',
   },
   {
     id: 11,
@@ -608,7 +608,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[인기] 해리포터 마법 지팡이 세트',
     subtitle: '해리포터 한정판',
-    price: '110000',
+    amount: '110000',
   },
   {
     id: 12,
@@ -616,7 +616,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[한정판] 포켓몬스터 피카츄 인형',
     subtitle: '포켓몬스터 특별 한정판',
-    price: '120000',
+    amount: '120000',
   },
   {
     id: 13,
@@ -624,7 +624,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 도라에몽 테마 손목시계',
     subtitle: '도라에몽 특별 한정판',
-    price: '130000',
+    amount: '130000',
   },
   {
     id: 14,
@@ -632,7 +632,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[신제품] 세일러문 테마 스마트워치',
     subtitle: '세일러문 특별 한정판',
-    price: '140000',
+    amount: '140000',
   },
   {
     id: 15,
@@ -640,7 +640,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[인기] 배트맨 테마 드론',
     subtitle: '배트맨 특별 한정판',
-    price: '150000',
+    amount: '150000',
   },
   {
     id: 16,
@@ -648,7 +648,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[한정판] 슈퍼마리오 테마 게임기',
     subtitle: '슈퍼마리오 특별 한정판',
-    price: '160000',
+    amount: '160000',
   },
   {
     id: 17,
@@ -656,7 +656,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[특가] 미키마우스 테마 이어폰',
     subtitle: '미키마우스 특별 한정판',
-    price: '170000',
+    amount: '170000',
   },
   {
     id: 18,
@@ -664,7 +664,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[신제품] 라인프렌즈 테마 블루투스 스피커',
     subtitle: '라인프렌즈 특별 한정판',
-    price: '180000',
+    amount: '180000',
   },
   {
     id: 19,
@@ -672,7 +672,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[인기] 아이언맨 테마 스마트폰 거치대',
     subtitle: '아이언맨 특별 한정판',
-    price: '190000',
+    amount: '190000',
   },
   {
     id: 20,
@@ -680,7 +680,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[한정판] 겨울왕국 엘사 인형',
     subtitle: '겨울왕국 특별 한정판',
-    price: '200000',
+    amount: '200000',
   },
   {
     id: 21,
@@ -688,7 +688,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[특가] 토이스토리 우디 피규어',
     subtitle: '토이스토리 특별 한정판',
-    price: '210000',
+    amount: '210000',
   },
   {
     id: 22,
@@ -696,7 +696,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[신제품] 토토로 테마 티셔츠',
     subtitle: '토토로 특별 한정판',
-    price: '220000',
+    amount: '220000',
   },
   {
     id: 23,
@@ -704,7 +704,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[인기] 트론 테마 자전거 헬멧',
     subtitle: '트론 특별 한정판',
-    price: '230000',
+    amount: '230000',
   },
   {
     id: 24,
@@ -712,7 +712,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[한정판] 라푼젤 테마 램프',
     subtitle: '라푼젤 특별 한정판',
-    price: '240000',
+    amount: '240000',
   },
   {
     id: 25,
@@ -720,7 +720,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 심슨 테마 머그컵',
     subtitle: '심슨 특별 한정판',
-    price: '13000',
+    amount: '13000',
   },
   {
     id: 26,
@@ -728,7 +728,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[인기] 스파이더맨 테마 티셔츠',
     subtitle: '스파이더맨 특별 한정판',
-    price: '250000',
+    amount: '250000',
   },
   {
     id: 27,
@@ -736,7 +736,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[신제품] 미니마우스 테마 스마트워치',
     subtitle: '미니마우스 특별 한정판',
-    price: '260000',
+    amount: '260000',
   },
   {
     id: 28,
@@ -744,7 +744,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[한정판] 마이리틀포니 테마 피규어 세트',
     subtitle: '마이리틀포니 특별 한정판',
-    price: '270000',
+    amount: '270000',
   },
   {
     id: 29,
@@ -752,7 +752,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[인기] 캡틴아메리카 테마 드론',
     subtitle: '캡틴아메리카 특별 한정판',
-    price: '280000',
+    amount: '280000',
   },
   {
     id: 30,
@@ -760,7 +760,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 짱구 테마 스마트폰 케이스',
     subtitle: '짱구 특별 한정판',
-    price: '290000',
+    amount: '290000',
   },
   {
     id: 31,
@@ -768,7 +768,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[신제품] 은하철도999 테마 백팩',
     subtitle: '은하철도999 특별 한정판',
-    price: '100000',
+    amount: '100000',
   },
   {
     id: 32,
@@ -776,7 +776,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[한정판] 디지몬 테마 스니커즈',
     subtitle: '디지몬 특별 한정판',
-    price: '210000',
+    amount: '210000',
   },
   {
     id: 33,
@@ -784,7 +784,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 슈퍼맨 테마 머그컵',
     subtitle: '슈퍼맨 특별 한정판',
-    price: '220000',
+    amount: '220000',
   },
   {
     id: 34,
@@ -792,7 +792,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[인기] 톰과 제리 테마 스마트폰 케이스',
     subtitle: '톰과 제리 특별 한정판',
-    price: '230000',
+    amount: '230000',
   },
   {
     id: 35,
@@ -800,7 +800,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[신제품] 디즈니 테마 팔찌 세트',
     subtitle: '디즈니 특별 한정판',
-    price: '240000',
+    amount: '240000',
   },
   {
     id: 36,
@@ -808,7 +808,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[한정판] 가디언즈오브갤럭시 테마 티셔츠',
     subtitle: '가디언즈오브갤럭시 특별 한정판',
-    price: '250000',
+    amount: '250000',
   },
   {
     id: 37,
@@ -816,7 +816,7 @@ export const rankListData = [
     giftType: '받고 싶어한',
     title: '[특가] 마녀배달부 키키 테마 인형',
     subtitle: '마녀배달부 키키 특별 한정판',
-    price: '260000',
+    amount: '260000',
   },
   {
     id: 38,
@@ -824,7 +824,7 @@ export const rankListData = [
     giftType: '위시로 받은',
     title: '[신제품] 바람의검심 테마 스니커즈',
     subtitle: '바람의검심 특별 한정판',
-    price: '270000',
+    amount: '270000',
   },
   {
     id: 39,
@@ -832,7 +832,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[한정판] 나루토 테마 피규어 세트',
     subtitle: '나루토 특별 한정판',
-    price: '280000',
+    amount: '280000',
   },
   {
     id: 40,
@@ -840,7 +840,7 @@ export const rankListData = [
     giftType: '많이 선물한',
     title: '[특가] 파워퍼프걸 테마 백팩',
     subtitle: '파워퍼프걸 특별 한정판',
-    price: '190000',
+    amount: '190000',
   },
 ] satisfies RankItemType[];
 

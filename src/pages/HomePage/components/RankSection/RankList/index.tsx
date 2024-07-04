@@ -17,7 +17,13 @@ export const RankList = () => {
       placeItems="start"
     >
       {visibleItems.map((item) => (
-        <RankingGoodsItem key={item.id} rankingItem={item} />
+        <RankingGoodsItem
+          key={item.id}
+          rank={item.rank}
+          title={item.title}
+          subtitle={item.subtitle}
+          amount={item.amount}
+        />
       ))}
     </Grid>
   );
