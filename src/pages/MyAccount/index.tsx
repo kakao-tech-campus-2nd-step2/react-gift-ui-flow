@@ -1,12 +1,23 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
+import { UserInfo } from '@/providers/UserInfoProviders';
 
 export const MyAccount = () => {
+  const { userName } = useContext(UserInfo);
+  const { setUserName } = useContext(UserInfo);
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    setUserName('');
+    sessionStorage.clear();
+    navigate('/');
+  };
   return (
     <Wrapper>
-      <Title>aabb님 안녕하세요!</Title>
-      <Button theme="darkGray" size="small" style={{ width: 200 }}>
+      <Title>{userName}님 안녕하세요!</Title>
+      <Button theme="darkGray" size="small" style={{ width: 200 }} onClick={handleLogout}>
         로그아웃
       </Button>
     </Wrapper>

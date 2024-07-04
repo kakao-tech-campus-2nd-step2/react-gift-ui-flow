@@ -26,3 +26,13 @@
 6. 로그인 페이지 구현하기
 7. 마이 페이지 구현하기
 8. 경로 상수화 하기
+
+---
+
+### Step2 인증 프로세스 구현
+
+1. 로그인 페이지에서 ID, PW를 입력하면 sessionStorage에 authToken key에 저장
+2. authToken을 토대로 로그인 여부 판단(contextAPI이용)
+3. 로그인 여부에 따른 헤더 수정
+4. my-account는 로그인 된 사람만 접근 가능하게 수정
+5. my-accout에서 로그아웃 구현

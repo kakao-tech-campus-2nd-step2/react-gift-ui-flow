@@ -6,11 +6,15 @@ import { BrowserRouter } from 'react-router-dom';
 
 import App from '@/App';
 
+import { UserInfoProvider } from './providers/UserInfoProviders';
+
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <UserInfoProvider>
+        <App />
+      </UserInfoProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
