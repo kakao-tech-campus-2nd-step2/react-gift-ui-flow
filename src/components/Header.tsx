@@ -1,7 +1,13 @@
-const Header: React.FC<{ themeKey?: string }> = ({ themeKey }) => {
+const labels: { [key: string]: string } = {
+  default: 'My Application',
+  theme1: 'Theme 1 Application',
+  theme2: 'Theme 2 Application',
+};
+
+const Header: React.FC<{ themeKey?: string }> = ({ themeKey = 'default' }) => {
   return (
     <header>
-      <h1>My Application</h1>
+      <h1>{labels[themeKey]}</h1>
       <nav>
         <ul>
           <li>
@@ -18,5 +24,3 @@ const Header: React.FC<{ themeKey?: string }> = ({ themeKey }) => {
     </header>
   );
 };
-
-export default Header;
