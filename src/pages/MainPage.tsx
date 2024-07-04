@@ -26,7 +26,7 @@ export const MainPage: React.FC = () => {
   ];
 
   const ItemsData = [];
-  for (let i = 1; i <= 6; i++) {
+  for (let i = 1; i <= 21; i++) {
     ItemsData.push({
       imageSrc:
         'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
@@ -39,6 +39,7 @@ export const MainPage: React.FC = () => {
 
   const [selectedFilter, setSelectedFilter] = useState<string>('ALL');
   const [selectedSubFilter, setSelectedSubFilter] = useState<string>('WANT');
+  const [visibleItems, setVisibleItems] = useState<number>(6);
 
   const handleImageClick = () => {
     alert('선물 받을 친구 선택하기');
@@ -54,6 +55,14 @@ export const MainPage: React.FC = () => {
 
   const handleSubFilterClick = (subFilter: string) => {
     setSelectedSubFilter(subFilter);
+  };
+
+  const handleShowMore = () => {
+    setVisibleItems(ItemsData.length);
+  };
+
+  const handleShowLess = () => {
+    setVisibleItems(6);
   };
 
   return (
@@ -145,11 +154,22 @@ export const MainPage: React.FC = () => {
         </SubFilterContainer>
         <ItemContainer>
           <Grid columns={{ sm: 3, md: 4, lg: 6 }} gap={20}>
-            {ItemsData.map((item, index) => (
+            {ItemsData.slice(0, visibleItems).map((item, index) => (
               <RankingGoodsItems key={index} {...item} />
             ))}
           </Grid>
         </ItemContainer>
+        <ButtonContainer>
+          {visibleItems < ItemsData.length ? (
+            <Button theme="outline" onClick={handleShowMore}>
+              더보기
+            </Button>
+          ) : (
+            <Button theme="outline" onClick={handleShowLess}>
+              접기
+            </Button>
+          )}
+        </ButtonContainer>
       </RankingSection>
     </>
   );
@@ -340,4 +360,10 @@ const SubFilterButton = styled(Button)`
 
 const ItemContainer = styled.div`
   margin: 0 auto 40px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 500px;
 `;
