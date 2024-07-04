@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import Header from './Header';
+
 const MainPage: React.FC = () => {
   const navigate = useNavigate();
 
@@ -61,8 +63,12 @@ const MainPage: React.FC = () => {
     setSelectedFilter(newFilter);
   };
 
+
+
   return (
     <div className="main-container">
+      <Header />
+
       {/* Theme 카테고리 섹션 */}
       <section className="theme-section">
         <ul className="theme-list">
