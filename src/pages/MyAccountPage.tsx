@@ -1,3 +1,5 @@
+import { Button } from '@/components/common/Button';
+
 const MyAccountPage = () => {
   const handleLogout = () => {
     console.log('로그아웃 처리');
@@ -6,7 +8,9 @@ const MyAccountPage = () => {
   return (
     <div>
       <h2>My Account Page</h2>
-      <button onClick={handleLogout}>Logout</button>
+      <Button onClick={handleLogout} theme="outline" size="responsive">
+        Logout
+      </Button>
     </div>
   );
 };
