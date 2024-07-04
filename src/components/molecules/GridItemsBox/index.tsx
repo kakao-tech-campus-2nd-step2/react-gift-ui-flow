@@ -1,15 +1,16 @@
 import type { ElementType } from 'react';
 
 import { Grid } from '@/components/atoms/Grid';
+import type { StaticItemProp } from '@/components/molecules/types/StaticItemProp';
 
-type GridItemsBoxProp<T> = {
+type GridItemsBoxProp<T extends StaticItemProp> = {
   columns: number | object;
   gap?: number;
   gridItems: T[];
   GridItemComponent: ElementType;
 };
 
-export const GridItemsBox = <T,>({
+export const GridItemsBox = <T extends StaticItemProp>({
   columns,
   gap = 0,
   GridItemComponent,
