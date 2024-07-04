@@ -33,9 +33,9 @@
 			- [x] 상품 목록 접기
 			- [x] 상품 목록 펼치기
 	- Theme 페이지(/theme :themeKey)
-		- [ ] Header 섹션 추가
-			- [ ] 재사용성을 고려하여 Header 섹션 만들기 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
-		- [ ] 상품 목록 섹션을 추가.
+		- [x] Header 섹션 추가
+			- [x] 재사용성을 고려하여 Header 섹션 만들기 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
+		- [x] 상품 목록 섹션을 추가.
 	- 로그인 페이지(/login)
 		- [ ] 로그인 기능 추가 (ID와 PW는 아무 값을 입력해도 통과되도록)
 	- 나의 페이지(/my-account)

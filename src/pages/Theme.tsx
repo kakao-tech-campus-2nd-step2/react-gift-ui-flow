@@ -1,6 +1,7 @@
 
 import { useParams } from 'react-router-dom';
 
+import ThemeGoods from '@/components/ThemeGoods/ThemeGoods';
 import ThemeHeader from '@/components/ThemeHeader/ThemeHeader';
 
 const Theme = () => {
@@ -13,7 +14,7 @@ const Theme = () => {
 	return (
 		<div>
 			<ThemeHeader themeKey={themeKey as string | number} />
-			<h1>Theme</h1>
+			<ThemeGoods />
 		</div>
 	);
 }
