@@ -1,35 +1,22 @@
-import styled from '@emotion/styled';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Footer from '@/components/common/Layouts/Footer/Footer';
 import Header from '@/components/common/Layouts/Header/Header';
-
-import SelectGiftRecipient from './components/others/SelectGiftRecipient';
-
-const AppWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-`;
-
-const MainContent = styled.div`
-  width: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  margin-top: 54px;
-`;
+import MainPage from "@/pages/MainPage";
+import ThemePage from "@/pages/ThemePage";
 
 const App = () => {
   return (
-    <AppWrapper>
+    <Router>
       <Header />
 
-      <MainContent>
-        <SelectGiftRecipient />
-      </MainContent>
+      <Routes>
+        <Route path="/" Component={MainPage} />
+        <Route path="/theme/:themeKey" Component={ThemePage} />
+      </Routes>
 
       <Footer />
-    </AppWrapper>
+    </Router>
   );
 };
 
