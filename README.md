@@ -21,7 +21,7 @@
 
 - **Footer 컴포넌트 생성**
   - [x] Footer 컴포넌트 파일 생성
-  - [ ] Footer 컴포넌트 기본 구조 작성
+  - [x] Footer 컴포넌트 기본 구조 작성
   - [x] Footer 컴포넌트를 모든 페이지에 적용
 
 #### pages

@@ -96,7 +96,7 @@ const Header = ({ themeKey }: HeaderProps) => {
           <p>{theme.description}</p>
         </>
       ) : (
-        <h1>기본 헤더</h1>
+        <h1>선물하기</h1>
       )}
       <nav>
         <ul>
