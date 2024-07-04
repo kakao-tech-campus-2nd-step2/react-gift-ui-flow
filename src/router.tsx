@@ -6,6 +6,7 @@ import MainPage from '@/pages/main/MainPage';
 import ThemePage from '@/pages/theme/ThemePage';
 import MyAccountPage from '@/pages/my-account/MyAccountPage';
 import Layout from '@/components/layout/Layout';
+import PrivateRoutes from './utils/PrivateRoutes';
 
 export const router = createBrowserRouter([
   {
@@ -24,14 +25,20 @@ export const router = createBrowserRouter([
         path: PATHS.BIRTHDAY,
         element: <ThemePage />,
       },
+      {
+        path: AUTH.MY_ACCOUNT,
+        element: <PrivateRoutes />,
+        children: [
+          {
+            index: true,
+            element: <MyAccountPage />,
+          },
+        ],
+      },
     ],
   },
   {
     path: AUTH.LOGIN,
     element: <LoginPage />,
-  },
-  {
-    path: AUTH.MY_ACCOUNT,
-    element: <MyAccountPage />,
   },
 ]);
