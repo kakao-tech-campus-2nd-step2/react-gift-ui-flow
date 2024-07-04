@@ -107,6 +107,10 @@ const categoryTitleStyle: React.CSSProperties = {
   fontSize: '14px',
 };
 
+const trendingSectionStyle: React.CSSProperties = {
+  textAlign: 'center',
+  marginTop: '50px',
+};
 const HomePage: React.FC = () => {
   return (
     <div>
@@ -130,6 +134,11 @@ const HomePage: React.FC = () => {
               </Link>
             </div>
           ))}
+        </div>
+      </section>
+      <section>
+        <div style={trendingSectionStyle}>
+          <h2 style={{ fontWeight: 'bold' }}>실시간 급상승 선물랭킹</h2>
         </div>
       </section>
     </div>
