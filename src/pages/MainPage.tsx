@@ -197,16 +197,91 @@ const AIButton = styled(Button)`
   }
 `;
 
-const RankingSection = styled.section``;
+const RankingSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1024px;
+  width: 100%;
+  margin: 80px auto;
+  padding: 40px;
+`;
 
-const RankingName = styled.h2``;
+const RankingName = styled.h2`
+  font-size: 36px;
+  font-weight: bold;
+`;
 
-const FilterContainer = styled.div``;
+const FilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  gap: 50px;
+`;
 
-const FilterButton = styled(Button)``;
+const FilterButton = styled(Button)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  padding: 0 50px;
+  border: none;
+  outline: none;
 
-const SubFilterContainer = styled.div``;
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    padding: 20px 0;
+    cursor: pointer;
+    border-radius: 40%;
+    background-color: #e6f1ff;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
 
-const SubFilterButton = styled(Button)``;
+  & > p {
+    color: gray;
+    font-size: 20px;
+    margin-top: 10px;
+  }
 
-const ItemContainer = styled.div``;
+  &:hover {
+    background: none;
+    border: none;
+  }
+`;
+
+const SubFilterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  background-color: #e6f1ff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1024px;
+  height: 70px;
+  align-items: center;
+  margin: 0 auto 40px;
+`;
+
+const SubFilterButton = styled(Button)`
+  background: none;
+  border: none;
+  color: #4684e9;
+  cursor: pointer;
+  outline: none;
+  font-size: 24px;
+  width: 200px;
+
+  &:hover {
+    background: none;
+    border: none;
+  }
+`;
+
+const ItemContainer = styled.div`
+  margin: 0 auto 40px;
+`;
