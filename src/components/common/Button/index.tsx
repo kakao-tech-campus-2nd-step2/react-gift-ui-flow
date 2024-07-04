@@ -7,8 +7,8 @@ type Props = {
   size?: 'large' | 'small' | 'responsive';
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const Button: React.FC<Props> = ({ ...props }: Props) => {
-  return <Wrapper {...props} />;
+export const Button: React.FC<Props> = ({ children, ...props }: Props) => {
+  return <Wrapper {...props}>{children}</Wrapper>;
 };
 
 const Wrapper = styled.button<Pick<Props, 'theme' | 'size'>>(

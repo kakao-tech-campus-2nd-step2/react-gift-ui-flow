@@ -5,6 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/common/Button/index'; // Import Button component
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 
+interface LoginPageProps {
+  onLogin: (username: string) => void;
+}
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -26,20 +30,20 @@ const LoginButton = styled(Button)`
   margin-top: 50px;
 `;
 
-const LoginPage: React.FC = () => {
+const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
+  const handleLogin = () => {
+    onLogin(id);
     navigate('/');
   };
 
   return (
     <Container>
       <h1>kakao</h1>
-      <Form onSubmit={handleSubmit}>      
+      <Form>      
         <UnderlineTextField
           type="text"
           value={id}
@@ -52,8 +56,8 @@ const LoginPage: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           label="비밀번호"
         />
-        <LoginButton>
-          <Button type="submit">로그인</Button>
+        <LoginButton onClick={handleLogin} theme="kakao" >
+          로그인
         </LoginButton>
       </Form>
     </Container>
