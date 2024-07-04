@@ -1,0 +1,48 @@
+import styled from '@emotion/styled';
+
+import { Button } from '@/components/common/Button';
+import { Header } from '@/components/common/Header/Header';
+import { useAuth } from '@/utils/hooks/useAuth';
+const MyAccountPage = () => {
+  const username = sessionStorage.getItem('auth');
+  const { handleLogout } = useAuth();
+  return (
+    <>
+      <Header />
+      <Wrapper>
+        <AccountContainer>
+          {username}님 안녕하세요!
+          <Space />
+          <Button theme="darkGray" style={{ maxWidth: '200px' }} onClick={handleLogout}>
+            로그아웃
+          </Button>
+        </AccountContainer>
+      </Wrapper>
+    </>
+  );
+};
+
+export default MyAccountPage;
+
+const Wrapper = styled.div({
+  width: '100%',
+  position: 'absolute',
+  top: '0px',
+  left: '0px',
+  marginTop: '54px',
+});
+
+const AccountContainer = styled.div({
+  width: '100%',
+  padding: '80px 0px 120px',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'center',
+  fontWeight: '700',
+  fontSize: '36px',
+});
+
+const Space = styled.div`
+  height: 64px;
+`;

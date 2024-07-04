@@ -1,8 +1,8 @@
-import type { ChangeEvent, FormEvent } from 'react';
+import type { ChangeEvent, FormEvent, MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export const useLogin = () => {
+export const useAuth = () => {
   const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(false);
@@ -36,11 +36,21 @@ export const useLogin = () => {
     setIsLogin(true);
     navigate('/');
   };
+
+  const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    if (isLogin) {
+      sessionStorage.removeItem('auth');
+      setIsLogin(false);
+      navigate('/');
+    }
+  };
   return {
     username,
     password,
     handleInputChange,
     handleLogin,
+    handleLogout,
     isLogin,
   };
 };

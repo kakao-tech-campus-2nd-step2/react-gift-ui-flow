@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useLogin } from '@/utils/hooks/useLogin';
+import { useAuth } from '@/utils/hooks/useAuth';
 
 const LoginForm = () => {
-  const { handleLogin, handleInputChange, username, password } = useLogin();
+  const { handleLogin, handleInputChange, username, password } = useAuth();
 
   return (
     <FormWrapper>

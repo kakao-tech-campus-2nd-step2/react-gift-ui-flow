@@ -29,7 +29,8 @@
 - [x] Theme 페이지 ( `/theme/:themeKey` )
   - [x] 재사용성을 고려하여 Header 섹션 구현 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
   - [x] 상품 목록 섹션 구현
-- [ ] 로그인 페이지( `/login` )
-  - [ ] ID와 PW를 입력하면 로그인이 되도록 구현(ID와 PW는 아무 값을 입력해도 통과되도록 함.)
-- [ ] 나의 페이지(`/my-account`) 구현
-  - [ ] 로그아웃 버튼 구현
+- [x] 로그인 페이지( `/login` )
+  - [x] ID와 PW를 입력하면 로그인이 되도록 구현(ID와 PW는 아무 값을 입력해도 통과되도록 함.)
+- [x] 나의 페이지(`/my-account`) 구현
+  - [x] 로그아웃 버튼 구현
+  - [x] 로그아웃 기능 구현

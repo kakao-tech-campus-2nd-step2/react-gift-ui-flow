@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
 import { colors, fontsizes } from '@/styles/variants';
-import { useLogin } from '@/utils/hooks/useLogin';
+import { useAuth } from '@/utils/hooks/useAuth';
 
 import { Container } from '../layouts/Container';
 
 export const Header = () => {
   const navigate = useNavigate();
-  const { isLogin } = useLogin();
+  const { isLogin } = useAuth();
 
   const moveToMain = () => {
     navigate('/');
