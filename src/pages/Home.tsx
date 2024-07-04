@@ -5,6 +5,7 @@ import FriendSelector from '@components/home/FriendSelector';
 import ThemeCategory from '@components/home/ThemeCategory';
 import Filter from '@components/home/Filter';
 import Inner from '@components/common/Layout/Inner';
+import RankingList from '@components/home/RankingList';
 
 export default function Home() {
   return (
@@ -13,9 +14,8 @@ export default function Home() {
       <FriendSelector />
       <Inner maxWidth={1024}>
         <ThemeCategory />
-      </Inner>
-      <Inner maxWidth={1024}>
         <Filter />
+        <RankingList />
       </Inner>
       <Footer />
     </>
