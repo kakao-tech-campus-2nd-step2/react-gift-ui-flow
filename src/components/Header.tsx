@@ -1,7 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
 import styles from './Header.module.scss';
+import { useAuth } from '@/context/AuthContext';
 const Header = () => {
+  const { authToken } = useAuth();
   const navigate = useNavigate();
 
   const handleLink = (path: string) => {
@@ -10,9 +12,15 @@ const Header = () => {
   return (
     <header>
       <h2 onClick={() => handleLink('/')}>선물하기</h2>
-      <div className={styles.login} onClick={() => handleLink('/login')}>
-        로그인
-      </div>
+      {authToken ? (
+        <div className={styles.login} onClick={() => handleLink('/my-account')}>
+          내 계정
+        </div>
+      ) : (
+        <div className={styles.login} onClick={() => handleLink('/login')}>
+          로그인
+        </div>
+      )}
     </header>
   );
 };
