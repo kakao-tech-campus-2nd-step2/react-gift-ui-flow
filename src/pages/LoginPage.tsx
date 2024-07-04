@@ -19,10 +19,36 @@ export const LoginPage: React.FC = () => {
   );
 };
 
-const LoginSection = styled.section``;
+const LoginSection = styled.section`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
 
-const FormContainer = styled(Container)``;
+  & > h1 {
+    font-size: 36px;
+  }
+`;
 
-const LoginField = styled(UnderlineTextField)``;
+const FormContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 475px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  padding: 60px 52px;
+`;
 
-const LoginButton = styled(Button)``;
+const LoginField = styled(UnderlineTextField)`
+  margin: 10px 0;
+`;
+
+const LoginButton = styled(Button)`
+  padding: 10px 0;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 50px;
+`;
