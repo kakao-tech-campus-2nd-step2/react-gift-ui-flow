@@ -1,26 +1,20 @@
-// import { Home } from '@/Pages/Home';
-// export const Layout = ()=> {
-//   return(
-//     <>
-//     <Header/>
-//     <Home/>
-//     <Footer/>
-//     </>
-//   );
-// };
-// export default Layout;
-// import React from 'react';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Footer from '@/Layout/Footer';
 import Header from '@/Layout/Header';
 
-const Layout = () => {
+interface LayoutProps {
+  isLoggedIn: boolean;
+  onLogout: () => void;
+}
+
+const Layout: React.FC<LayoutProps> = ({ isLoggedIn, onLogout }) => {
   return (
     <div>
-      <Header/>
+      <Header isLoggedIn={isLoggedIn} onLogout={onLogout} />
       <Outlet />
-      <Footer/>
+      <Footer />
     </div>
   );
 };

@@ -1,11 +1,32 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  isLoggedIn: boolean;
+  onLogout: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ isLoggedIn, onLogout }) => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
+  const handleLogoutClick = () => {
+    onLogout();
+    navigate('/');
+  };
+
   return (
     <HeaderWrapper>
       <Title>선물하기</Title>
-      <LoginButton>로그인</LoginButton>
+      {isLoggedIn ? (
+        <LoginButton onClick={handleLogoutClick}>로그아웃</LoginButton>
+      ) : (
+        <LoginButton onClick={handleLoginClick}>로그인</LoginButton>
+      )}
     </HeaderWrapper>
   );
 };
@@ -29,4 +50,7 @@ const Title = styled.h1`
 
 const LoginButton = styled.button`
   background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
 `;

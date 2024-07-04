@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
-
 type Props = {
   imageSrc: string;
   label: string;
