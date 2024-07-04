@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { Grid } from '../components/common/layouts/Grid/index';
 import { RankingGoodsItems } from '../components/common/GoodsItem/Ranking';
 import { Button } from '../components/common/Button/index';
+import Item from '@/components/Item';
 
 type RankingItem = {
   rankingIndex: number;
@@ -263,114 +264,66 @@ const Main = () => {
       </ChoiceFriend>
       <ThemeCategory>
         <Grid columns={6} gap={50}>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="생일"
-              />
-              <p>생일</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="졸업선물"
-              />
-              <p>졸업선물</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="스몰럭셔리"
-              />
-              <p>스몰럭셔리</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="명품선물"
-              />
-              <p>명품선물</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="결혼/집들이"
-              />
-              <p>결혼/집들이</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="따뜻한선물"
-              />
-              <p>따뜻한선물</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="가벼운선물"
-              />
-              <p>가벼운선물</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="팬심저격"
-              />
-              <p>팬심저격</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="졸업선물"
-              />
-              <p>교환권</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="졸업선물"
-              />
-              <p>건강/비타민</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="졸업선물"
-              />
-              <p>과일/한우</p>
-            </div>
-          </Item>
-          <Item href="/theme/life_small_gift">
-            <div>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt="졸업선물"
-              />
-              <p>출산/키즈</p>
-            </div>
-          </Item>
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="생일"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="졸업선물"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="스몰럭셔리"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="명품선물"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="결혼/집들이"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="따뜻한선물"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="가벼운선물"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="팬심저격"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="교환권"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="건강/비타민"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="과일/한우"
+          />
+          <Item
+            href="/theme/life_small_gift"
+            imageSrc="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+            text="출산/키즈"
+          />
         </Grid>
       </ThemeCategory>
       <AiService>
@@ -491,24 +444,6 @@ const ChoiceFriend = styled.section`
 
 const ThemeCategory = styled.section`
   padding: 45px 52px 23px;
-`;
-
-const Item = styled.a`
-  color: black;
-  text-decoration: none;
-  outline: none;
-  div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    img {
-      width: 90px;
-      border-radius: 32px;
-    }
-    p {
-      padding-top: 7px;
-    }
-  }
 `;
 
 const AiService = styled.section`
