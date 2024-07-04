@@ -1,5 +1,11 @@
+import { GoodsList } from './GoodsList';
 import { Header } from './Header';
 
 export const Theme = () => {
-  return <Header />;
+  return (
+    <div>
+      <Header />
+      <GoodsList />
+    </div>
+  );
 };
