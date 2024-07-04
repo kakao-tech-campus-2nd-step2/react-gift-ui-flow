@@ -1,4 +1,5 @@
 import styled from '@emotion/styled/macro';
+import { useState } from 'react';
 
 import { Grid } from '@/components/common/layouts/Grid';
 
@@ -15,11 +16,23 @@ const personGroup: Person[] = [
 ];
 
 export const PersonCategory = () => {
+  const [category, setCategory] = useState<string>('all');
+  const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCategory(e.target.value);
+    console.log(category);
+  };
   return (
     <Grid columns={4}>
       {personGroup.map((p: Person) => (
-        <Label htmlFor={p.key}>
-          <RadioInput type="radio" id={p.key} name="person_group" value={p.key} />
+        <Label htmlFor={p.key} key={p.key}>
+          <RadioInput
+            type="radio"
+            id={p.key}
+            name="person_group"
+            value={p.key}
+            onChange={handleCategory}
+            checked={category === p.key}
+          />
           <Category>{p.category}</Category>
           <CategoryMent>{p.ment}</CategoryMent>
         </Label>
