@@ -1,5 +1,5 @@
 import {
-  createContext, ReactNode, useMemo, useState,
+  createContext, ReactNode, useEffect, useMemo, useState,
 } from 'react';
 import { STORAGE_AUTH_TOKEN_KEY } from '@/constants';
 
@@ -24,6 +24,14 @@ function LoginContextProvider({ children }: { children: ReactNode }) {
 
   const [isLoggedIn, setIsLoggedIn] = useState(storedUsername !== null);
   const [username, setUsername] = useState(storedUsername || '');
+
+  useEffect(() => {
+    if (isLoggedIn) sessionStorage.setItem(STORAGE_AUTH_TOKEN_KEY, username);
+  }, [username, isLoggedIn]);
+
+  useEffect(() => {
+    if (!isLoggedIn) sessionStorage.removeItem(STORAGE_AUTH_TOKEN_KEY);
+  }, [isLoggedIn]);
 
   // 사실 안 감싸도 똑같은데 eslint 에러가 나서 감쌌다
   const loginStatus: LoginStatus = useMemo<LoginStatus>(() => ({
