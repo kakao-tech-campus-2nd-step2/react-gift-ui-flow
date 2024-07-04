@@ -5,17 +5,19 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from "@/components/common/Button"
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField"
+import { useAuth } from '@/context/AuthContext';
 
 const Login = () => {
 
-    const history = useNavigate()
+    const navigate = useNavigate()
+    const { login } = useAuth()
     const [id, setId] = useState('')
     const [pw, setPw] = useState('')
 
     const handleLogin = () => {
         if (id&&pw) { // id와 비밀번호가 모두 입력되었을 때만 로그인 처리
-            sessionStorage.setItem('authToken', id)
-            history(-1)
+            login(id)
+            navigate(-1)
         } else {
             alert('ID와 비밀번호를 모두 입력해주세요.')
         }
