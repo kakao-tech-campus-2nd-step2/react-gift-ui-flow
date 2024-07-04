@@ -11,44 +11,44 @@ import InitialProducts from '@/components/Product/InitialProducts';
 export const BodyWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center; /* 가운데 정렬 */
   height: 100%;
+  justify-content: center;
   width: 100%; /* 부모 요소의 너비를 따릅니다 */
-  background-color: #fff;
   box-sizing: border-box;
   padding: 0 20px; /* 패딩을 추가하여 좌우 여백을 설정 */
   overflow-x: hidden; /* 좌우 스크롤 숨기기 */
   flex: 1;
-
-  @media (max-width: 600px) {
-    align-items: flex-start;
-  }
 `;
 
 export const Child = styled.div`
-  width: 100%; /* 자식 요소의 너비를 100%로 설정 */
-  max-width: 1200px; /* 최대 너비를 설정하여 큰 화면에서도 중앙에 정렬 */
-  // border: 1px solid #000; /* 예시를 위한 테두리 */
+  max-width: 100%; /* 최대 너비를 설정하여 큰 화면에서도 중앙에 정렬 */
   margin: 20px 0; /* 상하 마진을 설정 */
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 20px;
   box-sizing: border-box;
   padding: 20px; /* 내부 패딩 추가 */
+  // background-color: yellow;
+`;
 
-  @media (max-width: 600px) {
-    align-items: flex-start;
-  }
+export const ChildColumnCenter = styled(Child)`
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 70%;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  // background-color: black;
+  padding: 10px;
 `;
 
 const BarWrapper = styled.div`
@@ -119,8 +119,8 @@ const MainPage = () => {
         ></Image>
         <h2 style={{ fontWeight: 500 }}>선물 받을 친구를 선택해주세요</h2>
       </Child>
-      <Child>
-        <Grid columns={{ sm: 4, lg: 6 }} gap={20}>
+      <ChildColumnCenter>
+        <Grid columns={{ sm: 2, md: 4, lg: 6 }} gap={20}>
           {themes.map((theme) => (
             <ItemWrapper key={theme.key} onClick={() => handleLink(`/theme/${theme.key}`)}>
               <Image src="/images/cake.jpeg" radius={40} ratio="square"></Image>
@@ -128,26 +128,22 @@ const MainPage = () => {
             </ItemWrapper>
           ))}
         </Grid>
-      </Child>
+      </ChildColumnCenter>
       <BarWrapper>
         <p style={{ color: 'rgba(0, 0, 0, 0.4)' }}>AI가 추천해주는 선물</p>
         <h3 style={{ fontWeight: 700 }}>선물을 추천받고 싶은 친구를 선택해주세요</h3>
       </BarWrapper>
-      <ItemWrapper>
-        <Child>
-          <FilterBar filter={filter} setFilter={setFilter} detail={detail} setDetail={setDetail} />
-        </Child>
-        <Child>
-          <ItemWrapper>
-            <ProductList products={displayedProducts} />
-            {detailedProducts.length > 6 && ( // 이렇게 하면 length가 6초과여야 버튼이 보이게 된다.
-              <Button onClick={() => setShowMore(!showMore)} theme="lightGray">
-                {showMore ? '접기' : '더보기'}
-              </Button>
-            )}
-          </ItemWrapper>
-        </Child>
-      </ItemWrapper>
+      <Child>
+        <FilterBar filter={filter} setFilter={setFilter} detail={detail} setDetail={setDetail} />
+      </Child>
+      <ChildColumnCenter>
+        <ProductList products={displayedProducts} />
+        {detailedProducts.length > 6 && ( // 이렇게 하면 length가 6초과여야 버튼이 보이게 된다.
+          <Button onClick={() => setShowMore(!showMore)} theme="lightGray">
+            {showMore ? '접기' : '더보기'}
+          </Button>
+        )}
+      </ChildColumnCenter>
     </BodyWrapper>
   );
 };
