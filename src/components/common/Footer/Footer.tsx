@@ -10,8 +10,6 @@ const footerStyle = {
   maxWidth: '100vw',
   backgroundColor: 'rgb(250, 250, 252)',
   textAlign: 'left' as const,
-  position: 'fixed' as const,
-  bottom: '0',
 };
 
 const Footer: React.FC<FooterProps> = ({ content }) => {
