@@ -27,7 +27,7 @@ const CategorySection = () => {
   return (
     <div className='categories'>
         {categoryData.map((category) => (
-            <Link to={`/category/${category.key}`} key={category.id} className='categoryContainer'>
+            <Link to={`/theme/${category.key}`} key={category.id} className='categoryContainer'>
                 <Image
                     src={category.img}
                     alt={`category${category.id}`}
