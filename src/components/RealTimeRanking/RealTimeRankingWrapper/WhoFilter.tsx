@@ -1,6 +1,7 @@
-import Icon from "@/components/common/GoodsItem/Icon";
-import { RealTimeRankingFilter } from ".";
+import { RealTimeRankContext, RealTimeRankingFilter } from ".";
 import styled from "@emotion/styled";
+import { useContext } from "react";
+import WhoFilterItem from "./WhoFilterItem";
 
 const WhoFilterList: RealTimeRankingFilter["who"][] = [
   "전체",
@@ -10,12 +11,19 @@ const WhoFilterList: RealTimeRankingFilter["who"][] = [
 ];
 
 const WhoFilter = () => {
+  const {
+    filter: { who },
+    setFilterWho,
+  } = useContext(RealTimeRankContext);
   return (
     <StyledWhoFilter>
       {WhoFilterList.map((target, index) => (
-        <li key={`${index}-${target}`}>
-          <Icon imageSrc={""} text={target} />
-        </li>
+        <WhoFilterItem
+          key={`${index}-${target}`}
+          target={target}
+          selected={who}
+          onClick={() => setFilterWho(target)}
+        />
       ))}
     </StyledWhoFilter>
   );

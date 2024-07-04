@@ -1,5 +1,6 @@
+import { RealTimeRankContext, RealTimeRankingFilter } from ".";
+import { useContext } from "react";
 import styled from "@emotion/styled";
-import { RealTimeRankingFilter } from ".";
 
 const purposeFilterList: RealTimeRankingFilter["purpose"][] = [
   "받고싶어한",
@@ -8,10 +9,22 @@ const purposeFilterList: RealTimeRankingFilter["purpose"][] = [
 ];
 
 const PurposeFilter = () => {
+  const {
+    filter: { purpose },
+    setFilterPurpose,
+  } = useContext(RealTimeRankContext);
+
   return (
     <StyledPurposeFilter>
       {purposeFilterList.map((target, index) => (
-        <li key={`${index}-${target}`}>{target}</li>
+        <StyledPurposeFilterList
+          key={`${index}-${target}`}
+          $selected={purpose}
+          $target={target}
+          onClick={() => setFilterPurpose(target)}
+        >
+          {target}
+        </StyledPurposeFilterList>
       ))}
     </StyledPurposeFilter>
   );
@@ -25,6 +38,19 @@ const StyledPurposeFilter = styled.ul`
   align-items: center;
   padding: 20px;
   border-radius: 16px;
+`;
+
+interface StyledPurposeFilterListProps {
+  $selected: RealTimeRankingFilter["purpose"];
+  $target: RealTimeRankingFilter["purpose"];
+}
+
+const StyledPurposeFilterList = styled.li<StyledPurposeFilterListProps>`
+  font-size: 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: ${({ $selected, $target }) =>
+    $selected === $target ? "#77A5F1" : ""};
 `;
 
 export default PurposeFilter;
