@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Header from '@/components/common/Header/Header';
 import Footer from '@/components/common/Footer/Footer';
-import ThemeHeader from '@/components/ThemeComponents/ThemeHeader';
+import ThemeHeader from '@/components/ThemeHeader';
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Grid } from '@/components/common/layouts/Grid';
 import { Container } from '@/components/common/layouts/Container';
