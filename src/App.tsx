@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Main from './pages/Main';
+import Theme from './pages/Theme';
 
 const App = () => {
     return (
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <Main />,
+    },
+    {
+        path: '/theme/:themeKey',
+        element: <Theme />,
     },
 ]);
 

@@ -1,11 +1,17 @@
+import { css } from '@emotion/css';
+import { Link } from 'react-router-dom';
+
+import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
+
+import { themeKeys } from './Theme';
 
 export default () => {
     return (
         <div>
             {/* theme section */}
-            <section>
+            <section className={sectionStyle}>
                 <Container>
                     <ThemeList />
                 </Container>
@@ -15,26 +21,36 @@ export default () => {
 };
 
 const ThemeList = () => {
-    const themeKey = [
-        '생일',
-        '졸업선물',
-        '스몰럭셔리',
-        '명품선물',
-        '결혼/집들이',
-        '따뜻한선물',
-        '가벼운선물',
-        '팬심저격',
-        '교환권',
-        '건강/비타민',
-        '과일/한우',
-        '출산/키즈',
-    ];
+    const ThemeBtn = ({ themeKey }: { themeKey: string }) => {
+        const divStyle = css`
+            padding: 25px 35px 24px;
+            text-align: center;
+        `;
+        return (
+            <Link className={divStyle} to={`/theme/${themeKey}`}>
+                <Image
+                    radius={30}
+                    ratio="square"
+                    alt={themeKey}
+                    src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+                />
+                <p>{themeKey}</p>
+            </Link>
+        );
+    };
 
     return (
-        <Grid columns={6}>
-            {themeKey.map((key) => (
-                <div key={key}>{key}</div>
+        <Grid columns={{ initial: 2, xs: 4, sm: 4, md: 6 }}>
+            {themeKeys.map((themeKey) => (
+                <ThemeBtn key={themeKey} themeKey={themeKey} />
             ))}
         </Grid>
     );
 };
+
+const sectionStyle = css`
+    padding: 14px 14px 3px;
+    @media screen and (min-width: 768px) {
+        padding: 45px 52px 23px;
+    }
+`;
