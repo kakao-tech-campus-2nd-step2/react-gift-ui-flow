@@ -23,6 +23,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 9;
 `;
 
 const Logo = styled.img`

@@ -17,6 +17,7 @@ export default function FriendSelector() {
 }
 
 const FriendSelectorContainer = styled.section`
+  margin-top: 60px;
   padding: 40px 0;
   background-color: #fafafa;
 `;
