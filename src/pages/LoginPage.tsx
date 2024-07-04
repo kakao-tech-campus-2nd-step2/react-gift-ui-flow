@@ -8,7 +8,11 @@ interface Credentials {
   pw: string;
 }
 
-const LoginPage: React.FC = () => {
+interface LoginPageProps {
+    onLogin: (username: string) => void;
+  }
+
+const LoginPage: React.FC<LoginPageProps> = ({onLogin}) => {
   const [credentials, setCredentials] = useState<Credentials>({ id: '', pw: '' });
   const navigate = useNavigate();
 
@@ -26,14 +30,15 @@ const LoginPage: React.FC = () => {
       return;
     }
 
+    onLogin(id);
     alert('로그인 성공!');
     navigate('/');
   };
 
   return (
-    <div className="container">
+    <div className="login-container">
       <img src="https://kakao-tech-week2-kakao-gift-ui-flow.pages.dev/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg" alt="카카오"></img>
-      <div className="login-container">
+      <div className="login-sub-container">
         <form onSubmit={handleSubmit} className="login-form">
           <div className="input-container">
             <input type="text" name="id" placeholder='이름' value={credentials.id} onChange={handleChange} required />

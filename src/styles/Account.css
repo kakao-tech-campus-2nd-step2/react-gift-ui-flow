@@ -1,0 +1,17 @@
+.account-container {
+    margin : 80px auto;
+    text-align: center;
+}
+.account-container h1 {
+    font : 36px "Malgun Gothic";
+    font-weight: bold;
+    margin-bottom: 64px;
+}
+.account-container button {
+    width : 200px;
+    height : 40px;
+    background-color: #444444;
+    color : #ffffff;
+    font : 15px "Malgun Gothic";
+    font-weight: bold;
+}

@@ -20,29 +20,29 @@ const items: Item[] = Array.from({ length: 12 }, (_, i) => ({
 }));
 
 const ThemePage: React.FC = () => {
-    const { themeKey } = useParams<{ themeKey?: string }>();
-  
-    if (!themeKey) {
-      return <Navigate to="/" replace />;
-    }
-  
-    return (
-      <div className="container">
-        <ThemeHeader themeKey={themeKey} />
-        <div className="items-container">
-          {items.map((item, index) => (
-            <div key={index} className="item-card">
-              <img src={item.image} alt={item.name} className="item-image" />
-              <div className="item-info">
-                <p className="item-store">BBQ</p>
-                <h3 className="item-title">{item.name}</h3>
-                <p className="item-price">{item.price}</p>
-              </div>
+  const { themeKey } = useParams<{ themeKey?: string }>();
+
+  if (!themeKey) {
+    return <Navigate to="/" replace />;
+  }
+
+  return (
+    <div className="container">
+      <ThemeHeader themeKey={themeKey} />
+      <div className="items-container">
+        {items.map((item, index) => (
+          <div key={index} className="item-card">
+            <img src={item.image} alt={item.name} className="item-image" />
+            <div className="item-info">
+              <p className="item-store">BBQ</p>
+              <h3 className="item-title">{item.name}</h3>
+              <p className="item-price">{item.price}</p>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    );
-  };
-  
-  export default ThemePage;
+    </div>
+  );
+};
+
+export default ThemePage;

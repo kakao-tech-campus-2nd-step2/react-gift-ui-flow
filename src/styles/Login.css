@@ -1,15 +1,15 @@
-.container {
+.login-container {
     text-align: center;
     justify-content: center;
     align-items: center;
     width: 580px;
     margin: 150px auto;
   }
-  .container img {
+  .login-container img {
     width: 88px;
   }
   
-  .login-container {
+  .login-sub-container {
     text-align: center;
     justify-content: center;
     align-items: center;
