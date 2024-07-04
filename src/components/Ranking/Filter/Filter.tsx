@@ -5,10 +5,13 @@ import FilterButton from '../../common/FilterButton/FilterButton';
 import RankingItems from '../RankingItems/RankingItems';
 import FilterTabs from './FilterTabs';
 
+const FilterContent = styled.div`
+  margin: 20px auto;
+  `;
+
 const FilterWrapper = styled.div`
   display: flex;
   justify-content: space-around;
-  margin-bottom: 20px;
 `;
 
 const items = [
@@ -45,7 +48,7 @@ const Filter: React.FC = () => {
   const filteredItems = items.filter(item => activeFilters.ALL || activeFilters[item.category]);
 
   return (
-    <div>
+    <FilterContent>
       <FilterWrapper>
         <FilterButton active={activeFilters.ALL} onClick={() => handleFilterChange('ALL')} buttonText='ALL'>전체</FilterButton>
         <FilterButton active={activeFilters.여성} onClick={() => handleFilterChange('여성')} buttonText='👩🏻‍🦳'>여성이</FilterButton>
@@ -56,7 +59,7 @@ const Filter: React.FC = () => {
         <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
       </div>
       <RankingItems items={filteredItems} />
-    </div>
+    </FilterContent>
   );
 };
 

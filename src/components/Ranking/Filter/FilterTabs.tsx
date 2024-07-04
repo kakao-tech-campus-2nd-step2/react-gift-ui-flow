@@ -9,7 +9,7 @@ const TabsWrapper = styled.div`
   border: 1px solid #dae5fb;
   padding: 10px;
   width: 85%;
-  margin: 0 auto;
+  margin: 20px auto;
 `;
 
 const Tab = styled.div<{ active: boolean }>`
@@ -23,6 +23,11 @@ const Tab = styled.div<{ active: boolean }>`
   text-align: center;
   pointer-events: auto;
 `;
+
+const TabsContent = styled.div`
+  margin: 50px auto;
+`;
+
 
 interface FilterTabProps {
   active: boolean;
@@ -41,11 +46,13 @@ interface FilterTabsProps {
 
 const FilterTabs: React.FC<FilterTabsProps> = ({ activeTab, onTabChange }) => {
   return (
+    <TabsContent>
     <TabsWrapper>
       <FilterTab active={activeTab === '받고 싶어한'} onClick={() => onTabChange('받고 싶어한')}>받고 싶어한</FilterTab>
       <FilterTab active={activeTab === '많이 선물한'} onClick={() => onTabChange('많이 선물한')}>많이 선물한</FilterTab>
       <FilterTab active={activeTab === '위시로 받은'} onClick={() => onTabChange('위시로 받은')}>위시로 받은</FilterTab>
     </TabsWrapper>
+    </TabsContent>
   );
 };
 

@@ -1,3 +1,4 @@
+import styled from '@emotion/styled';
 import React from 'react';
 
 import { RankingGoodsItems } from '../../common/GoodsItem/Ranking';
@@ -16,12 +17,21 @@ interface RankingItemsProps {
   items: Item[];
 }
 
+const GridWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  margin: 80px auto;
+`;
+
 const RankingItems: React.FC<RankingItemsProps> = ({ items }) => {
   const handleItemClick = (itemId: number) => {
     console.log(`Item clicked: ${itemId}`);
   };
 
   return (
+	<GridWrapper>
     <Grid columns={6} gap={20}>
       {items.map((item, index) => (
         <RankingGoodsItems
@@ -35,6 +45,7 @@ const RankingItems: React.FC<RankingItemsProps> = ({ items }) => {
         />
       ))}
     </Grid>
+	</GridWrapper>
   );
 };
 

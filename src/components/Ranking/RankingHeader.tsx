@@ -3,10 +3,11 @@ import { css } from '@emotion/react';
 import React from "react";
 
 const headerStyle = css`
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
   text-align: center;
-  margin: 20px 40px;
+  margin-top: 120px;
+  margin-bottom: 50px;
 `;
 
 const RankingHeader: React.FC = () => {
