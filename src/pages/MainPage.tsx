@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
+import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Image } from '@/components/common/Image/index';
 import { Grid } from '@/components/common/layouts/Grid/index';
 
@@ -22,6 +23,18 @@ export const MainPage: React.FC = () => {
     { name: '과일/한우', key: 'fruit-beef' },
     { name: '출산/키즈', key: 'pregnancy' },
   ];
+
+  const ItemsData = [];
+  for (let i = 1; i <= 6; i++) {
+    ItemsData.push({
+      imageSrc:
+        'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
+      subtitle: 'BBQ',
+      title: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
+      amount: 29000,
+      rankingIndex: i,
+    });
+  }
 
   const handleImageClick = () => {
     alert('선물 받을 친구 선택하기');
@@ -66,6 +79,39 @@ export const MainPage: React.FC = () => {
           <h3>선물을 추천받고 싶은 친구를 선택해주세요.</h3>
         </AIButton>
       </AISection>
+      <RankingSection>
+        <RankingName>실시간 급상승 선물랭킹</RankingName>
+        <FilterContainer>
+          <FilterButton>
+            <div>ALL</div>
+            <p>전체</p>
+          </FilterButton>
+          <FilterButton>
+            <div>👩🏻‍🦳</div>
+            <p>여성이</p>
+          </FilterButton>
+          <FilterButton>
+            <div>👨🏻‍🦳</div>
+            <p>남성이</p>
+          </FilterButton>
+          <FilterButton>
+            <div>👦🏻</div>
+            <p>청소년이</p>
+          </FilterButton>
+        </FilterContainer>
+        <SubFilterContainer>
+          <SubFilterButton>받고 싶어한</SubFilterButton>
+          <SubFilterButton>많이 선물한</SubFilterButton>
+          <SubFilterButton>위시로 받은</SubFilterButton>
+        </SubFilterContainer>
+        <ItemContainer>
+          <Grid columns={{ sm: 3, md: 4, lg: 6 }} gap={20}>
+            {ItemsData.map((item, index) => (
+              <RankingGoodsItems key={index} {...item} />
+            ))}
+          </Grid>
+        </ItemContainer>
+      </RankingSection>
     </>
   );
 };
@@ -126,7 +172,7 @@ const ItemName = styled.span`
 const AISection = styled.section`
   display: flex;
   justify-content: center;
-  max-width: 1000px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   padding: 20px;
@@ -150,3 +196,17 @@ const AIButton = styled(Button)`
     font-weight: bold;
   }
 `;
+
+const RankingSection = styled.section``;
+
+const RankingName = styled.h2``;
+
+const FilterContainer = styled.div``;
+
+const FilterButton = styled(Button)``;
+
+const SubFilterContainer = styled.div``;
+
+const SubFilterButton = styled(Button)``;
+
+const ItemContainer = styled.div``;
