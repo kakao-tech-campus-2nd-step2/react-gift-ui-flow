@@ -15,6 +15,10 @@ const MainPage: React.FC = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 6);
   };
 
+  const handleShowLess = () => {
+    setVisibleItems(6);
+  };
+
   const items = Array.from({ length: 20 }, (_, index) => `Gift ${index + 1}`);
 
   return (
@@ -52,7 +56,11 @@ const MainPage: React.FC = () => {
               <li key={item}>{item}</li>
             ))}
           </ul>
-          {visibleItems < items.length && <button onClick={handleLoadMore}>더보기</button>}
+          {visibleItems < items.length ? (
+            <button onClick={handleLoadMore}>더보기</button>
+          ) : (
+            <button onClick={handleShowLess}>접기</button>
+          )}
         </section>
       </main>
     </div>
