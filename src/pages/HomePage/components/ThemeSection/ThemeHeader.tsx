@@ -1,8 +1,8 @@
 import profile from '@/assets/default-profile.jpg';
 import { colors } from '@/styles/theme';
 
+import { Content } from '@/components/Content';
 import { Image } from '@/components/ui/Image/Default';
-import { Content } from '@/components/ui/Layout/Content';
 
 import { themeProfileStyle, themeTextStyle } from './style';
 

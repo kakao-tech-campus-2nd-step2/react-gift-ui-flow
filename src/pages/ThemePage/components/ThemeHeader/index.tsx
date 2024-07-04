@@ -1,6 +1,6 @@
 import { ThemeHeaderType } from '@/types/themeType';
 
-import { Content } from '@/components/ui/Layout/Content';
+import { Content } from '@/components/Content';
 
 import { headerStyle, textStyle } from './styles';
 

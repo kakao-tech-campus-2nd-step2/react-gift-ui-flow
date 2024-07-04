@@ -1,33 +1,27 @@
 import { DEFAULT_IMAGE_URL } from '@/constants/data';
-import { FilterRankItemType } from '@/types/rankTypes';
 
 import { RankedImage } from '@/components/ui/Image/RankingImage';
 import { Container } from '@/components/ui/Layout/Container';
 
+import { GoodsItemProps } from './Default';
 import { GoodsItemDetail } from './GoodsItemDetail';
 import { containerStyle } from './styles';
 
-interface RankingGoodsItemProps {
-  imageSrc?: string;
-  rankingItem: FilterRankItemType;
+interface RankingGoodsItemProps extends GoodsItemProps {
+  rank: number;
 }
 
 export const RankingGoodsItem = ({
   imageSrc = DEFAULT_IMAGE_URL,
-  rankingItem,
+  rank,
+  title,
+  subtitle,
+  amount,
 }: RankingGoodsItemProps) => {
   return (
     <Container maxWidth="100%" flexDirection="column" css={containerStyle}>
-      <RankedImage
-        rank={rankingItem.rank}
-        imageSrc={imageSrc}
-        alt={rankingItem.title}
-      />
-      <GoodsItemDetail
-        subtitle={rankingItem.subtitle}
-        title={rankingItem.title}
-        amount={rankingItem.price}
-      />
+      <RankedImage rank={rank} imageSrc={imageSrc} alt={title} />
+      <GoodsItemDetail subtitle={subtitle} title={title} amount={amount} />
     </Container>
   );
 };

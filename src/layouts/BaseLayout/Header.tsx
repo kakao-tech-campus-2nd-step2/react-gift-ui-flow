@@ -1,8 +1,8 @@
 import logo from '@/assets/logo.png';
 import { colors } from '@/styles/theme';
 
+import { Content } from '@/components/Content';
 import { Logo } from '@/components/Logo';
-import { Content } from '@/components/ui/Layout/Content';
 
 import { AuthButton } from './AuthButton';
 import { headerStyle } from './styles';

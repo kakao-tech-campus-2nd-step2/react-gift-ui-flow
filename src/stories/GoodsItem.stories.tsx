@@ -2,21 +2,20 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { DEFAULT_IMAGE_URL } from '@/constants/data';
 
-import { RankingGoodsItem } from '@/components/ui/GoodsItem/RankingGoodsItem';
+import { GoodsItem } from '@/components/ui/GoodsItem/Default';
 
-const meta: Meta<typeof RankingGoodsItem> = {
-  title: 'Example/GoodsItem/RankingGoodsItem',
-  component: RankingGoodsItem,
+const meta: Meta<typeof GoodsItem> = {
+  title: 'Example/GoodsItem/Default',
+  component: ({ ...props }) => (
+    <div css={{ width: '8rem' }}>
+      <GoodsItem {...props} />
+    </div>
+  ),
   parameters: {
     layout: 'centered',
   },
   tags: ['autodocs'],
   argTypes: {
-    rank: {
-      control: 'number',
-      min: 1,
-      max: 100,
-    },
     imageSrc: {
       control: 'text',
     },
@@ -33,11 +32,10 @@ const meta: Meta<typeof RankingGoodsItem> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof RankingGoodsItem>;
+type Story = StoryObj<typeof GoodsItem>;
 
 export const Default: Story = {
   args: {
-    rank: 1,
     imageSrc: DEFAULT_IMAGE_URL,
     subtitle: '카카오 프렌즈 특별 한정판',
     title: '[특가] 카카오 프렌즈 특별 한정판 브라이트 쿠션',

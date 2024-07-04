@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes } from 'react';
 import { useFilter } from '@/context/filter/useFilter';
 import { UserFilterButtonType } from '@/types/rankTypes';
 
-import { Callout } from '@/components/ui/Callout';
+import { Callout } from '@/components/Callout';
 
 import { buttonStyle, calloutStyle, textStyle } from './styles';
 

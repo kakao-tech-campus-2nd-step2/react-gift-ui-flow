@@ -1,5 +1,5 @@
-import { Callout } from '@/components/ui/Callout';
-import { Content } from '@/components/ui/Layout/Content';
+import { Callout } from '@/components/Callout';
+import { Content } from '@/components/Content';
 
 import { boldTextStyle, lightTextStyle, themeFooterStyle } from './style';
 

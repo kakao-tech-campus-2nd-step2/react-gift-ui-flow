@@ -1,7 +1,7 @@
 import { FilterProvider } from '@/context/filter/FilterProvider';
 import { RankListProvider } from '@/context/rankList/RankListProvider';
 
-import { Content } from '@/components/ui/Layout/Content';
+import { Content } from '@/components/Content';
 
 import { RankFilterGift } from './RankFilterGift';
 import { RankFilterUser } from './RankFilterUser';

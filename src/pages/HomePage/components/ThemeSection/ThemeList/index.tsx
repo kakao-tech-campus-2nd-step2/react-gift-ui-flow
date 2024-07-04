@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { themeData } from '@/mocks/mockData';
 
-import { Content } from '@/components/ui/Layout/Content';
+import { Content } from '@/components/Content';
 import { Grid } from '@/components/ui/Layout/Grid';
 
 import { ThemeListItem } from './ThemeListItem';

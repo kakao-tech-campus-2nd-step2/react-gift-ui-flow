@@ -1,7 +1,7 @@
 import { ThemeListType } from '@/types/themeType';
 
+import { Content } from '@/components/Content';
 import { GoodsItem } from '@/components/ui/GoodsItem/Default';
-import { Content } from '@/components/ui/Layout/Content';
 import { Grid } from '@/components/ui/Layout/Grid';
 
 import { contentStyle } from './styles';

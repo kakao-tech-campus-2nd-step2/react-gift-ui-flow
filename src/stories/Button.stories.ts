@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
 
-import { Button } from '@/components/ui/Button/Button';
+import { Button } from '@/components/ui/Button';
 
 const meta: Meta<typeof Button> = {
   title: 'Example/Button',
@@ -17,10 +16,13 @@ const meta: Meta<typeof Button> = {
     },
     size: {
       control: 'select',
-      options: ['small', 'large', 'response'],
+      options: ['small', 'medium', 'large', 'response'],
     },
   },
-  args: { onClick: fn() },
+  args: {
+    // eslint-disable-next-line no-alert
+    onClick: () => alert('버튼 클릭'),
+  },
 };
 
 export default meta;
@@ -29,5 +31,6 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'Button',
+    width: '8rem',
   },
 };

@@ -1,6 +1,6 @@
 import { GiftFilterButons } from '@/data/filterData';
 
-import { Callout } from '@/components/ui/Callout';
+import { Callout } from '@/components/Callout';
 
 import { ActiveGiftButton } from './ActiveGiftButton';
 import { calloutStyle } from './styles';

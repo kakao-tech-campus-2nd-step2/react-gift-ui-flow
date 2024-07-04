@@ -1,6 +1,6 @@
 import { colors } from '@/styles/theme';
 
-import { Content } from '@/components/ui/Layout/Content';
+import { Content } from '@/components/Content';
 
 import { footerStyles } from './styles';
 

@@ -17,8 +17,8 @@ export interface GoodsItemProps extends Omit<ThemeListType, 'id'> {
 
 export const GoodsItem = ({
   imageSrc = DEFAULT_IMAGE_URL,
-  subtitle,
   title,
+  subtitle,
   amount,
 }: GoodsItemProps) => {
   return (
