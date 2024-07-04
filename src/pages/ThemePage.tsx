@@ -6,6 +6,7 @@ import { Grid } from '@/components/common/layouts/Grid/index';
 
 export const ThemePage: React.FC = () => {
   const ItemsData = [];
+
   for (let i = 1; i <= 21; i++) {
     ItemsData.push({
       imageSrc:
@@ -15,9 +16,10 @@ export const ThemePage: React.FC = () => {
       amount: 29000,
     });
   }
+
   return (
     <>
-      <HeaderSection>
+      <HeaderSection style={{ backgroundColor: 'black' }}>
         <HeaderContainer>
           <HeaderLabel>Label</HeaderLabel>
           <HeaderTitle>Title</HeaderTitle>
@@ -35,14 +37,40 @@ export const ThemePage: React.FC = () => {
   );
 };
 
-const HeaderSection = styled.section``;
+const HeaderSection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  color: #fff;
+`;
 
 const HeaderContainer = styled(Container)``;
 
-const HeaderLabel = styled.p``;
+const HeaderLabel = styled.p`
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+`;
 
-const HeaderTitle = styled.h1``;
+const HeaderTitle = styled.h1`
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+`;
 
-const HeaderDescription = styled.p``;
+const HeaderDescription = styled.p`
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 10px 0 0 0;
+  white-space: pre-line;
+`;
 
-const ThemeSection = styled.section``;
+const ThemeSection = styled.section`
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px;
+`;
