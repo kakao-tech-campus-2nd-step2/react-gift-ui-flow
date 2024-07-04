@@ -10,12 +10,6 @@ const FilterWrapper = styled.div`
   margin-bottom: 20px;
 `;
 
-interface Item {
-  id: number;
-  category: string;
-  title: string;
-}
-
 const Filter: React.FC = () => {
   const [activeFilters, setActiveFilters] = useState<{ [key: string]: boolean }>({
     ALL: true,
@@ -38,16 +32,6 @@ const Filter: React.FC = () => {
     setTab(newTab);
   };
 
-  const data: Item[] = [
-    { id: 1, category: 'ALL', title: 'Item 1' },
-    { id: 2, category: '남성', title: 'Item 2' },
-    { id: 3, category: '청소년', title: 'Item 3' },
-    { id: 4, category: '여성', title: 'Item 4' },
-    // ...
-  ];
-
-  const filteredData = activeFilters.ALL ? data : data.filter(item => activeFilters[item.category]);
-
   return (
     <div>
       <FilterWrapper>
@@ -58,9 +42,6 @@ const Filter: React.FC = () => {
       </FilterWrapper>
       <div>
         <FilterTabs activeTab={tab} onTabChange={handleTabChange} />
-        {filteredData.map(item => (
-          <div key={item.id}>{item.title}</div>
-        ))}
       </div>
     </div>
   );
