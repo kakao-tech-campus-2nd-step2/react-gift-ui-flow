@@ -6,6 +6,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

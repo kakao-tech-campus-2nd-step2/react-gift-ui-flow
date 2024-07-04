@@ -1,25 +1,34 @@
-import {createBrowserRouter, Route, Routes} from "react-router-dom"
+import { createBrowserRouter } from 'react-router-dom';
+
 import App from '@/App';
-import MainPage from './MainPage';
-import ThemePage from './ThemePage';
-import LoginPage from './LoginPage';
-import MyAccountPage from './MyAccountPage';
+import LoginPage from '@/pages/LoginPage';
+import MainPage from '@/pages/MainPage';
+import MyAccountPage from '@/pages/MyAccountPage';
+import ThemePage from '@/pages/ThemePage';
 
 const router = createBrowserRouter([
   {
-    path:"/", //path 지정
-    element: <Root />, //Root element를 Render
+    path: '/',
+    element: <App />,
     children: [
       {
-        path:"",
-        element: <Home />,
+        path: '/',
+        element: <MainPage />,
       },
       {
-        path:"about",
-        element: <About />,
+        path: 'theme/:themeKey',
+        element: <ThemePage />,
       },
-    ]
-  }
-])
+      {
+        path: 'login',
+        element: <LoginPage />,
+      },
+      {
+        path: 'my-account',
+        element: <MyAccountPage />,
+      },
+    ],
+  },
+]);
 
 export default router;

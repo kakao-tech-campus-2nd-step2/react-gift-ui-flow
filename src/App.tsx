@@ -1,23 +1,16 @@
-import React from "react";
-import { Outlet } from "react-router-dom";
-import styled from '@emotion/styled';
+import { Outlet } from 'react-router-dom';
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 const App = () => {
-  const name = 'Josh Perez';
-
   return (
     <div>
-      <Title>Hello, {name}</Title>
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
