@@ -1,11 +1,13 @@
-import Main from './pages/Main';
+import { BrowserRouter } from 'react-router-dom';
+
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
 
   return (
-    <div>
-      <Main />
-    </div>
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
   );
 };
 

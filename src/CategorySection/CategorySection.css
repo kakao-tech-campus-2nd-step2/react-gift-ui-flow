@@ -1,3 +1,8 @@
+a {
+    color: #000;
+    text-decoration: none;
+}
+
 .categories {
     display: grid;
     grid-template-columns: repeat(6, 1fr); /* 기본적으로는 2행 6열 */
