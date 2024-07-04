@@ -1,12 +1,17 @@
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 
-const App = () => {
+interface AppProps {
+  themeKey?: string;
+}
+
+const App: React.FC<AppProps> = ({ themeKey = 'default' }) => {
   return (
     <div>
-      <Header themeKey="default" />
+      <Header themeKey={themeKey} />
       <Outlet />
       <Footer />
     </div>
