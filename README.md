@@ -22,8 +22,8 @@
 - [x] Header, Footer는 모든 페이지에 보여질 수 있도록 하세요.
 - [x] 각 Url Path 별로 페이지를 만들어요.
 - 메인페이지 (/)
-- [ ] Theme 카테고리 섹션을 추가해요.
-- [ ] Theme 카테고리 Item을 클릭 시, Theme 페이지 (/theme/:themeKey)로 이동해요.
+- [x] Theme 카테고리 섹션을 추가해요.
+- [x] Theme 카테고리 Item을 클릭 시, Theme 페이지 (/theme/:themeKey)로 이동해요.
 - [ ] 실시간 급상승 선물랭킹을 추가해요.
 - [ ] 필터 기능을 hooks를 사용하여 구현해요.
 - [ ] (전체, 여자, 남자, 청소년) 으로 나눠요.
