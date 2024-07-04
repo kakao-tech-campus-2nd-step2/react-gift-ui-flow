@@ -13,6 +13,7 @@
 
 }
 
+/** 누구에게 아이템 추천 받을지 **/
 .rankingSelectWhoContainer {
     display: flex;
     justify-content: center;
@@ -56,6 +57,7 @@
     font-weight: bold;
 }
 
+/** 어떤 아이템 추천 받을지 **/
 .rankingSelectBox {
     display: flex;
     background-color: #E3EFFE;
@@ -77,4 +79,28 @@
 .selectedItemWhich {
     color: #4078DF;
     font-weight: bold;
+}
+
+/** 랭킹 아이템 나열 **/
+.rankingItemContainer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 기본적으로는 2행 6열 */
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 0;
+}
+
+/** 랭킹 아이템 더보기 버튼 **/
+.buttonContainerSimple {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button02 {
+    margin: 0 calc(8% + 200px);
+}
+
+.buttonTitle02 {
+    color: #333;
 }

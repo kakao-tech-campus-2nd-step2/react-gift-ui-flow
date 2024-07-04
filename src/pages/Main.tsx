@@ -33,7 +33,7 @@ const Main = () => {
 
         <CategorySection />
 
-        <div className='buttonContainer'>
+        <div className='buttonContainerKakao'>
             <Button theme='kakao' size='responsive' className='button01'>
                 <div className='buttonSubtitle'>AI가 추천하는 선물</div>
                 <div className='buttonTitle'>선물을 추천받고 싶은 친구를 선택해주세요.</div>
@@ -41,7 +41,7 @@ const Main = () => {
         </div>
 
         <RankingSection />
-        
+
         <Footer title='카카오톡 선물하기'  />
     </div>
   )
