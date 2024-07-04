@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
 
-interface MyAccountPageProps {
-  username: string;
-  onLogout: () => void;
-}
+import { useAuth } from './ContextApi';
 
 const Container = styled.div`
   display: flex;
@@ -24,11 +21,12 @@ const Greeting = styled.h1`
   margin-bottom: 50px;
 `;
 
-const MyAccountPage: React.FC<MyAccountPageProps> = ({ username, onLogout }) => {
+const MyAccountPage: React.FC = () => {
+  const { username, logout } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    onLogout();
+    logout();
     navigate('/');
   };
 

@@ -2,11 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-interface HeaderProps {
-  isLoggedIn: boolean;
-  username: string;
-  onLogout: () => void;
-}
+import { useAuth } from './ContextApi';
 
 const HeaderContainer = styled.header`
   background-color: #fff;
@@ -35,7 +31,9 @@ const LoginLink = styled(Link)`
   }
 `;
 
-const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+const Header: React.FC = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <HeaderContainer>
       <Title>선물하기</Title>

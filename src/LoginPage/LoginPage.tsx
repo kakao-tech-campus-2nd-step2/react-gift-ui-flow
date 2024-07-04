@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index'; // Import Button component
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-
-interface LoginPageProps {
-  onLogin: (username: string) => void;
-}
+import { useAuth } from '@/ContextApi';
 
 const Container = styled.div`
   display: flex;
@@ -30,14 +27,15 @@ const LoginButton = styled(Button)`
   margin-top: 50px;
 `;
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+const LoginPage: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = () => {
     sessionStorage.setItem('authToken', id);
-    onLogin(id);
+    login(id);
     navigate('/');
   };
 
