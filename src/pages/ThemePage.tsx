@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 
+import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Grid } from '@/components/common/layouts/Grid';
 import { themeConfig } from '@/components/themeConfig';
 
@@ -16,7 +17,12 @@ const ThemePage = () => {
     return <div>Invalid theme</div>;
   }
 
-  const products = Array.from({ length: 30 }, (_, index) => `Product ${index + 1}`);
+  const products = Array.from({ length: 30 }, (_, index) => ({
+    imageSrc: `https://via.placeholder.com/150`,
+    subtitle: `Subtitle ${index + 1}`,
+    title: `Product Title ${index + 1}`,
+    amount: (index + 1) * 1000,
+  }));
 
   return (
     <div>
@@ -27,9 +33,13 @@ const ThemePage = () => {
           <h2>Products</h2>
           <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={20}>
             {products.map((product, index) => (
-              <div key={index} style={{ border: '1px solid #ccc', padding: '10px' }}>
-                {product}
-              </div>
+              <DefaultGoodsItems
+                key={index}
+                imageSrc={product.imageSrc}
+                subtitle={product.subtitle}
+                title={product.title}
+                amount={product.amount}
+              />
             ))}
           </Grid>
         </section>

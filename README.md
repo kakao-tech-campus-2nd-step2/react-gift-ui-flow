@@ -44,8 +44,8 @@
 2. **ThemePage (/theme/:themeKey)**
    - [x] ThemePage 파일 생성
    - [x] Header 섹션의 themeKey에 따른 내용 변경 확인
-   - [ ] 상품 목록 섹션 추가
-     - [ ] 상품 목록 기본 구조 작성
+   - [x] 상품 목록 섹션 추가
+     - [x] 상품 목록 기본 구조 작성
 
 3. **LoginPage (/login)**
    - [x] LoginPage 파일 생성
