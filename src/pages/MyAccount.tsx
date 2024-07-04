@@ -1,4 +1,5 @@
-import BaseLayout from '@/components/BaseLayout/BaseLayout';
+import BaseLayout from '@/layouts/BaseLayout';
+
 import { MyPageContent } from '@/components/MyPage/MyPageContent';
 
 export const MyAccountPage = () => {

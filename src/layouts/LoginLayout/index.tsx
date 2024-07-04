@@ -1,8 +1,7 @@
 import { HTMLAttributes } from 'react';
 
+import { loginContainerStyle } from '@/components/LoginPage/styles';
 import { Container } from '@/components/ui/Layout/Container';
-
-import { loginContainerStyle } from './styles';
 
 interface LoginLayoutProp extends HTMLAttributes<HTMLDivElement> {}
 

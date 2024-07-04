@@ -1,9 +1,10 @@
+import logo from '@/assets/logo.png';
 import { colors } from '@/styles/theme';
 
+import { Logo } from '@/components/Logo';
 import { Content } from '@/components/ui/Layout/Content';
 
 import { AuthButton } from './AuthButton';
-import { Logo } from './Logo';
 import { headerStyle } from './styles';
 
 export const Header = () => {
@@ -17,7 +18,7 @@ export const Header = () => {
       justifyContent="space-between"
       alignItems="center"
     >
-      <Logo />
+      <Logo src={logo} alt="카카오 선물하기 로고" width="86" />
       <AuthButton isLoggedIn={isLoggedIn} />
     </Content>
   );

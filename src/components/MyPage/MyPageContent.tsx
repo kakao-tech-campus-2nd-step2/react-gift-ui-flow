@@ -3,7 +3,7 @@ import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/Button/Button';
 import { Container } from '@/components/ui/Layout/Container';
 
-import * as styles from './styles';
+import { buttonStyle, countainerStyle, titleStyle } from './styles';
 
 export const MyPageContent = () => {
   const { userName, logout } = useAuth();
@@ -14,14 +14,14 @@ export const MyPageContent = () => {
       justifyContent="center"
       alignItems="center"
       gap="3rem"
-      css={styles.countainerStyle}
+      css={countainerStyle}
     >
-      <h1 css={styles.titleStyle}>{userName}님 안녕하세요!</h1>
+      <h1 css={titleStyle}>{userName}님 안녕하세요!</h1>
       <Button
         size="medium"
         theme="darkGray"
         width="14rem"
-        css={styles.buttonStyle}
+        css={buttonStyle}
         onClick={logout}
       >
         로그아웃
