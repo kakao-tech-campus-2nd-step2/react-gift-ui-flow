@@ -1,8 +1,12 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const ThemePage: React.FC = () => {
-  const { themeKey } = useParams<{ themeKey: string }>();
+interface Params {
+  themeKey: string;
+}
+
+const ThemePage = () => {
+  const { themeKey } = useParams<Params>();
 
   return (
     <div>
