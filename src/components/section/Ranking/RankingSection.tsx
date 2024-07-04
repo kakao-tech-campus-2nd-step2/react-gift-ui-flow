@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Container } from '@/components/common/layouts/Container';
 import { breakpoints } from '@/styles/variants';
-import { rankingItems } from '@/utils/hooks/createItems';
+import { rankingItems } from '@/utils/hooks/useCreateItems';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';

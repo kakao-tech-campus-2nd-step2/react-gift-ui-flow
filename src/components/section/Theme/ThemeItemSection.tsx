@@ -5,7 +5,7 @@ import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 import { breakpoints } from '@/styles/variants';
-import { defaultItems } from '@/utils/hooks/createItems';
+import { defaultItems } from '@/utils/hooks/useCreateItems';
 
 export const ThemeItemSection: React.FC = () => {
   const responsiveColumns = {
