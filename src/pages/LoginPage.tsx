@@ -2,23 +2,31 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Container } from '@/components/common/Layout/Container';
+import { useAuth } from '@/hooks/useAuth';
 
 export default function LoginPage() {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
-
+  const [id, setId] = useState<string>('');
+  const [pw, setPw] = useState<string>('');
+  const sessionStorage = window.sessionStorage;
   const navigate = useNavigate();
+  const { authToken, setAuthToken } = useAuth();
+
+  if (authToken) {
+    return <Navigate to="/" replace={true} />;
+  }
   const HandleLogin = () => {
     if (!id || !pw) {
       alert('아이디와 비밀번호를 입력해주세요.');
       return;
     }
-    navigate('/');
+    sessionStorage.setItem('authToken', JSON.stringify({ id, pw }));
+    setAuthToken({ id: id, pw: pw });
+    navigate(-1);
   };
   return (
     <LoginWrapper>
