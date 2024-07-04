@@ -1,18 +1,23 @@
 import './../styles/Account.css';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface AccountPageProps {
-  username: string;
-  onLogout: () => void;
-}
+import { useAuth } from '../context/AuthContext';
 
-const AccountPage: React.FC<AccountPageProps> = ({ username, onLogout }) => {
-  const navigate = useNavigate();
+
+const AccountPage: React.FC = () => {
+    const { isLoggedIn, username, logout } = useAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isLoggedIn) {
+          navigate('/login', { replace: true });
+        }
+      }, [isLoggedIn, navigate]);
 
   const handleLogout = () => {
-    onLogout();
+    logout();
     navigate('/');
   };
 

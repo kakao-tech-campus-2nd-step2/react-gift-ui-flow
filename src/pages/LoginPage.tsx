@@ -1,20 +1,22 @@
 import './../styles/Login.css';
 
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, {useState } from 'react';
+import { useLocation,useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/context/AuthContext';
 
 interface Credentials {
   id: string;
   pw: string;
 }
 
-interface LoginPageProps {
-    onLogin: (username: string) => void;
-  }
-
-const LoginPage: React.FC<LoginPageProps> = ({onLogin}) => {
+const LoginPage: React.FC = () => {
   const [credentials, setCredentials] = useState<Credentials>({ id: '', pw: '' });
+  const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
@@ -23,16 +25,14 @@ const LoginPage: React.FC<LoginPageProps> = ({onLogin}) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const { id, pw } = credentials;
 
-    if (!id || !pw) {
+    if (!credentials.id || !credentials.pw) {
       alert('아이디와 비밀번호를 입력해주세요.');
       return;
     }
 
-    onLogin(id);
-    alert('로그인 성공!');
-    navigate('/');
+    login(credentials.id);
+    navigate(from, {replace : true});
   };
 
   return (

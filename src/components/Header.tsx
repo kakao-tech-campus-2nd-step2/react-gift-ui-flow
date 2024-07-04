@@ -3,13 +3,12 @@ import './../styles/Header.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-interface HeaderProps {
-  isLoggedIn: boolean;
-  username: string;
-  onLogout: () => void;
-}
+import { useAuth } from '@/context/AuthContext';
 
-const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+
+
+const Header: React.FC = () => {
+  const {isLoggedIn} = useAuth();
   return (
   <header>
     <nav>
