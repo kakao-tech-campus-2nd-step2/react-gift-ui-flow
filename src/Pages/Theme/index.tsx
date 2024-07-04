@@ -1,9 +1,15 @@
 // import React from 'react';
-import { useParams } from 'react-router-dom';
+import Goods from './Goods';
+import {Header} from "./Header";
 
 const Theme = () => {
-  const { themeKey } = useParams();
-  return <h1>Theme Page for {themeKey}</h1>;
+  return (
+    <>
+    <Header/>
+    <Goods/>
+    </>
+  );
+
 };
 
 export default Theme;

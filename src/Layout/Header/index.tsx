@@ -14,6 +14,8 @@ export default Header;
 
 const HeaderWrapper = styled.header`
   display: flex;
+  width: 80%;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: center;
   padding: 16px;

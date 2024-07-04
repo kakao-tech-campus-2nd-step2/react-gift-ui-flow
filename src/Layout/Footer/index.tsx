@@ -13,7 +13,8 @@ export default Footer;
 
 const Wrapper = styled.footer`
   padding: 28px 16px 88px;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
   max-width: 100vw;
   background-color: #fafafc;
 `;

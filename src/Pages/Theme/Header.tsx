@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-// import { breakpoints } from '@/styles/variants';
-
 export const Header = () => {
   return (
     <Wrapper>
@@ -13,7 +11,10 @@ export const Header = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.div`
+
+export default Header;
+
+const Wrapper = styled.header`
   background-color: rgb(75, 77, 80);
   padding: 50px 20px;
 `;
@@ -24,12 +25,14 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const Label = styled.p`
-  font-size: 30px;
+  font-size: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.7);
 `;
 const Title = styled.h1`
   font-size: 40px;
+  margin-bottom: 10px;
   font-weight: bold;
   color: rgb(255, 255, 255);
 `;
