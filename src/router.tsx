@@ -6,7 +6,7 @@ import MainPage from '@/pages/main/MainPage';
 import ThemePage from '@/pages/theme/ThemePage';
 import MyAccountPage from '@/pages/my-account/MyAccountPage';
 import Layout from '@/components/layout/Layout';
-import PrivateRoutes from './utils/PrivateRoutes';
+import PrivateRoutes from '@/utils/PrivateRoutes';
 
 export const router = createBrowserRouter([
   {
