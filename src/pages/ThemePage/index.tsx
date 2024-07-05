@@ -1,13 +1,13 @@
-import getProducts from './getProducts';
-import ProductSection from './ProductSection';
+import getItems from '@/pages/ThemePage/getItems';
+import ItemList from '@/pages/ThemePage/ItemList';
 
 const ThemePage = () => {
-  const products = getProducts();
+  const items = getItems();
 
   return (
     <div>
       <main>
-        <ProductSection products={products} />
+        <ItemList items={items} />
       </main>
     </div>
   );

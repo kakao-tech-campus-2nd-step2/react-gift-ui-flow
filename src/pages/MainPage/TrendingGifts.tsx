@@ -5,7 +5,7 @@ import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
 
 const TrendingGifts = () => {
-  const [filter1, setFilter1] = useState('전체');
+  const [filter1, setFilter1] = useState('모두가');
   const [filter2, setFilter2] = useState('받고 싶어한');
   const [visibleItems, setVisibleItems] = useState(6);
 
@@ -18,22 +18,21 @@ const TrendingGifts = () => {
   };
 
   const items = Array.from({ length: 20 }, (_, index) => ({
-    imageSrc: `https://via.placeholder.com/150`,
-    subtitle: `Subtitle ${index + 1}`,
-    title: `Product Title ${index + 1}`,
-    amount: (index + 1) * 1000,
+    imageSrc: `https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240328114550_e72d7854bfb649c68c6bea6a1b85262b.jpg`,
+    subtitle: `오제티캔들`,
+    title: `브이 햄스터 캔들 / 향초 선물 불멍`,
+    amount: 10000,
   }));
 
   return (
     <section>
       <h2>실시간 급상승 선물랭킹</h2>
       <div>
-        <label>Filter by:</label>
         <select value={filter1} onChange={(e) => setFilter1(e.target.value)}>
-          <option value="전체">전체</option>
-          <option value="여성">여성</option>
-          <option value="남성">남성</option>
-          <option value="청소년">청소년</option>
+          <option value="모두가">모두가</option>
+          <option value="여성이">여성이</option>
+          <option value="남성이">남성이</option>
+          <option value="청소년">청소년이</option>
         </select>
         <select value={filter2} onChange={(e) => setFilter2(e.target.value)}>
           <option value="받고 싶어한">받고 싶어한</option>
