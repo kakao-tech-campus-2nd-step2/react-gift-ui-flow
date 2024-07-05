@@ -18,3 +18,9 @@ export const WithImage: Story = {
     imageUrl: 'https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png',
   },
 };
+
+export const WithLoginButton: Story = {
+  args: {
+    title: '선물하기',
+  },
+};

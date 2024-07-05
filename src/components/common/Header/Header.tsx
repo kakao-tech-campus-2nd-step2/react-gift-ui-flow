@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export interface HeaderProps {
   title: string;
@@ -15,6 +16,7 @@ const headerStyle = {
   padding: '0px 16px',
   display: 'flex',
   alignItems: 'center',
+  justifyContent: 'space-between',
 };
 
 const titleStyle = {
@@ -24,7 +26,21 @@ const titleStyle = {
   alignItems: 'center',
 };
 
+const loginButtonStyle = {
+  marginRight: '20px',
+  backgroundColor: 'transparent',
+  border: 'none',
+  fontSize: '16px',
+  cursor: 'pointer',
+};
+
 const Header: React.FC<HeaderProps> = ({ title, imageUrl }) => {
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    navigate('/login');
+  };
+
   return (
     <header style={headerStyle}>
       {imageUrl ? (
@@ -32,6 +48,9 @@ const Header: React.FC<HeaderProps> = ({ title, imageUrl }) => {
       ) : (
         <h1 style={titleStyle}>{title}</h1>
       )}
+      <button style={loginButtonStyle} onClick={handleLoginClick}>
+        로그인
+      </button>
     </header>
   );
 };
