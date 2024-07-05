@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
-type ButtonTheme = 'kakao' | 'primary';
+type ButtonTheme = 'kakao' | 'primary' | 'darkGray';
 type ButtonSize = 'small' | 'large' | 'responsive';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -71,6 +71,16 @@ const getThemeStyles = (theme: ButtonTheme) => {
 
         &:hover {
           background-color: #f8f8f8;
+        }
+      `;
+    case 'darkGray':
+      return css`
+        background-color: #444;
+        color: #fff;
+        font-weight: 700;
+
+        &:hover {
+          background-color: #555;
         }
       `;
     default:

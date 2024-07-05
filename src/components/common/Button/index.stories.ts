@@ -7,7 +7,7 @@ const meta: Meta<ButtonProps> = {
   tags: ['autodocs'],
   argTypes: {
     theme: {
-      control: { type: 'select', options: ['kakao', 'outline', 'black', 'lightGray', 'darkGray'] },
+      control: { type: 'select', options: ['kakao', 'primary', 'darkGray'] },
     },
     size: {
       control: { type: 'select', options: ['small', 'large', 'responsive'] },
@@ -31,6 +31,14 @@ export const Primary: Story = {
   args: {
     children: '버튼 텍스트',
     theme: 'primary',
+    size: 'large',
+  },
+};
+
+export const DarkGray: Story = {
+  args: {
+    children: '버튼 텍스트',
+    theme: 'darkGray',
     size: 'large',
   },
 };
