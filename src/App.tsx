@@ -1,18 +1,18 @@
-import styled from '@emotion/styled';
+import { Outlet, useParams } from 'react-router-dom';
+
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
 
 const App = () => {
-  const name = 'Josh Perez';
+  const { themeKey } = useParams<{ themeKey?: string }>();
 
   return (
     <div>
-      <Title>Hello, {name}</Title>
+      <Header themeKey={themeKey} />
+      <Outlet />
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
