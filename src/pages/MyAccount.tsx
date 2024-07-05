@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/common/Button";
+
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
 `;
 
 const StyledText = styled.h1`
@@ -16,15 +18,34 @@ const StyledText = styled.h1`
   margin-bottom: 50px;
 `;
 
+const StyledButton = styled(Button)`
+  margin-top: 40px;
+  height: 50px;
+  width: 200px;
+  background-color: #636061;
+  color: #FFF;
+  outline: none;
+  :hover {
+	background-color: #777475;
+  }
+`;
+
 interface MyAccountProps {
 	username: string;
+	onLogout: () => void;
 }
 
-const MyAccount: React.FC<MyAccountProps>= ({username}) => {
+const MyAccount: React.FC<MyAccountProps>= ({username, onLogout}) => {
+	const navigate = useNavigate();
+
+  const handleLogout = () => {
+    onLogout();
+    navigate('/');
+  };
 	  return (
 	<Container>
 	  <StyledText>{username}님 안녕하세요!</StyledText>
-	  <Button>로그아웃</Button>
+	  <StyledButton onClick={handleLogout}>로그아웃</StyledButton>
 	</Container>
   );
 }

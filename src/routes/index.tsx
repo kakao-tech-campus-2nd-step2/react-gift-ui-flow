@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
+import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
 
 import Home from '../pages/Home';
@@ -19,15 +20,22 @@ const AppRoutes = () => {
     setIsLoggedIn(true);
     console.log(`User ${username} logged in`);
   };
+
+  const handleLogout = () => {
+    setuser('');
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
-	  <Header isLoggedIn={isLoggedIn}/>
+      <Header isLoggedIn={isLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/theme/:themeKey" element={<Theme />} />
         <Route path="/login" element={<Login onLogin={handleLogin}/>} />
-        <Route path="/my-account" element={<MyAccount username={user}/>} />
+        <Route path="/my-account" element={<MyAccount username={user} onLogout={handleLogout}/>} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
