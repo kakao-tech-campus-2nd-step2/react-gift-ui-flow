@@ -1,4 +1,4 @@
-import '@/components/common/Theme/ChooseFriend.css';
+import '@/components/common/main/ChooseFriend.css';
 
 import React from 'react'
 
