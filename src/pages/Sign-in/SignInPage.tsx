@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/common/Button";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
@@ -8,13 +9,14 @@ const SignInPage: React.FC = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSignIn = () =>{
     console.log(username);
     console.log(password);
-    alert("Sign in!");
-  }
-
+    sessionStorage.setItem('authToken', username);
+    navigate(-1);
+  };
   return(
     <SignInWrapper>
       <InputContainers>
