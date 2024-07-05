@@ -1,21 +1,11 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useAuth } from '@/context/useAuth';
+import { useHandleLogin } from '@/pages/LoginPage/handleLogin';
+import { useLoginState } from '@/pages/LoginPage/useLoginState';
 
-const LoginPage: React.FC = () => {
-  const [id, setId] = useState('');
-  const [password, setPassword] = useState('');
-  const { login } = useAuth();
-  const navigate = useNavigate();
-
-  const handleLogin = () => {
-    login(id);
-    alert('로그인 처리');
-    navigate(-1); // 직전 페이지로 리디렉션
-  };
+export function LoginPage() {
+  const { id, setId, password, setPassword } = useLoginState();
+  const handleLogin = useHandleLogin(id);
 
   return (
     <div>
@@ -41,6 +31,6 @@ const LoginPage: React.FC = () => {
       </Button>
     </div>
   );
-};
+}
 
 export default LoginPage;
