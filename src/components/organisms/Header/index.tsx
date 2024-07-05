@@ -15,7 +15,9 @@ export const Header = () => {
   const onClick = () => {
     if (auth.name === undefined) {
       navigate('/login');
+      return;
     }
+    navigate('/my-account');
   };
 
   return (
