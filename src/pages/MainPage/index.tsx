@@ -1,9 +1,16 @@
-import getItems from '@/pages/MainPage/GetItems';
+import GetItem from '@/pages/MainPage/GetItem';
 import ItemList from '@/pages/MainPage/ItemList';
 import Theme from '@/pages/MainPage/Theme';
 
+interface Item {
+  imageSrc: string;
+  subtitle: string;
+  title: string;
+  amount: number;
+}
+
 const MainPage = () => {
-  const items = getItems();
+  const items: Item[] = GetItem();
 
   return (
     <div>
