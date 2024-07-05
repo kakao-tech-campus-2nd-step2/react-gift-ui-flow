@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container } from '@/components/common/layouts/Container';
@@ -8,9 +9,7 @@ const HeaderInner = styled.div`
   max-width: 1024px;
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
   align-items: center;
 `;
 
@@ -28,11 +27,22 @@ const LoginContainer = styled.div`
   align-items: center;
 `;
 
-const Header: React.FC = () => {
+const Header = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const authToken = sessionStorage.getItem('authToken');
+    if (authToken) {
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(false);
+    }
+  }, []);
+
   return (
     <Container>
       <HeaderInner>
-        <Link to={'/'}>
+        <Link to="/">
           <Logo>
             <img
               src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
@@ -40,11 +50,19 @@ const Header: React.FC = () => {
             />
           </Logo>
         </Link>
-        <Link to={'/login'}>
-          <LoginContainer>
-            <p>로그인</p>
-          </LoginContainer>
-        </Link>
+        {isLoggedIn ? (
+          <Link to="/my-account">
+            <LoginContainer>
+              <p>내 계정</p>
+            </LoginContainer>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <LoginContainer>
+              <p>로그인</p>
+            </LoginContainer>
+          </Link>
+        )}
       </HeaderInner>
     </Container>
   );

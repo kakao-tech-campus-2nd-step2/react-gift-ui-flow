@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import LoginPage from '@/pages/Login';
 import MainPage from '@/pages/Main';
 import ThemePage from '@/pages/Theme';
 
@@ -12,18 +13,29 @@ const RoutesComponent = () => {
     <Routes>
       <Route path={ROUTE_PATHS.MAIN} element={<MainPage />} />
       <Route path={ROUTE_PATHS.THEME} element={<ThemePage />} />
+      <Route path={ROUTE_PATHS.LOGIN} element={<LoginPage />} />
     </Routes>
+  );
+};
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const isLoginPage = location.pathname === ROUTE_PATHS.LOGIN;
+
+  return (
+    <div>
+      {!isLoginPage && <Header />}
+      {children}
+      {!isLoginPage && <Footer />}
+    </div>
   );
 };
 
 const AppRoutes = () => {
   return (
     <Router>
-      <div>
-        <Header />
+      <Layout>
         <RoutesComponent />
-        <Footer />
-      </div>
+      </Layout>
     </Router>
   );
 };
