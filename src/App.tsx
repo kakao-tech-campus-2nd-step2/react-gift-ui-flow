@@ -1,18 +1,32 @@
 import styled from '@emotion/styled';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-const App = () => {
-  const name = 'Josh Perez';
+import Footer from './components/common/Footer';
+import Header from './components/common/Header';
+import Loginpage from './pages/Loginpage';
+import Mainpage from './pages/Mainpage';
+import MyAccoutpage from './pages/MyAccountpage';
+import Themepage from './pages/Themepage';
 
+const App: React.FC = () => {
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <Router>
+      <Header />
+      <Content>
+        <Routes>
+          <Route path="/" element={<Mainpage />} />
+          <Route path="/theme/:themeKey" element={<Themepage />} />
+          <Route path="/login" element={<Loginpage />} />
+          <Route path="/my-account" element={<MyAccoutpage />} />
+        </Routes>
+      </Content>
+      <Footer />
+    </Router>
   );
 };
 
 export default App;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
+const Content = styled.div`
+  padding: 20px;
 `;

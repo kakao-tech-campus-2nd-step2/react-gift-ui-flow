@@ -11,23 +11,23 @@ const Loginpage: React.FC = () => {
     //로그인 로직 구현하기. 지금은 아무 값 가능
     navigate('/my-accout');
   };
-};
 
-return (
-  <div>
-    <h2>Login</h2>
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label>ID:</label>
-        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      </div>
-      <button type="submit">Login</button>
-    </form>
-  </div>
-);
+  return (
+    <div>
+      <h2>Login</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <label>이름:</label>
+          <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
+        </div>
+        <div>
+          <label>비밀번호:</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+        <button type="submit">로그인</button>
+      </form>
+    </div>
+  );
+};
 
 export default Loginpage;

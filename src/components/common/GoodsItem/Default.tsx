@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import styled from '@emotion/styled';
 
 import { Image } from '@/components/common/Image';
@@ -7,6 +8,7 @@ export type DefaultGoodsItemsProps = {
   subtitle: string;
   title: string;
   amount: number;
+  name: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const DefaultGoodsItems = ({
@@ -14,6 +16,7 @@ export const DefaultGoodsItems = ({
   subtitle,
   title,
   amount,
+  name,
   ...props
 }: DefaultGoodsItemsProps) => {
   return (

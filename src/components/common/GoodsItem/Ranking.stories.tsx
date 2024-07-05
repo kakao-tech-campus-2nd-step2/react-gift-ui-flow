@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 
 import { RankingGoodsItems } from './Ranking';
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Common/GoodsItem/Ranking',
   tags: ['autodocs'],
@@ -23,5 +22,6 @@ export const Default: Story = {
     subtitle: '카카오 프렌즈 특별 한정판',
     title: '[특가] 카카오 프렌즈 특별 한정판 브라이트 쿠션',
     amount: 10000,
+    name: '카카오 프렌즈',
   },
 };

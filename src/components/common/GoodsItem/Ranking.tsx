@@ -4,6 +4,7 @@ import { DefaultGoodsItems, type DefaultGoodsItemsProps } from './Default';
 
 type Props = {
   rankingIndex: number;
+  name: string;
 } & DefaultGoodsItemsProps;
 
 export const RankingGoodsItems = ({ rankingIndex, ...props }: Props) => {

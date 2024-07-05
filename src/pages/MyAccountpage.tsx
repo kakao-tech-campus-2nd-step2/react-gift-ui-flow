@@ -4,7 +4,7 @@ const MyAccoutpage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    //로그아웃 로직. 현재는 로그인으로 진행됨
+    //
     navigate('/login');
   };
   return (
