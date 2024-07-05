@@ -14,15 +14,15 @@
 
   - Theme page (`/theme/:themekey`)
 
-    - [ ] 재사용성을 고려하여 Header 섹션 추가 
+    - [x] 재사용성을 고려하여 Header 섹션 추가 
 
-    - [ ] 상품 목록 섹션 추가
+    - [x] 상품 목록 섹션 추가
 
   - Login page (`/login`)
 
-    - [ ] ID와 PW를 입력하면 로그인이 되도록 구현
+    - [x] ID와 PW를 입력하면 로그인이 되도록 구현
 
   - My page (`/my-account`)
 
-    - [ ] 로그아웃이 가능한 버튼 추가
+    - [x] 로그아웃이 가능한 버튼 추가
 
