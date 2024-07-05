@@ -1,12 +1,6 @@
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Grid } from '@/components/common/layouts/Grid';
-
-interface Item {
-  imageSrc: string;
-  subtitle: string;
-  title: string;
-  amount: number;
-}
+import type { Item } from '@/pages/ThemePage/types'; // types.ts 파일에서 Item 타입 가져오기
 
 interface ItemListProps {
   items: Item[];
