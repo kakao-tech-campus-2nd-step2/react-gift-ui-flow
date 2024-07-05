@@ -15,8 +15,8 @@ interface StyledInputProps {
   $size: InputSize;
 }
 
-export default function Input({ disabled, invalid = false, size = 'medium', ...props }: InputProps) {
-  return <StyledInput disabled={disabled} $size={size} $invalid={invalid} {...props} />;
+export default function Input({ disabled, invalid = false, size = 'medium', ...rest }: InputProps) {
+  return <StyledInput disabled={disabled} $size={size} $invalid={invalid} {...rest} />;
 }
 
 const sizeStyles = {

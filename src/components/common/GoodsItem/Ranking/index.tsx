@@ -7,9 +7,9 @@ interface RankingProps {
   rankingIndex: number;
 }
 
-export default function Ranking({ rankingIndex, ...props }: RankingProps) {
+export default function Ranking({ rankingIndex, ...rest }: RankingProps) {
   return (
-    <Badge rankingIndex={rankingIndex} {...props}>
+    <Badge rankingIndex={rankingIndex} {...rest}>
       {rankingIndex}
     </Badge>
   );

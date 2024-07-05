@@ -14,13 +14,13 @@ export interface GoodsItemProps {
   rankingIndex?: number;
 }
 
-export default function GoodsItem({ imageSrc, subtitle, title, amount, rankingIndex, ...props }: GoodsItemProps) {
+export default function GoodsItem({ imageSrc, subtitle, title, amount, rankingIndex, ...rest }: GoodsItemProps) {
   const imageSize = rankingIndex ? IMAGE_SIZE_RANKING : IMAGE_SIZE_GOODS_ITEM;
 
   const renderRanking = () => rankingIndex && <Ranking {...{ rankingIndex }} />;
 
   return (
-    <StyledGoodsItem rankingIndex={rankingIndex} {...props}>
+    <StyledGoodsItem rankingIndex={rankingIndex} {...rest}>
       {renderRanking()}
       <Image src={imageSrc} width={imageSize} height={imageSize} radius={4} />
       <Content>

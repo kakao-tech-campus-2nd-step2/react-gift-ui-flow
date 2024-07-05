@@ -15,7 +15,7 @@ export default function Container({
   flexDirection,
   justifyContent,
   alignItems,
-  ...props
+  ...rest
 }: ContainerProps) {
   return (
     <StyledContainer
@@ -23,7 +23,7 @@ export default function Container({
       flexDirection={flexDirection}
       justifyContent={justifyContent}
       alignItems={alignItems}
-      {...props}
+      {...rest}
     >
       {children}
     </StyledContainer>

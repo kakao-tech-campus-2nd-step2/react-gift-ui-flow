@@ -2,11 +2,12 @@ import React from 'react';
 import styled from '@emotion/styled';
 import goodsItemList from '@data/goodsItemList';
 import { GoodsItem, Grid, Inner } from '@components/common';
+import { BREAK_POINTS } from '@assets/styles/variants';
 
 export default function GoodsItemList() {
   return (
     <GoodsItemListContainer>
-      <Inner maxWidth={1024}>
+      <Inner maxWidth={BREAK_POINTS.md}>
         <Grid gap={14} columns={4}>
           {goodsItemList.map(({ id, imageSrc, subtitle, title, amount, target, wish }) => (
             <GoodsItem key={id} {...{ imageSrc, subtitle, title, amount, target, wish }} />

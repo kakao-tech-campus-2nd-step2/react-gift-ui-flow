@@ -2,6 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Inner } from '@components/common';
 import { useParams } from 'react-router-dom';
+import { BREAK_POINTS } from '@assets/styles/variants';
 import { THEME_KEY } from './constants';
 
 export default function SectionHeader() {
@@ -10,7 +11,7 @@ export default function SectionHeader() {
 
   return (
     <SectionHeaderContainer color={theme?.color}>
-      <Inner maxWidth={1024}>
+      <Inner maxWidth={BREAK_POINTS.md}>
         <Label>{theme?.label}</Label>
         <Title>{theme?.title}</Title>
         <Description>{theme?.description}</Description>

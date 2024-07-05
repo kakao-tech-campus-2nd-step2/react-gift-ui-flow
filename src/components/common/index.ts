@@ -1,6 +1,6 @@
 export { default as Button } from './Button';
 export { default as Footer } from './Footer';
-export { default as Input } from './Form/Input';
+export { default as InputField } from './Form/InputField';
 export { default as Image } from './Image';
 export { default as GoodsItem } from './GoodsItem';
 export { default as Ranking } from './GoodsItem/Ranking';
