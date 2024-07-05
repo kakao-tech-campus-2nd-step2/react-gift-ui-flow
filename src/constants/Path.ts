@@ -1,8 +1,6 @@
 export const PATHS = {
   MAIN: '/',
-  BIRTHDAY: '/theme/birthday',
-  WEDDING: '/theme/wedding',
-  GRADUATION: '/theme/graduation',
+  THEME: '/theme/:themeKey',
 };
 export const AUTH = {
   LOGIN: '/login',
