@@ -15,12 +15,14 @@ const Footer: React.FC = () => {
 export default Footer
 
 const Wrapper = styled.footer`
+  position: fixed;
   width: 100%;
-  max-width: 100vw;
-  box-sizing: border-box;
+  margin-top: auto;
+  z-index: 9;
   padding: 28px 16px 88px;
   background-color: rgb(250, 250, 252);
-
+  bottom: 0;
+  
   @media screen and (min-width: 768px) {
     padding: 40px 16px 120px;
   }
@@ -35,6 +37,7 @@ const FooterContainer = styled.div`
 const FooterInner = styled.div`
   width: 100%;
   max-width: 1024px;
+  height: 21px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

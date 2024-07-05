@@ -3,6 +3,8 @@ import { Link } from "react-router-dom"
 
 import { Image } from '@/components/common/Image/Image'
 import { Grid } from '@/components/common/Layouts/Grid/Grid'
+import ThemeFooter from '@/components/theme/ThemeFooter';
+import ThemeHeader from '@/components/theme/ThemeHeader';
 
 const ThemeCategory: React.FC = () => {
   const themes = [
@@ -21,9 +23,10 @@ const ThemeCategory: React.FC = () => {
   ]
 
   return (
-    <Wrapper>
-      <Container>
-        <Grid columns={6} gap={20}>
+    <ThemeContainer>
+      <ThemeHeader />
+      <MainContent>
+        <StyledGrid columns={6} gap={20}>
           {themes.map( (theme) => (
             <ThemeLink key={theme.key} to={`/theme/${theme.key}`}>
               <ThemeItem>
@@ -34,10 +37,10 @@ const ThemeCategory: React.FC = () => {
               </ThemeItem>
             </ThemeLink>
           ))}
-        </Grid>
-      </Container>
-    </Wrapper>
-    
+        </StyledGrid>
+      </MainContent>
+      <ThemeFooter />
+    </ThemeContainer>
   )
 }
 
@@ -45,22 +48,24 @@ export default ThemeCategory
 
 // 기존의 HTML 태그를 스타일링 할 때는 styled.{tagName}
 // 라이브러리에서 제공되는 컴포넌트를 스타일링 할 때는 styled.(componentName)
-const Wrapper = styled.div`
-  padding: 14px 14px 3px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-`;
-
-const Container = styled.div`
-  width: 100%;
-  max-width: 1024px;
+const ThemeContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: flex-start;
+`;
+
+const StyledGrid = styled(Grid)`
+  margin-top: 20px;
+  margin-bottom: 20px;
+  max-width: 1024px;
+  width: 100%;
 `;
 
 const ThemeLink = styled(Link)`
