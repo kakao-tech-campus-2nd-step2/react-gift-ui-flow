@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import GoodsItem, { GoodsItemProps } from '@/components/common/GoodsItem';
+import GoodsItem, { GoodsItemProps } from '@components/common/GoodsItem';
 
 const meta: Meta<GoodsItemProps> = {
   title: 'common/GoodsItem/Ranking',

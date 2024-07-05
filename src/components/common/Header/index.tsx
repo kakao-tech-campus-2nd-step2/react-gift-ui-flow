@@ -8,13 +8,15 @@ import { ROUTE_PATH } from '@routes/constants';
 import { BREAK_POINTS } from '@assets/styles/variants';
 import AuthLinks from './AuthLinks';
 
+const LOGO_ALT = 'home page logo';
+
 export default function Header() {
   return (
     <HeaderContainer>
       <Inner maxWidth={BREAK_POINTS.md}>
         <Container justifyContent="space-between" alignItems="center">
           <Link to={ROUTE_PATH.HOME}>
-            <Logo src={logo} alt="home page logo" />
+            <Logo src={logo} alt={LOGO_ALT} />
           </Link>
           <AuthLinks />
         </Container>

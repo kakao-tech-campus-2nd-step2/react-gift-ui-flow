@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Button } from '@components/common';
 import { useAuth } from '@context/auth/useAuth';
-import { useSessionStorage } from '@/hooks/useSessionStorage';
+import { useSessionStorage } from '@hooks/useSessionStorage';
 
 export default function AccountOverview() {
   const { logout } = useAuth();

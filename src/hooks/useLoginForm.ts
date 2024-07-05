@@ -1,5 +1,5 @@
-import { useAuth } from '@/context/auth/useAuth';
-import { ROUTE_PATH } from '@/routes/constants';
+import { useAuth } from '@context/auth/useAuth';
+import { ROUTE_PATH } from '@routes/constants';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 

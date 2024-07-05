@@ -4,6 +4,8 @@ import styled from '@emotion/styled';
 import { GoodsItem, Grid, Button } from '@components/common';
 
 const INITIAL_DISPLAY_COUNT = 6;
+const GRID_GAP = 14;
+const GRID_COLUMNS = 6;
 
 export default function RankingList() {
   const [showAll, setShowAll] = useState(false);
@@ -16,7 +18,7 @@ export default function RankingList() {
 
   return (
     <RankingListContainer>
-      <Grid gap={14} columns={6}>
+      <Grid gap={GRID_GAP} columns={GRID_COLUMNS}>
         {displayedItems.map(({ id, imageSrc, subtitle, title, amount, rankingIndex, target, wish }) => (
           <GoodsItem key={id} {...{ imageSrc, subtitle, title, amount, rankingIndex, target, wish }} />
         ))}

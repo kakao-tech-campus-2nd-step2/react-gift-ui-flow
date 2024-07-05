@@ -5,6 +5,7 @@ import Ranking from './Ranking';
 
 const IMAGE_SIZE_RANKING = 160;
 const IMAGE_SIZE_GOODS_ITEM = 250;
+const IMAGE_RADIUS = 4;
 
 export interface GoodsItemProps {
   imageSrc: string;
@@ -22,7 +23,7 @@ export default function GoodsItem({ imageSrc, subtitle, title, amount, rankingIn
   return (
     <StyledGoodsItem rankingIndex={rankingIndex} {...rest}>
       {renderRanking()}
-      <Image src={imageSrc} width={imageSize} height={imageSize} radius={4} />
+      <Image src={imageSrc} width={imageSize} height={imageSize} radius={IMAGE_RADIUS} />
       <Content>
         <SubTitle>{subtitle}</SubTitle>
         <Title>{title}</Title>

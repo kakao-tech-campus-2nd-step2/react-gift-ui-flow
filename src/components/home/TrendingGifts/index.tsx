@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Inner } from '@components/common/';
 import { RankingList, Filter } from '@components/home';
-import { BREAK_POINTS } from '@/assets/styles/variants';
+import { BREAK_POINTS } from '@assets/styles/variants';
 
 export default function TrendingGifts() {
   return (

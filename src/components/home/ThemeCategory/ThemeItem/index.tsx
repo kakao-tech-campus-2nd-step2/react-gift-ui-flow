@@ -2,7 +2,9 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { Container, Image } from '@components/common';
 import { useNavigate } from 'react-router-dom';
-import { THEME_ITEM } from '../constants';
+
+const IMAGE_SIZE = 90;
+const IMAGE_RADIUS = 32;
 
 export interface ThemeItemProps {
   image: string;
@@ -20,13 +22,7 @@ export default function ThemeItem({ image, name, themeKey, ...rest }: ThemeItemP
   return (
     <ThemeItemContainer {...rest} onClick={handleClick}>
       <Container flexDirection="column" alignItems="center">
-        <Image
-          src={image}
-          width={THEME_ITEM.IMAGE_SIZE}
-          height={THEME_ITEM.IMAGE_SIZE}
-          radius={THEME_ITEM.IMAGE_RADIUS}
-          alt={name}
-        />
+        <Image src={image} width={IMAGE_SIZE} height={IMAGE_SIZE} radius={IMAGE_RADIUS} alt={name} />
         <CategoryName>{name}</CategoryName>
       </Container>
     </ThemeItemContainer>

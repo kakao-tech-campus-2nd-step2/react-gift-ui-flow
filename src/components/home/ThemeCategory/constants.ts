@@ -74,13 +74,3 @@ export const THEME_CATEGORY_LIST = [
     themeKey: 'birth-kids',
   },
 ];
-
-export const THEME_CATEGORY = Object.freeze({
-  COLUMNS: 6,
-  GAP: 0,
-});
-
-export const THEME_ITEM = Object.freeze({
-  IMAGE_SIZE: 90,
-  IMAGE_RADIUS: 32,
-});

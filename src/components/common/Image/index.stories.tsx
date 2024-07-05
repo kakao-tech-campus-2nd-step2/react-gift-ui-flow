@@ -1,5 +1,9 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Image, { ImageProps } from '@/components/common/Image';
+import Image, { ImageProps } from '@components/common/Image';
+
+const IMAGE_SRC = 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png';
+const IMAGE_SIZE = 300;
+const IMAGE_RADIUS = 20;
 
 const meta: Meta<ImageProps> = {
   title: 'common/Image',
@@ -13,27 +17,27 @@ type Story = StoryObj<ImageProps>;
 
 export const RatioSquare: Story = {
   args: {
-    src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
-    width: 300,
-    height: 300,
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
     ratio: 'square',
   },
 };
 
 export const RadiusCircle: Story = {
   args: {
-    src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
-    width: 300,
-    height: 300,
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
     radius: 'circle',
   },
 };
 
 export const RadiusRound: Story = {
   args: {
-    src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
-    width: 300,
-    height: 300,
-    radius: 20,
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+    radius: IMAGE_RADIUS,
   },
 };
