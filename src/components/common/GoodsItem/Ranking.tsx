@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { DefaultGoodsItems, type DefaultGoodsItemsProps } from "./Default";
+import COLOR from "@/constants/color";
 
 type Props = {
   rankingIndex: number;
@@ -37,5 +38,5 @@ const RankingLabel = styled.span<Pick<Props, "rankingIndex">>`
   left: 4px;
   color: #fff;
   background-color: ${({ rankingIndex }) =>
-    rankingIndex <= 3 ? "#fd7364" : "#bbb"};
+    rankingIndex <= 3 ? COLOR.ACCENT_RED : COLOR.GRAY_800};
 `;

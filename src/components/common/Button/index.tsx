@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { breakpoints } from "@/styles/variants";
+import COLOR from "@/constants/color";
 
 type Props = {
   theme?:
@@ -56,51 +57,51 @@ const Wrapper = styled.button<Pick<Props, "theme" | "size">>(
     if (theme === "outline") {
       return {
         boxShadow: "0 0 0 1px #ccc inset",
-        color: "#999",
+        color: COLOR.GRAY_900,
         backgroundColor: "inherit",
         border: "1px solid",
 
         "&:hover": {
-          backgroundColor: "#f8f8f8",
+          backgroundColor: COLOR.GRAY_200,
         },
       };
     }
 
     if (theme === "black") {
       return {
-        color: "#fff",
-        backgroundColor: "#111",
+        color: COLOR.GRAY_200,
+        backgroundColor: COLOR.BLACK_100,
 
         "&:hover": {
-          backgroundColor: "#222",
+          backgroundColor: COLOR.BLACK_200,
         },
       };
     }
 
     if (theme === "lightGray") {
       return {
-        color: "#111",
-        backgroundColor: "#f0f0f0",
+        color: COLOR.BLACK_100,
+        backgroundColor: COLOR.GRAY_300,
 
         "&:hover": {
-          backgroundColor: "#ebebeb",
+          backgroundColor: COLOR.GRAY_400,
         },
       };
     }
 
     if (theme === "darkGray") {
       return {
-        color: "#fff",
-        backgroundColor: "#444",
+        color: COLOR.WHITE,
+        backgroundColor: COLOR.GRAY_500,
 
         "&:hover": {
-          backgroundColor: "#555",
+          backgroundColor: COLOR.GRAY_600,
         },
       };
     }
     if (theme === "transparent") {
       return {
-        color: "#000",
+        color: COLOR.BLACK,
         backgroundColor: "transparent",
         outline: "none",
         border: "none",
@@ -108,13 +109,13 @@ const Wrapper = styled.button<Pick<Props, "theme" | "size">>(
     }
 
     return {
-      color: "#111",
-      backgroundColor: "#fee500",
+      color: COLOR.BLACK_100,
+      backgroundColor: COLOR.PRIMARY,
       outline: "none",
       border: "none",
 
       "&:hover": {
-        backgroundColor: "#fada0a",
+        backgroundColor: COLOR.PRIMARY,
       },
     };
   },

@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 import { Image } from "@/components/common/Image";
+import COLOR from "@/constants/color";
 
 export type DefaultGoodsItemsProps = {
   imageSrc: string;
@@ -51,7 +52,7 @@ const Subtitle = styled.p`
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
-  color: #999;
+  color: ${COLOR.GRAY_900};
   margin-bottom: 4px;
   white-space: nowrap;
   overflow: hidden;
@@ -63,7 +64,7 @@ const Title = styled.h3`
   font-size: 14px;
   line-height: 22px;
   font-weight: 400;
-  color: #333;
+  color: ${COLOR.BLACK_300};
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -75,7 +76,7 @@ const Amount = styled.p`
   padding-top: 8px;
   font-size: 20px;
   line-height: 30px;
-  color: #222;
+  color: ${COLOR.BLACK_200};
   font-weight: 700;
   word-break: break-word;
 

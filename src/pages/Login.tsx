@@ -1,4 +1,5 @@
 import { Button } from "@/components/common/Button";
+import COLOR from "@/constants/color";
 import { AuthContext } from "@/contexts/AuthContext";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
@@ -61,7 +62,7 @@ const StyledLogin = styled.div`
   form {
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: ${COLOR.WHITE};
     padding: 4rem;
     border: 1px solid #e0e0e0;
   }
@@ -70,14 +71,13 @@ const StyledLogin = styled.div`
     width: 30rem;
     margin-bottom: 1rem;
     padding: 0.8rem;
-    border: 1px solid #e0e0e0;
+    border: 1px solid ${COLOR.GRAY_300};
     font-size: 1rem;
     outline: none;
     border: none;
-    border-bottom: 1px solid #e0e0e0;
-    translate: 3s;
+    border-bottom: 1px solid ${COLOR.GRAY_300};
     &:focus {
-      border-bottom: 1px solid #000000;
+      border-bottom: 1px solid ${COLOR.BLACK};
     }
   }
 `;

@@ -2,6 +2,7 @@ import { RealTimeRankContext } from ".";
 import { useContext } from "react";
 import styled from "@emotion/styled";
 import { RealTimeRankingFilter } from "@/model/Ranking";
+import COLOR from "@/constants/color";
 
 const purposeFilterList: RealTimeRankingFilter["purpose"][] = [
   "받고싶어한",
@@ -51,7 +52,7 @@ const StyledPurposeFilterList = styled.li<StyledPurposeFilterListProps>`
   font-weight: 500;
   cursor: pointer;
   color: ${({ $selected, $target }) =>
-    $selected === $target ? "#77A5F1" : ""};
+    $selected === $target ? COLOR.PRIMARY_BLUE : ""};
 `;
 
 export default PurposeFilter;

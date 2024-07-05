@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import COLOR from "@/constants/color";
 
 const Footer = () => {
   return (
@@ -10,7 +11,7 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f8f9fa;
+  background-color: ${COLOR.GRAY_100};
   height: 16rem;
 `;
 export default Footer;
