@@ -34,10 +34,10 @@
 - [x] 접기 버튼을 구현해요.
 - [x] 접기 버튼을 누르면 다시 6개만 보여줘요.
 - Theme 페이지 (/theme/:themeKey)
-- [ ] Header 섹션을 추가해요.
-- [ ] 재사용성을 고려하여 Header 섹션을 만들어요.
-- [ ] themeKey에 따라 label, title, description, backgroundColor가 달라져요.
-- [ ] 상품 목록 섹션을 추가해요.
+- [x] Header 섹션을 추가해요.
+- [x] 재사용성을 고려하여 Header 섹션을 만들어요.
+- [x] themeKey에 따라 label, title, description, backgroundColor가 달라져요.
+- [x] 상품 목록 섹션을 추가해요.
 - 로그인 페이지 (/login)
 - [ ] ID 와 PW 를 입력하면 로그인이 되도록 해요. (아무 값을 입력해도 로그인이 되요)
 - 나의 페이지 (/my-account)
