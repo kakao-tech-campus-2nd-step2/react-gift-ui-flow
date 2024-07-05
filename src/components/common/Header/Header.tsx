@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 
@@ -8,14 +9,22 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+  const navigate = useNavigate();
+
+  const handleLogoClick = () => {
+    navigate('/');
+  };
+
   return (
     <HeaderContainer>
-      <Image
-        src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
-        alt="선물하기 로고 이미지"
-        width={61}
-        height={54}
-      />
+      <LogoContainer onClick={handleLogoClick}>
+        <Image
+          src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+          alt="선물하기 로고 이미지"
+          width={61}
+          height={54}
+        />
+      </LogoContainer>
       <MenuItem>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
     </HeaderContainer>
   );
@@ -28,6 +37,10 @@ const HeaderContainer = styled.div`
   align-items: center;
   background-color: white;
   padding: 0px 20px;
+`;
+
+const LogoContainer = styled.div`
+  cursor: pointer;
 `;
 
 const MenuItem = styled.div`
