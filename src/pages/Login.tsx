@@ -52,7 +52,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 	const handleLogin = () => {
 		if (username && password) {
 			onLogin(username);
-			navigate('/my-account');
+			navigate('/');
 		} else {
 			alert('아이디와 비밀번호를 입력해주세요.');
 		}
