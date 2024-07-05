@@ -53,7 +53,7 @@ const UserButton = ({ navigate }: { navigate: NavigateFunction }) => {
         // TODO 마이페이지 또는 로그인페이지로
         <div>
             {isLogined ? (
-                <button onClick={() => navigate('/')}>내 계정</button>
+                <button onClick={() => navigate('/my-account')}>내 계정</button>
             ) : (
                 <button onClick={() => navigate('/login')}>로그인</button>
             )}

@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Error from './pages/Error';
 import Login from './pages/Login';
 import Main from './pages/Main';
+import MyAccount from './pages/MyAccount';
 import Theme from './pages/Theme';
 
 const App = () => {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: '/login',
         element: <Login />,
+    },
+    {
+        path: '/my-account',
+        element: <MyAccount />,
     },
     {
         path: '/error/:http_status',
