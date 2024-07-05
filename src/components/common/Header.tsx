@@ -1,5 +1,8 @@
 import styled from '@emotion/styled';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+import { authContext } from '@/context/AuthContext';
 
 const StyledHeader = styled.header`
   position: fixed;
@@ -44,7 +47,8 @@ const StyledLinkText = styled(Link)`
 `;
 
 const Header = () => {
-  const isLogin = false;
+  const { isLogin } = useContext(authContext);
+
   return (
     <StyledHeader>
       <StyledInner>
