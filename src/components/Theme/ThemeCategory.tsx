@@ -1,8 +1,10 @@
+import './ThemeCategory.css';
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const themes = [
-  { key: 'birthday', name: '생일선물' },
+  { key: 'birthday', name: '생일' },
   { key: 'graduation', name: '졸업선물' },
   { key: 'small-luxury', name: '스몰럭셔리' },
   { key: 'luxury', name: '명품선물' },
@@ -22,6 +24,7 @@ const ThemeCategory: React.FC = () => {
       <ul>
         {themes.map((theme) => (
           <li key={theme.key}>
+            <img src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png" />
             <Link to={`/theme/${theme.key}`}>{theme.name}</Link>
           </li>
         ))}
