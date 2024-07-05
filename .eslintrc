@@ -54,7 +54,8 @@
           ["@store", "./src/store"],
           ["@utils", "./src/utils"],
           ["@data", "./src/data"],
-          ["@routes", "./src/routes"]
+          ["@routes", "./src/routes"],
+          ["@context", "./src/context"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

@@ -1,7 +1,7 @@
+import { useAuth } from '@/context/auth/useAuth';
 import { ROUTE_PATH } from '@/routes/constants';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useSessionStorage } from '@hooks/useSessionStorage';
 
 interface UserInfoState {
   userName: string;
@@ -10,11 +10,11 @@ interface UserInfoState {
 
 export default function useLoginForm() {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [userInfo, setUserInfo] = useState<UserInfoState>({
     userName: '',
     userPassword: '',
   });
-  const [, setAuthToken] = useSessionStorage('authToken', '');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -23,7 +23,7 @@ export default function useLoginForm() {
 
   const handleLogin = () => {
     if (userInfo.userName !== '' && userInfo.userPassword !== '') {
-      setAuthToken(userInfo.userName);
+      login(userInfo.userName);
       navigate(ROUTE_PATH.PREV);
     }
   };

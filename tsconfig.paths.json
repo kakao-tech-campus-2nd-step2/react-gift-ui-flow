@@ -13,6 +13,7 @@
       "@utils/*": ["./src/utils/*"],
       "@data/*": ["./src/data/*"],
       "@routes/*": ["./src/routes/*"],
+      "@context/*": ["./src/context/*"],
     }
   }
 }
