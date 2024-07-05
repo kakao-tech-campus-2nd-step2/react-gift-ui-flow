@@ -1,6 +1,6 @@
 import React from 'react';
-import { FriendSelector, ThemeCategory, TrendingGifts } from '@components/home';
-import { Header, Footer } from '@/components/common';
+import { FriendSelector, FriendGiftRecommendation, ThemeCategory, TrendingGifts } from '@components/home';
+import { Header, Footer } from '@components/common';
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <main>
         <FriendSelector />
         <ThemeCategory />
+        <FriendGiftRecommendation />
         <TrendingGifts />
       </main>
       <Footer />

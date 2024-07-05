@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { ROUTES } from '@/routes/constants';
+import { ROUTE_PATH } from '@/routes/constants';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../common';
 
@@ -8,7 +8,7 @@ export default function AccountOverview() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(ROUTES.HOME);
+    navigate(ROUTE_PATH.HOME);
   };
 
   return (

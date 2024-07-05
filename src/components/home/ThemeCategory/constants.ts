@@ -77,7 +77,7 @@ export const THEME_CATEGORY_LIST = [
 
 export const THEME_CATEGORY = Object.freeze({
   COLUMNS: 6,
-  GAP: 24,
+  GAP: 0,
 });
 
 export const THEME_ITEM = Object.freeze({

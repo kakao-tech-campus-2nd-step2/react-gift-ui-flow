@@ -3,7 +3,7 @@ import { Input, Button, Image } from '@components/common';
 import styled from '@emotion/styled';
 import kakaoLogo from '@assets/images/kakao-logo.svg';
 import { useNavigate } from 'react-router-dom';
-import { ROUTES } from '@/routes/constants';
+import { ROUTE_PATH } from '@/routes/constants';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export default function Login() {
   });
 
   const handleClick = () => {
-    if (userInfo.userName !== '' || userInfo.userPassword !== '') navigate(ROUTES.HOME);
+    if (userInfo.userName !== '' || userInfo.userPassword !== '') navigate(ROUTE_PATH.HOME);
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {

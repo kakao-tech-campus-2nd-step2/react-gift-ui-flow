@@ -34,6 +34,7 @@ export default function ThemeItem({ image, name, themeKey, ...rest }: ThemeItemP
 }
 
 const ThemeItemContainer = styled.div`
+  padding: 25px 35px;
   cursor: pointer;
 `;
 

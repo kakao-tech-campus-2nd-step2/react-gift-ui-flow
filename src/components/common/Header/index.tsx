@@ -4,15 +4,17 @@ import Container from '@components/common/Layout/Container';
 import logo from '@assets/images/logo.png';
 import Inner from '@components/common/Layout/Inner';
 import { Link } from 'react-router-dom';
-import { ROUTES } from '@/routes/constants';
+import { ROUTE_PATH } from '@/routes/constants';
 
 export default function Header() {
   return (
     <HeaderContainer>
       <Inner maxWidth={1024}>
         <Container justifyContent="space-between" alignItems="center">
-          <Logo src={logo} alt="home page logo" />
-          <Link to={ROUTES.LOGIN}>
+          <Link to={ROUTE_PATH.HOME}>
+            <Logo src={logo} alt="home page logo" />
+          </Link>
+          <Link to={ROUTE_PATH.LOGIN}>
             <Login>로그인</Login>
           </Link>
         </Container>

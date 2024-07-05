@@ -5,27 +5,27 @@ import Home from '@pages/Home';
 import Theme from '@pages/Theme';
 import Login from '@pages/Login';
 import MyAccount from '@pages/MyAccount';
-import { ROUTES } from './constants';
+import { ROUTE_PATH } from './constants';
 
 export const router = createBrowserRouter([
   {
-    path: ROUTES.HOME,
+    path: ROUTE_PATH.HOME,
     element: <App />,
     children: [
       {
-        path: ROUTES.HOME,
+        path: ROUTE_PATH.HOME,
         element: <Home />,
       },
       {
-        path: ROUTES.THEME,
+        path: ROUTE_PATH.THEME,
         element: <Theme />,
       },
       {
-        path: ROUTES.LOGIN,
+        path: ROUTE_PATH.LOGIN,
         element: <Login />,
       },
       {
-        path: ROUTES.MY_ACCOUNT,
+        path: ROUTE_PATH.MY_ACCOUNT,
         element: <MyAccount />,
       },
     ],
