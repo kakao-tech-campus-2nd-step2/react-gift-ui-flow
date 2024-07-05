@@ -1,0 +1,11 @@
+.giftCategory__item {
+  font-size: 22px;
+  color: rgba(70, 132, 233, 0.7);
+  padding: 20px 30px;
+}
+.item_selected {
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(70, 132, 233);
+  padding: 20px 30px;
+}
