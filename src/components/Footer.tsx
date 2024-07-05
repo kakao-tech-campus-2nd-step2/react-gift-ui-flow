@@ -5,11 +5,10 @@ const FooterContainer = styled.footer`
   width: 100%;
   max-width: 100vw;
   background-color: rgb(250, 250, 252);
-  position: fixed;
-  bottom: 0;
   display: flex;
   justify-content: center;
-  position: fixed;
+
+  position: relative;
 `;
 
 const FooterInner = styled.div`
