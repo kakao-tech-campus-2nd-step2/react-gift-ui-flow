@@ -1,7 +1,9 @@
 import PageLayout from "@/components/common/layouts/PageLayout";
 import NotForLoggedInUser from "@/components/permission/NotForLoggedInUser";
+import AuthContextProvider from "@/contexts/AuthContext";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
+import MyAccount from "@/pages/MyAccount";
 import ThemeDetail from "@/pages/ThemeDetail";
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -22,7 +24,7 @@ export function RootRoute() {
         },
         {
           path: "/my-account",
-          element: <div>Hello world!</div>,
+          element: <MyAccount />,
         },
       ],
     },
@@ -35,5 +37,9 @@ export function RootRoute() {
       ),
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <AuthContextProvider>
+      <RouterProvider router={router} />;
+    </AuthContextProvider>
+  );
 }
