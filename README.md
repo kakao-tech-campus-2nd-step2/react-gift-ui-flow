@@ -5,7 +5,7 @@
 - [x] Footer 공통 컴포넌트 구현
 - [x] Inner 공통 컴포넌트 구현
 - [x] 친구 선택 유도 섹션 구현
-- [] 각 Url Path별로 페이지 구현
+- [x] 각 Url Path별로 페이지 구현
   - 메인페이지(`/`)
     - [x] Theme 카테고리 섹션 추가
       - [x] Theme 카테고리 Item 클릭 시 Theme페이지 (`/theme/:themeKey`)로 이동되도록 구현
@@ -26,9 +26,9 @@
 ## 📄 2단계 - 인증 프로세스 구현
 ### ✅ 기능 목록
 - [x] 로그인에서 ID, PW를 입력하면 직전페이지로 Redirect
-- [] Fake 로그인 기능 구현
+- [x] Fake 로그인 기능 구현
   - [x] ID, PW 입력시 ID를 sessionStorage의 `authToken` key에 저장
   - [x] 모든 페이지 진입 시 authToken 여부에 따라 로그인 여부 판단 로직 추가(ContextAPI 활용)
   - [x] 로그인할 경우 Header에서의 로그인 버튼을 '내 계정'으로 변경, 그렇지 않을 경우 '로그인'으로 변경
   - [x] 로그아웃 기능 구현(메인페이지(`/`)로 Redirect
-  - [] 마이페이지에 사용자이름 출력하도록 구현
+  - [x] 마이페이지에 사용자이름 출력하도록 구현
