@@ -33,9 +33,9 @@ type PopularNavButtonType = {
 };
 
 const popularNavButtons: PopularNavButtonType[] = [
-  { key: 'WANT', text: '받고 싶어한' },
-  { key: 'GIVEN', text: '많이 선물한' },
-  { key: 'WISHED', text: '위시로 받은' },
+  { key: 'WHAT_I_WANT', text: '받고 싶어한' },
+  { key: 'MANY_GIFT_GIVEN', text: '많이 선물한' },
+  { key: 'GIFT_I_WISHED', text: '위시로 받은' },
 ];
 
 const PopularGift = () => {
