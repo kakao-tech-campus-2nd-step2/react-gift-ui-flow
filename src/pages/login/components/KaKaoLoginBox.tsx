@@ -40,8 +40,11 @@ const KakaoButton = styled(Button)`
   margin-top: 60px;
 `;
 
+// src/pages/login/components/KaKaoLoginBox.tsx
+// ... (기존 코드 유지)
+
 const KaKaoLoginBox = () => {
-  const { name, handleNameChange, handleLoginClick } = useLogin();
+  const { name, password, handleNameChange, handlePasswordChange, handleLoginClick } = useLogin();
 
   return (
     <>
@@ -49,7 +52,12 @@ const KaKaoLoginBox = () => {
       <LoginBox>
         <Input placeholder="이름" value={name} onChange={handleNameChange} />
         <InputMargin />
-        <Input placeholder="비밀번호" type="password" />
+        <Input
+          placeholder="비밀번호"
+          type="password"
+          value={password}
+          onChange={handlePasswordChange}
+        />
         <KakaoButton theme="kakao" size="large" onClick={handleLoginClick}>
           로그인
         </KakaoButton>

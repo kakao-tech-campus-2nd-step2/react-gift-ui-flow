@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
-import useLogout from '@/hooks/custom-hooks/useLogout';
+import { useAuth } from '@/contexts/AuthContext';
 
 const NameMargin = styled.div`
   width: 100%;
@@ -13,12 +14,17 @@ const BtnWrapper = styled.div`
 `;
 
 const MyPageBox = () => {
-  const name = sessionStorage.getItem('authToken');
-  const { handleLogoutClick } = useLogout();
+  const { userId, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogoutClick = () => {
+    logout();
+    navigate('/');
+  };
 
   return (
     <>
-      {name}님 안녕하세요!
+      {userId}님 안녕하세요!
       <NameMargin />
       <BtnWrapper>
         <Button theme="darkGray" size="small" onClick={handleLogoutClick}>
