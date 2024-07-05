@@ -1,14 +1,23 @@
 import { css } from '@emotion/css';
+import { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import Header from '@/components/Header';
+import AuthContext from '@/context/AuthContext';
 
 export default () => {
-    const username = sessionStorage.getItem('authToken');
     const navigate = useNavigate();
+    const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+    useEffect(() => {
+        if (!isAuthenticated) navigate('/login');
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    const username = sessionStorage.getItem('authToken');
     const logout = () => {
         sessionStorage.removeItem('authToken');
+        setIsAuthenticated(false);
         navigate('/');
     };
     return (

@@ -1,8 +1,10 @@
 import { css } from '@emotion/css';
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
 import type { NavigateFunction } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+
+import AuthContext from '@/context/AuthContext';
 
 import { Image } from '../common/Image';
 
@@ -44,15 +46,11 @@ const FlexContainer = styled.div({
 });
 
 const UserButton = ({ navigate }: { navigate: NavigateFunction }) => {
-    const [isLogined, setIsLogined] = useState<boolean>(false);
-    useEffect(() => {
-        setIsLogined(sessionStorage.getItem('authToken') ? true : false);
-    }, []);
+    const isAuthenticated = useContext(AuthContext).isAuthenticated;
 
     return (
-        // TODO 마이페이지 또는 로그인페이지로
         <div>
-            {isLogined ? (
+            {isAuthenticated ? (
                 <button onClick={() => navigate('/my-account')}>내 계정</button>
             ) : (
                 <button onClick={() => navigate('/login')}>로그인</button>

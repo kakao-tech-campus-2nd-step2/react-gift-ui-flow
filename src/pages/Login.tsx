@@ -1,19 +1,22 @@
 import { css } from '@emotion/css';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Image } from '@/components/common/Image';
+import AuthContext from '@/context/AuthContext';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
+    const setIsAuthenticated = useContext(AuthContext).setIsAuthenticated;
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
         sessionStorage.setItem('authToken', username);
+        setIsAuthenticated(true);
         navigate('/');
     };
 

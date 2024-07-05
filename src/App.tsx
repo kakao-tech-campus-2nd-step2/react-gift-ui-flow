@@ -14,7 +14,7 @@ const App = () => {
     useEffect(() => {
         const authToken = sessionStorage.getItem('authToken');
         setIsAuthenticated(!!authToken);
-    }, []);
+    }, [isAuthenticated]);
 
     return (
         <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
