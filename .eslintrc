@@ -53,7 +53,8 @@
           ["@pages", "./src/pages"],
           ["@store", "./src/store"],
           ["@utils", "./src/utils"],
-          ["@data", "./src/data"]
+          ["@data", "./src/data"],
+          ["@routes", "./src/routes"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }

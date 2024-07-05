@@ -3,7 +3,7 @@ import { Input, Button, Image } from '@components/common';
 import styled from '@emotion/styled';
 import kakaoLogo from '@assets/images/kakao-logo.svg';
 import { useNavigate } from 'react-router-dom';
-import { ROUTE_PATH } from '@/routes/constants';
+import { ROUTE_PATH } from '@routes/constants';
 
 export default function Login() {
   const navigate = useNavigate();

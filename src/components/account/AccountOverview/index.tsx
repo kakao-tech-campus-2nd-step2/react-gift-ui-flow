@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { ROUTE_PATH } from '@/routes/constants';
+import { ROUTE_PATH } from '@routes/constants';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../../common';
 
