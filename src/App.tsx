@@ -1,17 +1,19 @@
-import { Outlet, useParams } from 'react-router-dom';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
+import Footer from '@/components/Footer'; // assuming you have a Footer component
+import Header from '@/components/Header'; // assuming you have a Header component
+import { AuthProvider } from '@/context/AuthContext';
 
-const App = () => {
-  const { themeKey } = useParams<{ themeKey?: string }>();
-
+const App: React.FC = () => {
   return (
-    <div>
-      <Header themeKey={themeKey} />
-      <Outlet />
+    <AuthProvider>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </div>
+    </AuthProvider>
   );
 };
 
