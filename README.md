@@ -15,7 +15,7 @@
 - [x] 필터 기능을 hooks를 사용하여 구현해요. (ex. 전체, 여성이, 남성이, 청소년이 / 받고 싶어한, 많이 선물한, 위시로 받은)
       상품 목록을 처음에는 6개만 보여지게 해요. 더보기를 누르는 경우 상품 목록을 더 보여줘요. (접기 버튼을 누르면 다시 6개만 보여지게 해요)
 - Theme 페이지(/theme/:themeKey)
-- [ ] Header 섹션을 추가해요.
+- [x] Header 섹션을 추가해요.
       재사용성을 고려하여 Header 섹션을 만들어요. (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
       상품 목록 섹션을 추가해요.
 - 로그인 페이지(/login)
