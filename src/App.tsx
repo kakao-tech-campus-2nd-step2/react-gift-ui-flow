@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       <Header />
-      <div style={{ paddingTop: '54px' }}>
+      <div>
         <Routes />
       </div>
       <Footer />

@@ -1,32 +1,18 @@
 import styled from '@emotion/styled';
 
-const HeaderContainer = styled.header`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  height: 54px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-`;
+import { Container } from '@/components/common/layouts/Container';
 
 const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 80%;
-  height: 54px;
+  height: 100%;
   padding: 0px 16px;
-  position: absolute;
 `;
 
 const Logo = styled.div`
   display: flex;
   align-items: center;
-  position: absolute;
-  left: 16px;
 
   img {
     height: 54px;
@@ -36,13 +22,11 @@ const Logo = styled.div`
 const LoginContainer = styled.div`
   display: flex;
   align-items: center;
-  position: absolute;
-  right: 16px;
 `;
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
-    <HeaderContainer>
+    <Container>
       <HeaderInner>
         <Logo>
           <img
@@ -54,7 +38,7 @@ const Header = () => {
           <p>로그인</p>
         </LoginContainer>
       </HeaderInner>
-    </HeaderContainer>
+    </Container>
   );
 };
 
