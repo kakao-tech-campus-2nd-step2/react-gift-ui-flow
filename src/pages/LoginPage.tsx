@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 interface LoginPageProps {
   onLogin: (name: string) => void;
@@ -50,15 +50,21 @@ const titleStyle: React.CSSProperties = {
   color: '#333333',
   textAlign: 'center',
 };
+
 const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const [name, setUsername] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     onLogin(name);
-    navigate('/');
+    sessionStorage.setItem('authToken', name); // Save the username in sessionStorage
+    navigate(from, { replace: true });
   };
+
   return (
     <div style={loginContainerStyle}>
       <div style={loginBoxStyle}>

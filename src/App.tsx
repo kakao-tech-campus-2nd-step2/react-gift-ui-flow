@@ -12,7 +12,7 @@ const App = () => {
   const [username, setUsername] = useState<string>('');
 
   useEffect(() => {
-    const storedUser = localStorage.getItem('username');
+    const storedUser = sessionStorage.getItem('authToken');
     if (storedUser) {
       setIsLoggedIn(true);
       setUsername(storedUser);
@@ -22,13 +22,13 @@ const App = () => {
   const handleLogin = (name: string) => {
     setUsername(name);
     setIsLoggedIn(true);
-    localStorage.setItem('username', name);
+    sessionStorage.setItem('authToken', name); // Save the username in sessionStorage
   };
 
   const handleLogout = () => {
     setUsername('');
     setIsLoggedIn(false);
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('authToken');
   };
 
   return (
@@ -44,7 +44,7 @@ const App = () => {
               isLoggedIn ? (
                 <MyAccountPage username={username} onLogout={handleLogout} />
               ) : (
-                <Navigate to="/login" />
+                <Navigate to="/login" replace />
               )
             }
           />
