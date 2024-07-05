@@ -27,10 +27,10 @@
 
 #### 인증
 
-- [ ] 인증 관련 로직 Context API로 구현
+- [x] 인증 관련 로직 Context API로 구현
+  - 모든 페이지 접근 시 로그인 여부 판단
   - [x] 로그인 시 ID를 sessionStorage의 authToken key에 저장
   - [x] 로그아웃
-- [ ] 모든 페이지 접근 시 로그인 여부 판단
 
 #### protected route
 

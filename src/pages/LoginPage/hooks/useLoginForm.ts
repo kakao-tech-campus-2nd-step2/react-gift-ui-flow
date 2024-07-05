@@ -1,9 +1,11 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/hooks/useAuth';
+import { useAuth } from '@/context/auth/useAuth';
 
 export const useLoginForm = () => {
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,6 +34,7 @@ export const useLoginForm = () => {
       alert('아이디와 비밀번호를 입력해주세요.');
     }
     login(username);
+    navigate(-1);
   };
 
   return {

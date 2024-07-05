@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import { AuthProvider } from '@/context/auth/AuthProvider';
 import { HomePage } from '@/pages/HomePage';
 import { LoginPage } from '@/pages/LoginPage';
 import { MyAccountPage } from '@/pages/MyAccountPage';
@@ -15,12 +16,14 @@ const ROUTES = {
 export const Router = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path={ROUTES.HOME} element={<HomePage />} />
-        <Route path={ROUTES.THEME} element={<ThemePage />} />
-        <Route path={ROUTES.LOGIN} element={<LoginPage />} />
-        <Route path={ROUTES.MY_ACCOUNT} element={<MyAccountPage />} />
-      </Routes>
+      <AuthProvider>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<HomePage />} />
+          <Route path={ROUTES.THEME} element={<ThemePage />} />
+          <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+          <Route path={ROUTES.MY_ACCOUNT} element={<MyAccountPage />} />
+        </Routes>
+      </AuthProvider>
     </BrowserRouter>
   );
 };
