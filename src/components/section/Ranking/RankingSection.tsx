@@ -10,7 +10,7 @@ import { WhoCategories } from './Categories/WhoCategories';
 import { RankingItems } from './RankingItems';
 
 export const RankingSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string | '전체'>('전체');
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
