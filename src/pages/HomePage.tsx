@@ -285,6 +285,9 @@ const ProductList: React.FC = () => {
   const showMoreProducts = () => {
     setVisibleProducts((prev) => prev + 6);
   };
+  const showLessProducts = () => {
+    setVisibleProducts(6);
+  };
 
   return (
     <div>
@@ -299,13 +302,17 @@ const ProductList: React.FC = () => {
           </div>
         ))}
       </div>
-      {visibleProducts < products.length && (
-        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        {visibleProducts < products.length ? (
           <button onClick={showMoreProducts} style={loadMoreButtonStyle}>
             더보기
           </button>
-        </div>
-      )}
+        ) : (
+          <button onClick={showLessProducts} style={loadMoreButtonStyle}>
+            접기
+          </button>
+        )}
+      </div>
     </div>
   );
 };
