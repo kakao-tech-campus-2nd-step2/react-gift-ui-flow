@@ -1,11 +1,11 @@
 import React from 'react';
 
-const headerStyle: React.CSSProperties = {
-  backgroundColor: '#4A4A4A',
+const headerStyle = (backgroundColor: string): React.CSSProperties => ({
+  backgroundColor,
   color: '#FFFFFF',
   padding: '20px',
   textAlign: 'left',
-};
+});
 
 const titleStyle: React.CSSProperties = {
   fontSize: '24px',
@@ -32,11 +32,12 @@ const secondLineStyle: React.CSSProperties = {
 interface ThemeHeaderProps {
   title: string;
   subtitle: string[];
+  backgroundColor: string;
 }
 
-const ThemeHeader: React.FC<ThemeHeaderProps> = ({ title, subtitle }) => {
+const ThemeHeader: React.FC<ThemeHeaderProps> = ({ title, subtitle, backgroundColor }) => {
   return (
-    <header style={headerStyle}>
+    <header style={headerStyle(backgroundColor)}>
       <div style={titleStyle}>{title}</div>
       <div style={subtitleContainerStyle}>
         <div style={{ ...subtitleLineStyle, ...firstLineStyle }}>{subtitle[0]}</div>
