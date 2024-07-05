@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-type GenderFilter = 'ALL' | 'FEMALE' | 'MALE' | 'TEEN';
-type GiftFilter = 'WANT' | 'GIVEN' | 'WISHED';
+import type { GenderFilter, GiftFilter } from '@/interfaces/FilterInterface';
 
 const useFilter = () => {
   const [genderFilter, setGenderFilter] = useState<GenderFilter>('ALL');
