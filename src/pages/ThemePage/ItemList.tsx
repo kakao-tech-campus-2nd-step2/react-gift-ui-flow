@@ -1,11 +1,18 @@
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Grid } from '@/components/common/layouts/Grid';
 
-const ItemList = ({
-  items,
-}: {
-  items: Array<{ imageSrc: string; subtitle: string; title: string; amount: number }>;
-}) => {
+interface Item {
+  imageSrc: string;
+  subtitle: string;
+  title: string;
+  amount: number;
+}
+
+interface ItemListProps {
+  items: Item[];
+}
+
+const ItemList = ({ items }: ItemListProps) => {
   return (
     <section>
       <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={20}>
