@@ -41,3 +41,71 @@
 	- 나의 페이지(/my-account)
 		- [x] 로그아웃 버튼 추가
 		- [x] 로그아웃 기능 추가
+
+
+
+
+
+
+# 폴더 구조
+
+```text
+src
+├── components
+│   ├── common
+│   │   ├── Button
+│   │   │   ├── index.stories.tsx
+│   │   │   ├── index.tsx
+│   │   ├── FilterButton
+│   │   │   ├── FilterButton.tsx
+│   │   ├── Form
+│   │   │   ├── Input
+│   │   │   │   ├── UnderlineTextField.stories.tsx
+│   │   │   │   ├── UnderlineTextField.tsx
+│   │   ├── GoodsItem
+│   │   │   ├── Default.stories.tsx
+│   │   │   ├── Default.tsx
+│   │   │   ├── Ranking.stories.tsx
+│   │   │   ├── Ranking.tsx
+│   │   ├── Image
+│   │   │   ├── index.stories.tsx
+│   │   │   ├── index.tsx
+│   │   ├── layouts
+│   │   │   ├── Container
+│   │   │   │   ├── index.stories.tsx
+│   │   │   │   ├── index.tsx
+│   │   │   ├── Grid
+│   │   │   │   ├── index.stories.tsx
+│   │   │   │   ├── index.tsx
+│   ├── Footer
+│   │   ├── Footer.tsx
+│   ├── GoodsCategory
+│   │   ├── GoodsCategory.tsx
+│   ├── Header
+│   │   ├── Header.tsx
+│   ├── Items
+│   │   ├── Items.tsx
+│   ├── Ranking
+│   │   ├── Detail
+│   │   │   ├── DetailButton.tsx
+│   │   ├── Filter
+│   │   │   ├── Filter.tsx
+│   │   │   ├── FilterTab.tsx
+│   │   │   ├── FilterTabs.tsx
+│   │   ├── RankingItems
+│   │   │   ├── RankingItems.tsx
+│   │   │   ├── RankingHeader.tsx
+│   ├── SelectFriend
+│   │   ├── SelectFriend.tsx
+│   ├── ThemeGoods
+│   │   ├── ThemeGoods.tsx
+│   ├── ThemeHeader
+│   │   ├── ThemeHeader.tsx
+├── pages
+│   ├── Home.tsx
+│   ├── Login.tsx
+│   ├── MyAccount.tsx
+├── routes
+│   ├── index.tsx
+
+```
