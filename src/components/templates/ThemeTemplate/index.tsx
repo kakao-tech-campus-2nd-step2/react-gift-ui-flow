@@ -1,8 +1,10 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
-import type { Theme } from '@/components/organisms/ThemedBanner';
-import { ThemedBanner } from '@/components/organisms/ThemedBanner';
+import type { Theme, ThemeKeyType } from '@/components/organisms/ThemedBanner';
+import { isValidThemeKey, ThemedBanner } from '@/components/organisms/ThemedBanner';
 import { ThemedItemsSection } from '@/components/organisms/ThemedItemsSection';
+import { RouterPath } from '@/router';
 
 export const themeMap = new Map<string, Theme>();
 
@@ -14,10 +16,19 @@ themeMap.set('life_small_gift', {
 });
 
 export const ThemeTemplate = () => {
-  return (
+  const navigate = useNavigate();
+  const { themeKey } = useParams();
+
+  useEffect(() => {
+    if (!isValidThemeKey(themeKey as string)) {
+      navigate(RouterPath.root);
+    }
+  });
+
+  return isValidThemeKey(themeKey as string) ? (
     <Fragment>
-      <ThemedBanner />
+      <ThemedBanner themeKey={themeKey as ThemeKeyType} />
       <ThemedItemsSection />
     </Fragment>
-  );
+  ) : null;
 };

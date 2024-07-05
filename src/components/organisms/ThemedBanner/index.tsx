@@ -6,9 +6,15 @@ import { Paragraph } from '@/components/atoms/Paragraph';
 import { Container } from '@/components/molecules/Container';
 import { themeMap } from '@/components/templates/ThemeTemplate';
 
+export type ThemeKeyType = 'life_small_gift';
+
 export type ThemeProps = {
-  themeKey?: string;
+  themeKey: ThemeKeyType;
 };
+
+export function isValidThemeKey(themeKey: string): themeKey is ThemeKeyType {
+  return themeKey === 'life_small_gift';
+}
 
 export type Theme = {
   label: string;
@@ -17,7 +23,7 @@ export type Theme = {
   backgroundColor: string;
 };
 
-export const ThemedBanner = ({ themeKey = 'life_small_gift' }: ThemeProps) => {
+export const ThemedBanner = ({ themeKey }: ThemeProps) => {
   const theme = themeMap.get(themeKey) as Theme;
   const { label, title, description, backgroundColor } = theme;
 
