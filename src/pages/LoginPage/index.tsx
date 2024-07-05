@@ -1,22 +1,14 @@
-// src/pages/LoginPage/LoginPage.tsx
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useAuth } from '@/context/AuthContext';
 
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const { setAuthToken } = useAuth();
-  const history = useHistory();
 
   const handleLogin = () => {
-    const token = 'fakeAuthToken';
-    setAuthToken(token);
-    sessionStorage.setItem('authToken', token);
-    history.push('/');
+    alert(`로그인 처리`);
   };
 
   return (

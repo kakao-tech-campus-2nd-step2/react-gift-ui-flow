@@ -84,7 +84,7 @@
   - [ ] ID를 sessionStorage의 `authToken` 키에 저장
   - [ ] 모든 페이지 진입 시 sessionStorage에서 `authToken` 확인
 
-#### 2. 헤더 구현 (@/components/Header)
+#### 2. 헤더 구현 (@/components/Header/Nav)
   - [ ] 로그인 상태: 내 계정 버튼 표시
   - [ ] 비로그인 상태: 로그인 버튼 표시
 
