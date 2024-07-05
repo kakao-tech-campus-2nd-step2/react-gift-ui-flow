@@ -3,16 +3,19 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/Main'
 import Theme from './pages/Theme';
 import Login from './pages/Login';
+import { LoginProvider } from './hooks/LoginContext';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/theme/:themeKey" element={<Theme />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
-    </Router>
+    <LoginProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/theme/:themeKey" element={<Theme />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </Router>
+    </LoginProvider>
   );
 }
 

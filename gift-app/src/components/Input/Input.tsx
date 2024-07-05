@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 interface InputProps {
-  type?: 'text' | 'number';
+  type?: 'text' | 'number' | 'password';
   placeholder?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
