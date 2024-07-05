@@ -38,6 +38,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '많이 선물한',
   },
   {
     rank: 2,
@@ -45,6 +47,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 3,
@@ -52,6 +56,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '위시로 받은',
   },
   {
     rank: 4,
@@ -59,6 +65,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 5,
@@ -66,6 +74,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '위시로 받은',
   },
   {
     rank: 6,
@@ -73,6 +83,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '많이 선물한',
   },
   {
     rank: 7,
@@ -80,6 +92,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '위시로 받은',
   },
   {
     rank: 8,
@@ -87,6 +101,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '많이 선물한',
   },
   {
     rank: 9,
@@ -94,6 +110,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 10,
@@ -101,6 +119,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 11,
@@ -108,6 +128,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '위시로 받은',
   },
   {
     rank: 12,
@@ -115,6 +137,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '많이 선물한',
   },
   {
     rank: 13,
@@ -122,6 +146,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 14,
@@ -129,6 +155,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '많이 선물한',
   },
   {
     rank: 15,
@@ -136,6 +164,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '위시로 받은',
   },
   {
     rank: 16,
@@ -143,6 +173,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '많이 선물한',
   },
   {
     rank: 17,
@@ -150,6 +182,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 18,
@@ -157,6 +191,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '위시로 받은',
   },
   {
     rank: 19,
@@ -164,6 +200,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '여성이',
+    giftType: '받고 싶어한',
   },
   {
     rank: 20,
@@ -171,6 +209,8 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '남성이',
+    giftType: '많이 선물한',
   },
   {
     rank: 21,
@@ -178,5 +218,7 @@ export const RankData = [
     storeTitle: 'BBQ',
     menu: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     price: '29,000원',
+    target: '청소년이',
+    giftType: '위시로 받은',
   },
 ];
