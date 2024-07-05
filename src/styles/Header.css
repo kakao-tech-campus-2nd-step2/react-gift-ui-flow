@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.giftIcon {
+  width: 61px;
+  height: 54px;
+}
+
+.login {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
