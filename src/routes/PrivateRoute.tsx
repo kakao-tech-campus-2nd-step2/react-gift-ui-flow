@@ -1,5 +1,5 @@
 import { useUserInfo } from '@/providers/AuthProvider';
-import LoginPage from '@/pages/LoginPage';
+import { Navigate } from 'react-router-dom';
 import MyPage from '@/pages/MyPage';
 
 const PrivateRoute = () => {
@@ -9,6 +9,6 @@ const PrivateRoute = () => {
     return <MyPage />;
   }
 
-  return <LoginPage />;
+  return <Navigate to="/login" replace />;
 };
 export default PrivateRoute;
