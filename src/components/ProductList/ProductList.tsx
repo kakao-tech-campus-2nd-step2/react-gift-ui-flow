@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 
+interface ProductListProps {
+  showMoreButton?: boolean;
+  initialVisibleProducts?: number;
+}
+
 const products = [
   {
     id: 1,
@@ -123,13 +128,16 @@ const loadMoreButtonStyle: React.CSSProperties = {
   width: '480px',
 };
 
-const ProductList: React.FC = () => {
-  const [visibleProducts, setVisibleProducts] = useState(6);
+const ProductList: React.FC<ProductListProps> = ({
+  showMoreButton = true,
+  initialVisibleProducts = 6,
+}) => {
+  const [visibleProducts, setVisibleProducts] = useState(initialVisibleProducts);
   const showMoreProducts = () => {
     setVisibleProducts((prev) => prev + 6);
   };
   const showLessProducts = () => {
-    setVisibleProducts(6);
+    setVisibleProducts(initialVisibleProducts);
   };
 
   return (
@@ -145,17 +153,20 @@ const ProductList: React.FC = () => {
           </div>
         ))}
       </div>
-      <div style={{ textAlign: 'center', marginTop: '20px' }}>
-        {visibleProducts < products.length ? (
+      {showMoreButton && visibleProducts < products.length && (
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
           <button onClick={showMoreProducts} style={loadMoreButtonStyle}>
             더보기
           </button>
-        ) : (
+        </div>
+      )}
+      {showMoreButton && visibleProducts >= products.length && (
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
           <button onClick={showLessProducts} style={loadMoreButtonStyle}>
             접기
           </button>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

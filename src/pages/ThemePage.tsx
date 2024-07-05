@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
+import ProductList from '@/components/ProductList/ProductList';
+
 import ThemeHeader from '../components/common/Header/ThemeHeader';
 
 const themes = {
@@ -95,6 +97,7 @@ const ThemePage: React.FC = () => {
         subtitle={descriptionLines}
         backgroundColor={theme.backgroundColor}
       />
+      <ProductList showMoreButton={false} initialVisibleProducts={Infinity} />
     </div>
   );
 };
