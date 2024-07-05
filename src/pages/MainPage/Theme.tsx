@@ -4,7 +4,7 @@ import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
 import { themes } from '@/components/Header/themes';
 
-const ThemeComponent = () => {
+const Theme = () => {
   const navigate = useNavigate();
 
   const handleClick = (themeKey: string) => {
@@ -27,4 +27,4 @@ const ThemeComponent = () => {
   );
 };
 
-export default ThemeComponent;
+export default Theme;
