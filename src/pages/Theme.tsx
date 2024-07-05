@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useParams } from 'react-router-dom';
 
+import ThemeGiftGrid from '@/components/ThemePage/ThemeGifts';
 import Header from '@/components/ThemePage/ThemeHeader';
 
 const Wrapper = styled.div`
@@ -11,7 +12,13 @@ const Wrapper = styled.div`
 export const ThemePage = () => {
   const { themeKey } = useParams<{ themeKey: string }>();
 
-  return <Wrapper>{themeKey && <Header themeKey={themeKey} />}</Wrapper>;
+  return (
+    <Wrapper>
+      {themeKey && <Header themeKey={themeKey} />}
+
+      <ThemeGiftGrid />
+    </Wrapper>
+  );
 };
 
 export default ThemePage;
