@@ -72,7 +72,7 @@ const allGifts = [
 ];
 
 export const GiftRanking = () => {
-  const [, setGifts] = useState(allGifts.slice(0, 6));
+  const [gifts, setGifts] = useState(allGifts.slice(0, 6));
   const [, setFilterWho] = useState<string>('전체');
   const [, setFilterWhy] = useState<string>('받고싶어한');
   const [showMore, setShowMore] = useState<boolean>(false);
@@ -111,7 +111,7 @@ export const GiftRanking = () => {
         <button onClick={() => handleFilterWhy('위시로 받은')}>위시로 받은</button>
       </div>
       <div>
-        {allGifts.map((gift) => (
+        {gifts.map((gift) => (
           <RankingGoodsItems {...gift} />
         ))}
       </div>
