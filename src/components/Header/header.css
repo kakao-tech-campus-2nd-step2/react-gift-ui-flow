@@ -23,3 +23,7 @@
 .header-item__login{
     font-size: 14px;
 }
+.link {
+    text-decoration: none; 
+    color: #111;
+}
