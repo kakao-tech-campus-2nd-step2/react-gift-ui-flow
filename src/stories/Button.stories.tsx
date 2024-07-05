@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import type { IButton } from '@/components/common/Button';
@@ -8,7 +9,14 @@ export default {
   title: 'Button',
 } as Meta;
 
-const Template: StoryFn<IButton> = (args) => <Button {...args} />;
+const Template: StoryFn<IButton> = (args) => (
+  <Button
+    {...args}
+    css={css`
+      width: 12px;
+    `}
+  />
+);
 
 export const Default = Template.bind({});
 Default.args = {
