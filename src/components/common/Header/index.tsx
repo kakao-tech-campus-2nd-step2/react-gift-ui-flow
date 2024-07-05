@@ -6,6 +6,7 @@ import { Inner } from '@components/common';
 import { Link } from 'react-router-dom';
 import { ROUTE_PATH } from '@routes/constants';
 import { BREAK_POINTS } from '@assets/styles/variants';
+import AuthLinks from './AuthLinks';
 
 export default function Header() {
   return (
@@ -15,9 +16,7 @@ export default function Header() {
           <Link to={ROUTE_PATH.HOME}>
             <Logo src={logo} alt="home page logo" />
           </Link>
-          <Link to={ROUTE_PATH.LOGIN}>
-            <Login>로그인</Login>
-          </Link>
+          <AuthLinks />
         </Container>
       </Inner>
     </HeaderContainer>
@@ -35,8 +34,4 @@ const HeaderContainer = styled.header`
 
 const Logo = styled.img`
   width: 60px;
-`;
-
-const Login = styled.p`
-  font-size: 14px;
 `;

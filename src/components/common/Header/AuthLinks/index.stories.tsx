@@ -1,21 +1,21 @@
 import React from 'react';
-import { MemoryRouter } from 'react-router-dom';
 import { Meta, StoryObj } from '@storybook/react';
+import { MemoryRouter } from 'react-router-dom';
 import AuthContext from '@context/auth/AuthContext';
 import { Global } from '@emotion/react';
 import resetStyles from '@assets/styles/resetStyles';
-import Header from '.';
+import AuthLinks from '.';
 
-const meta: Meta<typeof Header> = {
-  title: 'common/Header',
-  component: Header,
+const meta: Meta<typeof AuthLinks> = {
+  title: 'common/Header/Authlinks',
+  component: AuthLinks,
   tags: ['autodocs'],
   decorators: [
     (Story, context) => {
       const { isAuthenticated } = context.parameters;
       return (
         <AuthContext.Provider value={{ isAuthenticated, login: () => {}, logout: () => {} }}>
-          <MemoryRouter>
+          <MemoryRouter initialEntries={['/']}>
             <Global styles={resetStyles} />
             <Story />
           </MemoryRouter>
@@ -27,7 +27,7 @@ const meta: Meta<typeof Header> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof AuthLinks>;
 
 export const UnAuthenticated: Story = {
   parameters: {
