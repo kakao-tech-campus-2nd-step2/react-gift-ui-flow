@@ -1,0 +1,74 @@
+.ranking__filter {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ranking__filter__button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.filter__button__grid {
+  padding: 0 20px;
+}
+
+.filter__button__text {
+  width: 60px;
+  height: 60px;
+  border-radius: 24px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  color: white;
+  background-color: #e6f1ff;
+}
+
+.filter__button__text.selected {
+  background-color: #4684e9;
+}
+
+.filter__button__title {
+  font-size: 20px;
+  color: #333333;
+  margin-top: 8px;
+}
+
+.filter__button__title.selected {
+  color: #4684e9;
+  font-weight: 800;
+}
+
+.filter__line__frame {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e6f1ff;
+  border-radius: 12px;
+  padding: 20px 80px;
+  box-sizing: border-box;
+}
+
+.filter__line__text {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #76b9f6;
+}
+
+.filter__line__text.selected {
+  color: #4684e9;
+  font-weight: 800;
+}
