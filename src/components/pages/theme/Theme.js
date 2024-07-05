@@ -1,14 +1,16 @@
+import './Theme.css';
+
 import React from 'react'
 
 import Banner from '@/components/common/Theme/Banner'
-import Header from '@/components/Header/Header'
+import ProductList from '@/components/common/Theme/ProductList'
 
 
 export default function Theme() {
   return (
-    <div>
-      <Header/>
+    <div className='theme-container'>
       <Banner/>
+      <ProductList/>
     </div>
   )
 }
