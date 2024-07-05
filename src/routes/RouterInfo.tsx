@@ -1,12 +1,12 @@
 import MainPage from '@/pages/MainPage';
 import LoginPage from '@/pages/LoginPage';
-import Mypage from '@/pages/MyPage';
 import Gift from '@/pages/Gift';
 import { createBrowserRouter } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import styled from '@emotion/styled';
+import PrivateRoute from '@/routes/PrivateRoute';
 
 const Container = styled.div`
   width: 100%;
@@ -37,7 +37,7 @@ const RouterInfo = createBrowserRouter([
       },
       {
         path: '/my-account',
-        element: <Mypage />,
+        element: <PrivateRoute />,
       },
       {
         path: '/theme/:themekey',
