@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+import CategoryPage from './CategoryPage';
 import Footer from './components/common/Footer'; // Footer 컴포넌트를 import 합니다.
 import Header from './components/common/Header';
 import Home from './Home';
@@ -15,6 +16,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/Login' element={<Login />} />
+            <Route path='/theme/:themeKey' element={<CategoryPage />} />
           </Routes>
         </Content>
         <Footer /> {/* 모든 페이지에서 공통으로 보여지는 Footer */}
