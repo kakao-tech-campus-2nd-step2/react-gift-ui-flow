@@ -1,5 +1,6 @@
 import PageLayout from "@/components/common/layouts/PageLayout";
 import NotForLoggedInUser from "@/components/permission/NotForLoggedInUser";
+import ROUTE_PATH from "@/constants/path";
 import AuthContextProvider from "@/contexts/AuthContext";
 import Home from "@/pages/Home";
 import Login from "@/pages/Login";
@@ -11,25 +12,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 export function RootRoute() {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: ROUTE_PATH.ROOT,
       element: <PageLayout />,
       children: [
         {
-          path: "/",
+          path: ROUTE_PATH.ROOT,
           element: <Home />,
         },
         {
-          path: "/theme/:themeKey",
+          path: ROUTE_PATH.THEME_ROUTE,
           element: <ThemeDetail />,
         },
         {
-          path: "/my-account",
+          path: ROUTE_PATH.MY_ACCOUNT,
           element: <MyAccount />,
         },
       ],
     },
     {
-      path: "/login",
+      path: ROUTE_PATH.LOGIN,
       element: (
         <NotForLoggedInUser>
           <Login />
