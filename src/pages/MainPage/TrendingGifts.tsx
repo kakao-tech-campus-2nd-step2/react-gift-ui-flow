@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
+import { Button } from '@/components/common/Button'; // Button 컴포넌트를 import
+import { RankingGoodsItems } from '@/components/common/GoodsItem/RankingGoodsItems';
 import { Grid } from '@/components/common/layouts/Grid';
 
 const TrendingGifts = () => {
@@ -53,9 +54,13 @@ const TrendingGifts = () => {
         ))}
       </Grid>
       {visibleItems < items.length ? (
-        <button onClick={handleLoadMore}>더보기</button>
+        <Button onClick={handleLoadMore} theme="outline" size="large">
+          더보기
+        </Button>
       ) : (
-        <button onClick={handleShowLess}>접기</button>
+        <Button onClick={handleShowLess} theme="outline" size="large">
+          접기
+        </Button>
       )}
     </section>
   );
