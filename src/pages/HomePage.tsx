@@ -133,12 +133,47 @@ const activeFilterButtonStyle: React.CSSProperties = {
   backgroundColor: '#007bff',
   color: '#fff',
 };
+const newFilterButtonStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '10px 20px',
+  margin: '10px',
+  borderRadius: '10px',
+  cursor: 'pointer',
+  backgroundColor: 'transparent',
+  color: '#4684E9B3',
+  fontWeight: 'bold',
+  borderBottom: 'none',
+  fontSize: '16px',
+};
+
+const activeNewFilterButtonStyle: React.CSSProperties = {
+  ...newFilterButtonStyle,
+  color: '#007bff',
+};
+
+const filterContainerStyle: React.CSSProperties = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  backgroundColor: '#4684E91A',
+  padding: '20px',
+  borderRadius: '10px',
+  width: '100%',
+  height: '16px',
+  margin: '0 40px',
+};
 
 const HomePage: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [newActiveFilter, setNewActiveFilter] = useState<string | null>(null);
 
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
+  };
+  const handleNewFilterCilck = (filter: string) => {
+    setNewActiveFilter(filter);
   };
 
   return (
@@ -207,6 +242,38 @@ const HomePage: React.FC = () => {
                 👦🏻
               </button>
               <div>청소년이</div>
+            </div>
+          </div>
+        </div>
+        <div style={trendingSectionStyle}>
+          <div
+            style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginTop: '20px' }}
+          >
+            <div style={filterContainerStyle}>
+              <button
+                style={
+                  newActiveFilter === 'filter1' ? activeNewFilterButtonStyle : newFilterButtonStyle
+                }
+                onClick={() => handleNewFilterCilck('filter1')}
+              >
+                받고 싶어한
+              </button>
+              <button
+                style={
+                  newActiveFilter === 'filter2' ? activeNewFilterButtonStyle : newFilterButtonStyle
+                }
+                onClick={() => handleNewFilterCilck('filter2')}
+              >
+                많이 선물한
+              </button>
+              <button
+                style={
+                  newActiveFilter === 'filter3' ? activeNewFilterButtonStyle : newFilterButtonStyle
+                }
+                onClick={() => handleNewFilterCilck('filter3')}
+              >
+                위시로 받은
+              </button>
             </div>
           </div>
         </div>
