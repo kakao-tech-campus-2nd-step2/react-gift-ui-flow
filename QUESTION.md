@@ -1,112 +1,132 @@
-## 1주차 [질문](https://kibong.notion.site/db60b098e56e4333ae78e8c44edd09f5)
+# 🤔 2주차 [질문](https://kibong.notion.site/23645b1895664279856437d57eda9a83?pvs=4)
 
-### 1. reportWebVital?
-이번 프로젝트를 세팅하면서 불필요한 파일을 탐색하던중 reportWeVital이라는 것을 알게되었는데요.
-찾아보니 웹 성능 측정을 통해서 사용자 경험과 성능 평가를 가능하게 해주는 도구임을 알게되었습니다.
-초기 React프로젝트를 reportWebVitals로 console로 간단하게 찍어보니 console탭에서 성능에 대한 결과를 객체 형태로 확인할 수 있었습니다.
-결과로 FCP, TTFB, LCP, FID, CLS와 같이 다양한 방면으로 성능 측정이 가능하다는 것을 확인할 수 있었습니다.
-이러한 웹 성능 측정을 회사에서 실제로 많이 고민하고 코드를 짜는지 궁금하고, 한번도 이런 성능 측정을 해본 경험이 없기에 이 부분에 대해서 더 자세히 알려면 어떤식으로, 어떻게 공부하고 경험할 수 있는지 궁금합니다.
+## 1. 페이지별 컴포넌트는 어떻게 관리하는 게 좋을까요?
 
-### 2. 절대경로 ESLint 에러 이슈 어떻게 해결해야할까요?
-<img width="606" alt="스크린샷 2024-06-26 오후 5 44 42" src="https://github.com/kang-kibong/kang-kibong/assets/33623123/2acbd044-1698-4ffe-bc1b-bc4e0b9c2ae3">
+페이지별로 섹션에 해당하는 컴포넌트나 모든 페이지에서 공통으로 사용하지 않는 컴포넌트를 어떻게 관리하는 게 좋을지 고민입니다.
 
-ESLint가 `@components/Button.tsx` 모듈의 경로를 찾지 못하고 있었습니다.
-그 이유는 **alias reslover**가 제대로 설정되지 않아 생긴 문제였다고 판단하였습니다.
-때문에 두가지의 플러그인인 `eslint-plugin-import`와 `eslint-import-resolver-alias`가 필요하다고 생각되어 설치를 진행했습니다.
-설치가 완료된 후 `.eslintrc`에서 **import/resolver/alias** 부분에 각 절대경로에 해당하는 aslias를 따로 지정해주어야 인식할 수 있기에 다음과 같이 작성해보았습니다.
+과제를 진행할 때는 해당 페이지별로 디렉토리화해서 `pages` 폴더에 있는 컴포넌트를 호출하여 관리했습니다. 다른 방법이나 더 좋은 방법이 있을까요?
 
-```json
-{
-  "env": {
-    "browser": true,
-    "es2021": true
-  },
-  "extends": ["react-app", "eslint:recommended", "plugin:import/typescript", "airbnb", "prettier"],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "rules": {
-    "no-var": "error",
-    "no-multiple-empty-lines": "error",
-    "no-console": ["error", { "allow": ["warn", "error", "info"] }],
-    "eqeqeq": "error",
-    "dot-notation": "error",
-    "no-unused-vars": "error",
-    "react/jsx-filename-extension": ["error", { "extensions": [".tsx"] }],
-    "import/extensions": ["error", "ignorePackages"]
-  },
-  "settings": {
-    **"import/resolver": {
-      "alias": {
-        "map": [
-          ["@components", "./src/components"]
-        ],
-        "extensions": [".js", ".jsx", ".ts", ".tsx"]
-      }
-    }**
-  }
-}
+<br />
+
+## 2. 어떻게 상수화시키는 게 좋을까요?
+
+처음에는 `utils/constants`에 모든 상수를 관리할지, 아니면 각 컴포넌트마다 배치하는 게 좋을지 고민했습니다.
+
+과제를 진행할 때는 상수화할 것이 별로 없으면 컴포넌트 최상단에 배치하거나, 상수가 많거나 길어질 경우 해당 컴포넌트 폴더에 `constants` 파일을 만들어서 관리했습니다.
+
+어떤 방식으로 상수화시키는 게 좋을까요?
+
+<br />
+
+## 3. index 파일 네이밍의 사용 괜찮을까요?
+
+각 컴포넌트를 디렉토리화하고 `index`로 네이밍하여 과제를 진행했습니다. 왜냐하면 컴포넌트를 import할 때 하위 폴더가 많아지면 코드의 길이도 길어질 것 같아서 사용하게 되었습니다.
+
+하지만 `index`로 네이밍하면 코드를 작성하면서 어떤 컴포넌트인지 구분이 잘 안되는 점이 단점인 것 같습니다.
+
+더 좋은 방안이 있거나, 멘토님께서는 어떻게 관리하시는지 궁금합니다.
+
+<br />
+
+## 4. Story 파일들을 stories 폴더로 관리하는 게 좋을까요? 아니면 컴포넌트별로 관리하는 게 좋을까요?
+
+기존에는 `src` 폴더에 `stories` 폴더를 만들어 각 컴포넌트 폴더 구조대로 스토리를 추가했었는데, 이번에는 각 컴포넌트별 폴더에 작성해보았습니다.
+
+그 이유는 다시 `stories` 폴더를 뒤져야 한다는 점에서 개발 시간이 늘어나는 것 같아서입니다.
+
+더 좋은 방안이 있을까요?
+
+<br />
+
+## 5. Storybook 배포 경로를 PR 코멘트로 추가하고 싶은데 어떻게 해야 하나요?
+
+Storybook 배포에 대해 공부하면서 CI를 통해 자동으로 코멘트를 달 수 있다는 것을 알게 되었습니다.
+
+Storybook의 토큰과 사용자의 GitHub 토큰을 repository action의 secret에 설정하면 가능하다는 것을 알게 되었습니다.
+
+먼저 다음과 같이 `yml`을 작성해보았습니다.
+
+```yaml
+yaml코드 복사
+# Workflow name
+name: 'Chromatic Deployment'
+
+# Event for the workflow
+on: push
+
+# List of jobs
+jobs:
+  test:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+      - uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      - name: Create comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          message: "🚀 Storybook: ${{ steps.chromatic.outputs.storybookUrl }}"
+
 ```
-<img width="391" alt="스크린샷 2024-06-26 오후 5 47 23" src="https://github.com/kang-kibong/kang-kibong/assets/33623123/0af50065-124e-41d0-87e9-0d5302688883">
 
-절대경로를 통해 발생한 ESLint가 사라진 것을 확인할 수 있었지만, 에디터를 닫고 다시 열어보니 같은 이슈가 발생하였습니다.
+이후 설정에서 두 개의 secret을 설정했습니다.
 
-솔직히 이유를 잘 모르겠습니다.
+`CHROMATIC_PROJECT_TOKEN`은 성공적으로 설정할 수 있었지만, `GITHUB_TOKEN`은 앞에 `GITHUB`로 시작할 수 없다는 경고가 뜨며 설정할 수 없었습니다.
 
-구글링해본 결과 일단 `rules`에 `"import/no-unresolved": "off”`하면 해결할 수 있다고 하여 작성해놓은 상태입니다.
+<br />
 
-이 이슈를 해결할 수 있는 방안은 무엇일까요?
+<img width="783" alt="스크린샷 2024-07-05 오후 4 58 51" src="https://github.com/kang-kibong/kang-kibong/assets/33623123/2fac34f7-9363-42ed-9347-2a9d3c29156b">
 
-### 3. Emotion의 styled 작성은 어떤것을 선호하시나요?
+<br />
 
-css-in-js인 만큼 자바스크립트 안에 스타일 코드를 작성할 수 있다는 점에서 장점이있다고 생각합니다.
 
-하지만 책임분리를 생각해보면 스타일만 책임을 갖는 파일로 분리하는 것이 좋을지 아니면 컴포넌트 하단에 스타일 코드를 작성해야하는지 궁금합니다.
+때문에 `TOKEN`이라는 이름으로 secret을 설정하고 `yml`을 다시 작성했습니다.
 
-개인적으로 저는 컴포넌트 코드를 확인하면서 스타일링 작업을 해야되서 위, 아래로 자주 스크롤하는 것이, 생각보다 개발 효율이 안좋아서 책임 분리라는 이유로? 다음과 같이 스타일 코드 파일을 분리하여 작업하고 있습니다.
-```json
-Button
-├── Button.styled.ts
-└── Button.tsx
+```yaml
+yaml코드 복사
+# Workflow name
+name: 'Chromatic Deployment'
+
+# Event for the workflow
+on: push
+
+# List of jobs
+jobs:
+  test:
+    # Operating System
+    runs-on: ubuntu-latest
+    # Job steps
+    steps:
+      - uses: actions/checkout@v1
+      - run: yarn
+      - uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      - name: Create comment PR
+        uses: thollander/actions-comment-pull-request@v1
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        with:
+          message: "🚀 Storybook: ${{ steps.chromatic.outputs.storybookUrl }}"
+
 ```
 
-보통 어떤식으로 하는지 궁금합니다! 정답이란게 있을까요?
+이후 push를 진행하고 제대로 Storybook 배포와 URL 코멘트가 달리는지 확인해보았습니다.
 
-### 4. Emotion의 babel-plugin을 사용하는 이유는 무엇인가요?
+<br />
 
-스타일을 압축 및 호이스팅하여 최적화하고 souce map및 label로 더나은 개발 경험을 생성하는 플러그인을 원하면 권장한다고 합니다.
+<img width="578" alt="스크린샷 2024-07-05 오후 5 03 09" src="https://github.com/kang-kibong/kang-kibong/assets/33623123/436a0789-41f7-4316-b088-a877be70415e">
 
-해당 내용에 대해서 잘 이해가 가지 않아 고민입니다!
+<br />
 
-### 5. tailwindcss와 css-in-js에서의 고민
+아쉽게도 코멘트가 달리지 않는 것을 확인할 수 있었습니다.
 
-요즘 채용공고를 보면 이전과는 다르게 심심치않게 tailwindcss를 요구하는 회사가 많아지고 있다는 것을 느꼈습니다.
-
-이러한 동향이 발생된 멘토님의 개인적인 이유를 들어보고 싶습니다.
-
-개인적으로 tailwindcss는 inline css와 같이 클래스명 내에서 스타일링할 수 있다는 점에서 유지보수하기 힘들 것 같다는 생각에 평소 css-in-js를 많이 사용하는 것 같습니다.
-
-성능 차이에서일까요? 아니면 편의성때문일까요? 두 라이브러리에 대한 차이에 대해서도 궁금합니다.
-
-### 6. lint-staged, husky 현업에서 많이 사용하고있나요?
-
-eslint와 prettier를 공부하던 중 lint-staged와 huksy에 대해서 알게되었습니다.
-
-이번 과제에서도 적용해보았지만, 이를 고려하면 git hook을 통해 포맷팅와 린팅을 자동화 시킬 수 있다는 점이 장점이라 생각되어 다른 프로젝트에서도 평소 사용하고 있는 편입니다.
-
-현업에서도 많이 쓰이는 기술일까요? 아니면 이것도 필요에 따라 설치하는 편인가요?
-
-### 7. 폴더 구조에는 정답이란게 있을까요?
-
-코드를 작성하다보면 분리를 할 수 있는 상황이 되는데요. 이럴때마다 어떤 폴더로 관리해야되는지 감이 잘 안오는 것 같습니다.
-
-그 이유를 생각해보니 React가 라이브러리라는 특성을 가진 만큼 규격이 딱히 정해져 있지 않다보니 사람마다 천차만별로 관리하는 것 같다고 생각해서인 것 같습니다.
-
-이번 과제에서는 기능에 따라 패턴을 잡아봤습니다.
-
-혹시 정답이란게 있을까요? 혹은 최근 많이 사용되어지고 있는 패턴이 있을까요?
+무슨 이유로 안되는지 잘 모르겠습니다.
