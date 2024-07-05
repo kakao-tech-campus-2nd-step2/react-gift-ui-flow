@@ -1,10 +1,12 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, redirect } from 'react-router-dom';
 
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
 import { ErrorPage } from '@/components/pages/ErrorPage';
+import { LoginPage } from '@/components/pages/LoginPage';
 import { HeaderFooterOutlet } from '@/components/templates/HeaderFooter/HeaderFooterOutlet';
 import { MainTemplate } from '@/components/templates/MainTemplate';
+import { ThemeTemplate } from '@/components/templates/ThemeTemplate';
 
 export const RouterPath = {
   root: '/',
@@ -33,6 +35,22 @@ const mockImageLoader = (): (RankingGoodsItemsProps & IteratingItemProp)[] => {
   return mockData;
 };
 
+// onSubmit 이후에 실행됨
+export async function loginAction({
+  request,
+  // params,
+}: {
+  request: Request;
+  // params?: Params<string>;
+}) {
+  const formData = await request.formData();
+  const updates = Object.fromEntries(formData);
+  const { id } = updates;
+  sessionStorage.setItem('authToken', JSON.stringify({ name: id }));
+
+  return redirect('/');
+}
+
 export const router = createBrowserRouter([
   {
     path: RouterPath.root,
@@ -46,7 +64,15 @@ export const router = createBrowserRouter([
       },
       {
         path: RouterPath.theme,
+        loader: mockImageLoader,
+        element: <ThemeTemplate />,
       },
     ],
+  },
+  {
+    path: RouterPath.login,
+    action: loginAction,
+    element: <LoginPage />,
+    errorElement: <ErrorPage />,
   },
 ]);

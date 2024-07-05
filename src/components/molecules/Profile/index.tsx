@@ -10,10 +10,12 @@ export type ProfileProps = {
   onClick: MouseEventHandler<HTMLParagraphElement>;
 };
 
-export const Profile = ({ name = '로그인', onClick }: ProfileProps) => {
+export const Profile = ({ name, onClick }: ProfileProps) => {
+  const label = name === undefined ? '로그인' : '내 계정';
+
   return (
     <Container justifyContent={ContainerJustifyContentType.flexEnd}>
-      <ProfileParagraph onClick={onClick} content={name} />
+      <ProfileParagraph onClick={onClick} content={label} />
     </Container>
   );
 };
