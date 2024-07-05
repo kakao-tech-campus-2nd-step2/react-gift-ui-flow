@@ -27,7 +27,7 @@ export const useAuth = () => {
 
   const handleLogin = (e: FormEvent) => {
     e.preventDefault();
-    sessionStorage.setItem('auth', username);
+    sessionStorage.setItem('authToken', username);
     setIsLogin(true);
     navigate(-1);
   };
