@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: PATHS.BIRTHDAY,
+        path: PATHS.THEME,
         element: <ThemePage />,
       },
       {
