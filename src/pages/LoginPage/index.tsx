@@ -1,6 +1,8 @@
 // src/pages/LoginPage/LoginPage.tsx
 import { useState } from 'react';
 
+import { Button } from '@/components/common/Button';
+
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
@@ -23,9 +25,9 @@ const LoginPage = () => {
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <button onClick={handleLogin} type="submit">
+      <Button onClick={handleLogin} type="submit" theme="kakao" size="responsive">
         로그인
-      </button>
+      </Button>
     </div>
   );
 };
