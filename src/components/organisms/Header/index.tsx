@@ -7,6 +7,7 @@ import { AuthContext } from '@/components/contexts/AuthContext';
 import { Container } from '@/components/molecules/Container';
 import { Profile } from '@/components/molecules/Profile';
 import { 선물하기 } from '@/components/molecules/선물하기/선물하기';
+import { RouterPath } from '@/router';
 const HEADER_HEIGHT = '58px';
 
 export const Header = () => {
@@ -14,10 +15,10 @@ export const Header = () => {
   const auth = useContext(AuthContext);
   const onClick = () => {
     if (auth.name === undefined) {
-      navigate('/login');
+      navigate(RouterPath.login);
       return;
     }
-    navigate('/my-account');
+    navigate(RouterPath.myPage);
   };
 
   return (
