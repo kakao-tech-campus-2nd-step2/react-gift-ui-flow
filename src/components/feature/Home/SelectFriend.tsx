@@ -24,13 +24,28 @@ const FriendWrapper = styled.section`
   height: 150px;
   background-color: rgb(250, 250, 250);
   padding: 40px 20px;
+
+  @media screen and (max-width: 768px) {
+    height: 100px;
+    padding: 27px 20px;
+  }
 `;
 const ImageCustom = styled(Image)`
   width: 70px;
   height: 70px;
   margin-right: 16px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    width: 46px;
+    height: 46px;
+    border-radius: 18px;
+  }
 `;
 const Text = styled.p`
   font-size: 28px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
