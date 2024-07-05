@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation,useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/context/AuthContext';
 
@@ -8,7 +8,10 @@ const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const location = useLocation();
   const { login } = useAuth();
+
+  const from = location.state?.from?.pathname || '/'; // 이전 경로 또는 기본 경로
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +20,7 @@ const Login: React.FC = () => {
       return;
     }
     login(username);
-    navigate('/');
+    navigate(from, { replace: true }); // 로그인 후 이전 경로로 리디렉션
   };
 
   return (

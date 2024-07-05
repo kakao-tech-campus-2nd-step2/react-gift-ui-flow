@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigate,Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 import { useAuth } from '@/context/AuthContext';
 import Layout from '@/Layout';
@@ -17,7 +17,8 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ element, ...rest }) => {
   const { isLoggedIn } = useAuth();
-  return isLoggedIn ? React.cloneElement(element, { ...rest }) : <Navigate to={ROUTE_PATHS.LOGIN} />;
+  const location = useLocation();
+  return isLoggedIn ? React.cloneElement(element, { ...rest }) : <Navigate to={ROUTE_PATHS.LOGIN} state={{ from: location }} />;
 };
 
 const RoutesPage: React.FC = () => {
@@ -29,7 +30,7 @@ const RoutesPage: React.FC = () => {
         <Route index element={<Home />} />
         <Route path={ROUTE_PATHS.HOME} element={<Home />} />
         <Route path={ROUTE_PATHS.THEME} element={<Theme />} />
-        <Route path={ROUTE_PATHS.MYPAGE} element={<ProtectedRoute element={<MyAccount onLogout={logout}/>}/>} />
+        <Route path={ROUTE_PATHS.MYPAGE} element={<ProtectedRoute element={<MyAccount onLogout={logout}/>} />} />
       </Route>
       <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />
     </Routes>
@@ -37,4 +38,3 @@ const RoutesPage: React.FC = () => {
 };
 
 export default RoutesPage;
-
