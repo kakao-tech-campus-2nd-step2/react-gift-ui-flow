@@ -16,8 +16,7 @@ const FooterContainer = styled.div`
   padding: 20px;
   font-size: 14px;
   color: #333;
-  position: fixed;
-  width: 100%;
+  // position: fixed;
   bottom: 0;
 `;
 
