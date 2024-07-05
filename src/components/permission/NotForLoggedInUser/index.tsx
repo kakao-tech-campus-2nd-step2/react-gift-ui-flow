@@ -1,4 +1,4 @@
-import { getAccessToken } from "@/utils/localStorage";
+import { getAccessToken } from "@/utils/sessionStorage";
 import { useNavigate } from "react-router-dom";
 
 interface NotForLoggedInUserProps {

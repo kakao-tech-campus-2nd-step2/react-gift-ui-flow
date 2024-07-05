@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import { Container } from "../../Container";
 import { Link } from "react-router-dom";
-import { getAccessToken } from "@/utils/localStorage";
+import { getAccessToken } from "@/utils/sessionStorage";
 
 const Header = () => {
   const isLoggedIn = getAccessToken();
