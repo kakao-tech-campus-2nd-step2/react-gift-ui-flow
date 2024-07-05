@@ -1,6 +1,24 @@
 import IMAGE from "./Image";
 
-const CATEGORY = [
+export interface Category {
+  themeKey:
+    | "birthday"
+    | "graduation"
+    | "small-luxury"
+    | "luxury"
+    | "wedding"
+    | "touching"
+    | "light"
+    | "fan"
+    | "coupon"
+    | "health"
+    | "fruit-beef"
+    | "kids";
+  name: string;
+  imageSrc: string;
+}
+
+const CATEGORY: Category[] = [
   {
     themeKey: "birthday",
     name: "생일",

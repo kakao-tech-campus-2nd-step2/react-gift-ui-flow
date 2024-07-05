@@ -1,10 +1,12 @@
 import Icon from "@/components/common/GoodsItem/Icon";
+import { Category } from "@/constants/category";
+import ROUTE_PATH from "@/constants/path";
 import { Link } from "react-router-dom";
 
 interface CategoryItemProps {
   categoryName: string;
   imageSrc: string;
-  themeKey: string;
+  themeKey: Category["themeKey"];
 }
 const CategoryItem = ({
   categoryName,
@@ -12,8 +14,7 @@ const CategoryItem = ({
   themeKey,
 }: CategoryItemProps) => {
   return (
-    // TODO: 링크 상수화
-    <Link to={`/theme/${themeKey}`}>
+    <Link to={ROUTE_PATH.THEME_DETAIL(themeKey)}>
       <Icon imageSrc={imageSrc} text={categoryName} />
     </Link>
   );
