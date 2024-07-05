@@ -1,21 +1,28 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLogin } from '../hooks/LoginContext';
 
 const Header = () => {
-  const { isLoggedIn } = useLogin();
+  const { isLoggedIn, setRedirectPath } = useLogin();
+  const navigate = useNavigate();
+
+  const handleLoginClick = () => {
+    setRedirectPath(window.location.pathname);
+    navigate('/login');
+  };
 
   return (
     <HeaderContainer>
       <Logo>선물하기</Logo>
       {isLoggedIn ? (
-        <Link to="/my-account">내 계정</Link>
+        <StyledLink to="/my-account">내 계정</StyledLink>
       ) : (
-        <Link to="/login">로그인</Link>
+        <LoginButton onClick={handleLoginClick}>로그인</LoginButton>
       )}
     </HeaderContainer>
   );
 };
+
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -28,6 +35,24 @@ const HeaderContainer = styled.header`
 const Logo = styled.div`
   font-size: 18px;
   font-weight: bold;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
+const LoginButton = styled.button`
+  background: none;
+  border: none;
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+
+  &:hover {
+    color: darkblue;
+  }
 `;
 
 export default Header;

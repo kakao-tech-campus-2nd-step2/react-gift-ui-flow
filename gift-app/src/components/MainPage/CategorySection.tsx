@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useNavigate } from 'react-router-dom';
 
 const ImageLink = 'https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png';
 
@@ -18,10 +19,16 @@ const categories = [
 ];
 
 const CategorySection = () => {
+  const navigate = useNavigate();
+
+  const handleCategoryClick = (key: string) => {
+    navigate(`/theme/life_small_gift`);
+  };
+
   return (
     <CategoryContainer>
       {categories.map((category) => (
-        <CategoryItem key={category.key}>
+        <CategoryItem key={category.key} onClick={() => handleCategoryClick(category.key)}>
           <Image src={category.image} alt={category.name} />
           <CategoryName>{category.name}</CategoryName>
         </CategoryItem>

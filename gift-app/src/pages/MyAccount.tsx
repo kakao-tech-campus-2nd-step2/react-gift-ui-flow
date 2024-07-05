@@ -1,4 +1,3 @@
-import Layout from 'Layout/Layout';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import { useLogin } from '../hooks/LoginContext';
@@ -13,12 +12,12 @@ const MyAccount = () => {
   };
 
   return (
-    <Layout>
+    <div>
       <AccountContainer>
         <Greeting>{username}님 안녕하세요!</Greeting>
         <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>
       </AccountContainer>
-    </Layout>
+    </div>
   );
 };
 

@@ -12,7 +12,7 @@
 
   <메인 페이지>
   - [x] Theme 카테고리 섹션 추가
-    - [ ] Theme 카테고리 Item을 클릭 시 Theme 페이지로 이동
+    - [x] Theme 카테고리 Item을 클릭 시 Theme 페이지로 이동
   - [x] 실시간 급상승 선물랭킹 추가
     - [x] 필터 기능을 하는 hooks 추가
     - [x] 상품 목록 6개를 기본값으로 설정
@@ -31,7 +31,7 @@
 ## Week 2. 2단계 - 인증 프로세스 구현
 - [ ] Login 페이지에서 ID와 PW를 입력 시, 직전 페이지로 Redirect 되도록 구현
 - Fake 로그인 기능 구현
-  - [ ] Login 페이지에서 ID와 PW를 입력 시, ID를 sessionStorage의 authToken key에 저장
+  - [x] Login 페이지에서 ID와 PW를 입력 시, ID를 sessionStorage의 authToken key에 저장
   - [ ] 모든 페이지 진입 시 authToken을 토대로 로그인 여부를 판단하는 로직 추가
   - [ ] Header에서 로그인 시, 내 계정을 로그인 하지 않은 경우 로그인 버튼 추가
   - [ ] 내 계정(/my-account) 페이지는 로그인 한 사람만 접근 가능하게 구현

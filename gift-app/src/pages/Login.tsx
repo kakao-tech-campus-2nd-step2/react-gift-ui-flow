@@ -7,14 +7,14 @@ import { useLogin } from '../hooks/LoginContext';
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useLogin();
+  const { login, redirectPath } = useLogin();
   const navigate = useNavigate();
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
     if (id && password) {
       login(id);
-      navigate('/');
+      navigate(redirectPath);
     }
   };
 
