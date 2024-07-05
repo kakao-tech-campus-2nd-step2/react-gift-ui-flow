@@ -1,18 +1,35 @@
 import styled from '@emotion/styled';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import Footer from './components/common/Footer'; // Footer 컴포넌트를 import 합니다.
+import Header from './components/common/Header';
+import Home from './Home';
+import Login from './Login';
 
 const App = () => {
-  const name = 'Josh Perez';
-
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <Router>
+      <AppContainer>
+        <Header /> {/* 모든 페이지에서 공통으로 보여지는 Header */}
+        <Content>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/Login' element={<Login />} />
+          </Routes>
+        </Content>
+        <Footer /> {/* 모든 페이지에서 공통으로 보여지는 Footer */}
+      </AppContainer>
+    </Router>
   );
 };
 
 export default App;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
+const AppContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+`;
+
+const Content = styled.div`
+  padding-bottom: 60px; /* Footer 공간 확보 */
 `;
