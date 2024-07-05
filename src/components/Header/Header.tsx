@@ -28,7 +28,11 @@ const StyledLink = styled(Link)`
   outline: none;
 `;
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  isLoggedIn: boolean;
+}
+
+const Header: React.FC<HeaderProps> = ({isLoggedIn}) => {
   return (
     <HeaderContainer>
       <Nav>
@@ -36,7 +40,7 @@ const Header: React.FC = () => {
           <StyledLink to="/">선물하기</StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink to="/login">내 계정</StyledLink>
+          <StyledLink to={isLoggedIn ? '/my-account' : '/login'}>내 계정</StyledLink>
         </NavItem>
       </Nav>
     </HeaderContainer>

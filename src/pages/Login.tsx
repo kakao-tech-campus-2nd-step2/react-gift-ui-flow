@@ -1,4 +1,6 @@
 import styled from "@emotion/styled";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/common/Button/index";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
@@ -18,12 +20,12 @@ const LoginForm = styled.div`
   border: 1px solid #c7c7c7;
   padding: 30px;
   width: 400px;
-  height: 300px;
+  height: 250px;
   margin-top: 20px;
 `;
 
 const ButtonStyle = styled(Button)`
-  margin-top: 100px;
+  margin-top: 70px;
   height: 50px;
 `;
 
@@ -38,14 +40,39 @@ const UnderlineTextFieldStyle = styled(UnderlineTextField)`
   width: 100%;
 `;
 
-const Login = () => {
+interface LoginProps {
+	onLogin: (username: string) => void;
+}
+
+const Login: React.FC<LoginProps> = ({ onLogin }) => {
+	const [username, setUsername] = useState('');
+	const [password, setPassword] = useState('');
+	const navigate = useNavigate();
+
+	const handleLogin = () => {
+		if (username && password) {
+			onLogin(username);
+			navigate('/my-account');
+		} else {
+			alert('아이디와 비밀번호를 입력해주세요.');
+		}
+	}
   return (
     <Container>
       <LoginTextStyle>Kakao</LoginTextStyle>
       <LoginForm>
-        <UnderlineTextFieldStyle placeholder="이름"/>
-        <UnderlineTextFieldStyle placeholder="비밀번호"/>
-        <ButtonStyle>로그인</ButtonStyle>
+        <UnderlineTextFieldStyle 
+		value={username}
+		onChange={(e) => setUsername(e.target.value)}
+		placeholder='이름'
+		/>
+        <UnderlineTextFieldStyle 
+		type='password'
+		value={password}
+		onChange={(e) => setPassword(e.target.value)}
+		placeholder='비밀번호'
+		/>
+        <ButtonStyle onClick={handleLogin}>로그인</ButtonStyle>
       </LoginForm>
     </Container>
   );
