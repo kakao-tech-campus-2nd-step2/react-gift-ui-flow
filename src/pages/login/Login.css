@@ -1,0 +1,15 @@
+.login-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 58px;
+}
+.login__title {
+    color: rgb(51, 51, 51);
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
