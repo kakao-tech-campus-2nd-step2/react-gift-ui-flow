@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 import { Footer } from '@/components/common/Footer/Footer';
 import { Header } from '@/components/common/Header/Header';
@@ -9,6 +9,11 @@ import { LoginPage } from './pages/LoginPage';
 import { MainPage } from './pages/MainPage';
 import { MyAccountPage } from './pages/MyAccountPage';
 import { ThemePage } from './pages/ThemePage';
+
+const PrivateRoute = ({ element }: { element: React.ReactElement }) => {
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn ? element : <Navigate to="/login" />;
+};
 
 const AppRoutes = () => {
   const { isLoggedIn } = useAuth();
@@ -37,7 +42,7 @@ const AppRoutes = () => {
     },
     {
       path: '/my-account',
-      element: <MyAccountPage />,
+      element: <PrivateRoute element={<MyAccountPage />} />,
     },
     {
       path: '/theme/:themeKey',
