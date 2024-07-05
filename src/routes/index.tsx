@@ -18,7 +18,6 @@ const AppRoutes = () => {
   const handleLogin = (username:string) => {
     setuser(username);
     setIsLoggedIn(true);
-    console.log(`User ${username} logged in`);
   };
 
   const handleLogout = () => {

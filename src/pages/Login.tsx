@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 
 import { Button } from "@/components/common/Button/index";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
@@ -48,11 +48,14 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
+	const location = useLocation();
 
 	const handleLogin = () => {
 		if (username && password) {
 			onLogin(username);
-			navigate('/');
+			sessionStorage.setItem('username', username); // sessionStorage에 username 저장
+			const redirectTo = location.state?.from || '/'; // 로그인 후 이동할 페이지
+			navigate(redirectTo); // 페이지 이동
 		} else {
 			alert('아이디와 비밀번호를 입력해주세요.');
 		}
