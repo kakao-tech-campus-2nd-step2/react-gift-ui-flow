@@ -1,12 +1,12 @@
-import './Footer.css'; // 스타일링을 위한 CSS 파일
+import '../../styles/Footer.css';  // CSS 파일 경로를 지정합니다.
 
 import React from 'react';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="footer">
-            <p>© 2024 Gift Ranking App</p>
-        </footer>
+        <div className="footer">
+            <p className="footerText">카카오톡 선물하기</p>
+        </div>
     );
 };
 
