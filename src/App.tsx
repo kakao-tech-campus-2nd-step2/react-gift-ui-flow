@@ -6,6 +6,7 @@ import Footer from './components/common/Footer'; // Footer 컴포넌트를 impor
 import Header from './components/common/Header';
 import Home from './Home';
 import Login from './Login';
+import TrendingGifts from './TrendingGifts';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/' element={<Home />} />
             <Route path='/Login' element={<Login />} />
             <Route path='/theme/:themeKey' element={<CategoryPage />} />
+            <Route path='/trending' element={<TrendingGifts />} />
           </Routes>
         </Content>
         <Footer /> {/* 모든 페이지에서 공통으로 보여지는 Footer */}
