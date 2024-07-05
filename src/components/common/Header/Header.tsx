@@ -2,17 +2,19 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '@/AuthContext'; // Import useAuth
 import { Image } from '@/components/common/Image';
 
-interface HeaderProps {
-  isLoggedIn: boolean;
-}
-
-export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth(); // Use useAuth to get isLoggedIn
 
   const handleLogoClick = () => {
     navigate('/');
+  };
+
+  const handleLoginClick = () => {
+    navigate('/login');
   };
 
   return (
@@ -25,7 +27,9 @@ export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
           height={54}
         />
       </LogoContainer>
-      <MenuItem>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
+      <MenuItem onClick={handleLoginClick}>
+        {isLoggedIn ? '내 계정' : '로그인'}
+      </MenuItem>
     </HeaderContainer>
   );
 };
