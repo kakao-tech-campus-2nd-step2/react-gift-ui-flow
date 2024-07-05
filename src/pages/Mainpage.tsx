@@ -1,4 +1,4 @@
-import Header from '@/components/common/Header/Header';
+import Header from '@/components/common/Header';
 import themeItem from '@/components/ThemeItem';
 import { useFilter } from '@/hooks/useFilter';
 

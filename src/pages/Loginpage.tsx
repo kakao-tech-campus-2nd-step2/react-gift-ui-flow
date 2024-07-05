@@ -1,15 +1,15 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Loginpage: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     //로그인 로직 구현하기. 지금은 아무 값 가능
-    history.pushState('/my-accout');
+    navigate('/my-accout');
   };
 };
 
@@ -19,7 +19,7 @@ return (
     <form onSubmit={handleSubmit}>
       <div>
         <label>ID:</label>
-        <inpu type="text" value={id} onChange={(e) => setId(e.target.value)} />
+        <input type="text" value={id} onChange={(e) => setId(e.target.value)} />
       </div>
       <div>
         <label>Password:</label>
@@ -30,4 +30,4 @@ return (
   </div>
 );
 
-export default LoginPage;
+export default Loginpage;
