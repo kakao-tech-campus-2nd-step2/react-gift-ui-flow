@@ -46,5 +46,5 @@ ContextAPI와 SessionStorage를 사용하여 Fake 로그인 기능 구현
   - [x] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 `authToken` key에 저장
   - [x] 모든 페이지 진입 시 authToken을 토대로 로그인 여부를 판단하는 로직을 추가(ContextAPI 사용)
   - [x] Header에서 로그인 한 경우 내 계정을 로그인 하지 않은 경우 로그인 버튼을 추가
-  - [ ] 내 계정(`/my-account`) 페이지는 로그인 한 사람만 접근 가능하게 함. (로그인 하지 않은 유저는 로그인 페이지로 연결)
+  - [x] 내 계정(`/my-account`) 페이지는 로그인 한 사람만 접근 가능하게 함. (로그인 하지 않은 유저는 로그인 페이지로 연결)
   - [x] 내 계정 페이지에서 로그아웃을 할 수 있도록 함. (로그아웃 후 메인 페이지(/) 로 `Redirect` 되도록 함.)
