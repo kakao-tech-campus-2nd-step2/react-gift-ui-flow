@@ -8,8 +8,6 @@ import { AuthButton } from './AuthButton';
 import { headerStyle } from './styles';
 
 export const Header = () => {
-  const isLoggedIn = !!sessionStorage.getItem('authToken');
-
   return (
     <Content
       css={headerStyle}
@@ -19,7 +17,7 @@ export const Header = () => {
       alignItems="center"
     >
       <Logo src={logo} alt="카카오 선물하기 로고" width="86" />
-      <AuthButton isLoggedIn={isLoggedIn} />
+      <AuthButton />
     </Content>
   );
 };

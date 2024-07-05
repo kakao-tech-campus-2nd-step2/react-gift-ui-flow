@@ -40,7 +40,6 @@ export const useLoginForm = () => {
   return {
     username,
     password,
-    isLoginEnabled,
     handleInputChange,
     handleLogin,
   };

@@ -1,4 +1,4 @@
-import { GiftFilterButons } from '@/data/filterData';
+import { GiftContents } from '@/data/filterButton';
 
 import { Callout } from '@/components/Callout';
 
@@ -8,7 +8,7 @@ import { calloutStyle } from './styles';
 export const RankFilterGift = () => {
   return (
     <Callout justifyContent="space-around" theme="skyblue" css={calloutStyle}>
-      {GiftFilterButons.map((filter) => (
+      {GiftContents.map((filter) => (
         <ActiveGiftButton key={filter.index} gift={filter.value} />
       ))}
     </Callout>

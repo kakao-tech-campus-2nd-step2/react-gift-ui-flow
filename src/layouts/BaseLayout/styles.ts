@@ -9,13 +9,3 @@ export const mainStyles = css({
   marginTop: '3.5rem',
   flex: 1,
 });
-
-export const headerStyle = css({
-  position: 'fixed',
-  top: '0',
-  zIndex: '100',
-});
-
-export const footerStyles = css({
-  padding: '2rem 0',
-});
