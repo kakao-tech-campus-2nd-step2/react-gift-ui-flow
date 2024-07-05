@@ -2,13 +2,13 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
 import { colors, fontsizes } from '@/styles/variants';
-import { useAuth } from '@/utils/hooks/useAuth';
+import { useAuthContext } from '@/utils/hooks/useAuthContext';
 
 import { Container } from '../layouts/Container';
 
 export const Header = () => {
   const navigate = useNavigate();
-  const { isLogin } = useAuth();
+  const { isAuthenticated } = useAuthContext();
 
   const moveToMain = () => {
     navigate('/');
@@ -24,7 +24,7 @@ export const Header = () => {
       <Container>
         <Buttons>
           <TitleButton onClick={moveToMain}>선물하기</TitleButton>
-          {isLogin ? (
+          {isAuthenticated ? (
             <ButtonModal onClick={moveToMyAccount}>내 계정</ButtonModal>
           ) : (
             <ButtonModal onClick={moveToLogin}>로그인</ButtonModal>
