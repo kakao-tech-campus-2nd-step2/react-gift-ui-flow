@@ -1,22 +1,16 @@
-import './Header.css'; // 스타일링을 위한 CSS 파일
+import '../../styles/Header.css';  // CSS 파일 경로를 지정합니다.
 
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
     return (
-        <header className="header">
-            <div className="header-logo">
-                <Link to="/">선물하기</Link>
-            </div>
-            <nav className="header-nav">
-                <ul>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/login">Login</Link></li>
-                    <li><Link to="/my-account">My Account</Link></li>
-                </ul>
-            </nav>
-        </header>
+        <div className="header">
+            <Link to='/'>
+                <img src='https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png' alt='선물하기' className="giftIcon" />
+            </Link>
+            <Link to='/Login' className="login">로그인</Link>
+        </div>
     );
 };
 
