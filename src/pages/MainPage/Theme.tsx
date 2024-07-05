@@ -1,10 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Grid } from '@/components/common/layouts/Grid';
-import { themeConfig } from '@/components/ThemeConfig';
+import { getTheme } from '@/components/Header/GetTheme';
 
 const Theme = () => {
   const navigate = useNavigate();
+  const themes = getTheme();
 
   const handleThemeClick = (themeKey: string) => {
     navigate(`/theme/${themeKey}`);
@@ -13,9 +14,9 @@ const Theme = () => {
   return (
     <section>
       <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
-        {Object.keys(themeConfig).map((key) => (
+        {Object.keys(themes).map((key) => (
           <div key={key}>
-            <button onClick={() => handleThemeClick(key)}>{themeConfig[key].label}</button>
+            <button onClick={() => handleThemeClick(key)}>{themes[key].label}</button>
           </div>
         ))}
       </Grid>
