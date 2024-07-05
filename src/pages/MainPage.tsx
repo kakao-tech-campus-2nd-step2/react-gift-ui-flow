@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { Grid } from '@/components/common/layouts/Grid';
 import { themeConfig } from '@/components/themeConfig';
 
 const MainPage = () => {
@@ -27,17 +28,16 @@ const MainPage = () => {
     <div>
       <main>
         <section>
-          <h2>Theme Categories</h2>
-          <ul>
+          <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={20}>
             {Object.keys(themeConfig).map((key) => (
-              <li key={key}>
+              <div key={key}>
                 <button onClick={() => handleThemeClick(key)}>{themeConfig[key].label}</button>
-              </li>
+              </div>
             ))}
-          </ul>
+          </Grid>
         </section>
         <section>
-          <h2>Trending Gifts</h2>
+          <h2>실시간 급상승 선물랭킹</h2>
           <div>
             <label>Filter by:</label>
             <select value={filter1} onChange={(e) => setFilter1(e.target.value)}>
