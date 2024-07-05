@@ -23,10 +23,10 @@
 
   - [x] Header 컴포넌트 파일 생성
   - [x] Header 컴포넌트 기본 구조 작성
-    - [x] themeKey에 따라 label 변경 로직 추가
-    - [x] themeKey에 따라 title 변경 로직 추가
-    - [x] themeKey에 따라 description 변경 로직 추가
-    - [x] themeKey에 따라 backgroundColor 변경 로직 추가
+    - [ ] themeKey에 따라 label 변경 로직 추가
+    - [ ] themeKey에 따라 title 변경 로직 추가
+    - [ ] themeKey에 따라 description 변경 로직 추가
+    - [ ] themeKey에 따라 backgroundColor 변경 로직 추가
   - [x] Header 컴포넌트를 모든 페이지에 적용
 
 - **Footer 컴포넌트 생성**
@@ -78,20 +78,20 @@
 ### 2단계 - 인증 프로세스 구현
 
 #### 1. 로그인 구현 (@/pages/LoginPage)
-  - [ ] 로그인 버튼 클릭 시 Fake 로그인
-  - [ ] 로그인 성공 시 직전 페이지로 Redirect
-  - [ ] ContextAPI를 활용해 `authToken` 관리
-  - [ ] ID를 sessionStorage의 `authToken` 키에 저장
-  - [ ] 모든 페이지 진입 시 sessionStorage에서 `authToken` 확인
+  - [x] 로그인 버튼 클릭 시 Fake 로그인
+  - [x] 로그인 성공 시 직전 페이지로 Redirect
+  - [x] ContextAPI를 활용해 `authToken` 관리
+  - [x] ID를 sessionStorage의 `authToken` 키에 저장
+  - [x] 모든 페이지 진입 시 sessionStorage에서 `authToken` 확인
 
 #### 2. 헤더 구현 (@/components/Header/Nav)
-  - [ ] 로그인 상태: 내 계정 버튼 표시
-  - [ ] 비로그인 상태: 로그인 버튼 표시
+  - [x] 로그인 상태: 내 계정 버튼 표시
+  - [x] 비로그인 상태: 로그인 버튼 표시
 
 #### 3. 계정 페이지 구현 (@/pages/MyAccountPage)
-  - [ ] 로그인한 상태: 접근 가능
-  - [ ] 비로그인 상태: 로그인 페이지로 리디렉션
+  - [x] 로그인한 상태: 접근 가능
+  - [x] 비로그인 상태: 로그인 페이지로 리디렉션
 
   ##### **로그아웃 기능 구현**
-  - [ ] sessionStorage에서 `authToken` 제거
-  - [ ] 메인 페이지(/)로 리디렉션
+  - [x] sessionStorage에서 `authToken` 제거
+  - [x] 메인 페이지(/)로 리디렉션
