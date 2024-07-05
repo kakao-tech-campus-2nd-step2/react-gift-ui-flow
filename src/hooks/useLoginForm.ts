@@ -1,6 +1,7 @@
 import { ROUTE_PATH } from '@/routes/constants';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSessionStorage } from '@hooks/useSessionStorage';
 
 interface UserInfoState {
   userName: string;
@@ -13,6 +14,7 @@ export default function useLoginForm() {
     userName: '',
     userPassword: '',
   });
+  const [, setAuthToken] = useSessionStorage('authToken', '');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -20,7 +22,10 @@ export default function useLoginForm() {
   };
 
   const handleLogin = () => {
-    if (userInfo.userName !== '' && userInfo.userPassword !== '') navigate(ROUTE_PATH.PREV);
+    if (userInfo.userName !== '' && userInfo.userPassword !== '') {
+      setAuthToken(userInfo.userName);
+      navigate(ROUTE_PATH.PREV);
+    }
   };
 
   const handleSubmit = (e: FormEvent) => {
