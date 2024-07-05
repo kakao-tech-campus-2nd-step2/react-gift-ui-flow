@@ -2,6 +2,7 @@
   "compilerOptions": {
     "paths": {
       "@components/*": ["src/presentation/components/*"],
+      "@pages/*": ["src/presentation/pages/*"],
       "@utils/*": ["src/shared/utils/*"],
       "@hooks/*": ["src/presentation/hooks/*"]
     }
