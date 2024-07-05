@@ -1,7 +1,7 @@
 import MainPage from '@/pages/MainPage';
 import LoginPage from '@/pages/LoginPage';
-import Gift from '@/pages/Gift';
-import { createBrowserRouter } from 'react-router-dom';
+import GiftDetailPage from '@/pages/GiftDetailPage';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
@@ -41,7 +41,11 @@ const RouterInfo = createBrowserRouter([
       },
       {
         path: '/theme/:themekey',
-        element: <Gift />,
+        element: <GiftDetailPage />,
+      },
+      {
+        path: '/theme',
+        element: <Navigate to="/" replace />,
       },
     ],
   },
