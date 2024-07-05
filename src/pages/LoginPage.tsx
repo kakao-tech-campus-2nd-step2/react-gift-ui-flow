@@ -21,7 +21,7 @@ export default function LoginPage() {
     login(username);
     // alert('로그인 성공');
     // 직전 페이지로 Redirect 되도록 useLocation 사용
-    navigate(location.state?.from?.path || PATH.MAINPAGE);
+    navigate(location.state?.from?.pathname || PATH.MAINPAGE);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
