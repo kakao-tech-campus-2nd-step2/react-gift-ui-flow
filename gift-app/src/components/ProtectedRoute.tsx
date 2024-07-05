@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 import { useLogin } from '../hooks/LoginContext';
 
 interface ProtectedRouteProps {
@@ -6,9 +6,11 @@ interface ProtectedRouteProps {
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { isLoggedIn } = useLogin();
+  const { isLoggedIn, setRedirectPath } = useLogin();
+  const location = useLocation();
 
   if (!isLoggedIn) {
+    setRedirectPath(location.pathname);
     return <Navigate to="/login" />;
   }
 
