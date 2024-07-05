@@ -1,4 +1,4 @@
-import { ROUTE_PATH } from '@routes/constants';
+import { ROUTE_PATH } from '@/routes/constants';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ export default function useLoginForm() {
   };
 
   const handleLogin = () => {
-    if (userInfo.userName !== '' || userInfo.userPassword !== '') navigate(ROUTE_PATH.HOME);
+    if (userInfo.userName !== '' && userInfo.userPassword !== '') navigate(ROUTE_PATH.PREV);
   };
 
   const handleSubmit = (e: FormEvent) => {

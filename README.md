@@ -25,7 +25,7 @@
 
 ## 📄 2단계 - 인증 프로세스 구현
 ### ✅ 기능 목록
-- [] 로그인에서 ID, PW를 입력하면 직전페이지로 Redirect
+- [x] 로그인에서 ID, PW를 입력하면 직전페이지로 Redirect
 - [] Fake 로그인 기능 구현
   - [] ID, PW 입력시 ID를 sessionStorage의 `authToken` key에 저장
   - [] 모든 페이지 진입 시 authToken 여부에 따라 로그인 여부 판단 로직 추가(ContextAPI 활용)
