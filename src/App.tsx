@@ -1,18 +1,17 @@
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
+import  Footer from '@/components/common/Footer/Footer'
+import Header from '@/components/common/Header/Header'
+
 
 const App = () => {
-  const name = 'Josh Perez';
+  const isLoggedIn = false;
 
   return (
     <div>
-      <Title>Hello, {name}</Title>
+      <Header isLoggedIn={isLoggedIn}/>
+      <Footer />
     </div>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;

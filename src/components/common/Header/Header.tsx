@@ -5,15 +5,12 @@ interface HeaderProps {
   isLoggedIn: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
   return (
     <HeaderContainer>
-      <Placeholder />
-      <MiddleSection>
         <Title>선물하기</Title>
         <MenuItem>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
-      </MiddleSection>
-      <Placeholder />
+
     </HeaderContainer>
   );
 };
@@ -26,17 +23,6 @@ const HeaderContainer = styled.div`
   background-color: white;
   padding: 10px 20px;
   border-bottom: 1px solid #e0e0e0;
-`;
-
-const Placeholder = styled.div`
-  flex: 1;
-`;
-
-const MiddleSection = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex: 1;
 `;
 
 const Title = styled.div`
