@@ -19,7 +19,7 @@ export const RankingList = ({ goodsItems }: Props) => {
     <ListWrapper>
       <Container flexDirection="column" justifyContent="center" alignItems="center" maxWidth="1024px">
         <Grid
-          columns={6}
+          columns={{ init: 3, xs: 3, sm: 4, md: 6 }}
           gap={20}
           css={css`
             padding: 50px 0px;
@@ -38,10 +38,10 @@ export const RankingList = ({ goodsItems }: Props) => {
         </Grid>
         <Button
           themetype="outline"
-          size="large"
           onClick={() => setMore(!more)}
           css={css`
-            width: 50%;
+            max-width: 500px;
+            max-height: 60px;
           `}
         >
           {more ? '접기' : '더보기'}

@@ -9,7 +9,7 @@ export const ItemList = () => {
   return (
     <ListWrapper>
       <Container justifyContent="center" alignItems="center" maxWidth="1024px">
-        <Grid columns={4} gap={20}>
+        <Grid columns={{ init: 2, sm: 2, md: 4 }} gap={20}>
           {goodsItems.map((item) => (
             <GoodsItem
               key={item.key}
