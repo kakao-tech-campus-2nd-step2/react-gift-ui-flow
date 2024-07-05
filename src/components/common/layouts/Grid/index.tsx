@@ -1,44 +1,47 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import { vars } from '@/styles';
+import { breakpoints } from "@styles/index";
 
 type ResponseGridStyle = {
-  [key in keyof typeof vars.breakpoints]?: number;
+    [key in keyof typeof breakpoints]?: number;
 };
 
 type Props = {
-  columns: number | ResponseGridStyle;
-  gap?: number;
+    columns: number | ResponseGridStyle;
+    gap?: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const Grid: React.FC<Props> = ({ children, columns, ...props }: Props) => {
-  return (
-    <Wrapper columns={columns} {...props}>
-      {children}
-    </Wrapper>
-  );
+    return (
+        <Wrapper columns={columns} {...props}>
+            {children}
+        </Wrapper>
+    );
 };
 
-const Wrapper = styled.div<Pick<Props, 'columns' | 'gap'>>(
-  {
-    width: '100%',
-    display: 'grid',
-  },
-  ({ gap }) => ({
-    gap: gap ? `${gap}px` : '0',
-  }),
-  ({ columns }) => {
-    if (typeof columns === 'number') {
-      return {
-        gridTemplateColumns: `repeat(${columns}, 1fr)`,
-      };
-    }
+const Wrapper = styled.div<Pick<Props, "columns" | "gap">>(
+    {
+        width: "100%",
+        display: "grid",
+    },
+    ({ gap }) => ({
+        gap: gap ? `${gap}px` : "0",
+    }),
+    ({ columns }) => {
+        if (typeof columns === "number") {
+            return {
+                gridTemplateColumns: `repeat(${columns}, 1fr)`,
+            };
+        }
 
-    const breakpoints = Object.keys(columns) as (keyof typeof vars.breakpoints)[];
-    return breakpoints
-      .map((breakpoint) => {
-        return `@media screen and (min-width: ${vars.breakpoints[breakpoint]}) { grid-template-columns: repeat(${columns[breakpoint]}, 1fr); }`;
-      })
-      .join(' ');
-  },
+        const breakpointKeys = Object.keys(columns) as (keyof typeof breakpoints)[];
+
+        return breakpointKeys
+            .map((breakpoint) => {
+                const minWidth = breakpoints[breakpoint];
+                const numColumns = columns[breakpoint];
+                return `@media screen and (min-width: ${minWidth}px) { grid-template-columns: repeat(${numColumns}, 1fr); }`;
+            })
+            .join(" ");
+    },
 );

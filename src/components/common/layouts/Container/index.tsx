@@ -1,33 +1,33 @@
-import styled from '@emotion/styled';
-import { forwardRef } from 'react';
+import styled from "@emotion/styled";
+import { forwardRef } from "react";
 
-import { vars } from '@/styles';
+import { breakpoints } from "@styles/index";
 
 type Props = {
-  maxWidth?: string;
+    maxWidth?: string;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const Container: React.FC<Props> = forwardRef(
-  ({ children, maxWidth, ...props }: Props, ref: React.Ref<HTMLDivElement>) => {
-    return (
-      <Wrapper ref={ref} {...props}>
-        <Inner className="inner" maxWidth={maxWidth}>
-          {children}
-        </Inner>
-      </Wrapper>
-    );
-  },
+    ({ children, maxWidth, ...props }: Props, ref: React.Ref<HTMLDivElement>) => {
+        return (
+            <Wrapper ref={ref} {...props}>
+                <Inner className="inner" maxWidth={maxWidth}>
+                    {children}
+                </Inner>
+            </Wrapper>
+        );
+    },
 );
 
 const Wrapper = styled.div`
-  width: 100%;
+    width: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
-const Inner = styled.div<Pick<Props, 'maxWidth'>>`
-  width: 100%;
-  max-width: ${({ maxWidth }) => maxWidth ?? vars.breakpoints.md};
+const Inner = styled.div<Pick<Props, "maxWidth">>`
+    width: 100%;
+    max-width: ${({ maxWidth }) => maxWidth ?? breakpoints.md};
 `;
