@@ -6,14 +6,16 @@ type ContainerProps = {
   flexDirection?: 'row' | 'column';
   justifyContent?: 'center' | 'flex-start' | 'flex-end' | 'space-between' | 'space-around';
   alignItems?: 'center' | 'flex-start' | 'flex-end' | 'baseline' | 'stretch';
+  backgroundColor?: string;
   children: React.ReactNode;
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ backgroundColor?: string }>`
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
 const Inner = styled.div<ContainerProps>`
@@ -31,10 +33,11 @@ export const Container: React.FC<ContainerProps> = ({
   flexDirection,
   justifyContent,
   alignItems,
+  backgroundColor,
   children,
 }) => {
   return (
-    <Wrapper>
+    <Wrapper backgroundColor={backgroundColor}>
       <Inner
         className="inner"
         maxWidth={maxWidth}
