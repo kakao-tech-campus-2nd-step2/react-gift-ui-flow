@@ -14,6 +14,8 @@ const LoginPage: React.FC = () => {
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     login(username);
+
+    sessionStorage.setItem('authToken', username);
     navigate('/');
   };
 
