@@ -1,17 +1,17 @@
-/** @jsxImportSource @emotion/react */
-
 import { css } from '@emotion/react';
 
 type GridProps = {
+  className?: string;
   gap: number;
   columns: number | { initial: number; lg: number; md: number; sm: number };
   children: React.ReactNode;
 };
 
-function Grid({ gap, columns, children }: GridProps) {
+function Grid({ className, gap, columns, children }: GridProps) {
   if (typeof columns === 'number') {
     return (
       <div
+        className={className}
         css={css`
           width: 100%;
           display: grid;
@@ -45,5 +45,10 @@ function Grid({ gap, columns, children }: GridProps) {
     </div>
   );
 }
+
+Grid.defaultProps = {
+  gap: 0,
+  columns: 6,
+};
 
 export default Grid;
