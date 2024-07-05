@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
   const navigate = useNavigate();
-  const loginBtnText: string = localStorage.getItem('username') ? '내 계정' : '로그인';
+  const loginBtnText: string = sessionStorage.getItem('authToken') ? '내 계정' : '로그인';
 
   const handleLoginBtn = () => {
     if (loginBtnText === '로그인') {

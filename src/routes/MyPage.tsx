@@ -1,20 +1,21 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { Button } from '../components/common/Button/index';
 
 const MyPage = () => {
   const navigate = useNavigate();
-  const name = sessionStorage.getItem('authToken');
+  const { authToken, logout } = useAuth();
 
   const handleLogout = () => {
-    sessionStorage.removeItem('authToken');
+    logout();
     navigate('/');
   };
 
   return (
     <MyPageContainer>
       <MyPageInnerBox>
-        {name}님 안녕하세요!
+        {authToken}님 안녕하세요!
         <div></div>
         <Button theme="darkGray" size="small" onClick={handleLogout}>
           로그아웃

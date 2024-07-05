@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import { UnderlineTextField } from '../components/common/Form/Input/UnderlineTextField';
 import { Button } from '../components/common/Button';
 
 const LoginPage = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -15,8 +17,7 @@ const LoginPage = () => {
       return;
     }
 
-    sessionStorage.setItem('authToken', name);
-
+    login(name);
     navigate('/');
   };
 
