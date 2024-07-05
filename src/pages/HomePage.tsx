@@ -76,12 +76,6 @@ const categories = [
   },
 ];
 
-const trendingGifts = [
-  { id: 1, name: '전체', category: 'all' },
-  { id: 2, name: '여성이', category: 'woman' },
-  { id: 3, name: '남성이', category: 'man' },
-  { id: 4, name: '청소년이', category: 'teen' },
-];
 const containerStyle: React.CSSProperties = {
   padding: '20px',
   display: 'flex',
@@ -146,10 +140,6 @@ const HomePage: React.FC = () => {
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
   };
-
-  const filteredGifts = trendingGifts.filter(
-    (gift) => activeFilter === 'all' || gift.category === activeFilter,
-  );
 
   return (
     <div>
@@ -219,13 +209,6 @@ const HomePage: React.FC = () => {
               <div>청소년이</div>
             </div>
           </div>
-          <section>
-            <div style={trendingSectionStyle}>
-              {filteredGifts.map((gift) => (
-                <div key={gift.id}>{gift.name}</div>
-              ))}
-            </div>
-          </section>
         </div>
       </section>
     </div>
