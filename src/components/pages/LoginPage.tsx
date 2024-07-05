@@ -10,8 +10,13 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // 로그인 처리 로직 (여기서는 예시로 로그인 상태를 true로 설정)
+    // ID를 sessionStorage의 authToken key에 저장
+    sessionStorage.setItem('authToken', username);
+    
+    // AuthContext의 login 함수 호출
     login(username);
+
+    // 로그인 후 메인 페이지로 이동
     navigate('/');
   };
 
