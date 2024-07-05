@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { ROUTE_PATHS } from '@/Routes/constants';
+import { ROUTE_PATHS } from '@/routes/constants';
 
 const Wrapper = styled.div`
   display: flex;

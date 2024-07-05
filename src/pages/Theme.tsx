@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import { useParams } from 'react-router-dom';
 
-import ThemeGiftGrid from '@/components/ThemePage/ThemeGifts';
-import Header from '@/components/ThemePage/ThemeHeader';
+import ThemeGiftGrid from '@/components/themePage/ThemeGifts';
+import Header from '@/components/themePage/ThemeHeader';
 
 const Wrapper = styled.div`
   height: auto;
