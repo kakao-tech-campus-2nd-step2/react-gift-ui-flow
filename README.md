@@ -7,7 +7,7 @@
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
 
 #### 기능 요구 사항
-- [ ] Header와 Footer 공통 컴포넌트 만들어 모든 페이지에 적용
+- [x] Header, Footer, 공통 컴포넌트 만들어 모든 페이지에 적용
 - 각 Url Path별로 페이지를 만들기
 
   <메인 페이지>
