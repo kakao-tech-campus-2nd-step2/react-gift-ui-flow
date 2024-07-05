@@ -1,4 +1,4 @@
-import { GiftContents } from '@/data/filterButton';
+import { GiftContents } from '@/pages/HomePage/data/filterButton';
 
 import { Callout } from '@/components/Callout';
 

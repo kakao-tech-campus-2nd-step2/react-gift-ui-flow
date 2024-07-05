@@ -1,22 +1,24 @@
 import { HTMLAttributes } from 'react';
 
-import { loginContainerStyle } from '@/pages/LoginPage/components/LoginForm/styles';
-
 import { Container } from '@/components/ui/Layout/Container';
+
+import { containerStyle } from './styles';
 
 interface LoginLayoutProp extends HTMLAttributes<HTMLDivElement> {}
 
-export const LoginLayout = ({ children, ...props }: LoginLayoutProp) => {
+const LoginLayout = ({ children, ...props }: LoginLayoutProp) => {
   return (
     <Container
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
       gap="1rem"
-      css={loginContainerStyle}
+      css={containerStyle}
       {...props}
     >
       {children}
     </Container>
   );
 };
+
+export default LoginLayout;

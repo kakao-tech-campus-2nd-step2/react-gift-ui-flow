@@ -1,29 +1,6 @@
 import { css } from '@emotion/react';
 
-import {
-  AlignItems,
-  Column,
-  FlexDirection,
-  JustifyContent,
-  PlaceItems,
-} from '@/types/uiTypes';
-
-export const containerStyle = (
-  maxWidth?: string,
-  flexDirection?: FlexDirection,
-  justifyContent?: JustifyContent,
-  alignItems?: AlignItems,
-  gap?: string
-) =>
-  css({
-    display: 'flex',
-    width: '100%',
-    maxWidth,
-    flexDirection,
-    justifyContent,
-    alignItems,
-    gap,
-  });
+import { Column, PlaceItems } from '@/types/uiTypes';
 
 export const gridStyle = (
   gap: number,

@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 
-import { Container, ContainerProps } from '../ui/Layout/Container';
+import { Container, ContainerProps } from '@/components/ui/Layout/Container';
+
 import { contentStyle } from './styles';
 
 interface ContentProps extends ContainerProps {

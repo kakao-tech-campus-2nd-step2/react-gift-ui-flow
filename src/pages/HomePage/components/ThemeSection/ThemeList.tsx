@@ -6,7 +6,7 @@ import { Content } from '@/components/Content';
 import { Grid } from '@/components/ui/Layout/Grid';
 
 import { ThemeListItem } from './ThemeListItem';
-import { themeListStyle } from './styles';
+import { gridStyle } from './styles';
 
 export const ThemeList = () => {
   return (
@@ -18,7 +18,7 @@ export const ThemeList = () => {
           md: 4,
           sm: 4,
         }}
-        css={themeListStyle}
+        css={gridStyle}
       >
         {themeData.map((theme) => {
           return (

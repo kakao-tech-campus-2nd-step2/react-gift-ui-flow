@@ -2,11 +2,6 @@ import { css } from '@emotion/react';
 
 import { colors } from '@/styles/theme';
 
-export const loginContainerStyle = css({
-  height: '100vh',
-  gap: '2.5rem',
-});
-
 export const formContainerStyle = css({
   display: 'flex',
   flexDirection: 'column',

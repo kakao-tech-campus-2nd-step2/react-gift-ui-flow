@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { ROUTES } from '@/constants/routes';
+import ROUTES from '@/constants/routes';
 import { AuthProvider } from '@/context/auth/AuthProvider';
 import { HomePage } from '@/pages/HomePage';
 import { LoginPage } from '@/pages/LoginPage';

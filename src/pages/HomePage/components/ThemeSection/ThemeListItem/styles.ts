@@ -1,12 +1,6 @@
 import { css } from '@emotion/react';
 
-export const themeListStyle = css({
-  padding: '4rem 2rem',
-  rowGap: '1rem',
-  width: '100%',
-});
-
-export const themeListItemStyle = css({
+export const containerStyle = css({
   cursor: 'pointer',
   maxWidth: '4.75rem',
   '@media (min-width: 520px)': {
@@ -20,6 +14,6 @@ export const themeListItemStyle = css({
   },
 });
 
-export const themeTitleStyle = css({
+export const titleStyle = css({
   fontWeight: '500',
 });

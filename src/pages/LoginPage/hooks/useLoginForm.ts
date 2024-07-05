@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/context/auth/useAuth';
@@ -10,21 +10,13 @@ export const useLoginForm = () => {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [isLoginEnabled, setIsLoginEnabled] = useState(false);
-
-  useEffect(() => {
-    setIsLoginEnabled(username !== '' && password !== '');
-  }, [username, password]);
+  const isLoginEnabled = !!username.trim() && !!password;
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
-    if (name === 'username') {
-      setUsername(value);
-    }
-    if (name === 'password') {
-      setPassword(value);
-    }
+    if (name === 'username') setUsername(value);
+    if (name === 'password') setPassword(value);
   };
 
   const handleLogin = (e: FormEvent) => {

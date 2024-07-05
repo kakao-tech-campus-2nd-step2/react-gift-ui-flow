@@ -1,9 +1,9 @@
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 
 import { useFilter } from '@/context/filter/useFilter';
-import { getFilteredRankItem } from '@/utils/filterRankItem';
 
 import { RankListContext } from './RankListContext';
+import { getFilteredRankItem } from './getFilteredRankItem';
 
 const INITIAL_ITEMS_COUNT = 6;
 
@@ -12,6 +12,10 @@ export const RankListProvider = ({ children }: { children: ReactNode }) => {
   const filteredData = getFilteredRankItem(userFilter, giftFilter);
 
   const [visibleItemCount, setVisibleItemCount] = useState(INITIAL_ITEMS_COUNT);
+
+  useEffect(() => {
+    setVisibleItemCount(INITIAL_ITEMS_COUNT);
+  }, [userFilter, giftFilter]);
 
   const visibleItems = filteredData.slice(0, visibleItemCount);
   const isExpanded = visibleItemCount >= filteredData.length;
@@ -23,10 +27,6 @@ export const RankListProvider = ({ children }: { children: ReactNode }) => {
   const handleShowLess = useCallback(() => {
     setVisibleItemCount(INITIAL_ITEMS_COUNT);
   }, []);
-
-  useEffect(() => {
-    setVisibleItemCount(INITIAL_ITEMS_COUNT);
-  }, [userFilter, giftFilter]);
 
   const contextValue = useMemo(
     () => ({

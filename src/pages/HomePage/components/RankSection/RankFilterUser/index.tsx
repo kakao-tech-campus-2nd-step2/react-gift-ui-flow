@@ -1,4 +1,4 @@
-import { UserContents } from '@/data/filterButton';
+import { UserContents } from '@/pages/HomePage/data/filterButton';
 
 import { Container } from '@/components/ui/Layout/Container';
 

@@ -1,13 +1,17 @@
 import { FilterProvider } from '@/context/filter/FilterProvider';
 import BaseLayout from '@/layouts/BaseLayout';
 
+import { BannerBottom } from './components/BannerBottom';
+import { BannerTop } from './components/BannerTop';
 import { RankSection } from './components/RankSection';
-import { ThemeSection } from './components/ThemeSection';
+import { ThemeList } from './components/ThemeSection/ThemeList';
 
 export const HomePage = () => {
   return (
     <BaseLayout>
-      <ThemeSection />
+      <BannerTop />
+      <ThemeList />
+      <BannerBottom />
       <FilterProvider>
         <RankSection />
       </FilterProvider>

@@ -1,5 +1,5 @@
 import loginLogo from '@/assets/login-logo.svg';
-import { LoginLayout } from '@/layouts/LoginLayout';
+import LoginLayout from '@/layouts/LoginLayout';
 
 import { Logo } from '@/components/Logo';
 

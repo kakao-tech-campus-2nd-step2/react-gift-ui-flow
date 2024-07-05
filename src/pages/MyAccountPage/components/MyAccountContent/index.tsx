@@ -23,8 +23,8 @@ export const MyAccountConent = () => {
         size="medium"
         theme="darkGray"
         width="14rem"
-        css={buttonStyle}
         onClick={handleLogout}
+        css={buttonStyle}
       >
         로그아웃
       </Button>
