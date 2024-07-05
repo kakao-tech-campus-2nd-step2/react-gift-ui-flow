@@ -18,7 +18,7 @@ const ThemePage: React.FC = () => {
 
   const itemList = Array(21)
     .fill(defaultItem)
-    .map((item, index) => ({ ...item, rankingIndex: index + 1 }));
+    .map((item, index) => ({ ...item, rankingIndex: index + 1 }))
 
   return (
     <Wrapper>

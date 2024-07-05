@@ -1,14 +1,27 @@
 import styled from '@emotion/styled'
+import { useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/components/AuthContext'; 
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
+  const { isAuth } = useAuth();
+  const handleNavigate = (path: string) => {
+    navigate(path);
+  };
+
   return (
     <Wrapper>
       <HeaderContainer>
         <HeaderNavigator className="inner">
-          <a href="/">
+          <GiftText onClick={() => handleNavigate('/')}>
             <HeaderLogo src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" alt="카카오 선물하기 로고" />
-          </a>
-          <LoginText>로그인</LoginText>
+          </GiftText>
+          {isAuth ? (
+            <MyAccount onClick={() => handleNavigate('/my-account')}>내 계정</MyAccount>
+          ) : (
+            <Login onClick={() => handleNavigate('/login')}>로그인</Login>
+          )}
         </HeaderNavigator>
       </HeaderContainer>
     </Wrapper>
@@ -43,14 +56,19 @@ const HeaderNavigator = styled.div`
   align-items: center;
 `;
 
+const GiftText = styled.div``;
+
 const HeaderLogo = styled.img`
   height: 54px;
 `;
 
-const LoginText = styled.p`
-  align-items: center;
-  font-size: 14px;
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+const Login = styled.div`
+  width: 42px;
   cursor: pointer;
+  line-height: 54px;
+`;
+
+const MyAccount = styled.div`
+  cursor: pointer;
+  line-height: 54px;
 `;
