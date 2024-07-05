@@ -2,7 +2,8 @@ import { createContext, useState, ReactNode, useContext, useMemo } from 'react';
 
 interface LoginContextProps {
   isLoggedIn: boolean;
-  login: () => void;
+  username: string;
+  login: (username: string) => void;
   logout: () => void;
 }
 
@@ -14,11 +15,21 @@ interface LoginProviderProps {
 
 export const LoginProvider = ({ children }: LoginProviderProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
 
-  const login = () => setIsLoggedIn(true);
-  const logout = () => setIsLoggedIn(false);
+  const login = (username: string) => {
+    setIsLoggedIn(true);
+    setUsername(username);
+  };
+  const logout = () => {
+    setIsLoggedIn(false);
+    setUsername('');
+  };
 
-  const value = useMemo(() => ({ isLoggedIn, login, logout }), [isLoggedIn]);
+  const value = useMemo(
+    () => ({ isLoggedIn, username, login, logout }),
+    [isLoggedIn, username]
+  );
 
   return (
     <LoginContext.Provider value={value}>

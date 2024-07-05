@@ -13,7 +13,7 @@ const LoginPage = () => {
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
     if (id && password) {
-      login();
+      login(id);
       navigate('/');
     }
   };
