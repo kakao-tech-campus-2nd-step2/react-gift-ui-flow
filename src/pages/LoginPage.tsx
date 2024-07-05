@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-interface LoginPageProps {
-  onLogin: (name: string) => void;
-}
+import { useAuth } from '../context/AuthContext';
 
 const loginContainerStyle: React.CSSProperties = {
   display: 'flex',
@@ -51,17 +49,17 @@ const titleStyle: React.CSSProperties = {
   textAlign: 'center',
 };
 
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+const LoginPage: React.FC = () => {
   const [name, setUsername] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
+  const { login } = useAuth();
 
   const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    onLogin(name);
-    sessionStorage.setItem('authToken', name); // Save the username in sessionStorage
+    login(name);
     navigate(from, { replace: true });
   };
 
