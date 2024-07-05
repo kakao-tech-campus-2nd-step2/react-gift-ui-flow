@@ -28,9 +28,9 @@
 
 1. **MainPage (/)**
    - [x] MainPage 파일 생성
-   - [ ] Theme 카테고리 섹션 추가
-     - [ ] Theme 카테고리 섹션 기본 구조 작성
-     - [ ] Theme 카테고리 Item 클릭 시 Theme 페이지(/theme/:themeKey)로 이동 로직 추가
+   - [x] Theme 카테고리 섹션 추가
+     - [x] Theme 카테고리 섹션 기본 구조 작성
+     - [x] Theme 카테고리 Item 클릭 시 Theme 페이지(/theme/:themeKey)로 이동 로직 추가
    - [ ] 실시간 급상승 선물랭킹 추가
      - [ ] 실시간 급상승 선물랭킹 기본 구조 작성
      - [ ] 필터 기능을 hooks를 사용하여 구현
