@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+import { Image } from '@/components/common/Image';
+
 interface HeaderProps {
   isLoggedIn: boolean;
 }
@@ -8,9 +10,13 @@ interface HeaderProps {
 export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
   return (
     <HeaderContainer>
-        <Title>선물하기</Title>
-        <MenuItem>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
-
+      <Image
+        src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+        alt="선물하기 로고 이미지"
+        width={61}
+        height={54}
+      />
+      <MenuItem>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
     </HeaderContainer>
   );
 };
@@ -23,11 +29,6 @@ const HeaderContainer = styled.div`
   background-color: white;
   padding: 10px 20px;
   border-bottom: 1px solid #e0e0e0;
-`;
-
-const Title = styled.div`
-  font-size: 18px;
-  font-weight: bold;
 `;
 
 const MenuItem = styled.div`
