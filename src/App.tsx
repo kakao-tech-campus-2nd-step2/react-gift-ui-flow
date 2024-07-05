@@ -1,35 +1,45 @@
-// import styled from '@emotion/styled';
-
-import { Footer } from '@/components/features/Footer';
-import { Header } from '@/components/features/Header';
 import { Layout } from '@/components/features/Layout';
 import { Home } from '@/pages/Home';
 // import { Theme } from '@/pages/Theme';
 import { Login } from '@/pages/Login';
 // import { MyAccount } from '@/pages/MyAccount';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 
 const App = () => {
   return (
     <div>
-      <Header />
       <RouterProvider router={router} />
-      <Footer />
     </div>
   );
 };
 
+const RouterPath = {
+  root: '/',
+  home: '/',
+  theme: '/theme/:themeKey',
+  login: '/login',
+  myAccount: '/my-account',
+  notFound: '*',
+};
+
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: RouterPath.root,
     element: <Layout />,
     children: [
-      { path: '/home', element: <Home /> },
-      // { path: '/theme:themeKey', element: <Theme /> },
-      { path: '/login', element: <Login /> },
-      // { path: '/my-account', element: <MyAccount /> },
+      { path: RouterPath.home, element: <Home /> },
+      // { path: RouterPath.theme, element: <Theme /> },
+      // {
+      //   path: RouterPath.myAccount,
+      //   element: <MyAccount />,
+      // },
+      {
+        path: RouterPath.notFound,
+        element: <Navigate to={RouterPath.home} />,
+      },
     ],
   },
+  { path: RouterPath.login, element: <Login /> },
 ]);
 
 export default App;
