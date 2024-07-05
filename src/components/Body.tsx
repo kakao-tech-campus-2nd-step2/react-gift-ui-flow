@@ -4,7 +4,7 @@ import React from 'react';
 const Body: React.FC = () => {
     return (
       <BodyContainer>
-
+        body입니다.
       </BodyContainer>
     );
   };
