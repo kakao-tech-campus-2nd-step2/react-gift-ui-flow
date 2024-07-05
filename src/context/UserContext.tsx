@@ -1,18 +1,20 @@
-import React, { createContext, useContext, useMemo, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
-const authToken = sessionStorage.getItem('authToken');
-
-export const UserContext = createContext({ isLogin: authToken !== null, authToken });
+export const UserContext = createContext<string | null>(sessionStorage.getItem('authToken'));
+export const SetUserContext = createContext<React.Dispatch<React.SetStateAction<string>>>(() => {});
 
 export function UserContextProvider({ children }: { children: React.ReactNode }) {
-  const [isLogin, setIsLogin] = useState(authToken !== null && authToken !== '');
+  const [user, setUser] = useState<string>(sessionStorage.getItem('authToken') || '');
 
-  const value = useMemo(() => ({ isLogin, authToken, setIsLogin }), [isLogin, setIsLogin]);
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return (
+    <UserContext.Provider value={user}>
+      <SetUserContext.Provider value={setUser}>{children}</SetUserContext.Provider>
+    </UserContext.Provider>
+  );
 }
 
 export function useIsLogin() {
-  const context = useContext(UserContext);
-  if (!context) throw new Error('Cannot find UserContextProvider');
-  return context.isLogin;
+  const user = useContext(UserContext);
+
+  return user !== '';
 }

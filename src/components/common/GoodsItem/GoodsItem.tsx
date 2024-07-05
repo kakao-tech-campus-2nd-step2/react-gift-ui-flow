@@ -9,7 +9,14 @@ type GoodsItemProps = {
   hidden?: boolean;
 };
 
-function GoodsItem({ imageSrc, subTitle, title, amount, rankingIndex, hidden }: GoodsItemProps) {
+function GoodsItem({
+  imageSrc,
+  subTitle,
+  title,
+  amount,
+  rankingIndex,
+  hidden = false,
+}: GoodsItemProps) {
   return (
     <div hidden={hidden} className="goodsItem">
       {typeof rankingIndex === 'number' && (
@@ -24,9 +31,5 @@ function GoodsItem({ imageSrc, subTitle, title, amount, rankingIndex, hidden }: 
     </div>
   );
 }
-
-GoodsItem.defaultProps = {
-  hidden: false,
-};
 
 export default GoodsItem;

@@ -17,7 +17,7 @@ function RankGoodsItem({
   subTitle,
   title,
   amount,
-  hidden,
+  hidden = false,
 }: RankGoodsItemProps) {
   return (
     <GoodsItem
@@ -30,9 +30,5 @@ function RankGoodsItem({
     />
   );
 }
-
-RankGoodsItem.defaultProps = {
-  hidden: false,
-};
 
 export default RankGoodsItem;

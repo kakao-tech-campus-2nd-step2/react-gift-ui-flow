@@ -5,7 +5,12 @@ type RankingFilterButtonProps = {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-function RankingFilterButton({ selected, title, text, onClick }: RankingFilterButtonProps) {
+function RankingFilterButton({
+  selected = false,
+  title,
+  text,
+  onClick = () => {},
+}: RankingFilterButtonProps) {
   return (
     <button className="ranking__filter__button" onClick={onClick}>
       <p className={'filter__button__text' + (selected ? ' selected' : '')}>{text}</p>
@@ -13,10 +18,5 @@ function RankingFilterButton({ selected, title, text, onClick }: RankingFilterBu
     </button>
   );
 }
-
-RankingFilterButton.defaultProps = {
-  selected: false,
-  onClick: () => {},
-};
 
 export default RankingFilterButton;

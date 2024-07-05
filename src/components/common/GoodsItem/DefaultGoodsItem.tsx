@@ -10,7 +10,13 @@ type DefaultGoodsItemProps = {
   hidden?: boolean;
 };
 
-function DefaultGoodsItem({ imageSrc, subTitle, title, amount, hidden }: DefaultGoodsItemProps) {
+function DefaultGoodsItem({
+  imageSrc,
+  subTitle,
+  title,
+  amount,
+  hidden = false,
+}: DefaultGoodsItemProps) {
   return (
     <GoodsItem
       hidden={hidden}
@@ -21,9 +27,4 @@ function DefaultGoodsItem({ imageSrc, subTitle, title, amount, hidden }: Default
     />
   );
 }
-
-DefaultGoodsItem.defaultProps = {
-  hidden: false,
-};
-
 export default DefaultGoodsItem;

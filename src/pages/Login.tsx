@@ -1,6 +1,7 @@
 import '@styles/login.css';
 
-import { useState } from 'react';
+import { SetUserContext } from 'context/UserContext';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 type LoginInfo = {
@@ -9,6 +10,8 @@ type LoginInfo = {
 };
 
 function Login() {
+  const setUser = useContext(SetUserContext);
+
   const [loginInfo, setLoginInfo] = useState<LoginInfo>({
     name: '',
     password: '',
@@ -25,6 +28,7 @@ function Login() {
       return;
     } else {
       sessionStorage.setItem('authToken', loginInfo.name);
+      setUser(loginInfo.name);
       navigate('/');
     }
   };
