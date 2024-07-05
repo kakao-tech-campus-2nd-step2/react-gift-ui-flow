@@ -71,6 +71,6 @@ const LoginForm = styled.form`
 
 const LoginButton = styled(Button)`
   margin-top: 20px;
-  `;
+`;
 
 export default LoginPage;

@@ -17,7 +17,8 @@ const handleImageClick = () => {
 };
 
 const MainPage: React.FC = () => {
-  const { selectedCategory, selectedSubCategory, setSelectedCategory, setSelectedSubCategory } = useFilters();
+  const { selectedCategory, selectedSubCategory, setSelectedCategory, setSelectedSubCategory } =
+    useFilters();
   const [showAllRankings, setShowAllRankings] = useState(false);
 
   const toggleShowRankings = () => {

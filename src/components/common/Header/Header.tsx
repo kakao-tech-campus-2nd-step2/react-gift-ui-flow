@@ -27,9 +27,7 @@ export const Header: React.FC = () => {
           height={54}
         />
       </LogoContainer>
-      <MenuItem onClick={handleLoginClick}>
-        {isLoggedIn ? '내 계정' : '로그인'}
-      </MenuItem>
+      <MenuItem onClick={handleLoginClick}>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
     </HeaderContainer>
   );
 };
