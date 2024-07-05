@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import type { FormEvent } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import { useContext, useEffect } from 'react';
+import type { NavigateFunction } from 'react-router/dist/lib/hooks';
 import { Form, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/atoms/Button';
@@ -20,28 +21,31 @@ function validateString(str: string): boolean {
   return numericAlphabet.test(str);
 }
 
-const mockLogin = (setAuth: Dispatch<SetStateAction<Auth>>) => (e: FormEvent<HTMLFormElement>) => {
-  const formData = new FormData(e.currentTarget);
-  const id = formData.get('id') as string;
-  const pwd = formData.get('pwd') as string;
+const mockLogin =
+  (setAuth: Dispatch<SetStateAction<Auth>>, navigate: NavigateFunction) =>
+  (e: FormEvent<HTMLFormElement>) => {
+    const formData = new FormData(e.currentTarget);
+    const id = formData.get('id') as string;
+    const pwd = formData.get('pwd') as string;
 
-  if (!validateString(id as string) || !validateString(pwd as string)) {
-    alert('특수문자는 절대 안돼요');
+    if (!validateString(id as string) || !validateString(pwd as string)) {
+      alert('특수문자는 절대 안돼요');
+      e.preventDefault();
+      e.currentTarget.reset();
+      return;
+    }
+
+    // 등록된 유일한 회원
+    if (id === 'qwer' && pwd === '1234') {
+      const auth = { name: id };
+      setAuth(auth);
+      navigate(-1);
+      return;
+    }
+
     e.preventDefault();
     e.currentTarget.reset();
-    return;
-  }
-
-  // 등록된 유일한 회원
-  if (id === 'qwer' && pwd === '1234') {
-    const auth = { name: id };
-    setAuth(auth);
-    return;
-  }
-
-  e.preventDefault();
-  e.currentTarget.reset();
-};
+  };
 
 export const LoginPage = () => {
   const navigate = useNavigate();
@@ -58,7 +62,7 @@ export const LoginPage = () => {
     <FullHeightContainer maxWidth="580px" flexDirection={ContainerDirectionType.column}>
       <Image src={imgSrc} width="88px" color="#333" />
       <FormWrapper>
-        <Form method="post" onSubmit={mockLogin(setAuthContext)}>
+        <Form method="post" onSubmit={mockLogin(setAuthContext, navigate)}>
           <UnderlineTextField name="id" placeholder="이름" autoComplete="off" />
           <UnderlineTextField
             name="pwd"

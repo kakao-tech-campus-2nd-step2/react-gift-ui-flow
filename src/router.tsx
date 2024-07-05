@@ -1,4 +1,4 @@
-import { createBrowserRouter, redirect } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
@@ -49,7 +49,8 @@ export async function loginAction({
   const { id } = updates;
   sessionStorage.setItem('authToken', JSON.stringify({ name: id }));
 
-  return redirect(RouterPath.root);
+  // 인덱스로 리다이렉트 가능
+  // return redirect(RouterPath.root);
 }
 
 export const router = createBrowserRouter([
