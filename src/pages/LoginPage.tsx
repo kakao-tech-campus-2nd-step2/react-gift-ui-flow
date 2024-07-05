@@ -5,14 +5,12 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Container } from '@/components/common/layouts/Container/index';
+import { useAuth } from '@/contexts/AuthContext';
 
-interface LoginPageProps {
-  onLogin: (id: string) => void;
-}
-
-export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
+export const LoginPage: React.FC = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { login } = useAuth();
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
@@ -24,8 +22,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       return;
     }
 
-    sessionStorage.setItem('authToken', id);
-    onLogin(id);
+    login(id);
     navigate(from);
   };
 

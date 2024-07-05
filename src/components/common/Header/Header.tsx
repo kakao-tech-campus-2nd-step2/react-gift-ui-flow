@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
-interface HeaderProps {
-  isLoggedIn: boolean;
-}
+import { useAuth } from '@/contexts/AuthContext';
 
-export const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
+export const Header: React.FC = () => {
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
 
   const handleLogoClick = () => {
     navigate(`/`);

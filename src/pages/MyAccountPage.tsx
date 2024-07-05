@@ -3,22 +3,20 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/layouts/Container/index';
+import { useAuth } from '@/contexts/AuthContext';
 
-interface LoginPageProps {
-  onLogout: () => void;
-}
-
-export const MyAccountPage: React.FC<LoginPageProps> = ({ onLogout }) => {
+export const MyAccountPage: React.FC = () => {
   const navigate = useNavigate();
+  const { user, logout } = useAuth();
 
   const handleLogout = () => {
-    onLogout();
+    logout();
     navigate('/');
   };
 
   return (
     <MySection>
-      <h1>안녕하세요!</h1>
+      <h1>{user}님 안녕하세요!</h1>
       <MyContainer>
         <Button theme="darkGray" size="small" onClick={handleLogout}>
           <strong>로그아웃</strong>
