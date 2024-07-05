@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Footer from '@/components/common/Footer';
 import Header from '@/components/common/Header';
 import Login from '@/pages/Login';
 import Main from '@/pages/Main';
@@ -17,6 +18,7 @@ function App() {
             <Route path="/my-account" element={<MyAccount />} />
           </Routes>
         </main>
+        <Footer />
       </BrowserRouter>
     </div>
   );
