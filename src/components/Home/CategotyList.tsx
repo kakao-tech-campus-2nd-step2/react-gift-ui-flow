@@ -19,7 +19,7 @@ const categories = [
 
 const CategoryList: React.FC = () => (
     <CategorySection>
-        <CategoryTitle>카테고리</CategoryTitle>
+        <CategoryTitle></CategoryTitle>
         <CategoryListContainer>
             {categories.map((category, index) => (
                 <Link to={`/theme/${category.key}`} key={index}>
