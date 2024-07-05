@@ -1,8 +1,13 @@
 import './Header.css';
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { useAuth } from '../../contexts/AuthContext';
 
 const Header: React.FC = () => {
+  const { isAuthenticated } = useAuth();
+
   return (
     <header className="header">
       <nav>
@@ -10,9 +15,15 @@ const Header: React.FC = () => {
           <li>
             <a href="/">선물하기</a>
           </li>
-          <li>
-            <a href="/login">로그인</a>
-          </li>
+          {isAuthenticated ? (
+            <li>
+              <Link to="/my-account">내 계정</Link>
+            </li>
+          ) : (
+            <li>
+              <a href="/login">로그인</a>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
