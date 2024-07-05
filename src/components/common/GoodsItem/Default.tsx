@@ -33,6 +33,7 @@ export const DefaultGoodsItems = ({
 
 const Wrapper = styled.div`
   width: 100%;
+  margin-top: 30px;
 `;
 
 const InfoWrapper = styled.div`
