@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Container } from '@/components/common/layouts/Container';
+import { useAuth } from '@/providers/AuthContextProvider';
 
 const HeaderInner = styled.div`
   width: 100%;
@@ -28,23 +28,8 @@ const LoginContainer = styled.div`
 `;
 
 const Header = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  useEffect(() => {
-    const authToken = sessionStorage.getItem('authToken');
-    setIsLoggedIn(!!authToken);
-
-    window.addEventListener('storage', handleStorageChange);
-
-    return () => {
-      window.removeEventListener('storage', handleStorageChange);
-    };
-  }, []);
-
-  const handleStorageChange = () => {
-    const authToken = sessionStorage.getItem('authToken');
-    setIsLoggedIn(!!authToken);
-  };
+  const { authToken } = useAuth();
+  const userName = authToken;
 
   return (
     <Container>
@@ -57,9 +42,9 @@ const Header = () => {
             />
           </Logo>
         </Link>
-        <Link to={isLoggedIn ? '/my-account' : '/login'}>
+        <Link to={userName ? '/my-account' : '/login'}>
           <LoginContainer>
-            <p>{isLoggedIn ? '내 계정' : '로그인'}</p>
+            <p>{userName ? '내 계정' : '로그인'}</p>
           </LoginContainer>
         </Link>
       </HeaderInner>

@@ -6,6 +6,7 @@ import LoginPage from '@/pages/Login';
 import MainPage from '@/pages/Main';
 import MyAccountPage from '@/pages/MyAccount';
 import ThemePage from '@/pages/Theme';
+import { AuthProvider } from '@/providers/AuthContextProvider';
 
 import { ROUTE_PATHS } from './constants';
 import PrivateRoute from './privateRoute';
@@ -38,11 +39,13 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
 const AppRoutes = () => {
   return (
-    <Router>
-      <Layout>
-        <RoutesComponent />
-      </Layout>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Layout>
+          <RoutesComponent />
+        </Layout>
+      </Router>
+    </AuthProvider>
   );
 };
 
