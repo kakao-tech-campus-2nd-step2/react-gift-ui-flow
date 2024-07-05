@@ -1,16 +1,36 @@
 import { Container } from '@/components/common/layouts/Container';
 import * as styles from '../styles';
+import { TypeData } from '@/constants/GiftData';
 
-const TitleSection = () => {
+const TitleSection = ({ pathData }: { pathData: string }) => {
+  const matchedData = TypeData.find((data) => data.type === pathData);
+
+  if (!matchedData) {
+    return null;
+  }
+
   return (
-    <styles.TitleSectionLayout>
+    <styles.TitleSectionLayout backgroundColor={matchedData.backgroundColor}>
       <Container>
-        <styles.TypeText>가벼운 선물</styles.TypeText>
-        <styles.Title>예산은 가볍게, 감동은 무겁게❤️</styles.Title>
-        <styles.subTitle>당신의 센스를 뽐내줄 부담 없는 선물</styles.subTitle>
+        <styles.TypeText>{matchedData.title}</styles.TypeText>
+        <styles.Title>{matchedData.mainTitle}</styles.Title>
+        <styles.subTitle>{matchedData.subTitle}</styles.subTitle>
       </Container>
     </styles.TitleSectionLayout>
   );
+  // return (
+  //   <styles.TitleSectionLayout>
+  //     {TypeData.map((data, index) => {
+  //       return (
+  //         <Container key={index}>
+  //           <styles.TypeText>{data.title}</styles.TypeText>
+  //           <styles.Title>{data.mainTitle}</styles.Title>
+  //           <styles.subTitle>{data.subTitle}</styles.subTitle>
+  //         </Container>
+  //       );
+  //     })}
+  //   </styles.TitleSectionLayout>
+  // );
 };
 
 export default TitleSection;
