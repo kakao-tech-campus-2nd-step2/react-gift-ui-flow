@@ -2,8 +2,9 @@ import { Layout } from '@/components/features/Layout';
 import { Home } from '@/pages/Home';
 // import { Theme } from '@/pages/Theme';
 import { Login } from '@/pages/Login';
-// import { MyAccount } from '@/pages/MyAccount';
+import { MyAccount } from '@/pages/MyAccount';
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
+import { RouterPath } from '@/routes';
 
 const App = () => {
   return (
@@ -13,15 +14,6 @@ const App = () => {
   );
 };
 
-const RouterPath = {
-  root: '/',
-  home: '/',
-  theme: '/theme/:themeKey',
-  login: '/login',
-  myAccount: '/my-account',
-  notFound: '*',
-};
-
 const router = createBrowserRouter([
   {
     path: RouterPath.root,
@@ -29,10 +21,10 @@ const router = createBrowserRouter([
     children: [
       { path: RouterPath.home, element: <Home /> },
       // { path: RouterPath.theme, element: <Theme /> },
-      // {
-      //   path: RouterPath.myAccount,
-      //   element: <MyAccount />,
-      // },
+      {
+        path: RouterPath.myAccount,
+        element: <MyAccount />,
+      },
       {
         path: RouterPath.notFound,
         element: <Navigate to={RouterPath.home} />,
