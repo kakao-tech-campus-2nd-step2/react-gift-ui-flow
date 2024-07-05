@@ -8,3 +8,4 @@ export { default as Header } from './Header';
 export { default as Container } from './Layout/Container';
 export { default as Grid } from './Layout/Grid';
 export { default as Inner } from './Layout/Inner';
+export { default as SectionHeader } from './SectionHeader';
