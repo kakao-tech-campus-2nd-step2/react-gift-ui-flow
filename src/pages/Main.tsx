@@ -23,6 +23,9 @@ const AiSuggestButton = styled(Button)`
 const Wrapper = styled.div`
   height: auto;
   min-height: 100%;
+  left: 0;
+  right: 0;
+  top: 58px;
 `;
 
 export const MainPage = () => {

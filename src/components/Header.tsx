@@ -3,11 +3,14 @@ import styled from '@emotion/styled';
 import { Container } from '@/components/common/layouts/Container';
 
 const HeaderInner = styled.div`
+  width: 100%;
+  max-width: 1024px;
   display: flex;
+  flex-direction: row;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  height: 100%;
-  padding: 0px 16px;
 `;
 
 const Logo = styled.div`
