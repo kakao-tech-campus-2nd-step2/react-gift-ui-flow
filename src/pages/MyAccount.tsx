@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/layouts/Container';
@@ -36,11 +35,9 @@ const MyAccount = () => {
   const navigate = useNavigate();
   const userName = authToken;
 
-  useEffect(() => {
-    if (!authToken) {
-      navigate('/login');
-    }
-  }, [authToken, navigate]);
+  if (!authToken) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
 
   const handleLogout = () => {
     logout();

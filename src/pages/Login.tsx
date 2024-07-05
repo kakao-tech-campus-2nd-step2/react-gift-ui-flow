@@ -1,11 +1,9 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { useAuth } from '@/providers/AuthContextProvider';
-import { ROUTE_PATHS } from '@/routes/constants';
 
 const Wrapper = styled.div`
   display: flex;
@@ -43,7 +41,6 @@ const LogoImage = styled.img`
 const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
   const { login } = useAuth();
 
   const handleLogin = (e: React.FormEvent) => {
@@ -52,7 +49,7 @@ const LoginPage = () => {
       alert('아이디와 비밀번호를 입력해주세요.');
     } else {
       login(id);
-      navigate(ROUTE_PATHS.MAIN);
+      history.back();
     }
   };
 
