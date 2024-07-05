@@ -46,13 +46,9 @@
         "map": [
           ["@", "./src"],
           ["@components", "./src/components"],
-          ["@styles", "./src/styles"],
-          ["@apis", "./src/apis"],
           ["@assets", "./src/assets"],
           ["@hooks", "./src/hooks"],
           ["@pages", "./src/pages"],
-          ["@store", "./src/store"],
-          ["@utils", "./src/utils"],
           ["@data", "./src/data"],
           ["@routes", "./src/routes"],
           ["@context", "./src/context"]
