@@ -22,33 +22,46 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   return children;
 };
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <React.StrictMode>
       <AuthProvider>
         <Router>
-          <div>
-            <Header />
-            <Container>
-              <Routes>
-                <Route path="/" element={<MainPage />} />
-                <Route path="/theme/:themeKey" element={<ThemePage />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route
-                  path="/my-account"
-                  element={
-                    <RequireAuth>
-                      <MyAccountPage />
-                    </RequireAuth>
-                  }
-                />
-              </Routes>
-            </Container>
-            <Footer />
-          </div>
+          <Routes>
+            <Route path="/login" element={<LoginPage />} />
+            <Route
+              path="*"
+              element={
+                <DefaultLayout>
+                  <Routes>
+                    <Route path="/" element={<MainPage />} />
+                    <Route path="/theme/:themeKey" element={<ThemePage />} />
+                    <Route
+                      path="/my-account"
+                      element={
+                        <RequireAuth>
+                          <MyAccountPage />
+                        </RequireAuth>
+                      }
+                    />
+                  </Routes>
+                </DefaultLayout>
+              }
+            />
+          </Routes>
         </Router>
       </AuthProvider>
     </React.StrictMode>
+  );
+};
+
+const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  return (
+    <div>
+      <Header />
+      <Container>{children}</Container>
+      <Footer />
+    </div>
   );
 };
 
