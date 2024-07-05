@@ -27,21 +27,40 @@ const HeaderWrapper = styled.section<{ backgroundColor: string }>`
   width: 100%;
   background-color: ${(props) => props.backgroundColor};
   padding: 54px 20px;
+
+  @media screen and (max-width: 768px) {
+    padding: 27px 20px;
+  }
 `;
 const CustomContainer = styled(Container)`
   gap: 20px;
+  @media screen and (max-width: 768px) {
+    gap: 10px;
+  }
 `;
 const SubText = styled.p`
   font-size: 20px;
   font-weight: bold;
   color: #ffffffb3;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 const MainText = styled.p`
   font-size: 30px;
   font-weight: bold;
   color: white;
+
+  @media screen and (max-width: 768px) {
+    font-size: 22px;
+  }
 `;
 const DescriptText = styled.p`
   font-size: 24px;
   color: #ffffff8c;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
 `;
