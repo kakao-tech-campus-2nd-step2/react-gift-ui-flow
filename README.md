@@ -8,6 +8,8 @@
 ## 페이지 구현 - Routing, 로그인 (without API)
 
 ### 1단계 - 페이지 만들기 (without API)
+- design 작업은 진행하지 않았습니다.
+- 최대한 common 컴포넌트를 활용하고자 하였습니다.
 
 #### 공통 컴포넌트 생성
 - **Header 컴포넌트 생성**
