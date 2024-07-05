@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/layouts/Container';
+import { useAuth } from '@/providers/AuthContextProvider';
 
 const ProfileContainer = styled(Container)`
   padding: 80px 0px 120px;
@@ -31,20 +32,19 @@ const LogoutButton = styled(Button)`
 `;
 
 const MyAccount = () => {
-  const [userName, setUserName] = useState('');
+  const { authToken, logout } = useAuth();
   const navigate = useNavigate();
+  const userName = authToken;
 
   useEffect(() => {
-    const authToken = sessionStorage.getItem('authToken');
-    if (authToken) {
-      setUserName(authToken);
+    if (!authToken) {
+      navigate('/login');
     }
-  }, []);
+  }, [authToken, navigate]);
 
   const handleLogout = () => {
-    sessionStorage.removeItem('authToken');
+    logout();
     navigate('/');
-    window.location.reload(); // 임시
   };
 
   return (
