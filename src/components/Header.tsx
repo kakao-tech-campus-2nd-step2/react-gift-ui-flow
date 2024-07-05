@@ -32,9 +32,8 @@ const Header = () => {
 
   useEffect(() => {
     const authToken = sessionStorage.getItem('authToken');
-    setIsLoggedIn(!!authToken); // authToken이 존재하면 true, 아니면 false로 설정
+    setIsLoggedIn(!!authToken);
 
-    // authToken 변경 시 sessionStorage 갱신
     window.addEventListener('storage', handleStorageChange);
 
     return () => {
@@ -45,7 +44,6 @@ const Header = () => {
   const handleStorageChange = () => {
     const authToken = sessionStorage.getItem('authToken');
     setIsLoggedIn(!!authToken);
-    window.location.reload();
   };
 
   return (
@@ -59,19 +57,11 @@ const Header = () => {
             />
           </Logo>
         </Link>
-        {isLoggedIn ? (
-          <Link to="/my-account">
-            <LoginContainer>
-              <p>내 계정</p>
-            </LoginContainer>
-          </Link>
-        ) : (
-          <Link to="/login">
-            <LoginContainer>
-              <p>로그인</p>
-            </LoginContainer>
-          </Link>
-        )}
+        <Link to={isLoggedIn ? '/my-account' : '/login'}>
+          <LoginContainer>
+            <p>{isLoggedIn ? '내 계정' : '로그인'}</p>
+          </LoginContainer>
+        </Link>
       </HeaderInner>
     </Container>
   );

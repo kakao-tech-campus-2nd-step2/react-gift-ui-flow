@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
+import { useAuth } from '@/providers/AuthContextProvider';
 import { ROUTE_PATHS } from '@/routes/constants';
 
 const Wrapper = styled.div`
@@ -43,13 +44,14 @@ const LoginPage = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     if (!id || !password) {
       alert('아이디와 비밀번호를 입력해주세요.');
     } else {
-      sessionStorage.setItem('authToken', id);
+      login(id);
       navigate(ROUTE_PATHS.MAIN);
     }
   };

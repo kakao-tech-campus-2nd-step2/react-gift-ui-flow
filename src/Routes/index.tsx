@@ -8,6 +8,7 @@ import MyAccountPage from '@/pages/MyAccount';
 import ThemePage from '@/pages/Theme';
 
 import { ROUTE_PATHS } from './constants';
+import PrivateRoute from './privateRoute';
 
 const RoutesComponent = () => {
   return (
@@ -15,7 +16,10 @@ const RoutesComponent = () => {
       <Route path={ROUTE_PATHS.MAIN} element={<MainPage />} />
       <Route path={ROUTE_PATHS.THEME} element={<ThemePage />} />
       <Route path={ROUTE_PATHS.LOGIN} element={<LoginPage />} />
-      <Route path={ROUTE_PATHS.MY_ACCOUNT} element={<MyAccountPage />} />
+      <Route
+        path={ROUTE_PATHS.MY_ACCOUNT}
+        element={<PrivateRoute element={<MyAccountPage />} path={''} />}
+      />
     </Routes>
   );
 };
