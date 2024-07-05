@@ -1,6 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { Meta, StoryObj } from '@storybook/react';
+import AuthContext from '@/context/auth/AuthContext';
 import AccountOverview from '.';
 
 const meta: Meta<typeof AccountOverview> = {
@@ -8,11 +9,16 @@ const meta: Meta<typeof AccountOverview> = {
   component: AccountOverview,
   tags: ['autodocs'],
   decorators: [
-    (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
-    ),
+    (Story, context) => {
+      const { isAuthenticated } = context.parameters;
+      return (
+        <AuthContext.Provider value={{ isAuthenticated, login: () => {}, logout: () => {} }}>
+          <MemoryRouter>
+            <Story userName="사용자" />
+          </MemoryRouter>
+        </AuthContext.Provider>
+      );
+    },
   ],
 };
 
