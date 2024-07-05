@@ -1,4 +1,4 @@
-import { createContext, useState, ReactNode, useContext, useMemo } from 'react';
+import { createContext, useState, ReactNode, useContext, useMemo, useEffect } from 'react';
 
 interface LoginContextProps {
   isLoggedIn: boolean;
@@ -16,16 +16,17 @@ interface LoginProviderProps {
 }
 
 export const LoginProvider = ({ children }: LoginProviderProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    const saved = sessionStorage.getItem('isLoggedIn');
-    return saved === 'true';
-  });
-  const [username, setUsername] = useState(() => {
-    return sessionStorage.getItem('username') || '';
-  });
-  const [redirectPath, setRedirectPath] = useState(() => {
-    return sessionStorage.getItem('redirectPath') || '/';
-  });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
+  const [redirectPath, setRedirectPath] = useState('/');
+
+  useEffect(() => {
+    const authToken = sessionStorage.getItem('authToken');
+    if (authToken) {
+      setIsLoggedIn(true);
+      setUsername(authToken);
+    }
+  }, []);
 
   const login = (username: string) => {
     setIsLoggedIn(true);

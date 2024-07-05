@@ -32,7 +32,7 @@
 - [ ] Login 페이지에서 ID와 PW를 입력 시, 직전 페이지로 Redirect 되도록 구현
 - Fake 로그인 기능 구현
   - [x] Login 페이지에서 ID와 PW를 입력 시, ID를 sessionStorage의 authToken key에 저장
-  - [ ] 모든 페이지 진입 시 authToken을 토대로 로그인 여부를 판단하는 로직 추가
+  - [x] 모든 페이지 진입 시 authToken을 토대로 로그인 여부를 판단하는 로직 추가
   - [ ] Header에서 로그인 시, 내 계정을 로그인 하지 않은 경우 로그인 버튼 추가
   - [ ] 내 계정(/my-account) 페이지는 로그인 한 사람만 접근 가능하게 구현
   - [ ] 내 계정 페이지에서 로그아웃을 할 수 있도록 구현
