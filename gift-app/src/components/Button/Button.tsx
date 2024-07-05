@@ -1,13 +1,14 @@
 import styled from '@emotion/styled';
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
-interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children'> {
   primary?: 'primary' | 'secondary';
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large'| 'responsive';
-  children: string;
+  children: ReactNode;
   onClick?: () => void;
   theme?: 'Con' | 'Muji' | 'JayG';
+  active?: boolean;
 }
 
 const Button = ({
@@ -16,6 +17,7 @@ const Button = ({
   backgroundColor = '',
   children,
   theme,
+  active,
   ...props
 }: ButtonProps) => {
 
@@ -42,6 +44,7 @@ const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size
       type='button'
       className={['button', sizeClass, modeTheme].join(' ')}
       style={{ backgroundColor }}
+      active={active}
       {...props}
     >
       {children}
@@ -49,7 +52,7 @@ const sizeClass = size === 'responsive' ? 'button--responsive' : `button--${size
   );
 };
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<{ active?: boolean }>`
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
