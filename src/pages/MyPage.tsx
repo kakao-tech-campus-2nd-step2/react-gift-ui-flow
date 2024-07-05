@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 
 import Footer from '../components/common/Footer';
 import Header from '../components/common/Header';
+import Account from '../components/common/Login/Account';
+import { useAuth } from '../components/common/Login/AuthContext';
 
 const MyPageContainer = styled.section`
   width: 100%;
@@ -46,24 +48,25 @@ const MyPageContainer = styled.section`
 
 function Mypage() {
   const navigate = useNavigate();
-  const username = localStorage.getItem('username');
+  const { logout, authToken } = useAuth();
 
   useEffect(() => {
-    if (!username) {
+    if (!authToken) {
       navigate('/login');
     }
-  }, [navigate, username]);
+  }, [authToken, navigate]);
 
   const handleLogout = () => {
-    localStorage.removeItem('username');
+    logout();
     navigate('/login');
   };
+
+  const username = authToken || '';
 
   return (
     <MyPageContainer>
       <Header />
-      <p>{username ? `${username}님 안녕하세요!` : ''}</p>
-      <button onClick={handleLogout}>로그아웃</button>
+      <Account handleLogout={handleLogout} name={username} />
       <Footer />
     </MyPageContainer>
   );
