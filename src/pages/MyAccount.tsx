@@ -1,15 +1,26 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '@/context/AuthContext';
 
 type MyAccountProps = {
   name: string;
 };
 
 export const MyAccount: React.FC<MyAccountProps> = ({ name }) => {
+  const { logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/');
+  };
+
   return (
     <LogoutContainer>
       <h1>{name}님 안녕하세요!</h1>
-      <LogoutButton>로그아웃</LogoutButton>
+      <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>
     </LogoutContainer>
   );
 };
@@ -22,4 +33,6 @@ const LogoutContainer = styled.div`
   align-items: center;
 `;
 
-const LogoutButton = styled.button``;
+const LogoutButton = styled.button`
+  cursor: pointer;
+`;

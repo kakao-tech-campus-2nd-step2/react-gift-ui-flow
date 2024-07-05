@@ -1,13 +1,20 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React, { useContext,useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { AuthContext } from '@/context/AuthContext';
 
 export const Login: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Logged in with ID:', id, 'and Password:', password);
+    login(id);
+    navigate(-1);
   };
 
   return (

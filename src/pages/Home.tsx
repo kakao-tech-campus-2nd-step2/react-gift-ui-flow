@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export const Home: React.FC = () => {
   const [filter, setFilter] = useState('전체');
@@ -167,11 +168,13 @@ export const Home: React.FC = () => {
         <ThemeList>
           {themes.map((theme) => (
             <ThemeItem key={theme.key}>
-              <img
-                src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
-                alt={theme.label}
-              />
-              {theme.label}
+              <Link to={`/theme/${theme.key}`}>
+                <img
+                  src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
+                  alt={theme.label}
+                />
+                {theme.label}
+              </Link>
             </ThemeItem>
           ))}
         </ThemeList>

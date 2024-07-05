@@ -24,7 +24,7 @@ export const Theme: React.FC = () => {
     },
   };
 
-  const theme = themeDetails[themeKey || 'default'];
+  const theme = themeDetails[themeKey as string] || themeDetails.default;
 
   // 임시 상품 목록 데이터
   const products = [

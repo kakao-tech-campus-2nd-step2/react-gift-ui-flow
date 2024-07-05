@@ -1,19 +1,28 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+
+import { AuthContext } from '@/context/AuthContext';
 
 type HeaderProps = React.HTMLAttributes<HTMLDivElement>;
 
 export const Header: React.FC<HeaderProps> = ({ ...props }) => {
+  const { authToken } = useContext(AuthContext);
+
   return (
     <HeaderWrapper {...props}>
       <HeaderContent>
-        <a href="#">
+        <Link to="/">
           <img
             src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
             alt="카카오 선물하기 로고"
           />
-        </a>
-        <LoginDiv>로그인</LoginDiv>
+        </Link>
+        {authToken ? (
+          <MyAccountLink to="/my-account">내 계정</MyAccountLink>
+        ) : (
+          <LoginLink to="/login">로그인</LoginLink>
+        )}
       </HeaderContent>
     </HeaderWrapper>
   );
@@ -45,7 +54,14 @@ const HeaderContent = styled.footer`
   }
 `;
 
-const LoginDiv = styled.div`
+const LoginLink = styled(Link)`
+  align-items: center;
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+`;
+
+const MyAccountLink = styled(Link)`
   align-items: center;
   font-size: 14px;
   color: rgb(0, 0, 0);
