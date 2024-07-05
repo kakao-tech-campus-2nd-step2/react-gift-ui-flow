@@ -29,7 +29,7 @@ export const useAuth = () => {
     e.preventDefault();
     sessionStorage.setItem('auth', username);
     setIsLogin(true);
-    navigate('/');
+    navigate(-1);
   };
 
   const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
