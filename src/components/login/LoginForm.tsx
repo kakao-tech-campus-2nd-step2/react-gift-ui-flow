@@ -83,12 +83,14 @@ const StyledButton = styled.button`
   }
 `;
 
+const initDate: { name: string; password: string } = {
+  name: '',
+  password: '',
+};
+
 const LoginForm = () => {
   const nav = useNavigate();
-  const [userInfo, setUserInfo] = useState({
-    name: '',
-    password: '',
-  });
+  const [userInfo, setUserInfo] = useState(initDate);
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -102,6 +104,8 @@ const LoginForm = () => {
     if (userInfo.name === '' || userInfo.password === '') {
       alert('아이디와 비밀번호를 입력해주세요.');
     } else {
+      sessionStorage.setItem('authToken', JSON.stringify(userInfo.name));
+      setUserInfo(initDate);
       nav('/');
     }
   };
