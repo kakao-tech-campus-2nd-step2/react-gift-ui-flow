@@ -25,11 +25,12 @@ export const MyPageTemplate = () => {
   useEffect(() => {
     if (auth.name === undefined) {
       /**
-       * 주소창 localhost:3000/my-account으로 바로 들어오면 login으로 보내고
-       * 마이페이지에서 로그아웃하면 /로 보내기
+       * 주소창에 localhost:3000/my-account으로 바로 들어오면 login으로 보내고
+       * localhost:3000/my-account로 들어왔을 때 로그인하면 마이페이지로 리다이렉트 되도록,
+       * 마이페이지에서 로그아웃하면 인덱스 페이지로 보내기
        */
       if (isFirstJumpedIn.current) {
-        navigate(RouterPath.login);
+        navigate(RouterPath.login, { state: { from: location.pathname } });
       } else {
         navigate(RouterPath.root);
       }

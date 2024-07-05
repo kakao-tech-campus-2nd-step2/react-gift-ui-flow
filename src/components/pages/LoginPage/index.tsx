@@ -3,7 +3,7 @@ import type { FormEvent } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
 import { useContext, useEffect } from 'react';
 import type { NavigateFunction } from 'react-router/dist/lib/hooks';
-import { Form, useNavigate } from 'react-router-dom';
+import { Form, useLocation, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/atoms/Button';
 import { ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
@@ -49,12 +49,14 @@ const mockLogin =
 
 export const LoginPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const auth = useContext(AuthContext);
   const setAuthContext = useContext(SetAuthContext) as Dispatch<SetStateAction<Auth>>;
+  const toPreviousPage = location.state?.from || RouterPath.root;
 
   useEffect(() => {
     if (auth.name !== undefined) {
-      navigate(RouterPath.root);
+      navigate(toPreviousPage);
     }
   });
 
