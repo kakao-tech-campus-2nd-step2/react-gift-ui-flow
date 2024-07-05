@@ -12,7 +12,6 @@ const ThemeCategories = () => {
 
   return (
     <section>
-      <h2>Theme Categories</h2>
       <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
         {Object.keys(themeConfig).map((key) => (
           <div key={key}>

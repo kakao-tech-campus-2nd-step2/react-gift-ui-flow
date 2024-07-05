@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
 
 const TrendingGifts = () => {
@@ -15,7 +16,12 @@ const TrendingGifts = () => {
     setVisibleItems(6);
   };
 
-  const items = Array.from({ length: 20 }, (_, index) => `Gift ${index + 1}`);
+  const items = Array.from({ length: 20 }, (_, index) => ({
+    imageSrc: `https://via.placeholder.com/150`,
+    subtitle: `Subtitle ${index + 1}`,
+    title: `Product Title ${index + 1}`,
+    amount: (index + 1) * 1000,
+  }));
 
   return (
     <section>
@@ -35,8 +41,15 @@ const TrendingGifts = () => {
         </select>
       </div>
       <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
-        {items.slice(0, visibleItems).map((item) => (
-          <div key={item}>{item}</div>
+        {items.slice(0, visibleItems).map((item, index) => (
+          <RankingGoodsItems
+            key={index}
+            rankingIndex={index + 1}
+            imageSrc={item.imageSrc}
+            subtitle={item.subtitle}
+            title={item.title}
+            amount={item.amount}
+          />
         ))}
       </Grid>
       {visibleItems < items.length ? (
