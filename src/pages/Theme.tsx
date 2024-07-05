@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { useParams } from 'react-router-dom';
 
-import { Container } from '@/components/common/layouts/Container';
+import Header from '@/components/ThemePage/ThemeHeader';
 
 const Wrapper = styled.div`
   height: auto;
@@ -8,13 +9,9 @@ const Wrapper = styled.div`
 `;
 
 export const ThemePage = () => {
-  return (
-    <Wrapper>
-      <Container>
-        <h1>ThemePage</h1>
-      </Container>
-    </Wrapper>
-  );
+  const { themeKey } = useParams<{ themeKey: string }>();
+
+  return <Wrapper>{themeKey && <Header themeKey={themeKey} />}</Wrapper>;
 };
 
 export default ThemePage;

@@ -2,9 +2,9 @@ import styled from '@emotion/styled';
 
 import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/layouts/Container';
-import { SelectFriend } from '@/components/Main/SelectFriend';
-import { ThemeMenu } from '@/components/Main/ThemeGrid';
-import TrendGiftRanking from '@/components/Main/TrendGiftRanking';
+import { SelectFriend } from '@/components/MainPage/SelectFriend';
+import { ThemeMenu } from '@/components/MainPage/ThemeGrid';
+import TrendGiftRanking from '@/components/MainPage/TrendGiftRanking';
 
 const AiSuggestButton = styled(Button)`
   flex-direction: column;

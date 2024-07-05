@@ -35,6 +35,7 @@ const TrendGiftRankingGrid = ({ visibleItems }: { visibleItems: number }) => {
     <GridContainer columns={6} gap={16}>
       {rankingItems.slice(0, visibleItems).map((item) => (
         <RankingGoodsItems
+          key={item.rankingIndex}
           rankingIndex={item.rankingIndex}
           imageSrc={item.imageSrc}
           subtitle={item.subtitle}

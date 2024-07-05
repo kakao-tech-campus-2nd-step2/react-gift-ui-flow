@@ -23,7 +23,7 @@ const Wrapper = styled(Grid)`
 
 const ThemeGrid = () => (
   <Wrapper columns={6} gap={12}>
-    <Link to="/theme/:themekey">
+    <Link to="/theme/life_small_gift">
       <ThemeItem>
         <ThemeImage
           src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
