@@ -16,9 +16,16 @@ interface LoginProviderProps {
 }
 
 export const LoginProvider = ({ children }: LoginProviderProps) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [username, setUsername] = useState('');
-  const [redirectPath, setRedirectPath] = useState('/');
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    const saved = sessionStorage.getItem('isLoggedIn');
+    return saved === 'true';
+  });
+  const [username, setUsername] = useState(() => {
+    return sessionStorage.getItem('username') || '';
+  });
+  const [redirectPath, setRedirectPath] = useState(() => {
+    return sessionStorage.getItem('redirectPath') || '/';
+  });
 
   useEffect(() => {
     const authToken = sessionStorage.getItem('authToken');

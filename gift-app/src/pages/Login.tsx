@@ -47,7 +47,6 @@ const LoginContainer = styled.div`
   background-color: #ffffff;
   padding: 140px 40px;
   border-radius: 10px;
-
   max-width: 400px;
   margin: 100px auto;
 `;
