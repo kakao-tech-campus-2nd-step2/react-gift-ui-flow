@@ -28,15 +28,14 @@ const themes = [
 ];
 
 const items: Item[] = [
-  { id: 1, name: 'Gift Item 1', category: '여성', rank: 1 },
-  { id: 2, name: 'Gift Item 2', category: '남성', rank: 2 },
-  { id: 3, name: 'Gift Item 3', category: '청소년', rank: 3 },
-  { id: 4, name: 'Gift Item 4', category: '여성', rank: 4 },
-  { id: 5, name: 'Gift Item 5', category: '남성', rank: 5 },
-  { id: 6, name: 'Gift Item 6', category: '청소년', rank: 6 },
+  { id: 1, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '여성', rank: 1 },
+  { id: 2, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '남성', rank: 2 },
+  { id: 3, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '청소년', rank: 3 },
+  { id: 4, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '여성', rank: 4 },
+  { id: 5, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '남성', rank: 5 },
+  { id: 6, name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', category: '청소년', rank: 6 },
   { id: 7, name: 'Gift Item 7', category: '여성', rank: 7 },
   { id: 8, name: 'Gift Item 8', category: '남성', rank: 8 },
-  //아이템 추가하기
 ];
 
 const Mainpage: React.FC = () => {
@@ -61,7 +60,7 @@ const Mainpage: React.FC = () => {
         ))}
       </div>
 
-      <h2>필터</h2>
+      <h2></h2>
       <div>
         {filterOptions.map((f) => (
           <button key={f} onClick={() => changeFilter(f)}>
@@ -80,7 +79,7 @@ const Mainpage: React.FC = () => {
             imageSrc="/images/item.png"
             subtitle=""
             title={item.name}
-            amount={0}
+            amount={29000}
           />
         ))}
       </div>
