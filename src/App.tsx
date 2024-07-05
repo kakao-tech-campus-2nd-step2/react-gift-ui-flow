@@ -6,19 +6,22 @@ import { Main } from '@/components/Main/main';
 import { Theme } from '@/components/Theme/theme';
 import { Login } from '@/components/Login/login';
 import { Mypage } from '@/components/Mypage/mypage';
+import { AuthProvider } from '@/components/Login/AuthContext';
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />}></Route>
-        <Route path="/theme/:themeKey" element={<Theme />}></Route>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/my-account" element={<Mypage />}></Route>
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main />}></Route>
+          <Route path="/theme/:themeKey" element={<Theme />}></Route>
+          <Route path="/login" element={<Login />}></Route>
+          <Route path="/my-account" element={<Mypage />}></Route>
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 
