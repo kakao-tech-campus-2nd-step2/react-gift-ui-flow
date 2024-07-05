@@ -5,7 +5,6 @@ import { useSearchParams } from 'react-router-dom';
 import KAKAO_LOGO from '@/assets/kakao_logo.svg';
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { breakpoints } from '@/styles/variants';
 
 export const Login = () => {
   const [id, setId] = useState('');
@@ -18,8 +17,10 @@ export const Login = () => {
       return;
     }
 
-    // authSessionStorage.set(id);
+    // id를 세션 스토리지에 저장
+    sessionStorage.setItem('authToken', id);
 
+    // origin URL(홈)로 리다이렉트
     const redirectUrl = queryParams.get('redirect') ?? `${window.location.origin}/`;
     return window.location.replace(redirectUrl);
   };
@@ -67,9 +68,4 @@ const FormWrapper = styled.article`
   width: 100%;
   max-width: 580px;
   padding: 16px;
-
-  @media screen and (min-width: ${breakpoints.sm}) {
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 60px 52px;
-  }
 `;
