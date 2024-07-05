@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextProps {
@@ -6,9 +7,13 @@ interface AuthContextProps {
   logout: () => void;
 }
 
+interface AuthProviderProps {
+  children: ReactNode;
+}
+
 const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-export const AuthProvider: React.FC = ({ children }) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authToken, setAuthToken] = useState<string | null>(sessionStorage.getItem('authToken'));
 
   const login = (token: string) => {
