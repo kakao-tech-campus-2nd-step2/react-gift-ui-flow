@@ -46,7 +46,7 @@ const FlexContainer = styled.div({
 const UserButton = ({ navigate }: { navigate: NavigateFunction }) => {
     const [isLogined, setIsLogined] = useState<boolean>(false);
     useEffect(() => {
-        setIsLogined(sessionStorage.getItem('user') ? true : false);
+        setIsLogined(sessionStorage.getItem('authToken') ? true : false);
     }, []);
 
     return (

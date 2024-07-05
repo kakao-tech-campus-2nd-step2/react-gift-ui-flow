@@ -13,7 +13,7 @@ export default function Login() {
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
-        sessionStorage.setItem('user', username);
+        sessionStorage.setItem('authToken', username);
         navigate('/');
     };
 

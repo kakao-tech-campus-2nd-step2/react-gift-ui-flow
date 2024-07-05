@@ -5,10 +5,10 @@ import { Button } from '@/components/common/Button';
 import Header from '@/components/Header';
 
 export default () => {
-    const username = sessionStorage.getItem('user');
+    const username = sessionStorage.getItem('authToken');
     const navigate = useNavigate();
     const logout = () => {
-        sessionStorage.removeItem('user');
+        sessionStorage.removeItem('authToken');
         navigate('/');
     };
     return (
