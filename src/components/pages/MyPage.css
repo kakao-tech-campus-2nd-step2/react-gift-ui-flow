@@ -1,0 +1,30 @@
+.my-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.my-page p {
+  text-align: center;
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.my-page button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(68, 68, 68);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.my-page button:hover {
+  background-color: rgb(106, 106, 106);
+}
