@@ -1,10 +1,70 @@
+// import styled from '@emotion/styled';
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Header from '@/components/Category/CategoryHeader';
-import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
+import ThemeHeader from '@/components/Category/ThemeHeader';
+import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
+import { Container } from '@/components/common/layouts/Container';
+import { Grid } from '@/components/common/layouts/Grid';
 import rankingItems from '@/data/RankingItems';
+import { breakpoints } from '@/styles/variants';
+
+const ThemePage: React.FC = () => {
+  const { themeKey } = useParams<{ themeKey: string }>();
+  const [columns, setColumns] = useState(3);
+
+  const updateGridColumns = () => {
+      const width = window.innerWidth;
+      if (width < parseInt(breakpoints.xs)) {
+        setColumns(2);
+      } else {
+        setColumns(4);
+      }
+  };
+
+  useEffect(() => {
+    updateGridColumns();
+    window.addEventListener('resize', updateGridColumns);
+    return () => {
+      window.removeEventListener('resize', updateGridColumns);
+    };
+  }, []);
+
+  const theme =
+    themeKey && themeData[themeKey]
+      ? themeData[themeKey]
+      : {
+          label: 'Theme',
+          title: 'Theme Page',
+          description: 'Browse our collection',
+          backgroundColor: '#333',
+        };
+
+  return (
+    <Container>
+      <ThemeHeader
+        label={theme.label}
+        title={theme.title}
+        description={theme.description}
+        backgroundColor={theme.backgroundColor}
+      />
+      <DefaultItemContainer>
+        <Grid columns={columns} gap={10}>
+          {rankingItems.map((item) => (
+            <DefaultGoodsItems
+              key={item.rankingIndex} // Ensure you have a unique key, might need to adjust depending on data structure
+              subtitle={item.subtitle}
+              title={item.title}
+              amount={item.amount}
+              imageSrc={item.imageSrc}
+            />
+          ))}
+        </Grid>
+      </DefaultItemContainer>
+    </Container>
+  );
+};
 
 const themeData: Record<
   string,
@@ -85,51 +145,10 @@ const themeData: Record<
   },
 };
 
-const ThemePage: React.FC = () => {
-  const { themeKey } = useParams<{ themeKey: string }>();
-
-  const theme =
-    themeKey && themeData[themeKey]
-      ? themeData[themeKey]
-      : {
-          label: 'Theme',
-          title: 'Theme Page',
-          description: 'Browse our collection',
-          backgroundColor: '#333',
-        };
-
-  return (
-    <Container>
-      <Header
-        label={theme.label}
-        title={theme.title}
-        description={theme.description}
-        backgroundColor={theme.backgroundColor}
-      />
-      <Grid columns={3} gap={20}>
-        {rankingItems.map((item) => (
-          <RankingGoodsItems
-            key={item.rankingIndex}
-            rankingIndex={item.rankingIndex}
-            subtitle={item.subtitle}
-            title={item.title}
-            amount={item.amount}
-            imageSrc={item.imageSrc}
-          />
-        ))}
-      </Grid>
-    </Container>
-  );
-};
+const DefaultItemContainer = styled(Container)`
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding: 0 12vw;
+`;
 
 export default ThemePage;
-
-const Container = styled.div`
-  padding: 20px;
-`;
-
-const Grid = styled.div<{ columns: number; gap: number }>`
-  display: grid;
-  grid-template-columns: repeat(${(props) => props.columns}, 1fr);
-  gap: ${(props) => props.gap}px;
-`;

@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
 const FooterContainer = styled.div`
   align-items: center;
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 50px 14vh;
   font-size: 14px;
   color: #333;
   // position: fixed;
