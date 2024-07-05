@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Footer from './components/Footer';
+import AuthContext from './context/AuthContext';
 import Error from './pages/Error';
 import Login from './pages/Login';
 import Main from './pages/Main';
@@ -8,11 +10,17 @@ import MyAccount from './pages/MyAccount';
 import Theme from './pages/Theme';
 
 const App = () => {
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    useEffect(() => {
+        const authToken = sessionStorage.getItem('authToken');
+        setIsAuthenticated(!!authToken);
+    }, []);
+
     return (
-        <div>
+        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
             <RouterProvider router={router} />
             <Footer />
-        </div>
+        </AuthContext.Provider>
     );
 };
 
