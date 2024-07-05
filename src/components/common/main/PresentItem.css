@@ -12,3 +12,6 @@
     letter-spacing: 0.5px;
     padding-top: 13px;
 }
+.link {
+    text-decoration: none; 
+}
