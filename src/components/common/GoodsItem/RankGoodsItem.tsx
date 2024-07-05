@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/** @jsxImportSource @emotion/react */
-
 import '@styles/goodsItem.css';
 
 import GoodsItem from './GoodsItem';
@@ -11,11 +8,20 @@ type RankGoodsItemProps = {
   subTitle: string;
   title: string;
   amount: number;
+  hidden?: boolean;
 };
 
-function RankGoodsItem({ rankingIndex, imageSrc, subTitle, title, amount }: RankGoodsItemProps) {
+function RankGoodsItem({
+  rankingIndex,
+  imageSrc,
+  subTitle,
+  title,
+  amount,
+  hidden,
+}: RankGoodsItemProps) {
   return (
     <GoodsItem
+      hidden={hidden}
       imageSrc={imageSrc}
       subTitle={subTitle}
       title={title}
@@ -24,5 +30,9 @@ function RankGoodsItem({ rankingIndex, imageSrc, subTitle, title, amount }: Rank
     />
   );
 }
+
+RankGoodsItem.defaultProps = {
+  hidden: false,
+};
 
 export default RankGoodsItem;

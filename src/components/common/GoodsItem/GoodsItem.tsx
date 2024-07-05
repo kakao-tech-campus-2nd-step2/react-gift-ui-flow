@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/** @jsxImportSource @emotion/react */
-
 import '@styles/goodsItem.css';
 
 type GoodsItemProps = {
@@ -9,13 +6,16 @@ type GoodsItemProps = {
   title: string;
   amount: number;
   rankingIndex?: number;
+  hidden?: boolean;
 };
 
-function GoodsItem({ imageSrc, subTitle, title, amount, rankingIndex }: GoodsItemProps) {
+function GoodsItem({ imageSrc, subTitle, title, amount, rankingIndex, hidden }: GoodsItemProps) {
   return (
-    <div className="goodsItem">
+    <div hidden={hidden} className="goodsItem">
       {typeof rankingIndex === 'number' && (
-        <span className="goodsItem__ranking">{rankingIndex}</span>
+        <span className={'goodsItem__ranking' + (rankingIndex <= 3 ? ' top' : '')}>
+          {rankingIndex}
+        </span>
       )}
       <img className="goodsItem__img" src={imageSrc} alt={title} />
       <div className="goodsItem__subtitle">{subTitle}</div>
@@ -24,5 +24,9 @@ function GoodsItem({ imageSrc, subTitle, title, amount, rankingIndex }: GoodsIte
     </div>
   );
 }
+
+GoodsItem.defaultProps = {
+  hidden: false,
+};
 
 export default GoodsItem;

@@ -10,10 +10,23 @@ type DefaultGoodsItemProps = {
   subTitle: string;
   title: string;
   amount: number;
+  hidden?: boolean;
 };
 
-function DefaultGoodsItem({ imageSrc, subTitle, title, amount }: DefaultGoodsItemProps) {
-  return <GoodsItem imageSrc={imageSrc} subTitle={subTitle} title={title} amount={amount} />;
+function DefaultGoodsItem({ imageSrc, subTitle, title, amount, hidden }: DefaultGoodsItemProps) {
+  return (
+    <GoodsItem
+      hidden={hidden}
+      imageSrc={imageSrc}
+      subTitle={subTitle}
+      title={title}
+      amount={amount}
+    />
+  );
 }
+
+DefaultGoodsItem.defaultProps = {
+  hidden: false,
+};
 
 export default DefaultGoodsItem;
