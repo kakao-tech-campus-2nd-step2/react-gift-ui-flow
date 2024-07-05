@@ -40,7 +40,9 @@ const Header: React.FC<HeaderProps> = ({isLoggedIn}) => {
           <StyledLink to="/">선물하기</StyledLink>
         </NavItem>
         <NavItem>
-          <StyledLink to={isLoggedIn ? '/my-account' : '/login'}>내 계정</StyledLink>
+          <StyledLink to={isLoggedIn ? '/my-account' : '/login'}>
+            {isLoggedIn ? '내 계정' : '로그인'}
+          </StyledLink>
         </NavItem>
       </Nav>
     </HeaderContainer>
