@@ -1,18 +1,38 @@
-import styled from '@emotion/styled';
+import '@/App.css';
+
+import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
+
+// import React from 'react';
+import GiftRanking from '@/components/common/main/GiftRanking';
+import ThemeCategory from '@/components/common/main/ThemeCategory';
+import Footer from '@/components/Footer/Footer';
+import Header from '@/components/Header/Header';
+import Theme from '@/components/pages/theme/Theme.js';
+
 
 const App = () => {
-  const name = 'Josh Perez';
 
   return (
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/theme/:themeKey' element={<Theme />}/>
+      </Routes>
+    </Router>
+  );
+};
+
+function Home() {
+  return(
     <div>
-      <Title>Hello, {name}</Title>
+      <Header/>
+      <ThemeCategory/>
+      <GiftRanking/>
+      <Footer/>
     </div>
   );
 };
 
 export default App;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
+
