@@ -30,4 +30,4 @@
   - [x] ID, PW 입력시 ID를 sessionStorage의 `authToken` key에 저장
   - [x] 모든 페이지 진입 시 authToken 여부에 따라 로그인 여부 판단 로직 추가(ContextAPI 활용)
   - [x] 로그인할 경우 Header에서의 로그인 버튼을 '내 계정'으로 변경, 그렇지 않을 경우 '로그인'으로 변경
-  - [] 로그아웃 기능 구현(메인페이지(`/`)로 Redirect
+  - [x] 로그아웃 기능 구현(메인페이지(`/`)로 Redirect

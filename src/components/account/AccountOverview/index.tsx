@@ -1,21 +1,16 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { ROUTE_PATH } from '@routes/constants';
-import { useNavigate } from 'react-router-dom';
-import { Button } from '../../common';
+import { Button } from '@components/common';
+import { useAuth } from '@context/auth/useAuth';
 
 export default function AccountOverview() {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(ROUTE_PATH.HOME);
-  };
+  const { logout } = useAuth();
 
   return (
     <MyAccountContainer>
       <Greeting>~님 안녕하세요!</Greeting>
       <ButtonContainer>
-        <Button size="small" theme="darkGray" onClick={handleClick}>
+        <Button size="small" theme="darkGray" onClick={logout}>
           로그아웃
         </Button>
       </ButtonContainer>

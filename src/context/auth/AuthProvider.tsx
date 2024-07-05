@@ -1,5 +1,7 @@
 import React, { ReactNode, useEffect, useState, useMemo, useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useSessionStorage } from '@hooks/useSessionStorage';
+import { ROUTE_PATH } from '@routes/constants';
 import AuthContext from './AuthContext';
 
 interface AuthProviderProps {
@@ -7,6 +9,7 @@ interface AuthProviderProps {
 }
 
 export default function AuthProvider({ children }: AuthProviderProps) {
+  const navigate = useNavigate();
   const [authToken, setAuthToken] = useSessionStorage('authToken', '');
   const [isAuthenticated, setIsAuthenticated] = useState(!!authToken);
 
@@ -23,7 +26,8 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 
   const logout = useCallback(() => {
     setAuthToken('');
-  }, [setAuthToken]);
+    navigate(ROUTE_PATH.HOME);
+  }, [setAuthToken, navigate]);
 
   const value = useMemo(
     () => ({
