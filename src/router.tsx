@@ -6,6 +6,7 @@ import { ErrorPage } from '@/components/pages/ErrorPage';
 import { LoginPage } from '@/components/pages/LoginPage';
 import { HeaderFooterOutlet } from '@/components/templates/HeaderFooter/HeaderFooterOutlet';
 import { MainTemplate } from '@/components/templates/MainTemplate';
+import { MyPageTemplate } from '@/components/templates/MyPageTemplate';
 import { ThemeTemplate } from '@/components/templates/ThemeTemplate';
 
 export const RouterPath = {
@@ -55,7 +56,6 @@ export const router = createBrowserRouter([
   {
     path: RouterPath.root,
     element: <HeaderFooterOutlet />,
-    errorElement: <ErrorPage />,
     children: [
       {
         index: true,
@@ -67,12 +67,19 @@ export const router = createBrowserRouter([
         loader: mockImageLoader,
         element: <ThemeTemplate />,
       },
+      {
+        path: RouterPath.myPage,
+        element: <MyPageTemplate />,
+      },
     ],
   },
   {
     path: RouterPath.login,
     action: loginAction,
     element: <LoginPage />,
-    errorElement: <ErrorPage />,
+  },
+  {
+    path: RouterPath.notFound,
+    element: <ErrorPage />,
   },
 ]);

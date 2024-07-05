@@ -1,7 +1,7 @@
 import type { Dispatch, ReactNode, SetStateAction } from 'react';
 import { createContext, useState } from 'react';
 
-const defaultAuthValue = {
+export const defaultAuthValue = {
   name: undefined,
 };
 
