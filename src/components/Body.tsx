@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+import SelectFriend from './BodyComponents/SelectFriend';
+import Theme from './BodyComponents/Theme';
+
+
 const Body: React.FC = () => {
     return (
       <BodyContainer>
-        body입니다.
+        <SelectFriend />
+        <Theme />
       </BodyContainer>
     );
   };
