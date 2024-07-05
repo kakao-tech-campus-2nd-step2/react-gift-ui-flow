@@ -1,0 +1,19 @@
+.theme-header {
+  padding: 20px;
+  color: #333;
+}
+
+.theme-header h3 {
+  margin-top: 20px;
+  font-weight: 900;
+}
+
+.theme-header h1 {
+  font-weight: 700;
+  margin-top: 15px;
+}
+
+.theme-header p {
+  font-size: 20px;
+  margin: 15px 0 15px 0;
+}
