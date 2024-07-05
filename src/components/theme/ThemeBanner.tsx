@@ -28,7 +28,7 @@ const themes: Record<ThemeKey, Theme> = {
   }
 };
 
-export default function ThemeHeader({ themeKey }: ThemeHeaderProps) {
+const ThemeHeader: React.FC<ThemeHeaderProps> = ({ themeKey }) => {
   const theme = themes[themeKey];
 
   return (
@@ -44,7 +44,9 @@ export default function ThemeHeader({ themeKey }: ThemeHeaderProps) {
       </HeaderContent>
     </HeaderWrapper>
   );
-}
+};
+
+export default ThemeHeader;
 
 const HeaderWrapper = styled.section<{ backgroundColor: string }>`
   margin-top: 54px;
