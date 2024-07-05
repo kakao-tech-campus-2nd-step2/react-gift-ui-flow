@@ -1,4 +1,8 @@
 import styled from '@emotion/styled';
+import { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { authContext } from '@/context/AuthContext';
 
 const MyAccountContainer = styled.div`
   width: 100%;
@@ -36,9 +40,18 @@ const StyledButton = styled.button`
 `;
 
 const MyAccount = () => {
+  const nav = useNavigate();
+  const { isLogin, userInfo } = useContext(authContext);
+
+  useEffect(() => {
+    if (!isLogin) {
+      nav('/login');
+    }
+  }, [isLogin, nav]);
+
   return (
     <MyAccountContainer>
-      {`${''}님 안녕하세요!`}
+      {`${userInfo}님 안녕하세요!`}
       <DivHeight />
       <StyledButton>로그아웃</StyledButton>
     </MyAccountContainer>
