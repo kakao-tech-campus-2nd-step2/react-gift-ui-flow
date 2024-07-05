@@ -45,7 +45,9 @@ const Header: React.FC = () => {
             />{' '}
           </a>
           <div>
-            <p>로그인</p>
+            <a href="/login">
+              <p>로그인</p>
+            </a>
           </div>
         </Content>
       </Wrapper>
