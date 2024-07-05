@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 import { Container } from '@/components/common/layouts/Container';
 
@@ -31,15 +32,19 @@ const Header: React.FC = () => {
   return (
     <Container>
       <HeaderInner>
-        <Logo>
-          <img
-            src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
-            alt="선물하기"
-          />
-        </Logo>
-        <LoginContainer>
-          <p>로그인</p>
-        </LoginContainer>
+        <Link to={'/'}>
+          <Logo>
+            <img
+              src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+              alt="선물하기"
+            />
+          </Logo>
+        </Link>
+        <Link to={'/login'}>
+          <LoginContainer>
+            <p>로그인</p>
+          </LoginContainer>
+        </Link>
       </HeaderInner>
     </Container>
   );

@@ -1,17 +1,7 @@
-// import styled from '@emotion/styled';
-import Footer from '@/components/Footer';
-import Header from '@/components/Header';
-
-import { Routes } from './Routes';
+import Routes from './Routes/index';
 
 const App = () => {
-  return (
-    <div>
-      <Header />
-      <Routes />
-      <Footer />
-    </div>
-  );
+  return <Routes />;
 };
 
 export default App;
