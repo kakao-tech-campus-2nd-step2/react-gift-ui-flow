@@ -23,6 +23,6 @@ jobs:
       - name: Create comment PR
         uses: thollander/actions-comment-pull-request@v1
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
         with:
           message: "🚀storybook: ${{ steps.chromatic.outputs.storybookUrl }}"
