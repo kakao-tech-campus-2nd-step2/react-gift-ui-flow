@@ -28,7 +28,7 @@ const MainPage = () => {
     <div>
       <main>
         <section>
-          <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={20}>
+          <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
             {Object.keys(themeConfig).map((key) => (
               <div key={key}>
                 <button onClick={() => handleThemeClick(key)}>{themeConfig[key].label}</button>
@@ -52,11 +52,11 @@ const MainPage = () => {
               <option value="위시로 받은">위시로 받은</option>
             </select>
           </div>
-          <ul>
+          <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
             {items.slice(0, visibleItems).map((item) => (
-              <li key={item}>{item}</li>
+              <div key={item}>{item}</div>
             ))}
-          </ul>
+          </Grid>
           {visibleItems < items.length ? (
             <button onClick={handleLoadMore}>더보기</button>
           ) : (
