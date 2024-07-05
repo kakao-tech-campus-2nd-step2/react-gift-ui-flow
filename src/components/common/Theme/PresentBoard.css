@@ -1,0 +1,18 @@
+.PresentBoard-container{
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.PresentBoard {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 60%;
+}
+
+@media (max-width: 1224px) {
+    .PresentBoard {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
