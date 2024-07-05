@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
@@ -9,12 +9,12 @@ const LoginPage: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     login(id);
     alert('로그인 처리');
-    history.goBack(); // 직전 페이지로 리디렉션
+    navigate(-1); // 직전 페이지로 리디렉션
   };
 
   return (
