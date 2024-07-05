@@ -51,6 +51,7 @@
           ["@pages", "./src/pages"],
           ["@data", "./src/data"],
           ["@routes", "./src/routes"],
+          ["@utils", "./src/utils"],
           ["@context", "./src/context"]
         ],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
