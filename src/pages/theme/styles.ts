@@ -1,10 +1,14 @@
 import styled from '@emotion/styled';
 import * as Global from '@/styles/GlobalStyles';
 
-export const TitleSectionLayout = styled.section`
+type TitleSectionLayoutProps = {
+  backgroundColor?: string;
+};
+
+export const TitleSectionLayout = styled.section<TitleSectionLayoutProps>`
   padding: 27px 20px 23px;
   width: 100%;
-  background-color: rgb(75, 77, 80);
+  background-color: ${(props) => props.backgroundColor};
 
   @media screen and (min-width: 768px) {
     padding: 50px 20px;
