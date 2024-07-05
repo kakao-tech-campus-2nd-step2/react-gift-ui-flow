@@ -4,6 +4,7 @@ import { Button } from '@/components/common/Button';
 import { Container } from '@/components/common/layouts/Container';
 import { SelectFriend } from '@/components/Main/SelectFriend';
 import { ThemeMenu } from '@/components/Main/ThemeGrid';
+import TrendGiftRanking from '@/components/Main/TrendGiftRanking';
 
 const AiSuggestButton = styled(Button)`
   flex-direction: column;
@@ -35,7 +36,8 @@ export const MainPage = () => {
           <h3>선물을 추천받고 싶은 친구를 선택해주세요.</h3>
         </AiSuggestButton>
       </Container>
-      <div style={{ height: '120px' }}></div>
+      <div style={{ height: '120px' }} />
+      <TrendGiftRanking />
     </Wrapper>
   );
 };
