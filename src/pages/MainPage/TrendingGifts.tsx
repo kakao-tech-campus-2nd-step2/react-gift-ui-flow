@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Button } from '@/components/common/Button'; // Button 컴포넌트를 import
-import { RankingGoodsItems } from '@/components/common/GoodsItem/RankingGoodsItems';
+import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
 
 const TrendingGifts = () => {
