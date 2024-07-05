@@ -1,7 +1,7 @@
-// src/pages/LoginPage/LoginPage.tsx
 import { useState } from 'react';
 
 import { Button } from '@/components/common/Button';
+import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 
 const LoginPage = () => {
   const [id, setId] = useState('');
@@ -15,10 +15,15 @@ const LoginPage = () => {
     <div>
       <h1>Login</h1>
       <div>
-        <input type="text" id="id" value={id} onChange={(e) => setId(e.target.value)} />
+        <UnderlineTextField
+          type="text"
+          id="id"
+          value={id}
+          onChange={(e) => setId(e.target.value)}
+        />
       </div>
       <div>
-        <input
+        <UnderlineTextField
           type="password"
           id="password"
           value={password}
