@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
+import { Button } from '@/components/common/Button';
 import { themes } from '@/styles/themes';
 
 const Section = styled.section`
@@ -62,15 +63,6 @@ const labelStyle = css`
   color: #000;
 `;
 
-const buttonStyle = css`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: #feeb00;
-  padding: 20px;
-  border-radius: 8px;
-`;
-
 function Main() {
   return (
     <div className="main">
@@ -87,7 +79,7 @@ function Main() {
         </Wrapper>
       </Section>
 
-      <section>
+      <section style={{ padding: '45px 52px 23px' }}>
         <Wrapper>
           <InnerDiv>
             <GridDiv>
@@ -108,12 +100,12 @@ function Main() {
         </Wrapper>
       </section>
 
-      <section style={{ padding: '40px 16px' }}>
+      <section style={{ padding: '16px' }}>
         <Wrapper>
           <InnerDiv>
-            <div css={buttonStyle}>
+            <Button theme="kakao" size="large">
               <h4>선물을 추천받고 싶은 친구를 선택해주세요.</h4>
-            </div>
+            </Button>
           </InnerDiv>
         </Wrapper>
       </section>
