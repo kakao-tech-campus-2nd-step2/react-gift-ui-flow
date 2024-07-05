@@ -35,7 +35,7 @@ const Image = styled.img`
 `;
 
 const Text = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   color: #333;
 `;
 

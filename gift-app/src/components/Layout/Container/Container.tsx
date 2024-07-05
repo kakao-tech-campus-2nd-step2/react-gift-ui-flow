@@ -10,9 +10,8 @@ const Container = ({ children }: ContainerProps) => {
 };
 
 const StyledContainer = styled.div`
-  padding: 20px;
+  padding: 10px;
   background-color: #f0f0f0;
-  border: 1px solid #ccc;
   border-radius: 8px;
 `;
 
