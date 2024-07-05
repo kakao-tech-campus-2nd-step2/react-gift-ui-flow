@@ -7,14 +7,18 @@ import Header from '../components/common/Header/Header';
 // 명시적으로 children을 포함하는 타입을 정의합니다.
 interface LayoutProps {
   children: ReactNode;
+  isLoggedIn: boolean;
+  username: string;
+  onLogout: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, isLoggedIn }) => {
   return (
     <>
       <Header
         title="선물하기"
         imageUrl="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
+        isLoggedIn={isLoggedIn}
       />
       <div style={{ paddingTop: '100px', paddingBottom: '88px' }}>{children}</div>
       <Footer content="카카오톡 선물하기" />

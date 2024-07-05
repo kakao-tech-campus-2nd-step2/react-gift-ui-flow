@@ -1,9 +1,10 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export interface HeaderProps {
   title: string;
   imageUrl?: string;
+  isLoggedIn: boolean;
 }
 
 const headerStyle = {
@@ -20,37 +21,50 @@ const headerStyle = {
 };
 
 const titleStyle = {
-  width: '100%',
   display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
 };
 
-const loginButtonStyle = {
-  marginRight: '20px',
-  backgroundColor: 'transparent',
-  border: 'none',
-  fontSize: '16px',
-  cursor: 'pointer',
+const rightContainerStyle = {
+  display: 'flex',
+  alignItems: 'center',
+  gap: '10px',
 };
 
-const Header: React.FC<HeaderProps> = ({ title, imageUrl }) => {
-  const navigate = useNavigate();
+const linkStyle = {
+  color: 'purple',
+  textDecoration: 'none',
+  fontWeight: 'bold',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '54px',
+  padding: '0 30px',
+};
 
-  const handleLoginClick = () => {
-    navigate('/login');
-  };
-
+const Header: React.FC<HeaderProps> = ({ title, imageUrl, isLoggedIn }) => {
   return (
     <header style={headerStyle}>
-      {imageUrl ? (
-        <img src={imageUrl} alt={title} style={{ height: '40px', paddingLeft: '20px' }} />
-      ) : (
-        <h1 style={titleStyle}>{title}</h1>
-      )}
-      <button style={loginButtonStyle} onClick={handleLoginClick}>
-        로그인
-      </button>
+      <div style={titleStyle}>
+        {imageUrl ? (
+          <img src={imageUrl} alt={title} style={{ height: '40px' }} />
+        ) : (
+          <h1>{title}</h1>
+        )}
+      </div>
+      <div style={rightContainerStyle}>
+        {isLoggedIn ? (
+          <>
+            <Link to="/my-account" style={linkStyle}>
+              내 계정
+            </Link>
+          </>
+        ) : (
+          <Link to="/login" style={linkStyle}>
+            로그인
+          </Link>
+        )}
+      </div>
     </header>
   );
 };
