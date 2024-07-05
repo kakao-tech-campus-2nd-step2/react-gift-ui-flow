@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
+import { ROUTES } from '@/constants/routes';
 import { useAuth } from '@/context/auth/useAuth';
 
 export const useLogout = () => {
@@ -8,7 +9,7 @@ export const useLogout = () => {
 
   const handleLogout = () => {
     logout();
-    navigate(-1);
+    navigate(ROUTES.HOME);
   };
 
   return { handleLogout };
