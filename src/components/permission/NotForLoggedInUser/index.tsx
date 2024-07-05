@@ -11,7 +11,7 @@ const NotForLoggedInUser = ({ children }: NotForLoggedInUserProps) => {
   if (isLoggedIn) {
     navigate("/");
   }
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 export default NotForLoggedInUser;
