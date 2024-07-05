@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import GiftLogo from '@/assets/pc_gift_logo.png';
 import { Image } from '@/components/common/Image';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Layout = styled.header`
   height: 59px;
@@ -36,7 +37,7 @@ const LogoImg = styled(Image)`
 `;
 
 const MainNavigation = () => {
-  const authToken = sessionStorage.getItem('authToken');
+  const { isLoggedIn } = useAuth();
 
   return (
     <Layout>
@@ -44,7 +45,7 @@ const MainNavigation = () => {
         <NavLink to="/">
           <LogoImg src={GiftLogo} alt="nav" radius={0} ratio="auto" />
         </NavLink>
-        {authToken ? (
+        {isLoggedIn ? (
           <NavLink to="my-account">
             <LoginText>내 계정</LoginText>
           </NavLink>
