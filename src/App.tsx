@@ -1,11 +1,12 @@
 // import styled from '@emotion/styled';
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
+import { Footer } from '@/components/features/Footer';
+import { Header } from '@/components/features/Header';
+import { Layout } from '@/components/features/Layout';
 import { Home } from '@/pages/Home';
 import { Login } from '@/pages/Login';
 import { MyAccount } from '@/pages/MyAccount';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -20,7 +21,7 @@ const App = () => {
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <Layout />,
     children: [
       { path: '/home', element: <Home /> },
       { path: '/theme:themeKey', element: <Theme /> },
