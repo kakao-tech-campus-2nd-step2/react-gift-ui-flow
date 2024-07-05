@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { AuthContext } from './AuthContext';
-import type { AuthProviderProps } from './types';
+import { AuthContext } from '@/context/AuthContext';
+import type { AuthProviderProps } from '@/context/types';
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authToken, setAuthToken] = useState<string | null>(sessionStorage.getItem('authToken'));

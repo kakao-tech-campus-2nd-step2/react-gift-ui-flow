@@ -1,9 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Footer from '@/components/Footer'; // assuming you have a Footer component
-import Header from '@/components/Header'; // assuming you have a Header component
-import { AuthProvider } from '@/context/AuthContext';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { AuthProvider } from '@/context/AuthProvider';
 
 const App: React.FC = () => {
   return (
