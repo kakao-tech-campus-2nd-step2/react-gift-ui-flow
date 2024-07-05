@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
 
 const FooterWrapper = styled.div`
   width: 100vw;
-  height: auto;
+  height: 10vh;
   background-color: #efefef;
 `
 
