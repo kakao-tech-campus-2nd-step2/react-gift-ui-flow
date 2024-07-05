@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import Container from '@components/Layout/Container/Container';
+import Container from 'Layout/Container/Container';
 
 const FriendSelection = () => {
   const handleImageClick = () => {

@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import Container from '@components/Layout/Container/Container';
+import Container from 'Layout/Container/Container';
 
 export default {
   title: 'Layout/Container',
