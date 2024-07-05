@@ -15,9 +15,8 @@ const LoginPage: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Implement your login logic here (e.g., API call)
-    // For now, we just call the login function and navigate to the home page
-    login();
+    // Call the login function with the username
+    login(username);
     navigate('/');
   };
 

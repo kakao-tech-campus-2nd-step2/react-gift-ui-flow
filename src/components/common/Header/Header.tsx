@@ -1,20 +1,25 @@
+// src/components/common/Header/Header.tsx
 import styled from '@emotion/styled';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/AuthContext'; // Import useAuth
+import { useAuth } from '@/AuthContext';
 import { Image } from '@/components/common/Image';
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
-  const { isLoggedIn } = useAuth(); // Use useAuth to get isLoggedIn
+  const { isLoggedIn } = useAuth();
 
   const handleLogoClick = () => {
     navigate('/');
   };
 
-  const handleLoginClick = () => {
-    navigate('/login');
+  const handleMenuClick = () => {
+    if (isLoggedIn) {
+      navigate('/my-account');
+    } else {
+      navigate('/login');
+    }
   };
 
   return (
@@ -27,7 +32,9 @@ export const Header: React.FC = () => {
           height={54}
         />
       </LogoContainer>
-      <MenuItem onClick={handleLoginClick}>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
+      <MenuItem onClick={handleMenuClick}>
+        {isLoggedIn ? '내 계정' : '로그인'}
+      </MenuItem>
     </HeaderContainer>
   );
 };
