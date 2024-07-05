@@ -2,14 +2,13 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface LoginProps {
-  onLogin: () => void;
-}
+import { useAuth } from '@/context/AuthContext';
 
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -17,7 +16,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       alert('아이디와 비밀번호를 입력하세요');
       return;
     }
-    onLogin();
+    login(username);
     navigate('/');
   };
 

@@ -1,23 +1,16 @@
-import { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { AuthProvider } from './context/AuthContext';
 import RoutesPage from './router/Router';
 
-const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLogin = () => {
-    setIsLoggedIn(true);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-  };
-
+const App: React.FC = () => {
   return (
-    <Router>
-      <RoutesPage isLoggedIn={isLoggedIn} onLogin={handleLogin} onLogout={handleLogout} />
-    </Router>
+    <AuthProvider>
+      <Router>
+        <RoutesPage />
+      </Router>
+    </AuthProvider>
   );
 };
 
