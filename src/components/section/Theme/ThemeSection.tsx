@@ -13,7 +13,7 @@ type ThemeSectionProps = {
   children: React.ReactNode;
 };
 
-export const Items: React.FC<ThemeSectionProps> = ({ gap, columns, children }) => (
+export const Items = ({ gap, columns, children }: ThemeSectionProps) => (
   <SectionWrapper>
     <Container>
       <Grid columns={columns} gap={gap}>

@@ -11,7 +11,7 @@ type ButtonProps = {
   isSelected: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const GiftCategories: React.FC<Props> = ({ onCategoryChange }) => {
+export const GiftCategories = ({ onCategoryChange }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('받고 싶어한');
 
   const handleCategoryClick = (category: string) => {

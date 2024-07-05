@@ -9,7 +9,7 @@ import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
 import { RankingItems } from './RankingItems';
 
-export const RankingSection: React.FC = () => {
+export const RankingSection = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const handleCategoryChange = (category: string) => {

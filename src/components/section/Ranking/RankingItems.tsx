@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
@@ -13,7 +13,7 @@ interface RankingItemsProps {
   items: Item[];
 }
 
-export const RankingItems: React.FC<RankingItemsProps> = ({ items }) => {
+export const RankingItems = ({ items }: RankingItemsProps) => {
   const [count, setCount] = useState(6);
   const [isViewedMore, setIsViewedMore] = useState(false);
 

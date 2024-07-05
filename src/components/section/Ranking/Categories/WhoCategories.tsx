@@ -10,7 +10,7 @@ type ButtonProps = {
   isSelected: boolean;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-export const WhoCategories: React.FC<Props> = ({ onCategoryChange }) => {
+export const WhoCategories = ({ onCategoryChange }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('전체');
 
   const handleCategoryClick = (category: string) => {

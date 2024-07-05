@@ -6,7 +6,7 @@ import MainPage from './pages/MainPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ThemePage from './pages/ThemePage';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <BrowserRouter>

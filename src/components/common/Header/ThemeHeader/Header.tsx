@@ -13,7 +13,7 @@ type SectionProps = {
   backgroundColor: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ themeKey }) => {
+export const Header = ({ themeKey }: HeaderProps) => {
   const theme = themes[themeKey];
   return (
     <Wrapper backgroundColor={theme.backgroundColor}>
