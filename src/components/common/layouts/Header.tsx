@@ -22,6 +22,7 @@ export const Header: React.FC<HeaderProps> = ({ ...props }) => {
 const HeaderWrapper = styled.footer`
   position: fixed;
   display: flex;
+  justify-content: center;
   z-index: 9999;
   width: 100%;
   max-width: 100vw;
