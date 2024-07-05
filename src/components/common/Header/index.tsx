@@ -21,7 +21,7 @@ const Header = () => {
         </StyledA>
         {savedToken ? (
           <MenuContainer onClick={myaccountClick}>
-            <p>나의 페이지</p>
+            <p>내 계정</p>
           </MenuContainer>
         ) : (
           <MenuContainer onClick={loginClick}>
