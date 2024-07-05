@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/common/Button';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
+import { useCount } from '@/pages/MainPage/handleCount';
+import { sortItems } from '@/pages/MainPage/sortItems';
 import type { Item } from '@/pages/MainPage/types';
-
-import { useVisibility } from './handleVisibility';
-import { sortItems } from './sortItems';
 
 interface ItemListProps {
   items: Item[];
@@ -14,7 +13,7 @@ interface ItemListProps {
 
 const ItemList = ({ items }: ItemListProps) => {
   const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC'>('ASC');
-  const { visibleItems, handleMore, handleLess } = useVisibility(6);
+  const { count, handleIncrease, handleReset } = useCount(6);
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
 
   useEffect(() => {
@@ -32,7 +31,7 @@ const ItemList = ({ items }: ItemListProps) => {
         </select>
       </div>
       <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
-        {filteredItems.slice(0, visibleItems).map((item, index) => (
+        {filteredItems.slice(0, count).map((item, index) => (
           <RankingGoodsItems
             key={index}
             rankingIndex={index + 1}
@@ -43,12 +42,12 @@ const ItemList = ({ items }: ItemListProps) => {
           />
         ))}
       </Grid>
-      {visibleItems < filteredItems.length ? (
-        <Button onClick={handleMore} theme="outline" size="large">
+      {count < filteredItems.length ? (
+        <Button onClick={handleIncrease} theme="outline" size="large">
           더보기
         </Button>
       ) : (
-        <Button onClick={handleLess} theme="outline" size="large">
+        <Button onClick={handleReset} theme="outline" size="large">
           접기
         </Button>
       )}
