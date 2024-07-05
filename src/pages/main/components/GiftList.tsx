@@ -59,6 +59,21 @@ const GiftEx = styled.p`
   }
 `;
 
+const giftItems = [
+  { text: '생일' },
+  { text: '졸업선물' },
+  { text: '스몰럭셔리' },
+  { text: '명품선물' },
+  { text: '결혼/집들이' },
+  { text: '따뜻한선물' },
+  { text: '가벼운선물' },
+  { text: '팬심저격' },
+  { text: '교환권' },
+  { text: '건강/비타민' },
+  { text: '과일/한우' },
+  { text: '출산/키즈' },
+];
+
 const GiftList = () => {
   return (
     <GiftLayout>
@@ -73,78 +88,14 @@ const GiftList = () => {
           }}
           gap={0}
         >
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>생일</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>졸업선물</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>스몰럭셔리</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>명품선물</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>결혼/집들이</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>따뜻한선물</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>가벼운선물</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>팬심저격</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>교환권</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>건강/비타민</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>과일/한우</GiftEx>
-            </GiftContainer>
-          </NavLink>
-          <NavLink to="/theme/life_small_gift">
-            <GiftContainer>
-              <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
-              <GiftEx>출산/키즈</GiftEx>
-            </GiftContainer>
-          </NavLink>
+          {giftItems.map((item, index) => (
+            <NavLink key={index} to="/theme/life_small_gift">
+              <GiftContainer>
+                <ImageBox src={GiftImg} alt="bar" ratio="square" radius={16} />
+                <GiftEx>{item.text}</GiftEx>
+              </GiftContainer>
+            </NavLink>
+          ))}
         </Grid>
       </GiftWrapper>
     </GiftLayout>
