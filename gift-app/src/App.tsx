@@ -1,11 +1,14 @@
 import '@styles/reset.css';
-import Layout from '@components/Layout/Layout';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Main from './pages/Main'
 
 function App() {
   return (
-    <Layout>
-      <div> 확인용 </div>
-    </Layout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </Router>
   );
 }
 
