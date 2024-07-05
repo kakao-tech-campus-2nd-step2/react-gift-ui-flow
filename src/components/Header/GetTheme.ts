@@ -9,7 +9,7 @@ interface Themes {
   [key: string]: Theme;
 }
 
-export const getTheme = (): Themes => {
+export const GetTheme = (): Themes => {
   return {
     theme1: {
       label: '생일테마',

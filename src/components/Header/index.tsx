@@ -1,4 +1,4 @@
-import { getTheme } from '@/components/Header/GetTheme';
+import { GetTheme } from '@/components/Header/GetTheme';
 import Nav from '@/components/Header/Nav';
 import Title from '@/components/Header/Title';
 
@@ -7,7 +7,7 @@ interface HeaderProps {
 }
 
 const Header = ({ themeKey }: HeaderProps) => {
-  const theme = themeKey ? getTheme()[themeKey] : null;
+  const theme = themeKey ? GetTheme()[themeKey] : null;
   const backgroundColor = theme ? theme.backgroundColor : 'transparent';
 
   return (
