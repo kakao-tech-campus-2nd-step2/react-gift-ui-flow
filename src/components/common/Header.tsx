@@ -1,10 +1,15 @@
 import styled from '@emotion/styled';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { useAuth } from '@/App-core/AuthContext';
 
 const Header = () => {
   const { isLoggedIn } = useAuth();
+  const location = useLocation();
+
+  const handleLoginClick = () => {
+    sessionStorage.setItem('redirectPath', location.pathname + location.search);
+  };
 
   return (
     <HeaderContainer>
@@ -14,7 +19,9 @@ const Header = () => {
       {isLoggedIn ? (
         <NavItem to="/my-account">내 계정</NavItem>
       ) : (
-        <NavItem to="/login">로그인</NavItem>
+        <NavItem to="/login" onClick={handleLoginClick}>
+          로그인
+        </NavItem>
       )}
     </HeaderContainer>
   );

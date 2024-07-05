@@ -16,6 +16,7 @@ const LoginPage = () => {
     if (username && password) {
       login(username); // 로그인 상태 변경
       const redirectPath = sessionStorage.getItem('redirectPath') || '/';
+      sessionStorage.removeItem('redirectPath'); // 리디렉션 후 경로 삭제
       console.log('Login successful. Redirecting to:', redirectPath);
       navigate(redirectPath, { replace: true });
     } else {
