@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 export interface IButton extends React.ComponentProps<'button'> {
   themetype: 'kakao' | 'outline' | 'black' | 'lightGray' | 'darkGray';
-  size: 'small' | 'large' | 'responsive';
+  size?: 'small' | 'large' | 'responsive';
   children?: React.ReactNode;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -19,7 +19,7 @@ const themeStyles = {
     background-color: #fee500;
     color: black;
     &:hover {
-      background-color: #f8f8f8;
+      background-color: #fada0a;
       transition: 0.1s;
     }
   `,
@@ -28,7 +28,7 @@ const themeStyles = {
     color: black;
     box-shadow: rgb(168, 168, 168) 0px 0px 0px 1px inset;
     &:hover {
-      background-color: #cecece;
+      background-color: #f8f8f8;
       transition: 0.1s;
     }
   `,
@@ -61,38 +61,35 @@ const themeStyles = {
 const sizeStyles = {
   small: css`
     font-size: 12px;
-    padding: 5px 10px;
+    height: 40px;
   `,
   large: css`
     font-size: 16px;
-    padding: 15px 30px;
+    height: 60px;
   `,
   responsive: css`
-    font-size: 12px;
-    padding: 8px 16px;
+    font-size: 14px;
+    height: 50px;
 
-    @media (min-width: 600px) {
+    @media (min-width: 768px) {
       font-size: 14px;
-      padding: 10px 20px;
+      height: 60px;
     }
-
-    @media (min-width: 900px) {
+    @media (min-width: 1024px) {
       font-size: 16px;
-      padding: 12px 24px;
-    }
-
-    @media (min-width: 1200px) {
-      font-size: 18px;
-      padding: 15px 30px;
+      height: 80px;
     }
   `,
 };
 
 const StyleBtn = styled.button<Pick<IButton, 'themetype' | 'size'>>`
-  padding: 10px 20px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   ${(props) => themeStyles[props.themetype]};
-  ${(props) => sizeStyles[props.size]};
+  ${(props) => (props.size ? sizeStyles[props.size] : null)};
 `;

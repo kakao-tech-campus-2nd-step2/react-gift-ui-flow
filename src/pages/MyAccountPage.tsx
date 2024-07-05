@@ -24,10 +24,9 @@ export default function MyAccountPage() {
         <Title>{authToken.id}님 안녕하세요!</Title>
         <Button
           themetype="darkGray"
-          size="large"
           onClick={HandleLogout}
           css={css`
-            width: 20%;
+            max-width: 180px;
             margin-top: 30px;
           `}
         >
