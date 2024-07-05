@@ -1,18 +1,18 @@
-import HeaderNav from '@/components/Header/HeaderNav';
-import HeaderTitle from '@/components/Header/HeaderTitle';
-import { themeConfig } from '@/components/themeConfig';
+import Nav from '@/components/Header/Nav';
+import Title from '@/components/Header/Title';
+import { themeConfig } from '@/components/ThemeConfig';
 
 interface HeaderProps {
   themeKey?: string;
 }
 
 const Header = ({ themeKey }: HeaderProps) => {
+  const backgroundColor = themeKey ? themeConfig[themeKey]?.backgroundColor : 'transparent';
+
   return (
-    <header
-      style={{ backgroundColor: themeKey ? themeConfig[themeKey]?.backgroundColor : 'transparent' }}
-    >
-      <HeaderTitle themeKey={themeKey} />
-      <HeaderNav />
+    <header style={{ backgroundColor }}>
+      <Title themeKey={themeKey} />
+      <Nav />
     </header>
   );
 };
