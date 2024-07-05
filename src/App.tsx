@@ -4,17 +4,19 @@ import ThemePage from './pages/ThemePage';
 import LoginPage from './pages/LoginPage';
 import PATH from './components/constants';
 import MyPage from './pages/MyPage';
-import { AuthProvider, useAuth } from './components/AuthContext';
+import { AuthProvider } from './components/AuthContext';
 import { ReactNode } from 'react';
-
+// import { useAuth } from './components/AuthContext';
 interface ProtectedRouteProps {
   children: ReactNode;
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-  const { isAuth } = useAuth();
+  // const { isAuth } = useAuth();
 
-  if (!isAuth) {
+  const token = sessionStorage.getItem('authToken');
+
+  if (!token) {
     alert('권한이 없습니다. 로그인 페이지로 이동합니다.');
     return <Navigate to={PATH.LOGINPAGE} replace />;
   } else {
