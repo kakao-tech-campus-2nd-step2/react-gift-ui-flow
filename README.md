@@ -41,9 +41,9 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 
 ## 2단계 기능 목록
 
-- [ ] 로그인 페이지에서 ID와 PW를 입력하면 직전 페이지로 Redirect
+- [x] 로그인 페이지에서 ID와 PW를 입력하면 직전 페이지로 Redirect
 
-### Fake 로그인 기능을 구현
+### Fake 로그인 기능 구현
 
 - [ ] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 **`authToken`** key에 저장
 - [ ] 모든 페이지 진입 시, **`authToken`**을 토대로 로그인 여부를 판단하는 로직 추가(ContextAPI 활용)
