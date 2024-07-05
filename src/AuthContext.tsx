@@ -1,11 +1,11 @@
 // src/AuthContext.tsx
 import type { ReactNode } from 'react';
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextType {
   isLoggedIn: boolean;
   username: string;
-  login: (name: string) => void;
+  login: (username: string) => void;
   logout: () => void;
 }
 
@@ -15,14 +15,24 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
 
+  useEffect(() => {
+    const storedUsername = sessionStorage.getItem('authToken');
+    if (storedUsername) {
+      setIsLoggedIn(true);
+      setUsername(storedUsername);
+    }
+  }, []);
+
   const login = (name: string) => {
     setIsLoggedIn(true);
     setUsername(name);
+    sessionStorage.setItem('authToken', name);
   };
 
   const logout = () => {
     setIsLoggedIn(false);
     setUsername('');
+    sessionStorage.removeItem('authToken');
   };
 
   return (

@@ -1,4 +1,3 @@
-// src/components/common/Header/Header.tsx
 import styled from '@emotion/styled';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -32,9 +31,7 @@ export const Header: React.FC = () => {
           height={54}
         />
       </LogoContainer>
-      <MenuItem onClick={handleMenuClick}>
-        {isLoggedIn ? '내 계정' : '로그인'}
-      </MenuItem>
+      <MenuItem onClick={handleMenuClick}>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
     </HeaderContainer>
   );
 };

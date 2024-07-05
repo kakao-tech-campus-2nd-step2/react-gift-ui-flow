@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
-import { useAuth } from '@/AuthContext'; // Import useAuth
+import { useAuth } from '@/AuthContext';
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { Image } from '@/components/common/Image';
@@ -11,13 +11,32 @@ const LoginPage: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
-  const { login } = useAuth(); // Use useAuth to get login function
+  const location = useLocation();
+  const { login } = useAuth();
+
+  const from = (location.state as { from: string })?.from || '/';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Call the login function with the username
+
+    if (!username && !password) {
+      alert('아이디와 비밀번호를 입력하세요');
+      return;
+    }
+
+    if (!username) {
+      alert('아이디를 입력하세요');
+      return;
+    }
+
+    if (!password) {
+      alert('비밀번호를 입력하세요');
+      return;
+    }
+
     login(username);
-    navigate('/');
+    sessionStorage.setItem('authToken', username); // Store ID in sessionStorage
+    navigate(from);
   };
 
   return (
