@@ -102,16 +102,31 @@ const categoryTitleStyle: React.CSSProperties = {
 };
 
 const CategoryList: React.FC = () => {
+  const firstRow = categories.slice(0, 6);
+  const secondRow = categories.slice(6);
+
   return (
-    <div style={containerStyle}>
-      {categories.slice(0, 6).map((category) => (
-        <div key={category.key} style={categoryCardStyle}>
-          <Link to={`/theme/${category.key}`}>
-            <img src={category.image} alt={category.name} style={categoryImageStyle} />
-            <div style={categoryTitleStyle}>{category.name}</div>
-          </Link>
-        </div>
-      ))}
+    <div style={{ padding: '20px' }}>
+      <div style={containerStyle}>
+        {firstRow.map((category) => (
+          <div key={category.key} style={categoryCardStyle}>
+            <Link to={`/theme/${category.key}`}>
+              <img src={category.image} alt={category.name} style={categoryImageStyle} />
+              <div style={categoryTitleStyle}>{category.name}</div>
+            </Link>
+          </div>
+        ))}
+      </div>
+      <div style={containerStyle}>
+        {secondRow.map((category) => (
+          <div key={category.key} style={categoryCardStyle}>
+            <Link to={`/theme/${category.key}`}>
+              <img src={category.image} alt={category.name} style={categoryImageStyle} />
+              <div style={categoryTitleStyle}>{category.name}</div>
+            </Link>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
