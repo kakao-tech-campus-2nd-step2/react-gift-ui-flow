@@ -24,7 +24,6 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     window.addEventListener('storage', handleStorageChange);
-
     // session storage나 local storage 바뀔때 마다 함수 실행
   }, []);
 
