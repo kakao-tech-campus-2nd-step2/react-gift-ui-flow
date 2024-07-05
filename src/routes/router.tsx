@@ -1,10 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import App from '@/App';
-import Home from '@pages/Home';
-import Theme from '@pages/Theme';
-import Login from '@pages/Login';
-import MyAccount from '@pages/MyAccount';
+import { App, Home, Theme, Login, MyAccount } from '@pages/index';
 import { ROUTE_PATH } from './constants';
 
 export const router = createBrowserRouter([
