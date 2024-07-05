@@ -19,6 +19,7 @@ export const RankingGoodsItems = ({ rankingIndex, ...props }: Props) => {
 const Wrapper = styled.div`
   width: 100%;
   position: relative;
+  max-width: 150px;
 `;
 
 const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`

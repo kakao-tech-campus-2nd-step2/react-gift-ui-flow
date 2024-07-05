@@ -1,7 +1,11 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
+import { useAuth } from './AuthContext';
+
 const Header: React.FC = () => {
+  const { authToken } = useAuth();
+
   return (
     <HeaderContainer>
       <Nav>
@@ -10,12 +14,15 @@ const Header: React.FC = () => {
         </NavItemleft>
 
         <NavList>
-          <NavItem>
-            <Link to="/my-account">My Account</Link>
-          </NavItem>
-          <NavItemRight>
-            <Link to="/login">로그인</Link>
-          </NavItemRight>
+          {authToken ? (
+            <NavItem>
+              <Link to="/my-account">내 계정</Link>
+            </NavItem>
+          ) : (
+            <NavItemRight>
+              <Link to="/login">로그인</Link>
+            </NavItemRight>
+          )}
         </NavList>
       </Nav>
     </HeaderContainer>

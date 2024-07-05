@@ -1,15 +1,24 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/components/common/AuthContext';
 
 const Loginpage: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const { setAuthToken } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
-    //로그인 로직 구현하기. 지금은 아무 값 가능
-    navigate('/my-accout');
+    // Fake 로그인
+    if (id && password) {
+      setAuthToken(id);
+      navigate(from, { replace: true });
+    }
   };
 
   return (

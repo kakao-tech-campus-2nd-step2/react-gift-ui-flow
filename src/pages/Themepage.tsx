@@ -117,12 +117,12 @@ const Themepage: React.FC = () => {
   return (
     <Container>
       <HeaderSection style={{ backgroundColor: theme.backgroundColor }}>
-        <h1>{theme.title}</h1>
+        <h1>{theme.label}</h1>
+        <h2>{theme.title}</h2>
         <p>{theme.description}</p>
       </HeaderSection>
 
       <Content>
-        <h2>{theme.label}</h2>
         <ItemList>
           {filteredItems.map((item) => (
             <Item key={item.id}>
