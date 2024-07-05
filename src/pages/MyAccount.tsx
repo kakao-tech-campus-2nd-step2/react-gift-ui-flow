@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import React from 'react';
 
 import { Button } from '@/components/common/Button';
-// import { useAuth } from '@/context/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 
 const Container = styled.div`
   display: flex;
@@ -18,12 +18,12 @@ const WelcomeMessage = styled.h1`
 `;
 
 const MyAccount: React.FC = () => {
-  //  const { logout } = useAuth();
+  const { userId, logout } = useAuth();
 
   return (
     <Container>
-      <WelcomeMessage>{}님 안녕하세요!</WelcomeMessage>
-      <Button theme="darkGray" size="small" style={{ width: '200px' }}>
+      <WelcomeMessage>{userId}님 안녕하세요!</WelcomeMessage>
+      <Button theme="darkGray" size="small" style={{ width: '200px' }} onClick={logout}>
         로그아웃
       </Button>
     </Container>

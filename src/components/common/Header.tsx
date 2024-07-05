@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { useAuth } from '@/context/AuthContext';
+
 const Container = styled.div`
   position: fixed;
   z-index: 9999;
@@ -34,6 +36,7 @@ const Content = styled.div`
 `;
 
 const Header: React.FC = () => {
+  const { isLoggedIn } = useAuth();
   return (
     <Container>
       <Wrapper>
@@ -45,9 +48,15 @@ const Header: React.FC = () => {
             />{' '}
           </a>
           <div>
-            <a href="/login">
-              <p>로그인</p>
-            </a>
+            {isLoggedIn ? (
+              <a href="/my-account">
+                <p>내 계정</p>
+              </a>
+            ) : (
+              <a href="/login">
+                <p>로그인</p>
+              </a>
+            )}
           </div>
         </Content>
       </Wrapper>
