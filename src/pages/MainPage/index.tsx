@@ -1,12 +1,15 @@
-import ThemeCategories from '@/pages/MainPage/ThemeCategories';
-import TrendingGifts from '@/pages/MainPage/TrendingGifts';
+import getItems from '@/pages/MainPage/GetItems';
+import ItemList from '@/pages/MainPage/ItemList';
+import Theme from '@/pages/MainPage/Theme';
 
 const MainPage = () => {
+  const items = getItems();
+
   return (
     <div>
       <main>
-        <ThemeCategories />
-        <TrendingGifts />
+        <Theme />
+        <ItemList items={items} />
       </main>
     </div>
   );

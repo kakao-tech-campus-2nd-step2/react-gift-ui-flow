@@ -1,4 +1,4 @@
-import getItems from '@/pages/ThemePage/getItems';
+import getItems from '@/pages/ThemePage/GetItems';
 import ItemList from '@/pages/ThemePage/ItemList';
 
 const ThemePage = () => {

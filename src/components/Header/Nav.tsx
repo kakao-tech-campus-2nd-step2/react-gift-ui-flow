@@ -1,4 +1,4 @@
-const HeaderNav = () => {
+const Nav = () => {
   return (
     <nav>
       <ul>
@@ -16,4 +16,4 @@ const HeaderNav = () => {
   );
 };
 
-export default HeaderNav;
+export default Nav;

@@ -1,10 +1,10 @@
-import { themeConfig } from '@/components/themeConfig';
+import { themeConfig } from '@/components/ThemeConfig';
 
-interface HeaderTitleProps {
+interface TitleProps {
   themeKey?: string;
 }
 
-const HeaderTitle = ({ themeKey }: HeaderTitleProps) => {
+const Title = ({ themeKey }: TitleProps) => {
   const theme = themeKey ? themeConfig[themeKey] : null;
 
   return (
@@ -22,4 +22,4 @@ const HeaderTitle = ({ themeKey }: HeaderTitleProps) => {
   );
 };
 
-export default HeaderTitle;
+export default Title;

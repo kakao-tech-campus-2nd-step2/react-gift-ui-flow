@@ -1,9 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Grid } from '@/components/common/layouts/Grid';
-import { themeConfig } from '@/components/themeConfig';
+import { themeConfig } from '@/components/ThemeConfig';
 
-const ThemeCategories = () => {
+const Theme = () => {
   const navigate = useNavigate();
 
   const handleThemeClick = (themeKey: string) => {
@@ -23,4 +23,4 @@ const ThemeCategories = () => {
   );
 };
 
-export default ThemeCategories;
+export default Theme;
