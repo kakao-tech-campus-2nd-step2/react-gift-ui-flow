@@ -266,18 +266,46 @@ const productPriceStyle: React.CSSProperties = {
   marginTop: '5px',
 };
 
+const loadMoreButtonStyle: React.CSSProperties = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  padding: '10px 20px',
+  margin: '20px auto',
+  borderRadius: '5px',
+  cursor: 'pointer',
+  backgroundColor: '#fff',
+  color: '#000',
+  border: '1px solid #ddd',
+  width: '480px',
+};
+
 const ProductList: React.FC = () => {
+  const [visibleProducts, setVisibleProducts] = useState(6);
+  const showMoreProducts = () => {
+    setVisibleProducts((prev) => prev + 6);
+  };
+
   return (
-    <div style={containerStyle}>
-      {products.map((product) => (
-        <div key={product.id} style={productCardStyle}>
-          <img src={product.image} alt={product.name} style={productImageStyle} />
-          <div style={productInfoStyle}>
-            <div style={productNameStyle}>{product.name}</div>
-            <div style={productPriceStyle}>{product.price}원</div>
+    <div>
+      <div style={containerStyle}>
+        {products.slice(0, visibleProducts).map((product) => (
+          <div key={product.id} style={productCardStyle}>
+            <img src={product.image} alt={product.name} style={productImageStyle} />
+            <div style={productInfoStyle}>
+              <div style={productNameStyle}>{product.name}</div>
+              <div style={productPriceStyle}>{product.price}원</div>
+            </div>
           </div>
+        ))}
+      </div>
+      {visibleProducts < products.length && (
+        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+          <button onClick={showMoreProducts} style={loadMoreButtonStyle}>
+            더보기
+          </button>
         </div>
-      ))}
+      )}
     </div>
   );
 };
