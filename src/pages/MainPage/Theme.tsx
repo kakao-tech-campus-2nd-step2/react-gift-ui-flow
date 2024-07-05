@@ -1,11 +1,11 @@
 import { useNavigate } from 'react-router-dom';
 
 import { Grid } from '@/components/common/layouts/Grid';
-import { getTheme } from '@/components/Header/GetTheme';
+import { GetTheme } from '@/components/Header/GetTheme';
 
 const Theme = () => {
   const navigate = useNavigate();
-  const themes = getTheme();
+  const themes = GetTheme();
 
   const handleThemeClick = (themeKey: string) => {
     navigate(`/theme/${themeKey}`);

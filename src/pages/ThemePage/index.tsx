@@ -1,14 +1,15 @@
-import getItems from '@/pages/ThemePage/GetItems';
+import { Container } from '@/components/common/layouts/Container';
+import GetItem from '@/pages/ThemePage/GetItem';
 import ItemList from '@/pages/ThemePage/ItemList';
 
 const ThemePage = () => {
-  const items = getItems();
+  const items = GetItem();
 
   return (
     <div>
-      <main>
+      <Container maxWidth="1200px">
         <ItemList items={items} />
-      </main>
+      </Container>
     </div>
   );
 };

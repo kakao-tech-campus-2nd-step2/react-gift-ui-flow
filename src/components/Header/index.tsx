@@ -1,3 +1,4 @@
+import { Container } from '@/components/common/layouts/Container';
 import { GetTheme } from '@/components/Header/GetTheme';
 import Nav from '@/components/Header/Nav';
 import Title from '@/components/Header/Title';
@@ -12,8 +13,10 @@ const Header = ({ themeKey }: HeaderProps) => {
 
   return (
     <header style={{ backgroundColor }}>
-      <Title themeKey={themeKey} />
-      <Nav />
+      <Container maxWidth="1200px">
+        <Title themeKey={themeKey} />
+        <Nav />
+      </Container>
     </header>
   );
 };

@@ -1,3 +1,4 @@
+import { Container } from '@/components/common/layouts/Container';
 import GetItem from '@/pages/MainPage/GetItem';
 import ItemList from '@/pages/MainPage/ItemList';
 import Theme from '@/pages/MainPage/Theme';
@@ -14,10 +15,10 @@ const MainPage = () => {
 
   return (
     <div>
-      <main>
+      <Container maxWidth="1200px">
         <Theme />
         <ItemList items={items} />
-      </main>
+      </Container>
     </div>
   );
 };
