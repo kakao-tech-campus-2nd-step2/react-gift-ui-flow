@@ -20,11 +20,11 @@ const ItemList = ({ items }: ItemListProps) => {
   const [filter2, setFilter2] = useState('받고 싶어한');
   const [visibleItems, setVisibleItems] = useState(6);
 
-  const handleLoadMore = () => {
+  const handleMore = () => {
     setVisibleItems((prevVisibleItems) => prevVisibleItems + 6);
   };
 
-  const handleShowLess = () => {
+  const handleLess = () => {
     setVisibleItems(6);
   };
 
@@ -57,11 +57,11 @@ const ItemList = ({ items }: ItemListProps) => {
         ))}
       </Grid>
       {visibleItems < items.length ? (
-        <Button onClick={handleLoadMore} theme="outline" size="large">
+        <Button onClick={handleMore} theme="outline" size="large">
           더보기
         </Button>
       ) : (
-        <Button onClick={handleShowLess} theme="outline" size="large">
+        <Button onClick={handleLess} theme="outline" size="large">
           접기
         </Button>
       )}

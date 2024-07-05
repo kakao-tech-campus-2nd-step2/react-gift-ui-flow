@@ -1,6 +1,8 @@
+import { Container } from '@/components/common/layouts/Container';
+
 const Footer = () => {
   return (
-    <footer>
+    <Container maxWidth="1200px">
       <p>카카오톡 선물하기</p>
       <p>(주)카카오 대표이사 : 정신아</p>
       <p>주소 : 제주특별자치도 제주시 첨단로 242</p>
@@ -18,7 +20,7 @@ const Footer = () => {
         판매자가 판매하는 상품에 대해 (주)카카오는 통신중개 판매업자로서 통신판매의 당사자가 아니며
         상품의 주문, 배송 및 환불 등과 관련한 의무와 책임은 각 판매자에게 있습니다.
       </p>
-    </footer>
+    </Container>
   );
 };
 
