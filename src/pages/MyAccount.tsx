@@ -43,6 +43,11 @@ const MyAccount = () => {
   const nav = useNavigate();
   const { isLogin, userInfo } = useContext(authContext);
 
+  const handleLogout = () => {
+    sessionStorage.removeItem('authToken');
+    nav('/');
+  };
+
   useEffect(() => {
     if (!isLogin) {
       nav('/login');
@@ -53,7 +58,7 @@ const MyAccount = () => {
     <MyAccountContainer>
       {`${userInfo}님 안녕하세요!`}
       <DivHeight />
-      <StyledButton>로그아웃</StyledButton>
+      <StyledButton onClick={handleLogout}>로그아웃</StyledButton>
     </MyAccountContainer>
   );
 };
