@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '../../../context/AuthContext';
+
 export interface HeaderProps {
   title: string;
   imageUrl?: string;
@@ -42,7 +44,9 @@ const linkStyle = {
   padding: '0 30px',
 };
 
-const Header: React.FC<HeaderProps> = ({ title, imageUrl, isLoggedIn }) => {
+const Header: React.FC<HeaderProps> = ({ title, imageUrl }) => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <header style={headerStyle}>
       <div style={titleStyle}>
@@ -54,11 +58,9 @@ const Header: React.FC<HeaderProps> = ({ title, imageUrl, isLoggedIn }) => {
       </div>
       <div style={rightContainerStyle}>
         {isLoggedIn ? (
-          <>
-            <Link to="/my-account" style={linkStyle}>
-              내 계정
-            </Link>
-          </>
+          <Link to="/my-account" style={linkStyle}>
+            내 계정
+          </Link>
         ) : (
           <Link to="/login" style={linkStyle}>
             로그인
