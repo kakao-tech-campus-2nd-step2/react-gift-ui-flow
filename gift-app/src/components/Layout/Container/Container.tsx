@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
+import { ReactNode } from 'react';
 
-const Container: React.FC = () => {
-  return <StyledContainer>Hello World</StyledContainer>;
+type ContainerProps = {
+  children: React.ReactNode;
+};
+
+const Container = ({ children }: ContainerProps) => {
+  return <StyledContainer>{children}</StyledContainer>;
 };
 
 const StyledContainer = styled.div`
