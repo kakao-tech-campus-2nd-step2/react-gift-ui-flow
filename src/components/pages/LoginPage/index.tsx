@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
 import type { FormEvent } from 'react';
 import type { Dispatch, SetStateAction } from 'react';
-import { useContext } from 'react';
-import { Form } from 'react-router-dom';
+import { useContext, useEffect } from 'react';
+import { Form, useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/atoms/Button';
 import { ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
 import { Image } from '@/components/atoms/Image';
 import { UnderlineTextField } from '@/components/atoms/Input/UnderlineTextField';
 import type { Auth } from '@/components/contexts/AuthContext';
-import { SetAuthContext } from '@/components/contexts/AuthContext';
+import { AuthContext, SetAuthContext } from '@/components/contexts/AuthContext';
 import { Container } from '@/components/molecules/Container';
+import { RouterPath } from '@/router';
 const imgSrc =
   'https://kakao-tech-week2-kakao-gift-ui-flow.pages.dev/static/media/kakao_logo.60e99555125ae4c4b8f23f6c5faee9ec.svg';
 
@@ -43,7 +44,15 @@ const mockLogin = (setAuth: Dispatch<SetStateAction<Auth>>) => (e: FormEvent<HTM
 };
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const auth = useContext(AuthContext);
   const setAuthContext = useContext(SetAuthContext) as Dispatch<SetStateAction<Auth>>;
+
+  useEffect(() => {
+    if (auth.name !== undefined) {
+      navigate(RouterPath.root);
+    }
+  });
 
   return (
     <FullHeightContainer maxWidth="580px" flexDirection={ContainerDirectionType.column}>
