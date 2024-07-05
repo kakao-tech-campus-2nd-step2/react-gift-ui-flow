@@ -1,7 +1,5 @@
+// src/pages/LoginPage/LoginPage.tsx
 import { useState } from 'react';
-
-import { Button } from '@/components/common/Button';
-import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 
 const LoginPage = () => {
   const [id, setId] = useState('');
@@ -15,24 +13,19 @@ const LoginPage = () => {
     <div>
       <h1>Login</h1>
       <div>
-        <UnderlineTextField
-          type="text"
-          id="id"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-        />
+        <input type="text" id="id" value={id} onChange={(e) => setId(e.target.value)} />
       </div>
       <div>
-        <UnderlineTextField
+        <input
           type="password"
           id="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
-      <Button onClick={handleLogin} type="submit" theme="kakao" size="responsive">
+      <button onClick={handleLogin} type="submit">
         로그인
-      </Button>
+      </button>
     </div>
   );
 };
