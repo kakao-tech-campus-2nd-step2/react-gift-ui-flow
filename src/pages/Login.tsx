@@ -4,6 +4,7 @@ import { useLocation,useNavigate} from "react-router-dom";
 
 import { Button } from "@/components/common/Button/index";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
+import { useAuth } from "@/contexts/Authcontext";
 
 const Container = styled.div`
   display: flex;
@@ -44,18 +45,18 @@ interface LoginProps {
 	onLogin: (username: string) => void;
 }
 
-const Login: React.FC<LoginProps> = ({ onLogin }) => {
+const Login: React.FC<LoginProps> = ({}) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 	const location = useLocation();
+	const { login } = useAuth();
 
+	const from = (location.state as { from?: Location })?.from?.pathname || "/";
 	const handleLogin = () => {
 		if (username && password) {
-			onLogin(username);
-			sessionStorage.setItem('authToken', username); // sessionStorage에 username 저장
-			const redirectTo = location.state?.from || '/'; // 로그인 후 이동할 페이지
-			navigate(redirectTo); // 페이지 이동
+			login(username);
+			navigate(from, {replace: true});
 		} else {
 			alert('아이디와 비밀번호를 입력해주세요.');
 		}

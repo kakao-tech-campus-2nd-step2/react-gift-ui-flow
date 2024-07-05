@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "@/components/common/Button";
+import { useAuth } from "@/contexts/Authcontext";
 
 
 const Container = styled.div`
@@ -35,11 +36,12 @@ interface MyAccountProps {
 	onLogout: () => void;
 }
 
-const MyAccount: React.FC<MyAccountProps>= ({username, onLogout}) => {
+const MyAccount: React.FC<MyAccountProps>= () => {
 	const navigate = useNavigate();
+  const { user: username, logout } = useAuth();
 
   const handleLogout = () => {
-    onLogout();
+    logout();
     navigate('/');
   };
 	  return (
