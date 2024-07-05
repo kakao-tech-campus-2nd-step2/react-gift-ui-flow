@@ -6,10 +6,10 @@ import { useAuth } from '@/context/auth/useAuth';
 import { Button } from '@/components/ui/Button';
 
 export const AuthButton = () => {
-  const { user } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  const text = user ? '내 계정' : '로그인';
-  const linkTo = user ? ROUTES.MY_ACCOUNT : ROUTES.LOGIN;
+  const text = isLoggedIn ? '내 계정' : '로그인';
+  const linkTo = isLoggedIn ? ROUTES.MY_ACCOUNT : ROUTES.LOGIN;
 
   return (
     <Link to={linkTo}>

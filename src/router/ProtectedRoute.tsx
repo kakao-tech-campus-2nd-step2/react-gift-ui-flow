@@ -4,7 +4,7 @@ import { ROUTES } from '@/constants/routes';
 import { useAuth } from '@/context/auth/useAuth';
 
 export const ProtectedRoute = () => {
-  const { user } = useAuth();
+  const { isLoggedIn } = useAuth();
 
-  return user ? <Outlet /> : <Navigate to={ROUTES.LOGIN} replace />;
+  return isLoggedIn ? <Outlet /> : <Navigate to={ROUTES.LOGIN} replace />;
 };
