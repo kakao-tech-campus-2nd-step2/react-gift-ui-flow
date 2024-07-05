@@ -18,6 +18,9 @@ const List = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-
   padding: 40px;
+
+  @media screen and (max-width: 768px) {
+    padding: 20px;
+  }
 `;

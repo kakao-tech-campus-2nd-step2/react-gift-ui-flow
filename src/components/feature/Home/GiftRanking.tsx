@@ -23,7 +23,7 @@ export const GiftRanking = () => {
       : goodsItems.filter((goods) => goods.filterTarget === selectTarget && goods.filterType === selectType);
   return (
     <RankingWrapper>
-      <Container flexDirection="column" justifyContent="center" alignItems="center" maxWidth="1024px">
+      <Container flexDirection="column" justifyContent="center" maxWidth="1024px">
         <Title>실시간 급상승 선물랭킹</Title>
         <RankingFilter
           selectTarget={selectTarget}
@@ -44,4 +44,10 @@ const RankingWrapper = styled.div`
 const Title = styled.h1`
   font-size: 32px;
   font-weight: bold;
+  text-align: center;
+
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    text-align: left;
+  }
 `;

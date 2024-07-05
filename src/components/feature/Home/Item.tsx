@@ -26,6 +26,10 @@ const ItemWrapper = styled.div`
   flex-direction: column;
   gap: 10px;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    gap: 6px;
+  }
 `;
 const Icon = styled.div<Pick<IItem, 'selectTarget' | 'text'>>`
   display: flex;
@@ -40,7 +44,14 @@ const Icon = styled.div<Pick<IItem, 'selectTarget' | 'text'>>`
   font-weight: bolder;
   font-size: 20px;
   background-color: ${(props) => (props.selectTarget === props.text ? '#4684E9' : 'rgb(230, 241, 255)')};
-  transition: 0.2s;
+  transition: background-color 0.2s;
+
+  @media screen and (max-width: 768px) {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    font-size: 14px;
+  }
 `;
 
 const Text = styled.p<Pick<IItem, 'selectTarget' | 'text'>>`
@@ -48,5 +59,11 @@ const Text = styled.p<Pick<IItem, 'selectTarget' | 'text'>>`
   font-weight: ${(props) => (props.selectTarget === props.text ? 'bold' : '400')};
   color: ${(props) => (props.selectTarget === props.text ? '#4684E9' : 'black')};
   text-align: center;
-  transition: 0.2s;
+  transition:
+    color 0.2s,
+    font-weight 0.2s;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `;

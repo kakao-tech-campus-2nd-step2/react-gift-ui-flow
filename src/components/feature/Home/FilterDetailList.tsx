@@ -29,10 +29,19 @@ const DetailList = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(70, 132, 233, 0.1);
 `;
+
 const DetailText = styled.div<Pick<IItem, 'selectType' | 'text'>>`
   font-size: 22px;
   padding: 20px 30px;
   font-weight: ${(props) => (props.selectType === props.text ? 'bold' : '400')};
   color: ${(props) => (props.selectType === props.text ? '#4684E9' : 'rgba(70, 132, 233, 0.7)')};
   cursor: pointer;
+  transition:
+    color 0.2s,
+    font-weight 0.2s;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+    padding: 14px 30px;
+  }
 `;
