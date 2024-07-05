@@ -1,11 +1,13 @@
 import { Button } from "@/components/common/Button";
-import { setAccessToken } from "@/utils/localStorage";
+import { AuthContext } from "@/contexts/AuthContext";
 import { css } from "@emotion/css";
 import styled from "@emotion/styled";
-import { FormEvent, useRef } from "react";
+import { FormEvent, useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
@@ -21,8 +23,7 @@ const Login = () => {
       return;
     }
 
-    const accessToken = Date.now().toString();
-    setAccessToken(accessToken);
+    login(username);
 
     navigate("/");
   };
