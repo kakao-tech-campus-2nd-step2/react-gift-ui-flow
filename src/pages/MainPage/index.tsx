@@ -1,17 +1,11 @@
 import { Container } from '@/components/common/layouts/Container';
-import GetItem from '@/pages/MainPage/GetItem';
+import getItems from '@/pages/MainPage/getItems';
 import ItemList from '@/pages/MainPage/ItemList';
 import Theme from '@/pages/MainPage/Theme';
-
-interface Item {
-  imageSrc: string;
-  subtitle: string;
-  title: string;
-  amount: number;
-}
+import type { Item } from '@/pages/MainPage/types';
 
 const MainPage = () => {
-  const items: Item[] = GetItem();
+  const items: Item[] = getItems();
 
   return (
     <div>

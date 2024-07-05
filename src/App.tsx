@@ -1,18 +1,19 @@
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import { AuthProvider } from '@/context/AuthProvider';
 
-const App = () => {
-  const { themeKey } = useParams<{ themeKey?: string }>();
-
+function App() {
   return (
-    <div>
-      <Header themeKey={themeKey} />
-      <Outlet />
+    <AuthProvider>
+      <Header />
+      <main>
+        <Outlet />
+      </main>
       <Footer />
-    </div>
+    </AuthProvider>
   );
-};
+}
 
 export default App;

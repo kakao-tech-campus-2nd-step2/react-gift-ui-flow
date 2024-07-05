@@ -1,9 +1,8 @@
 import { Button } from '@/components/common/Button';
+import { useLogout } from '@/pages/MyAccountPage/useLogout';
 
 const MyAccountPage = () => {
-  const handleLogout = () => {
-    alert(`로그아웃 처리`);
-  };
+  const handleLogout = useLogout();
 
   return (
     <div>

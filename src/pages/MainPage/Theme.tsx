@@ -2,11 +2,10 @@ import { useNavigate } from 'react-router-dom';
 
 import { Image } from '@/components/common/Image';
 import { Grid } from '@/components/common/layouts/Grid';
-import { GetTheme } from '@/components/Header/GetTheme';
+import { themes } from '@/components/Header/themes';
 
-const ThemeComponent = () => {
+const Theme = () => {
   const navigate = useNavigate();
-  const themes = GetTheme();
 
   const handleClick = (themeKey: string) => {
     navigate(`/theme/${themeKey}`);
@@ -28,4 +27,4 @@ const ThemeComponent = () => {
   );
 };
 
-export default ThemeComponent;
+export default Theme;
