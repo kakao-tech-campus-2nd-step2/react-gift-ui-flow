@@ -32,12 +32,21 @@ const Header = () => {
 
   useEffect(() => {
     const authToken = sessionStorage.getItem('authToken');
-    if (authToken) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
+    setIsLoggedIn(!!authToken); // authToken이 존재하면 true, 아니면 false로 설정
+
+    // authToken 변경 시 sessionStorage 갱신
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
+
+  const handleStorageChange = () => {
+    const authToken = sessionStorage.getItem('authToken');
+    setIsLoggedIn(!!authToken);
+    window.location.reload();
+  };
 
   return (
     <Container>
