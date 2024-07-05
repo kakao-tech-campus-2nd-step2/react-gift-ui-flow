@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 
 import { Container } from '@/components/common/layouts/Container';
 
-//label, title, description, backgroundColor
 interface Props {
     label: string;
     title: string;

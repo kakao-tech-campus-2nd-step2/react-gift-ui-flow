@@ -1,6 +1,8 @@
+import { css } from '@emotion/css';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import DefaultList from './DefaultList';
 import ThemeHeader from './ThemeHeader';
 
 export default () => {
@@ -24,6 +26,15 @@ export default () => {
                     description={'당신의 센스를 뽐내줄 부담 없는 선물'}
                     backgroundColor={'rgb(75, 77, 80)'}
                 />
+            </section>
+            {/* goods list */}
+            <section
+                className={css`
+                    margin-top: 50px;
+                    margin-bottom: 100px;
+                `}
+            >
+                <DefaultList />
             </section>
         </div>
     );
