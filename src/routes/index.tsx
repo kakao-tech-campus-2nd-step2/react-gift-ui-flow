@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
 import Footer from '@/components/Footer/Footer';
 import Header from '@/components/Header/Header';
-import PrivateRoute from '@/components/PrivateRoute/PrivateRoute';
+import { AuthProvider} from '@/contexts/Authcontext';
 
 import Home from '../pages/Home';
 import Login from '../pages/Login';
@@ -27,16 +27,18 @@ const AppRoutes = () => {
   };
 
   return (
+  <AuthProvider>
     <Router>
       <Header isLoggedIn={isLoggedIn}/>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/theme/:themeKey" element={<Theme />} />
-        <Route path="/login" element={<Login onLogin={handleLogin}/>} />
-        <Route path="/my-account" element={<PrivateRoute isLoggedIn={isLoggedIn}><MyAccount username={user} onLogout={handleLogout}/></PrivateRoute>} />
+          <Route path="/" element={<Home />} />
+          <Route path="/theme/:themeKey" element={<Theme />} />
+          <Route path="/login" element={<Login onLogin={handleLogin}/>} />
+          <Route path="/my-account" element={<MyAccount username={user} onLogout={handleLogout}/>} />
       </Routes>
       <Footer />
     </Router>
+  </AuthProvider>
   );
 }
 
