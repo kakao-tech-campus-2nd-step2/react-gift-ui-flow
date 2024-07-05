@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/** @jsxImportSource @emotion/react */
-
 import '@styles/goodsItem.css';
 
 import GoodsItem from './GoodsItem';
