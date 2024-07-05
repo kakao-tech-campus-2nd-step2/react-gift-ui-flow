@@ -12,8 +12,10 @@ import Theme from '../pages/Theme';
 const AppRoutes = () => {
 
   const[isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setuser] = useState('');
 
-  const handleLogin = (username: string) => {
+  const handleLogin = (username:string) => {
+    setuser(username);
     setIsLoggedIn(true);
     console.log(`User ${username} logged in`);
   };
@@ -24,7 +26,7 @@ const AppRoutes = () => {
         <Route path="/" element={<Home />} />
         <Route path="/theme/:themeKey" element={<Theme />} />
         <Route path="/login" element={<Login onLogin={handleLogin}/>} />
-        <Route path="/my-account" element={<MyAccount />} />
+        <Route path="/my-account" element={<MyAccount username={user}/>} />
       </Routes>
     </Router>
   );

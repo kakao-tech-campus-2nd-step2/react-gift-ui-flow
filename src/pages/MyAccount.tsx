@@ -13,13 +13,17 @@ const Container = styled.div`
 const StyledText = styled.h1`
   font-size: 30px;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 `;
 
-const MyAccount = () => {
+interface MyAccountProps {
+	username: string;
+}
+
+const MyAccount: React.FC<MyAccountProps>= ({username}) => {
 	  return (
 	<Container>
-	  <StyledText>My Account</StyledText>
+	  <StyledText>{username}님 안녕하세요!</StyledText>
 	  <Button>로그아웃</Button>
 	</Container>
   );
