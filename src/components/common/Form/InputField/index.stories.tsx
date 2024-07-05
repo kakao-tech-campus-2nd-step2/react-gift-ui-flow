@@ -1,3 +1,6 @@
+import React from 'react';
+import { Global } from '@emotion/react';
+import resetStyles from '@/assets/styles/resetStyles';
 import { Meta, StoryObj } from '@storybook/react';
 import InputField, { InputFieldProps } from '.';
 
@@ -17,11 +20,17 @@ const meta: Meta<InputFieldProps> = {
       control: 'text',
     },
     srOnly: {
-      control: {
-        type: 'boolean',
-      },
+      control: 'boolean',
     },
   },
+  decorators: [
+    (Story) => (
+      <>
+        <Global styles={resetStyles} />
+        <Story />
+      </>
+    ),
+  ],
 };
 
 export default meta;

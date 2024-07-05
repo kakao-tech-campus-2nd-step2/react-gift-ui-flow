@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import Container from '@components/common/Layout/Container';
 import logo from '@assets/images/logo.png';
-import Inner from '@components/common/Layout/Inner';
+import { Inner } from '@components/common';
 import { Link } from 'react-router-dom';
 import { ROUTE_PATH } from '@routes/constants';
 import { BREAK_POINTS } from '@assets/styles/variants';
