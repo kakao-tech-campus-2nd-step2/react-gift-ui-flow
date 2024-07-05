@@ -5,27 +5,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from '@/components/common/Footer/index';
 import Header from "@/components/common/Header/index";
 import Homepage from '@/pages/Homepage/Homepage';
-import MyAccountPage from "@/pages/My-account/MyAccountPage"
+import MyAccountPage from "@/pages/My-aacount/MyAccountPage";
 import SignInPage from "@/pages/Sign-in/SignInPage";
+
+import { ThemePage } from "./pages/Theme/ThemePage";
 
 
 const App: React.FC = () => {
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     children: [
-  //       { path: "", element: <Homepage /> },
-  //       {
-  //         path:"login"
-  //         element: <SignIn />
-  //       },
-  //       {
-  //         path: "my-account",
-  //         element: <MyAccount />
-  //       },
-  //     ]
-  //   }
-  // ])
+
   return (
     <>
     <BrowserRouter>
@@ -35,6 +22,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/login" element={<SignInPage />}></Route>
           <Route path="/my-account" element={<MyAccountPage />}></Route>
+          <Route path="/theme" element={<ThemePage />}></Route>
         </Routes>
       </Body>
       <Footer></Footer>
@@ -46,11 +34,13 @@ const App: React.FC = () => {
 export default App;
 
 const Body = styled.div`
-  padding-top: 30px;
+  position: sticky;
+  padding-top: 40px;
   width: 100vw;
   height: 90vh;
   align-items: center;
   justify-content: center;
+  overflow-y: scroll;
 `
 
 // style?
