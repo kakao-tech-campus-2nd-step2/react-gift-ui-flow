@@ -1,19 +1,32 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import ThemeHeader from './ThemeHeader';
+
 export default () => {
-    const { themeKey } = useParams();
+    const themeKey = useParams().themeKey ?? '';
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (themeKey && !themeKeys[themeKey]) {
+        if (!themeKeys[themeKey]) {
             navigate('/error/404');
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    //label, title, description, backgroundColor
-    return <div>{themeKey}</div>;
+    return (
+        <div>
+            {/* theme header section */}
+            <section>
+                <ThemeHeader
+                    label={themeKeys[themeKey].label}
+                    title={'예산은 가볍게, 감동은 무겁게 ❤️'}
+                    description={'당신의 센스를 뽐내줄 부담 없는 선물'}
+                    backgroundColor={'rgb(75, 77, 80)'}
+                />
+            </section>
+        </div>
+    );
 };
 
 export const themeKeys: { [key: string]: { label: string } } = {
