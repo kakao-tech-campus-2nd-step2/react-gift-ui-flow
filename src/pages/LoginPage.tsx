@@ -7,7 +7,7 @@ import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineText
 import { Container } from '@/components/common/layouts/Container/index';
 
 interface LoginPageProps {
-  onLogin: () => void;
+  onLogin: (id: string) => void;
 }
 
 export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
@@ -23,7 +23,9 @@ export const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
       alert('아이디와 비밀번호를 입력해주세요.');
       return;
     }
-    onLogin();
+
+    sessionStorage.setItem('authToken', id);
+    onLogin(id);
     navigate(from);
   };
 

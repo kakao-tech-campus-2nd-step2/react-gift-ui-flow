@@ -45,7 +45,7 @@ FE 카카오 선물하기 2주차 과제: 페이지 구현
 
 ### Fake 로그인 기능 구현
 
-- [ ] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 **`authToken`** key에 저장
+- [x] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 **`authToken`** key에 저장
 - [ ] 모든 페이지 진입 시, **`authToken`**을 토대로 로그인 여부를 판단하는 로직 추가(ContextAPI 활용)
 - [ ] Header에서 로그인 한 경우 내 계정 버튼, 로그인 하지 않은 경우 로그인 버튼 추가
 - [ ] 내 계정(**`/my-account`**) 페이지는 로그인 한 사람만 접근 가능. (로그인 하지 않은 유저는 로그인 페이지로 연결)
