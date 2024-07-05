@@ -12,8 +12,8 @@ import { ThemeTemplate } from '@/components/templates/ThemeTemplate';
 export const RouterPath = {
   root: '/',
   theme: '/theme/:themeKey',
-  myPage: 'my-account',
-  login: 'login',
+  myPage: '/my-account',
+  login: '/login',
   notFound: '*',
 };
 
@@ -49,7 +49,7 @@ export async function loginAction({
   const { id } = updates;
   sessionStorage.setItem('authToken', JSON.stringify({ name: id }));
 
-  return redirect('/');
+  return redirect(RouterPath.root);
 }
 
 export const router = createBrowserRouter([
