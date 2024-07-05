@@ -10,7 +10,7 @@ export const ThemeCategory = () => {
   return (
     <ThemeWrapper>
       <Container flexDirection="row" alignItems="center" justifyContent="center" maxWidth="1024px">
-        <Grid columns={{init:4, xs:4, lg:6}} gap={60}>
+        <Grid columns={{ init: 4, xs: 4, lg: 6 }} gap={60}>
           <Link to="theme/theme_birth">
             <ThemeCategoryItem
               src="https://img1.daumcdn.net/thumb/S104x104/?fname=https%3A%2F%2Ft1.daumcdn.net%2Fgift%2Fhome%2Ftheme%2F292020231106_MXMUB.png"
