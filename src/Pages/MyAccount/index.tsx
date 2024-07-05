@@ -1,6 +1,11 @@
 import styled from '@emotion/styled';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+// 세션 스토리지에서 사용자 ID를 가져오는 함수
+export const getAuthToken = (): string | null => {
+  return sessionStorage.getItem('authToken');
+};
 
 interface MyAccountProps {
   onLogout: () => void;
@@ -8,6 +13,12 @@ interface MyAccountProps {
 
 const MyAccount: React.FC<MyAccountProps> = ({ onLogout }) => {
   const navigate = useNavigate();
+  const [username, setUsername] = useState<string | null>(null);
+
+  useEffect(() => {
+    const token = getAuthToken();
+    setUsername(token);
+  }, []);
 
   const handleLogoutClick = () => {
     onLogout();
@@ -16,7 +27,7 @@ const MyAccount: React.FC<MyAccountProps> = ({ onLogout }) => {
 
   return (
     <Wrapper>
-      <Title>내 계정</Title>
+      <Title>{username ? `${username}님 반갑습니다!` : '반갑습니다!'}</Title>
       <LogoutButton onClick={handleLogoutClick}>로그아웃</LogoutButton>
     </Wrapper>
   );
