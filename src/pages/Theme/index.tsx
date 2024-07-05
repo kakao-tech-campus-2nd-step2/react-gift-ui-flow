@@ -7,8 +7,9 @@ import Header from "@/components/common/Header";
 
 import ItemList from "./ItemList";
 import ThemeHeader from "./ThemeHeader";
+import { Themes } from "./ThemeHeader";
 
-const themeKeys = ["life_small_gift"];
+const themeKeys = Object.keys(Themes);
 
 const Theme: React.FC = () => {
   const authToken = useContext(AuthTokenContext);

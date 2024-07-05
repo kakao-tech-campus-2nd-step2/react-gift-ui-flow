@@ -10,9 +10,9 @@ const ThemeHeader: React.FC<Prop> = ({ themeKey }) => {
   return (
     <Wrapper themeKey={themeKey}>
       <StyledDiv>
-        <Label>{themes[themeKey].label}</Label>
-        <Title>{themes[themeKey].title}</Title>
-        <Description>{themes[themeKey].description}</Description>
+        <Label>{Themes[themeKey].label}</Label>
+        <Title>{Themes[themeKey].title}</Title>
+        <Description>{Themes[themeKey].description}</Description>
       </StyledDiv>
     </Wrapper>
   );
@@ -28,7 +28,7 @@ type Theme = {
   };
 };
 
-const themes: Theme = {
+export const Themes: Theme = {
   life_small_gift: {
     label: "가벼운 선물",
     title: "예산은 가볍게, 감동은 무겁게❤️",
@@ -50,7 +50,7 @@ const Wrapper = styled.section<Pick<Prop, "themeKey">>(
     },
   },
   ({ themeKey }) => ({
-    backgroundColor: themes[themeKey].backgroundColor,
+    backgroundColor: Themes[themeKey].backgroundColor,
   }),
 );
 
