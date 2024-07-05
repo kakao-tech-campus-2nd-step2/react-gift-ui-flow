@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import LoginPage from './pages/loginpage';
 import MainPage from './pages/mainpage';
 import MyPage from './pages/mypage';
+import ThemePage from './pages/ThemePage';
 
 const App: React.FC = () => (
   <Router>
@@ -13,6 +14,7 @@ const App: React.FC = () => (
         <Route path="/" element={<MainPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/my-account" element={<PrivateRoute component={MyPage} />} />
+        <Route path="/theme/life_small_gift" element={<ThemePage />} />
       </Routes>
     </AuthProvider>
   </Router>
