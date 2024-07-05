@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { DefaultGoodsItems, type DefaultGoodsItemsProps } from './Default';
+import { DefaultGoodsItems, type DefaultGoodsItemsProps } from './DefaultGoodsItems';
 
 type Props = {
   rankingIndex: number;

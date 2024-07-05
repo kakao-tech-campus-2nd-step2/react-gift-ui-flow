@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/common/Button';
 import { Grid } from '@/components/common/layouts/Grid';
-import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
+import { RankingGoodsItems } from '@/components/common/GoodsItem/RankingGoodsItem';
 
 type GoodsData = {
   id: number;
