@@ -14,9 +14,11 @@
 
 ## page
 
-|메인|테마|로그인|마이페이지|
-|---|---|---|---|
-|ㅇ|ㅇ|ㅇ|ㅇ|
+|메인|테마|
+|---|---|
+|![localhost_3000_](https://github.com/dandamdandam/react-gift-ui-flow/assets/102032954/df2712af-c58d-40ff-99d3-c1d036bac3a0)|![localhost_3000_ (1)](https://github.com/dandamdandam/react-gift-ui-flow/assets/102032954/090a2a21-90a4-4101-a52a-a33235de23ed)|
+|로그인|마이페이지|
+|![image](https://github.com/dandamdandam/react-gift-ui-flow/assets/102032954/cfaa18c0-04ba-42b2-a6bd-03c4376c3e0f)|![image](https://github.com/dandamdandam/react-gift-ui-flow/assets/102032954/a6ae9247-29cd-4b5d-9a9b-2e9c6374e72a)|
 
 ## 🎸
 
