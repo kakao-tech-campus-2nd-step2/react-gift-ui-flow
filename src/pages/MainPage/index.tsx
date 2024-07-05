@@ -1,9 +1,7 @@
-import React from 'react';
-
 import ThemeCategories from '@/pages/MainPage/ThemeCategories';
 import TrendingGifts from '@/pages/MainPage/TrendingGifts';
 
-const MainPage: React.FC = () => {
+const MainPage = () => {
   return (
     <div>
       <main>

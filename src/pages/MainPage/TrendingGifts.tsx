@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Grid } from '@/components/common/layouts/Grid';
 
-const TrendingGifts: React.FC = () => {
+const TrendingGifts = () => {
   const [filter1, setFilter1] = useState('전체');
   const [filter2, setFilter2] = useState('받고 싶어한');
   const [visibleItems, setVisibleItems] = useState(6);

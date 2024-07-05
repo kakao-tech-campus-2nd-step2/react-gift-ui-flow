@@ -1,10 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Grid } from '@/components/common/layouts/Grid';
 import { themeConfig } from '@/components/themeConfig';
 
-const ThemeCategories: React.FC = () => {
+const ThemeCategories = () => {
   const navigate = useNavigate();
 
   const handleThemeClick = (themeKey: string) => {
