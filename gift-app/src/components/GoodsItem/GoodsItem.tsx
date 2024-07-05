@@ -37,30 +37,30 @@ const GoodsItem = ({
 };
 
 const StyledGoodsItem = styled.div`
-  border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin: 10px;
+
+  margin: px;
   padding: 10px;
-  width: 200px;
+  width: 185px;
+  position: relative;
 
 
-  .goods-item-ranking { //부모 요소의 클래스 이름과 무관하게 독립적으로 사용될 스타일
+  .goods-item-ranking {
     background-color: orange;
     border-radius: 20%;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
     position: absolute;
-    top: 42px;
-    left: 42px;
+    top: 15px;
+    left: 15px;
     z-index: 1;
     color: white;
+    font-size: 13px;
+    font-weight: bold;
   }
 
   & .top-ranking {
@@ -84,7 +84,8 @@ const StyledGoodsItem = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* This makes the image cover the container while preserving aspect ratio */
+    object-fit: cover;
+    border-radius: 4px;
   }  
 
   .goods-item-info {
@@ -98,7 +99,7 @@ const StyledGoodsItem = styled.div`
   }
 
   .goods-item-title {
-    font-size: 1.2em;
+    font-size: 0.9em;
     margin: 10px 0;
     font-weight: normal;
   }
