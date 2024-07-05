@@ -1,16 +1,9 @@
-import { useState } from 'react';
 import styled from '@emotion/styled';
 import GoodsItem from '@components/GoodsItem/GoodsItem';
 import Button, { ButtonProps } from '@components/Button/Button'; // ButtonProps 가져오기
-
-interface StyledButtonProps extends ButtonProps {
-  active?: boolean;
-}
+import useFilter from 'hooks/useFilter';
 
 const GiftRanking = () => {
-  const [filter, setFilter] = useState('all');
-  const [subFilter, setSubFilter] = useState('받고 싶어한');
-  const [showMore, setShowMore] = useState(false);
   const GoodsImageLink = "https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg";
 
   const items = [
@@ -22,7 +15,8 @@ const GiftRanking = () => {
     { id: 6, rank: 6, corp: 'BBQ', name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L', price: 29000, image: GoodsImageLink },
   ];
 
-  const displayedItems = showMore ? items : items.slice(0, 6);
+  const { filter, setFilter, subFilter, setSubFilter, filterItems } = useFilter(items);
+  const displayedItems = filterItems().slice(0, 6);
 
   return (
     <RankingContainer>
@@ -99,7 +93,7 @@ const FilterButtonWrapper = styled.div`
   align-items: center;
 `;
 
-const StyledButton = styled(Button)<StyledButtonProps>`
+const StyledButton = styled(Button)<{ active: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,7 +126,7 @@ const SubFilterContainer = styled.div`
   justify-content: center;
 `;
 
-const SubFilterButton = styled(Button)<StyledButtonProps>`
+const SubFilterButton = styled(Button)<{ active: boolean }>`
   background-color: transparent;
   color: ${({ active }) => (active ? '#007aff' : '#333')};
   cursor: pointer;
