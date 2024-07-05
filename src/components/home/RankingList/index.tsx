@@ -1,18 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import rankingList from '@data/rankingList';
 import styled from '@emotion/styled';
 import { GoodsItem, Grid, Button } from '@components/common';
+import useToggle from '@hooks/useToggle';
 
 const INITIAL_DISPLAY_COUNT = 6;
 const GRID_GAP = 14;
 const GRID_COLUMNS = 6;
 
 export default function RankingList() {
-  const [showAll, setShowAll] = useState(false);
-
-  const toggleShowAll = () => {
-    setShowAll((prevShowAll) => !prevShowAll);
-  };
+  const [showAll, toggleShowAll] = useToggle(false);
 
   const displayedItems = showAll ? rankingList : rankingList.slice(0, INITIAL_DISPLAY_COUNT);
 
