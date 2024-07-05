@@ -3,6 +3,7 @@ import { css } from '@emotion/css';
 import { Button } from '@/components/common/Button';
 import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
+import Header from '@/components/Header';
 
 import RankingView from './RankingView';
 import ThemeList from './ThemeList';
@@ -10,6 +11,7 @@ import ThemeList from './ThemeList';
 export default () => {
     return (
         <div>
+            <Header />
             {/* select recipient section */}
             <section className={selectRecipientStyle}>
                 <button>
