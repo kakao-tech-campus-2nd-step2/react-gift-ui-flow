@@ -47,12 +47,7 @@ const Mainpage: React.FC = () => {
   const { filter, changeFilter, filterOptions } = useFilter();
   const [showMore, setShowMore] = useState(false);
 
-  const filterItems = items.filter((item) => {
-    if (filter === '전체') return true;
-    return item.category === filter;
-  });
-
-  const displayedItems = showMore ? filterItems : filterItems.slice(0, 6);
+  const displayedItems = showMore ? items : items.slice(0, 6);
 
   return (
     <div>
@@ -68,7 +63,11 @@ const Mainpage: React.FC = () => {
       <h2>실시간 급상승 선물랭킹</h2>
       <FilterButtons>
         {filterOptions.map((option) => (
-          <FilterButton key={option.value} onClick={() => changeFilter(option.value)}>
+          <FilterButton
+            key={option.value}
+            onClick={() => changeFilter(option.value)}
+            selected={filter === option.value}
+          >
             {option.label}
           </FilterButton>
         ))}
@@ -87,7 +86,7 @@ const Mainpage: React.FC = () => {
           />
         ))}
       </ItemGrid>
-      {filterItems.length > 6 && (
+      {items.length > 6 && (
         <button onClick={() => setShowMore(!showMore)}>{showMore ? '접기' : '더보기'}</button>
       )}
     </div>
@@ -102,21 +101,23 @@ const FilterButtons = styled.div`
   margin-bottom: 20px;
 `;
 
-const FilterButton = styled.button`
+const FilterButton = styled.button<{ selected: boolean }>`
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 10px 20px;
   border: none;
   border-radius: 20px;
-  background-color: #f0f0f0;
+  background-color: ${({ selected }) => (selected ? '#007bff' : '#f0f0f0')};
+  color: ${({ selected }) => (selected ? '#fff' : '#000')};
   font-size: 16px;
   cursor: pointer;
 
   &:hover {
-    background-color: #e0e0e0;
+    background-color: ${({ selected }) => (selected ? '#0069d9' : '#e0e0e0')};
   }
 `;
+
 const ItemGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(6, 1fr);

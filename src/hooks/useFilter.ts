@@ -12,10 +12,6 @@ export type Filter =
 export const useFilter = () => {
   const [filter, setFilter] = useState<Filter>('전체');
 
-  const changeFilter = (newFilter: Filter) => {
-    setFilter(newFilter);
-  };
-
   const filterOptions: { label: string; value: Filter }[] = [
     { label: '전체', value: '전체' },
     { label: '👩 여성이', value: '여성이' },
@@ -25,6 +21,10 @@ export const useFilter = () => {
     { label: ' 많이 선물한', value: '많이 선물한' },
     { label: ' 위시로 받은', value: '위시로 받은' },
   ];
+
+  const changeFilter = (newFilter: Filter) => {
+    setFilter(newFilter);
+  };
 
   return {
     filter,
