@@ -10,7 +10,7 @@ export const useAuth = () => {
   const [password, setPassword] = useState('');
 
   useEffect(() => {
-    const auth = sessionStorage.getItem('auth');
+    const auth = sessionStorage.getItem('authToken');
     setIsLogin(auth !== null);
   }, []);
 
@@ -35,7 +35,7 @@ export const useAuth = () => {
   const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (isLogin) {
-      sessionStorage.removeItem('auth');
+      sessionStorage.removeItem('authToken');
       setIsLogin(false);
       navigate('/');
     }
