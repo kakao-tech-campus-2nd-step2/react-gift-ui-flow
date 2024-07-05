@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React, { useState } from "react";
-import { useNavigate, useLocation} from "react-router-dom";
+import { useLocation,useNavigate} from "react-router-dom";
 
 import { Button } from "@/components/common/Button/index";
 import { UnderlineTextField } from "@/components/common/Form/Input/UnderlineTextField";
@@ -53,7 +53,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
 	const handleLogin = () => {
 		if (username && password) {
 			onLogin(username);
-			sessionStorage.setItem('username', username); // sessionStorage에 username 저장
+			sessionStorage.setItem('authToken', username); // sessionStorage에 username 저장
 			const redirectTo = location.state?.from || '/'; // 로그인 후 이동할 페이지
 			navigate(redirectTo); // 페이지 이동
 		} else {

@@ -1,11 +1,17 @@
 import React from 'react';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation} from 'react-router-dom';
 
-const PrivateRoute = ({ children }: { children: React.ReactNode }) => {
-	const auth = sessionStorage.getItem('authToken');
+
+interface PrivateRouteProps {
+	children: JSX.Element;
+	isLoggedIn: boolean;
+  }
+
+const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, isLoggedIn }) => {
+	const user = sessionStorage.getItem('username');
 	const location = useLocation();
 
-	if (!auth) {
+	if (!user || !isLoggedIn) {
 		return <Navigate to="/login" state={{ from: location }} />;
 	}
 
