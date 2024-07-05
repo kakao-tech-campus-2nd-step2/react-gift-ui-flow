@@ -9,7 +9,7 @@ export const AuthButton = () => {
   const { user } = useAuth();
 
   const text = user ? '내 계정' : '로그인';
-  const linkTo = user ? ROUTES.HOME : ROUTES.LOGIN;
+  const linkTo = user ? ROUTES.MY_ACCOUNT : ROUTES.LOGIN;
 
   return (
     <Link to={linkTo}>

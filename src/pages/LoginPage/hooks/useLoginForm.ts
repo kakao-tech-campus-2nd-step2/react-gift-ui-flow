@@ -32,6 +32,7 @@ export const useLoginForm = () => {
     if (!isLoginEnabled) {
       /* eslint-disable no-alert */
       alert('아이디와 비밀번호를 입력해주세요.');
+      return;
     }
     login(username);
     navigate(-1);
