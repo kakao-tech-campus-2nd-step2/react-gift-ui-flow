@@ -23,10 +23,12 @@ const ThemeCategory: React.FC = () => {
     <div className="theme-category">
       <ul>
         {themes.map((theme) => (
-          <li key={theme.key}>
-            <img src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png" />
-            <Link to={`/theme/${theme.key}`}>{theme.name}</Link>
-          </li>
+          <Link to={`/theme/${theme.key}`}>
+            <li key={theme.key}>
+              <img src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png" />
+              <p>{theme.name}</p>
+            </li>
+          </Link>
         ))}
       </ul>
     </div>
