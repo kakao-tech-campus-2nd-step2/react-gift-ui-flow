@@ -1,23 +1,33 @@
 // import styled from '@emotion/styled';
 
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Footer } from '@/components/Footer';
+import { Header } from '@/components/Header';
+import { Home } from '@/pages/Home';
+import { Login } from '@/pages/Login';
+import { MyAccount } from '@/pages/MyAccount';
 
 const App = () => {
-  // const name = 'Josh Perez';
-
   return (
     <div>
       <Header />
+      <RouterProvider router={router} />
       <Footer />
-      {/* <Title>Hello, {name}</Title> */}
     </div>
   );
 };
 
-export default App;
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Home />,
+    children: [
+      { path: '/home', element: <Home /> },
+      { path: '/theme:themeKey', element: <Theme /> },
+      { path: '/login', element: <Login /> },
+      { path: '/my-account', element: <MyAccount /> },
+    ],
+  },
+]);
 
-// const Title = styled.h1`
-//   font-size: 1.5em;
-//   color: gray;
-// `;
+export default App;
