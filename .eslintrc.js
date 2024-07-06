@@ -30,6 +30,16 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index', 'object', 'type'],
+        alphabetize: {
+          order: 'desc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     'react/react-in-jsx-scope': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
