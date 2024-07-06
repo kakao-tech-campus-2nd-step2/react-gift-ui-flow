@@ -17,8 +17,8 @@ export const GiftRankFilters = () => {
     <Wrapper>
       <Heading2 hContent={hContent} />
       <GroupSpecificationFilter
-        flexItems={groupSpecificationButtons}
-        FlexItemComponent={GroupSpecificationButton}
+        items={groupSpecificationButtons}
+        component={GroupSpecificationButton}
       />
       <ActionSpecificationFilter
         flexItems={actionSpecificationButtons}
