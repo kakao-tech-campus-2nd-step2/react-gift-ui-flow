@@ -1,13 +1,13 @@
-import LoginSection from './components/LoginSection';
-import * as styles from './styles';
-import LoginLogo from '@/assets/login/Kakao_Login_Title.svg';
+import LoginLogo from './components/login-logo';
+import LoginSection from './components/login-section';
+import * as S from './styles';
 
 const LoginPage = () => {
   return (
-    <styles.LoginLayout>
-      <styles.LoginLogo src={LoginLogo} alt="카카오 CI" />
+    <S.LoginLayout>
+      <LoginLogo />
       <LoginSection />
-    </styles.LoginLayout>
+    </S.LoginLayout>
   );
 };
 

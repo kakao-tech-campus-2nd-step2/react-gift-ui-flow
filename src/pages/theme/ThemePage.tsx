@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
-import GiftSection from './components/GiftSection';
-import TitleSection from './components/TitleSection';
+import GiftSection from './components/gift-section';
+import TitleSection from './components/title-section';
 
 const ThemePage = () => {
   const GiftPath = useParams();

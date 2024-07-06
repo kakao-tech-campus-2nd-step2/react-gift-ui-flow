@@ -1,5 +1,5 @@
 import { Button } from '@/components/common/Button';
-import * as styles from '../styles';
+import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
 import { PATHS } from '@/constants/Path';
 import { useState } from 'react';
@@ -17,13 +17,13 @@ const LoginSection = () => {
     navigate(PATHS.MAIN);
   };
   return (
-    <styles.SectionLayout>
-      <styles.LoginInput placeholder="이름" value={userId} onChange={HandlerChange} type="text" />
-      <styles.InputSpacer></styles.InputSpacer>
-      <styles.LoginInput placeholder="비밀번호" type="password" />
-      <styles.ButtonSpacer></styles.ButtonSpacer>
+    <S.SectionLayout>
+      <S.LoginInput placeholder="이름" value={userId} onChange={HandlerChange} type="text" />
+      <S.InputSpacer />
+      <S.LoginInput placeholder="비밀번호" type="password" />
+      <S.ButtonSpacer />
       <Button onClick={HandlerLogin}>로그인</Button>
-    </styles.SectionLayout>
+    </S.SectionLayout>
   );
 };
 

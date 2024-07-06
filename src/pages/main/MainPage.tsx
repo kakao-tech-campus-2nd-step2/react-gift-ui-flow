@@ -1,19 +1,19 @@
-import * as styles from './styles';
-import SelectAI from './components/SelectAI';
-import SelectFriend from './components/SelectFriend';
-import SelectGiftType from './components/SelectGiftType';
-import UpSurgeRank from './components/UpSurgeRank';
+import SelectAI from './components/select-AI';
+import SelectFriend from './components/select-friends';
+import SelectGiftType from './components/select-gift-type';
+import UpSurgeRank from './components/up-surge-rank';
+import * as S from './styles';
 
 const MainPage = () => {
   return (
-    <div>
+    <>
       <SelectFriend />
       <SelectGiftType />
       <SelectAI />
-      <styles.SelectSpacer></styles.SelectSpacer>
+      <S.SelectSpacer />
 
       <UpSurgeRank />
-    </div>
+    </>
   );
 };
 
