@@ -6,7 +6,7 @@ const MyInfo = () => {
   const userName = sessionStorage.getItem('authToken') || 'User';
   const navigate = useNavigate();
 
-  const HandlerLogout = () => {
+  const handlerLogout = () => {
     sessionStorage.removeItem('authToken');
     navigate(PATHS.MAIN);
   };
@@ -14,7 +14,7 @@ const MyInfo = () => {
     <>
       {userName}님 안녕하세요!
       <S.BoxSpacer />
-      <S.LogoutButton onClick={HandlerLogout}>로그아웃</S.LogoutButton>
+      <S.LogoutButton onClick={handlerLogout}>로그아웃</S.LogoutButton>
     </>
   );
 };

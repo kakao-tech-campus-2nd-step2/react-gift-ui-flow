@@ -8,21 +8,21 @@ const LoginSection = () => {
   const [userId, setUserId] = useState<string>('');
   const navigate = useNavigate();
 
-  const HandlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handlerChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserId(e.target.value);
   };
 
-  const HandlerLogin = () => {
+  const handlerLogin = () => {
     sessionStorage.setItem('authToken', userId);
     navigate(PATHS.MAIN);
   };
   return (
     <S.SectionLayout>
-      <S.LoginInput placeholder="이름" value={userId} onChange={HandlerChange} type="text" />
+      <S.LoginInput placeholder="이름" value={userId} onChange={handlerChange} type="text" />
       <S.InputSpacer />
       <S.LoginInput placeholder="비밀번호" type="password" />
       <S.ButtonSpacer />
-      <Button onClick={HandlerLogin}>로그인</Button>
+      <Button onClick={handlerLogin}>로그인</Button>
     </S.SectionLayout>
   );
 };
