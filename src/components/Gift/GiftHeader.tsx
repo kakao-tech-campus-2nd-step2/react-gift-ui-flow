@@ -4,6 +4,10 @@ import ThemeDetails from '@/components/Gift/ThemeDetails';
 import { Navigate } from 'react-router-dom';
 import type { Theme } from '@/components/Gift/ThemeDetails';
 
+interface TitleProps {
+  backgroundColor: string;
+}
+
 const ThemePage = () => {
   const { themekey } = useParams();
   const themeExists = themekey && themekey in ThemeDetails;
@@ -24,10 +28,6 @@ const GiftHeader = () => {
 };
 
 export default GiftHeader;
-
-interface TitleProps {
-  backgroundColor: string;
-}
 
 // Title은 flex-direction: row;를 가지고 있습니다.
 const Title = styled.div<TitleProps>`
