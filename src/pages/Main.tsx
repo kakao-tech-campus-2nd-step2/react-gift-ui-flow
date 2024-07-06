@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
@@ -82,8 +83,8 @@ function Main() {
         <Container>
           <Grid gap={0} columns={6}>
             {Object.keys(themes).map((key) => (
-              <a
-                href={`/theme/${key}`}
+              <Link
+                to={`/theme/${key}`}
                 style={{ textDecoration: 'none', outline: 'none', color: '#000' }}
               >
                 <ItemContainer>
@@ -96,7 +97,7 @@ function Main() {
                   />
                   <p css={labelStyle}>{themes[key as keyof typeof themes].label}</p>
                 </ItemContainer>
-              </a>
+              </Link>
             ))}
           </Grid>
         </Container>
