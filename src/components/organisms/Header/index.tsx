@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Container } from '@/components/molecules/Container';
@@ -12,13 +12,15 @@ const HEADER_HEIGHT = '58px';
 
 export const Header = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const auth = useContext(AuthContext);
   const onClick = () => {
     if (auth.name === undefined) {
-      navigate(RouterPath.login);
+      // 해당 경우 이후 로직에서 state를 사용은 안하지만 state 통일성을 위해
+      navigate(RouterPath.login, { state: { previousPage: location.pathname } });
       return;
     }
-    navigate(RouterPath.myAccount);
+    navigate(RouterPath.myAccount, { state: { previousPage: location.pathname } });
   };
 
   return (

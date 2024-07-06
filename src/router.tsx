@@ -1,4 +1,5 @@
-import { createBrowserRouter } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { createBrowserRouter, Navigate, Outlet, redirect, useLocation } from 'react-router-dom';
 
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
@@ -8,11 +9,12 @@ import { HeaderFooterOutlet } from '@/components/templates/HeaderFooter/HeaderFo
 import { MainTemplate } from '@/components/templates/MainTemplate';
 import { MyPageTemplate } from '@/components/templates/MyPageTemplate';
 import { ThemeTemplate } from '@/components/templates/ThemeTemplate';
+import { AuthContext } from '@/contexts/AuthContext';
 
 export const RouterPath = {
   root: '/',
   theme: '/theme/:themeKey',
-  myPage: '/my-account',
+  myAccount: '/my-account',
   login: '/login',
   notFound: '*',
 };
@@ -49,9 +51,43 @@ export async function loginAction({
   const { id } = updates;
   sessionStorage.setItem('authToken', JSON.stringify({ name: id }));
 
-  // 인덱스로 리다이렉트 가능
-  // return redirect(RouterPath.root);
+  const url = new URL(request.url);
+  const previousPage = url.searchParams.get('previousPage') || '/';
+
+  return redirect(previousPage);
 }
+
+const PrivateRoute = (): React.ReactElement => {
+  const auth = useContext(AuthContext);
+  const location = useLocation();
+
+  /**
+   * 마이페이지에서 로그아웃시 인덱스로 보내기
+   *
+   * 마이페이지로 들어오는 경로
+   * 1. 헤더의 내 계정 버튼을 통해 navigate 되는 경로
+   *
+   * 2. 주소창에 /my-account 그냥 대입
+   * 2-1) 마이페이지를 빨리 조회하고 싶은데 auth 때문에 리다이렉트 된 경우, 로그인하면 바로 마이페이지를 조회할 수 있게 하고 싶다. -> loginAction으로 구현
+   *
+   * logoutAction을 구현할 순 없을까?
+   */
+  if (
+    auth?.name === undefined &&
+    // 2-2에서 로그아웃
+    ((location.state?._isRedirect && location.pathname === RouterPath.myAccount) ||
+      // 1에서 로그아웃
+      location.state?.previousPage)
+  ) {
+    return <Navigate to={RouterPath.root} />;
+  }
+
+  return auth.name ? (
+    <Outlet />
+  ) : (
+    <Navigate to={RouterPath.login} state={{ previousPage: location.pathname }} />
+  );
+};
 
 export const router = createBrowserRouter([
   {
@@ -69,8 +105,8 @@ export const router = createBrowserRouter([
         element: <ThemeTemplate />,
       },
       {
-        path: RouterPath.myPage,
-        element: <MyPageTemplate />,
+        element: <PrivateRoute />,
+        children: [{ path: RouterPath.myAccount, element: <MyPageTemplate /> }],
       },
     ],
   },
