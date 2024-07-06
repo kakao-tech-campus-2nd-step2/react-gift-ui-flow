@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface AuthContextType {
@@ -15,16 +15,17 @@ interface AuthProviderProps {
 }
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [authToken, setAuthToken] = useState<string | null>(null);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const token = sessionStorage.getItem('authToken');
-
-    if (token) {
-      setAuthToken(token);
+  const [authToken, setAuthToken] = useState<string | null>(() => {
+    try {
+      const token = sessionStorage.getItem('authToken');
+      return token;
+    } catch (error) {
+      console.error('sessionStorage에서 authToken을 가져오는 것 실패', error);
+      return null;
     }
-  }, []);
+  });
+
+  const navigate = useNavigate();
 
   const login = (token: string) => {
     sessionStorage.setItem('authToken', token);
