@@ -15,5 +15,5 @@ Primary.args = {
   label: 'Header Label',
   title: 'Header Title',
   description: 'Header Description',
-  backgroundColor: '#333'
+  backgroundColor: '#333',
 };

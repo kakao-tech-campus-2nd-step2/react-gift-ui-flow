@@ -5,7 +5,7 @@ export type HeaderProps = {
   title?: string;
   description?: string;
   backgroundColor?: string;
-}
+};
 
 const HeaderContainer = styled.header<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
@@ -26,7 +26,7 @@ const HeaderContainer = styled.header<{ backgroundColor: string }>`
 const HeaderLabel = styled.h2`
   font-size: 18px;
   font-weight: bold;
-  color: #ADADAD;
+  color: #adadad;
 `;
 
 const HeaderTitle = styled.h1`
@@ -38,7 +38,7 @@ const HeaderTitle = styled.h1`
 
 const HeaderDescription = styled.h2`
   font-size: 20px;
-  color: #ADADAD;
+  color: #adadad;
 `;
 
 const Header: React.FC<HeaderProps> = ({

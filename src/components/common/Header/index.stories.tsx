@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/react';
 
-import Header, { HeaderSubtitle,HeaderTitle } from './index';
+import Header, { HeaderSubtitle, HeaderTitle } from './index';
 
 export default {
   title: 'Components/Header',

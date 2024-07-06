@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 
 export type FooterProps = {
-    title: string;
-  }
+  title: string;
+};
 
 const FooterContainer = styled.header`
-  background-color: #FCFCFC;
+  background-color: #fcfcfc;
   color: #333;
   padding: 40px calc(8% + 100px) 120px calc(8% + 100px);
   font-size: 8px;
@@ -20,7 +20,7 @@ const FooterContainer = styled.header`
   }
 `;
 
-const Footer:React.FC<FooterProps> = ({ title }) => (
+const Footer: React.FC<FooterProps> = ({ title }) => (
   <FooterContainer>
     <h1>{title}</h1>
   </FooterContainer>

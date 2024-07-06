@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 export type HeaderProps = {
   children: ReactNode;
-}
+};
 
 const HeaderContainer = styled.header`
   background-color: #fff;
@@ -31,9 +31,7 @@ const HeaderSubtitle = styled.h2`
 `;
 
 const Header: React.FC<HeaderProps> = ({ children }) => (
-  <HeaderContainer>
-    {children}
-  </HeaderContainer>
+  <HeaderContainer>{children}</HeaderContainer>
 );
 
 export { HeaderSubtitle, HeaderTitle };

@@ -1,20 +1,20 @@
-import { ReactNode } from "react";
-import { Navigate } from "react-router-dom";
+import type { ReactNode } from 'react';
+import { Navigate } from 'react-router-dom';
 
-import { useAuth } from "@/context/AuthContext";
+import { useAuth } from '@/context/AuthContext';
 
 interface ProtectedRouteProps {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
-    const { authToken } = useAuth();
+  const { authToken } = useAuth();
 
-    if (!authToken) {
-        return <Navigate to="/login" />;
-    }
+  if (!authToken) {
+    return <Navigate to="/login" />;
+  }
 
-    return <>{children}</>;
-}
+  return <>{children}</>;
+};
 
 export default ProtectedRoute;
