@@ -41,7 +41,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const subTitle = styled.p`
+export const SubTitle = styled.p`
   padding-top: 5px;
   font-size: 14px;
   line-height: 20px;
