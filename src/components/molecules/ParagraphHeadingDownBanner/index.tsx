@@ -4,7 +4,7 @@ import { ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
 import type { HeadingLevel } from '@/components/atoms/Heading';
 import { Heading } from '@/components/atoms/Heading';
 import { Paragraph } from '@/components/atoms/Paragraph';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 
 type ParagraphHeadingBannerProp = {
   hNum: HeadingLevel;
@@ -18,10 +18,10 @@ export const ParagraphHeadingDownBanner = ({
   pContent,
 }: ParagraphHeadingBannerProp) => {
   return (
-    <Container flexDirection={ContainerDirectionType.column}>
+    <CenteringContainer flexDirection={ContainerDirectionType.column}>
       <ThinGrayParagraph content={pContent} />
       <BoldHeading hNumber={hNum} hContent={hContent} />
-    </Container>
+    </CenteringContainer>
   );
 };
 

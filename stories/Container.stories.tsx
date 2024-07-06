@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Common/Layout/Container',
-  component: Container,
+  component: CenteringContainer,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
@@ -21,7 +21,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Container>;
+} satisfies Meta<typeof CenteringContainer>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;

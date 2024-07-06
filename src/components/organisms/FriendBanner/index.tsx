@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import type { MouseEvent } from 'react';
 
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import { ImageParagraphBanner } from '@/components/molecules/ImageParagraphBanner';
 
 const friendImgSrc = 'https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png';
@@ -15,9 +15,9 @@ const onClick = (e: MouseEvent) => {
 export const FriendBanner = () => {
   return (
     <FriendBannerWrapper>
-      <Container>
+      <CenteringContainer>
         <ImageParagraphBanner src={friendImgSrc} alt={alt} onClick={onClick} pContent={pContent} />
-      </Container>
+      </CenteringContainer>
     </FriendBannerWrapper>
   );
 };

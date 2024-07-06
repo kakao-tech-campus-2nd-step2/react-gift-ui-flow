@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { ContainerAlignItemsType, ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
 import { Heading } from '@/components/atoms/Heading';
 import { Paragraph } from '@/components/atoms/Paragraph';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import type { Theme, ThemeProps } from '@/components/templates/ThemeTemplate';
 import { themeMap } from '@/components/templates/ThemeTemplate';
 
@@ -13,7 +13,7 @@ export const ThemedBanner = ({ themeKey }: ThemeProps) => {
 
   return (
     <ThemeHeaderWrapper backgroundColor={backgroundColor}>
-      <Container
+      <CenteringContainer
         flexDirection={ContainerDirectionType.column}
         alignItems={ContainerAlignItemsType.start}
         maxWidth="1024px"
@@ -21,7 +21,7 @@ export const ThemedBanner = ({ themeKey }: ThemeProps) => {
         <HookLabel content={label} />
         <HookTitle hContent={title} hNumber={1} />
         <HookDescription content={description} />
-      </Container>
+      </CenteringContainer>
     </ThemeHeaderWrapper>
   );
 };

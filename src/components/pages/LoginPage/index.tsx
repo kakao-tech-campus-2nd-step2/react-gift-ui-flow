@@ -8,7 +8,7 @@ import { Button } from '@/components/atoms/Button';
 import { ContainerDirectionType } from '@/components/atoms/FlatFlex/types';
 import { Image } from '@/components/atoms/Image';
 import { UnderlineTextField } from '@/components/atoms/Input/UnderlineTextField';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import type { Auth } from '@/contexts/AuthContext';
 import { SetAuthContext } from '@/contexts/AuthContext';
 import { RouterPath } from '@/router';
@@ -85,6 +85,6 @@ const Margin = styled.div`
   margin-bottom: 60px;
 `;
 
-const FullHeightContainer = styled(Container)`
+const FullHeightContainer = styled(CenteringContainer)`
   height: 100vh;
 `;

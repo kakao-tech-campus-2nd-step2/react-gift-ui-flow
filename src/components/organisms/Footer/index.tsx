@@ -2,14 +2,14 @@ import styled from '@emotion/styled';
 
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Paragraph } from '@/components/atoms/Paragraph';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 
 export const Footer = () => {
   return (
     <FooterWrapper>
-      <Container justifyContent={ContainerJustifyContentType.flexStart} maxWidth="1024px">
+      <CenteringContainer justifyContent={ContainerJustifyContentType.flexStart} maxWidth="1024px">
         <Paragraph content="카카오톡 선물하기" />
-      </Container>
+      </CenteringContainer>
     </FooterWrapper>
   );
 };

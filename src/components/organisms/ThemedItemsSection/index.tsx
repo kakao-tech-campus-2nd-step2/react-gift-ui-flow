@@ -1,28 +1,28 @@
 import styled from '@emotion/styled';
 import { useLoaderData } from 'react-router-dom';
 
-import { Container } from '@/components/molecules/Container';
+import type { ItemProps } from '@/components/atoms/IContainer/types';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import type { DefaultGoodsItemsProps } from '@/components/molecules/GoodsItem/Default';
 import { DefaultGoodsItems } from '@/components/molecules/GoodsItem/Default';
-import { GridItemsBox } from '@/components/molecules/GridItemsBox';
-import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
+import { GridContainer } from '@/components/molecules/GridContainer';
 
 export const ThemedItemsSection = () => {
-  const mockData = useLoaderData() as (DefaultGoodsItemsProps & IteratingItemProp)[];
+  const mockData = useLoaderData() as (DefaultGoodsItemsProps & ItemProps)[];
 
   return (
     <ThemeFullBodyWrapper>
-      <Container maxWidth="1024px">
-        <GridItemsBox
+      <CenteringContainer maxWidth="1024px">
+        <GridContainer
           columns={{
             initial: 2,
             md: 4,
           }}
           gap={16}
-          gridItems={mockData}
-          GridItemComponent={DefaultGoodsItems}
+          items={mockData}
+          component={DefaultGoodsItems}
         />
-      </Container>
+      </CenteringContainer>
     </ThemeFullBodyWrapper>
   );
 };

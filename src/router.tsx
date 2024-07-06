@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { createBrowserRouter, Navigate, Outlet, redirect, useLocation } from 'react-router-dom';
 
+import type { ItemProps } from '@/components/atoms/IContainer/types';
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
-import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
 import { ErrorPage } from '@/components/pages/ErrorPage';
 import { LoginPage } from '@/components/pages/LoginPage';
 import { HeaderFooterOutlet } from '@/components/templates/HeaderFooter/HeaderFooterOutlet';
@@ -19,7 +19,7 @@ export const RouterPath = {
   notFound: '*',
 };
 
-const mockImageLoader = (): (RankingGoodsItemsProps & IteratingItemProp)[] => {
+const mockImageLoader = (): (RankingGoodsItemsProps & ItemProps)[] => {
   const item = {
     name: 'BBQ 양념치킨+크림치즈볼+콜라1.25L',
     imageSrc:
@@ -29,7 +29,7 @@ const mockImageLoader = (): (RankingGoodsItemsProps & IteratingItemProp)[] => {
     amount: 29000,
   };
 
-  const mockData: (RankingGoodsItemsProps & IteratingItemProp)[] = [];
+  const mockData: (RankingGoodsItemsProps & ItemProps)[] = [];
 
   for (let i = 0; i < 21; i++) {
     mockData.push({ rankingIndex: i + 1, ...item, id: `${i}` });

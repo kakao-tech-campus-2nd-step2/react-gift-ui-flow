@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import { Profile } from '@/components/molecules/Profile';
 import { 선물하기 } from '@/components/molecules/선물하기/선물하기';
 import { AuthContext } from '@/contexts/AuthContext';
@@ -25,10 +25,10 @@ export const Header = () => {
 
   return (
     <HeaderWrapper>
-      <Container justifyContent={ContainerJustifyContentType.spaceBetween}>
+      <CenteringContainer justifyContent={ContainerJustifyContentType.spaceBetween}>
         <선물하기 height={HEADER_HEIGHT} />
         <Profile {...auth} onClick={onClick} />
-      </Container>
+      </CenteringContainer>
     </HeaderWrapper>
   );
 };

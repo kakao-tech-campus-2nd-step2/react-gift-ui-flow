@@ -4,7 +4,7 @@ import type { MouseEventHandler } from 'react';
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Image } from '@/components/atoms/Image';
 import { Paragraph } from '@/components/atoms/Paragraph';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 
 type ImageBannerProps = {
   src: string;
@@ -16,10 +16,10 @@ type ImageBannerProps = {
 export const ImageParagraphBanner = ({ src, alt, onClick, pContent }: ImageBannerProps) => {
   return (
     <ImageBannerWrapper>
-      <Container justifyContent={ContainerJustifyContentType.flexStart}>
+      <CenteringContainer justifyContent={ContainerJustifyContentType.flexStart}>
         <LeftImage src={src} alt={alt} onClick={onClick} />
         <RightParagraph content={pContent} />
-      </Container>
+      </CenteringContainer>
     </ImageBannerWrapper>
   );
 };

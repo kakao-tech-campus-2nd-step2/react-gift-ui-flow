@@ -3,7 +3,7 @@ import type { MouseEventHandler } from 'react';
 
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
 import { Paragraph } from '@/components/atoms/Paragraph';
-import { Container } from '@/components/molecules/Container';
+import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 
 export type ProfileProps = {
   name: string | undefined;
@@ -14,9 +14,9 @@ export const Profile = ({ name, onClick }: ProfileProps) => {
   const label = name === undefined ? '로그인' : '내 계정';
 
   return (
-    <Container justifyContent={ContainerJustifyContentType.flexEnd}>
+    <CenteringContainer justifyContent={ContainerJustifyContentType.flexEnd}>
       <ProfileParagraph onClick={onClick} content={label} />
-    </Container>
+    </CenteringContainer>
   );
 };
 

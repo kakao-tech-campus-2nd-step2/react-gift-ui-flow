@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { GridItemsBox } from '@/components/molecules/GridItemsBox';
+import { GridContainer } from '@/components/molecules/GridContainer';
 import type { ThemeItemProp } from '@/components/molecules/ThemeItems';
 import { ThemeItem } from '@/components/molecules/ThemeItems';
 
@@ -39,7 +39,7 @@ for (let i = 0; i < 12; i++) {
 export const ThemeCategories = () => {
   return (
     <ThemeCategoriesWrapper>
-      <GridItemsBox columns={columns} gridItems={themeItems} GridItemComponent={ThemeItem} />
+      <GridContainer columns={columns} items={themeItems} component={ThemeItem} />
     </ThemeCategoriesWrapper>
   );
 };

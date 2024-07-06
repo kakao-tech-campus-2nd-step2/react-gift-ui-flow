@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { useContext } from 'react';
 
 import { ActionSpecificationButton } from '@/components/molecules/ActionSpecificationButton';
-import { FlexItemsBox } from '@/components/molecules/FlexItemsBox';
+import { FlexContainer } from '@/components/molecules/FlexContainer';
 import { GroupSpecificationButton } from '@/components/molecules/GroupSpecificationButton';
 import { Heading2 } from '@/components/molecules/Heading2';
 import { GiftActionButtons, GiftGroupButtons } from '@/contexts/GiftRankContext';
@@ -21,8 +21,8 @@ export const GiftRankFilters = () => {
         component={GroupSpecificationButton}
       />
       <ActionSpecificationFilter
-        flexItems={actionSpecificationButtons}
-        FlexItemComponent={ActionSpecificationButton}
+        items={actionSpecificationButtons}
+        component={ActionSpecificationButton}
       />
     </Wrapper>
   );
@@ -39,11 +39,11 @@ const Wrapper = styled.section`
   padding-right: 16px;
 `;
 
-const GroupSpecificationFilter = styled(FlexItemsBox)`
+const GroupSpecificationFilter = styled(FlexContainer)`
   padding-top: 20px;
 `;
 
-const ActionSpecificationFilter = styled(FlexItemsBox)`
+const ActionSpecificationFilter = styled(FlexContainer)`
   width: 100%;
   border-radius: 12px;
   border: 1px solid rgba(70, 132, 233, 0.1);

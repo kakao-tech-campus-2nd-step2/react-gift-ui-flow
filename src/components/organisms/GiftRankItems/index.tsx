@@ -3,34 +3,35 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { Button } from '@/components/atoms/Button';
+import type { ItemProps } from '@/components/atoms/IContainer/types';
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import { RankingGoodsItems } from '@/components/molecules/GoodsItem/Ranking';
-import { GridItemsBox } from '@/components/molecules/GridItemsBox';
-import type { IteratingItemProp } from '@/components/molecules/types/IteratingItemProp';
+import { GridContainer } from '@/components/molecules/GridContainer';
 
 export const GiftRankItems = () => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
-  const mockData = useLoaderData() as (RankingGoodsItemsProps & IteratingItemProp)[];
+  const mockData = useLoaderData() as (RankingGoodsItemsProps & ItemProps)[];
   const showData = isClicked ? mockData : mockData.slice(0, 6);
+  const onClickHandler = () => {
+    setIsClicked((prev) => !prev);
+  };
 
   return (
     <Wrapper>
-      <GridItemsBox
+      <GridContainer
         columns={{
           initial: 3,
           sm: 4,
           md: 6,
         }}
         gap={16}
-        gridItems={showData}
-        GridItemComponent={RankingGoodsItems}
+        items={showData}
+        component={RankingGoodsItems}
       />
       <Button
         theme="outline"
         style={{ maxWidth: '480px', margin: '30px auto 0 auto' }}
-        onClick={() => {
-          setIsClicked((prev) => !prev);
-        }}
+        onClick={onClickHandler}
       >
         {isClicked ? '접기' : '더보기'}
       </Button>
