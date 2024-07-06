@@ -74,11 +74,14 @@ export const BodyWrapper = styled.div`
   padding: 0 20px; /* 패딩을 추가하여 좌우 여백을 설정 */
   overflow-x: hidden; /* 좌우 스크롤 숨기기 */
   flex: 1;
+  @media (max-width: 768px) {
+    padding: 0 10px; /* 작은 화면에서는 좌우 패딩을 줄입니다 */
+  }
 `;
 
 export const Child = styled.div`
-  max-width: 100%; /* 최대 너비를 설정하여 큰 화면에서도 중앙에 정렬 */
-  margin: 20px 0; /* 상하 마진을 설정 */
+  max-width: 100%;
+  margin-top: 20px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -98,7 +101,7 @@ export const ItemWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-width: 70%;
+  width: auto;
   align-items: center;
   justify-content: center;
   cursor: pointer;
