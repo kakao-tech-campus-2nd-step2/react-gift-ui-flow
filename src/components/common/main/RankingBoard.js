@@ -6,8 +6,8 @@ import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 
 const GoodsList = () => {
   const goodsData = [];
-  const [visibleItems, setVisibleItems] = useState(21);
-  const totalItems = 21;
+  const [showAll, setShowAll] = useState(true);
+  let visibleItems = showAll ? 21 : 6;
 
   for (let i = 1; i <= 22; i++) {
     goodsData.push({
@@ -21,11 +21,13 @@ const GoodsList = () => {
   }
 
   const handleShowMore = () => {
-    setVisibleItems(totalItems);
+    setShowAll(true);
+    visibleItems = 21;
   };
 
   const handleShowLess = () => {
-    setVisibleItems(6);
+    setShowAll(false);
+    visibleItems = 6;
   };
 
   return (
@@ -45,13 +47,13 @@ const GoodsList = () => {
         )}
       </div>
       <div className="showBtn-container">
-        {visibleItems < totalItems ? (
-          <button className="showBtn" onClick={handleShowMore}>
-            더보기
-          </button>
-        ) : (
+        {showAll ? (
           <button className="showBtn" onClick={handleShowLess}>
             접기
+          </button>
+        ) : (
+          <button className="showBtn" onClick={handleShowMore}>
+            더보기
           </button>
         )}
       </div>
