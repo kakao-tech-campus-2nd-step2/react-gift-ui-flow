@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 import { ThemedBanner } from '@/components/organisms/ThemedBanner';
 import { ThemedItemsSection } from '@/components/organisms/ThemedItemsSection';
+import { RouterPath } from '@/router';
 
 const themeKeys = ['life_small_gift'] as const;
 
@@ -39,18 +40,14 @@ themeMap.set('life_small_gift', {
 });
 
 export const ThemeTemplate = () => {
-  const { themeKey } = useParams();
+  const { themeKey = '' } = useParams();
 
-  // useEffect(() => {
-  //   if (!isValidThemeKey(themeKey as string)) {
-  //     navigate(RouterPath.root);
-  //   }
-  // });
-
-  return isValidThemeKey(themeKey as string) ? (
+  return isValidThemeKey(themeKey) ? (
     <Fragment>
-      <ThemedBanner themeKey={themeKey as ThemeKeyType} />
+      <ThemedBanner themeKey={themeKey} />
       <ThemedItemsSection />
     </Fragment>
-  ) : null;
+  ) : (
+    <Navigate to={RouterPath.root} />
+  );
 };
