@@ -5,6 +5,8 @@ import { RouterPath } from '@/routes';
 
 export const MyAccount = () => {
   const handleLogout = () => {
+    sessionStorage.removeItem('authToken');
+
     const redirectURL = `${window.location.origin}${RouterPath.home}`;
     window.location.replace(redirectURL);
   };
