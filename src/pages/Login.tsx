@@ -36,13 +36,13 @@ const Login = () => {
         <UnderlineTextField
           placeholder="이름"
           value={id}
-          onChange={(e) => setId((e.target as HTMLInputElement).value)}
+          onChange={(e) => setId(e.target.value)}
           className="textFieldId"
         />
         <UnderlineTextField
           placeholder="비밀번호"
           value={pw}
-          onChange={(e) => setPw((e.target as HTMLInputElement).value)}
+          onChange={(e) => setPw(e.target.value)}
           className="textFieldPw"
         />
         <Button theme="kakao" size="responsive" onClick={handleLogin} className="buttonLogin">
