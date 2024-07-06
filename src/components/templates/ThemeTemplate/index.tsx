@@ -1,10 +1,33 @@
-import { Fragment, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Fragment } from 'react';
+import { useParams } from 'react-router-dom';
 
-import type { Theme, ThemeKeyType } from '@/components/organisms/ThemedBanner';
-import { isValidThemeKey, ThemedBanner } from '@/components/organisms/ThemedBanner';
+import { ThemedBanner } from '@/components/organisms/ThemedBanner';
 import { ThemedItemsSection } from '@/components/organisms/ThemedItemsSection';
-import { RouterPath } from '@/router';
+
+const themeKeys = ['life_small_gift'] as const;
+
+export type ThemeKeyType = (typeof themeKeys)[number];
+
+export type ThemeProps = {
+  themeKey: ThemeKeyType;
+};
+
+export function isValidThemeKey(themeKey: string): themeKey is ThemeKeyType {
+  let isValid = false;
+
+  for (const type of themeKeys) {
+    isValid = isValid || themeKey === type;
+  }
+
+  return isValid;
+}
+
+export type Theme = {
+  label: string;
+  title: string;
+  description: string;
+  backgroundColor: string;
+};
 
 export const themeMap = new Map<string, Theme>();
 
@@ -16,14 +39,13 @@ themeMap.set('life_small_gift', {
 });
 
 export const ThemeTemplate = () => {
-  const navigate = useNavigate();
   const { themeKey } = useParams();
 
-  useEffect(() => {
-    if (!isValidThemeKey(themeKey as string)) {
-      navigate(RouterPath.root);
-    }
-  });
+  // useEffect(() => {
+  //   if (!isValidThemeKey(themeKey as string)) {
+  //     navigate(RouterPath.root);
+  //   }
+  // });
 
   return isValidThemeKey(themeKey as string) ? (
     <Fragment>

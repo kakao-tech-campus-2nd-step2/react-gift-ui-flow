@@ -4,24 +4,8 @@ import { ContainerAlignItemsType, ContainerDirectionType } from '@/components/at
 import { Heading } from '@/components/atoms/Heading';
 import { Paragraph } from '@/components/atoms/Paragraph';
 import { Container } from '@/components/molecules/Container';
+import type { Theme, ThemeProps } from '@/components/templates/ThemeTemplate';
 import { themeMap } from '@/components/templates/ThemeTemplate';
-
-export type ThemeKeyType = 'life_small_gift';
-
-export type ThemeProps = {
-  themeKey: ThemeKeyType;
-};
-
-export function isValidThemeKey(themeKey: string): themeKey is ThemeKeyType {
-  return themeKey === 'life_small_gift';
-}
-
-export type Theme = {
-  label: string;
-  title: string;
-  description: string;
-  backgroundColor: string;
-};
 
 export const ThemedBanner = ({ themeKey }: ThemeProps) => {
   const theme = themeMap.get(themeKey) as Theme;
