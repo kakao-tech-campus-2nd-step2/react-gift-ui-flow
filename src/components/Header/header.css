@@ -1,29 +1,28 @@
-
 .header-container {
-    position: fixed;
-    z-index: 100;
-    background-color: #fff;
-    width: 100%;
-    height: 58px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: fixed;
+  z-index: 100;
+  background-color: #fff;
+  width: 100%;
+  height: 58px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.header-item{
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header-item {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.header-item__gift{
-    font-weight: bold;
-    font-size: 17px;
+.header-item__gift {
+  font-weight: bold;
+  font-size: 17px;
 }
-.header-item__login{
-    font-size: 14px;
+.header-item__login {
+  font-size: 14px;
 }
 .link {
-    text-decoration: none; 
-    color: #111;
+  text-decoration: none;
+  color: #111;
 }

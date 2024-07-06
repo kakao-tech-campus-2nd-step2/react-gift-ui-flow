@@ -4,13 +4,12 @@ import ChooseBtn from './ChooseBtn';
 import ChooseFriend from './ChooseFriend';
 import PresentBoard from './PresentBoard';
 
-
 export default function ThemeCategory() {
   return (
     <div>
-      <ChooseFriend/>
-      <PresentBoard/>
-      <ChooseBtn/>
+      <ChooseFriend />
+      <PresentBoard />
+      <ChooseBtn />
     </div>
-  )
+  );
 }

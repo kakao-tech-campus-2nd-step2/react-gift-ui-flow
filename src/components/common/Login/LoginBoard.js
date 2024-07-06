@@ -10,7 +10,7 @@ import { IsLoginContext } from '@/components/contextAPI/IsLoginContext';
 export default function LoginBoard() {
   const navigate = useNavigate();
 
-  const { setIsLogin } = useContext(IsLoginContext); 
+  const { setIsLogin } = useContext(IsLoginContext);
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,7 +18,7 @@ export default function LoginBoard() {
     if (id && password) {
       sessionStorage.setItem('authToken', id);
       setIsLogin(true);
-      
+
       navigate(-1);
     } else {
       alert('아이디와 비밀번호를 입력해주세요.');

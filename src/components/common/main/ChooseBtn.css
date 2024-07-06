@@ -1,21 +1,21 @@
-.chooseBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
+.chooseBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
 }
 .chooseBtn-container {
-    background-color: #FEEB00;
-    width: 60%;
-    height: 44px;
-    padding: 16px;
-    border-radius: 8px;
+  background-color: #feeb00;
+  width: 60%;
+  height: 44px;
+  padding: 16px;
+  border-radius: 8px;
 }
 .chooseBtn__subtitle {
-    color: rgba(0, 0, 0, 0.4);
-    font-size: 17px;
+  color: rgba(0, 0, 0, 0.4);
+  font-size: 17px;
 }
 .chooseBtn__title {
-    font-size: 18px;
-    font-weight: 700;
+  font-size: 18px;
+  font-weight: 700;
 }

@@ -1,24 +1,23 @@
 .goods-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 .goods-list {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    width: 60%;
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 60%;
+  gap: 20px;
 }
 .showBtn-container {
-    padding-top: 30px;
+  padding-top: 30px;
 }
 .showBtn {
-    width: 480px;
-    height: 60px;
-    font-size: 16px;
-    color: rgb(17, 17, 17);
-    box-shadow: rgb(204, 204, 204) 0px 0px 0px 1px inset;
+  width: 480px;
+  height: 60px;
+  font-size: 16px;
+  color: rgb(17, 17, 17);
+  box-shadow: rgb(204, 204, 204) 0px 0px 0px 1px inset;
 }
