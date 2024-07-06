@@ -13,7 +13,7 @@ interface ProductsProps {
 
 const ProductList = ({ products }: ProductsProps) => {
   return (
-    <Grid columns={{ sm: 3, md: 4, lg: 6 }} gap={20}>
+    <Grid columns={{ initial: 3, md: 4, lg: 6 }} gap={20}>
       {products.map((product, index) => (
         <div key={product.id}>
           <RankingGoodsItems
