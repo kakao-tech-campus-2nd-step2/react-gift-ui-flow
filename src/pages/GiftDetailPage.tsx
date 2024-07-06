@@ -8,7 +8,7 @@ const GiftDetailPage = () => {
     <BodyWrapper>
       <GiftHeader />
       <ChildColumnCenter>
-        <Grid columns={{ sm: 2, md: 3, lg: 4 }} gap={10}>
+        <Grid columns={{ initial: 2, md: 3, lg: 4 }} gap={10}>
           <ItemWrapper>
             <DefaultGoodsItems
               imageSrc="/images/gift.jpg"
