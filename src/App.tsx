@@ -1,16 +1,18 @@
 import { Layout } from '@/components/features/Layout';
 import { Home } from '@/pages/Home';
 // import { Theme } from '@/pages/Theme';
+import { AuthProvider } from '@/auth/AuthProvider';
 import { Login } from '@/pages/Login';
 import { MyAccount } from '@/pages/MyAccount';
-import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom';
 import { RouterPath } from '@/routes';
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RequireAuth } from '@/auth/RequireAuth';
 
 const App = () => {
   return (
-    <div>
+    <AuthProvider>
       <RouterProvider router={router} />
-    </div>
+    </AuthProvider>
   );
 };
 
@@ -23,7 +25,11 @@ const router = createBrowserRouter([
       // { path: RouterPath.theme, element: <Theme /> },
       {
         path: RouterPath.myAccount,
-        element: <MyAccount />,
+        element: (
+          <RequireAuth>
+            <MyAccount />
+          </RequireAuth>
+        ),
       },
       {
         path: RouterPath.notFound,
