@@ -67,7 +67,7 @@ ___질문 2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (�
     useTheme을 통해 하나의 상태를 만들어 공유하고 싶었습니다.
     상태가 drilling을 통해 연결되어 있지 않더라도,
     setSeelctedTheme을 통해 state를 바꾸면 useTheme에 저장이 될 것이고,
-    최소한 UICoponent가 리렌더링될 때는 useTheme을 다시 호출하니까 가장 최신의 selectedTheme이 반환되겠지 했는데
+    최소한 UIComponent가 리렌더링될 때는 useTheme을 다시 호출하니까 마지막 상태가 반환되겠지 했는데
     UIComponent가 리렌더 돼도 useTheme의 반환 값은 바뀌지 않았습니다.
     왜 안되지?라는 생각에 진행이 막혔었습니다.
 
