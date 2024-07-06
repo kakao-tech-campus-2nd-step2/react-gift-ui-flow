@@ -7,10 +7,10 @@ type MarginCenterProp = {
 };
 
 export const Margin0Auto = ({ children, limitMaxWidth = false }: MarginCenterProp) => {
-  return <FloatDiv limitMaxWidth={limitMaxWidth}>{children}</FloatDiv>;
+  return <Margin0AutoItem limitMaxWidth={limitMaxWidth}>{children}</Margin0AutoItem>;
 };
 
-const FloatDiv = styled.div<Pick<MarginCenterProp, 'limitMaxWidth'>>`
+const Margin0AutoItem = styled.div<Pick<MarginCenterProp, 'limitMaxWidth'>>`
   margin: 0 auto;
   max-width: ${({ limitMaxWidth }) => (limitMaxWidth ? '1024px' : '100%')};
 `;
