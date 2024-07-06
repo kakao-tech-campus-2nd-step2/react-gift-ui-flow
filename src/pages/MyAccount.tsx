@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-// import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
@@ -19,14 +19,16 @@ const WelcomeMessage = styled.h1`
 `;
 
 const MyAccount: React.FC = () => {
-  const { userId, logout } = useAuth();
+  const { userId, isLoggedIn, logout, isInitialized } = useAuth();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   if (!isLoggedIn) {
-  //     navigate('/login', { state: { from: '/my-account' } });
-  //   }
-  // }, [isLoggedIn, navigate]);
+  useEffect(() => {
+    if (isInitialized && !isLoggedIn) {
+      navigate('/login', { state: { from: '/my-account' } });
+    }
+  }, [isLoggedIn, isInitialized, navigate]);
+
+  if (!isInitialized) return null;
 
   return (
     <Container>
