@@ -6,6 +6,7 @@ import { Login } from '@/pages/Login';
 import { MyAccount } from '@/pages/MyAccount';
 import { RouterPath } from '@/routes';
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RequireAuth } from '@/auth/RequireAuth';
 
 const App = () => {
   return (
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
       // { path: RouterPath.theme, element: <Theme /> },
       {
         path: RouterPath.myAccount,
-        element: <MyAccount />,
+        element: (
+          <RequireAuth>
+            <MyAccount />
+          </RequireAuth>
+        ),
       },
       {
         path: RouterPath.notFound,
