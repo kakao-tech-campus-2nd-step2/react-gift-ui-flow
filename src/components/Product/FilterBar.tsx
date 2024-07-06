@@ -7,6 +7,56 @@ export interface FilterBarProps {
   setDetail: (detail: string) => void;
 }
 
+const iconfunc = (who: string) => {
+  switch (who) {
+    case '여성이':
+      return '👩';
+    case '남성이':
+      return '👱‍♂️';
+    case '청소년이':
+      return '👦🏻';
+    default:
+      return 'ALL';
+  }
+};
+
+const FilterBar = ({ filter, setFilter, detail, setDetail }: FilterBarProps) => {
+  const filters = ['전체', '여성이', '남성이', '청소년이'];
+  const details = ['받고 싶어한', '많이 선물한', '위시로 받은'];
+  return (
+    <FilterWrapper>
+      <h1 style={{ fontWeight: 700 }}>실시간 급상승 선물랭킹</h1>
+      <Child>
+        {filters.map((f) => (
+          <SquareButtonWrapper className={filter === f ? 'active' : ''}>
+            <FilterButton
+              key={f}
+              className={filter === f ? 'active' : ''}
+              onClick={() => setFilter(f)}
+            >
+              {iconfunc(f)}
+            </FilterButton>
+            <p>{f}</p>
+          </SquareButtonWrapper>
+        ))}
+      </Child>
+      <ButtonBar>
+        {details.map((d) => (
+          <FilterButton2
+            key={d}
+            className={detail === d ? 'active' : ''}
+            onClick={() => setDetail(d)}
+          >
+            {d}
+          </FilterButton2>
+        ))}
+      </ButtonBar>
+    </FilterWrapper>
+  );
+};
+
+export default FilterBar;
+
 export const FilterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -60,7 +110,7 @@ export const Child = styled.div`
   width: 100%;
 `;
 
-export const Child2 = styled.div`
+export const ButtonBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,7 +121,7 @@ export const Child2 = styled.div`
   border-radius: 12px;
 `;
 
-const Child3 = styled.div`
+const SquareButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,53 +132,3 @@ const Child3 = styled.div`
   }
   flex-grow: 1;
 `;
-
-const iconfunc = (who: string) => {
-  switch (who) {
-    case '여성이':
-      return '👩';
-    case '남성이':
-      return '👱‍♂️';
-    case '청소년이':
-      return '👦🏻';
-    default:
-      return 'ALL'; // default to male image if no match is found
-  }
-};
-
-const FilterBar = ({ filter, setFilter, detail, setDetail }: FilterBarProps) => {
-  const filters = ['전체', '여성이', '남성이', '청소년이'];
-  const details = ['받고 싶어한', '많이 선물한', '위시로 받은'];
-  return (
-    <FilterWrapper>
-      <h1 style={{ fontWeight: 700 }}>실시간 급상승 선물랭킹</h1>
-      <Child>
-        {filters.map((f) => (
-          <Child3 className={filter === f ? 'active' : ''}>
-            <FilterButton
-              key={f}
-              className={filter === f ? 'active' : ''}
-              onClick={() => setFilter(f)}
-            >
-              {iconfunc(f)}
-            </FilterButton>
-            <p>{f}</p>
-          </Child3>
-        ))}
-      </Child>
-      <Child2>
-        {details.map((d) => (
-          <FilterButton2
-            key={d}
-            className={detail === d ? 'active' : ''}
-            onClick={() => setDetail(d)}
-          >
-            {d}
-          </FilterButton2>
-        ))}
-      </Child2>
-    </FilterWrapper>
-  );
-};
-
-export default FilterBar;
