@@ -61,8 +61,8 @@ const BodyPlusWrapper = styled(BodyWrapper)`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh; /* 화면의 전체 높이를 차지하도록 설정 */
-  padding: 0 20px; /* 좌우 패딩을 설정하여 여백 추가 */
+  height: 100vh;
+  padding: 0 20px;
   gap: 20px;
 `;
 
