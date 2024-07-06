@@ -13,7 +13,7 @@ const LoginSection = () => {
   };
 
   const handlerLogin = () => {
-    sessionStorage.setItem('authToken', userId);
+    sessionStorage.setItem('authToken', JSON.stringify(userId));
     navigate(PATHS.MAIN);
   };
   return (
