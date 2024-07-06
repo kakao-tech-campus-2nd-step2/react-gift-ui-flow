@@ -86,6 +86,7 @@ function Main() {
               <Link
                 to={`/theme/${key}`}
                 style={{ textDecoration: 'none', outline: 'none', color: '#000' }}
+                key={key}
               >
                 <ItemContainer>
                   <Image
