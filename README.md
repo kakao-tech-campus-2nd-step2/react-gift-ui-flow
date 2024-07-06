@@ -31,14 +31,15 @@ ___질문 1. CRA 기반의 SPA프로젝트에서 React Router를 사용하지 �
     사용자 편의성이 없어집니다. URL이 하나라면, 사용자는 페이지를 구분할 수 없을 것이고
     페이지 내비게이션과 URL 공유와 같은 기능을 사용할 수 없습니다.
     물론 history API를 통해 직접 구현할 수도 있으나 React Router를 대체하긴 쉽지 않습니다.
-    페이지를 구분하기 위해 React Router를 통해 서버 요청 없이 URl을 바꿀 수 있는데, 서버 요청을 통해 view를 바꾼다면,
+    페이지를 구분하기 위해 React Router를 통해 서버 요청 없이 URl을 바꿀 수 있는데,
+    서버 요청을 통해 view를 바꾼다면,
     URL이 바뀔 때마다 html 문서가 바뀌어 상태를 잃게 됩니다. (새로고침)
 
 ___질문 2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (로그인을 제외한 예시와 이유를 함께 적어주세요.)___
 
     Props Drilling 하기 싫을 때, UI에 light/dark 모드를 적용할 때, 
-    Context(provider)의 value가 바뀔 때마다 의존하는 컴포넌트(consumer)들 모두 리렌더링 되기 때문에 트리 구조 상관없이,
-    상단 memo된 컴포넌트의 유무를 신경쓰지 않고, 리렌더링 시키기 좋습니다. 
+    Context(provider)의 value가 바뀔 때마다 의존하는 컴포넌트(consumer)들 모두 리렌더링 되기 때문에
+    트리 구조 상관없이, 상단 memo된 컴포넌트의 유무를 신경쓰지 않고, 리렌더링 시키기 좋습니다. 
     실제로 props drilling 하지 않고 custom hook을 써서 해봤는데 잘 안됐습니다.
     상태를 life up 후 drilling하면, state가 바뀔 때 마다 의존하는 컴포넌트의 UI가 바뀌긴 하지만, 
     나중에 트리 중단에서 memo를 통해 리렌더링을 막을 수도 있어서 drilling을 하면 안되겠다는 생각을 했고
@@ -75,7 +76,8 @@ ___질문 2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (�
     Context API를 사용하면 "상단 -> 하단 흐름"과 "같은 provider 중첩x"만 지키면 
     트리 구조 상관 없이 하나의 값을 공유할 수 있습니다.
     추가적으로 redux를 사용한다면, 하나의 상태를 내부 store에 저장해 여러 곳에서 공유할 수 있습니다.
-    이때, redux는 one-way data flow 구조로 짜여있고, 동작이 store, action, reducer, subscriber를 통해 정형화되어
+    이때, redux는 one-way data flow 구조로 짜여있고, 
+    동작이 store, action, reducer, subscriber를 통해 정형화되어
     공유된 상태를 변화시키는 것과 해당 영향 예측을 보다 쉽게 할 수 있습니다.
 
 ___질문 3. Local Storage, Session Storage 와 Cookies의 차이가 무엇이며 각각 어떨때 사용하면 좋을까요?___
