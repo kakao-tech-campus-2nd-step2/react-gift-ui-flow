@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
@@ -40,14 +40,12 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const { login } = useAuth();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (id && password) {
       login(id);
-      navigate(from, { replace: true });
+      navigate(-1);
     } else {
       alert('아이디와 비밀번호를 입력해주세요.');
     }
