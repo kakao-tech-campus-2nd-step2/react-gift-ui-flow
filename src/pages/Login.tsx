@@ -17,7 +17,13 @@ const Login = () => {
     if (id && pw) {
       // id와 비밀번호가 모두 입력되었을 때만 로그인 처리
       login(id);
-      navigate(-1);
+      if (window.history.state && window.history.state.idx > 0) {
+        // 이전 페이지가 있으면 이전 페이지로 이동
+        navigate(-1);
+      } else {
+        // 이전 페이지가 없으면 홈으로 이동
+        navigate('/');
+      }
     } else {
       alert('ID와 비밀번호를 모두 입력해주세요.');
     }
