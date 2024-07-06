@@ -2,6 +2,8 @@ import { Grid } from '@/components/common/layouts/Grid';
 import { useNavigate } from 'react-router-dom';
 import { Image } from '@/components/common/Image';
 import { ItemWrapper } from '@/pages/MainPage';
+import styled from '@emotion/styled';
+import { breakpoints } from '@/styles/variants/index';
 
 const themes = [
   { key: 'birthday', name: '생일' },
@@ -26,15 +28,35 @@ const Gift = () => {
   };
 
   return (
-    <Grid columns={{ sm: 2, md: 4, lg: 6 }} gap={20}>
+    <CenterGrid columns={{ initial: 4, lg: 6 }} gap={20} style={{ justifyContent: 'center' }}>
       {themes.map((theme) => (
         <ItemWrapper key={theme.key} onClick={() => handleLink(`/theme/${theme.key}`)}>
-          <Image src="/images/cake.jpeg" radius={40} ratio="square"></Image>
+          <StyledImage src="/images/cake.jpeg" radius={40} ratio="square"></StyledImage>
           <p>{theme.name}</p>
         </ItemWrapper>
       ))}
-    </Grid>
+    </CenterGrid>
   );
 };
 
 export default Gift;
+
+const CenterGrid = styled(Grid)`
+  justify-items: center;
+  align-items: flex-start;
+
+  @media (max-width: ${breakpoints.xs}) {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 40%;
+    gap: 10px;
+  }
+`;
+
+const StyledImage = styled(Image)`
+  @media (max-width: ${breakpoints.xs}) {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 40%;
+  }
+`;
