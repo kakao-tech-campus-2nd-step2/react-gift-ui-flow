@@ -1,0 +1,24 @@
+header {
+  width : 100%;
+}
+
+header nav {
+  margin: 0 auto;
+  max-width: 1024px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 16px; 
+}
+  
+header nav a img {
+  width : 60.75px;
+  height: 54px; 
+}
+  
+header nav a {
+  text-decoration: none; 
+  color: black; 
+  font-size: 14px; 
+}
+  

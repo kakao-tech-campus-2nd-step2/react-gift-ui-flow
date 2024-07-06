@@ -1,0 +1,150 @@
+.gift-section {
+    text-align: center;
+    max-width: 1024px;
+    margin : 0 auto;
+}
+
+.gift-ranking-header {
+    margin-top: 120px;
+    margin-bottom: 20px;
+}
+
+.gift-ranking-header h3 {
+    font : 35px "Malgun Gothic";
+    font-weight: bold;
+}
+
+.gift-ranking-buttons {
+    padding : 20px 0px 7px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.button-container button {
+    background-color: #e6f1ff;
+    border: none;
+    border-radius: 40%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.button-container.active button {
+    background-color: #4684e9;
+}
+.button-container button span {
+    color : white;
+}
+.button-container span {
+    font-size : 30px;
+    font : 40px "Malgun Gothic";
+}
+.button-container.active .category {
+    font-weight: bold;
+    color : #4684e9;
+}
+
+.button-container span {
+    margin-top: 4px;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.sub-ranking-buttons {
+    display: flex;
+    justify-content: center;
+    background-color: #e6f1ff; 
+    border-radius: 5px;
+}
+
+.sub-ranking-buttons button {
+    background-color: transparent;
+    border: none;
+    padding: 20px 30px;
+    cursor: pointer;
+    font : 22px "Malgun Gothic";
+    color: #4684e9b3;
+}
+
+.sub-ranking-buttons button.active {
+    font-weight: bold;
+    color: #4684e9;
+}
+
+.gift-section {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+  .gift-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    gap: 10px; 
+    padding: 40px 0px 60px; 
+
+}
+  
+  .gift-item {
+    position: relative;
+    width: 157.34px;
+    margin: 1px;
+    text-align: left;
+  }
+  
+  .gift-item img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .rank-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width : 20px;
+    height : 20px;
+    margin : 5px;
+    border-radius: 10px;;
+    background-color: #bbbbbb; 
+    color: white;
+    padding: 5px;
+    font : 18px "Malgun Gothic";
+  }
+  
+  .gift-item.top-three .rank-badge {
+    background-color: #FF6347; 
+  }
+  .gift-store {
+    color : #999999;
+    margin : 0px 0px 4px;
+    font : 14px "Malgun Gothic";
+  }
+  
+  .price {
+    font-weight: bold;
+    font-size : 20px;
+    margin : 8px 0px 0px;
+  }
+  .load-more-button {
+    font : 16px "Malgun Gothic";
+    border :1px solid #11111144;
+    color : #111111;
+    width : 480px;
+    height : 60px;
+    cursor: pointer;
+    margin-bottom: 30px;
+}

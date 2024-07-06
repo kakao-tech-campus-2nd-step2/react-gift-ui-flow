@@ -1,0 +1,10 @@
+footer {
+    width:100%;
+    background-color: #fafafc;
+    height : 137.6px;
+}
+footer p {
+    padding : 28px 16px 88px;
+    margin: 0 auto;
+    max-width: 1024px; 
+}
