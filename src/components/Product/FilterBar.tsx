@@ -17,16 +17,13 @@ export const FilterWrapper = styled.div`
 
 export const FilterButton = styled.button`
   background: none;
-  border: 0;
-  cursor: pointer;
-  font: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 16px;
-  font-size: 14px;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  font-size: 20px;
   font-weight: 700;
   transition: background-color 200ms ease;
   background-color: rgb(230, 241, 255);
@@ -39,19 +36,16 @@ export const FilterButton = styled.button`
 
 export const FilterButton2 = styled.button`
   background: none;
-  border: 0;
   cursor: pointer;
   padding: 13px 20px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 16px;
   color: rgba(70, 132, 233, 0.7);
   font-weight: 400;
   transition:
     color 200ms ease,
     font-weight 200ms ease;
-  background-color: rgba(70, 132, 233, 0.3);
   outline: none;
-
   &.active {
     color: rgb(70, 132, 233);
   }
@@ -60,18 +54,21 @@ export const FilterButton2 = styled.button`
 export const Child = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center; /* 가로 가운데 정렬 */
+  justify-content: center;
   margin: 20px 0;
   gap: 10px;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  width: 100%;
 `;
 
 export const Child2 = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center; /* 가로 가운데 정렬 */
-  margin: 20px 0;
-  width: 100%; /* 전체 너비를 차지하도록 설정 */
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+  background-color: rgb(230, 241, 255);
+  border: 1px solid rgba(70, 132, 233, 0.1);
+  border-radius: 12px;
 `;
 
 const Child3 = styled.div`
@@ -83,6 +80,7 @@ const Child3 = styled.div`
   &.active {
     color: rgb(70, 132, 233);
   }
+  flex-grow: 1;
 `;
 
 const iconfunc = (who: string) => {
