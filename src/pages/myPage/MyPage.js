@@ -3,7 +3,7 @@ import './MyPage.css';
 import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-import { IsLoginContext } from '@/components/contextAPI/IsLoginContext'; // IsLoginContext import 추가
+import { IsLoginContext } from '@/components/contextAPI/IsLoginContext';
 
 
 export default function MyPage() {

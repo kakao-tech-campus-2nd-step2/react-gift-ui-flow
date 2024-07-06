@@ -3,7 +3,7 @@ import '@/App.css';
 import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
 
 // import React from 'react';
-import { IsLoginProvider } from '@/components/contextAPI/IsLoginContext';
+import { IsLoginProvider } from '@/components/contextAPI/IsLoginProvider';
 import Layout from '@/components/Layout/Layout';
 import Login from '@/pages/login/Login';
 import Main from '@/pages/main/Main';
