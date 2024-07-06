@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 import { useAuth } from '@/context/AuthContext';
 
@@ -41,21 +42,21 @@ const Header: React.FC = () => {
     <Container>
       <Wrapper>
         <Content>
-          <a href="/">
+          <Link to="/">
             <img
               src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
               alt="카카오 선물하기 로고"
             />{' '}
-          </a>
+          </Link>
           <div>
             {isLoggedIn ? (
-              <a href="/my-account">
+              <Link to="/my-account">
                 <p>내 계정</p>
-              </a>
+              </Link>
             ) : (
-              <a href="/login">
+              <Link to="/login">
                 <p>로그인</p>
-              </a>
+              </Link>
             )}
           </div>
         </Content>

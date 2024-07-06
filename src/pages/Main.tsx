@@ -2,6 +2,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
@@ -82,9 +83,10 @@ function Main() {
         <Container>
           <Grid gap={0} columns={6}>
             {Object.keys(themes).map((key) => (
-              <a
-                href={`/theme/${key}`}
+              <Link
+                to={`/theme/${key}`}
                 style={{ textDecoration: 'none', outline: 'none', color: '#000' }}
+                key={key}
               >
                 <ItemContainer>
                   <Image
@@ -96,7 +98,7 @@ function Main() {
                   />
                   <p css={labelStyle}>{themes[key as keyof typeof themes].label}</p>
                 </ItemContainer>
-              </a>
+              </Link>
             ))}
           </Grid>
         </Container>
@@ -145,7 +147,7 @@ function Main() {
                   imageSrc="https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg"
                   subtitle="BBQ "
                   title="BBQ 양념치킨+크림치즈볼+콜라1.25L"
-                  amount={29000}
+                  price={29000}
                 />
               ))}
             </Grid>

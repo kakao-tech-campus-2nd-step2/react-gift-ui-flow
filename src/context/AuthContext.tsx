@@ -5,6 +5,7 @@ type AuthContextType = {
   userId: string | null;
   login: (id: string) => void;
   logout: () => void;
+  isInitialized: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -12,6 +13,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
 
   useEffect(() => {
     const token = sessionStorage.getItem('authToken');
@@ -19,6 +21,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setIsLoggedIn(true);
       setUserId(token);
     }
+    setIsInitialized(true);
   }, []);
 
   const login = (id: string) => {
@@ -34,7 +37,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, userId, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, userId, login, logout, isInitialized }}>
       {children}
     </AuthContext.Provider>
   );
