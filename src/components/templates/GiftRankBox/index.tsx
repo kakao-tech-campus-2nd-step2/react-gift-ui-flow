@@ -1,6 +1,6 @@
-import { GiftRankProvider } from '@/components/contexts/GiftRankContext';
 import { GiftRankFilters } from '@/components/organisms/GiftRankFilters';
 import { GiftRankItems } from '@/components/organisms/GiftRankItems';
+import { GiftRankProvider } from '@/contexts/GiftRankContext';
 
 export const GiftRankBox = () => {
   return (

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled';
 import { useContext } from 'react';
 
-import { GiftActionButtons, GiftGroupButtons } from '@/components/contexts/GiftRankContext';
 import { ActionSpecificationButton } from '@/components/molecules/ActionSpecificationButton';
 import { FlexItemsBox } from '@/components/molecules/FlexItemsBox';
 import { GroupSpecificationButton } from '@/components/molecules/GroupSpecificationButton';
 import { Heading2 } from '@/components/molecules/Heading2';
+import { GiftActionButtons, GiftGroupButtons } from '@/contexts/GiftRankContext';
 
 const hContent = `실시간 급상승 선물랭킹`;
 

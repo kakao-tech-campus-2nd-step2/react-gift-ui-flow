@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { MouseEventHandler } from 'react';
 import { useContext } from 'react';
 
-import { GiftSelectedGroupId } from '@/components/contexts/GiftRankContext';
+import { GiftSelectedGroupId } from '@/contexts/GiftRankContext';
 
 export type GroupSpecificationButtonProps = {
   id: number;

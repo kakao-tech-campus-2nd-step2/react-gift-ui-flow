@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider } from 'react-router-dom';
 
-import { AuthContextProvider } from '@/components/contexts/AuthContext';
+import { AuthContextProvider } from '@/contexts/AuthContext';
 import { router } from '@/router';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

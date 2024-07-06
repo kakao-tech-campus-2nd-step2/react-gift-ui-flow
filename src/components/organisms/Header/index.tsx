@@ -3,10 +3,10 @@ import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { ContainerJustifyContentType } from '@/components/atoms/FlatFlex/types';
-import { AuthContext } from '@/components/contexts/AuthContext';
 import { Container } from '@/components/molecules/Container';
 import { Profile } from '@/components/molecules/Profile';
 import { 선물하기 } from '@/components/molecules/선물하기/선물하기';
+import { AuthContext } from '@/contexts/AuthContext';
 import { RouterPath } from '@/router';
 const HEADER_HEIGHT = '58px';
 
@@ -18,7 +18,7 @@ export const Header = () => {
       navigate(RouterPath.login);
       return;
     }
-    navigate(RouterPath.myPage);
+    navigate(RouterPath.myAccount);
   };
 
   return (

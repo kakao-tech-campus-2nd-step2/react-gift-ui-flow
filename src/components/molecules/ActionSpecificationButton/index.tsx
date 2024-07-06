@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import type { MouseEventHandler } from 'react';
 import { useContext } from 'react';
 
-import { GiftSelectedActionId } from '@/components/contexts/GiftRankContext';
+import { GiftSelectedActionId } from '@/contexts/GiftRankContext';
 
 export type ActionSpecificationButtonProps = {
   id: number;
