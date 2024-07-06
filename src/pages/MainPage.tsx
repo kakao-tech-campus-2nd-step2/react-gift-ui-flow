@@ -6,6 +6,7 @@ import FilterBar from '@/components/Product/FilterBar';
 import ProductList from '@/components/Product/ProductList';
 import InitialProducts from '@/components/Product/InitialProducts';
 import Gift from '@/components/Gift/Gift';
+import { breakpoints } from '@/styles/variants/index';
 
 const MainPage = () => {
   const [filter, setFilter] = useState('전체');
@@ -87,7 +88,7 @@ export const Child = styled.div`
   align-items: center;
   gap: 20px;
   box-sizing: border-box;
-  padding: 20px; /* 내부 패딩 추가 */
+  padding: 20px;
   // background-color: yellow;
 `;
 
@@ -118,8 +119,7 @@ const BarWrapper = styled.div`
   background-color: rgb(254, 235, 0);
   padding: 16px;
   border-radius: 8px;
-
-  @media (max-width: 600px) {
+  @media (max-width: ${breakpoints.sm}) {
     align-items: flex-start;
   }
 `;
