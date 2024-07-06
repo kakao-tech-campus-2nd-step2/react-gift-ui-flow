@@ -1,19 +1,24 @@
 import './LoginBoard.css';
 
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index.tsx';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField.tsx';
+import { IsLoginContext } from '@/components/contextAPI/IsLoginContext';
 
 export default function LoginBoard() {
   const navigate = useNavigate();
+
+  const { setIsLogin } = useContext(IsLoginContext); 
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
     if (id && password) {
       sessionStorage.setItem('authToken', id);
+      setIsLogin(true);
+      
       navigate(-1);
     } else {
       alert('아이디와 비밀번호를 입력해주세요.');
