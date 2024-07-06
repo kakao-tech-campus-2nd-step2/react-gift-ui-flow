@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import * as G from '@/styles/GlobalStyles';
+import * as G from '@/styles/globalStyles';
 
 export const BoxSpacer = styled(G.Div)`
   width: 100%;

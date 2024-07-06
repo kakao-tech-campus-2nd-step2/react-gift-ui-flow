@@ -21,12 +21,3 @@ export const Login = styled.p`
   cursor: pointer;
   text-decoration: none;
 `;
-
-// export const InnerContainer = styled.div`
-//   width: 100%;
-//   max-width: 1024px;
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   align-items: center;
-// `;

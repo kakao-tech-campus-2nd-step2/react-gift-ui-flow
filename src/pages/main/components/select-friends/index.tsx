@@ -1,6 +1,6 @@
 import { Container } from '@/components/common/layouts/Container';
 import * as S from './styles';
-import * as G from '@/styles/GlobalStyles';
+import * as G from '@/styles/globalStyles';
 import SelectImg from '@/assets/main/Friends_Icon.png';
 
 const SelectFriend = () => {

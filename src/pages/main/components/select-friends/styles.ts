@@ -1,4 +1,4 @@
-import { Section } from '@/styles/GlobalStyles';
+import { Section } from '@/styles/globalStyles';
 import styled from '@emotion/styled';
 
 export const SelectFriendsLayout = styled(Section)`

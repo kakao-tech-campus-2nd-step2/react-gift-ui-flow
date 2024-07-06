@@ -1,7 +1,7 @@
-import * as Global from '@/styles/GlobalStyles';
+import * as G from '@/styles/globalStyles';
 import styled from '@emotion/styled';
 
-export const MyAccountPageLayout = styled(Global.Div)`
+export const MyAccountPageLayout = styled(G.Div)`
   width: 100%;
   padding: 80px 0px 120px;
   display: flex;
