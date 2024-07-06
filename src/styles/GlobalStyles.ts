@@ -39,3 +39,8 @@ export const Div = styled.div`
   display: block;
   unicode-bidi: isolate;
 `;
+
+export const Section = styled.section`
+  display: block;
+  unicode-bidi: isolate;
+`;
