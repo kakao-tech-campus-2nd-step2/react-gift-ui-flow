@@ -8,9 +8,14 @@ import type { FlexContainerProps } from '@/components/atoms/IContainer/types';
 export const FlexContainer = <T extends ItemProps>({
   items,
   component,
-  className,
+  className = '',
 }: FlexContainerProps<T>): ReactElement => {
   return (
-    <IContainer items={items} component={component} container={FlatFlex} className={className} />
+    <IContainer
+      items={items}
+      component={component}
+      container={FlatFlex}
+      otherProps={{ className }}
+    />
   );
 };

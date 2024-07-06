@@ -16,8 +16,7 @@ export const GridContainer = <T extends ItemProps>({
       items={items}
       component={component}
       container={Grid}
-      className={className}
-      otherProps={{ columns, gap }}
+      otherProps={{ className, columns, gap }}
     />
   );
 };

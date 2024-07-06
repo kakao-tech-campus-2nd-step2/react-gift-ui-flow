@@ -14,7 +14,6 @@ export type IteratingLayoutProps<T extends ItemProps> = IteratingItemProps<T> & 
 };
 
 export type IContainerProps<T extends ItemProps> = IteratingLayoutProps<T> & {
-  className?: string;
   otherProps?: object;
 };
 

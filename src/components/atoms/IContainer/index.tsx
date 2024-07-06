@@ -5,12 +5,11 @@ import type { IContainerProps, ItemProps } from '@/components/atoms/IContainer/t
 export const IContainer = <T extends ItemProps>({
   items,
   component: Component,
-  className = '',
   container: Container,
   otherProps = {},
 }: IContainerProps<T>): ReactElement => {
   return (
-    <Container className={className} {...otherProps}>
+    <Container {...otherProps}>
       {items.map(({ id, ...props }) => (
         <Component key={id} id={id} {...props} />
       ))}
