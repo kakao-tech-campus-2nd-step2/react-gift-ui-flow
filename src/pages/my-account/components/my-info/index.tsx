@@ -1,4 +1,4 @@
-import { PATHS } from '@/constants/Path';
+import { PATHS } from '@/constants/path';
 import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
 

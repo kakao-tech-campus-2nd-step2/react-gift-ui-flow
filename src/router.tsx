@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 
-import { AUTH, PATHS } from '@/constants/Path';
+import { AUTH, PATHS } from '@/constants/path';
 import LoginPage from '@/pages/login/LoginPage';
 import MainPage from '@/pages/main/MainPage';
 import ThemePage from '@/pages/theme/ThemePage';

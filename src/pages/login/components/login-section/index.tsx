@@ -1,7 +1,7 @@
 import { Button } from '@/components/common/Button';
 import * as S from './styles';
 import { useNavigate } from 'react-router-dom';
-import { PATHS } from '@/constants/Path';
+import { PATHS } from '@/constants/path';
 import { useState } from 'react';
 
 const LoginSection = () => {

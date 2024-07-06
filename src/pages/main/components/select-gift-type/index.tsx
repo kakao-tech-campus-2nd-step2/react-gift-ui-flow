@@ -1,6 +1,6 @@
 import { Grid } from '@/components/common/layouts/Grid';
 import * as S from './styles';
-import { TypeData } from '@/constants/GiftData';
+import { giftData } from '@/constants/giftData';
 import { Container } from '@/components/common/layouts/Container';
 import { useNavigate } from 'react-router-dom';
 
@@ -10,7 +10,7 @@ const SelectGiftType = () => {
     <S.SelectGiftLayout>
       <Container>
         <Grid columns={6}>
-          {TypeData.map((data, index) => (
+          {giftData.map((data, index) => (
             <S.GiftTypeContainer onClick={() => navigate(`/theme/${data.type}`)} key={index}>
               <S.GiftImg src={data.image} alt={data.title} />
               <S.GiftTypeTitle>{data.title}</S.GiftTypeTitle>

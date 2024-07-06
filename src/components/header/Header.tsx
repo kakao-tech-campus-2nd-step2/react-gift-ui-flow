@@ -2,7 +2,7 @@ import GiftLogo from '@/assets/header/pc_gift_logo.png';
 import * as S from './styles';
 import * as G from '@/styles/globalStyles';
 import { useNavigate } from 'react-router-dom';
-import { AUTH, PATHS } from '@/constants/Path';
+import { AUTH, PATHS } from '@/constants/path';
 import { Container } from '@/components/common/layouts/Container';
 
 const Header = () => {
