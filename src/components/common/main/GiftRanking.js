@@ -23,8 +23,9 @@ export default function GiftRanking() {
     <div className="giftRanking">
       <div className="giftRanking__title">실시간 급상승 선물랭킹</div>
       <div className="giftRanking_container">
-        {targetCategories.map((category) => (
+        {targetCategories.map((category, index) => (
           <TargetCategory
+            key={index}
             icon={category.icon}
             target={category.target}
             isSelected={selectedTarget === category.target}
@@ -34,8 +35,9 @@ export default function GiftRanking() {
       </div>
 
       <div className="giftCategory">
-        {giftCategories.map((category) => (
+        {giftCategories.map((category, index) => (
           <GiftCategory
+            key={index}
             category={category}
             isSelected={selectedCategory === category}
             onClick={() => setSelectedCategory(category)}

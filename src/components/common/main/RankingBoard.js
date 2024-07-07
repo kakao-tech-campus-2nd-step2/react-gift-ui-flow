@@ -34,9 +34,10 @@ const GoodsList = () => {
     <div className="goods-container">
       <div className="goods-list">
         {goodsData.map(
-          (item) =>
+          (item, index) =>
             item.rankingIndex <= visibleItems && (
               <RankingGoodsItems
+                key={index}
                 rankingIndex={item.rankingIndex}
                 imageSrc={item.imageSrc}
                 subtitle={item.subtitle}
