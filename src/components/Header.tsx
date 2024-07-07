@@ -11,9 +11,7 @@ export const Header = () => {
       <Nav>
         <TitleLink to="/">선물하기</TitleLink>
         {isAuthenticated ? (
-          <>
-            <LabelLink to="/my-account">내 계정</LabelLink>
-          </>
+          <LabelLink to="/my-account">내 계정</LabelLink>
         ) : (
           <LabelLink to="/login">로그인</LabelLink>
         )}
