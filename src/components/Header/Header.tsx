@@ -23,7 +23,7 @@ const Header = () => {
           />
         </Logo>
         {isLoggedIn ? (
-          <Link to="./my-account">내 계정</Link>
+          <Link to="/my-account">내 계정</Link>
         ) : (
           <Login href="/login">로그인</Login>
         )}
