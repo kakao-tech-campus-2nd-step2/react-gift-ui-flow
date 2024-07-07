@@ -30,6 +30,8 @@ const LoginForm = () => {
         placeholder="이름"
         name="id"
         value={id}
+        name="username"
+        value={username}
         onChange={handleInputChange}
       />
       <Space />

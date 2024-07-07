@@ -3,12 +3,14 @@ import { useNavigate } from 'react-router-dom';
 
 import { colors, fontsizes } from '@/styles/variants';
 import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuth } from '@/utils/hooks/useAuth';
 
 import { Container } from '../layouts/Container';
 
 export const Header = () => {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthContext();
+  const { isLogin } = useAuth();
 
   const moveToMain = () => {
     navigate('/');
