@@ -22,9 +22,9 @@ const AuthContext = createContext({
 });
 
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(
-    !!sessionStorage.getItem('authToken'),
-  );
+  const [isLoggedIn, setIsLoggedIn] = useState(() => {
+    return sessionStorage.getItem('authToken');
+  });
 
   const login = (id: string) => {
     sessionStorage.setItem('authToken', id);
