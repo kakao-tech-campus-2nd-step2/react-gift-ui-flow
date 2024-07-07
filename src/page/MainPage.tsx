@@ -18,6 +18,7 @@ const MainPage: React.FC = () => {
 export default MainPage;
 
 const PageContainer = styled.div`
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   width: 100%;
