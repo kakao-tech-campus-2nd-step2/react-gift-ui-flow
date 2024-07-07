@@ -10,12 +10,12 @@ import type { ThemeKey } from './theme.value';
 import { THEME_HEADERS } from './theme.value';
 
 const ThemePage = () => {
-  const { themeKey } = useParams<{ themeKey: string }>();
+  const { themeKey } = useParams<{ themeKey: ThemeKey }>();
   const [bannerProps, setBannerProps] = useState(THEME_HEADERS.Birthday);
 
   useEffect(() => {
-    if (themeKey && THEME_HEADERS[themeKey as ThemeKey]) {
-      setBannerProps(THEME_HEADERS[themeKey as ThemeKey]);
+    if (themeKey && THEME_HEADERS[themeKey]) {
+      setBannerProps(THEME_HEADERS[themeKey]);
     } else {
       setBannerProps(THEME_HEADERS.Default);
     }
