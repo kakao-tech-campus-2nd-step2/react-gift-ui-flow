@@ -15,20 +15,20 @@ const meta = {
     },
   },
   argTypes: {
-    // theme: {
-    //   control: {
-    //     type: 'radio',
-    //     options: ['kakao', 'outline', 'black', 'lightGray', 'darkGray'],
-    //     default: 'kakao',
-    //   },
-    // },
-    // size: {
-    //   control: {
-    //     type: 'radio',
-    //     options: ['large', 'small', 'responsive'],
-    //     default: 'responsive',
-    //   },
-    // },
+    theme: {
+      control: {
+        type: 'radio',
+        options: ['kakao', 'outline', 'black', 'lightGray', 'darkGray'],
+        default: 'kakao',
+      },
+    },
+    size: {
+      control: {
+        type: 'radio',
+        options: ['large', 'small', 'responsive'],
+        default: 'responsive',
+      },
+    },
   },
   render: (props) => (
     <div style={{ width: '120px' }}>
