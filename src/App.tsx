@@ -1,18 +1,53 @@
-import styled from '@emotion/styled';
+import React, { useContext } from 'react';
+import { Global } from '@emotion/react';
+import resetStyles from '@styles/resetStyles';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
+import Layout from '@components/Layout/Layout';
+import Main from '@pages/Main/Main';
+import ThemePage from '@pages/ThemePage/ThemePage';
+import LoginPage from '@pages/Login/LoginPage';
+import MyAccountPage from '@pages/MyAccount/MyAccountPage';
+import { AuthProvider, AuthContext } from '@contexts/AuthContext';
+import { ROUTE_PATHS } from './constants';
 
 const App = () => {
-  const name = 'Josh Perez';
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <>
+      <Global styles={resetStyles} />
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path={ROUTE_PATHS.ROOT} Component={Main} />
+            <Route path={ROUTE_PATHS.THEME} Component={ThemePage} />
+            <Route path={ROUTE_PATHS.LOGIN} Component={LoginPage} />
+            <Route
+              path={ROUTE_PATHS.MYACCOUNT}
+              element={
+                isLoggedIn ? (
+                  <MyAccountPage />
+                ) : (
+                  <Navigate to={ROUTE_PATHS.LOGIN} />
+                )
+              }
+            />
+          </Routes>
+        </Layout>
+      </Router>
+    </>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
+export default AppWrapper;
