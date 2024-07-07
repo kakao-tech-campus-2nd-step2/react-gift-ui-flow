@@ -11,6 +11,13 @@ type Props = {
   onFilterOptionChange: (option: RankingFilterOption) => void;
 };
 
+const targetTypes = ['ALL', 'FEMALE', 'MALE', 'TEEN'] as const;
+const rankTypes = [
+  { label: '받고 싶어한', value: 'MANY_WISH' },
+  { label: '많이 선물한', value: 'MANY_RECEIVE' },
+  { label: '위시로 받은', value: 'MANY_WISH_RECEIVE' },
+] as const;
+
 const GoodsRankingFilter = ({ filterOption, onFilterOptionChange }: Props) => {
   const handleFilterOption = (
     key: keyof RankingFilterOption,
@@ -25,47 +32,26 @@ const GoodsRankingFilter = ({ filterOption, onFilterOptionChange }: Props) => {
   return (
     <Wrapper>
       <TargetTypeWrapper>
-        <TargetTypeButton
-          value="ALL"
-          selected={filterOption.targetType === 'ALL'}
-          onClick={(value) => handleFilterOption('targetType', value)}
-        />
-        <TargetTypeButton
-          value="FEMALE"
-          selected={filterOption.targetType === 'FEMALE'}
-          onClick={(value) => handleFilterOption('targetType', value)}
-        />
-        <TargetTypeButton
-          value="MALE"
-          selected={filterOption.targetType === 'MALE'}
-          onClick={(value) => handleFilterOption('targetType', value)}
-        />
-        <TargetTypeButton
-          value="TEEN"
-          selected={filterOption.targetType === 'TEEN'}
-          onClick={(value) => handleFilterOption('targetType', value)}
-        />
+      {targetTypes.map((type) => (
+          <TargetTypeButton
+            key={type}
+            value={type}
+            selected={filterOption.targetType === type}
+            onClick={(value) => handleFilterOption('targetType', value)}
+          />
+        ))}
       </TargetTypeWrapper>
       <Spacing height={16} />
       <RankTypeWrapper>
-        <RankTypeButton
-          label="받고 싶어한"
-          value="MANY_WISH"
-          selected={filterOption.rankType === 'MANY_WISH'}
-          onClick={(value) => handleFilterOption('rankType', value)}
-        />
-        <RankTypeButton
-          label="많이 선물한"
-          value="MANY_RECEIVE"
-          selected={filterOption.rankType === 'MANY_RECEIVE'}
-          onClick={(value) => handleFilterOption('rankType', value)}
-        />
-        <RankTypeButton
-          label="위시로 받은"
-          value="MANY_WISH_RECEIVE"
-          selected={filterOption.rankType === 'MANY_WISH_RECEIVE'}
-          onClick={(value) => handleFilterOption('rankType', value)}
-        />
+      {rankTypes.map(({ label, value }) => (
+          <RankTypeButton
+            key={value}
+            label={label}
+            value={value}
+            selected={filterOption.rankType === value}
+            onClick={(value) => handleFilterOption('rankType', value)}
+          />
+        ))}
       </RankTypeWrapper>
     </Wrapper>
   );
