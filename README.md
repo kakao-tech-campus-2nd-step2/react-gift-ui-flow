@@ -1,15 +1,64 @@
-# 카카오 테크 캠퍼스 - 프론트엔드 카카오 선물하기 편
+# 📝 1단계 -Requirements
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
+- [x] 본인만의 기준으로 일관된 코드를 작성해주세요.
+- [x] 기능 단위로 나누어 커밋을 해주세요.
+- [x] Header, Footer와 같은 공통 컴포넌트를 만들어요. (모든 페이지에서 Header와 Footer는 보여질 수 있게 적용해요.)
+- [x] 각 Url Path별로 페이지를 만들어요. (결과물과 스타일은 결과 링크 참고)
 
-## Week 1. 1단계 - 프로젝트 세팅
+## 메인 페이지 (`/`)
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
+- [x] Theme 카테고리 섹션을 추가해요.
+- [x] Theme 카테고리 Item을 클릭 시 Theme 페이지(`/theme/:themeKey`)로 이동해요.
+- [x] 실시간 급상승 선물랭킹을 추가해요.
+- [x] 필터 기능을 hooks를 사용하여 구현해요. (ex. 전체, 여성이, 남성이, 청소년이 / 받고 싶어한, 많이 선물한, 위시로 받은)
+- [x] 상품 목록을 처음에는 6개만 보여지게 해요. 더보기를 누르는 경우 상품 목록을 더 보여줘요. (접기 버튼을 누르면 다시 6개만 보여지게 해요)
 
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+## Theme 페이지 (`/theme/:themeKey`)
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
+- [x] Header 섹션을 추가해요.
+- [x] 재사용성을 고려하여 Header 섹션을 만들어요. (themeKey에 따라 label, title, description, backgroundColor가 달라짐)
+- [x] 상품 목록 섹션을 추가해요.
 
-## Week 2. 1단계 - 페이지 만들기
+## 로그인 페이지(`/login`)
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+- [x] ID와 PW를 입력하면 로그인이 되도록 구현해요. (ID와 PW는 아무 값을 입력해도 통과되도록 해요.)
+
+## 나의 페이지(`/my-account`)
+
+- [x] 로그아웃을 할 수 있는 버튼을 추가해요.
+
+# 📝 2단계 - Requirements
+
+- [x] 본인만의 기준으로 일관된 코드를 작성해주세요.
+- [x] 기능 단위로 나누어 커밋을 해주세요.
+- [x] 로그인 페이지에서 ID와 PW를 입력하면 직전 페이지로 Redirect 되도록 해요.
+
+## Fake 로그인 기능을 구현해요.
+
+- [x] 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 `authToken` key에 저장해요.
+- [x] 모든 페이지 진입 시 `authToken`을 토대로 로그인 여부를 판단하는 로직을 추가해요. (ContextAPI 활용)
+- [x] Header에서 로그인 한 경우 내 계정을 로그인 하지 않은 경우 로그인 버튼을 추가해요.
+- [x] 내 계정(`/my-account`) 페이지는 로그인 한 사람만 접근 가능하게 해요. (로그인 하지 않은 유저는 로그인 페이지로 연결해요)
+- [x] 내 계정 페이지에서 로그아웃을 할 수 있도록 해요. (로그아웃 후 메인 페이지(`/`) 로 Redirect 되도록 해요)
+
+# 📝 3단계 - Requirements
+
+## 2주차 질문
+
+### 질문 1. CRA 기반의 SPA프로젝트에서 React Router를 사용하지 않는다면 어떤 문제가 발생하나요?
+
+React Router를 사용하지 않는다면 페이지를 이동할 때는 a 태그 와 href 속성을 이용하여 페이지 전체를 불러오면서 페이지를 이동할 수밖에 없다. 따라서 사용자는 그 페이지가 바뀌는 순간 화면이 깜빡이면서 순간적인 딜레이를 체감할 수 있게 되고, 사용자는 이를 '느리다'고 판단할 수 밖에 없다.
+따라서 React로 프로젝트를 진행하게 될 때는 React의 SPA 라는 장점을 살리기 위해 React Router를 사용하여 `useNavigate` 또는 `Link` 를 활용하여 필요한 부분의 컴포넌트만 변경하는 방식을 잘 활용하여 사용자가 부드럽게 화면이 전환되는 경험을 할 수 있게 만드는 것이 좋은 방법인 것 같다.
+
+### 질문 2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (로그인을 제외한 예시와 이유를 함께 적어주세요.)
+
+리액트 Context나 Redux는 전역 상태관리를 하는 방법을 나타낸다고 생각한다. contextAPI 는 리액트 내장 상태관리 라이브러리, Redux는 외부 라이브러리라고 알고 있다.
+우선 상태관리를 전역으로 선언하여 사용하는 이유는 Props drilling을 방지하고, 필요한 값이 존재하는데 컴포넌트와 컴포넌트 사이의 거리가 멀때 props 전달 방식으로는 조금 힘들 경우에 그 값을 전역으로 선언하여 넣고, 꺼내오는 방식으로 더 효율적으로 관리하게 된다.
+
+### 질문 3. Local Storage, Session Storage 와 Cookies의 차이가 무엇이며 각각 어떨때 사용하면 좋을까요?
+
+먼저 Local Storage와 Session Storage 부터 비교해보면, Local Storage는 페이지를 닫게 되어도 브라우저에 데이터가 유지되는 반면, Session Storage 의 경우 페이지를 닫을경우 데이터가 사라지게 된다.
+
+Storage와 쿠키를 비교해봤을떄, 만료시간과 보안 측면에서 차이점을 보인다고 생각한다. 쿠키는 일반적으로 정보를 3일정도 유지하는 것으로 알고있다. 또한 사용자가 수정가능하기때문에 별도의 설정이 없다면, XSS 공격이나 XSRF 공격에 노출되어 보안적으로 심각한 문제가 발생할 수도 있다.
+
+결국 Storage나 쿠키는 Token 관련해서 관리가 필요할 때 사용하는 것으로 알고있다. Refresh Token과 Access Token을 적절한 곳에 보관하여 Token 탈취와 같은 보안 관련 이슈를 대응할 수 있어야 한다고 생각한다. 각 위치마다 장단점이 존재하기 때문에 정해진 위치는 없다고 알고있다.
