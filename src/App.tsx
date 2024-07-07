@@ -24,7 +24,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/login" element={<SignInPage />}></Route>
           {isLogin ? (<>
-            <Route path="/theme" element={<ThemePage />}></Route>
+            <Route path="/theme/*" element={<ThemePage />}></Route>
             <Route path="/my-account" element={<MyAccountPage />}></Route>
             </>
           ) : null
