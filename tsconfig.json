@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -8,22 +8,20 @@
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "sourceMap": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "incremental": true,
-    "baseUrl": ".",
+    "baseUrl": "src",
     "paths": {
-      "@/*": ["./src/*"]
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@styles/*": ["styles/*"]
     }
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "build", "public"]
+  "exclude": ["node_modules", "build"],
+  "include": ["src", ".storybook"],
 }
