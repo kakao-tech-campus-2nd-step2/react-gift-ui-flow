@@ -10,7 +10,7 @@ import {
 } from '@pages/Login/LoginPage.styles';
 import Input from '@components/Input/Input';
 import Button from '@components/Button/Button';
-import { AuthContext } from '../../App';
+import { AuthContext } from '@contexts/AuthContext';
 import { ROUTE_PATHS } from '../../constants';
 
 const LoginPage = () => {

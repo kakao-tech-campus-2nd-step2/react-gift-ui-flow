@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect, useMemo } from 'react';
+import React, { useContext } from 'react';
 import { Global } from '@emotion/react';
 import resetStyles from '@styles/resetStyles';
 import {
@@ -12,44 +12,16 @@ import Main from '@pages/Main/Main';
 import ThemePage from '@pages/ThemePage/ThemePage';
 import LoginPage from '@pages/Login/LoginPage';
 import MyAccountPage from '@pages/MyAccount/MyAccountPage';
+import { AuthProvider, AuthContext } from '@contexts/AuthContext';
 import { ROUTE_PATHS } from './constants';
 
-const AuthContext = createContext({
-  isLoggedIn: false,
-  // eslint-disable-next-line no-unused-vars
-  login: (id: string) => {},
-  logout: () => {},
-});
-
 const App = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(() => {
-    return sessionStorage.getItem('authToken');
-  });
-
-  const login = (id: string) => {
-    sessionStorage.setItem('authToken', id);
-    setIsLoggedIn(true);
-  };
-
-  const logout = () => {
-    sessionStorage.removeItem('authToken');
-    setIsLoggedIn(false);
-  };
-
-
-  const value = useMemo(
-    () => ({
-      isLoggedIn,
-      login,
-      logout,
-    }),
-    [isLoggedIn],
-  );
+  const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <>
       <Global styles={resetStyles} />
-      <AuthContext.Provider value={value}>
+      <AuthProvider>
         <Router>
           <Layout>
             <Routes>
@@ -69,10 +41,9 @@ const App = () => {
             </Routes>
           </Layout>
         </Router>
-      </AuthContext.Provider>
+      </AuthProvider>
     </>
   );
 };
 
-export { AuthContext };
 export default App;

@@ -86,6 +86,10 @@
                     [
                         "@pages",
                         "./src/pages"
+                    ],
+                    [
+                        "@contexts",
+                        "./src/contexts"
                     ]
                 ],
                 "extensions": [

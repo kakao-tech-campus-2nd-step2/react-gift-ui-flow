@@ -24,6 +24,7 @@
       "@components/*": ["components/*"],
       "@styles/*": ["styles/*"],
       "@pages/*": ["pages/*"],
+      "@contexts/*": ["contexts/*"],
     }
   },
   "include": [

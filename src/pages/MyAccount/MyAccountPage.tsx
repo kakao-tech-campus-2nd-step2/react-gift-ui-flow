@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { StyledDiv, StyledButton } from '@pages/MyAccount/MyAccountPage.styles';
 import Button from '@components/Button/Button';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../App';
+import { AuthContext } from '@contexts/AuthContext';
 import { ROUTE_PATHS } from '../../constants';
 
 const MyAccountPage = () => {
