@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { breakpoints } from '@/styles/variants';
+import { breakpoints } from '../../../styles/variants';
 
 type Props = {
   theme?: 'kakao' | 'outline' | 'black' | 'lightGray' | 'darkGray';

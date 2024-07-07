@@ -3,7 +3,7 @@ import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
 import path from 'path';
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: ['./src/**/*.mdx', './src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
   addons: [
     '@storybook/addon-links',
     '@storybook/addon-essentials',
@@ -14,7 +14,7 @@ const config: StorybookConfig = {
   webpackFinal: async (config) => {
     config.resolve?.plugins?.push(
       new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, '../tsconfig.json'),
+        configFile: path.resolve(__dirname, './tsconfig.json'),
       }),
     );
 
