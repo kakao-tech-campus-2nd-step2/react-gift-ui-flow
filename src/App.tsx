@@ -36,9 +36,6 @@ const App = () => {
     setIsLoggedIn(false);
   };
 
-  useEffect(() => {
-    setIsLoggedIn(!!sessionStorage.getItem('authToken'));
-  }, []);
 
   const value = useMemo(
     () => ({
