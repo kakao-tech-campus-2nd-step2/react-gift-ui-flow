@@ -13,7 +13,7 @@ export default function Banner() {
   return (
     <div className="Banner">
       <div className="Banner-container">
-        <div className="label">{selectedTheme.key}</div>
+        <div className="label">{selectedTheme.data.label}</div>
         <div className="title">{selectedTheme.data.title}</div>
         <div className="description">{selectedTheme.data.description}</div>
       </div>
