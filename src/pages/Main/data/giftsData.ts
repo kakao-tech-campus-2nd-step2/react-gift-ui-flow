@@ -1,0 +1,10 @@
+export const gifts = [
+  { rankingIndex: 1, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 1', amount: 1000 },
+  { rankingIndex: 2, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 2', amount: 2000 },
+  { rankingIndex: 3, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 3', amount: 3000 },
+  { rankingIndex: 4, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 4', amount: 4000 },
+  { rankingIndex: 5, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 5', amount: 5000 },
+  { rankingIndex: 6, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 6', amount: 6000 },
+  { rankingIndex: 7, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 7', amount: 7000 },
+  { rankingIndex: 8, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 8', amount: 8000 },
+];

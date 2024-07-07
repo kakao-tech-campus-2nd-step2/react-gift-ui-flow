@@ -7,32 +7,8 @@ import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Button } from '@/components/common/Button';
 import { GoodsRankingFilter } from '@/components/common/GoodsRankingFilter';
 import { breakpoints } from '@/styles/variants';
-
-const categories = [
-  { key: 'theme1', label: '생일' , imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG'},
-  { key: 'theme2', label: '졸업선물', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme3', label: '스몰럭셔리', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme4', label: '명품선물', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme5', label: '결혼/집들이', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme6', label: '따뜻한선물', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme7', label: '가벼운선물', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme8', label: '팬심저격', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme9', label: '교환권' , imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG'},
-  { key: 'theme10', label: '건강/비타민', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme11', label: '과일/한우', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-  { key: 'theme12', label: '출산/키즈', imageSrc: 'https://img.hani.co.kr/imgdb/resize/2018/0313/00500561_20180313.JPG' },
-];
-
-const gifts = [
-  { rankingIndex: 1, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 1', amount: 1000 },
-  { rankingIndex: 2, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 2', amount: 2000 },
-  { rankingIndex: 3, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 3', amount: 3000 },
-  { rankingIndex: 4, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 4', amount: 4000 },
-  { rankingIndex: 5, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 5', amount: 5000 },
-  { rankingIndex: 6, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 6', amount: 6000 },
-  { rankingIndex: 7, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 7', amount: 7000 },
-  { rankingIndex: 8, imageSrc: 'https://img1.kakaocdn.net/thumb/C320x320@2x.fwebp.q82/?fname=https%3A%2F%2Fst.kakaocdn.net%2Fproduct%2Fgift%2Fproduct%2F20240405092925_4b920eaeef6a4f0eb2a5c2a434da7ec7.jpg', subtitle: 'Subtitle', title: 'Title 8', amount: 8000 },
-];
+import { categories } from './data/categoriesData';
+import { gifts } from './data/giftsData';
 
 type RankingFilterOption = {
   targetType: 'ALL' | 'FEMALE' | 'MALE' | 'TEEN';
