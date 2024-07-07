@@ -13,6 +13,8 @@ import { ThemePage } from "./pages/Theme/ThemePage";
 
 const App: React.FC = () => {
 
+  const isLogin = !!sessionStorage.getItem("authToken");
+
   return (
     <>
     <BrowserRouter>
@@ -21,8 +23,13 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Homepage />}></Route>
           <Route path="/login" element={<SignInPage />}></Route>
-          <Route path="/my-account" element={<MyAccountPage />}></Route>
-          <Route path="/theme" element={<ThemePage />}></Route>
+          {isLogin ? (<>
+            <Route path="/theme" element={<ThemePage />}></Route>
+            <Route path="/my-account" element={<MyAccountPage />}></Route>
+            </>
+          ) : null
+          }
+          <Route path="*" element={<SignInPage />}></Route> 
         </Routes>
       </Body>
       <Footer></Footer>
