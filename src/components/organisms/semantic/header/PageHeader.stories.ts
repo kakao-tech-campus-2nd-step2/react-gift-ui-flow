@@ -12,6 +12,5 @@ type Story = StoryObj<typeof PageHeader>;
 export const DefaultHeader: Story = {
   args: {
     displayLogo: true,
-    isLoggedIn: false,
   },
 };

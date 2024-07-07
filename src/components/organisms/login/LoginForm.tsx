@@ -3,18 +3,21 @@ import Input from '@components/atoms/input/Input';
 import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
 import { useNavigate } from 'react-router-dom';
-import { useCallback } from 'react';
-import Paths from '@constants/Paths';
+import { useCallback, useContext, useRef } from 'react';
+import { LoginContext } from '@/providers/LoginContextProvider';
 
 function LoginForm() {
   const navigate = useNavigate();
+  const { setIsLoggedIn, setUsername } = useContext(LoginContext);
+
+  const idRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
+
   const onLoginClick = useCallback(() => {
-    navigate(Paths.MAIN_PAGE, {
-      state: {
-        loginState: true,
-      },
-    });
-  }, [navigate]);
+    setIsLoggedIn(true);
+    setUsername(idRef.current ? idRef.current.value : '');
+    navigate(-1);
+  }, [navigate, setIsLoggedIn, setUsername]);
 
   return (
     <Container
@@ -40,6 +43,7 @@ function LoginForm() {
               height: '46px',
             }}
             placeholder="이름"
+            ref={idRef}
           />
           <div css={css`
             height: 16px;
@@ -52,6 +56,7 @@ function LoginForm() {
             }}
             placeholder="비밀번호"
             type="password"
+            ref={passwordRef}
           />
           <div css={css`
             height: 60px;

@@ -5,30 +5,33 @@ import styled from '@emotion/styled';
 import { HEADER_HEIGHT, MAX_CONTENT_WIDTH } from '@styles/size';
 import { Link } from 'react-router-dom';
 import Paths from '@constants/Paths';
+import { useContext } from 'react';
+import { LoginContext } from '@/providers/LoginContextProvider';
 
 interface PageHeaderProps {
-  isLoggedIn?: boolean;
   displayLogo?: boolean;
 }
 
 const HeaderAccountButton = styled.p`
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 `;
 
-function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
+function PageHeader({ displayLogo }: PageHeaderProps) {
+  const { isLoggedIn } = useContext(LoginContext);
+
   return (
     <header css={css`
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding: 0 16px;
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-        background-color: #ffffff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 0 16px;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      background-color: #ffffff;
     `}
     >
       <Container
@@ -40,7 +43,7 @@ function PageHeader({ isLoggedIn, displayLogo }: PageHeaderProps) {
           ? (
             <img
               css={css`
-                  height: 100%;
+                height: 100%;
               `}
               src={headerLogo}
             />

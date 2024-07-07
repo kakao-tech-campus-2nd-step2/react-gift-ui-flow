@@ -2,25 +2,30 @@ import Container from '@components/atoms/container/Container';
 import Page from '@components/templates/Page';
 import { css } from '@emotion/react';
 import Button from '@components/atoms/button/Button';
-import { useCallback } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
+import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import Paths from '@constants/Paths';
-import styled from '@emotion/styled';
+import { LoginContext } from '@/providers/LoginContextProvider';
 
 const GreetingTitle = styled.h1`
-    font-weight: bold;
-    font-size: 36px
+  font-weight: bold;
+  font-size: 36px
 `;
 
 function MyPage() {
+  const { isLoggedIn, setIsLoggedIn, username } = useContext(LoginContext);
   const navigate = useNavigate();
+
   const onLogoutClick = useCallback(() => {
-    navigate(Paths.MAIN_PAGE, {
-      state: {
-        loginState: false,
-      },
-    });
-  }, [navigate]);
+    setIsLoggedIn(false);
+  }, [setIsLoggedIn]);
+
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate(Paths.LOGIN_PAGE);
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <Page isLoggedIn>
@@ -35,7 +40,8 @@ function MyPage() {
           alignItems="center"
         >
           <GreetingTitle>
-            회원님 안녕하세요!
+            {username}
+            님 안녕하세요!
           </GreetingTitle>
           <div css={css`
             height: 64px;
