@@ -1,12 +1,18 @@
 import styled from '@emotion/styled';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const HeaderWrapper = styled.header`
+interface HeaderProps {
+  bgColor?: string;
+  isLoggedIn: boolean;
+}
+
+const HeaderWrapper = styled.header<{ bgColor?: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #ffffff;
+  background-color: ${({ bgColor }) => bgColor || '#ffffff'};
 `;
 
 const HeaderInner = styled.div`
@@ -22,7 +28,7 @@ const LogoText = styled.div`
   font-family: 'Arial, sans-serif';
 `;
 
-const LoginButton = styled.button`
+const NavButton = styled(Link)`
   padding: 8px 16px;
   background-color: transparent;
   color: black;
@@ -31,14 +37,23 @@ const LoginButton = styled.button`
   cursor: pointer;
   font-size: 14px;
   font-family: 'Arial, sans-serif';
+  text-decoration: none;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
 `;
 
-const Header: React.FC = () => {
+const Header: React.FC<HeaderProps> = ({ bgColor, isLoggedIn }) => {
   return (
-    <HeaderWrapper>
+    <HeaderWrapper bgColor={bgColor}>
       <HeaderInner>
         <LogoText>선물하기</LogoText>
-        <LoginButton>로그인</LoginButton>
+        {isLoggedIn ? (
+          <NavButton to="/my-account">내 계정</NavButton>
+        ) : (
+          <NavButton to="/login">로그인</NavButton>
+        )}
       </HeaderInner>
     </HeaderWrapper>
   );
