@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgb(255, 255, 255); /* 흰색 배경 */
+}
+
+.title img {
+  height: 54px;
+}
+
+.login {
+  font-size: 14px;
+  cursor: pointer;
+}

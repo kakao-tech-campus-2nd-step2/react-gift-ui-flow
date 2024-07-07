@@ -1,0 +1,10 @@
+.theme-div {
+  display: grid;
+  padding: 45px 52px 23px;
+  grid-template-rows: repeat(2, 150px);
+  grid-template-columns: repeat(6, 200px);
+}
+
+.themeitem {
+  padding: 25px 35px 24px;
+}
