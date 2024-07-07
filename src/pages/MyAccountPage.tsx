@@ -3,24 +3,25 @@ import styled from '@emotion/styled';
 import { Button } from '@/components/common/Button';
 import { Footer } from '@/components/common/Footer/Footer';
 import { Header } from '@/components/common/Header/Header';
-import { useAuth } from '@/utils/hooks/useAuth';
+import { AuthRoute } from '@/routes/AuthRoute';
+import { useAuthContext } from '@/utils/hooks/useAuthContext';
+
 const MyAccountPage = () => {
-  const username = sessionStorage.getItem('auth');
-  const { handleLogout } = useAuth();
+  const { username, logout } = useAuthContext();
   return (
-    <>
+    <AuthRoute>
       <Header />
       <Wrapper>
         <AccountContainer>
           {username}님 안녕하세요!
           <Space />
-          <Button theme="darkGray" style={{ maxWidth: '200px' }} onClick={handleLogout}>
+          <Button theme="darkGray" style={{ maxWidth: '200px' }} onClick={logout}>
             로그아웃
           </Button>
         </AccountContainer>
         <Footer />
       </Wrapper>
-    </>
+    </AuthRoute>
   );
 };
 

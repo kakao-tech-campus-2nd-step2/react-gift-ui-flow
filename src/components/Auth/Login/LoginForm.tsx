@@ -1,17 +1,35 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useAuth } from '@/utils/hooks/useAuth';
+import { useAuthContext } from '@/utils/hooks/useAuthContext';
 
 const LoginForm = () => {
-  const { handleLogin, handleInputChange, username, password } = useAuth();
+  const { login } = useAuthContext();
+  const [id, setId] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (name === 'id') {
+      setId(value);
+    } else if (name === 'password') {
+      setPassword(value);
+    }
+  };
+
+  const handleLogin = () => {
+    login(id);
+  };
 
   return (
     <FormWrapper>
       <UnderlineTextField
         type="text"
         placeholder="이름"
+        name="id"
+        value={id}
         name="username"
         value={username}
         onChange={handleInputChange}
