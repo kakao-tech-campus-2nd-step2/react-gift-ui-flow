@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import { Image } from '@/components/common/Image';
+import { Image } from "@/components/common/Image";
 
 export type DefaultGoodsItemsProps = {
   imageSrc: string;

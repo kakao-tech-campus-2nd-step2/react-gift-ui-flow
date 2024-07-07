@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
+import styled from "@emotion/styled";
 
-import { DefaultGoodsItems, type DefaultGoodsItemsProps } from './Default';
+import { DefaultGoodsItems, type DefaultGoodsItemsProps } from "./Default";
 
 type Props = {
   rankingIndex: number;
@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
-const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`
+const RankingLabel = styled.span<Pick<Props, "rankingIndex">>`
   position: absolute;
   z-index: 2;
   width: 30px;
@@ -36,5 +36,5 @@ const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`
   top: 4px;
   left: 4px;
   color: #fff;
-  background-color: ${({ rankingIndex }) => (rankingIndex <= 3 ? '#fd7364' : '#bbb')};
+  background-color: ${({ rankingIndex }) => (rankingIndex <= 3 ? "#fd7364" : "#bbb")};
 `;

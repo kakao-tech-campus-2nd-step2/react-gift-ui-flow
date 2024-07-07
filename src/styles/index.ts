@@ -1,3 +1,3 @@
-import './reset.css';
+import "./reset.css";
 
-export * as vars from './variants';
+export * as vars from "./variants";

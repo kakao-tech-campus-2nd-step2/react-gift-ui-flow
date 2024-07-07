@@ -1,23 +1,23 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { Container } from '.';
+import { Container } from ".";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Common/Layout/Container',
+  title: "Common/Layout/Container",
   component: Container,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     maxWidth: {
       control: {
-        type: 'text',
+        type: "text",
       },
     },
     children: {
       control: {
-        type: 'text',
+        type: "text",
       },
     },
   },
@@ -30,13 +30,13 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     maxWidth: undefined,
-    children: 'Hello, world!',
+    children: "Hello, world!",
   },
 };
 
 export const FullScreen: Story = {
   args: {
-    maxWidth: '100%',
-    children: 'Hello, world!',
+    maxWidth: "100%",
+    children: "Hello, world!",
   },
 };
