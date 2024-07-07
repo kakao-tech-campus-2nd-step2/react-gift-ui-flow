@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@components/Layout/Container';
 import { AuthContext } from '@contexts/AuthContext';
-import { HeaderContainer, Logo, Login } from './Header.styles';
+import { HeaderContainer, Logo } from './Header.styles';
 
 const Header = () => {
   const { isLoggedIn } = useContext(AuthContext);
@@ -25,7 +25,7 @@ const Header = () => {
         {isLoggedIn ? (
           <Link to="/my-account">내 계정</Link>
         ) : (
-          <Login href="/login">로그인</Login>
+          <Link to="/login">로그인</Link>
         )}
       </Container>
     </HeaderContainer>
