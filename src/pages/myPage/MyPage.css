@@ -1,0 +1,29 @@
+.myPage {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 58px;
+}
+.myPage-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.myPage__welcome {
+  font-size: 36px;
+  font-weight: 700;
+  color: #333;
+}
+.myPage__btn {
+  width: 200px;
+  height: 40px;
+  background-color: rgb(68, 68, 68);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 60px;
+}

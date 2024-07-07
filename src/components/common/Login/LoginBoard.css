@@ -1,0 +1,15 @@
+.loginBoard-container {
+  width: 500px;
+  height: 350px;
+  padding: 0 52px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loginBoard__pw {
+  margin-top: 30px;
+}
+.loginBoard__btn {
+  margin-top: 60px;
+}

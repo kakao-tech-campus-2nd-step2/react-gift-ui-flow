@@ -1,0 +1,20 @@
+.ChoseFriend-container {
+  background-color: rgb(250, 250, 250);
+  padding: 50px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ChoseFriend-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 70px;
+  width: 60%;
+}
+.ChoseFriend-inner__text {
+  font-size: 28px;
+  color: rgb(51, 51, 51);
+  margin-left: 20px;
+}
