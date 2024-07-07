@@ -6,6 +6,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./.prettierrc",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -25,11 +28,10 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
     "@craco/craco": "^7.1.0",
     "@emotion/eslint-plugin": "^11.11.0",
     "@storybook/addon-essentials": "^7.6.17",
@@ -38,7 +40,7 @@
     "@storybook/addon-onboarding": "^1.0.11",
     "@storybook/blocks": "^7.6.17",
     "@storybook/preset-create-react-app": "^7.6.17",
-    "@storybook/react": "^7.6.17",
+    "@storybook/react": "^7.6.20",
     "@storybook/react-webpack5": "^7.6.17",
     "@storybook/test": "^7.6.17",
     "@testing-library/jest-dom": "^5.17.0",
@@ -65,9 +67,11 @@
     "eslint-plugin-storybook": "^0.8.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
+    "react-scripts": "5.0.1",
     "storybook": "^7.6.17",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
-    "webpack": "^5.90.3"
+    "typescript": "^4.9.5",
+    "webpack": "^5.92.1"
   },
   "overrides": {
     "react-refresh": "0.11.0"
