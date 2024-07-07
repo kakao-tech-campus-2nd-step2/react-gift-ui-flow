@@ -2,14 +2,55 @@
 
 [🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
 
-## Week 1. 1단계 - 프로젝트 세팅
-
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
-
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
-
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
-
 ## Week 2. 1단계 - 페이지 만들기
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+- 공동 컴포넌트 구현<br/>
+  - [X] Header 구현<br/>
+  - [x] Footer 구현<br/>
+        <br/>
+- Url Path별 페이지 구현<br/>
+  - 메인 페이지 (`/`)<br/>
+    - [x] Theme 카테고리 섹션 추가<br/>
+      - [x] Theme 카테고리 Item을 클릭 시 Theme 페이지(`/theme/:themeKey`)로 이동<br/>
+    - [x] 실시간 급상승 선물랭킹 추가<br/>
+      - [x] 필터 기능을 hooks를 사용하여 구현 (ex. 전체, 여성이, 남성이, 청소년이 받고 싶어한, 많이 선물한, 위시로 받은)<br/>
+      - [x] 상품 목록을 처음에는 6개만 보여지게 하기. 더보기를 누르는 경우 상품 목록을 더 보여줌 (접기 버튼을 누르면 다시 6개만 보여지게 함)<br/>
+  - Theme 페이지 (`/theme/:themeKey`)<br/>
+    - [x] Header 섹션을 추가<br/>
+      - [x] 재사용성을 고려하여 Header 섹션 만들기 (themeKey에 따라 label, title, description, backgroundColor가 달라짐)<br/>
+    - [x] 상품 목록 섹션 추가<br/>
+  - 로그인 페이지 (`/login`)<br/>
+    - [x] ID와 PW를 입력하면 로그인이 되도록 구현 (ID와 PW는 아무 값을 입력해도 통과되도록)<br/>
+  - 나의 페이지 (`/my-account`)<br/>
+    - [x] 로그아웃 버튼 추가
+
+### 2주차 질문
+
+1. CRA 기반의 SPA프로젝트에서 React Router를 사용하지 않는다면 어떤 문제가 발생하나요?
+   - React Router 없이 내비게이션을 구현하려면 직접 상태 관리와 URL 관리를 해야하는데, 이는 복잡하고 오류 발생이 잦다.
+   - 상태 관리 및 데이터 페칭 로직을 직접 구현해야 하며, 이는 코드의 복잡도를 증가시킴
+  
+2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (로그인을 제외한 예시와 이유를 함께 적어주세요.)
+   - React Context
+     - 다국어 지원
+     - 테마 관리(ex. 라이트 모드 및 다크모드)
+   - Redux
+     - 복잡한 상태 관리
+     - 비동기 데이터 페칭 및 캐싱
+3. Local Storage, Session Storage 와 Cookies의 차이가 무엇이며 각각 어떨때 사용하면 좋을까요?
+   - 데이터 전송
+     - 스토리지 : 클라이언트 측에만 저장되고 서버로 전송되지 않음
+     - 쿠키 : HTTP 요청과 함께 서버로 자동으로 전송
+   - 데이터 용량
+     - 스토리지 : 도메인당 약 5MB의 데이터를 저장
+     - 쿠키 : 도메인당 약 4KB의 데이터를 저장할 수 있음
+   - 만료 시간
+     - 스토리지 : 로컬 → 명시적으로 삭제할 때까지, 세션 → 브라우저 세션이 끝날 때까지
+     - 쿠키 : 만료 시간 지정 가능하며, 지정된 시간이 지나면 자동 삭제
+   - 보안
+     - 스토리지 : 보안 설정이 없음
+     - 쿠키 : Secure 및 HttpOnly 플래그를 사용하여 보안을 강화
+
+**Local Storage** : 사용자 설정 (예: 테마, 레이아웃 설정)과 같은 장기적으로 저장해야 하는 데이터 또는 대규모 데이터를 저장할 때 적합<br/>
+**Session Storage** : 세션 동안만 필요한 데이터 (예: 일시적인 폼 데이터) 또는 사용자 인터페이스 상태를 일시적으로 저장할 때 적합<br/>
+**Cookies** : 사용자 인증 정보 (예: JWT 토큰) 또는 서버와 클라이언트 간에 필요한 작은 데이터를 저장할 때 적합 (예: 세션 ID)

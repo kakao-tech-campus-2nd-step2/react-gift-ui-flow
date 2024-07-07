@@ -1,0 +1,21 @@
+.selectButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.button {
+  border-radius: 5px;
+}
+
+.subText {
+  color: gray;
+}
+
+.mainText {
+  font-size: 18px;
+  font-weight: 700;
+}
