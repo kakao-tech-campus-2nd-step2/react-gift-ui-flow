@@ -14,18 +14,18 @@ interface AuthProviderProps {
 const AuthProvider = ({ children }: AuthProviderProps) => {
   const [isLoggedIn, setIsLoggedIn] = useState(() =>
     // eslint-disable-next-line implicit-arrow-linebreak
-    sessionStorage.getItem('authToken'),
+    !!sessionStorage.getItem('authToken'),
   // eslint-disable-next-line function-paren-newline
   );
 
   const login = (id: string) => {
     sessionStorage.setItem('authToken', id);
-    setIsLoggedIn(() => sessionStorage.getItem('authToken'));
+    setIsLoggedIn(() => !!sessionStorage.getItem('authToken'));
   };
 
   const logout = () => {
     sessionStorage.removeItem('authToken');
-    setIsLoggedIn(() => sessionStorage.getItem('authToken'));
+    setIsLoggedIn(() => !!sessionStorage.getItem('authToken'));
   };
 
   const value = useMemo(

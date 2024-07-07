@@ -21,29 +21,33 @@ const App = () => {
   return (
     <>
       <Global styles={resetStyles} />
-      <AuthProvider>
-        <Router>
-          <Layout>
-            <Routes>
-              <Route path={ROUTE_PATHS.ROOT} Component={Main} />
-              <Route path={ROUTE_PATHS.THEME} Component={ThemePage} />
-              <Route path={ROUTE_PATHS.LOGIN} Component={LoginPage} />
-              <Route
-                path={ROUTE_PATHS.MYACCOUNT}
-                element={
-                  isLoggedIn ? (
-                    <MyAccountPage />
-                  ) : (
-                    <Navigate to={ROUTE_PATHS.LOGIN} />
-                  )
-                }
-              />
-            </Routes>
-          </Layout>
-        </Router>
-      </AuthProvider>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path={ROUTE_PATHS.ROOT} Component={Main} />
+            <Route path={ROUTE_PATHS.THEME} Component={ThemePage} />
+            <Route path={ROUTE_PATHS.LOGIN} Component={LoginPage} />
+            <Route
+              path={ROUTE_PATHS.MYACCOUNT}
+              element={
+                isLoggedIn ? (
+                  <MyAccountPage />
+                ) : (
+                  <Navigate to={ROUTE_PATHS.LOGIN} />
+                )
+              }
+            />
+          </Routes>
+        </Layout>
+      </Router>
     </>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <AuthProvider>
+    <App />
+  </AuthProvider>
+);
+
+export default AppWrapper;
