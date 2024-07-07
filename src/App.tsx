@@ -1,18 +1,23 @@
-import styled from '@emotion/styled';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = () => {
-  const name = 'Josh Perez';
+import LoginPage from './pages/LoginPage';
+import MainPage from './pages/MainPage';
+import MyAccountPage from './pages/MyAccountPage';
+import ThemePage from './pages/ThemePage';
 
+const App: React.FC = () => {
   return (
     <div>
-      <Title>Hello, {name}</Title>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />}></Route>
+          <Route path="/theme/:themeKey" element={<ThemePage />}></Route>
+          <Route path="/login" element={<LoginPage />}></Route>
+          <Route path="/my-account" element={<MyAccountPage />}></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
