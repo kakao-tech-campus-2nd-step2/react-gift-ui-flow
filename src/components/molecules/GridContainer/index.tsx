@@ -1,8 +1,8 @@
 import type { ReactElement } from 'react';
 
 import { Grid } from '@/components/atoms/Grid';
-import { IContainer } from '@/components/atoms/IContainer';
-import type { GridContainerProps, ItemProps } from '@/components/atoms/IContainer/types';
+import { ItemsIterator } from '@/components/atoms/ItemsIterator';
+import type { GridContainerProps, ItemProps } from '@/components/atoms/ItemsIterator/types';
 
 export const GridContainer = <T extends ItemProps>({
   items,
@@ -12,7 +12,7 @@ export const GridContainer = <T extends ItemProps>({
   className = '',
 }: GridContainerProps<T>): ReactElement => {
   return (
-    <IContainer
+    <ItemsIterator
       items={items}
       component={component}
       container={Grid}

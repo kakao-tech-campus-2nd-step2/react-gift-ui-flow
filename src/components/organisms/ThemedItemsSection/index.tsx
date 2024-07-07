@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import { useLoaderData } from 'react-router-dom';
 
-import type { ItemProps } from '@/components/atoms/IContainer/types';
+import type { ItemProps } from '@/components/atoms/ItemsIterator/types';
 import { CenteringContainer } from '@/components/molecules/CenteringContainer';
 import type { DefaultGoodsItemsProps } from '@/components/molecules/GoodsItem/Default';
 import { DefaultGoodsItems } from '@/components/molecules/GoodsItem/Default';

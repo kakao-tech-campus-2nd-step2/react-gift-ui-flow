@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 import { Button } from '@/components/atoms/Button';
-import type { ItemProps } from '@/components/atoms/IContainer/types';
+import type { ItemProps } from '@/components/atoms/ItemsIterator/types';
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import { RankingGoodsItems } from '@/components/molecules/GoodsItem/Ranking';
 import { GridContainer } from '@/components/molecules/GridContainer';

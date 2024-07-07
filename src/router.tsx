@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { createBrowserRouter, Navigate, Outlet, redirect, useLocation } from 'react-router-dom';
 
-import type { ItemProps } from '@/components/atoms/IContainer/types';
+import type { ItemProps } from '@/components/atoms/ItemsIterator/types';
 import type { RankingGoodsItemsProps } from '@/components/molecules/GoodsItem/Ranking';
 import { ErrorPage } from '@/components/pages/ErrorPage';
 import { LoginPage } from '@/components/pages/LoginPage';

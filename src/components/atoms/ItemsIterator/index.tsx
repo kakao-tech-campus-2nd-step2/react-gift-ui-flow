@@ -1,13 +1,13 @@
 import type { ReactElement } from 'react';
 
-import type { IContainerProps, ItemProps } from '@/components/atoms/IContainer/types';
+import type { ItemProps, ItemsIteratorProps } from '@/components/atoms/ItemsIterator/types';
 
-export const IContainer = <T extends ItemProps>({
+export const ItemsIterator = <T extends ItemProps>({
   items,
   component: Component,
   container: Container,
   otherProps = {},
-}: IContainerProps<T>): ReactElement => {
+}: ItemsIteratorProps<T>): ReactElement => {
   return (
     <Container {...otherProps}>
       {items.map(({ id, ...props }) => (

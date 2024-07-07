@@ -13,7 +13,7 @@ export type IteratingLayoutProps<T extends ItemProps> = IteratingItemProps<T> & 
   container: ElementType;
 };
 
-export type IContainerProps<T extends ItemProps> = IteratingLayoutProps<T> & {
+export type ItemsIteratorProps<T extends ItemProps> = IteratingLayoutProps<T> & {
   otherProps?: object;
 };
 
