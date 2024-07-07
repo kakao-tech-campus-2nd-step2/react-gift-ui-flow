@@ -7,6 +7,7 @@ const meta = {
   tags: ['autodocs'],
   component: UnderlineTextField,
   args: {
+    label: '이름',
     placeholder: 'placeholder',
     disabled: false,
     invalid: false,

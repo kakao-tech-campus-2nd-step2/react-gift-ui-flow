@@ -1,14 +1,43 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 import { breakpoints } from '@/styles/variants';
 
-// Extends Input field
 type Props = {
   invalid?: boolean;
   size?: 'large' | 'small' | 'responsive';
+  label: string;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export const UnderlineTextField = (props: Props) => <Input {...props} />;
+export const UnderlineTextField: React.FC<Props> = ({label, ...props}) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleFocus = () => {
+    setInputValue('');
+  };
+
+  const handleBlur = () => {
+    if (inputValue === '') {
+      setInputValue('');
+    }
+  };
+
+  return (
+    <Input
+      type="text"
+      value={inputValue}
+      onChange={handleChange}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      placeholder={label}
+      {...props}
+    />
+  );
+};
 
 const Input = styled.input<Pick<Props, 'invalid' | 'size'>>(
   {
