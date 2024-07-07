@@ -1,18 +1,17 @@
-import styled from '@emotion/styled';
+import { Route, Routes } from "react-router-dom";
+import Home from "@pages/Home";
+import Theme from "@pages/Theme";
+import Main from "@pages/Main";
 
 const App = () => {
-  const name = 'Josh Perez';
-
-  return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Home />}>
+                <Route path="/" element={<Main />} />
+                <Route path="/theme/:themeKey" element={<Theme />} />
+            </Route>
+        </Routes>
+    );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
