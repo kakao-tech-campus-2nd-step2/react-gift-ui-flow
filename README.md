@@ -15,17 +15,17 @@
 - [X] Header와 Footer 공통 컴포넌트 만들기 (모든 페이지에서 보여야 함)
   - [X] 로그인 여부에 따라 프로필 / 로그인 띄우기
 - [X] 메인 페이지( / )  
-  - [ ] Theme 카테고리 섹션 추가
+  - [X] Theme 카테고리 섹션 추가
   - [ ] Trending 섹션 추가
-- [ ] Theme 페이지 ( /theme )
+- [X] Theme 페이지 ( /theme )
   - [X] Header 섹션 추가
-  - [ ] themeKey에 따라 label, title, description, backgroundColor가 달라지는 Header 섹션 만들기
+  - [X] themeKey에 따라 label, title, description, backgroundColor가 달라지는 Header 섹션 만들기
 - [X] 로그인 페이지 ( /login )
   - [X] 로그인 하면 직전 페이지로 리다이렉트
   - [X] authToken ke에 저장
-- [ ] 마이 페이지 ( my- account)  
+- [X] 마이 페이지 ( my- account)  
   - [X] 로그아웃 버튼 추가
-  - [ ] 로그인 한 사람만 접근 가능하게 구현
+  - [X] 로그인 한 사람만 접근 가능하게 구현
   - [X] 로그아웃 이후 메인 페이지로 리다이렉트
 - [ ] 모든 페이지 진입 시 autoToken을 토대로 로그인 여부 판단하는 로직 추가(ContextAPI 활용)
 
