@@ -1,6 +1,5 @@
 import { Layout } from '@/components/features/Layout';
 import { Home } from '@/pages/Home';
-// import { Theme } from '@/pages/Theme';
 import { AuthProvider } from '@/auth/AuthProvider';
 import { Login } from '@/pages/Login';
 import { MyAccount } from '@/pages/MyAccount';
@@ -22,7 +21,6 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: RouterPath.home, element: <Home /> },
-      // { path: RouterPath.theme, element: <Theme /> },
       {
         path: RouterPath.myAccount,
         element: (
