@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container } from '@/components/common/layouts/Container';
 import { Button } from '@/components/common/Button';
-import { useAuth } from '@/contexts/AuthContext';
+import { useAuth } from '@/hooks/useAuth';
 import styled from '@emotion/styled';
 
 const MyAccount: React.FC = () => {
