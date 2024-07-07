@@ -7,7 +7,9 @@
     "build": "craco build",
     "test": "craco test",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,json}\""
   },
   "browserslist": {
     "production": [
@@ -24,12 +26,12 @@
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
+    "@types/react-router-dom": "^5.3.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.24.1"
   },
   "devDependencies": {
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
     "@craco/craco": "^7.1.0",
     "@emotion/eslint-plugin": "^11.11.0",
     "@storybook/addon-essentials": "^7.6.17",
@@ -46,11 +48,11 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.82",
-    "@types/react": "^18.2.57",
-    "@types/react-dom": "^18.2.19",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.1.0",
     "eslint-config-prettier": "^9.1.0",
@@ -65,11 +67,17 @@
     "eslint-plugin-storybook": "^0.8.0",
     "prettier": "^3.2.5",
     "prop-types": "^15.8.1",
+    "react-scripts": "5.0.1",
     "storybook": "^7.6.17",
     "tsconfig-paths-webpack-plugin": "^4.1.0",
+    "typescript": "^4.9.5",
     "webpack": "^5.90.3"
   },
   "overrides": {
     "react-refresh": "0.11.0"
-  }
+  },
+  "description": "[🔗 link](https://edu.nextstep.camp/s/hazAC9xa)",
+  "main": ".eslintrc.js",
+  "author": "",
+  "license": "ISC"
 }
