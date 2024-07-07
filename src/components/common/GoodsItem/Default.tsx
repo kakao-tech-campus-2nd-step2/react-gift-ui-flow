@@ -6,14 +6,14 @@ export type DefaultGoodsItemsProps = {
   imageSrc: string;
   subtitle: string;
   title: string;
-  amount: number;
+  price: number;
 } & React.HTMLAttributes<HTMLDivElement>;
 
 export const DefaultGoodsItems = ({
   imageSrc,
   subtitle,
   title,
-  amount,
+  price,
   ...props
 }: DefaultGoodsItemsProps) => {
   return (
@@ -22,10 +22,10 @@ export const DefaultGoodsItems = ({
       <InfoWrapper>
         <Subtitle>{subtitle}</Subtitle>
         <Title>{title}</Title>
-        <Amount>
-          {amount}
+        <Price>
+          {price}
           <span>원</span>
-        </Amount>
+        </Price>
       </InfoWrapper>
     </Wrapper>
   );
@@ -65,7 +65,7 @@ const Title = styled.h3`
   -webkit-box-orient: vertical;
 `;
 
-const Amount = styled.p`
+const Price = styled.p`
   padding-top: 8px;
   font-size: 20px;
   line-height: 30px;
