@@ -39,4 +39,3 @@ const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`
   background-color: ${({ rankingIndex }) => (rankingIndex <= 3 ? '#fd7364' : '#bbb')};
 `;
 
-export default RankingGoodsItems;
