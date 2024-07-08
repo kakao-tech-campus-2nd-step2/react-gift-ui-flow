@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { ComponentProps } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Path } from '@/App-core/path';
@@ -6,10 +7,10 @@ import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 
-type Props = {
+interface Props extends ComponentProps<'div'> {
   image: string;
   label: string;
-} & React.HTMLAttributes<HTMLDivElement>;
+}
 
 const CategoryItem = ({ image, label, ...props }: Props) => (
   <ItemWrapper {...props}>
