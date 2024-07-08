@@ -4,7 +4,6 @@ import React from 'react';
 import Footer from '../components/common/Footer/Footer';
 import Header from '../components/common/Header/Header';
 
-// 명시적으로 children을 포함하는 타입을 정의합니다.
 interface LayoutProps {
   children: ReactNode;
   isLoggedIn: boolean;
@@ -12,7 +11,12 @@ interface LayoutProps {
   onLogout: () => void;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, isLoggedIn }) => {
+const Layout: React.FC<LayoutProps> = ({
+  children,
+  isLoggedIn,
+  username: _username,
+  onLogout: _onLogout,
+}) => {
   return (
     <>
       <Header

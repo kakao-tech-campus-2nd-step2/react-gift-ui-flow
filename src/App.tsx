@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Layout from './layouts/Layout';
@@ -8,23 +8,7 @@ import LoginPage from './pages/LoginPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ThemePage from './pages/ThemePage';
 import PrivateRoute from './PrivateRoute';
-
-const App: React.FC = () => {
-  return (
-    <AuthProvider>
-      <Router>
-        <LayoutWrapper>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/theme/:themeKey" element={<ThemePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/my-account" element={<PrivateRoute element={<MyAccountPage />} />} />
-          </Routes>
-        </LayoutWrapper>
-      </Router>
-    </AuthProvider>
-  );
-};
+import { ROUTES } from './routes';
 
 const LayoutWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isLoggedIn, username, logout } = useAuth();
@@ -32,6 +16,49 @@ const LayoutWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     <Layout isLoggedIn={isLoggedIn} username={username} onLogout={logout}>
       {children}
     </Layout>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: ROUTES.HOME,
+    element: (
+      <LayoutWrapper>
+        <HomePage />
+      </LayoutWrapper>
+    ),
+  },
+  {
+    path: ROUTES.THEME,
+    element: (
+      <LayoutWrapper>
+        <ThemePage />
+      </LayoutWrapper>
+    ),
+  },
+  {
+    path: ROUTES.LOGIN,
+    element: (
+      <LayoutWrapper>
+        <LoginPage />
+      </LayoutWrapper>
+    ),
+  },
+  {
+    path: ROUTES.MY_ACCOUNT,
+    element: (
+      <LayoutWrapper>
+        <PrivateRoute element={<MyAccountPage />} />
+      </LayoutWrapper>
+    ),
+  },
+]);
+
+const App: React.FC = () => {
+  return (
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   );
 };
 
