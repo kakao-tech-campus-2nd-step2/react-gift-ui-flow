@@ -3,18 +3,23 @@ import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
+import type { IChangeFilter } from './Filter';
+
 import { Button } from '@/components/common/Button';
 import { GoodsItem } from '@/components/common/GoodsItem';
 import { Container } from '@/components/common/Layout/Container';
 import { Grid } from '@/components/common/Layout/Grid';
-import type { Goods } from '@/constant/GoodsItems';
+import { goodsItems } from '@/constant/GoodsItems';
 
-type Props = {
-  goodsItems: Goods[];
-};
-export const RankingList = ({ goodsItems }: Props) => {
+export const FilteredList = ({ filter }: Pick<IChangeFilter, 'filter'>) => {
   const [more, setMore] = useState(false);
-  const itemsToShow = more ? goodsItems : goodsItems.slice(0, 6);
+
+  const filteredItems = goodsItems.filter((goods) => {
+    return (filter.target === '전체' || goods.filterTarget === filter.target) && goods.filterType === filter.type;
+  });
+  
+  const visibleItems = more ? filteredItems : filteredItems.slice(0, 6);
+
   return (
     <ListWrapper>
       <Container flexDirection="column" justifyContent="center" alignItems="center" maxWidth="1024px">
@@ -25,7 +30,7 @@ export const RankingList = ({ goodsItems }: Props) => {
             padding: 50px 0px;
           `}
         >
-          {itemsToShow.map((item) => (
+          {visibleItems.map((item) => (
             <GoodsItem
               key={item.key}
               imageSrc={item.imageSrc}

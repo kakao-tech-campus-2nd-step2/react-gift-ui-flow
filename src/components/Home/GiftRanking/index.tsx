@@ -1,37 +1,33 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import { RankingFilter } from './RankingFilter';
-import { RankingList } from './RankingList';
+import { Filter } from './Filter';
+import { FilteredList } from './FilteredList';
 
 import { Container } from '@/components/common/Layout/Container';
-import { goodsItems } from '@/constant/GoodsItems';
+import type { TARGET_FILTER_ITEMS, TYPE_FILTER_ITEMS } from '@/constant/Filter';
+
+export type Target = (typeof TARGET_FILTER_ITEMS)[number]['text'];
+export type Type = (typeof TYPE_FILTER_ITEMS)[number]['text'];
 
 export interface IFilter {
-  selectTarget: string;
-  setSelectTarget: React.Dispatch<React.SetStateAction<string>>;
-  selectType: string;
-  setSelectType: React.Dispatch<React.SetStateAction<string>>;
+  target: Target;
+  type: Type;
 }
 
 export const GiftRanking = () => {
-  const [selectTarget, setSelectTarget] = useState<string>('전체');
-  const [selectType, setSelectType] = useState<string>('받고 싶어한');
-  const Items =
-    selectTarget === '전체'
-      ? goodsItems.filter((goods) => goods.filterType === selectType)
-      : goodsItems.filter((goods) => goods.filterTarget === selectTarget && goods.filterType === selectType);
+  const [filter, setFilter] = useState<IFilter>({ target: '전체', type: '받고 싶어한' });
+
+  const changeFilter = ({ target, type }: Partial<IFilter>) => {
+    setFilter((prev) => ({ target: target ?? prev.target, type: type ?? prev.type }));
+  };
+
   return (
     <RankingWrapper>
       <Container flexDirection="column" justifyContent="center" maxWidth="1024px">
         <Title>실시간 급상승 선물랭킹</Title>
-        <RankingFilter
-          selectTarget={selectTarget}
-          setSelectTarget={setSelectTarget}
-          selectType={selectType}
-          setSelectType={setSelectType}
-        />
-        <RankingList goodsItems={Items} />
+        <Filter filter={filter} changeFilter={changeFilter} />
+        <FilteredList filter={filter} />
       </Container>
     </RankingWrapper>
   );

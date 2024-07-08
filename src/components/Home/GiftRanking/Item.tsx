@@ -3,17 +3,17 @@ import styled from '@emotion/styled';
 export interface IItem {
   icon?: string;
   text: string;
-  selectTarget?: string;
-  selectType?: string;
+  targetValue?: string;
+  typeValue?: string;
   onClick?: () => void;
 }
-export const Item = ({ icon, text, selectTarget, onClick }: IItem) => {
+export const Item = ({ icon, text, targetValue, onClick }: IItem) => {
   return (
-    <ItemWrapper>
-      <Icon selectTarget={selectTarget} text={text} onClick={onClick}>
+    <ItemWrapper onClick={onClick}>
+      <Icon targetValue={targetValue} text={text}>
         {icon}
       </Icon>
-      <Text selectTarget={selectTarget} text={text}>
+      <Text targetValue={targetValue} text={text}>
         {text}
       </Text>
     </ItemWrapper>
@@ -31,7 +31,7 @@ const ItemWrapper = styled.div`
     gap: 6px;
   }
 `;
-const Icon = styled.div<Pick<IItem, 'selectTarget' | 'text'>>`
+const Icon = styled.div<Pick<IItem, 'targetValue' | 'text'>>`
   display: flex;
   justify-content: center;
   text-align: center;
@@ -43,7 +43,7 @@ const Icon = styled.div<Pick<IItem, 'selectTarget' | 'text'>>`
   color: white;
   font-weight: bolder;
   font-size: 20px;
-  background-color: ${(props) => (props.selectTarget === props.text ? '#4684E9' : 'rgb(230, 241, 255)')};
+  background-color: ${(props) => (props.targetValue === props.text ? '#4684E9' : 'rgb(230, 241, 255)')};
   transition: background-color 0.2s;
 
   @media screen and (max-width: 768px) {
@@ -54,10 +54,10 @@ const Icon = styled.div<Pick<IItem, 'selectTarget' | 'text'>>`
   }
 `;
 
-const Text = styled.p<Pick<IItem, 'selectTarget' | 'text'>>`
+const Text = styled.p<Pick<IItem, 'targetValue' | 'text'>>`
   font-size: 20px;
-  font-weight: ${(props) => (props.selectTarget === props.text ? 'bold' : '400')};
-  color: ${(props) => (props.selectTarget === props.text ? '#4684E9' : 'black')};
+  font-weight: ${(props) => (props.targetValue === props.text ? 'bold' : '400')};
+  color: ${(props) => (props.targetValue === props.text ? '#4684E9' : 'black')};
   text-align: center;
   transition:
     color 0.2s,
