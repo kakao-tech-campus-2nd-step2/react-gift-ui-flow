@@ -9,7 +9,7 @@ type InputProps = {
   Size: 'sm' | 'md' | 'lg' | 'responsive';
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-function UnderlineTextField({ disabled, invalid, Size, ...rest }: InputProps) {
+function UnderlineTextField({ disabled = false, invalid = false, Size, ...rest }: InputProps) {
   return (
     <input
       disabled={disabled}
@@ -18,10 +18,5 @@ function UnderlineTextField({ disabled, invalid, Size, ...rest }: InputProps) {
     />
   );
 }
-
-UnderlineTextField.defaultProps = {
-  disabled: false,
-  invalid: false,
-};
 
 export default UnderlineTextField;

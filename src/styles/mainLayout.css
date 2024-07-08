@@ -32,6 +32,10 @@
   color: black;
 }
 
+.mainLayout__header__link {
+  color: black;
+}
+
 .mainLayout__footer__frame {
   margin-top: auto;
   background-color: #fafafc;

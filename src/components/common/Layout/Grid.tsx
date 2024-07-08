@@ -7,7 +7,7 @@ type GridProps = {
   children: React.ReactNode;
 };
 
-function Grid({ className, gap, columns, children }: GridProps) {
+function Grid({ className, gap = 0, columns = 6, children }: GridProps) {
   if (typeof columns === 'number') {
     return (
       <div
@@ -45,10 +45,5 @@ function Grid({ className, gap, columns, children }: GridProps) {
     </div>
   );
 }
-
-Grid.defaultProps = {
-  gap: 0,
-  columns: 6,
-};
 
 export default Grid;

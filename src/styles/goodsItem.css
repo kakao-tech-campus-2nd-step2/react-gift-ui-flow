@@ -5,7 +5,7 @@
 .goodsItem__ranking {
   position: absolute;
   margin: 5px;
-  background-color: #fd7363;
+  background-color: #bbbbbb;
   color: white;
   width: 30px;
   height: 30px;
@@ -16,10 +16,15 @@
   font-weight: bold;
 }
 
+.goodsItem__ranking.top {
+  background-color: #fd7363;
+}
+
 .goodsItem__img {
   width: 100%;
   aspect-ratio: 1/1;
   object-fit: cover;
+  border-radius: 5px;
 }
 
 .goodsItem__subtitle {
