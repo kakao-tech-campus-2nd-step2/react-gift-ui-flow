@@ -9,7 +9,7 @@ import { UserInfo } from '@/providers/UserInfoProviders';
 
 export const Login = () => {
   const [name, setName] = useState<string>('');
-  const [pw, setPw] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
   const { setUserName } = useContext(UserInfo);
 
@@ -36,8 +36,8 @@ export const Login = () => {
           type="password"
           placeholder="비밀번호"
           style={{ marginBottom: 50 }}
-          value={pw}
-          onChange={(e) => setPw(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
         <Button onClick={hanldeClick}>로그인</Button>
       </Container>

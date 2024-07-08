@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { breakpoints } from '@/styles/variants';
 interface Situation {
-  key: string;
+  key: 'want' | 'many' | 'wish';
   ment: string;
 }
 const situationGroup: Situation[] = [
@@ -25,7 +25,6 @@ export const SituationCategory = () => {
   const [category, setCategory] = useState('want');
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCategory(e.target.value);
-    console.log(category);
   };
   return (
     <Wrapper>

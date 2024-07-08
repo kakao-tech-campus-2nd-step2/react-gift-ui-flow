@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Grid } from '@/components/common/layouts/Grid';
 
 interface Person {
-  key: string;
+  key: 'all' | 'f' | 'm' | 's';
   category: string;
   ment: string;
 }
@@ -16,7 +16,7 @@ const personGroup: Person[] = [
 ];
 
 export const PersonCategory = () => {
-  const [category, setCategory] = useState<string>('all');
+  const [category, setCategory] = useState('all');
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCategory(e.target.value);
   };
