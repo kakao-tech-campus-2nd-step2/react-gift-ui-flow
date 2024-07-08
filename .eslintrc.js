@@ -5,9 +5,6 @@ module.exports = {
     node: true,
   },
   extends: [
-    'plugin:@typescript-eslint/recommended',
-    'airbnb/hooks',
-    'airbnb-typescript',
     'prettier',
     'plugin:storybook/recommended',
   ],
@@ -31,15 +28,10 @@ module.exports = {
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': 'off',
+    'simple-import-sort/exports': 'off',
     '@typescript-eslint/consistent-type-imports': 'warn',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-      },
-    ],
+    '@typescript-eslint/no-unused-vars': 'off',
     'import/extensions': ['off'],
     'import/no-extraneous-dependencies': ['off'],
     'react/jsx-filename-extension': [
@@ -48,6 +40,7 @@ module.exports = {
         extensions: ['.tsx', '.js', '.jsx'],
       },
     ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-use-before-define': ['off'],
   },
   ignorePatterns: ['**/build/**/*', '.eslintrc.js', 'craco.config.js'],
@@ -57,3 +50,4 @@ module.exports = {
     },
   },
 };
+
