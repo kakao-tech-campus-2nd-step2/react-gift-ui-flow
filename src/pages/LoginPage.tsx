@@ -2,23 +2,26 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/common/Button';
+import PATH from '@/components/constants';
+import { useAuth } from '@/components/AuthContext';
 
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const location = useLocation();
-
+  const { login } = useAuth();
+  
   const handleLogin = () => {
     if (!username || !password) {
       alert('이름과 비밀번호를 입력해주세요.');
       return;
     }
     // 로그인 성공시, authToken key 저장
-    sessionStorage.setItem('authToken', username);
+    login(username);
     // alert('로그인 성공');
     // 직전 페이지로 Redirect 되도록 useLocation 사용
-    navigate(location.state?.from || '/');
+    navigate(location.state?.from?.pathname || PATH.MAINPAGE);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

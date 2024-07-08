@@ -3,12 +3,21 @@ import Footer from '@/components/common/Footer/Footer';
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import PATH from '@/components/constants';
+import { useAuth } from '@/components/AuthContext';
+import { useEffect, useState } from 'react';
 
 export default function MyPage() {
+  const { logout } = useAuth();
   const navigate = useNavigate();
+  const [userName, setUsername] = useState(sessionStorage.getItem('authToken'));
+
+  useEffect(() => {
+    setUsername(sessionStorage.getItem('authToken'));
+  }, []);
 
   const handleLogoutButton = () => {
     // alert('logout');
+    logout();
     navigate(PATH.MAINPAGE);
   };
 
@@ -17,7 +26,7 @@ export default function MyPage() {
       <Header />
       <MainContent>
         <MyPageContent>
-          <h1>님 안녕하세요!</h1>
+          <h1>{userName}님 안녕하세요!</h1>
           <LogoutButton onClick={handleLogoutButton}>로그아웃</LogoutButton>
         </MyPageContent>
       </MainContent>
