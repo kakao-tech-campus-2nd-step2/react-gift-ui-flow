@@ -18,16 +18,20 @@ const MenuButton = ({ icon, text, active, onClick }: MenuButtonProps) => {
 
 export default MenuButton
 
-const MenuButtonWrapper = styled.div`
+const MenuButtonWrapper = styled.button`
   width: 230px;
   height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
-const MenuButtonIcon = styled.button<{ active: boolean }>`
+const MenuButtonIcon = styled.div<{ active: boolean }>`
   outline: none;
   width: 60px;
   height: 60px;
@@ -42,7 +46,7 @@ const MenuButtonIcon = styled.button<{ active: boolean }>`
   transition: background-color 200ms ease 0s;
 `;
 
-const MenuButtonText = styled.p<{ active: boolean }>`
+const MenuButtonText = styled.div<{ active: boolean }>`
   cursor: pointer;
   padding: 10px 0px 6px;
   color: ${(props) => (props.active ? 'rgb(70,132,233)' : '#000')};
