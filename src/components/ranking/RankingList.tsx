@@ -1,27 +1,27 @@
 
 import styled from '@emotion/styled';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/Layouts/Grid/Grid';
 
-export default function GiftList() {
+const GiftList = () => {
   const [showMore, setShowMore] = useState(false);
 
-  const baseItem = {
+  const baseItem = useMemo(() => ({
     imageSrc:
       'https://st.kakaocdn.net/product/gift/product/20231030175450_53e90ee9708f45ffa45b3f7b4bc01c7c.jpg',
     subtitle: 'BBQ',
     title: 'BBQ 양념치킨 + 크림치즈볼 + 콜라1.25L',
     amount: 29000,
-  };
+  }), []);
 
-  const items = Array(21)
+  const items = useMemo(() => Array(21)
     .fill(baseItem)
-    .map((item, index) => ({ ...item, rankingIndex: index + 1 }));
+    .map((item, index) => ({ ...item, rankingIndex: index + 1 })), [baseItem]);
 
-  const initialItems = items.slice(0, 6);
-  const moreItems = items.slice(6, 21);
+  const initialItems = useMemo(() => items.slice(0, 6), [items]);
+  const moreItems = useMemo(() => items.slice(6, 21), [items]);
 
   const onMoreClick = () => {
     setShowMore(!showMore);
@@ -31,25 +31,25 @@ export default function GiftList() {
     <Wrapper>
       <EmptyField />
       <Grid gap={25} columns={6}>
-        {initialItems.map((item, index) => (
+        {initialItems.map(({ imageSrc, subtitle, title, amount, rankingIndex }, index) => (
           <RankingGoodsItems
             key={index}
-            rankingIndex={item.rankingIndex}
-            imageSrc={item.imageSrc}
-            subtitle={item.subtitle}
-            title={item.title}
-            amount={item.amount}
+            rankingIndex={rankingIndex}
+            imageSrc={imageSrc}
+            subtitle={subtitle}
+            title={title}
+            amount={amount}
           />
         ))}
         {showMore &&
-          moreItems.map((item, index) => (
+          moreItems.map(({ imageSrc, subtitle, title, amount, rankingIndex }, index) => (
             <RankingGoodsItems
               key={index + 6}
-              imageSrc={item.imageSrc}
-              subtitle={item.subtitle}
-              title={item.title}
-              amount={item.amount}
-              rankingIndex={item.rankingIndex}
+              imageSrc={imageSrc}
+              subtitle={subtitle}
+              title={title}
+              amount={amount}
+              rankingIndex={rankingIndex}
             />
           ))}
       </Grid>
@@ -58,7 +58,10 @@ export default function GiftList() {
       </MoreButtonWrapper>
     </Wrapper>
   );
-}
+};
+
+export default GiftList;
+
 
 const Wrapper = styled.div`
   max-width: 1024px;
@@ -92,6 +95,10 @@ const MoreButton = styled.button`
   border-radius: 4px;
   display: flex;
   justify-content: center;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 const EmptyField = styled.div`
