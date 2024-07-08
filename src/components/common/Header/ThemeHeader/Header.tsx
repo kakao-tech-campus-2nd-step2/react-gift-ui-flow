@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
+import { themes } from '@/data/sectionThemes';
 import { breakpoints, colors } from '@/styles/variants';
-import { themes } from '@/utils/types/sectionThemes';
 
 import { Container } from '../../layouts/Container';
 

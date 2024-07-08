@@ -2,6 +2,8 @@ import type { ChangeEvent, FormEvent, MouseEvent } from 'react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { ROUTE_PATH } from '@/routes/constants';
+
 export const useAuth = () => {
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ export const useAuth = () => {
     e.preventDefault();
     sessionStorage.setItem('authToken', username);
     setIsLogin(true);
-    navigate(-1);
+    navigate(ROUTE_PATH.PREVIOUS);
   };
 
   const handleLogout = (e: MouseEvent<HTMLButtonElement>) => {
@@ -34,7 +36,7 @@ export const useAuth = () => {
     if (isLogin) {
       sessionStorage.removeItem('authToken');
       setIsLogin(false);
-      navigate('/');
+      navigate(ROUTE_PATH.MAIN_PAGE);
     }
   };
   return {

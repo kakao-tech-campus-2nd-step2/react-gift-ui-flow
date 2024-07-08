@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
+import { ROUTE_PATH } from '@/routes/constants';
 import { colors, fontsizes } from '@/styles/variants';
 import { useAuthContext } from '@/utils/hooks/useAuthContext';
 
@@ -11,13 +12,13 @@ export const Header = () => {
   const { isAuthenticated } = useAuthContext();
 
   const moveToMain = () => {
-    navigate('/');
+    navigate(ROUTE_PATH.MAIN_PAGE);
   };
   const moveToLogin = () => {
-    navigate('/login');
+    navigate(ROUTE_PATH.LOGIN_PAGE);
   };
   const moveToMyAccount = () => {
-    navigate('/my-account');
+    navigate(ROUTE_PATH.MYACCOUNT_PAGE);
   };
   return (
     <Wrapper>

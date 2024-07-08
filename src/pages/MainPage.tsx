@@ -8,7 +8,7 @@ import { ThemeSection } from '@/components/section/Theme/ThemeSection';
 const MainPage = () => {
   return (
     <>
-      <Header></Header>
+      <Header />
       <Wrapper>
         <ThemeSection />
         <RankingSection />

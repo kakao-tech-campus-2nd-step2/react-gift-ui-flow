@@ -1,5 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { ROUTE_PATH } from '@/routes/constants';
 interface AuthContextType {
   authToken: string | null; //토큰
   isAuthenticated: boolean; //인증 유무
@@ -39,13 +41,15 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     setAuthToken(id);
     setIsAuthenticated(true);
     setUsername(id);
-    navigate(-1);
+    navigate(ROUTE_PATH.PREVIOUS);
   };
 
   const logout = () => {
     sessionStorage.removeItem('authToken');
     setIsAuthenticated(false);
-    navigate('/');
+    setAuthToken(null);
+    setUsername(null);
+    navigate(ROUTE_PATH.MAIN_PAGE);
   };
 
   return (

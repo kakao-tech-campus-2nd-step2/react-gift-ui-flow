@@ -1,14 +1,12 @@
-import type { ReactNode } from 'react';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
 import { useAuthContext } from '@/utils/hooks/useAuthContext';
 
-interface Props {
-  children: ReactNode;
-}
+import { ROUTE_PATH } from './constants';
 
-export const AuthRoute = ({ children }: Props) => {
+export const AuthRoute = () => {
   const { isAuthenticated, loading } = useAuthContext();
   const navigate = useNavigate();
 
@@ -17,9 +15,9 @@ export const AuthRoute = ({ children }: Props) => {
       return;
     }
     if (!isAuthenticated) {
-      navigate('/login');
+      navigate(ROUTE_PATH.LOGIN_PAGE);
     }
   }, [isAuthenticated, navigate, loading]);
 
-  return <>{children}</>;
+  return isAuthenticated ? <Outlet /> : <Navigate to={ROUTE_PATH.LOGIN_PAGE} />;
 };
