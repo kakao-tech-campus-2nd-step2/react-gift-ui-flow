@@ -14,15 +14,12 @@ export const useAuth = () => {
     setIsLogin(auth !== null);
   }, []);
 
-  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
+  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setUsername(e.target.value);
+  };
 
-    if (name === 'username') {
-      setUsername(value);
-    }
-    if (name === 'password') {
-      setPassword(value);
-    }
+  const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value);
   };
 
   const handleLogin = (e: FormEvent) => {
@@ -43,7 +40,8 @@ export const useAuth = () => {
   return {
     username,
     password,
-    handleInputChange,
+    handleUsernameChange,
+    handlePasswordChange,
     handleLogin,
     handleLogout,
     isLogin,

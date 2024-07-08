@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
-import { breakpoints } from '@/styles/variants';
 import ITEMS from '@/components/section/Theme/types/items';
+import { breakpoints } from '@/styles/variants';
 
 type ThemeSectionProps = {
   gap?: number;

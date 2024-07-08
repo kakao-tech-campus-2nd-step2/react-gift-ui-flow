@@ -1,4 +1,5 @@
-import { useEffect, ReactNode } from 'react';
+import type { ReactNode } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthContext } from '@/utils/hooks/useAuthContext';
