@@ -7,18 +7,16 @@ const Header = () => {
   const { authToken } = useAuth();
   const navigate = useNavigate();
 
-  const handleLink = (path: string) => {
-    navigate(path);
-  };
   return (
     <header>
-      <h2 onClick={() => handleLink('/')}>선물하기</h2>
+      <h2 onClick={() => navigate('/')}>선물하기</h2>
       {authToken ? (
-        <div className={styles.login} onClick={() => handleLink('/my-account')}>
+        <div className={styles.login} onClick={() => navigate('/my-account')}>
           내 계정
         </div>
       ) : (
-        <div className={styles.login} onClick={() => handleLink('/login')}>
+        <div className={styles.login} onClick={() => navigate('/login')}>
+
           로그인
         </div>
       )}
