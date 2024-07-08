@@ -1,4 +1,3 @@
-import React from 'react';
 import { useParams } from 'react-router-dom';
 
 import ThemeHeader from '../Theme/ThemeHeader';
@@ -93,7 +92,6 @@ const ThemePage: React.FC = () => {
         description={theme.description}
         backgroundColor={theme.backgroundColor}
       />
-      <h1>{theme.label} 페이지</h1>
     </div>
   );
 };

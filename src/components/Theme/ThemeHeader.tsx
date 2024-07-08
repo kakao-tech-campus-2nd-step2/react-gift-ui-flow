@@ -1,7 +1,5 @@
 import './ThemeHeader.css';
 
-import React from 'react';
-
 interface ThemeHeaderProps {
   label: string;
   title: string;

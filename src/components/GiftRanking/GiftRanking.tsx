@@ -1,7 +1,5 @@
 import './GiftRanking.css';
 
-import React from 'react';
-
 import useGiftRanking from './useGiftRanking';
 
 const GiftRanking: React.FC = () => {
