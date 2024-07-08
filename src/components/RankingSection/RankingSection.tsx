@@ -182,6 +182,7 @@ const RankingItemContainer = styled.div`
   grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   padding: 40px 0;
+  gap: 20px
 `;
 
 const RankingItem = styled.div`
