@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import { AuthProvider } from './store/AuthProvider';
 
-import { MainLayout } from '@/components/feature/Layout/MainLayout';
+import { MainLayout } from '@/components/Layout/MainLayout';
 import LoginPage from '@/pages/LoginPage';
 import MainPage from '@/pages/MainPage';
 import MyAccountPage from '@/pages/MyAccountPage';

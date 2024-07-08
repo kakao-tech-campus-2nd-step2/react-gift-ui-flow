@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
+import type { IFilter } from '.';
 import { FilterDetailList } from './FilterDetailList';
 import { FilterList } from './FilterList';
-import type { IFilter } from './GiftRanking';
 
 import { Container } from '@/components/common/Layout/Container';
 

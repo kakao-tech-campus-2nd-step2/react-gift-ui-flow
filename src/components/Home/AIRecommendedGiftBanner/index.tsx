@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import { Container } from '@/components/common/Layout/Container';
 
-export const AIGift = () => {
+export const AIRecommendedGiftBanner = () => {
   return (
     <AIGiftWrapper>
       <Container maxWidth="1024px">

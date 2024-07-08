@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import type { IFilter } from './GiftRanking';
+import type { IFilter } from '.';
 import { Item } from './Item';
 
 export const FilterList = ({ selectTarget, setSelectTarget }: Pick<IFilter, 'selectTarget' | 'setSelectTarget'>) => {
