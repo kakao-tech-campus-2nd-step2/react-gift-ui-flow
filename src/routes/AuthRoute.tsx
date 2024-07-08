@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Navigate, Outlet } from 'react-router-dom';
 
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 import { ROUTE_PATH } from './constants';
 

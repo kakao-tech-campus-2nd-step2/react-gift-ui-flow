@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 
+import { useAuthContext } from '@/hooks/useAuthContext';
 import { ROUTE_PATH } from '@/routes/constants';
 import { colors, fontsizes } from '@/styles/variants';
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
 
 import { Container } from '../layouts/Container';
 

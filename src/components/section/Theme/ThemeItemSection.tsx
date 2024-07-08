@@ -4,7 +4,7 @@ import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 import { breakpoints } from '@/styles/variants';
-import { defaultItems } from '@/utils/hooks/useCreateItems';
+import { defaultItems } from '@/data/giftItems';
 
 export const ThemeItemSection = () => {
   const responsiveColumns = {

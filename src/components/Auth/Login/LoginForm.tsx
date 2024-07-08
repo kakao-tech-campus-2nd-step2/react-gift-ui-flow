@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 const LoginForm = () => {
   const { login } = useAuthContext();

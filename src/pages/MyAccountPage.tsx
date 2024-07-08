@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Button } from '@/components/common/Button';
 import { Footer } from '@/components/common/Footer/Footer';
 import { Header } from '@/components/common/Header/Header';
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 const MyAccountPage = () => {
   const { username, logout } = useAuthContext();
