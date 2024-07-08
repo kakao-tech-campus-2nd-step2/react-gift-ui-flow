@@ -9,15 +9,14 @@ import { ROUTE_PATHS } from '../Routes/constants';
 
 export const Header = () => {
   const { userName } = useContext(UserInfo);
-  const auth = sessionStorage.getItem('authToken');
   return (
     <Wrapper>
       <Cotainer>
         <Logo>
           <Link to={ROUTE_PATHS.ROOT}>선물하기</Link>
         </Logo>
-        <Link to={userName === auth ? '/my-account' : '/login'}>
-          {userName === auth ? '내 계정' : '로그인'}
+        <Link to={userName !== '' ? '/my-account' : '/login'}>
+          {userName !== '' ? '내 계정' : '로그인'}
         </Link>
       </Cotainer>
     </Wrapper>

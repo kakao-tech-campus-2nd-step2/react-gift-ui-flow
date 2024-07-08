@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { Button } from '@/components/common/Button';
 import { breakpoints } from '@/styles/variants';
 
-export const Badge = () => {
+export const SubMent = () => {
   return (
-    <Wrapper>
+    <Container>
       <Button
         style={{
           padding: '10px 0',
@@ -18,10 +18,10 @@ export const Badge = () => {
         <Subtitle>AI가 추천하는 선물</Subtitle>
         <Maintitle>선물을 추천받고 싶은 친구를 선택해주세요.</Maintitle>
       </Button>
-    </Wrapper>
+    </Container>
   );
 };
-const Wrapper = styled.div`
+const Container = styled.div`
   max-width: ${breakpoints.md};
   margin: 0 auto;
 `;

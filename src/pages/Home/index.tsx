@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import { Badge } from './Badge';
 import { MainMent } from './MainMent';
 import { Ranking } from './Ranking';
+import { SubMent } from './SubMent';
 import { Theme } from './Theme';
 
 export const Home = () => {
@@ -10,7 +10,7 @@ export const Home = () => {
     <Wrapper>
       <MainMent />
       <Theme />
-      <Badge />
+      <SubMent />
       <Ranking />
     </Wrapper>
   );

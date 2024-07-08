@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { Home } from '@/pages/Home';
 import { Login } from '@/pages/Login';
@@ -12,16 +12,15 @@ import { ROUTE_PATHS } from './constants';
 
 export const RoutesPage = () => {
   const { userName } = useContext(UserInfo);
-  const auth = sessionStorage.getItem('authToken');
   return (
     <Routes>
       <Route path={ROUTE_PATHS.ROOT} element={<Layout />}>
         <Route path={ROUTE_PATHS.ROOT} element={<Home />} />
         <Route path={ROUTE_PATHS.THEME} element={<Theme />} />
-        {userName === auth ? (
+        {userName !== '' ? (
           <Route path={ROUTE_PATHS.MYPAGE} element={<MyAccount />} />
         ) : (
-          <Route path={ROUTE_PATHS.MYPAGE} element={<Login />} />
+          <Route path="*" element={<Navigate replace to={ROUTE_PATHS.LOGIN} />} />
         )}
       </Route>
       <Route path={ROUTE_PATHS.LOGIN} element={<Login />} />

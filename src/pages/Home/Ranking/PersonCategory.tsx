@@ -19,7 +19,6 @@ export const PersonCategory = () => {
   const [category, setCategory] = useState<string>('all');
   const handleCategory = (e: React.ChangeEvent<HTMLInputElement>) => {
     setCategory(e.target.value);
-    console.log(category);
   };
   return (
     <Grid columns={4}>

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
+import { ROUTE_PATHS } from '@/components/Routes/constants';
 import { UserInfo } from '@/providers/UserInfoProviders';
 
 export const Login = () => {
@@ -15,7 +16,7 @@ export const Login = () => {
   const hanldeClick = () => {
     sessionStorage.setItem('authToken', name);
     setUserName(name);
-    navigate(-1);
+    navigate(ROUTE_PATHS.ROOT);
   };
 
   return (
@@ -54,9 +55,6 @@ const Logo = styled.img`
   width: 88px;
 `;
 const Container = styled.div`
-  // display: flex;
-  // flex-direction: column;
-  // gap: 40px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   padding: 60px 52px;
 `;
