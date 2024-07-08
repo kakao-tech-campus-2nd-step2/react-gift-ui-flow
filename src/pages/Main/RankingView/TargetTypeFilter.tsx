@@ -31,15 +31,15 @@ const TargetTypeFilter: React.FC<Props> = ({ target, selectedTarget, onClick }: 
     };
 
     return (
-        <FilterBtn target={target} selectedTarget={selectedTarget} onClick={onClick}>
+        <FilterButton target={target} selectedTarget={selectedTarget} onClick={onClick}>
             <div>{contentByTarget[target].icon}</div>
             <p>{contentByTarget[target].text}</p>
-        </FilterBtn>
+        </FilterButton>
     );
 };
 export default TargetTypeFilter;
 
-const FilterBtn = styled.button<Omit<Props, 'onClick'>>`
+const FilterButton = styled.button<Omit<Props, 'onClick'>>`
     div {
         ${({ target, selectedTarget }) =>
             target === selectedTarget

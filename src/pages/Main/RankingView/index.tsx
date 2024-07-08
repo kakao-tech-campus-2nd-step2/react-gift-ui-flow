@@ -73,7 +73,7 @@ export default () => {
                 rankType={rankType}
                 showMoreDetail={showMoreDetail}
             />
-            <Container maxWidth="400px" className={detailBtnStyle}>
+            <Container maxWidth="400px" className={detailButtonStyle}>
                 <Button theme="outline" onClick={() => setShowMoreDetail((value) => !value)}>
                     {showMoreDetail ? '접기' : '더보기'}
                 </Button>
@@ -104,7 +104,7 @@ const rankTypeFilterContainerStyle = css`
     }
     background-color: ${colors.lightBlue};
 `;
-const detailBtnStyle = css`
+const detailButtonStyle = css`
     margin-top: 20px;
     margin-bottom: 50px;
 `;

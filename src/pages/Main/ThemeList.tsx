@@ -8,7 +8,7 @@ import { Grid } from '@/components/common/layouts/Grid';
 import { themeKeys } from '../Theme';
 
 export default () => {
-    const ThemeBtn = ({ themeKey }: { themeKey: string }) => {
+    const ThemeButton = ({ themeKey }: { themeKey: string }) => {
         const divStyle = css`
             display: flex;
             flex-direction: column;
@@ -38,7 +38,7 @@ export default () => {
     return (
         <Grid columns={{ initial: 2, xs: 4, sm: 4, md: 6 }}>
             {Object.keys(themeKeys).map((themeKey) => (
-                <ThemeBtn key={themeKey} themeKey={themeKey} />
+                <ThemeButton key={themeKey} themeKey={themeKey} />
             ))}
         </Grid>
     );

@@ -30,7 +30,7 @@ export default () => {
                 </Container>
             </section>
             <Container>
-                <Button className={aiRecommendBtnStyle}>
+                <Button className={aiRecommendButtonStyle}>
                     <div
                         className={css`
                             color: #858585;
@@ -84,7 +84,7 @@ const selectRecipientStyle = css`
         height: 60px;
     }
 `;
-const aiRecommendBtnStyle = css`
+const aiRecommendButtonStyle = css`
     margin: 30px 0;
     padding: 10px 0;
     flex-direction: column;
