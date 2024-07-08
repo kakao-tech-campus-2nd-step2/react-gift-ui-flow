@@ -6,21 +6,18 @@ import { useAuth } from '@/components/AuthContext';
 const Header: React.FC = () => {
   const navigate = useNavigate();
   const { isAuth } = useAuth();
-  const handleNavigate = (path: string) => {
-    navigate(path);
-  };
 
   return (
     <Wrapper>
       <HeaderContainer>
         <HeaderNavigator className="inner">
-          <GiftText onClick={() => handleNavigate('/')}>
+          <GiftText onClick={() => navigate('/')}>
             <HeaderLogo src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png" alt="카카오 선물하기 로고" />
           </GiftText>
           {isAuth ? (
-            <MyAccount onClick={() => handleNavigate('/my-account')}>내 계정</MyAccount>
+            <MyAccount onClick={() => navigate('/my-account')}>내 계정</MyAccount>
           ) : (
-            <Login onClick={() => handleNavigate('/login')}>로그인</Login>
+            <Login onClick={() => navigate('/login')}>로그인</Login>
           )}
         </HeaderNavigator>
       </HeaderContainer>
