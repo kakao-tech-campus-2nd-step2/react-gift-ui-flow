@@ -1,6 +1,22 @@
 import styled from '@emotion/styled';
 
-export const Header: React.FC = () => {
+import { useNavigate } from 'react-router-dom';
+
+import { useAuth } from '@/auth/AuthContext';
+
+export const Header = () => {
+  const navigate = useNavigate();
+  const { authToken, logout } = useAuth();
+
+  const handleLoginClick = () => {
+    if (authToken) {
+      logout();
+      navigate('/login');
+    } else {
+      navigate('/login');
+    }
+  };
+
   return (
     <StyledHeader>
       <HeaderContainer>
@@ -11,9 +27,11 @@ export const Header: React.FC = () => {
               alt="카카오 선물하기 로고"
             ></Logo>
           </a>
-          <LoginContainer>
-            <LoginText>로그인</LoginText>
-          </LoginContainer>
+          {authToken ? (
+            <Button onClick={() => navigate('/my-account')}>내 계정</Button>
+          ) : (
+            <Button onClick={handleLoginClick}>로그인</Button>
+          )}
         </NavContainer>
       </HeaderContainer>
     </StyledHeader>
@@ -26,16 +44,14 @@ const StyledHeader = styled.header`
   width: 100%;
   max-width: 100vw;
   height: 54px;
-  background-color: rgb(255, 255, 255);
+  background-color: #fff;
   padding: 0px 16px;
 `;
 
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
-  -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
   align-items: center;
 `;
 
@@ -44,9 +60,7 @@ const NavContainer = styled.div`
   max-width: 1024px;
   display: flex;
   flex-direction: row;
-  -webkit-box-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
   align-items: center;
 `;
 
@@ -54,13 +68,9 @@ const Logo = styled.img`
   height: 54px;
 `;
 
-const LoginContainer = styled.div``;
-
-const LoginText = styled.p`
-  -webkit-box-align: center;
+const Button = styled.p`
   align-items: center;
   font-size: 14px;
-  color: rgb(0, 0, 0);
+  color: #000;
   text-decoration: none;
-  cursor: pointer;
 `;
