@@ -1,20 +1,16 @@
-# react-gift-react-foundation
-FE 카카오 선물하기 1주차 과제: React 기초
+## Week 2 - Step 3
 
-### Week1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+질문 1. CRA 기반의 SPA프로젝트에서 React Router를 사용하지 않는다면 어떤 문제가 발생하나요?
 
-#### Requirements
-- [x] 1주차 Style 부분 코드리뷰 반영
-    - [x] Components 안에 있는 App.tsx 옮기기
-    - [x] css module 대신 emotion 스타일 라이브러리를 tsx에 추가
-    - [x] 컴포넌트 별로 폴더 구조 변경
-    - [x] 통일성을 위해 style 코드의 storybook이라는 prefix 사용한 부분 제거
-- [x] 불필요한 stories 폴더 전체 제거
-- [x] rankingIndex의 여부로 isRanking을 대체
-- [x] 재할당 가능한 let을 대신하는 themeStyle 객체 및 스타일 수정
-- [x] theme별 primary/secondary 스타일 추가
-- [x] 예측가능성을 고려한 label -> children 변경
-- [x] 통일성과 올바른 기능 작동을 위한 Grid style 코드 수정
-- [x] ratio 완벽하게 처리하는 로직 개선
-- [x] radius 완벽하게 처리하는 로직 개선
-- [x] button tag의 모든 prop을 받을 수 있도록 extends로 타입을 확장 및 Omit 활용
+- 라우팅 기능이 없다면 전통적인 웹 페이지의 방식을 쓸 때처럼 다른 페이지로 이동할 때마다 서버에서 리소스를 전달받아야 해서 트래픽이나 서버 부하 등과 문제가 생길 수 있을 것입니다.
+- 여러 라우팅 tool 중 React Router를 쓰지 않는다면 리치 라우터나 Next.js 등 다른 라우터를 쓰면 되겠지만, 가장 보편적인 방법을 쓰지 않는 만큼 다른 라이브러리를 사용할 때 솔직히 에러를 해결하기 쉽지 않을 것 같습니다…ㅎㅎ
+
+질문 2. 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (로그인을 제외한 예시와 이유를 함께 적어주세요.)
+
+- 대표적으로 다크 모드/라이트 모드가 있다고 생각합니다. Context나 Redux는 상위 Props의 내용이 중요하지 않을 때, Props Drilling 해결하기 위해 나왔습니다. 따라서 이는 주로 부모 props와 관련이 크게 없는 간단한 모드를 변경할 때 사용하면 좋겠다고 생각했습니다.
+
+
+질문 3. Local Storage, Session Storage 와 Cookies의 차이가 무엇이며 각각 어떨때 사용하면 좋을까요?
+- Local Storage는 브라우저에 데이터를 영구적으로 저장한다는 차이점이 있습니다. 따라서 브라우저를 닫고 다시 열어도, 탭간에도 데이터가 유지 됩니다. 다크 모드를 설정해야 할 때 이용하면 좋겠다고 생각했습니다.
+- Session Storage는 브라우저 세션 동안만 데이터를 저장합니다. 브라우저를 닫았다 열어도, 탭간에도 데이터가 유지되지 않습니다. 따라서 데이터가 쌓일 게 많은 환경이라면, 효율성을 위해 필요한 데이터를 저장해서 사용하면 좋을 것 같습니다.
+- Cookies는 서버와 http 요청을 할 때 자동으로 전송되는 데이터입니다. 따라서 채팅 기능에서 서버가 사용자를 식별할 때 쿠키를 많이 사용할 것 같습니다.
