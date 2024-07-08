@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-shadow */
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
@@ -135,6 +136,12 @@ const products: Product[] = [
   },
 ];
 
+const filterProducts = (products: Product[], category: string, type: string) => {
+  return products.filter(
+    (product) => (category === 'all' || product.category === category) && product.type === type,
+  );
+};
+
 const ProductList = ({
   activeCategory,
   activeType,
@@ -143,15 +150,12 @@ const ProductList = ({
   activeType: string;
 }) => {
   const [visibleProducts, setVisibleProducts] = useState<number>(6);
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(() =>
+    filterProducts(products, activeCategory, activeType),
+  );
 
   useEffect(() => {
-    const filtered = products.filter(
-      (product) =>
-        (activeCategory === 'all' || product.category === activeCategory) &&
-        product.type === activeType,
-    );
-    setFilteredProducts(filtered);
+    setFilteredProducts(filterProducts(products, activeCategory, activeType));
     setVisibleProducts(6); // 필터가 바뀔 때 처음 6개만 보이도록 설정
   }, [activeCategory, activeType]);
 
