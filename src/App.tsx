@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Layout from './layouts/Layout';
@@ -6,8 +7,9 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ThemePage from './pages/ThemePage';
+import PrivateRoute from './PrivateRoute';
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <AuthProvider>
       <Router>
@@ -31,12 +33,6 @@ const LayoutWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) =>
       {children}
     </Layout>
   );
-};
-
-const PrivateRoute: React.FC<{ element: React.ReactElement }> = ({ element }) => {
-  const { isLoggedIn } = useAuth();
-  const location = useLocation();
-  return isLoggedIn ? element : <Navigate to="/login" replace state={{ from: location }} />;
 };
 
 export default App;
