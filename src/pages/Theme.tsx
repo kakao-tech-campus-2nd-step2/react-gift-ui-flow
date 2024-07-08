@@ -1,7 +1,5 @@
-//import React from 'react'
-
-import './Theme.css';
-
+/** @jsxImportSource @emotion/react */
+import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
 import Footer from '@/components/common/Footer';
@@ -10,6 +8,33 @@ import Header, { HeaderSubtitle, HeaderTitle } from '@/components/common/Header'
 import SubHeader from '@/components/common/Header/SubHeader';
 
 import ranking01 from '../images/ranking01.png';
+
+
+const ThemePage = styled.div`
+  width: 100%;
+`;
+
+const HeaderContainer = styled.div`
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+`;
+
+const ThemeContainer = styled.div`
+  padding-top: 64px;
+`;
+
+const ThemeItemContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  gap: 20px;
+  padding: 40px calc(8% + 100px);
+  margin-bottom: 100px;
+`;
+
+const ThemeItem = styled.div``;
+
 
 const Theme = () => {
   // 21개 아이템 더미데이터 생성
@@ -23,7 +48,6 @@ const Theme = () => {
         amount: 29000,
         imageSrc: ranking01,
       });
-      //dummyItems.push({ name: `Product ${i}`, price: 29000 + i, imageUrl: {image${i}} });
     }
     return dummyItems;
   };
@@ -31,8 +55,8 @@ const Theme = () => {
   const items = generateDummyItems();
 
   return (
-    <div className="ThemePage">
-      <div className="header">
+    <ThemePage>
+      <HeaderContainer>
         <Header>
           <Link to={'/'}>
             <HeaderTitle>선물하기</HeaderTitle>
@@ -41,29 +65,29 @@ const Theme = () => {
             <HeaderSubtitle>로그인</HeaderSubtitle>
           </Link>
         </Header>
-      </div>
-      <div className="themeContainer">
+      </HeaderContainer>
+      <ThemeContainer>
         <SubHeader
           label={'가벼운 선물'}
           title={'예산은 가볍게, 감동은 무겁게❤️'}
           description={'당신의 센서를 뽐내줄 부담 없는 선물'}
           backgroundColor={'#4C4C4C'}
         />
-        <div className="themeItemContainer">
-          {items.map((item) => (
-            <div className="themeItem">
+        <ThemeItemContainer>
+          {items.map((item, index) => (
+            <ThemeItem key={index}>
               <DefaultGoodsItems
                 imageSrc={item.imageSrc}
                 subtitle={item.subtitle}
                 title={item.title}
                 amount={item.amount}
               />
-            </div>
+            </ThemeItem>
           ))}
-        </div>
-      </div>
+        </ThemeItemContainer>
+      </ThemeContainer>
       <Footer title="카카오톡 선물하기" />
-    </div>
+    </ThemePage>
   );
 };
 

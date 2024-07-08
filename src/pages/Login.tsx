@@ -1,11 +1,40 @@
-import './Login.css';
-
+/** @jsxImportSource @emotion/react */
+import styled from '@emotion/styled';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
 import { useAuth } from '@/context/AuthContext';
+
+const LoginPage = styled.div`
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Title = styled.div`
+  font-size: 35px;
+`;
+
+const Container = styled.div`
+  width: 450px;
+  border: 1px solid #ddd;
+  padding: 50px;
+  margin: 20px;
+`;
+
+const TextField = styled(UnderlineTextField)`
+  margin-bottom: 10px;
+`;
+
+const ButtonLogin = styled(Button)`
+  margin-top: 40px;
+`;
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,26 +59,25 @@ const Login = () => {
   };
 
   return (
-    <div className="Login">
-      <div className="title">Kakao</div>
-      <div className="container">
-        <UnderlineTextField
+    <LoginPage>
+      <Title>Kakao</Title>
+      <Container>
+        <TextField
           placeholder="이름"
           value={id}
           onChange={(e) => setId(e.target.value)}
-          className="textFieldId"
         />
-        <UnderlineTextField
+        <TextField
           placeholder="비밀번호"
           value={pw}
           onChange={(e) => setPw(e.target.value)}
-          className="textFieldPw"
+          type="password"
         />
-        <Button theme="kakao" size="responsive" onClick={handleLogin} className="buttonLogin">
+        <ButtonLogin theme="kakao" size="responsive" onClick={handleLogin} className="buttonLogin">
           <div>로그인</div>
-        </Button>
-      </div>
-    </div>
+        </ButtonLogin>
+      </Container>
+    </LoginPage>
   );
 };
 
