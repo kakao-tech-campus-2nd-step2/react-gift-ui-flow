@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from 'react';
 
 interface AuthContextType {
   isAuthenticated: boolean;
-  login: (username: string) => void;
+  login: (id: string) => void;
   logout: () => void;
 }
 
@@ -25,9 +25,9 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const isAuthenticated = !!authToken;
 
   //로그인 함수
-  const login = (username: string) => {
-    sessionStorage.setItem('authToken', username);
-    setAuthToken(username);
+  const login = (id: string) => {
+    sessionStorage.setItem('authToken', id);
+    setAuthToken(id);
   };
 
   //로그아웃 함수

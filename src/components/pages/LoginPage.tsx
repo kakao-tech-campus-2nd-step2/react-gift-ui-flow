@@ -6,16 +6,16 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 
 const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
+  const [id, setId] = useState('');
   const [password, setPassword] = useState('');
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    login(username);
+    login(id);
 
-    sessionStorage.setItem('authToken', username);
+    sessionStorage.setItem('authToken', id);
     navigate('/');
   };
 
@@ -24,12 +24,12 @@ const LoginPage: React.FC = () => {
       <h1>kakao</h1>
       <form onSubmit={handleLogin}>
         <div className="form-group">
-          <label htmlFor="username">이름</label>
+          <label htmlFor="username">아이디</label>
           <input
             type="text"
             id="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={id}
+            onChange={(e) => setId(e.target.value)}
             required
           />
         </div>
