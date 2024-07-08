@@ -4,27 +4,30 @@ import { useEffect, useState } from 'react';
 import MenuButton from './MenuButton';
 import RankingList from './RankingList';
 
-export default function GiftRanking() {
-  const [genderFilter, setGenderFilter] = useState('ALL');
-  const [wishFilter, setWishFilter] = useState('받고 싶어한');
+type GenderFilterType = 'ALL' | '남성이' | '여성이' | '청소년이';
+type WishFilterType = '받고 싶어한' | '많이 선물한' | '위시로 받은';
 
-  const handleGenderFilterChange = (filter: string) => {
+export default function GiftRanking() {
+  const [genderFilter, setGenderFilter] = useState<GenderFilterType>('ALL');
+  const [wishFilter, setWishFilter] = useState<WishFilterType>('받고 싶어한');
+
+  const handleGenderFilterChange = (filter: GenderFilterType) => {
     setGenderFilter(filter);
   };
 
-  const handleWishFilterChange = (filter: string) => {
+  const handleWishFilterChange = (filter: WishFilterType) => {
     setWishFilter(filter);
   };
 
   const [activeButton, setActiveButton] = useState('ALL'); 
   const [wishButton, setWishButton] = useState('받고 싶어한');
 
-  const handleButtonClick = (filter: string) => {
+  const handleButtonClick = (filter: GenderFilterType) => {
     setActiveButton(filter); 
     handleGenderFilterChange(filter); 
   };
 
-  const handleWishClick = (filter: string) => {
+  const handleWishClick = (filter: WishFilterType) => {
     setWishButton(filter); 
     handleWishFilterChange(filter); 
   };
@@ -37,36 +40,28 @@ export default function GiftRanking() {
     console.log(wishFilter);
   }, [wishFilter]);
 
+  const filterItems: { icon: string; text: string, value: GenderFilterType }[] = [
+    { icon: 'ALL', text: '전체', value: 'ALL' },
+    { icon: '👩‍🦰', text: '여성이', value: '여성이' },
+    { icon: '👱‍♂️', text: '남성이', value: '남성이' },
+    { icon: '👦🏻', text: '청소년이', value: '청소년이' },
+  ];
+
   return (
     <GiftRankingWrapper>
       <GiftRankingInner>
         <GiftRankingTitle>실시간 급상승 선물랭킹</GiftRankingTitle>
         <GiftRankingMenuContainer>
           <GiftRankingMenuTop>
-            <MenuButton
-              icon="ALL"
-              text="전체"
-              active={activeButton === 'ALL'}
-              onClick={() => handleButtonClick('ALL')}
-            />
-            <MenuButton
-              icon="👩‍🦰"
-              text="여성이"
-              active={activeButton === '여성이'}
-              onClick={() => handleButtonClick('여성이')}
-            />
-            <MenuButton
-              icon="👱‍♂️"
-              text="남성이"
-              active={activeButton === '남성이'}
-              onClick={() => handleButtonClick('남성이')}
-            />
-            <MenuButton
-              icon="👦🏻"
-              text="청소년이"
-              active={activeButton === '청소년이'}
-              onClick={() => handleButtonClick('청소년이')}
-            />
+            {filterItems.map((item) => (
+              <MenuButton
+                key={item.value}
+                icon={item.icon}
+                text={item.text}
+                active={activeButton === item.value}
+                onClick={() => handleButtonClick(item.value)}
+              />
+            ))}
           </GiftRankingMenuTop>
 
           <EmptyField />
