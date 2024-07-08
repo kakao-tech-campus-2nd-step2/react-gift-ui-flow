@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import Footer from '../components/common/Footer';
-import Header from '../components/common/Header';
+import Layout from '../components/common/Layout';
 import { HomePage } from '../pages/HomePage';
 import LoginPage from '../pages/LoginPage';
 import MyAccountPage from '../pages/MyAccountPage';
@@ -20,65 +19,19 @@ const RouterPath = {
 const router = createBrowserRouter([
   {
     path: RouterPath.root,
-    element: (
-      <>
-        <Header />
-        <HomePage />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: RouterPath.home,
-    element: (
-      <>
-        <Header />
-        <HomePage />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: `${RouterPath.theme}/:category`,
-    element: (
-      <>
-        <Header />
-        <ThemePage />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: RouterPath.login,
-    element: (
-      <>
-        <Header />
-        <LoginPage />
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: RouterPath.myAccount,
-    element: (
-      <>
-        <Header />
-        <ProtectedRoute>
-          <MyAccountPage />
-        </ProtectedRoute>
-        <Footer />
-      </>
-    ),
-  },
-  {
-    path: RouterPath.notFound,
-    element: (
-      <>
-        <Header />
-        <HomePage />
-        <Footer />
-      </>
-    ),
+    element: <Layout />,
+    children: [
+      { path: RouterPath.root, element: <HomePage /> },
+      { path: RouterPath.home, element: <HomePage /> },
+      { path: `${RouterPath.theme}/:category`, element: <ThemePage /> },
+      { path: RouterPath.login, element: <LoginPage /> },
+      {
+        path: RouterPath.myAccount,
+        element: <ProtectedRoute />,
+        children: [{ path: RouterPath.myAccount, element: <MyAccountPage /> }],
+      },
+      { path: RouterPath.notFound, element: <HomePage /> },
+    ],
   },
 ]);
 
