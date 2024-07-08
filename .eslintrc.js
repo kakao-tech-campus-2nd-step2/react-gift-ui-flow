@@ -1,59 +1,25 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-    node: true,
-  },
-  extends: [
-    'plugin:@typescript-eslint/recommended',
-    'airbnb/hooks',
-    'airbnb-typescript',
-    'prettier',
-    'plugin:storybook/recommended',
-  ],
-  parser: '@typescript-eslint/parser',
-  parserOptions: {
-    project: './tsconfig.json',
-    ecmaFeatures: {
-      jsx: true,
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint', 'prettier'],
+    extends: ['airbnb', 'plugin:import/errors', 'plugin:import/warnings', 'plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended', 'prettier', 'plugin:storybook/recommended'],
+    rules: {
+        'linebreak-style': 0,
+        'import/prefer-default-export': 0,
+        'prettier/prettier': 0,
+        'import/extensions': 0,
+        'no-use-before-define': 0,
+        'import/no-unresolved': 0,
+        'import/no-extraneous-dependencies': 0,
+        'no-shadow': 0,
+        'react/prop-types': 0,
+        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
+        'jsx-a11y/no-noninteractive-element-interactions': 0,
+        'react/require-default-props': 'off',
+        'react/function-component-definition': 'off',
+        'react/jsx-props-no-spreading': 'off',
+        'react/no-unescaped-entities': 'off',
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        "react/react-in-jsx-scope": "off",
     },
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'react-hooks',
-    'json-format',
-    'simple-import-sort',
-    '@emotion',
-    'prettier',
-  ],
-  rules: {
-    'react/react-in-jsx-scope': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
-    '@typescript-eslint/consistent-type-imports': 'warn',
-    '@typescript-eslint/no-unused-vars': [
-      'error',
-      {
-        argsIgnorePattern: '^_',
-      },
-    ],
-    'import/extensions': ['off'],
-    'import/no-extraneous-dependencies': ['off'],
-    'react/jsx-filename-extension': [
-      'warn',
-      {
-        extensions: ['.tsx', '.js', '.jsx'],
-      },
-    ],
-    '@typescript-eslint/no-use-before-define': ['off'],
-  },
-  ignorePatterns: ['**/build/**/*', '.eslintrc.js', 'craco.config.js'],
-  settings: {
-    'import/resolver': {
-      typescript: {},
-    },
-  },
 };
