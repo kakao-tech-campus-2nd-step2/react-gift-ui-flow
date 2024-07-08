@@ -13,7 +13,7 @@ import TargetTypeFilter from './TargetTypeFilter';
 export default () => {
     const [targetType, setTargetType] = useState<TargetType>('ALL');
     const [rankType, setRankType] = useState<RankType>('MANY_WISH');
-    const [isDetail, setIsDetail] = useState<boolean>(false);
+    const [showMoreDetail, setShowMoreDetail] = useState<boolean>(false);
 
     return (
         <div
@@ -68,10 +68,14 @@ export default () => {
                 </RankTypeFilter>
             </div>
             {/* ranking item list */}
-            <RankingList targetType={targetType} rankType={rankType} isDetail={isDetail} />
+            <RankingList
+                targetType={targetType}
+                rankType={rankType}
+                showMoreDetail={showMoreDetail}
+            />
             <Container maxWidth="400px" className={detailBtnStyle}>
-                <Button theme="outline" onClick={() => setIsDetail((value) => !value)}>
-                    {isDetail ? '접기' : '더보기'}
+                <Button theme="outline" onClick={() => setShowMoreDetail((value) => !value)}>
+                    {showMoreDetail ? '접기' : '더보기'}
                 </Button>
             </Container>
         </div>

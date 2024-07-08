@@ -4,19 +4,12 @@ import { Grid } from '@/components/common/layouts/Grid';
 import type { RankType, TargetType } from './FilterType';
 
 interface Props {
-    isDetail?: boolean;
+    showMoreDetail?: boolean;
     targetType: TargetType;
     rankType: RankType;
 }
 
-/**
- * RankingList
- * @param isDetail 상품 리스트 더보기 토글
- * @param targetType TargetType 필터링
- * @param rankType RankType 필터링
- * @returns Ranking이 매겨진 상품 리스트
- */
-export default ({ isDetail, targetType, rankType }: Props) => {
+export default ({ showMoreDetail, targetType, rankType }: Props) => {
     const initItems = () => {
         const items = [];
         for (let i = 0; i < 20; i++) {
@@ -29,7 +22,7 @@ export default ({ isDetail, targetType, rankType }: Props) => {
 
     return (
         <Grid columns={{ initial: 2, xs: 3, sm: 3, md: 6 }} gap={20}>
-            {items.slice(0, isDetail ? undefined : 6).map((item, index) => (
+            {items.slice(0, showMoreDetail ? undefined : 6).map((item, index) => (
                 <RankingGoodsItems
                     key={item}
                     rankingIndex={index + 1}
