@@ -12,24 +12,24 @@ const GiftRanking: React.FC = () => {
     <div className="gift-ranking">
       <h2>실시간 급상승 선물랭킹</h2>
       <div className="filters">
-        {filters.map((f) => (
+        {filters.map((filterOption) => (
           <button
-            key={f}
-            className={`filter-button ${filter === f ? 'active' : ''}`}
-            onClick={() => setFilter(f)}
+            key={filterOption}
+            className={`filter-button ${filter === filterOption ? 'active' : ''}`}
+            onClick={() => setFilter(filterOption)}
           >
-            {f}
+            {filterOption}
           </button>
         ))}
       </div>
       <div className="sub-filters">
-        {subFilters.map((sf) => (
+        {subFilters.map((subFilterOption) => (
           <button
-            key={sf}
-            className={`sub-filter-button ${subFilter === sf ? 'active' : ''}`}
-            onClick={() => setSubFilter(sf)}
+            key={subFilterOption}
+            className={`sub-filter-button ${subFilter === subFilterOption ? 'active' : ''}`}
+            onClick={() => setSubFilter(subFilterOption)}
           >
-            {sf}
+            {subFilterOption}
           </button>
         ))}
       </div>
