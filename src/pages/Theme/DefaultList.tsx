@@ -7,14 +7,7 @@ import { Grid } from '@/components/common/layouts/Grid';
  * @returns 기본 상품 리스트
  */
 export default () => {
-    const initItems = () => {
-        const items = [];
-        for (let i = 0; i < 20; i++) {
-            items.push(i);
-        }
-        return items;
-    };
-    const items = initItems();
+    const items = Array.from(Array(21).keys());
 
     return (
         <Container>

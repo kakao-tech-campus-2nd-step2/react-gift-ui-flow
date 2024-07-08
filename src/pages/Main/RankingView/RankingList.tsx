@@ -10,14 +10,7 @@ interface Props {
 }
 
 export default ({ showMoreDetail, targetType, rankType }: Props) => {
-    const initItems = () => {
-        const items = [];
-        for (let i = 0; i < 20; i++) {
-            items.push(i);
-        }
-        return items;
-    };
-    const items = initItems();
+    const items = Array.from(Array(21).keys());
     console.log(targetType, rankType); //TODO: targetType, rankType에 따라 상품 리스트 필터링
 
     return (
