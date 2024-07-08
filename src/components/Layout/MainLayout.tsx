@@ -1,10 +1,8 @@
 import styled from '@emotion/styled';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import { Footer } from './Footer';
 import { Header } from './Header';
-
-import LoginPage from '@/pages/LoginPage';
 
 export const Main = styled.main`
   width: 100%;
@@ -15,11 +13,6 @@ export const Main = styled.main`
   padding-top: 54px;
 `;
 export const MainLayout = () => {
-  const location = useLocation();
-  const hideLayout = location.pathname === '/login';
-
-  if (hideLayout) return <LoginPage />;
-
   return (
     <>
       <Header />

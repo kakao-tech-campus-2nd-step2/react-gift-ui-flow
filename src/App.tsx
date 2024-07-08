@@ -15,10 +15,10 @@ const App = () => {
       <ResetStyles />
       <AuthProvider>
         <Routes>
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<MainLayout />}>
             <Route index path="/" element={<MainPage />} />
             <Route path="/theme/:themeKey" element={<ThemePage />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/my-account" element={<MyAccountPage />} />
           </Route>
         </Routes>
