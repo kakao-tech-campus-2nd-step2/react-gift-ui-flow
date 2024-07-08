@@ -1,6 +1,5 @@
 import { ButtonHTMLAttributes } from 'react';
 
-import { useFilter } from '@/context/filter/useFilter';
 import { GiftFilterType } from '@/types/rankTypes';
 
 import { textStyle } from './styles';
@@ -8,14 +7,16 @@ import { textStyle } from './styles';
 interface ActiveGiftButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   gift: GiftFilterType;
+  isActive: boolean;
+  onClick: () => void;
 }
 
-export const ActiveGiftButton = ({ gift, ...props }: ActiveGiftButtonProps) => {
-  const { giftFilter, setGiftFilter } = useFilter();
-
-  const isActive = gift === giftFilter;
-  const onClick = () => setGiftFilter(gift);
-
+export const ActiveGiftButton = ({
+  gift,
+  isActive,
+  onClick,
+  ...props
+}: ActiveGiftButtonProps) => {
   return (
     <button onClick={onClick} css={textStyle(isActive)} {...props}>
       {gift}

@@ -1,13 +1,15 @@
-import { useRankList } from '@/context/rankList/useRankList';
+import { FilterRankItemType } from '@/types/rankTypes';
 
 import { RankingGoodsItem } from '@/components/ui/GoodsItem/Ranking';
 import { Grid } from '@/components/ui/Layout/Grid';
 
 import { itemContainerStyle } from './styles';
 
-export const RankList = () => {
-  const { visibleItems } = useRankList();
+type RankListProps = {
+  filteredList: FilterRankItemType[];
+};
 
+export const RankList = ({ filteredList }: RankListProps) => {
   return (
     <Grid
       columns={{
@@ -18,7 +20,7 @@ export const RankList = () => {
       }}
       placeItems="start"
     >
-      {visibleItems.map((item) => (
+      {filteredList.map((item) => (
         <div key={item.id} css={itemContainerStyle}>
           <RankingGoodsItem
             rank={item.rank}

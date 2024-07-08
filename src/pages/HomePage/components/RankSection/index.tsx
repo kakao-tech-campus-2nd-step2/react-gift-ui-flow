@@ -1,23 +1,28 @@
-import { RankListProvider } from '@/context/rankList/RankListProvider';
+import { useRankFilters } from '@/pages/HomePage/hooks/useRankFilters';
+import { getFilteredRankItem } from '@/pages/HomePage/utils/getFilteredRankItem';
 
 import { Content } from '@/components/Content';
 
+import { FilteredRankList } from './FilteredRankList';
 import { RankFilterGift } from './RankFilterGift';
 import { RankFilterUser } from './RankFilterUser';
-import { RankList } from './RankList';
 import { RankTitle } from './RankTitle';
-import { ShowMoreButton } from './ShowMoreButton';
 
 export const RankSection = () => {
+  const { userFilter, giftFilter, setUserFilter, setGiftFilter } =
+    useRankFilters();
+  const filteredList = getFilteredRankItem(userFilter, giftFilter);
+
   return (
     <Content flexDirection="column" height="fit-content" gap="2rem">
       <RankTitle />
-      <RankFilterUser />
-      <RankFilterGift />
-      <RankListProvider>
-        <RankList />
-        <ShowMoreButton />
-      </RankListProvider>
+      <RankFilterUser userFilter={userFilter} setUserFilter={setUserFilter} />
+      <RankFilterGift giftFilter={giftFilter} setGiftFilter={setGiftFilter} />
+      <FilteredRankList
+        filteredList={filteredList}
+        userFilter={userFilter}
+        giftFilter={giftFilter}
+      />
     </Content>
   );
 };
