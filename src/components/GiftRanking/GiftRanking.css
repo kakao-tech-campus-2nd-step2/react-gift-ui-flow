@@ -1,0 +1,94 @@
+.gift-ranking {
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gift-ranking h2 {
+  margin-bottom: 20px;
+  font-size: 34px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sub-filters {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  background-color: rgb(230, 241, 255);
+}
+
+.filter-button {
+  color: rgb(102, 102, 102);
+  background-color: transparent;
+  font-size: 20px;
+}
+
+.sub-filter-button {
+  margin: 0 10px;
+  padding: 10px 0px;
+  border: none;
+  background-color: #eee;
+  color: rgba(70, 132, 233, 0.7);
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 22px;
+}
+
+.filter-button:hover,
+.sub-filter-button:hover {
+  background-color: rgb(230, 241, 255);
+}
+
+.filter-button.active,
+.sub-filter-button.active {
+  color: rgb(70, 132, 233);
+  font-weight: 700;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  width: 150px;
+  margin: 10px;
+}
+
+.item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.item-name {
+  font-size: 14px;
+}
+
+.item-price {
+  color: #333;
+  font-weight: 900;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.toggle-button {
+  margin-top: 20px;
+  padding: 10px 10px;
+  border: 1px solid rgb(204, 204, 204);
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 12px;
+}

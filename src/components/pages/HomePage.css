@@ -1,0 +1,27 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250, 250, 250);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.home .home-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 30%;
+  margin-bottom: 20px;
+}
+
+.home .home-description {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.home .themeCategory {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
