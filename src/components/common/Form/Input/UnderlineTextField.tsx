@@ -1,72 +1,46 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { breakpoints } from '@/styles/variants';
-
-// Extends Input field
-type Props = {
+export interface IUnderlineTextField extends React.ComponentProps<'input'> {
   invalid?: boolean;
-  size?: 'large' | 'small' | 'responsive';
-} & React.InputHTMLAttributes<HTMLInputElement>;
+  variant?: 'small' | 'large' | 'responsive';
+}
 
-export const UnderlineTextField = (props: Props) => <Input {...props} />;
+export const UnderlineTextField = ({ invalid = false, variant = 'responsive', ...rest }: IUnderlineTextField) => {
+  return <StyleInput invalid={invalid} variant={variant} {...rest} />;
+};
 
-const Input = styled.input<Pick<Props, 'invalid' | 'size'>>(
-  {
-    width: '100%',
-    boxSizing: 'border-box',
-    color: '#191919',
-    transition: 'border-color 200ms',
-    borderStyle: 'solid',
+const sizeStyles = {
+  small: css`
+    font-size: 12px;
+  `,
+  large: css`
+    font-size: 18px;
+  `,
+  responsive: css`
+    font-size: 14px;
 
-    '&:focus': {
-      outline: 'none',
-      borderColor: '#252525',
-    },
-    '&:disabled': {
-      color: '#7d7d7d',
-      cursor: 'not-allowed',
-    },
-
-    '&::placeholder': {
-      color: '#7d7d7d',
-    },
-  },
-  ({ size = 'responsive' }) => {
-    const largeStyle = {
-      minHeight: '46px',
-      fontSize: '18px',
-      lineHeight: '25px',
-      padding: '10px 0 8px',
-      borderWidth: '0 0 2px',
-    };
-
-    const smallStyle = {
-      minHeight: '42px',
-      fontSize: '15px',
-      lineHeight: '1.5',
-      padding: '9px 0',
-      borderWidth: '0 0 1px',
-    };
-
-    if (size === 'large') return largeStyle;
-    if (size === 'small') return smallStyle;
-
-    return {
-      ...smallStyle,
-      [`@media screen and (min-width:${breakpoints.sm})`]: {
-        ...largeStyle,
-      },
-    };
-  },
-  ({ invalid = false }) => {
-    if (invalid) {
-      return {
-        borderColor: '#ff4b4b',
-      };
+    @media (min-width: 768px) {
+      font-size: 14px;
     }
 
-    return {
-      borderColor: '#ccc',
-    };
-  },
-);
+    @media (min-width: 1024px) {
+      font-size: 16px;
+    }
+  `,
+};
+
+const StyleInput = styled.input<Pick<IUnderlineTextField, 'invalid' | 'variant'>>`
+  width: 100%;
+  padding: 12px 0px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  border-color: ${(props) => (props.invalid ? '#ff4b4b' : '#ccc')};
+  ${(props) => (props.variant ? sizeStyles[props.variant] : null)};
+  &:focus {
+    outline: none;
+    border-bottom: 2px solid #000;
+  }
+`;
