@@ -2,11 +2,15 @@ import './GiftRanking.css';
 
 import useGiftRanking from './useGiftRanking';
 
+type Filter = '전체' | '여성이' | '남성이' | '청소년이';
+type SubFilter = '받고 싶어한' | '많이 선물한' | '위시로 받은';
+
+const filters: Filter[] = ['전체', '여성이', '남성이', '청소년이'];
+const subFilters: SubFilter[] = ['받고 싶어한', '많이 선물한', '위시로 받은'];
+
 const GiftRanking: React.FC = () => {
   const { filteredItems, filter, setFilter, subFilter, setSubFilter, showMore, setShowMore } =
     useGiftRanking();
-  const filters = ['전체', '여성이', '남성이', '청소년이'];
-  const subFilters = ['받고 싶어한', '많이 선물한', '위시로 받은'];
 
   return (
     <div className="gift-ranking">
