@@ -15,14 +15,11 @@ const LoginPage = () => {
   const handleLogin = () => {
     if (username && password) {
       login(username); // 로그인 상태 변경
-      const redirectPath = sessionStorage.getItem('redirectPath') || '/';
-      sessionStorage.removeItem('redirectPath'); // 리디렉션 후 경로 삭제
-      navigate(redirectPath, { replace: true });
+      navigate('/', { replace: true });
     } else {
       alert('ID와 비밀번호를 입력해주세요.');
     }
   };
-
   return (
     <PageWrapper>
       <Logo>kakao</Logo>
