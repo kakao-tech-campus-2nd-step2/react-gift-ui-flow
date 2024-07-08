@@ -16,6 +16,7 @@ const Header = () => {
         </div>
       ) : (
         <div className={styles.login} onClick={() => navigate('/login')}>
+
           로그인
         </div>
       )}

@@ -3,6 +3,7 @@ import { createContext, useContext, useSyncExternalStore } from 'react';
 
 const AUTH_TOKEN_KEY = 'authToken';
 
+
 interface AuthContextType {
   authToken: string | null;
   login: (token: string) => void;
