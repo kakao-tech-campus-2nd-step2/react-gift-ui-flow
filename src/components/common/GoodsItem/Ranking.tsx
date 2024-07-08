@@ -33,7 +33,7 @@ const RankingLabel = styled.span<Pick<Props, 'rankingIndex'>>`
   font-size: 18px;
   line-height: 1;
   font-weight: 700;
-  top: 4px;
+  top: 34px;
   left: 4px;
   color: #fff;
   background-color: ${({ rankingIndex }) => (rankingIndex <= 3 ? '#fd7364' : '#bbb')};
