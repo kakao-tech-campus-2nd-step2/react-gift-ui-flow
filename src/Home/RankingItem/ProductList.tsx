@@ -149,44 +149,42 @@ const ProductList = ({
   activeCategory: string;
   activeType: string;
 }) => {
-  const [visibleProducts, setVisibleProducts] = useState<number>(6);
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(() =>
     filterProducts(products, activeCategory, activeType),
   );
 
   useEffect(() => {
     setFilteredProducts(filterProducts(products, activeCategory, activeType));
-    setVisibleProducts(6); // 필터가 바뀔 때 처음 6개만 보이도록 설정
+    setIsCollapsed(true);
   }, [activeCategory, activeType]);
 
   const toggleVisibleProducts = () => {
-    if (visibleProducts === 6) {
-      setVisibleProducts(filteredProducts.length);
-    } else {
-      setVisibleProducts(6);
-    }
+    setIsCollapsed(!isCollapsed);
   };
 
   return (
     <Container>
       <List>
-        {filteredProducts.slice(0, visibleProducts).map((product, index) => (
-          <RankingGoodsItems
-            key={product.id}
-            rankingIndex={index + 1}
-            imageSrc={product.imageSrc}
-            title={product.title}
-            subtitle={product.subtitle}
-            amount={product.amount}
-          />
-        ))}
+        {filteredProducts
+          .slice(0, isCollapsed ? 6 : filteredProducts.length)
+          .map((product, index) => (
+            <RankingGoodsItems
+              key={product.id}
+              rankingIndex={index + 1}
+              imageSrc={product.imageSrc}
+              title={product.title}
+              subtitle={product.subtitle}
+              amount={product.amount}
+            />
+          ))}
       </List>
       <Button
         theme="outline"
         style={{ maxWidth: '480px', margin: '20px auto', display: 'block', outline: 'none' }}
         onClick={toggleVisibleProducts}
       >
-        {visibleProducts === 6 ? '더보기' : '접기'}
+        {isCollapsed ? '더보기' : '접기'}
       </Button>
     </Container>
   );
