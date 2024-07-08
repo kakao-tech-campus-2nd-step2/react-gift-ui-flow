@@ -73,11 +73,11 @@ const sizeStyles = {
 
     @media (min-width: 768px) {
       font-size: 14px;
-      height: 60px;
+      height: 50px;
     }
     @media (min-width: 1024px) {
       font-size: 16px;
-      height: 80px;
+      height: 60px;
     }
   `,
 };
