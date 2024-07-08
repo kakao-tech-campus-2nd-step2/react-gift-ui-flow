@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { createContext, useContext, useState } from 'react';
 
+const AUTH_TOKEN_KEY = 'authToken';
+
 interface AuthContextType {
   authToken: string | null;
   login: (token: string) => void;
@@ -14,15 +16,15 @@ interface AuthProviderProps {
 }
 
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const [authToken, setAuthToken] = useState<string | null>(sessionStorage.getItem('authToken'));
+  const [authToken, setAuthToken] = useState<string | null>(sessionStorage.getItem(AUTH_TOKEN_KEY));
 
   const login = (token: string) => {
-    sessionStorage.setItem('authToken', token);
+    sessionStorage.setItem(AUTH_TOKEN_KEY, token);
     setAuthToken(token);
   };
 
   const logout = () => {
-    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem(AUTH_TOKEN_KEY);
     setAuthToken(null);
   };
 
