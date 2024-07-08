@@ -1,4 +1,4 @@
-import type { ReactNode} from 'react';
+import type { ReactNode } from 'react';
 import { createContext, useContext, useEffect, useState } from 'react';
 
 interface AuthContextType {
@@ -15,7 +15,7 @@ const AuthContext = createContext<AuthContextType>({
   logout: () => {},
 });
 
-export const useAuth = () => useContext(AuthContext);
+export const useAuth = () => useContext<AuthContextType>(AuthContext);
 
 interface AuthProviderProps {
   children: ReactNode;
