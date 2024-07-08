@@ -1,89 +1,159 @@
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-abbr,
-blockquote,
-body,
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+html {
+  line-height: 1.5;
+  tab-size: 4;
+}
+body {
+  margin: 0;
+  line-height: inherit;
+}
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+abbr[title] {
+  text-decoration: underline dotted;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+b,
+strong {
+  font-weight: bolder;
+}
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  font-size: 1em;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sub {
+  bottom: -0.25em;
+}
+sup {
+  top: -0.5em;
+}
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
 button,
-dd,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  appearance: button;
+  background-color: transparent;
+  background-image: none;
+}
+[type='search'] {
+  appearance: textfield;
+  outline-offset: -2px;
+}
+blockquote,
 dl,
-dt,
-fieldset,
-figure,
-form,
+dd,
 h1,
 h2,
 h3,
 h4,
 h5,
 h6,
-hgroup,
-input,
-legend,
-li,
-ol,
+hr,
+figure,
 p,
-pre,
-address,
-caption,
-code,
-figcaption,
-pre,
-th,
-ul {
+pre {
+  margin: 0;
+}
+ol,
+ul,
+menu {
+  list-style: none;
   margin: 0;
   padding: 0;
-  font-weight: 400;
-  font-style: normal;
 }
-
-fieldset,
-iframe {
-  border: 0;
+textarea {
+  resize: vertical;
 }
-caption,
-th {
-  text-align: left;
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #727272;
 }
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-details,
-main,
-summary {
-  display: block;
-}
-audio,
-canvas,
-progress,
-video {
-  vertical-align: initial;
-}
-button {
-  background: none;
-  border: 0;
-  box-sizing: initial;
-  color: inherit;
+button,
+[role='button'] {
   cursor: pointer;
-  font: inherit;
-  line-height: inherit;
-  overflow: visible;
-  vertical-align: inherit;
 }
-button:disabled {
+:disabled {
   cursor: default;
 }
-:focus {
-  outline: 4px solid rgba(0, 125, 250, 0.6);
-  outline-offset: 1px;
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
 }
-:focus[data-focus-method='mouse']:not(input):not(textarea):not(select),
-:focus[data-focus-method='touch']:not(input):not(textarea):not(select) {
-  outline: none;
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
-::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+[hidden] {
+  display: none;
 }
