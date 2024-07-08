@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '../context/AuthContext';
 
@@ -52,15 +52,12 @@ const titleStyle: React.CSSProperties = {
 const LoginPage: React.FC = () => {
   const [name, setUsername] = useState('');
   const navigate = useNavigate();
-  const location = useLocation();
   const { login } = useAuth();
-
-  const from = location.state?.from?.pathname || '/';
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     login(name);
-    navigate(from, { replace: true });
+    navigate(-1);
   };
 
   return (
