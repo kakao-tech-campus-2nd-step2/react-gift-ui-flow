@@ -1,6 +1,6 @@
 import './GiftRanking.css';
 
-import useGiftRanking from './useGiftRanking';
+import useGiftRanking from '../../hooks/useGiftRanking';
 
 type Filter = '전체' | '여성이' | '남성이' | '청소년이';
 type SubFilter = '받고 싶어한' | '많이 선물한' | '위시로 받은';
