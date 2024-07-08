@@ -6,6 +6,9 @@ import { Button } from '@/components/common/Button';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Container } from '@/components/common/layouts/Container';
 
+type Category = 'all' | 'women' | 'men' | 'teens';
+type Type = 'wanted' | 'gifted' | 'wishlist';
+
 interface Product {
   id: number;
   category: string;
@@ -136,7 +139,7 @@ const products: Product[] = [
   },
 ];
 
-const filterProducts = (products: Product[], category: string, type: string) => {
+const filterProducts = (products: Product[], category: Category, type: Type) => {
   return products.filter(
     (product) => (category === 'all' || product.category === category) && product.type === type,
   );
@@ -146,8 +149,8 @@ const ProductList = ({
   activeCategory,
   activeType,
 }: {
-  activeCategory: string;
-  activeType: string;
+  activeCategory: Category;
+  activeType: Type;
 }) => {
   const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>(() =>
@@ -156,7 +159,7 @@ const ProductList = ({
 
   useEffect(() => {
     setFilteredProducts(filterProducts(products, activeCategory, activeType));
-    setIsCollapsed(true);
+    setIsCollapsed(true); // 필터가 바뀔 때 처음 6개만 보이도록 설정
   }, [activeCategory, activeType]);
 
   const toggleVisibleProducts = () => {

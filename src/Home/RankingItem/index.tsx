@@ -5,9 +5,12 @@ import AgeTabs from './AgeTabs';
 import ProductList from './ProductList';
 import TypeTabs from './TypeTabs';
 
+type Category = 'all' | 'women' | 'men' | 'teens';
+type Type = 'wanted' | 'gifted' | 'wishlist';
+
 const GiftRankingPage = () => {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
-  const [activeType, setActiveType] = useState<string>('wanted');
+  const [activeCategory, setActiveCategory] = useState<Category>('all');
+  const [activeType, setActiveType] = useState<Type>('wanted');
 
   return (
     <PageWrapper>

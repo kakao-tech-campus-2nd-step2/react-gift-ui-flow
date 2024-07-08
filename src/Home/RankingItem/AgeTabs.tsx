@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+type Category = 'all' | 'women' | 'men' | 'teens';
+
 const categories = [
   { id: 'all', label: '전체', icon: 'ALL' },
   { id: 'women', label: '여성', icon: '👩🏻‍🦳' },
@@ -7,17 +9,16 @@ const categories = [
   { id: 'teens', label: '청소년', icon: '👦🏻' },
 ];
 
-const AgeTabs = ({
-  activeCategory,
-  setActiveCategory,
-}: {
-  activeCategory: string;
-  setActiveCategory: (category: string) => void;
-}) => {
+interface AgeTabsProps {
+  activeCategory: Category;
+  setActiveCategory: (category: Category) => void;
+}
+
+const AgeTabs = ({ activeCategory, setActiveCategory }: AgeTabsProps) => {
   return (
     <Tabs>
       {categories.map((category) => (
-        <Tab key={category.id} onClick={() => setActiveCategory(category.id)}>
+        <Tab key={category.id} onClick={() => setActiveCategory(category.id as Category)}>
           <Icon isActive={category.id === activeCategory}>{category.icon}</Icon>
           <Label>{category.label}</Label>
         </Tab>
@@ -36,7 +37,7 @@ const Tab = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 110px;
+  margin: 0 100px;
   cursor: pointer;
 `;
 
