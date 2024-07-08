@@ -2,6 +2,9 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
+* {
+  box-sizing: border-box;
+}
 abbr,
 blockquote,
 body,
@@ -37,7 +40,13 @@ ul {
   font-weight: 400;
   font-style: normal;
 }
-
+a {
+  text-decoration: none;
+  color: #000;
+}
+a:focus {
+  outline: none;
+}
 fieldset,
 iframe {
   border: 0;
