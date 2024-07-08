@@ -6,45 +6,38 @@ import { useAuth } from '@/components/AuthContext';
 import { Button } from '@/components/common/Button/Button'
 
 const LoginPage: React.FC = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { login } = useAuth();
+  const [formState, setFormState] = useState({ username: '', password: '' })
+  const navigate = useNavigate()
+  const location = useLocation()
+  const { login } = useAuth()
 
   const handleLogin = () => {
+    const { username, password } = formState;
     if (!username || !password) {
       alert('이름과 비밀번호를 입력해주세요.')
-      return;
+      return
     }
     // 로그인 성공시, authToken key 저장
     login(username)
 
     // 직전 페이지로 Redirect 되도록 useLocation 사용
     navigate(location.state?.from || '/')
-  };
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
-    if (name === 'username') {
-      setUsername(value)
-    } else if (name === 'password') {
-      setPassword(value)
-    }
-  };
+    setFormState(prevState => ({
+      ...prevState,
+      [name]: value,
+    }))
+  }
 
   return (
     <LoginWrapper>
       <LoginTitle>Kakao</LoginTitle>
       <LoginForm>
-        <LoginInput name="username" placeholder="이름" value={username} onChange={handleChange} />
-        <LoginInput
-          name="password"
-          type="password"
-          placeholder="비밀번호"
-          value={password}
-          onChange={handleChange}
-        />
+        <LoginInput name='username' placeholder='이름' value={formState.username} onChange={handleChange} />
+        <LoginInput name='password' type='password' placeholder='비밀번호' value={formState.password} onChange={handleChange} />
         <LoginbtnWrapper>
           <Button theme={'kakao'} size={'responsive'} onClick={handleLogin}>
             로그인
