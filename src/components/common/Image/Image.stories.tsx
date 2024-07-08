@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Image } from '.';
+import { Image } from './Image';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -8,6 +8,7 @@ const meta = {
   component: Image,
   tags: ['autodocs'],
   args: {
+    
     src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
   },
 } satisfies Meta<typeof Image>;
