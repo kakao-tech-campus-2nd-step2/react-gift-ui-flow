@@ -6,13 +6,21 @@
 
 ### ✨How to start
 
-#### `npm run start`
+- 프로젝트 실행
 
-프로젝트 실행
+```
+npm install
+cd react-gift-ui-flow
+npm run start
+```
 
-#### `npm run storybook`
+- 스토리북 실행
 
-스토리북 실행
+```
+npm install
+cd react-gift-ui-flow
+npm run storybook
+```
 
 ### 📜Requirements
 
