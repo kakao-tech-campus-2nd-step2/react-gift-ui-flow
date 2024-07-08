@@ -5,7 +5,7 @@ import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
 import { breakpoints } from '@/styles/variants';
-import items from '@/utils/types/items';
+import ITEMS from '@/components/section/Theme/types/items';
 
 type ThemeSectionProps = {
   gap?: number;
@@ -30,7 +30,7 @@ export const ThemeSection = () => {
   };
   return (
     <Items gap={0} columns={{ xs: 4, sm: 4, md: 6 }}>
-      {items.map((item, index) => (
+      {ITEMS.map((item, index) => (
         <ItemContainer key={index} onClick={() => onItemClick(item.themeKey)}>
           <Image
             src={item.image}
