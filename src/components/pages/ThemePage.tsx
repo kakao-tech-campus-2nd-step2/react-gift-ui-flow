@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 
 import { themes } from '../../data/themes';
+import { ProductList } from '../Theme/ProductList';
 import ThemeHeader from '../Theme/ThemeHeader';
 
 const ThemePage: React.FC = () => {
@@ -17,6 +18,7 @@ const ThemePage: React.FC = () => {
         description={theme.description}
         backgroundColor={theme.backgroundColor}
       />
+      <ProductList />
     </div>
   );
 };
