@@ -5,3 +5,7 @@ export const breakpoints = {
   md: '1024px',
   lg: '1280px',
 };
+export const colors = {
+  blue: 'rgb(70, 132, 233)',
+  lightBlue: 'rgb(230, 241, 255)',
+}
