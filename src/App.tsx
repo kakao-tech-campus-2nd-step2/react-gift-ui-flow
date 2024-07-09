@@ -1,62 +1,54 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
 
 import Footer from './components/common/Footer/Footer';
 import Header from './components/common/Header/Header';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import LoginPage from './pages/LoginPage';
 import MainPage from './pages/MainPage';
 import MyAccountPage from './pages/MyAccountPage';
 import ThemePage from './pages/ThemePage';
 
-const AppWrapper = styled.div`
+const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 `;
 
-const ContentWrapper = styled.div`
+const MainContent = styled.div`
   flex: 1;
+  background-color: #f9f9f9;
 `;
 
+const CustomHeader: React.FC = () => {
+  const { isLoggedIn } = useAuth();
+  return <Header isLoggedIn={isLoggedIn} />;
+};
+
+const ProtectedRoute: React.FC<{ element: JSX.Element }> = ({ element }) => {
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn ? element : <Navigate to="/login" />;
+};
+
 const App: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginId, setLoginId] = useState('');
-
-  const handleLogin = (id: string) => {
-    setIsLoggedIn(true);
-    setLoginId(id);
-  };
-
-  const handleLogout = () => {
-    setIsLoggedIn(false);
-    setLoginId('');
-  };
-
   return (
-    <Router>
-      <AppWrapper>
-        <Header isLoggedIn={isLoggedIn} />
-        <ContentWrapper>
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
-            <Route
-              path="/my-account"
-              element={
-                isLoggedIn ? (
-                  <MyAccountPage onLogout={handleLogout} loginId={loginId} />
-                ) : (
-                  <Navigate to="/login" />
-                )
-              }
-            />
-            <Route path="/theme/:themeKey" element={<ThemePage />} />
-          </Routes>
-        </ContentWrapper>
-        <Footer />
-      </AppWrapper>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <AppContainer>
+          <CustomHeader />
+          <MainContent>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/my-account" element={<ProtectedRoute element={<MyAccountPage />} />} />
+              <Route path="/theme/:themeKey" element={<ThemePage />} />
+            </Routes>
+          </MainContent>
+          <Footer />
+        </AppContainer>
+      </Router>
+    </AuthProvider>
   );
 };
 
