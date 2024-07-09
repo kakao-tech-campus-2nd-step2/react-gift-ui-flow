@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
+import type { FilterCategory, FilterSubCategory } from '@/types/index';
+
 import CategoryButton from './CategoryButton';
 import SubCategoryButton from './SubCategoryButton';
 
@@ -12,9 +14,6 @@ const categories = [
 ];
 
 const subCategories = ['받고 싶어한', '많이 선물한', '위시로 받은'];
-
-type FilterCategory = '전체' | '여성이' | '남성이' | '청소년이';
-type FilterSubCategory = '받고 싶어한' | '많이 선물한' | '위시로 받은';
 
 type CategoryBarProps = {
   selectedCategory: FilterCategory;
