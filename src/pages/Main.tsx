@@ -74,7 +74,7 @@ const MainPage: React.FC = () => {
           ))}
         </Grid>
         <ButtonWrapper>
-          <Button theme="lightGray" size="responsive" onClick={toggleShowRankings}>
+          <Button themeName="lightGray" size="responsive" onClick={toggleShowRankings}>
             {showAllRankings ? '접기' : '더보기'}
           </Button>
         </ButtonWrapper>

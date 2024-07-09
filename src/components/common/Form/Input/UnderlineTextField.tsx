@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
+import React from 'react';
 
-import { breakpoints } from '@/styles/variants';
+import { theme } from '@/styles/theme';
 
-// Extends Input field
 type Props = {
   invalid?: boolean;
   size?: 'large' | 'small' | 'responsive';
@@ -14,27 +14,25 @@ const Input = styled.input<Pick<Props, 'invalid' | 'size'>>(
   {
     width: '100%',
     boxSizing: 'border-box',
-    color: '#191919',
+    color: theme.colors.primary,
     transition: 'border-color 200ms',
     borderStyle: 'solid',
-
     '&:focus': {
       outline: 'none',
-      borderColor: '#252525',
+      borderColor: theme.colors.borderHover,
     },
     '&:disabled': {
-      color: '#7d7d7d',
+      color: theme.colors.placeholder,
       cursor: 'not-allowed',
     },
-
     '&::placeholder': {
-      color: '#7d7d7d',
+      color: theme.colors.placeholder,
     },
   },
   ({ size = 'responsive' }) => {
     const largeStyle = {
       minHeight: '46px',
-      fontSize: '18px',
+      fontSize: theme.fontSizes.large,
       lineHeight: '25px',
       padding: '10px 0 8px',
       borderWidth: '0 0 2px',
@@ -42,7 +40,7 @@ const Input = styled.input<Pick<Props, 'invalid' | 'size'>>(
 
     const smallStyle = {
       minHeight: '42px',
-      fontSize: '15px',
+      fontSize: theme.fontSizes.small,
       lineHeight: '1.5',
       padding: '9px 0',
       borderWidth: '0 0 1px',
@@ -53,20 +51,10 @@ const Input = styled.input<Pick<Props, 'invalid' | 'size'>>(
 
     return {
       ...smallStyle,
-      [`@media screen and (min-width:${breakpoints.sm})`]: {
-        ...largeStyle,
-      },
+      [`@media screen and (min-width:${theme.breakpoints.sm})`]: largeStyle,
     };
   },
-  ({ invalid = false }) => {
-    if (invalid) {
-      return {
-        borderColor: '#ff4b4b',
-      };
-    }
-
-    return {
-      borderColor: '#ccc',
-    };
-  },
+  ({ invalid = false }) => ({
+    borderColor: invalid ? theme.colors.error : theme.colors.border,
+  })
 );

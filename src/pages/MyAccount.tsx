@@ -17,7 +17,7 @@ const MyAccountPage: React.FC = () => {
   return (
     <AccountContainer>
       <WelcomeMessage>{username}님 안녕하세요!</WelcomeMessage>
-      <Button theme="darkGray" size="responsive" onClick={handleLogout}>
+      <Button themeName="darkGray" size="responsive" onClick={handleLogout}>
         로그아웃
       </Button>
     </AccountContainer>
