@@ -11,8 +11,8 @@ export default function GoodsItemList() {
     <GoodsItemListContainer>
       <CenteredContainer maxWidth="md">
         <Grid gap={GRID_GAP} columns={GRID_COLUMNS}>
-          {goodsItemList.map(({ id, imageSrc, subtitle, title, amount, target, wish }) => (
-            <GoodsItem key={id} {...{ imageSrc, subtitle, title, amount, target, wish }} />
+          {goodsItemList.map(({ id, imageSrc, subtitle, title, amount }) => (
+            <GoodsItem key={id} imageSrc={imageSrc} subtitle={subtitle} title={title} amount={amount} />
           ))}
         </Grid>
       </CenteredContainer>
