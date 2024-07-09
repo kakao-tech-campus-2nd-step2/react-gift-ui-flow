@@ -2,7 +2,8 @@ import { createContext, ReactNode, useContext, useEffect, useState } from 'react
 
 type AuthContextType = {
   authToken: string | null;
-  setAuthToken: (token: string | null) => void;
+  saveAuthToken: (token: string) => void;
+  deleteAuthToken: () => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -26,7 +27,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [authToken]);
 
+  const saveAuthToken = (token: string) => {
+    setAuthToken(token);
+  };
+
+  const deleteAuthToken = () => {
+    setAuthToken(null);
+  };
+
   return (
-    <AuthContext.Provider value={{ authToken, setAuthToken }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ authToken, saveAuthToken, deleteAuthToken }}>
+      {children}
+    </AuthContext.Provider>
   );
 };

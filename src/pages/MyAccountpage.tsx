@@ -4,10 +4,10 @@ import { useAuth } from '@/components/common/AuthContext';
 
 const MyAccoutpage: React.FC = () => {
   const navigate = useNavigate();
-  const { authToken, setAuthToken } = useAuth();
+  const { authToken, deleteAuthToken } = useAuth();
 
   const handleLogout = () => {
-    setAuthToken(null);
+    deleteAuthToken();
     navigate('/');
   };
   return (

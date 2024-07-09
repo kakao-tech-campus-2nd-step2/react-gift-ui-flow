@@ -6,7 +6,7 @@ import { useAuth } from '@/components/common/AuthContext';
 const Loginpage: React.FC = () => {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
-  const { setAuthToken } = useAuth();
+  const { saveAuthToken } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -16,7 +16,7 @@ const Loginpage: React.FC = () => {
     event.preventDefault();
     // Fake 로그인
     if (id && password) {
-      setAuthToken(id);
+      saveAuthToken(id);
       navigate(from, { replace: true });
     }
   };
