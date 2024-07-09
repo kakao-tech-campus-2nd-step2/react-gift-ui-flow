@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { Container, Image } from '@components/common';
 import { useNavigate } from 'react-router-dom';
 import { getDynamicPath } from '@utils/getDynamicPath';
-import { ROUTE_PATH } from '@routes/constants';
+import { ROUTE_PATH } from '@routes/path';
 
 const IMAGE_SIZE = 90;
 const IMAGE_RADIUS = 32;

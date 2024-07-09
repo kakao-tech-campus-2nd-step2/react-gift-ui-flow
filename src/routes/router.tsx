@@ -1,8 +1,8 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
 import { App, Home, Theme, Login, MyAccount } from '@pages/index';
-import { PrivateRoute } from '@components/common';
-import { ROUTE_PATH } from './constants';
+import PrivateRoute from './components/PrivateRoute';
+import { ROUTE_PATH } from './path';
 
 export const router = createBrowserRouter([
   {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { Inner } from '@components/common/';
-import { RankingList, Filter } from '@components/home';
+import { RankingList, Filter } from '@components/features/Home';
 import { BREAK_POINTS } from '@assets/styles/variants';
 
 export default function TrendingGifts() {

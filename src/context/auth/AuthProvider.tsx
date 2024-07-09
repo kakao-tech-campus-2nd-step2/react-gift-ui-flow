@@ -1,7 +1,7 @@
 import React, { ReactNode, useEffect, useState, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useSessionStorage } from '@hooks/useSessionStorage';
-import { ROUTE_PATH } from '@routes/constants';
+import { ROUTE_PATH } from '@routes/path';
 import AuthContext from './AuthContext';
 
 interface AuthProviderProps {

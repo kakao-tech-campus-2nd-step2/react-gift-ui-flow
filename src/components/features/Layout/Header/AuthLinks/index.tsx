@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useAuth } from '@context/auth/useAuth';
 import { Link } from 'react-router-dom';
-import { ROUTE_PATH } from '@routes/constants';
+import { ROUTE_PATH } from '@routes/path';
 
 const AUTH_LINKS = {
   authenticated: { path: ROUTE_PATH.MY_ACCOUNT, label: '내 계정' },

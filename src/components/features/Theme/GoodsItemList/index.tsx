@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import goodsItemList from '@data/goodsItemList';
+import goodsItemList from '@mocks/goodsItemList';
 import { GoodsItem, Grid, Inner } from '@components/common';
 import { BREAK_POINTS } from '@assets/styles/variants';
 

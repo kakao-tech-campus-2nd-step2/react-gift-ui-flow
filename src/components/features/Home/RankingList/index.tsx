@@ -1,5 +1,5 @@
 import React from 'react';
-import rankingList from '@data/rankingList';
+import rankingList from '@mocks/rankingList';
 import styled from '@emotion/styled';
 import { GoodsItem, Grid, Button } from '@components/common';
 import useToggle from '@hooks/useToggle';

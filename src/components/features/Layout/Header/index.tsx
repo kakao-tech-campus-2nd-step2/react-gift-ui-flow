@@ -4,7 +4,7 @@ import Container from '@components/common/Layout/Container';
 import logo from '@assets/images/logo.png';
 import { Inner } from '@components/common';
 import { Link } from 'react-router-dom';
-import { ROUTE_PATH } from '@routes/constants';
+import { ROUTE_PATH } from '@routes/path';
 import { BREAK_POINTS } from '@assets/styles/variants';
 import AuthLinks from './AuthLinks';
 

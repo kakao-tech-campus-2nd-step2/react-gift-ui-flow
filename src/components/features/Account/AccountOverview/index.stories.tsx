@@ -1,7 +1,7 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { Meta, StoryObj } from '@storybook/react';
-import AuthContext from '@/context/auth/AuthContext';
+import AuthContext from '@context/auth/AuthContext';
 import AccountOverview from '.';
 
 const meta: Meta<typeof AccountOverview> = {

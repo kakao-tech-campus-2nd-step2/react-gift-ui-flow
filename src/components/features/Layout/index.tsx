@@ -5,7 +5,7 @@ export interface PageWrapperProps {
   children: ReactNode;
 }
 
-export default function PageWrapper({ children }: PageWrapperProps) {
+export default function Layout({ children }: PageWrapperProps) {
   return (
     <>
       <Header />
