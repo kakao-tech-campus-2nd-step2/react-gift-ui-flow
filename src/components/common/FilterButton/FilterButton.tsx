@@ -28,7 +28,7 @@ const Text = styled.span<{ active: boolean }>`
   transition: color 0.3s;
 `;
 
-interface FilterButtonProps {
+interface FilterButtonProps extends React.HTMLAttributes<HTMLButtonElement>{
   active: boolean;
   onClick: () => void;
   buttonText: string;
