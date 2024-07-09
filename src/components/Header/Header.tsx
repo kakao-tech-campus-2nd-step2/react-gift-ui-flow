@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { useNavigate } from 'react-router-dom';
 import { Image } from '../common/Image';
 import { useUserInfo } from '@/providers/AuthProvider';
+import routePath from '@/routes/path';
 
 const Header = () => {
   const navigate = useNavigate();
@@ -12,8 +13,8 @@ const Header = () => {
   };
 
   const handleWhere = (where: string) => {
-    if (where === 'login') handleLink('/my-account');
-    else handleLink('/login');
+    if (where === 'login') handleLink(routePath.myAccount);
+    else handleLink(routePath.login);
   };
 
   return (
@@ -21,7 +22,7 @@ const Header = () => {
       <Image
         style={{ cursor: 'pointer' }}
         src="/images/gift_logo.png"
-        onClick={() => handleLink('/')}
+        onClick={() => handleLink(routePath.home)}
         width={60}
       ></Image>
       <h3 style={{ cursor: 'pointer' }} onClick={() => handleWhere(state)}>
