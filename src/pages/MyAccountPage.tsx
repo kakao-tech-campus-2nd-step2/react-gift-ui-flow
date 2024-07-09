@@ -2,48 +2,52 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface MyAccountPageProps {
-  onLogout: () => void;
-  loginId: string;
-}
+import { useAuth } from '../context/AuthContext';
 
-const Container = styled.div`
+const MyAccountPage: React.FC = () => {
+  const { loginId, logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUserLogout = () => {
+    logout();
+    navigate('/');
+  };
+
+  return (
+    <AccountContainer>
+      <GreetingText>{loginId}님 안녕하세요!</GreetingText>
+      <LogoutButton onClick={handleUserLogout}>로그아웃</LogoutButton>
+    </AccountContainer>
+  );
+};
+
+export default MyAccountPage;
+
+const AccountContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background-color: #f0f0f0;
 `;
 
-const WelcomeText = styled.h1`
+const GreetingText = styled.h1`
   font-size: 24px;
   margin-bottom: 20px;
+  color: #333;
 `;
 
 const LogoutButton = styled.button`
-  padding: 10px 20px;
+  padding: 12px 24px;
   background-color: #333;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+
+  &:hover {
+    background-color: #555;
+  }
 `;
-
-const MyAccountPage: React.FC<MyAccountPageProps> = ({ onLogout, loginId }) => {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    onLogout();
-    navigate('/');
-  };
-
-  return (
-    <Container>
-      <WelcomeText>{loginId}님 안녕하세요!</WelcomeText>
-      <LogoutButton onClick={handleLogout}>로그아웃</LogoutButton>
-    </Container>
-  );
-};
-
-export default MyAccountPage;
