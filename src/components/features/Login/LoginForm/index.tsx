@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { InputField, Button } from '@components/common';
-import useLoginForm from '@hooks/useLoginForm';
+import useLoginForm from './useLoginForm';
 
 export default function LoginForm() {
   const { userInfo, handleChange, handleSubmit } = useLoginForm();
