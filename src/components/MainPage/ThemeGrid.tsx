@@ -13,8 +13,6 @@ const ThemeItem = styled.section`
   max-width: 100%;
 `;
 
-const ThemeImage = styled(Image)``;
-
 const Wrapper = styled(Grid)`
   padding: 45px 0 23px 0;
   margin: 0 
@@ -31,7 +29,7 @@ interface ThemeItemComponentProps {
 const ThemeItemComponent = ({ link, src, alt, label }: ThemeItemComponentProps) => (
   <Link to={link}>
     <ThemeItem>
-      <ThemeImage src={src} alt={alt} width="90px" radius={32} ratio="square" />
+      <Image src={src} alt={alt} width="90px" radius={32} ratio="square" />
       <p>{label}</p>
     </ThemeItem>
   </Link>
