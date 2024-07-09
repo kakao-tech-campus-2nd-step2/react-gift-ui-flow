@@ -31,12 +31,12 @@ const AppRoutes = () => {
   <AuthProvider>
     <Router>
       <Header isLoggedIn={isLoggedIn}/>
-      <Routes>
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/theme/:themeKey" element={<Theme />} />
           <Route path="/login" element={<Login onLogin={handleLogin}/>} />
           <Route path="/my-account" element={<PrivateRoute><MyAccount username={user} onLogout={handleLogout}/></PrivateRoute>} />
-      </Routes>
+        </Routes>
       <Footer />
     </Router>
   </AuthProvider>
