@@ -1,18 +1,13 @@
-import styled from '@emotion/styled';
+import { RouterProvider } from 'react-router-dom';
+import RouterInfo from '@/routes/RouterInfo';
+import { AuthProvider } from '@/providers/AuthProvider';
 
 const App = () => {
-  const name = 'Josh Perez';
-
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <AuthProvider>
+      <RouterProvider router={RouterInfo} />
+    </AuthProvider>
   );
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
