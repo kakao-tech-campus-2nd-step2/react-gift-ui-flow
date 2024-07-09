@@ -25,19 +25,17 @@ const SelectFriendInner = styled.section`
 `;
 
 export const SelectFriend = () => (
-  <>
-    <SelectFriendContainer>
-      <SelectFriendInner>
-        <Image
-          src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png"
-          alt="친구 선택 유도 아이콘"
-          width="70px"
-          radius={16}
-          ratio="square"
-        ></Image>
-        <p>선물 받을 친구를 선택해주세요.</p>
-      </SelectFriendInner>
-    </SelectFriendContainer>
-  </>
+  <SelectFriendContainer>
+    <SelectFriendInner>
+      <Image
+        src="https://gift-s.kakaocdn.net/dn/gift/images/m640/bg_profile_default.png"
+        alt="친구 선택 유도 아이콘"
+        width="70px"
+        radius={16}
+        ratio="square"
+      />
+      <p>선물 받을 친구를 선택해주세요.</p>
+    </SelectFriendInner>
+  </SelectFriendContainer>
 );
 export default SelectFriend;
