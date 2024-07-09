@@ -7,6 +7,6 @@ export { default as Ranking } from './GoodsItem/Ranking';
 export { default as Header } from '../features/Layout/Header';
 export { default as Container } from './Layout/Container';
 export { default as Grid } from './Layout/Grid';
-export { default as Inner } from './Layout/Inner';
+export { default as CenteredContainer } from './Layout/CenteredContainer';
 export { default as SectionHeader } from './SectionHeader';
 export { default as PrivateRoute } from '../../routes/components/PrivateRoute';

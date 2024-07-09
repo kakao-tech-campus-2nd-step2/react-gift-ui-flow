@@ -1,11 +1,9 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Container from '@components/common/Layout/Container';
 import logo from '@assets/images/logo.png';
-import { Inner } from '@components/common';
+import { CenteredContainer, Container } from '@components/common';
 import { Link } from 'react-router-dom';
 import { ROUTE_PATH } from '@routes/path';
-import { BREAK_POINTS } from '@assets/styles/variants';
 import AuthLinks from './AuthLinks';
 
 const LOGO_ALT = 'home page logo';
@@ -13,14 +11,14 @@ const LOGO_ALT = 'home page logo';
 export default function Header() {
   return (
     <HeaderContainer>
-      <Inner maxWidth={BREAK_POINTS.md}>
+      <CenteredContainer maxWidth="md">
         <Container justifyContent="space-between" alignItems="center">
           <Link to={ROUTE_PATH.HOME}>
             <Logo src={logo} alt={LOGO_ALT} />
           </Link>
           <AuthLinks />
         </Container>
-      </Inner>
+      </CenteredContainer>
     </HeaderContainer>
   );
 }
