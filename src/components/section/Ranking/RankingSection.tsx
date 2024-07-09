@@ -2,12 +2,14 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 
 import { Container } from '@/components/common/layouts/Container';
+
 import { rankingItems } from '@/data/giftItems';
 import { breakpoints } from '@/styles/variants';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
 import { RankingItems } from './RankingItems';
+
 import type { Category,Item } from './types/Ranking';
 
 export const RankingSection = () => {

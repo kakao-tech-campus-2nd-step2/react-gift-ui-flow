@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { ROUTE_PATH } from '@/routes/constants';
 interface AuthContextType {
   authToken: string | null; //토큰

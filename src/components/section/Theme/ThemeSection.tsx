@@ -26,7 +26,6 @@ export const Items = ({ gap, columns, children }: ThemeSectionProps) => (
 
 export const ThemeSection = () => {
   const navigate = useNavigate();
-
   const onItemClick = (themeKey: string) => {
     const themePagePath = ROUTE_PATH.THEME_PAGE.replace(':themeKey', themeKey);
     navigate(themePagePath);

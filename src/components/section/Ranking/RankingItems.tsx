@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { useState } from 'react';
 
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
