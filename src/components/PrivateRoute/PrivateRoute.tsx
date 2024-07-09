@@ -13,8 +13,7 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({ children}) => {
 	const location = useLocation();
 
 	if (!isLoggedIn) {
-		console.log(location)
-		return <Navigate to="/login" state={{ from: location }}/>;
+		return <Navigate to="/login" state={{ from: location.pathname }}/>;
 	}
 
 	return children;

@@ -53,6 +53,7 @@ const Login: React.FC<LoginProps> = ({}) => {
 	const { login } = useAuth();
 
 	const from = (location.state as { from?: Location })?.from?.pathname || "/";
+  console.log(location.state)
 	const handleLogin = () => {
 		if (username && password) {
 			login(username);
