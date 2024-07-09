@@ -1,0 +1,22 @@
+  .footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #eaeaea;
+    padding: 16px 0;
+    text-align: left;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .footer-inner p {
+    font-size: 14px;
+    color: #666;
+  }
+  .login {
+    text-decoration: none;
+    color: black;
+  }
+  

@@ -1,18 +1,16 @@
-import styled from '@emotion/styled';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from 'src/components/pages/AuthContext';
+import { Routes } from 'src/components/Routes';
 
-const App = () => {
-  const name = 'Josh Perez';
-
+const App: React.FC = () => {
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
-  );
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter> 
+    </AuthProvider>
+  )
 };
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;

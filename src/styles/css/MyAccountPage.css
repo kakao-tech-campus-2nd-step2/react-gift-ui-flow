@@ -1,0 +1,55 @@
+.account-container {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+  }
+  
+  .account-header {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .account-header h1 {
+    font-size: 20px;
+    margin: 0;
+  }
+  
+  .account-header button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .account-content {
+    text-align: center;
+  }
+  
+  .account-content h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  .account-content button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .account-content button:hover {
+    background-color: #555;
+  }
+  
