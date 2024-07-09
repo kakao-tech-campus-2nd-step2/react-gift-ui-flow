@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,7 @@ const Nav: React.FC = () => {
     <nav>
       <ul>
         <li>
+
           <Link to="/">홈</Link>
         </li>
         {authToken ? (
