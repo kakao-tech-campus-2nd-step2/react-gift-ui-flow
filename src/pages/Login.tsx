@@ -1,5 +1,5 @@
 import styled from "@emotion/styled";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useLocation,useNavigate} from "react-router-dom";
 
 import { Button } from "@/components/common/Button/index";
@@ -41,22 +41,17 @@ const UnderlineTextFieldStyle = styled(UnderlineTextField)`
   width: 100%;
 `;
 
-interface LoginProps {
-	onLogin: (username: string) => void;
-}
-
-const Login: React.FC<LoginProps> = ({}) => {
+const Login = ({}) => {
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const navigate = useNavigate();
 	const location = useLocation();
-	const { login } = useAuth();
+	const { setAuthToken } = useAuth();
 
 	const from = (location.state as { from?: Location })?.from?.pathname || "/";
-  console.log(location.state)
-	const handleLogin = () => {
+	const handleClickLoginButton = () => {
 		if (username && password) {
-			login(username);
+			setAuthToken(username);
 			navigate(from, {replace: true});
 		} else {
 			alert('아이디와 비밀번호를 입력해주세요.');
@@ -77,7 +72,7 @@ const Login: React.FC<LoginProps> = ({}) => {
 		onChange={(e) => setPassword(e.target.value)}
 		placeholder='비밀번호'
 		/>
-        <ButtonStyle onClick={handleLogin}>로그인</ButtonStyle>
+        <ButtonStyle onClick={handleClickLoginButton}>로그인</ButtonStyle>
       </LoginForm>
     </Container>
   );

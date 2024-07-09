@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import React from 'react';
 import { Link } from 'react-router-dom';
+
+import { useAuth } from '@/contexts/Authcontext';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -28,11 +29,8 @@ const StyledLink = styled(Link)`
   outline: none;
 `;
 
-interface HeaderProps {
-  isLoggedIn: boolean;
-}
-
-const Header: React.FC<HeaderProps> = ({isLoggedIn}) => {
+const Header = ({}) => {
+  const { isLoggedIn } = useAuth();
   return (
     <HeaderContainer>
       <Nav>

@@ -31,23 +31,19 @@ const StyledButton = styled(Button)`
   }
 `;
 
-interface MyAccountProps {
-	username: string;
-	onLogout: () => void;
-}
 
-const MyAccount: React.FC<MyAccountProps>= () => {
+const MyAccount = () => {
 	const navigate = useNavigate();
-  const { user: username, logout } = useAuth();
+  const { user: username, clearAuthToken } = useAuth();
 
-  const handleLogout = () => {
-    logout();
+  const handleClickLogoutButton = () => {
+    clearAuthToken();
     navigate('/');
   };
 	  return (
 	<Container>
 	  <StyledText>{username}님 안녕하세요!</StyledText>
-	  <StyledButton onClick={handleLogout}>로그아웃</StyledButton>
+	  <StyledButton onClick={handleClickLogoutButton}>로그아웃</StyledButton>
 	</Container>
   );
 }
