@@ -1,7 +1,6 @@
 import React from 'react';
-import { Global } from '@emotion/react';
-import resetStyles from '@/assets/styles/global/resetStyles';
 import { Meta, StoryObj } from '@storybook/react';
+import GlobalStyles from '@assets/styles';
 import InputField, { InputFieldProps } from '.';
 
 const meta: Meta<InputFieldProps> = {
@@ -26,7 +25,7 @@ const meta: Meta<InputFieldProps> = {
   decorators: [
     (Story) => (
       <>
-        <Global styles={resetStyles} />
+        <GlobalStyles />
         <Story />
       </>
     ),
@@ -42,6 +41,8 @@ export const Default: Story = {
     type: 'text',
     label: '이름',
     labelFor: 'userName',
-    srOnly: false,
+    srOnly: true,
+    size: 'small',
+    disabled: true,
   },
 };
