@@ -2,86 +2,82 @@ import styled from '@emotion/styled';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-interface LoginPageProps {
-  onLogin: (id: string) => void;
-}
+import { useAuth } from '../context/AuthContext';
 
-const LoginContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`;
-
-const Logo = styled.h1`
-  font-size: 32px;
-  margin-bottom: 20px;
-`;
-
-const Form = styled.form`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-`;
-
-const Input = styled.input`
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  padding: 10px;
-  background-color: #ffeb3b;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-`;
-
-const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
-  const [id, setId] = useState('');
-  const [pw, setPw] = useState('');
+const LoginPage: React.FC = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    onLogin(id);
-    navigate('/');
+    login(username);
+    navigate(-1);
   };
 
   return (
-    <LoginContainer>
-      <Logo>kakao</Logo>
-      <Form onSubmit={handleSubmit}>
-        <Input
+    <Container>
+      <LoginForm onSubmit={handleLogin}>
+        <Title>kakao</Title>
+        <InputField
           type="text"
-          placeholder="이름"
-          value={id}
-          onChange={(e) => setId(e.target.value)}
-          required
+          placeholder="아이디"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
-        <Input
+        <InputField
           type="password"
           placeholder="비밀번호"
-          value={pw}
-          onChange={(e) => setPw(e.target.value)}
-          required
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <Button type="submit">로그인</Button>
-      </Form>
-    </LoginContainer>
+        <LoginButton type="submit">로그인</LoginButton>
+      </LoginForm>
+    </Container>
   );
 };
 
 export default LoginPage;
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+`;
+
+const LoginForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+`;
+
+const Title = styled.h1`
+  margin-bottom: 20px;
+  text-align: center;
+`;
+
+const InputField = styled.input`
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+`;
+
+const LoginButton = styled.button`
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #ffeb3b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+`;
