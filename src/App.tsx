@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Navigate, Route, Routes, useLocation } from 'react-router-dom';
+import { createBrowserRouter, Navigate, Outlet, RouterProvider, useLocation } from 'react-router-dom';
 
 import Footer from '@/components/common/Footer/Footer';
 import Header from '@/components/common/Header/Header';
@@ -23,46 +23,52 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   return children;
 };
 
+const DefaultLayout: React.FC = () => (
+  <div>
+    <Header />
+    <Container>
+      <Outlet />
+    </Container>
+    <Footer />
+  </div>
+);
+
+const router = createBrowserRouter([
+  {
+    path: "/login",
+    element: <LoginPage />,
+  },
+  {
+    path: "*",
+    element: <DefaultLayout />,
+    children: [
+      {
+        path: "/",
+        element: <MainPage />,
+      },
+      {
+        path: "theme/:themeKey",
+        element: <ThemePage />,
+      },
+      {
+        path: "my-account",
+        element: (
+          <RequireAuth>
+            <MyAccountPage />
+          </RequireAuth>
+        ),
+      },
+    ],
+  },
+]);
+
 const App: React.FC = () => {
   return (
     <React.StrictMode>
       <AuthProvider>
-        <Router>
-          <Routes>
-            <Route path="/login" element={<LoginPage />} />
-            <Route
-              path="*"
-              element={
-                <DefaultLayout>
-                  <Routes>
-                    <Route path="/" element={<MainPage />} />
-                    <Route path="/theme/:themeKey" element={<ThemePage />} />
-                    <Route
-                      path="/my-account"
-                      element={
-                        <RequireAuth>
-                          <MyAccountPage />
-                        </RequireAuth>
-                      }
-                    />
-                  </Routes>
-                </DefaultLayout>
-              }
-            />
-          </Routes>
-        </Router>
+        <RouterProvider router={router} />
       </AuthProvider>
     </React.StrictMode>
-  );
-};
-
-const DefaultLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  return (
-    <div>
-      <Header />
-      <Container>{children}</Container>
-      <Footer />
-    </div>
   );
 };
 
