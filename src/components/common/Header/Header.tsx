@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 interface HeaderProps {
-  bgColor?: string;
   isLoggedIn: boolean;
 }
 
@@ -28,7 +27,7 @@ const LogoText = styled.div`
   font-family: 'Arial, sans-serif';
 `;
 
-const NavButton = styled(Link)`
+const LoginButton = styled(Link)`
   padding: 8px 16px;
   background-color: transparent;
   color: black;
@@ -38,21 +37,17 @@ const NavButton = styled(Link)`
   font-size: 14px;
   font-family: 'Arial, sans-serif';
   text-decoration: none;
-
-  &:hover {
-    background-color: #f0f0f0;
-  }
 `;
 
-const Header: React.FC<HeaderProps> = ({ bgColor, isLoggedIn }) => {
+const Header: React.FC<HeaderProps> = ({ isLoggedIn }) => {
   return (
-    <HeaderWrapper bgColor={bgColor}>
+    <HeaderWrapper>
       <HeaderInner>
         <LogoText>선물하기</LogoText>
         {isLoggedIn ? (
-          <NavButton to="/my-account">내 계정</NavButton>
+          <LoginButton to="/my-account">내 계정</LoginButton>
         ) : (
-          <NavButton to="/login">로그인</NavButton>
+          <LoginButton to="/login">로그인</LoginButton>
         )}
       </HeaderInner>
     </HeaderWrapper>
