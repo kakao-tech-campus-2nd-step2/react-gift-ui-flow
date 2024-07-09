@@ -52,7 +52,7 @@ const MainPage = () => {
       </Child>
       <ChildColumnCenter>
         <ProductList products={displayedProducts} />
-        {detailedProducts.length > 6 && ( // 이렇게 하면 length가 6초과여야 버튼이 보이게 된다.
+        {detailedProducts.length > 6 && (
           <Button onClick={() => setShowMore(!showMore)} theme="lightGray">
             {showMore ? '접기' : '더보기'}
           </Button>
