@@ -1,18 +1,50 @@
-import styled from '@emotion/styled';
+import { useEffect, useState } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import Footer from './components/Footer';
+import AuthContext from './context/AuthContext';
+import Error from './pages/Error';
+import Login from './pages/Login';
+import Main from './pages/Main';
+import MyAccount from './pages/MyAccount';
+import Theme from './pages/Theme';
 
 const App = () => {
-  const name = 'Josh Perez';
+    const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
+    useEffect(() => {
+        const authToken = sessionStorage.getItem('authToken');
+        setIsAuthenticated(!!authToken);
+    }, [isAuthenticated]);
 
-  return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
-  );
+    return (
+        <AuthContext.Provider value={{ isAuthenticated, setIsAuthenticated }}>
+            <RouterProvider router={router} />
+            <Footer />
+        </AuthContext.Provider>
+    );
 };
 
-export default App;
+const router = createBrowserRouter([
+    {
+        path: '/',
+        element: <Main />,
+    },
+    {
+        path: '/login',
+        element: <Login />,
+    },
+    {
+        path: '/my-account',
+        element: <MyAccount />,
+    },
+    {
+        path: '/error/:http_status',
+        element: <Error />,
+    },
+    {
+        path: '/theme/:themeKey',
+        element: <Theme />,
+    },
+]);
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
+export default App;
