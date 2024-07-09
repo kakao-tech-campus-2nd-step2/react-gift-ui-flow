@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useUserInfo } from '@/providers/AuthProvider';
 import { BodyWrapper } from '@/pages/MainPage';
 import styled from '@emotion/styled';
+import routePath from '@/routes/path';
 
 const MyPage = () => {
   const handleLogout = () => {
@@ -15,7 +16,7 @@ const MyPage = () => {
   const { handleUser } = useUserInfo();
 
   const handleLink = () => {
-    navigate('/');
+    navigate(routePath.home);
     handleLogout();
   };
 
