@@ -76,3 +76,4 @@ Create React App (CRA) 기반의 SPA 프로젝트에서 React Router를 사용�
 ## 🛠️ 코드 리뷰 반영
 ### 📄 요구 사항
 - [x] useLoginForm을 LoginForm 컴포넌트 폴더 내부에서 관리
+- [] Inner 컴포넌트의 maxWidth props 제약 조건 부여 및 CenteredConatiner 컴포넌트로 변경
