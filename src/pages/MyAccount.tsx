@@ -11,8 +11,7 @@ export default () => {
     const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
     useEffect(() => {
         if (!isAuthenticated) navigate('/login');
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [navigate, isAuthenticated]);
 
     const username = sessionStorage.getItem('authToken');
     const logout = () => {

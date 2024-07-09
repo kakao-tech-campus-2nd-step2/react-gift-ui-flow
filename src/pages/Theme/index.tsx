@@ -15,8 +15,7 @@ export default () => {
         if (!themeKeys[themeKey]) {
             navigate('/error/404');
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [navigate, themeKey]);
 
     return (
         <div>
