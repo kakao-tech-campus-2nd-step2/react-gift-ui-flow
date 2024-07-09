@@ -8,23 +8,18 @@ const Header: React.FC = () => {
 
   return (
     <HeaderContainer>
-      <Nav>
-        <NavItemleft>
-          <Link to="/">선물하기</Link>
-        </NavItemleft>
-
-        <NavList>
-          {authToken ? (
-            <NavItem>
-              <Link to="/my-account">내 계정</Link>
-            </NavItem>
-          ) : (
-            <NavItemRight>
-              <Link to="/login">로그인</Link>
-            </NavItemRight>
-          )}
-        </NavList>
-      </Nav>
+      <NavItem>
+        <Link to="/">선물하기</Link>
+      </NavItem>
+      {authToken ? (
+        <NavItem>
+          <Link to="/my-account">내 계정</Link>
+        </NavItem>
+      ) : (
+        <NavItem>
+          <Link to="/login">로그인</Link>
+        </NavItem>
+      )}
     </HeaderContainer>
   );
 };
@@ -40,28 +35,6 @@ const HeaderContainer = styled.header`
   border-bottom: 1px solid #ddd;
 `;
 
-const Nav = styled.nav`
-  display: flex;
-  width: 100%;
-`;
-
-const NavList = styled.ul`
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  flex: 1;
-  justify-content: flex-end;
-`;
-
-const NavItemleft = styled.div`
-  margin-right: auto;
-`;
-
 const NavItem = styled.li`
-  margin-left: 20px;
-`;
-
-const NavItemRight = styled(NavItem)`
-  margin-left: auto;
+  margin: 0 20px;
 `;
