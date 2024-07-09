@@ -1,9 +1,6 @@
 import itemThumbnail from '@/assets/images/itemThumbnail.jpg';
 import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
-
-export interface Item extends Omit<DefaultGoodsItemsProps, 'rankingIndex'> {
-  rankingIndex: number;
-}
+import type { Item } from '@/components/section/Ranking/types/Ranking';
 
 const createRankingItems = (): Item[] => {
   return Array.from({ length: 30 }, (_, index) => ({

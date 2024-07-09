@@ -1,17 +1,10 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
 
-interface Item extends Omit<DefaultGoodsItemsProps, 'rankingIndex'> {
-  rankingIndex: number;
-}
-
-interface RankingItemsProps {
-  items: Item[];
-}
+import type { RankingItemsProps } from './types/Ranking';
 
 export const RankingItems = ({ items }: RankingItemsProps) => {
   const [count, setCount] = useState(6);

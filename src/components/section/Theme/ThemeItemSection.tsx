@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
-import { breakpoints } from '@/styles/variants';
 import { defaultItems } from '@/data/giftItems';
+import { breakpoints } from '@/styles/variants';
 
 export const ThemeItemSection = () => {
   const responsiveColumns = {
