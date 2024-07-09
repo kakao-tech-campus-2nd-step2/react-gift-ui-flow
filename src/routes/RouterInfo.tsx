@@ -7,6 +7,7 @@ import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import styled from '@emotion/styled';
 import PrivateRoute from '@/routes/PrivateRoute';
+import routePath from './path';
 
 const Container = styled.div`
   width: 100%;
@@ -28,7 +29,7 @@ const Layout = () => {
 
 const RouterInfo = createBrowserRouter([
   {
-    path: '/',
+    path: routePath.root,
     element: <Layout />,
     children: [
       {
@@ -36,21 +37,21 @@ const RouterInfo = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: '/my-account',
+        path: routePath.myAccount,
         element: <PrivateRoute />,
       },
       {
-        path: '/theme/:themekey',
+        path: routePath.themekey,
         element: <GiftDetailPage />,
       },
       {
-        path: '/theme',
-        element: <Navigate to="/" replace />,
+        path: routePath.theme,
+        element: <Navigate to={routePath.home} replace />,
       },
     ],
   },
   {
-    path: '/login',
+    path: routePath.login,
     element: <LoginPage />,
   },
 ]);
