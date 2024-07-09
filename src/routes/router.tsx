@@ -23,12 +23,12 @@ export const router = createBrowserRouter([
         element: <LoginPage />,
       },
       {
+        path: ROUTE_PATH.THEME_PAGE,
+        element: <ThemePage />,
+      },
+      {
         element: <AuthRoute />,
         children: [
-          {
-            path: ROUTE_PATH.THEME_PAGE,
-            element: <ThemePage />,
-          },
           {
             path: ROUTE_PATH.MYACCOUNT_PAGE,
             element: <MyAccountPage />,
