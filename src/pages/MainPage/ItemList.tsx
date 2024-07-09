@@ -3,49 +3,35 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/common/Button';
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
-
-interface Item {
-  imageSrc: string;
-  subtitle: string;
-  title: string;
-  amount: number;
-}
+import { useCount } from '@/pages/MainPage/handleCount';
+import { sortItems } from '@/pages/MainPage/sortItems';
+import type { Item } from '@/pages/MainPage/types';
 
 interface ItemListProps {
   items: Item[];
 }
 
 const ItemList = ({ items }: ItemListProps) => {
-  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
-  const [visibleItems, setVisibleItems] = useState(6);
+  const [sortOrder, setSortOrder] = useState<'ASC' | 'DESC'>('ASC');
+  const { count, handleIncrease, handleReset } = useCount(6);
   const [filteredItems, setFilteredItems] = useState<Item[]>([]);
 
   useEffect(() => {
-    const sortedItems = [...items].sort((a, b) =>
-      sortOrder === 'asc' ? a.amount - b.amount : b.amount - a.amount,
-    );
+    const sortedItems = sortItems(items, sortOrder);
     setFilteredItems(sortedItems);
   }, [items, sortOrder]);
-
-  const handleMore = () => {
-    setVisibleItems((prevVisibleItems) => prevVisibleItems + 6);
-  };
-
-  const handleLess = () => {
-    setVisibleItems(6);
-  };
 
   return (
     <section>
       <h2>실시간 급상승 선물랭킹</h2>
       <div>
-        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value as 'asc' | 'desc')}>
-          <option value="asc">금액 낮은 순</option>
-          <option value="desc">금액 높은 순</option>
+        <select value={sortOrder} onChange={(e) => setSortOrder(e.target.value as 'ASC' | 'DESC')}>
+          <option value="ASC">금액 낮은 순</option>
+          <option value="DESC">금액 높은 순</option>
         </select>
       </div>
       <Grid columns={{ sm: 4, md: 5, lg: 6 }} gap={20}>
-        {filteredItems.slice(0, visibleItems).map((item, index) => (
+        {filteredItems.slice(0, count).map((item, index) => (
           <RankingGoodsItems
             key={index}
             rankingIndex={index + 1}
@@ -56,12 +42,12 @@ const ItemList = ({ items }: ItemListProps) => {
           />
         ))}
       </Grid>
-      {visibleItems < filteredItems.length ? (
-        <Button onClick={handleMore} theme="outline" size="large">
+      {count < filteredItems.length ? (
+        <Button onClick={handleIncrease} theme="outline" size="large">
           더보기
         </Button>
       ) : (
-        <Button onClick={handleLess} theme="outline" size="large">
+        <Button onClick={handleReset} theme="outline" size="large">
           접기
         </Button>
       )}

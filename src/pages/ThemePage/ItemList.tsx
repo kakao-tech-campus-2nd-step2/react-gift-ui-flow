@@ -1,12 +1,6 @@
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Grid } from '@/components/common/layouts/Grid';
-
-interface Item {
-  imageSrc: string;
-  subtitle: string;
-  title: string;
-  amount: number;
-}
+import type { Item } from '@/pages/ThemePage/types'; 
 
 interface ItemListProps {
   items: Item[];

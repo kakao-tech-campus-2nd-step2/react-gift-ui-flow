@@ -1,11 +1,12 @@
-import { GetTheme } from '@/components/Header/GetTheme';
+
+import { themes } from '@/components/Header/themes';
 
 interface TitleProps {
   themeKey?: string;
 }
 
 const Title = ({ themeKey }: TitleProps) => {
-  const theme = themeKey ? GetTheme()[themeKey] : null;
+  const theme = themeKey ? themes[themeKey] : null;
 
   return (
     <div>

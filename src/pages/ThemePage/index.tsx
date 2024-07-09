@@ -1,9 +1,9 @@
 import { Container } from '@/components/common/layouts/Container';
-import GetItem from '@/pages/ThemePage/GetItem';
+import getItmes from '@/pages/ThemePage/getItmes';
 import ItemList from '@/pages/ThemePage/ItemList';
 
 const ThemePage = () => {
-  const items = GetItem();
+  const items = getItmes();
 
   return (
     <div>
