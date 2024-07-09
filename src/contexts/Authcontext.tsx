@@ -1,6 +1,8 @@
 import type { ReactNode} from 'react';
 import React, { createContext, useContext, useEffect,useState } from 'react';
 
+const AUTH_TOKEN_KEY = 'authToken';
+
 interface AuthContextType {
   isLoggedIn: boolean;
   user: string | null;
@@ -15,7 +17,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
 
   useEffect(() => {
-    const storedUser = sessionStorage.getItem('authToken');
+    const storedUser = sessionStorage.getItem(AUTH_TOKEN_KEY);
     if (storedUser) {
       setUser(storedUser);
       setIsLoggedIn(true);
@@ -24,13 +26,13 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const setAuthToken = (username: string) => {
     setIsLoggedIn(true);
-    sessionStorage.setItem('authToken', username);
+    sessionStorage.setItem(AUTH_TOKEN_KEY, username);
     setUser(username);
   };
 
   const clearAuthToken = () => {
     setIsLoggedIn(false);
-    sessionStorage.removeItem('authToken');
+    sessionStorage.removeItem(AUTH_TOKEN_KEY);
     setUser(null);
   };
 
