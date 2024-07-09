@@ -3,20 +3,18 @@ import { useParams } from 'react-router-dom';
 import ThemeDetails from '@/components/Gift/ThemeDetails';
 import { Navigate } from 'react-router-dom';
 import type { Theme } from '@/components/Gift/ThemeDetails';
+import routePath from '@/routes/path';
 
 interface TitleProps {
   backgroundColor: string;
 }
 
-const ThemePage = () => {
+const GiftHeader = () => {
   const { themekey } = useParams();
   const themeExists = themekey && themekey in ThemeDetails;
-  if (!themeExists) <Navigate to="/" replace />;
-  return ThemeDetails[themekey as string];
-}; // ThemeDetails에 존재하지 않은 themeKey일 경우 main page로 리다이렉션
+  if (!themeExists) return <Navigate to={routePath.home} replace />;
 
-const GiftHeader = () => {
-  const theme: Theme = ThemePage();
+  const theme: Theme | undefined = ThemeDetails[themekey];
 
   return (
     <Title backgroundColor={theme.backgroundColor}>
@@ -29,26 +27,25 @@ const GiftHeader = () => {
 
 export default GiftHeader;
 
-// Title은 flex-direction: row;를 가지고 있습니다.
 const Title = styled.div<TitleProps>`
-  display: flex; /* Flexbox를 활성화 */
-  flex-direction: column; /* 자식 요소들을 가로 방향으로 배치 */
-  gap: 30px; /* 자식 요소들 사이에 30px 간격을 줌 */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
   padding: 20px;
 `;
 const H1 = styled.h1`
-  color: white; /* h1의 색상 설정 */
+  color: white;
   font-weight: 700;
 `;
 
 const H2 = styled.h2`
-  color: rgba(255, 255, 255, 0.55); /* h2의 색상 설정 */
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 700;
 `;
 
 const H3 = styled.h3`
-  color: rgba(255, 255, 255, 0.55); /* h3의 색상 설정 */
+  color: rgba(255, 255, 255, 0.55);
   font-weight: 700;
 `;
