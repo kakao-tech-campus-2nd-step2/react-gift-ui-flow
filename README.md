@@ -1,15 +1,58 @@
-# 카카오 테크 캠퍼스 - 프론트엔드 카카오 선물하기 편
+## 2주차 질문
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa)
+### 1️⃣ CRA 기반의 SPA프로젝트에서 React Router를 사용하지 않는다면 어떤 문제가 발생하는가?
 
-## Week 1. 1단계 - 프로젝트 세팅
+- SPA (Single Page Application)에서 페이지 전환을 효율적으로 관리하지 못한다. React Router는 URL을 기반으로 적절한 컴포넌트를 렌더링해주는데 이것을 사용하지 않으면 윽정 URL로 직접 접근하기 어렵다.
+- 리액트 라우터는 URL과 컴포넌트 간의 매핑을 관리하는데 이것을 사용하지 않으면 URL를 기반으로 진행되는 코드의 복잡성이 증가됩니다.
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzgHvzRM)
+### 2️⃣ 리액트 Context 나 Redux는 언제 사용하면 좋을까요? (로그인을 제외한 예시와 이유를 함께 적어보세요)
 
-## Week 1. 2단계 - Storybook을 사용하여 재사용 가능한 컴포넌트 구현
+리액트 Context와 redux는 상태관리에 사용되며 특정상황에서는 유용합니다.
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/4wYFPW1K)
+- 언어/지역
+  애플리케이션의 언어를 다국어로 지원할 경우 언어 설정을 전역적으로 필요하고 이것을 context를 사용하여 다국어 지원이 가능합니다.
+- 대규모 애플리케이션 상태관리
+  복잡한 애플리케이션에서 다양한 데이터 소스와 상호작용할 때
+  redux는 액션과 reducer 패턴을 통해서 상태변화를 예측 가능하고 디버깅을 용이 하게 합니다.
 
-## Week 2. 1단계 - 페이지 만들기
+### 3️⃣ Local Storage, Session Storage와 Cookies의 차이가 무엇이며 각각 어떨때 사용하면 좋을까?
 
-[🔗 link](https://edu.nextstep.camp/s/hazAC9xa/ls/QzV1ncxk)
+- Local Storage : 영구적 데이터 저장이 필요할 때
+- Session Storage : 브라우저 세션 동안만 필요한 임시 데이터 저장에 사용
+- Cookies : 서버와 클라이언트 간에 작은 데이터를 교환하거나 인증 정보를 저장할 때
+
+---
+
+## 1단계 - 페이지 만들기
+
+### 메인페이지
+
+- Theme 카테고리 섹션을 추가
+  - Theme 카테고리 Item을 클릭 시 Theme 페이지( /theme/:themeKey)로 이동
+- 실시간 급상승 선물랭킹을 추가
+  - 필터 기능을 hooks를 사용하여 구현 (ex. 전체, 여성이, 남성이, 청소년이, 밭고싶어한, 많이 선물한, 위시로 받은)
+  - 상품목록을 처음에는 6개만 보여지게 해요. 더보기를 누르는 경우 상품목록을 더 보여줘요 (접기를 누르면 다시 6개만 보이기)
+
+### Theme 페이지 (/theme/:themeKey)
+
+- Header 섹션을 추가
+  - 재사용성을 고려하여 Header 섹션을 만들어요 (themekey에 따라 label, title, description, backgroundColor가 달라짐)
+- 상품 목록 섹션을 추가해요
+
+### 로그인 페이지
+
+- ID와 PW를 입력하면 로그인이 되도록 구현 (ID와 PW는 아무 값을 입력해도 통과되도록)
+
+### 나의 페이지
+
+- 로그아웃을 할 수 있는 버튼을 추가
+
+## 2단계 - 인증 프로세스 구현
+
+- 로그인된 페이지에서 ID 와 PW를 입력하면 직전 페이지로 Redirect 되도록 해요.
+- Fack로그인 기능을 구현
+  - 로그인 페이지에서 ID와 PW를 입력하면 ID를 sessionStorage의 authToken key에 저장
+  - 모든 페이지 진입 시 authToken 을 토대로 로그인 여부를 판단하는 로직을 추가(ContextAPI)
+  - Header에서 로그인 한 경우 내 계정을 로그인 하지 않은 경우 로그인 버튼을 추가
+  - 내 계정페이지는 로그인 한 사람만 접근 가능하도록 해요
+  - 내 계정 페이지에서 로그아웃을 할 수 있도록 해요 (로그아웃 후 메인 페이지로 Redirect 되되록 해요)
