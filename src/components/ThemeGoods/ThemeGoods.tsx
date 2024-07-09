@@ -1,9 +1,8 @@
 import styled from "@emotion/styled";
 import React from "react";
 
+import { DefaultGoodsItems } from "@/components/common/GoodsItem/Default";
 import { Grid } from "@/components/common/layouts/Grid/index";
-
-import { DefaultGoodsItems } from "../common/GoodsItem/Default";
 
 interface ItemType {
 	imageSrc: string;

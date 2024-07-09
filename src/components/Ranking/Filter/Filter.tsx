@@ -1,8 +1,9 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
-import FilterButton from '../../common/FilterButton/FilterButton';
-import RankingItems from '../RankingItems/RankingItems';
+import FilterButton from '@/components/common/FilterButton/FilterButton';
+import RankingItems from '@/components/Ranking/RankingItems/RankingItems';
+
 import FilterTabs from './FilterTabs';
 
 const FilterContent = styled.div`

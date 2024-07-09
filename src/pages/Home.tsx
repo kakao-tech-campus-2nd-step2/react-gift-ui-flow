@@ -2,12 +2,11 @@
 import { css } from '@emotion/react';
 import React from 'react';
 
+import { Button } from '@/components/common/Button/index';
 import GoodsCatygory from '@/components/GoodsCategory/GoodsCategory';
+import Filter from '@/components/Ranking/Filter/Filter';
 import RankingHeader from '@/components/Ranking/RankingHeader';
 import SelectFriend from '@/components/SelectFriend/SelectFriend';
-
-import { Button } from '../components/common/Button/index';
-import Filter from '../components/Ranking/Filter/Filter';
 
 
 

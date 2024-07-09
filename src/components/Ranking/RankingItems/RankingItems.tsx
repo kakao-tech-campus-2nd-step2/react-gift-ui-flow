@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 import React, { useState } from 'react';
 
-import { RankingGoodsItems } from '../../common/GoodsItem/Ranking';
-import { Grid } from '../../common/layouts/Grid';
-import DetailButton from '../Detail/DetailButton';
+import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
+import { Grid } from '@/components/common/layouts/Grid';
+import DetailButton from '@/components/Ranking/Detail/DetailButton';
 
 interface Item {
   id: number;

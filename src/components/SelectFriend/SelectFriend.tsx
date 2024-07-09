@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 
-import { Image } from '../common/Image';
+import { Image } from '@/components/common/Image';
 
 
 const SelectFriendStyle = styled.div`
