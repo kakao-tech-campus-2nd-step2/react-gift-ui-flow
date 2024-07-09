@@ -1,6 +1,6 @@
 import React from 'react';
 import { Global } from '@emotion/react';
-import resetStyles from '@/assets/styles/resetStyles';
+import resetStyles from '@/assets/styles/global/resetStyles';
 import { Meta, StoryObj } from '@storybook/react';
 import InputField, { InputFieldProps } from '.';
 

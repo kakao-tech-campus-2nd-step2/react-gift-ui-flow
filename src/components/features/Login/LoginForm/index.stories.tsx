@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { Meta, StoryObj } from '@storybook/react';
 import AuthContext from '@context/auth/AuthContext';
 import { Global } from '@emotion/react';
-import resetStyles from '@assets/styles/resetStyles';
+import resetStyles from '@/assets/styles/global/resetStyles';
 import LoginForm from '.';
 
 const meta: Meta<typeof LoginForm> = {

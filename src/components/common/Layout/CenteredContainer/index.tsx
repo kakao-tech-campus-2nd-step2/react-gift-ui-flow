@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from '@emotion/styled';
-import { BREAK_POINTS } from '@assets/styles/variants';
+import { BREAK_POINTS } from '@assets/styles/theme/variants';
 
 type MaxWidth = 'xs' | 'sm' | 'md' | 'lg';
 

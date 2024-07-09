@@ -3,7 +3,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 import AuthContext from '@context/auth/AuthContext';
 import { Global } from '@emotion/react';
-import resetStyles from '@assets/styles/resetStyles';
+import resetStyles from '@/assets/styles/global/resetStyles';
 import AuthLinks from '.';
 
 const meta: Meta<typeof AuthLinks> = {
