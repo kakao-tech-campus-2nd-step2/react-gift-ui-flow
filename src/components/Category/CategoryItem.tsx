@@ -2,6 +2,8 @@ import styled from '@emotion/styled';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import { getThemeRoute } from '@/constants/routes';
+
 export type CategoryItemProps = {
   id: number;
   themeKey: string;
@@ -13,7 +15,7 @@ const CategoryItem: React.FC<{ item: CategoryItemProps }> = ({ item }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/theme/${item.themeKey}`);
+    navigate(getThemeRoute(item.themeKey));
   };
 
   return (

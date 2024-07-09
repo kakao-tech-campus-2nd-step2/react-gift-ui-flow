@@ -3,6 +3,7 @@ import { createBrowserRouter, Navigate, Outlet, RouterProvider, useLocation } fr
 
 import Footer from '@/components/common/Footer/Footer';
 import Header from '@/components/common/Header/Header';
+import { ROUTES } from '@/constants/routes';
 import LoginPage from '@/pages/Login';
 import MainPage from '@/pages/Main';
 import MyAccountPage from '@/pages/MyAccount';
@@ -16,8 +17,7 @@ const RequireAuth = ({ children }: { children: JSX.Element }) => {
   const location = useLocation();
 
   if (!isLoggedIn) {
-    // 로그인하지 않은 경우 로그인 페이지로 이동
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to={ROUTES.LOGIN} state={{ from: location }} replace />;
   }
 
   return children;
@@ -35,7 +35,7 @@ const DefaultLayout: React.FC = () => (
 
 const router = createBrowserRouter([
   {
-    path: "/login",
+    path: ROUTES.LOGIN,
     element: <LoginPage />,
   },
   {
@@ -43,15 +43,15 @@ const router = createBrowserRouter([
     element: <DefaultLayout />,
     children: [
       {
-        path: "/",
+        path: ROUTES.MAIN,
         element: <MainPage />,
       },
       {
-        path: "theme/:themeKey",
+        path: ROUTES.THEME,
         element: <ThemePage />,
       },
       {
-        path: "my-account",
+        path: ROUTES.MY_ACCOUNT,
         element: (
           <RequireAuth>
             <MyAccountPage />

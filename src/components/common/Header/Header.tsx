@@ -4,20 +4,21 @@ import { useNavigate } from 'react-router-dom';
 
 import { useAuth } from '@/AuthContext';
 import { Image } from '@/components/common/Image';
+import { ROUTES, TEXTS } from '@/constants/routes'; // 상수 불러오기
 
 export const Header: React.FC = () => {
   const navigate = useNavigate();
   const { isLoggedIn } = useAuth();
 
   const handleLogoClick = () => {
-    navigate('/');
+    navigate(ROUTES.MAIN);
   };
 
   const handleMenuClick = () => {
     if (isLoggedIn) {
-      navigate('/my-account');
+      navigate(ROUTES.MY_ACCOUNT);
     } else {
-      navigate('/login');
+      navigate(ROUTES.LOGIN);
     }
   };
 
@@ -26,12 +27,12 @@ export const Header: React.FC = () => {
       <LogoContainer onClick={handleLogoClick}>
         <Image
           src="https://gift-s.kakaocdn.net/dn/gift/images/m640/pc_gift_logo.png"
-          alt="선물하기 로고 이미지"
+          alt={TEXTS.LOGO_ALT_TEXT}
           width={40}
           height={25}
         />
       </LogoContainer>
-      <MenuItem onClick={handleMenuClick}>{isLoggedIn ? '내 계정' : '로그인'}</MenuItem>
+      <MenuItem onClick={handleMenuClick}>{isLoggedIn ? TEXTS.MENU_MY_ACCOUNT : TEXTS.MENU_LOGIN}</MenuItem>
     </HeaderContainer>
   );
 };
