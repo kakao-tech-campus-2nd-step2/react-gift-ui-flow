@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import FriendSelector from '.';
 
 const meta: Meta<typeof FriendSelector> = {
-  title: 'components/home/FriendSelector',
+  title: 'features/Home/FriendSelector',
   component: FriendSelector,
   tags: ['autodocs'],
 };

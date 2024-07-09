@@ -5,7 +5,7 @@ import AuthContext from '@context/auth/AuthContext';
 import AccountOverview from '.';
 
 const meta: Meta<typeof AccountOverview> = {
-  title: 'components/account/AccountOverview',
+  title: 'features/Account/AccountOverview',
   component: AccountOverview,
   tags: ['autodocs'],
   decorators: [

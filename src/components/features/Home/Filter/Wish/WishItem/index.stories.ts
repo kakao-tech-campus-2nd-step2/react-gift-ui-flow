@@ -3,7 +3,7 @@ import WishItem, { WishItemProps } from '.';
 import { FILTER_WISHS } from '../../constants';
 
 const meta: Meta<WishItemProps> = {
-  title: 'components/home/Filter/Wish/WishItem',
+  title: 'features/Home/Filter/Wish/WishItem',
   component: WishItem,
   tags: ['autodocs'],
   argTypes: {

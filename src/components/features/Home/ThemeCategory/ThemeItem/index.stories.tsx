@@ -5,7 +5,7 @@ import theme from '@assets/images/theme.jpeg';
 import ThemeItem, { ThemeItemProps } from '.';
 
 const meta: Meta<ThemeItemProps> = {
-  title: 'components/home/ThemeCategory/ThemeItem',
+  title: 'features/Home/ThemeCategory/ThemeItem',
   component: ThemeItem,
   tags: ['autodocs'],
   decorators: [

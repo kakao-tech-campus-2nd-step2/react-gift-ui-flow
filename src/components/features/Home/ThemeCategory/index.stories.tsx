@@ -4,7 +4,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import ThemeCategory from '.';
 
 const meta: Meta<typeof ThemeCategory> = {
-  title: 'components/home/ThemeCategory/Default',
+  title: 'features/Home/ThemeCategory',
   component: ThemeCategory,
   tags: ['autodocs'],
   decorators: [

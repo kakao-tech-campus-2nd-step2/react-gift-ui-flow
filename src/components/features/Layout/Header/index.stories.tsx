@@ -7,7 +7,7 @@ import resetStyles from '@assets/styles/resetStyles';
 import Header from '.';
 
 const meta: Meta<typeof Header> = {
-  title: 'common/Header',
+  title: 'features/Layout/Header',
   component: Header,
   tags: ['autodocs'],
   decorators: [

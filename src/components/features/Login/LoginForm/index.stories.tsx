@@ -7,7 +7,7 @@ import resetStyles from '@assets/styles/resetStyles';
 import LoginForm from '.';
 
 const meta: Meta<typeof LoginForm> = {
-  title: 'components/login/LoginForm',
+  title: 'features/Login/LoginForm',
   component: LoginForm,
   tags: ['autodocs'],
   decorators: [

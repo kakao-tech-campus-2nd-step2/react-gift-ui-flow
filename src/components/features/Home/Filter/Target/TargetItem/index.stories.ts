@@ -3,7 +3,7 @@ import TargetItem, { TargetItemProps } from '.';
 import { FILTER_TARGETS } from '../../constants';
 
 const meta: Meta<TargetItemProps> = {
-  title: 'components/home/Filter/Target/TargetItem',
+  title: 'features/Home/Filter/Target/TargetItem',
   component: TargetItem,
   tags: ['autodocs'],
   argTypes: {

@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import TrendingGifts from '.';
 
 const meta: Meta<typeof TrendingGifts> = {
-  title: 'components/home/TrendingGifts',
+  title: 'features/Home/TrendingGifts',
   component: TrendingGifts,
   tags: ['autodocs'],
 };

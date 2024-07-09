@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import FriendGiftRecommendation from '.';
 
 const meta: Meta<typeof FriendGiftRecommendation> = {
-  title: 'components/home/FriendGiftRecommendation',
+  title: 'features/Home/FriendGiftRecommendation',
   component: FriendGiftRecommendation,
   tags: ['autodocs'],
 };

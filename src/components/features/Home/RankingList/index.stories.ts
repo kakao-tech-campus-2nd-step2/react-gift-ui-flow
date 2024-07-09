@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react';
 import RankingList from '.';
 
 const meta: Meta<typeof RankingList> = {
-  title: 'components/home/RankingList/Default',
+  title: 'features/Home/RankingList',
   component: RankingList,
   tags: ['autodocs'],
 };

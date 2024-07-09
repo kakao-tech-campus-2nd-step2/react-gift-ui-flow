@@ -7,7 +7,7 @@ import resetStyles from '@assets/styles/resetStyles';
 import AuthLinks from '.';
 
 const meta: Meta<typeof AuthLinks> = {
-  title: 'common/Header/Authlinks',
+  title: 'features/Layout/Header/Authlinks',
   component: AuthLinks,
   tags: ['autodocs'],
   decorators: [

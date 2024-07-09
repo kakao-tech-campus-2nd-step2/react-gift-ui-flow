@@ -5,7 +5,7 @@ import Target, { TargetProps } from '.';
 import { FILTER_TARGETS } from '../constants';
 
 const meta: Meta<TargetProps> = {
-  title: 'components/home/Filter/Target/Default',
+  title: 'features/Home/Filter/Target',
   component: Target,
   tags: ['autodocs'],
 };

@@ -5,7 +5,7 @@ import Wish, { WishProps } from '.';
 import { FILTER_WISHS } from '../constants';
 
 const meta: Meta<WishProps> = {
-  title: 'components/home/Filter/Wish/Default',
+  title: 'features/Home/Filter/Wish',
   component: Wish,
   tags: ['autodocs'],
 };
