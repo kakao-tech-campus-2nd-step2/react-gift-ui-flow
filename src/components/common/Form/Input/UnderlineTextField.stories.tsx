@@ -1,22 +1,22 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
-import { UnderlineTextField } from './UnderlineTextField';
+import { UnderlineTextField } from "./UnderlineTextField";
 
 const meta = {
-  title: 'Common/Form/Input/UnderlineTextField',
-  tags: ['autodocs'],
+  title: "Common/Form/Input/UnderlineTextField",
+  tags: ["autodocs"],
   component: UnderlineTextField,
   args: {
-    placeholder: 'placeholder',
+    placeholder: "placeholder",
     disabled: false,
     invalid: false,
   },
   argTypes: {
     size: {
       control: {
-        type: 'select',
-        options: ['large', 'small', 'responsive'],
-        default: 'responsive',
+        type: "select",
+        options: ["large", "small", "responsive"],
+        default: "responsive",
       },
     },
   },

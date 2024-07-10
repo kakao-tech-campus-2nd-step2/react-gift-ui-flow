@@ -1,6 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-
-import { Grid } from '.';
+import { Grid } from ".";
+import { Meta, StoryObj } from "@storybook/react";
 
 const ChildComponent = () => (
   <>
@@ -25,10 +24,10 @@ const ChildComponent = () => (
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Common/Layout/Grid',
+  title: "Common/Layout/Grid",
   component: Grid,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
-  tags: ['autodocs'],
+  tags: ["autodocs"],
 } satisfies Meta<typeof Grid>;
 
 export default meta;

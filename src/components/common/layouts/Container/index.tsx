@@ -1,7 +1,7 @@
-import styled from '@emotion/styled';
-import { forwardRef } from 'react';
+import styled from "@emotion/styled";
+import { forwardRef } from "react";
 
-import { vars } from '@/styles';
+import { vars } from "@/styles";
 
 type Props = {
   maxWidth?: string;
@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Inner = styled.div<Pick<Props, 'maxWidth'>>`
+const Inner = styled.div<Pick<Props, "maxWidth">>`
   width: 100%;
   max-width: ${({ maxWidth }) => maxWidth ?? vars.breakpoints.md};
 `;
