@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 import { Container } from "../../Container";
 import { Link } from "react-router-dom";
-import { getAccessToken } from "@/utils/sessionStorage";
 import ROUTE_PATH from "@/constants/path";
+import { useContext } from "react";
+import { AuthContext } from "@/contexts/AuthContext";
 
 const Header = () => {
-  const isLoggedIn = getAccessToken();
+  const isLoggedIn = useContext(AuthContext).username;
+
   return (
     <Container>
       <StyledHeader>

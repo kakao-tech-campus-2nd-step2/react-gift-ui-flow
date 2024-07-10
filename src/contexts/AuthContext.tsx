@@ -11,11 +11,11 @@ interface AuthContextProviderProps {
   children: React.ReactNode;
 }
 const AuthContextProvider = ({ children }: AuthContextProviderProps) => {
-  const [username, setUsername] = useState(getAccessToken() || "");
+  const [username, setUsername] = useState<string>();
 
   useEffect(() => {
-    setUsername(getAccessToken() || "");
-  }, []);
+    setUsername(getAccessToken());
+  }, [getAccessToken]);
 
   const login = (username: string) => {
     setUsername(username);
