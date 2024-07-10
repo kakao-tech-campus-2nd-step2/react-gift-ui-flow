@@ -34,6 +34,8 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     '@typescript-eslint/consistent-type-imports': 'warn',
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error", { "ignoreTypeValueShadow": true, "ignoreFunctionTypeParameterNameValueShadow": true }],
     '@typescript-eslint/no-unused-vars': [
       'error',
       {
