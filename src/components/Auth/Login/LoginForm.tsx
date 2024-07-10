@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 import { Button } from '@/components/common/Button';
 import { UnderlineTextField } from '@/components/common/Form/Input/UnderlineTextField';
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
 const LoginForm = () => {
   const { login } = useAuthContext();
@@ -30,8 +30,6 @@ const LoginForm = () => {
         placeholder="이름"
         name="id"
         value={id}
-        name="username"
-        value={username}
         onChange={handleInputChange}
       />
       <Space />

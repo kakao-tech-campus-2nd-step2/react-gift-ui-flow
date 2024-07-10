@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom';
 import { Image } from '@/components/common/Image';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
+import ITEMS from '@/components/section/Theme/types/items';
+import { ROUTE_PATH } from '@/routes/constants';
 import { breakpoints } from '@/styles/variants';
-import items from '@/utils/types/items';
 
 type ThemeSectionProps = {
   gap?: number;
@@ -13,7 +14,7 @@ type ThemeSectionProps = {
   children: React.ReactNode;
 };
 
-export const Items: React.FC<ThemeSectionProps> = ({ gap, columns, children }) => (
+export const Items = ({ gap, columns, children }: ThemeSectionProps) => (
   <SectionWrapper>
     <Container>
       <Grid columns={columns} gap={gap}>
@@ -26,12 +27,13 @@ export const Items: React.FC<ThemeSectionProps> = ({ gap, columns, children }) =
 export const ThemeSection = () => {
   const navigate = useNavigate();
   const onItemClick = (themeKey: string) => {
-    navigate(`/theme/${themeKey}`);
+    const themePagePath = ROUTE_PATH.THEME_PAGE.replace(':themeKey', themeKey);
+    navigate(themePagePath);
   };
   return (
     <Items gap={0} columns={{ xs: 4, sm: 4, md: 6 }}>
-      {items.map((item, index) => (
-        <ItemContainer key={index} onClick={() => onItemClick(item.themeKey)}>
+      {ITEMS.map((item) => (
+        <ItemContainer key={item.themeKey} onClick={() => onItemClick(item.themeKey)}>
           <Image
             src={item.image}
             alt={`선물 테마: ${item.category}`}

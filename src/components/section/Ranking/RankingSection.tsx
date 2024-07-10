@@ -2,39 +2,35 @@ import styled from '@emotion/styled';
 import { useState } from 'react';
 
 import { Container } from '@/components/common/layouts/Container';
+
+import { rankingItems } from '@/data/giftItems';
 import { breakpoints } from '@/styles/variants';
-import { rankingItems } from '@/utils/hooks/useCreateItems';
 
 import { GiftCategories } from './Categories/GiftCategories';
 import { WhoCategories } from './Categories/WhoCategories';
 import { RankingItems } from './RankingItems';
 
-export const RankingSection: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+import type { Category,Item } from './types/Ranking';
+
+export const RankingSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | '전체'>('전체');
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategory(category);
   };
   //선물 아이템이 모두 동일하므로, 랭킹 인덱스로 대체
+  const categoryFilterMap: { [key in Category]: (item: Item) => boolean } = {
+    전체: () => true,
+    여성이: (item: Item) => item.rankingIndex >= 1 && item.rankingIndex <= 10,
+    남성이: (item: Item) => item.rankingIndex >= 11 && item.rankingIndex <= 21,
+    청소년이: (item: Item) => item.rankingIndex >= 22,
+    '받고 싶어한': (item: Item) => item.rankingIndex >= 1 && item.rankingIndex <= 10,
+    '많이 선물한': (item: Item) => item.rankingIndex >= 11 && item.rankingIndex <= 21,
+    '위시로 받은': (item: Item) => item.rankingIndex >= 22,
+  };
+
   const filteredItems = selectedCategory
-    ? rankingItems.filter((item) => {
-        if (selectedCategory === '전체') {
-          return true;
-        } else if (selectedCategory === '여성이') {
-          return item.rankingIndex >= 1 && item.rankingIndex <= 10;
-        } else if (selectedCategory === '남성이') {
-          return item.rankingIndex >= 11 && item.rankingIndex <= 21;
-        } else if (selectedCategory === '청소년이') {
-          return item.rankingIndex >= 22;
-        } else if (selectedCategory === '받고 싶어한') {
-          return item.rankingIndex >= 1 && item.rankingIndex <= 10;
-        } else if (selectedCategory === '많이 선물한') {
-          return item.rankingIndex >= 11 && item.rankingIndex <= 21;
-        } else if (selectedCategory === '위시로 받은') {
-          return item.rankingIndex >= 22;
-        }
-        return false;
-      })
+    ? rankingItems.filter((item: Item) => categoryFilterMap[selectedCategory as Category](item))
     : rankingItems;
 
   return (

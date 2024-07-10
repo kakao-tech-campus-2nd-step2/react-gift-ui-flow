@@ -1,19 +1,13 @@
 import styled from '@emotion/styled';
-import React, { useState } from 'react';
 
-import { type DefaultGoodsItemsProps } from '@/components/common/GoodsItem/Default';
+import { useState } from 'react';
+
 import { RankingGoodsItems } from '@/components/common/GoodsItem/Ranking';
 import { Grid } from '@/components/common/layouts/Grid';
 
-interface Item extends Omit<DefaultGoodsItemsProps, 'rankingIndex'> {
-  rankingIndex: number;
-}
+import type { RankingItemsProps } from './types/Ranking';
 
-interface RankingItemsProps {
-  items: Item[];
-}
-
-export const RankingItems: React.FC<RankingItemsProps> = ({ items }) => {
+export const RankingItems = ({ items }: RankingItemsProps) => {
   const [count, setCount] = useState(6);
   const [isViewedMore, setIsViewedMore] = useState(false);
 

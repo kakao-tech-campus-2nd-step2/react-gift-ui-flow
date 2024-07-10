@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
+import { themes } from '@/data/sectionThemes';
 import { breakpoints, colors } from '@/styles/variants';
-import { themes } from '@/utils/types/sectionThemes';
 
 import { Container } from '../../layouts/Container';
 
@@ -13,7 +13,7 @@ type SectionProps = {
   backgroundColor: string;
 };
 
-export const Header: React.FC<HeaderProps> = ({ themeKey }) => {
+export const Header = ({ themeKey }: HeaderProps) => {
   const theme = themes[themeKey];
   return (
     <Wrapper backgroundColor={theme.backgroundColor}>

@@ -1,13 +1,12 @@
 import styled from '@emotion/styled';
-import React from 'react';
 
 import { DefaultGoodsItems } from '@/components/common/GoodsItem/Default';
 import { Container } from '@/components/common/layouts/Container';
 import { Grid } from '@/components/common/layouts/Grid';
+import { defaultItems } from '@/data/giftItems';
 import { breakpoints } from '@/styles/variants';
-import { defaultItems } from '@/utils/hooks/useCreateItems';
 
-export const ThemeItemSection: React.FC = () => {
+export const ThemeItemSection = () => {
   const responsiveColumns = {
     initial: 2,
     xs: 2,

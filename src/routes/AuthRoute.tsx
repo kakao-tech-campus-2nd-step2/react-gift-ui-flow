@@ -1,23 +1,23 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 
-import { useAuthContext } from '@/utils/hooks/useAuthContext';
+import { useAuthContext } from '@/hooks/useAuthContext';
 
-interface Props {
-  children: React.ReactNode;
-}
+import { ROUTE_PATH } from './constants';
 
-export const AuthRoute: React.FC<Props> = ({ children }) => {
+export const AuthRoute = () => {
   const { isAuthenticated, loading } = useAuthContext();
   const navigate = useNavigate();
+
   useEffect(() => {
     if (loading) {
       return;
     }
     if (!isAuthenticated) {
-      navigate('/login');
+      navigate(ROUTE_PATH.LOGIN_PAGE);
     }
   }, [isAuthenticated, navigate, loading]);
 
-  return <>{children}</>;
+  return isAuthenticated ? <Outlet /> : <Navigate to={ROUTE_PATH.LOGIN_PAGE} />;
 };
