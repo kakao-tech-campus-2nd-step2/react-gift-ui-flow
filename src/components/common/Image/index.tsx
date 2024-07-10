@@ -15,7 +15,7 @@ const Wrapper = styled.img<Pick<Props, 'ratio' | 'radius'>>(
   ({ radius = 0 }) => {
     if (radius === 'circle') {
       return {
-        borderRadius: '50%',
+        borderRadius: '100%',
       };
     }
 
@@ -28,13 +28,15 @@ const Wrapper = styled.img<Pick<Props, 'ratio' | 'radius'>>(
   ({ ratio = 'auto' }) => {
     if (ratio === 'square') {
       return {
-        aspectRatio: '1 / 1',
+        aspectRatio: '1',
+        objectFit: 'cover',
       };
     }
 
     if (ratio === 'auto') {
       return {
         aspectRatio: 'auto',
+        maxHeight: '50vh',
       };
     }
 

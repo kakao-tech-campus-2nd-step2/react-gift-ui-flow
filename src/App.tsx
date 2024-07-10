@@ -1,18 +1,58 @@
-import styled from '@emotion/styled';
+// import styled from '@emotion/styled';
+import styled from "@emotion/styled"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-const App = () => {
-  const name = 'Josh Perez';
+import Footer from '@/components/common/Footer/index';
+import Header from "@/components/common/Header/index";
+import Homepage from '@/pages/Homepage/Homepage';
+import MyAccountPage from "@/pages/My-aacount/MyAccountPage";
+import SignInPage from "@/pages/Sign-in/SignInPage";
+
+import { ThemePage } from "./pages/Theme/ThemePage";
+
+
+const App: React.FC = () => {
+
+  const isLogin = !!sessionStorage.getItem("authToken");
 
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <>
+    <BrowserRouter>
+      <Header></Header>
+      <Body>
+        <Routes>
+          <Route path="/" element={<Homepage />}></Route>
+          <Route path="/login" element={<SignInPage />}></Route>
+          {isLogin ? (<>
+            <Route path="/theme/*" element={<ThemePage />}></Route>
+            <Route path="/my-account" element={<MyAccountPage />}></Route>
+            </>
+          ) : null
+          }
+          <Route path="*" element={<SignInPage />}></Route> 
+        </Routes>
+      </Body>
+      <Footer></Footer>
+    </BrowserRouter>
+    </>
   );
 };
 
 export default App;
 
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;
+const Body = styled.div`
+  position: sticky;
+  padding-top: 40px;
+  width: 100vw;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+`
+
+// style?
+
+// const Title = styled.h1`
+//   font-size: 1.5em;
+//   color: gray;
+// `;
