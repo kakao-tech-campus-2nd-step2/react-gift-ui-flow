@@ -19,8 +19,6 @@ const COLOR = {
   GRAY_900: "#999",
 
   WHITE: "#fff",
-};
-
-Object.freeze(COLOR);
+} as const;
 
 export default COLOR;

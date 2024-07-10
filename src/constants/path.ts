@@ -6,8 +6,6 @@ const ROUTE_PATH = {
   LOGIN: "/login",
   THEME_ROUTE: "/theme/:themeKey",
   THEME_DETAIL: (themeKey: Category["themeKey"]) => `/theme/${themeKey}`,
-};
-
-Object.freeze(ROUTE_PATH);
+} as const;
 
 export default ROUTE_PATH;

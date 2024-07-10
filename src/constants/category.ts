@@ -81,6 +81,4 @@ const CATEGORY: Category[] = [
   },
 ];
 
-Object.freeze(CATEGORY);
-
 export default CATEGORY;
