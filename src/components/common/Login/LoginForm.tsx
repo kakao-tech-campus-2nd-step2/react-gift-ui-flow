@@ -39,7 +39,7 @@ const LoginForm = () => {
     setPassword(event.target.value);
   }, []);
 
-  const handleLogin = () => {
+  const performLogin = () => {
     if (id && password) {
       login(id);
       navigate(-1);
@@ -67,7 +67,7 @@ const LoginForm = () => {
       />
       <div style={{ height: '16px' }} />
       <ButtonContainer>
-        <Button type="submit" onClick={handleLogin}>
+        <Button type="submit" onClick={performLogin}>
           로그인
         </Button>
       </ButtonContainer>
