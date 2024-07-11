@@ -1,36 +1,38 @@
-import type { StorybookConfig } from '@storybook/react-webpack5';
-import TsconfigPathsPlugin from 'tsconfig-paths-webpack-plugin';
-import path from 'path';
+import type { StorybookConfig } from '@storybook/react-webpack5'
+
+const path = require('path')
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 
 const config: StorybookConfig = {
-  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
-  addons: [
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/preset-create-react-app',
-    '@storybook/addon-onboarding',
-    '@storybook/addon-interactions',
-  ],
-  webpackFinal: async (config) => {
-    config.resolve?.plugins?.push(
-      new TsconfigPathsPlugin({
-        configFile: path.resolve(__dirname, '../tsconfig.json'),
-      }),
-    );
+	stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+	addons: [
+		'@storybook/preset-create-react-app',
+		'@storybook/addon-onboarding',
+		'@storybook/addon-links',
+		'@storybook/addon-essentials',
+		'@chromatic-com/storybook',
+		'@storybook/addon-interactions',
+	],
 
-    return config;
-  },
-  framework: {
-    name: '@storybook/react-webpack5',
-    options: {
-      builder: {
-        useSWC: true,
-      },
-    },
-  },
-  docs: {
-    autodocs: 'tag',
-  },
-  staticDirs: ['../public'],
-};
-export default config;
+	framework: {
+		name: '@storybook/react-webpack5',
+		options: {},
+	},
+	staticDirs: ['../public'],
+	webpackFinal: async (config, { configType }) => {
+		config.module?.rules?.push({
+			test: /\.scss|.sass$/,
+			use: ['style-loader', 'css-loader', 'sass-loader'],
+			include: path.resolve(__dirname, '../'),
+		})
+
+		config.resolve!.plugins = [
+			new TsconfigPathsPlugin({
+				configFile: path.resolve(__dirname, '../tsconfig.json'),
+			}),
+		]
+
+		return config
+	},
+}
+export default config
