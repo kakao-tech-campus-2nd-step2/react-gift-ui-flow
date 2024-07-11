@@ -8,16 +8,16 @@ import ThemePage from './pages/ThemePage';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/theme" element={<ThemePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/theme" element={<ThemePage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/mypage" element={<Mypage />} />
-        </AuthProvider>
-      </Routes>
-    </BrowserRouter>
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
