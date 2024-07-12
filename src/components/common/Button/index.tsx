@@ -1,103 +1,100 @@
+import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 
-import { breakpoints } from '@/styles/variants';
+type ButtonTheme = 'kakao' | 'primary' | 'darkGray';
+type ButtonSize = 'small' | 'large' | 'responsive';
 
-type Props = {
-  theme?: 'kakao' | 'outline' | 'black' | 'lightGray' | 'darkGray';
-  size?: 'large' | 'small' | 'responsive';
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  theme?: ButtonTheme;
+  size?: ButtonSize;
+  children: ReactNode;
+}
 
-export const Button: React.FC<Props> = ({ ...props }: Props) => {
-  return <Wrapper {...props} />;
+interface StyledButtonProps {
+  theme: ButtonTheme;
+  size: ButtonSize;
+}
+
+export default function Button({ theme = 'kakao', size = 'large', children, ...rest }: ButtonProps) {
+  return (
+    <StyledButton {...{ theme, size }} {...rest}>
+      {children}
+    </StyledButton>
+  );
+}
+
+const getSizeStyles = (size: ButtonSize) => {
+  switch (size) {
+    case 'small':
+      return css`
+        height: 40px;
+        font-size: 15px;
+      `;
+
+    case 'large':
+      return css`
+        height: 60px;
+        font-size: 16px;
+      `;
+    case 'responsive':
+      return css`
+        height: 40px;
+        font-size: 15px;
+
+        @media only screen and (min-width: 768px) {
+          height: 60px;
+          font-size: 16px;
+        }
+      `;
+    default:
+      return css``;
+  }
 };
 
-const Wrapper = styled.button<Pick<Props, 'theme' | 'size'>>(
-  {
-    width: '100%',
-    borderRadius: '4px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    cursor: 'pointer',
-    transition: 'background-color 200ms',
-  },
-  ({ size = 'responsive' }) => {
-    const largeStyle = {
-      height: '60px',
-      fontSize: '16px',
-    };
+const getThemeStyles = (theme: ButtonTheme) => {
+  switch (theme) {
+    case 'kakao':
+      return css`
+        background-color: #fee500;
+        color: #111;
 
-    const smallStyle = {
-      height: '40px',
-      fontSize: '15px',
-    };
-    if (size === 'large') {
-      return largeStyle;
-    }
+        &:hover {
+          opacity: 0.8;
+        }
+      `;
+    case 'primary':
+      return css`
+        background-color: #fff;
+        border: 1px solid #b5b2b2;
+        color: #111;
 
-    if (size === 'small') {
-      return smallStyle;
-    }
+        &:hover {
+          background-color: #f8f8f8;
+        }
+      `;
+    case 'darkGray':
+      return css`
+        background-color: #444;
+        color: #fff;
+        font-weight: 700;
 
-    return {
-      ...smallStyle,
-      [`@media screen and (min-width:${breakpoints.sm})`]: {
-        ...largeStyle,
-      },
-    };
-  },
-  ({ theme = 'kakao' }) => {
-    if (theme === 'outline') {
-      return {
-        boxShadow: '0 0 0 1px #ccc inset',
-        color: '#999',
+        &:hover {
+          background-color: #555;
+        }
+      `;
+    default:
+      return css``;
+  }
+};
 
-        '&:hover': {
-          backgroundColor: '#f8f8f8',
-        },
-      };
-    }
+const StyledButton = styled.button<StyledButtonProps>`
+  border: none;
+  width: 100%;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 
-    if (theme === 'black') {
-      return {
-        color: '#fff',
-        backgroundColor: '#111',
-
-        '&:hover': {
-          backgroundColor: '#222',
-        },
-      };
-    }
-
-    if (theme === 'lightGray') {
-      return {
-        color: '#111',
-        backgroundColor: '#f0f0f0',
-
-        '&:hover': {
-          backgroundColor: '#ebebeb',
-        },
-      };
-    }
-
-    if (theme === 'darkGray') {
-      return {
-        color: '#fff',
-        backgroundColor: '#444',
-
-        '&:hover': {
-          backgroundColor: '#555',
-        },
-      };
-    }
-
-    return {
-      color: '#111',
-      backgroundColor: '#fee500',
-
-      '&:hover': {
-        backgroundColor: '#fada0a',
-      },
-    };
-  },
-);
+  ${({ size }) => getSizeStyles(size)}
+  ${({ theme }) => getThemeStyles(theme)}
+`;

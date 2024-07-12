@@ -1,18 +1,15 @@
-import styled from '@emotion/styled';
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import AuthProvider from '@context/auth/AuthProvider';
+import GlobalStyles from '@assets/styles';
 
-const App = () => {
-  const name = 'Josh Perez';
-
+function App() {
   return (
-    <div>
-      <Title>Hello, {name}</Title>
-    </div>
+    <AuthProvider>
+      <GlobalStyles />
+      <Outlet />
+    </AuthProvider>
   );
-};
+}
 
 export default App;
-
-const Title = styled.h1`
-  font-size: 1.5em;
-  color: gray;
-`;

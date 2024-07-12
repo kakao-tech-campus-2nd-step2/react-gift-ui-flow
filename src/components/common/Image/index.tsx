@@ -1,47 +1,53 @@
+import React, { ImgHTMLAttributes } from 'react';
 import styled from '@emotion/styled';
 
-type Props = {
-  radius?: 'circle' | number;
-  ratio?: 'square' | 'auto' | number;
-} & React.ImgHTMLAttributes<HTMLImageElement>;
+type Ratio = number | 'square';
+type Radius = number | 'circle';
 
-export const Image = ({ ...props }: Props) => <Wrapper {...props} />;
+export interface ImageProps extends ImgHTMLAttributes<HTMLDivElement> {
+  ratio?: Ratio;
+  radius?: Radius;
+  src: string;
+  width?: number;
+  height?: number;
+}
 
-const Wrapper = styled.img<Pick<Props, 'ratio' | 'radius'>>(
-  {
-    objectFit: 'cover',
-    objectPosition: 'center',
-  },
-  ({ radius = 0 }) => {
-    if (radius === 'circle') {
-      return {
-        borderRadius: '50%',
-      };
-    }
+export default function Image({ ratio, radius, src, width, height, ...rest }: ImageProps) {
+  return <StyledImageContainer {...{ ratio, radius, src, width, height }} {...rest} />;
+}
 
-    if (typeof radius === 'number') {
-      return {
-        borderRadius: `${radius}px`,
-      };
-    }
-  },
-  ({ ratio = 'auto' }) => {
-    if (ratio === 'square') {
-      return {
-        aspectRatio: '1 / 1',
-      };
-    }
+const ratioStyles = (ratio?: Ratio) => {
+  if (typeof ratio === 'number') {
+    return `aspect-ratio: ${ratio};`;
+  }
 
-    if (ratio === 'auto') {
-      return {
-        aspectRatio: 'auto',
-      };
-    }
+  if (ratio === 'square') {
+    return 'aspect-ratio: 1 / 1;';
+  }
 
-    if (typeof ratio === 'number') {
-      return {
-        aspectRatio: `${ratio}`,
-      };
-    }
-  },
-);
+  return '';
+};
+
+const radiusStyles = (radius?: Radius) => {
+  if (typeof radius === 'number') {
+    return `border-radius: ${radius}px;`;
+  }
+
+  if (radius === 'circle') {
+    return 'border-radius: 50%;';
+  }
+
+  return '';
+};
+
+const StyledImageContainer = styled.div<ImageProps>`
+  overflow: hidden;
+  background-image: url(${(props) => props.src});
+  background-size: cover;
+  background-position: center;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+
+  ${({ ratio }) => ratioStyles(ratio)}
+  ${({ radius }) => radiusStyles(radius)}
+`;

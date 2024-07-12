@@ -1,37 +1,43 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
+import Image, { ImageProps } from '@components/common/Image';
 
-import { Image } from '.';
+const IMAGE_SRC = 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png';
+const IMAGE_SIZE = 300;
+const IMAGE_RADIUS = 20;
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
-  title: 'Common/Image',
-  component: Image,
+const meta: Meta<ImageProps> = {
+  title: 'common/Image',
   tags: ['autodocs'],
-  args: {
-    src: 'https://t1.kakaocdn.net/friends/www/talk/kakaofriends_talk_2018.png',
-  },
-} satisfies Meta<typeof Image>;
+  component: Image,
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+
+type Story = StoryObj<ImageProps>;
 
 export const RatioSquare: Story = {
   args: {
-    width: '100px',
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
     ratio: 'square',
   },
 };
 
 export const RadiusCircle: Story = {
   args: {
-    width: '100px',
-    ratio: 'square',
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
     radius: 'circle',
   },
 };
 
 export const RadiusRound: Story = {
   args: {
-    radius: 10,
+    src: IMAGE_SRC,
+    width: IMAGE_SIZE,
+    height: IMAGE_SIZE,
+    radius: IMAGE_RADIUS,
   },
 };
