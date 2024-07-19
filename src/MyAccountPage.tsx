@@ -4,11 +4,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { Button } from '@/components/common/Button/index';
 
-interface MyAccountPageProps {
-  username: string;
-  onLogout: () => void;
-}
-
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,12 +19,13 @@ const Greeting = styled.h1`
   margin-bottom: 50px;
 `;
 
-const MyAccountPage: React.FC<MyAccountPageProps> = ({ username, onLogout }) => {
-  const navigate = useNavigate();
+const MyAccountPage: React.FC = () => {
+  const { username, logout } = useAuth();
+  const navigate = useNavigate(); // 네비게이션 함수를 가지고 와서
 
   const handleLogout = () => {
-    onLogout();
-    navigate('/');
+    logout();
+    navigate('/'); // 메인 페이지로 Redirect
   };
 
   return (
